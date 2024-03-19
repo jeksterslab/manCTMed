@@ -85,7 +85,7 @@ Replication <- function(i,
       }
     )
   } else {
-    run <- FALSE
+    run <- TRUE
   }
   if (run) {
     # parameters
