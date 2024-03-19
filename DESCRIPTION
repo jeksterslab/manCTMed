@@ -25,7 +25,9 @@ Imports:
     ctsem,
     dynr,
     cTMed,
-    dynUtils
+    dynUtils,
+    simStateSpace,
+    rprojroot
 Suggests:
     knitr,
     rmarkdown,
