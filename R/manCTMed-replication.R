@@ -330,9 +330,9 @@ Replication <- function(i,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-	nm <- names(dynr_fit$Coefficients)
-	rt <- dynr_fit@transformed.inv.hessian
-	dimnames(rt) <- list(nm, nm)
+    nm <- names(dynr_fit$Coefficients)
+    rt <- dynr_fit@transformed.inv.hessian
+    dimnames(rt) <- list(nm, nm)
     vcov_phi_vec <- rt[parnames, parnames]
     dynr <- list(
       phi = phi,
