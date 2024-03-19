@@ -18,12 +18,16 @@
 #'   Replication ID.
 #' @param n Positive integer.
 #'   Sample size.
+#' @param Logical.
+#'   If `write = TRUE`, write results into a file.
+#'   If `write = FALSE`, return results.
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
 Replication <- function(i,
-                        n) {
+                        n,
+                        write = TRUE) {
   # path
   root <- rprojroot::is_rstudio_project
   path <- root$find_file(
@@ -330,9 +334,9 @@ Replication <- function(i,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-    nm <- names(dynr_fit$Coefficients)
-    rt <- dynr_fit@transformed.inv.hessian
-    dimnames(rt) <- list(nm, nm)
+	nm <- names(dynr_fit$Coefficients)
+	rt <- dynr_fit@transformed.inv.hessian
+	dimnames(rt) <- list(nm, nm)
     vcov_phi_vec <- rt[parnames, parnames]
     dynr <- list(
       phi = phi,
@@ -446,6 +450,14 @@ Replication <- function(i,
       mc_ctsem = mc_ctsem,
       posterior = posterior
     )
-    saveRDS(output, file = fn, compress = "xz")
+    if (write) {
+      saveRDS(
+        output,
+        file = fn,
+        compress = "xz"
+      )
+    } else {
+      return(output)
+    }
   }
 }
