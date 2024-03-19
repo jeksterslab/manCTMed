@@ -16,12 +16,16 @@ Sample size.}
 \description{
 Performs a single simulation replication involving the following:
 \itemize{
-\item Data generation
-\item Model fitting using the dynr package
-\item Model fitting using the ctsem package
-\item Delta method using the \code{\link[cTMed:DeltaMed]{cTMed::DeltaMed()}} function
-\item Monte Carlo method using the \code{\link[cTMed:MCMed]{cTMed::MCMed()}} function
-\item Posterior distribution using the \code{\link[cTMed:PosteriorMed]{cTMed::PosteriorMed()}} function
+\item Data generation using the \code{simStateSpace} package.
+\item Model fitting using the \code{dynr} package.
+\item Model fitting using the \code{ctsem} package.
+\item Generate delta method confidence intervals
+using the \code{\link[cTMed:DeltaMed]{cTMed::DeltaMed()}} function.
+\item Generate Monte Carlo method confidence intervals
+using the \code{\link[cTMed:MCMed]{cTMed::MCMed()}} function.
+\item Generate credible intervals
+based on the posterior distribution of the drift matrix
+using the \code{\link[cTMed:PosteriorMed]{cTMed::PosteriorMed()}} function.
 }
 }
 \author{
