@@ -1,12 +1,16 @@
 #' Simulation Replication
 #'
 #' Performs a single simulation replication involving the following:
-#' - Data generation
-#' - Model fitting using the dynr package
-#' - Model fitting using the ctsem package
-#' - Delta method using the [cTMed::DeltaMed()] function
-#' - Monte Carlo method using the [cTMed::MCMed()] function
-#' - Posterior distribution using the [cTMed::PosteriorMed()] function
+#' - Data generation using the `simStateSpace` package.
+#' - Model fitting using the `dynr` package.
+#' - Model fitting using the `ctsem` package.
+#' - Generate delta method confidence intervals
+#'   using the [cTMed::DeltaMed()] function.
+#' - Generate Monte Carlo method confidence intervals
+#'   using the [cTMed::MCMed()] function.
+#' - Generate credible intervals
+#'   based on the posterior distribution of the drift matrix
+#'   using the [cTMed::PosteriorMed()] function.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
