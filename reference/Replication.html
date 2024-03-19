@@ -93,7 +93,7 @@ using the <code><a href="https://github.com/jeksterslab/cTMed/reference/Posterio
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Replication</span><span class="op">(</span><span class="va">i</span>, <span class="va">n</span>, write <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">Replication</span><span class="op">(</span><span class="va">i</span>, <span class="va">n</span>, write <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">wd</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -112,6 +112,12 @@ Sample size.</p></dd>
 <dd><p>Logical.
 If <code>write = TRUE</code>, write results into a file.
 If <code>write = FALSE</code>, return results.</p></dd>
+
+
+<dt>wd</dt>
+<dd><p>Working directory.
+Directory where output file is saved
+if <code>write = TRUE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
