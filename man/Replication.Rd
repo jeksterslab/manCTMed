@@ -4,7 +4,7 @@
 \alias{Replication}
 \title{Simulation Replication}
 \usage{
-Replication(i, n)
+Replication(i, n, write = TRUE)
 }
 \arguments{
 \item{i}{Positive integer.
@@ -12,6 +12,10 @@ Replication ID.}
 
 \item{n}{Positive integer.
 Sample size.}
+
+\item{write}{Logical.
+If \code{write = TRUE}, write results into a file.
+If \code{write = FALSE}, return results.}
 }
 \description{
 Performs a single simulation replication involving the following:
