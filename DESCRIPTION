@@ -22,12 +22,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
-Imports: ctsem, dynr, cTMed, dynUtils, simStateSpace, rprojroot
+Imports: stats, ctsem, dynr, cTMed, dynUtils, simStateSpace, rprojroot
 Suggests: knitr, rmarkdown, testthat
 Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
 RoxygenNote: 7.3.1
 NeedsCompilation: no
-Packaged: 2024-03-19 08:42:10 UTC; root
+Packaged: 2024-03-19 08:53:11 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
