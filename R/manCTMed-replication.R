@@ -321,7 +321,7 @@ Replication <- function(i,
       "phi_23",
       "phi_33"
     )
-    phi_vec <- cook(dynr_fit)[parnames]
+    phi_vec <- coef(dynr_fit)[parnames]
     phi <- matrix(
       data = phi_vec,
       nrow = 3
