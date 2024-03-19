@@ -3,14 +3,13 @@
 args <- commandArgs(trailingOnly = TRUE)
 i <- as.integer(args[1])
 n <- as.integer(args[2])
-wd <- as.character(args[2])
 
 suppressMessages(
   suppressWarnings(
     manCTMed::Replication(
       i = i,
       n = n,
-      wd = wd
+      wd = "/scratch/ibp5092/manCTMed/.sim"
     )
   )
 )

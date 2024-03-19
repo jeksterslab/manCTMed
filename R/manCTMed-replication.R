@@ -21,22 +21,25 @@
 #' @param write Logical.
 #'   If `write = TRUE`, write results into a file.
 #'   If `write = FALSE`, return results.
-#' @param wd Working directory.
-#'   Directory where output file is saved
-#'   if `write = TRUE`.
+#' @param wd Working directory.   
+#'   Needed for output files if `write = TRUE`
+#'   and for temporary files.
+#'
+#' @examples
+#' Replication(i = 1, n = 50, wd = tempdir())
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
+#' @importFrom stats coef vcov 
+#' @import dynr
 #' @export
 Replication <- function(i,
                         n,
                         write = FALSE,
-                        wd) {
+                        wd = getwd()) {
   # path
   path <- file.path(
     wd,
-    ".sim",
-    "results",
     paste0(
       "n",
       "-",
@@ -332,16 +335,13 @@ Replication <- function(i,
       "phi_23",
       "phi_33"
     )
-    phi_vec <- dynr_fit$Coefficients[parnames]
+    phi_vec <- coef(dynr_fit)[parnames]
     phi <- matrix(
       data = phi_vec,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-    nm <- names(dynr_fit$Coefficients)
-    rt <- dynr_fit@transformed.inv.hessian
-    dimnames(rt) <- list(nm, nm)
-    vcov_phi_vec <- rt[parnames, parnames]
+    vcov_phi_vec <- vcov(dynr_fit)[parnames, parnames]
     dynr <- list(
       phi = phi,
       vcov = vcov_phi_vec

@@ -27,8 +27,7 @@ Imports:
     dynr,
     cTMed,
     dynUtils,
-    simStateSpace,
-    rprojroot
+    simStateSpace
 Suggests:
     knitr,
     rmarkdown,
@@ -36,4 +35,3 @@ Suggests:
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed
-RoxygenNote: 7.3.1

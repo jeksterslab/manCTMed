@@ -24,16 +24,6 @@ parallel \
         ::: $(seq 50 50 200) \
         ::: $(seq 1 1000)
 
-parallel \
-        --tmpdir "$PARALLEL_TMP_FOLDER" \
-        apptainer exec \
-                --bind "$PROJECT_WD" \
-                "$PROJECT_SIF" \
-                'Rscript "$PROJECT_SIM_R" {2} {1}; \
-        echo sim rep {2} n {1} \
-        ::: $(seq 50 50 200) \
-        ::: $(seq 1000 1)
-
 # post TMP ---------------------------------------------------------------------
 rm -rf -- "$PARALLEL_TMP_FOLDER"
 trap - EXIT
