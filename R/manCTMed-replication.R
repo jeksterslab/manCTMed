@@ -21,16 +21,20 @@
 #' @param write Logical.
 #'   If `write = TRUE`, write results into a file.
 #'   If `write = FALSE`, return results.
+#' @param wd Working directory.
+#'   Directory where output file is saved
+#'   if `write = TRUE`.
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
 Replication <- function(i,
                         n,
-                        write = TRUE) {
+                        write = FALSE,
+                        wd) {
   # path
-  root <- rprojroot::is_rstudio_project
-  path <- root$find_file(
+  path <- file.path(
+    wd,
     ".sim",
     "results",
     paste0(
