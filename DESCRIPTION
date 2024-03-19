@@ -22,6 +22,7 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
 Imports:
+    stats,
     ctsem,
     dynr,
     cTMed,
@@ -35,4 +36,3 @@ Suggests:
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed
-RoxygenNote: 7.3.1

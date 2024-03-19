@@ -17,7 +17,6 @@
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
-#' @import dynr
 #' @export
 Replication <- function(i,
                         n) {
@@ -321,13 +320,13 @@ Replication <- function(i,
       "phi_23",
       "phi_33"
     )
-    phi_vec <- coef.dynrCook(dynr_fit)[parnames]
+    phi_vec <- dynr::coef.dynrCook(dynr_fit)[parnames]
     phi <- matrix(
       data = phi_vec,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-    vcov_phi_vec <- vcov.dynrCook(dynr_fit)[parnames, parnames]
+    vcov_phi_vec <- dynr::vcov.dynrCook(dynr_fit)[parnames, parnames]
     dynr <- list(
       phi = phi,
       vcov = vcov_phi_vec
@@ -372,7 +371,7 @@ Replication <- function(i,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-    vcov_phi_vec <- cov(do.call(what = "rbind", args = posterior_phi_vec))
+    vcov_phi_vec <- stats::cov(do.call(what = "rbind", args = posterior_phi_vec))
     ctsem <- list(
       posterior = posterior,
       posterior_phi = posterior_phi,
