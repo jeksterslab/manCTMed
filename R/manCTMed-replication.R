@@ -324,13 +324,16 @@ Replication <- function(i,
       "phi_23",
       "phi_33"
     )
-    phi_vec <- dynr:::coef.dynrCook(dynr_fit)[parnames]
+    phi_vec <- dynr_fit$Coefficients[parnames]
     phi <- matrix(
       data = phi_vec,
       nrow = 3
     )
     colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-    vcov_phi_vec <- dynr:::vcov.dynrCook(dynr_fit)[parnames, parnames]
+    nm <- names(dynr_fit$Coefficients)
+    rt <- dynr_fit@transformed.inv.hessian
+    dimnames(rt) <- list(nm, nm)
+    vcov_phi_vec <- rt[parnames, parnames]
     dynr <- list(
       phi = phi,
       vcov = vcov_phi_vec
