@@ -1,0 +1,29 @@
+---
+title: "manCTMed: Session"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{manCTMed: Session}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+```{r}
+#| message = FALSE
+library(manCTMed)
+```
+
+# Session
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,20 @@
+---
+title: Preface
+---
+
+<!-- This will become index.html in the quarto website. -->
+
+## Initial setup
+
+Publish the project to Quarto Pub interactively by typing
+
+```sh
+export QUARTO_PUB_AUTH_TOKEN=TOKEN_HERE
+quarto publish
+```
+
+Save the generated `_publish.yml`. Once the `_publish.yml` is generated, the succeeding builds will be handled by GitHub actions.
+
+## Wiki
+
+This website contains resources related to the R [@RCoreTeam-2023] package [manCTMed](https://github.com/jeksterslab/manCTMed) outside the [pkgdown](https://jeksterslab.github.io/manCTMed) documentation.

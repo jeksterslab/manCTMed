@@ -1,0 +1,52 @@
+---
+title: "Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects in Continuous-Time Mediation Models"
+author: "Ivan Jacob Agaloos Pesigan"
+date: "`r Sys.Date()`"
+bibliography: "vignettes.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects in Continuous-Time Mediation Models}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+[![DOI](https://zenodo.org/badge/DOI/10.0000/0000000000.svg)](https://doi.org/10.0000/0000000000)
+<!-- badges: end -->
+
+## Description
+
+Research compendium for the manuscript
+Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (In Preparation).
+Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects
+in Continuous-Time Mediation Models.
+https://doi.org/10.0000/0000000000
+
+## Installation
+
+You can install `manCTMed` from
+[GitHub](https://github.com/jeksterslab/manCTMed) with:
+
+```r
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("jeksterslab/manCTMed")
+```
+
+## More Information
+
+See
+[GitHub Pages](https://jeksterslab.github.io/manCTMed/index.html)
+for package documentation.
