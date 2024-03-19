@@ -18,7 +18,7 @@
 #'   Replication ID.
 #' @param n Positive integer.
 #'   Sample size.
-#' @param Logical.
+#' @param write Logical.
 #'   If `write = TRUE`, write results into a file.
 #'   If `write = FALSE`, return results.
 #'
