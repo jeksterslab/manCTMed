@@ -1,0 +1,33 @@
+Package: manCTMed
+Title: Continuous Time Mediation
+Version: 0.9.1
+Authors@R: c(
+    person(given = "Ivan Jacob Agaloos",
+           family = "Pesigan",
+           role = c("aut", "cre", "cph"),
+           email = "r.jeksterslab@gmail.com",
+           comment = c(ORCID = "0000-0000-0000-0000"))
+    )
+Description: Research compendium for the manuscript
+    Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (In Preparation).
+    Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects
+    in Continuous-Time Mediation Models.
+    <doi:10.0000/0000000000>.
+URL: https://github.com/jeksterslab/manCTMed,
+        https://jeksterslab.github.io/manCTMed/,
+        https://osf.io/qwnmf/?view_only=855be2012b554f05bbc679946845bab8,
+        https://doi.org/10.0000/0000000000
+BugReports: https://github.com/jeksterslab/manCTMed/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 3.5.0)
+Imports: ctsem, dynr, cTMed, dynUtils, simStateSpace, rprojroot
+Suggests: knitr, rmarkdown, testthat
+Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
+RoxygenNote: 7.3.1
+NeedsCompilation: no
+Packaged: 2024-03-19 07:50:52 UTC; root
+Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
+    (<https://orcid.org/0000-0000-0000-0000>)
+Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
