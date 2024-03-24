@@ -12,7 +12,7 @@ results <- lapply(
   FUN = manCTMed::Summarize,
   reps = reps,
   wd = wd,
-  ncores = parallel::detectCores() 
+  ncores = parallel::detectCores()
 )
 results <- do.call(
   what = "rbind",

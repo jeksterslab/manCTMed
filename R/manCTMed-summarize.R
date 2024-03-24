@@ -132,8 +132,10 @@ Summarize <- function(n,
     ci <- mapply(
       FUN = function(ci,
                      fit,
-                     method) {
+                     method,
+                     repid) {
         out <- cbind(
+          repid = repid,
           summary(ci, alpha = c(0.05, 0.01, 0.001)),
           fit = fit,
           method = method
@@ -158,6 +160,7 @@ Summarize <- function(n,
       ),
       fit = c("dynr", "dynr", "ctsem", "ctsem", "ctsem"),
       method = c("delta", "mc", "delta", "mc", "posterior"),
+      repid = repid,
       SIMPLIFY = FALSE
     )
     ci <- lapply(
