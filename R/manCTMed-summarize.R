@@ -99,7 +99,7 @@ Summarize <- function(n,
     )
   )
   dim(parameters) <- NULL
-  foo <- function(i,
+  foo <- function(repid,
                   n,
                   wd,
                   parameters) {
@@ -120,7 +120,7 @@ Summarize <- function(n,
         "-",
         sprintf(
           "%05d",
-          i
+          repid
         )
       )
     )

@@ -3,32 +3,32 @@
 #' The function simulates data using
 #' the [simStateSpace::SimSSMOUFixed()] function.
 #'
-#' @param i Positive integer.
+#' @param repid Positive integer.
 #'   Replication ID.
 #' @param n Positive integer.
 #'   Sample size.
 #'
 #' @examples
-#' Data(i = 1, n = 50)
+#' Data(repid = 1, n = 50)
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @import simStateSpace
 #' @export
-Data <- function(i,
+Data <- function(repid,
                  n) {
   # parameters
   if (n == 50) {
-    seed <- i
+    seed <- repid
   }
   if (n == 100) {
-    seed <- 5000 + i
+    seed <- 5000 + repid
   }
   if (n == 150) {
-    seed <- 10000 + i
+    seed <- 10000 + repid
   }
   if (n == 200) {
-    seed <- 15000 + i
+    seed <- 15000 + repid
   }
   set.seed(seed)
   time <- 7 * 24
@@ -87,7 +87,7 @@ Data <- function(i,
   theta <- 0.2 * iden
   theta_l <- t(chol(theta))
   args <- list(
-    rep = i,
+    repid = repid,
     n = n,
     seed = seed,
     time = time,

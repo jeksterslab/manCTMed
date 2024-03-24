@@ -21,7 +21,7 @@
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
-Replication <- function(i,
+Replication <- function(repid,
                         n,
                         wd,
                         delta_t = c(5, 10, 15, 20),
@@ -60,7 +60,7 @@ Replication <- function(i,
       "-",
       sprintf(
         "%05d",
-        i
+        repid
       )
     )
   )
@@ -69,21 +69,27 @@ Replication <- function(i,
     ".Rds"
   )
   if (file.exists(fn)) {
-    tryCatch(
-      expr = {
-        readRDS(fn)
-        run <- FALSE
-      },
-      error = function(e) {
-        run <- TRUE
-      }
-    )
+    check_file <- function(fn) {
+      tryCatch(
+        expr = {
+          readRDS(fn)
+          return(FALSE)
+        },
+        error = function(e) {
+          return(TRUE)
+        },
+        warning = function(w) {
+          return(TRUE)
+        }
+      )
+    }
+    run <- check_file(fn = fn)
   } else {
     run <- TRUE
   }
   if (run) {
     data <- Data(
-      i = i,
+      repid = repid,
       n = n
     )
     fit_dynr <- FitDynr(x = data)
@@ -105,9 +111,11 @@ Replication <- function(i,
   }
   return(
     paste(
-      "Replication",
-      i,
-      "done."
+      "repid:",
+      repid,
+      "n:",
+      n,
+      "\n"
     )
   )
 }
