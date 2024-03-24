@@ -34,6 +34,10 @@ Summarize <- function(n,
                       ncores = NULL) {
   if (is.null(ncores)) {
     ncores <- 1
+  } else {
+    if (ncores < 0) {
+      ncores <- 1
+    }
   }
   # path
   path <- file.path(
@@ -89,7 +93,7 @@ Summarize <- function(n,
       med = "m"
     )
   )
-  parameters <- do.call(
+  parameter <- do.call(
     what = "cbind",
     args = lapply(
       X = as.data.frame(t(med)),
@@ -98,11 +102,11 @@ Summarize <- function(n,
       }
     )
   )
-  dim(parameters) <- NULL
+  dim(parameter) <- NULL
   foo <- function(repid,
                   n,
                   wd,
-                  parameters) {
+                  parameter) {
     # files
     fn_root <- file.path(
       path,
@@ -169,7 +173,7 @@ Summarize <- function(n,
         return(
           cbind(
             x,
-            parameters = parameters
+            parameter = parameter
           )
         )
       }
@@ -185,13 +189,77 @@ Summarize <- function(n,
     FUN = foo,
     n = n,
     wd = wd,
-    parameters = parameters,
+    parameter = parameter,
     mc.cores = ncores
   )
-  return(
-    do.call(
-      what = "rbind",
-      args = output
+  output <- do.call(
+    what = "rbind",
+    args = output
+  )
+  output$hit_05 <- (
+    (
+      output[, "2.5%"] < output[, "parameter"]
+    ) & (
+      output[, "parameter"] < output[, "97.5%"]
     )
+  )
+  output$hit_01 <- (
+    (
+      output[, "0.5%"] < output[, "parameter"]
+    ) & (
+      output[, "parameter"] < output[, "99.5%"]
+    )
+  )
+  output$hit_001 <- (
+    (
+      output[, "0.05%"] < output[, "parameter"]
+    ) & (
+      output[, "parameter"] < output[, "99.95%"]
+    )
+  )
+  output$width_05 <- (
+    (
+      output[, "est"] - output[, "2.5%"]
+    ) + (
+      output[, "97.5%"] - output[, "est"]
+    )
+  )
+  output$width_01 <- (
+    (
+      output[, "est"] - output[, "0.5%"]
+    ) + (
+      output[, "99.5%"] - output[, "est"]
+    )
+  )
+  output$width_001 <- (
+    (
+      output[, "est"] - output[, "0.05%"]
+    ) + (
+      output[, "99.95%"] - output[, "est"]
+    )
+  )
+  output$sym_05 <- (
+    (
+      output[, "est"] - output[, "2.5%"]
+    ) - (
+      output[, "97.5%"] - output[, "est"]
+    )
+  )
+  output$sym_01 <- (
+    (
+      output[, "est"] - output[, "0.5%"]
+    ) - (
+      output[, "99.5%"] - output[, "est"]
+    )
+  )
+  output$sym_001 <- (
+    (
+      output[, "est"] - output[, "0.05%"]
+    ) - (
+      output[, "99.95%"] - output[, "est"]
+    )
+  )
+  return(
+    output
   )
 }
