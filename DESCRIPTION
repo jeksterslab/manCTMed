@@ -20,14 +20,15 @@ URL: https://github.com/jeksterslab/manCTMed,
 BugReports: https://github.com/jeksterslab/manCTMed/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
-Imports: stats, ctsem, dynr, cTMed, dynUtils, simStateSpace, rprojroot
+Imports: stats, ctsem, dynr, cTMed, dynUtils, simStateSpace
 Suggests: knitr, rmarkdown, testthat
 Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
 RoxygenNote: 7.3.1
 NeedsCompilation: no
-Packaged: 2024-03-19 20:13:00 UTC; root
+Packaged: 2024-03-24 06:06:03 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

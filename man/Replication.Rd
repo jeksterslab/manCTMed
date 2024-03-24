@@ -4,22 +4,22 @@
 \alias{Replication}
 \title{Simulation Replication}
 \usage{
-Replication(i, n, write = FALSE, wd)
+Replication(repid, n, wd, delta_t = c(5, 10, 15, 20), R = 20000L)
 }
 \arguments{
-\item{i}{Positive integer.
+\item{repid}{Positive integer.
 Replication ID.}
 
 \item{n}{Positive integer.
 Sample size.}
 
-\item{write}{Logical.
-If \code{write = TRUE}, write results into a file.
-If \code{write = FALSE}, return results.}
+\item{wd}{Working directory for output files.}
 
-\item{wd}{Working directory.
-Directory where output file is saved
-if \code{write = TRUE}.}
+\item{delta_t}{Numeric vector.
+Vector of time-intervals to use.}
+
+\item{R}{Positive integer.
+Number of Monte Carlo replications.}
 }
 \description{
 Performs a single simulation replication involving the following:
@@ -35,6 +35,14 @@ using the \code{\link[cTMed:MCMed]{cTMed::MCMed()}} function.
 based on the posterior distribution of the drift matrix
 using the \code{\link[cTMed:PosteriorMed]{cTMed::PosteriorMed()}} function.
 }
+}
+\seealso{
+Other Simulation Functions: 
+\code{\link{CI}()},
+\code{\link{Data}()},
+\code{\link{FitCtsem}()},
+\code{\link{FitDynr}()},
+\code{\link{Summarize}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
