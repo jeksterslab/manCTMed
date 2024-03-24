@@ -16,7 +16,7 @@
 #'
 #' @inheritParams Data
 #' @inheritParams CI
-#' @param wd Working directory for output files. 
+#' @param wd Working directory for output files.
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed

@@ -78,19 +78,21 @@ Summarize <- function(n,
     ".Rds"
   )
   first <- readRDS(fn)
-  phi <- first$args$phi
+  phi <- first$data$args$phi
   colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-  med <- cTMed::Med(
-    phi = phi,
-    delta_t = first$ci_dynr$delta_t,
-    from = "x",
-    to = "y",
-    med = "m"
+  med <- summary(
+    cTMed::Med(
+      phi = phi,
+      delta_t = first$ci_dynr$delta_t,
+      from = "x",
+      to = "y",
+      med = "m"
+    )
   )
   parameters <- do.call(
     what = "cbind",
     args = lapply(
-      X = as.data.frame(t(summary(med))),
+      X = as.data.frame(t(med)),
       FUN = function(x) {
         return(t(x[-1]))
       }
@@ -131,12 +133,20 @@ Summarize <- function(n,
       FUN = function(ci,
                      fit,
                      method) {
+        out <- cbind(
+          summary(ci, alpha = c(0.05, 0.01, 0.001)),
+          fit = fit,
+          method = method
+        )
+        if (method == "delta") {
+          out$R <- NA
+        }
+        if (method == "mc" || method == "posterior") {
+          out$z <- NA
+          out$p <- NA
+        }
         return(
-          cbind(
-            summary(ci),
-            fit = fit,
-            method = method
-          )
+          out
         )
       },
       ci = list(
