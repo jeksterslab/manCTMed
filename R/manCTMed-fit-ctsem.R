@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' library(ctsem)
-#' data <- Data(i = 1, n = 50)
+#' data <- Data(repid = 1, n = 50)
 #' fit <- FitCtsem(x = data)
 #'
 #' @family Simulation Functions

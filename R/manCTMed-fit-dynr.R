@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' library(dynr)
-#' data <- Data(i = 1, n = 50)
+#' data <- Data(repid = 1, n = 50)
 #' fit <- FitDynr(x = data)
 #'
 #' @family Simulation Functions
