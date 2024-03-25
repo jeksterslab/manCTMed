@@ -9,8 +9,9 @@
 #'   Sample size.
 #'
 #' @examples
+#' \dontrun{
 #' Data(repid = 1, n = 50)
-#'
+#' }
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @import simStateSpace

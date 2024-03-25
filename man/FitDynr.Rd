@@ -14,10 +14,11 @@ Output of the \code{\link[=Data]{Data()}} function.}
 The function fits the model using the \link{dynr} package.
 }
 \examples{
+\dontrun{
 library(dynr)
 data <- Data(repid = 1, n = 50)
 fit <- FitDynr(x = data)
-
+}
 }
 \seealso{
 Other Simulation Functions: 

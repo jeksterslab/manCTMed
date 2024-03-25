@@ -23,12 +23,13 @@ for the total, direct, amd indirect effects
 using the \link{cTMed} package.
 }
 \examples{
+\dontrun{
 # dynr
 library(dynr)
 data <- Data(repid = 1, n = 50)
 fit <- FitDynr(x = data)
 CI(fit)
-
+}
 }
 \seealso{
 Other Simulation Functions: 

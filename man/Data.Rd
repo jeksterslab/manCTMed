@@ -18,8 +18,9 @@ The function simulates data using
 the \code{\link[simStateSpace:SimSSMOUFixed]{simStateSpace::SimSSMOUFixed()}} function.
 }
 \examples{
+\dontrun{
 Data(repid = 1, n = 50)
-
+}
 }
 \seealso{
 Other Simulation Functions: 
