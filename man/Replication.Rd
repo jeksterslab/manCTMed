@@ -39,6 +39,7 @@ using the \code{\link[cTMed:PosteriorMed]{cTMed::PosteriorMed()}} function.
 \seealso{
 Other Simulation Functions: 
 \code{\link{CI}()},
+\code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},

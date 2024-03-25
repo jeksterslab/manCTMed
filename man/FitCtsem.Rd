@@ -22,6 +22,7 @@ fit <- FitCtsem(x = data)
 \seealso{
 Other Simulation Functions: 
 \code{\link{CI}()},
+\code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
 \code{\link{Replication}()},

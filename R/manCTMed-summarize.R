@@ -2,264 +2,187 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @inheritParams Data
-#' @inheritParams CI
-#' @inheritParams Replication
-#' @param reps Replication numbers.
-#' @param ncores Positive integer.
-#'   Number of cores to use.
-#'
-#' @examples
-#' n <- 50
-#' wd <- tempdir()
-#' delta_t <- c(5, 10)
-#' R <- 25L
-#' reps <- 1:2
-#' lapply(
-#'   X = 1:2,
-#'   FUN = Replication,
-#'   n = 50,
-#'   wd = wd,
-#'   delta_t = delta_t,
-#'   R = R
-#' )
-#' Summarize(n = n, reps = reps, wd = wd)
+#' @inheritParams Collate
+#' @param x R object.
+#'   Output of the [Collate()] function.
 #'
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
-Summarize <- function(n,
-                      reps = 1:1000,
-                      wd,
+Summarize <- function(x,
                       ncores = NULL) {
-  if (is.null(ncores)) {
-    ncores <- 1
-  } else {
-    if (ncores < 0) {
+  .Summarize <- function(x,
+                         ncores = NULL) {
+    if (is.null(ncores)) {
       ncores <- 1
-    }
-  }
-  # path
-  path <- file.path(
-    wd,
-    paste0(
-      "n",
-      "-",
-      sprintf(
-        "%05d",
-        n
-      )
-    )
-  )
-  dir.create(
-    path,
-    showWarnings = FALSE,
-    recursive = TRUE
-  )
-  # files
-  fn_root <- file.path(
-    path,
-    paste0(
-      "manCTMed",
-      "-",
-      "n",
-      "-",
-      sprintf(
-        "%05d",
-        n
-      ),
-      "-",
-      "rep",
-      "-",
-      sprintf(
-        "%05d",
-        1
-      )
-    )
-  )
-  fn <- paste0(
-    fn_root,
-    ".Rds"
-  )
-  first <- readRDS(fn)
-  phi <- first$data$args$phi
-  colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-  med <- summary(
-    cTMed::Med(
-      phi = phi,
-      delta_t = first$ci_dynr$delta_t,
-      from = "x",
-      to = "y",
-      med = "m"
-    )
-  )
-  parameter <- do.call(
-    what = "cbind",
-    args = lapply(
-      X = as.data.frame(t(med)),
-      FUN = function(x) {
-        return(t(x[-1]))
+    } else {
+      if (ncores < 0) {
+        ncores <- 1
       }
-    )
-  )
-  dim(parameter) <- NULL
-  foo <- function(repid,
-                  n,
-                  wd,
-                  parameter) {
-    # files
-    fn_root <- file.path(
-      path,
-      paste0(
-        "manCTMed",
-        "-",
-        "n",
-        "-",
-        sprintf(
-          "%05d",
-          n
-        ),
-        "-",
-        "rep",
-        "-",
-        sprintf(
-          "%05d",
-          repid
+    }
+    foo <- function(x,
+                    n,
+                    delta_t,
+                    fit,
+                    method) {
+      if (fit == "dynr" && method == "posterior") {
+        stop(
+          "`fit = \"dynr\"` and `method =\"posterior\"` not available."
+        )
+      }
+      x <- x[
+        which(x[, "interval"] == delta_t), ,
+        drop = FALSE
+      ]
+      x <- x[
+        which(x[, "fit"] == fit), ,
+        drop = FALSE
+      ]
+      x <- x[
+        which(x[, "method"] == method), ,
+        drop = FALSE
+      ]
+      effects <- unique(x[, "effect"])
+      output <- lapply(
+        X = effects,
+        FUN = function(effect) {
+          x <- x[
+            which(x[, "effect"] == effect), ,
+            drop = FALSE
+          ]
+          # recode
+          x[, "repid"] <- max(x[, "repid"])
+          x[, "fit"] <- 0
+          x[, "method"] <- 0
+          # recode effect
+          if (effect == "total") {
+            x[, "effect"] <- 1
+          }
+          if (effect == "direct") {
+            x[, "effect"] <- 2
+          }
+          if (effect == "indirect") {
+            x[, "effect"] <- 3
+          }
+          quantiles <- stats::quantile(
+            x = x[, "est"],
+            probs = c(0.0005, 0.005, 0.025, 0.50, 0.975, 0.995, 0.9995)
+          )
+          names(quantiles) <- paste0(
+            "sim_",
+            names(quantiles)
+          )
+          means_orig <- colMeans(x)
+          means_names <- names(means_orig)
+          means_names[1] <- "reps"
+          names(means_orig) <- means_names
+          means <- c(
+            means_orig,
+            est_var = stats::var(x[, "est"]),
+            est_sd = stats::sd(x[, "est"]),
+            quantiles
+          )
+          sim_width_05 <- (
+            (
+              means[["est"]] - means[["sim_2.5%"]]
+            ) + (
+              means[["sim_97.5%"]] - means[["est"]]
+            )
+          )
+          sim_width_01 <- (
+            (
+              means[["est"]] - means[["sim_0.5%"]]
+            ) + (
+              means[["sim_99.5%"]] - means[["est"]]
+            )
+          )
+          sim_width_001 <- (
+            (
+              means[["est"]] - means[["sim_0.05%"]]
+            ) + (
+              means[["sim_99.95%"]] - means[["est"]]
+            )
+          )
+          sim_sym_05 <- (
+            (
+              means[["est"]] - means[["sim_2.5%"]]
+            ) - (
+              means[["sim_97.5%"]] - means[["est"]]
+            )
+          )
+          sim_sym_01 <- (
+            (
+              means[["est"]] - means[["sim_0.5%"]]
+            ) - (
+              means[["sim_99.5%"]] - means[["est"]]
+            )
+          )
+          sim_sym_001 <- (
+            (
+              means[["est"]] - means[["sim_0.05%"]]
+            ) - (
+              means[["sim_99.95%"]] - means[["est"]]
+            )
+          )
+          return(
+            c(
+              means,
+              sim_width_05 = sim_width_05,
+              sim_width_01 = sim_width_01,
+              sim_width_001 = sim_width_001,
+              sim_sym_05 = sim_sym_05,
+              sim_sym_01 = sim_sym_01,
+              sim_sym_001 = sim_sym_001
+            )
+          )
+        }
+      )
+      output <- as.data.frame(
+        do.call(
+          what = "rbind",
+          args = output
         )
       )
-    )
-    fn <- paste0(
-      fn_root,
-      ".Rds"
-    )
-    x <- readRDS(fn)
-    ci <- mapply(
-      FUN = function(ci,
-                     fit,
-                     method,
-                     repid) {
-        out <- cbind(
-          repid = repid,
-          summary(ci, alpha = c(0.05, 0.01, 0.001)),
-          fit = fit,
-          method = method
-        )
-        if (method == "delta") {
-          out$R <- NA
-        }
-        if (method == "mc" || method == "posterior") {
-          out$z <- NA
-          out$p <- NA
-        }
-        return(
-          out
+      output[, "effect"] <- effects
+      output[, "fit"] <- fit
+      output[, "method"] <- method
+      return(output)
+    }
+    n <- unique(x[, "n"])
+    delta_t <- unique(x[, "interval"])
+    fit <- unique(x[, "fit"])
+    method <- unique(x[, "method"])
+    args <- expand.grid(n = n, delta_t = delta_t, fit = fit, method = method)
+    args <- args[!(args[, "fit"] == "dynr" & args[, "method"] == "posterior"), ]
+    output <- parallel::mclapply(
+      X = 1:(dim(args)[1]),
+      FUN = function(i) {
+        foo(
+          x = x,
+          n = args[i, "n"],
+          delta_t = args[i, "delta_t"],
+          fit = args[i, "fit"],
+          method = args[i, "method"]
         )
       },
-      ci = list(
-        x$ci_dynr$delta,
-        x$ci_dynr$mc,
-        x$ci_ctsem$delta,
-        x$ci_ctsem$mc,
-        x$ci_ctsem$posterior
-      ),
-      fit = c("dynr", "dynr", "ctsem", "ctsem", "ctsem"),
-      method = c("delta", "mc", "delta", "mc", "posterior"),
-      repid = repid,
-      SIMPLIFY = FALSE
+      mc.cores = ncores
     )
-    ci <- lapply(
-      X = ci,
-      FUN = function(x) {
-        return(
-          cbind(
-            x,
-            parameter = parameter
-          )
-        )
-      }
+    return(
+      do.call(
+        what = "rbind",
+        args = output
+      )
     )
-    ci <- do.call(
-      what = "rbind",
-      args = ci
-    )
-    return(ci)
   }
-  output <- parallel::mclapply(
-    X = reps,
-    FUN = foo,
-    n = n,
-    wd = wd,
-    parameter = parameter,
-    mc.cores = ncores
-  )
-  output <- do.call(
-    what = "rbind",
-    args = output
-  )
-  output$hit_05 <- (
-    (
-      output[, "2.5%"] < output[, "parameter"]
-    ) & (
-      output[, "parameter"] < output[, "97.5%"]
-    )
-  )
-  output$hit_01 <- (
-    (
-      output[, "0.5%"] < output[, "parameter"]
-    ) & (
-      output[, "parameter"] < output[, "99.5%"]
-    )
-  )
-  output$hit_001 <- (
-    (
-      output[, "0.05%"] < output[, "parameter"]
-    ) & (
-      output[, "parameter"] < output[, "99.95%"]
-    )
-  )
-  output$width_05 <- (
-    (
-      output[, "est"] - output[, "2.5%"]
-    ) + (
-      output[, "97.5%"] - output[, "est"]
-    )
-  )
-  output$width_01 <- (
-    (
-      output[, "est"] - output[, "0.5%"]
-    ) + (
-      output[, "99.5%"] - output[, "est"]
-    )
-  )
-  output$width_001 <- (
-    (
-      output[, "est"] - output[, "0.05%"]
-    ) + (
-      output[, "99.95%"] - output[, "est"]
-    )
-  )
-  output$sym_05 <- (
-    (
-      output[, "est"] - output[, "2.5%"]
-    ) - (
-      output[, "97.5%"] - output[, "est"]
-    )
-  )
-  output$sym_01 <- (
-    (
-      output[, "est"] - output[, "0.5%"]
-    ) - (
-      output[, "99.5%"] - output[, "est"]
-    )
-  )
-  output$sym_001 <- (
-    (
-      output[, "est"] - output[, "0.05%"]
-    ) - (
-      output[, "99.95%"] - output[, "est"]
-    )
+  output <- lapply(
+    X = x,
+    FUN = .Summarize,
+    ncores = ncores
   )
   return(
-    output
+    do.call(
+      what = "rbind",
+      args = output
+    )
   )
 }

@@ -114,8 +114,7 @@ Replication <- function(repid,
       "repid:",
       repid,
       "n:",
-      n,
-      "\n"
+      n
     )
   )
 }
