@@ -26,49 +26,49 @@ Plot <- function(x) {
   )
   p <- ggplot2::ggplot(
     data = x,
-    ggplot2::aes(
-      x = interval,
-      y = hit_05,
-      shape = Method,
-      color = Method,
-      group = Method,
-      linetype = Method
-    )
-  ) +
-    ggplot2::geom_hline(
-      yintercept = 0.95,
-      alpha = 0.5
+      ggplot2::aes(
+        x = interval,
+        y = hit_05,
+        shape = Method,
+        color = Method,
+        group = Method,
+        linetype = Method
+      )
     ) +
-    ggplot2::geom_hline(
-      yintercept = 0.925,
-      alpha = 0.5
-    ) +
-    ggplot2::geom_hline(
-      yintercept = 0.975,
-      alpha = 0.5
-    ) +
-    ggplot2::annotate(
-      geom = "rect",
-      fill = "grey",
-      alpha = 0.75,
-      xmin = -Inf,
-      xmax = Inf,
-      ymin = 0.925,
-      ymax = 0.975
-    ) +
-    ggplot2::geom_point() +
-    ggplot2::geom_line() +
-    ggplot2::facet_grid(
-      n_label ~ effect
-    ) +
-    ggplot2::xlab(
-      "Time-Interval"
-    ) +
-    ggplot2::ylab(
-      "Coverage Probability"
-    ) +
-    ggplot2::theme_bw() +
-    ggplot2::scale_color_brewer(palette = "Set1") +
-    ggplot2::scale_shape()
-  return(p)
+      ggplot2::geom_hline(
+        yintercept = 0.95,
+        alpha = 0.5
+      ) +
+      ggplot2::geom_hline(
+        yintercept = 0.925,
+        alpha = 0.5
+      ) +
+      ggplot2::geom_hline(
+        yintercept = 0.975,
+        alpha = 0.5
+      ) +
+      ggplot2::annotate(
+        geom = "rect",
+        fill = "grey",
+        alpha = 0.75,
+        xmin = -Inf,
+        xmax = Inf,
+        ymin = 0.925,
+        ymax = 0.975
+      ) +
+      ggplot2::geom_point() +
+      ggplot2::geom_line() +
+      ggplot2::facet_grid(
+        n_label ~ effect
+      ) +
+      ggplot2::xlab(
+        "Time-Interval"
+      ) +
+      ggplot2::ylab(
+        "Coverage Probability"
+      ) +
+      ggplot2::theme_bw() +
+      ggplot2::scale_color_brewer(palette = "Set1") +
+      ggplot2::scale_shape()
+      return(p)
 }
