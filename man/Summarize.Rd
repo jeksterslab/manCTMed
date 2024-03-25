@@ -4,15 +4,11 @@
 \alias{Summarize}
 \title{Summarize Results}
 \usage{
-Summarize(n, reps = 1:1000, wd, ncores = NULL)
+Summarize(x, ncores = NULL)
 }
 \arguments{
-\item{n}{Positive integer.
-Sample size.}
-
-\item{reps}{Replication numbers.}
-
-\item{wd}{Working directory for output files.}
+\item{x}{R object.
+Output of the \code{\link[=Collate]{Collate()}} function.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}
@@ -20,26 +16,10 @@ Number of cores to use.}
 \description{
 Summarize Results
 }
-\examples{
-n <- 50
-wd <- tempdir()
-delta_t <- c(5, 10)
-R <- 25L
-reps <- 1:2
-lapply(
-  X = 1:2,
-  FUN = Replication,
-  n = 50,
-  wd = wd,
-  delta_t = delta_t,
-  R = R
-)
-Summarize(n = n, reps = reps, wd = wd)
-
-}
 \seealso{
 Other Simulation Functions: 
 \code{\link{CI}()},
+\code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},
