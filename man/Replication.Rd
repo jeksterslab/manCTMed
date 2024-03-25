@@ -26,14 +26,10 @@ Performs a single simulation replication involving the following:
 \itemize{
 \item Data generation using the \code{simStateSpace} package.
 \item Model fitting using the \code{dynr} package.
-\item Model fitting using the \code{ctsem} package.
 \item Generate delta method confidence intervals
 using the \code{\link[cTMed:DeltaMed]{cTMed::DeltaMed()}} function.
 \item Generate Monte Carlo method confidence intervals
 using the \code{\link[cTMed:MCMed]{cTMed::MCMed()}} function.
-\item Generate credible intervals
-based on the posterior distribution of the drift matrix
-using the \code{\link[cTMed:PosteriorMed]{cTMed::PosteriorMed()}} function.
 }
 }
 \seealso{
@@ -41,8 +37,8 @@ Other Simulation Functions:
 \code{\link{CI}()},
 \code{\link{Collate}()},
 \code{\link{Data}()},
-\code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},
+\code{\link{Plot}()},
 \code{\link{Summarize}()}
 }
 \author{

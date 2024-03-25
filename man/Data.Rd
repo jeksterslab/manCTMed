@@ -25,8 +25,8 @@ Data(repid = 1, n = 50)
 Other Simulation Functions: 
 \code{\link{CI}()},
 \code{\link{Collate}()},
-\code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},
+\code{\link{Plot}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }

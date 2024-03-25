@@ -137,7 +137,7 @@ Collate <- function(ns,
           if (method == "delta") {
             out$R <- NA
           }
-          if (method == "mc" || method == "posterior") {
+          if (method == "mc") {
             out$z <- NA
             out$p <- NA
           }
@@ -147,13 +147,10 @@ Collate <- function(ns,
         },
         ci = list(
           x$ci_dynr$delta,
-          x$ci_dynr$mc,
-          x$ci_ctsem$delta,
-          x$ci_ctsem$mc,
-          x$ci_ctsem$posterior
+          x$ci_dynr$mc
         ),
-        fit = c("dynr", "dynr", "ctsem", "ctsem", "ctsem"),
-        method = c("delta", "mc", "delta", "mc", "posterior"),
+        fit = c("dynr", "dynr"),
+        method = c("delta", "mc"),
         repid = repid,
         SIMPLIFY = FALSE
       )

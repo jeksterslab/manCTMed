@@ -21,8 +21,8 @@ Other Simulation Functions:
 \code{\link{CI}()},
 \code{\link{Collate}()},
 \code{\link{Data}()},
-\code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},
+\code{\link{Plot}()},
 \code{\link{Replication}()}
 }
 \author{

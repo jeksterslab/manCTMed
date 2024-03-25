@@ -3,14 +3,10 @@
 #' Performs a single simulation replication involving the following:
 #' - Data generation using the `simStateSpace` package.
 #' - Model fitting using the `dynr` package.
-#' - Model fitting using the `ctsem` package.
 #' - Generate delta method confidence intervals
 #'   using the [cTMed::DeltaMed()] function.
 #' - Generate Monte Carlo method confidence intervals
 #'   using the [cTMed::MCMed()] function.
-#' - Generate credible intervals
-#'   based on the posterior distribution of the drift matrix
-#'   using the [cTMed::PosteriorMed()] function.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -93,15 +89,11 @@ Replication <- function(repid,
       n = n
     )
     fit_dynr <- FitDynr(x = data)
-    fit_ctsem <- FitCtsem(x = data)
     ci_dynr <- CI(x = fit_dynr)
-    ci_ctsem <- CI(x = fit_ctsem)
     output <- list(
       data = data,
       fit_dynr = fit_dynr,
-      fit_ctsem = fit_ctsem,
-      ci_dynr = ci_dynr,
-      ci_ctsem = ci_ctsem
+      ci_dynr = ci_dynr
     )
     saveRDS(
       output,

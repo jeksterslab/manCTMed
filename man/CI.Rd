@@ -9,7 +9,7 @@ CI(x, delta_t = c(5, 10, 15, 20), R = 20000L)
 }
 \arguments{
 \item{x}{R object.
-Output of the \code{\link[=FitCtsem]{FitCtsem()}} or \code{\link[=FitDynr]{FitDynr()}} functions.}
+Output of the \code{\link[=FitDynr]{FitDynr()}} function.}
 
 \item{delta_t}{Numeric vector.
 Vector of time-intervals to use.}
@@ -29,18 +29,13 @@ data <- Data(repid = 1, n = 50)
 fit <- FitDynr(x = data)
 CI(fit)
 
-# ctsem
-library(ctsem)
-fit <- FitCtsem(x = data)
-CI(fit)
-
 }
 \seealso{
 Other Simulation Functions: 
 \code{\link{Collate}()},
 \code{\link{Data}()},
-\code{\link{FitCtsem}()},
 \code{\link{FitDynr}()},
+\code{\link{Plot}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }
