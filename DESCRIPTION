@@ -23,11 +23,11 @@ Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
 Imports:
     stats,
-    ctsem,
     dynr,
     cTMed,
     dynUtils,
-    simStateSpace
+    simStateSpace,
+    ggplot2
 Suggests:
     knitr,
     rmarkdown,
@@ -35,4 +35,3 @@ Suggests:
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed
-RoxygenNote: 7.3.1

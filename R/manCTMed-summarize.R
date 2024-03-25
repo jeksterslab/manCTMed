@@ -25,11 +25,6 @@ Summarize <- function(x,
                     delta_t,
                     fit,
                     method) {
-      if (fit == "dynr" && method == "posterior") {
-        stop(
-          "`fit = \"dynr\"` and `method =\"posterior\"` not available."
-        )
-      }
       x <- x[
         which(x[, "interval"] == delta_t), ,
         drop = FALSE
@@ -152,8 +147,12 @@ Summarize <- function(x,
     delta_t <- unique(x[, "interval"])
     fit <- unique(x[, "fit"])
     method <- unique(x[, "method"])
-    args <- expand.grid(n = n, delta_t = delta_t, fit = fit, method = method)
-    args <- args[!(args[, "fit"] == "dynr" & args[, "method"] == "posterior"), ]
+    args <- expand.grid(
+      n = n,
+      delta_t = delta_t,
+      fit = fit,
+      method = method
+    )
     output <- parallel::mclapply(
       X = 1:(dim(args)[1]),
       FUN = function(i) {

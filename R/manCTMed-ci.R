@@ -6,7 +6,7 @@
 #' using the [cTMed] package.
 #'
 #' @param x R object.
-#'   Output of the [FitCtsem()] or [FitDynr()] functions.
+#'   Output of the [FitDynr()] function.
 #' @param delta_t Numeric vector.
 #'   Vector of time-intervals to use.
 #' @param R Positive integer.
@@ -17,11 +17,6 @@
 #' library(dynr)
 #' data <- Data(repid = 1, n = 50)
 #' fit <- FitDynr(x = data)
-#' CI(fit)
-#'
-#' # ctsem
-#' library(ctsem)
-#' fit <- FitCtsem(x = data)
 #' CI(fit)
 #'
 #' @family Simulation Functions
@@ -58,25 +53,12 @@ CI <- function(x,
     ncores = ncores,
     seed = seed
   )
-  if (x$type == "ctsem") {
-    posterior <- cTMed::PosteriorMed(
-      phi = x$posterior_phi,
-      delta_t = delta_t,
-      from = from,
-      to = to,
-      med = med,
-      ncores = ncores
-    )
-  } else {
-    posterior <- NULL
-  }
   return(
     list(
       type = x$type,
       delta_t = delta_t,
       delta = delta,
-      mc = mc,
-      posterior = posterior
+      mc = mc
     )
   )
 }
