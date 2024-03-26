@@ -25,7 +25,7 @@
 #' @import cTMed
 #' @export
 CI <- function(x,
-               delta_t = c(5, 10, 15, 20),
+               delta_t = 1:20,
                R = 20000L) {
   from <- "x"
   to <- "y"

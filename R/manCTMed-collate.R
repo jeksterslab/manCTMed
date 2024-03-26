@@ -82,15 +82,7 @@ Collate <- function(ns,
         med = "m"
       )
     )
-    parameter <- do.call(
-      what = "cbind",
-      args = lapply(
-        X = as.data.frame(t(med)),
-        FUN = function(x) {
-          return(t(x[-1]))
-        }
-      )
-    )
+    parameter <- t(med[, -1])
     dim(parameter) <- NULL
     foo <- function(repid,
                     n,

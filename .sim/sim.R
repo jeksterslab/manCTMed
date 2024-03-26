@@ -8,7 +8,7 @@ args <- commandArgs(trailingOnly = TRUE)
 repid <- as.integer(args[1])
 n <- as.integer(args[2])
 wd <- "/scratch/ibp5092/manCTMed/.sim"
-delta_t <- c(5, 10, 15, 20)
+delta_t <- 1:20
 R <- 20000L
 
 # ------------------------------------------------------------------------------
