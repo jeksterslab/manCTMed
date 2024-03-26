@@ -22,7 +22,7 @@ Other Simulation Functions:
 \code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
-\code{\link{Plot}()},
+\code{\link{PlotCoverage}()},
 \code{\link{Replication}()}
 }
 \author{

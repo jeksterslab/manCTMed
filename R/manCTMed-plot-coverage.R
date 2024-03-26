@@ -1,4 +1,4 @@
-#' Plot Results
+#' Plot Coverage Probabilities
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -8,9 +8,41 @@
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
-Plot <- function(x) {
-  interval <- hit_05 <- Method <- NULL
-  x$Method <- x$method
+PlotCoverage <- function(x) {
+  interval <- hit_05 <- NULL
+  Method <- as.character(
+    x$method
+  )
+  Method <- ifelse(
+    test = Method == "delta",
+    yes = "Delta",
+    no = Method
+  )
+  Method <- ifelse(
+    test = Method == "mc",
+    yes = "MC",
+    no = Method
+  )
+  x$Method
+  effect_label <- as.character(
+    x$effect
+  )
+  effect_label <- ifelse(
+    test = effect_label == "total",
+    yes = "Total Effect",
+    no = effect_label
+  )
+  effect_label <- ifelse(
+    test = effect_label == "direct",
+    yes = "Direct Effect",
+    no = effect_label
+  )
+  effect_label <- ifelse(
+    test = effect_label == "indirect",
+    yes = "Indirect Effect",
+    no = effect_label
+  )
+  x$effect_label <- effect_label
   x$n_label <- paste0(
     "n:",
     x$n
@@ -50,7 +82,7 @@ Plot <- function(x) {
     ggplot2::annotate(
       geom = "rect",
       fill = "grey",
-      alpha = 0.75,
+      alpha = 0.50,
       xmin = -Inf,
       xmax = Inf,
       ymin = 0.925,
@@ -59,7 +91,7 @@ Plot <- function(x) {
     ggplot2::geom_point() +
     ggplot2::geom_line() +
     ggplot2::facet_grid(
-      n_label ~ effect
+      n_label ~ effect_label
     ) +
     ggplot2::xlab(
       "Time-Interval"

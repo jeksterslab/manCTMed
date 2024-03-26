@@ -24,7 +24,7 @@ Other Simulation Functions:
 \code{\link{CI}()},
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
-\code{\link{Plot}()},
+\code{\link{PlotCoverage}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }

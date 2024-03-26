@@ -103,10 +103,11 @@ Replication <- function(repid,
   }
   return(
     paste(
-      "repid:",
-      repid,
+      "done",
       "n:",
-      n
+      n,
+      "repid:",
+      repid
     )
   )
 }

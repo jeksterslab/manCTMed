@@ -5,7 +5,7 @@
 \title{Generate Confidence Intervals
 for the Total, Direct, and Indirect Effects}
 \usage{
-CI(x, delta_t = c(5, 10, 15, 20), R = 20000L)
+CI(x, delta_t = 1:20, R = 20000L)
 }
 \arguments{
 \item{x}{R object.
@@ -36,7 +36,7 @@ Other Simulation Functions:
 \code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
-\code{\link{Plot}()},
+\code{\link{PlotCoverage}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }

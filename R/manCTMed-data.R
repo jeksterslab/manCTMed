@@ -19,17 +19,19 @@
 Data <- function(repid,
                  n) {
   # parameters
-  if (n == 50) {
-    seed <- repid
-  }
-  if (n == 100) {
-    seed <- 5000 + repid
-  }
-  if (n == 150) {
-    seed <- 10000 + repid
-  }
-  if (n == 200) {
-    seed <- 15000 + repid
+  seed <- NULL
+  ns <- seq(
+    from = 50,
+    to = 1000,
+    by = 50
+  )
+  seed_base <- seq(
+    from = 0,
+    by = 5000,
+    length.out = length(ns)
+  )
+  for (i in seq_along(ns)) {
+    seed <- seed_base[i] + repid
   }
   set.seed(seed)
   time <- 7 * 24
