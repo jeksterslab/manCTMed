@@ -72,18 +72,19 @@
 	\node[inv] (X2) [right = of X1] {};
 	\node[inv] (M2) [right = of M1] {};
 	\node[inv] (Y2) [right = of Y1] {};
-	\node[latent] (X3) [right = of X2] {$\eta_{X_{t + \Delta t}}$};
-	\node[latent] (M3) [right = of M2] {$\eta_{M_{t + \Delta t}}$};
-	\node[latent] (Y3) [right = of Y2] {$\eta_{Y_{t + \Delta t}}$};
+	\node[latent] (X3) [right = of X2] {$\eta_{X_{t + 3}}$};
+	\node[latent] (M3) [right = of M2] {$\eta_{M_{t + 3}}$};
+	\node[latent] (Y3) [right = of Y2] {$\eta_{Y_{t + 3}}$};
 	\draw[path] (X0) to node {} (X3);
     \draw[path] (X0) to node {} (M3);
-    \draw[path] (X0) to node {} (Y3);
+    %\draw[path] (X0) to node {} (Y3);
 	\draw[path] (M0) to node {} (X3);
     \draw[path] (M0) to node {} (M3);
     \draw[path] (M0) to node {} (Y3);
 	\draw[path] (Y0) to node {} (X3);
     \draw[path] (Y0) to node {} (M3);
     \draw[path] (Y0) to node {} (Y3);
+    \draw[path, color = green] (X0) to node {} (Y3);
 \end{tikzpicture}
 
 \end{document}
