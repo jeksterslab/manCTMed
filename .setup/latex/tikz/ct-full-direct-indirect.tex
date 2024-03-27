@@ -1,0 +1,126 @@
+\documentclass[tikz, border=1mm]{standalone}
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 20mm,
+		latent/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 20mm,
+			align = center
+		},
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		inv/.style = {
+			ellipse,
+			draw=none,
+			thick,
+			inner sep = 0pt,
+			minimum size = 20mm,
+			align = center
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			thick,
+			>=stealth'
+		},
+		dot/.style = {
+			->,
+			thick,
+			>=stealth',
+            dashed
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[latent] (X0) {$\eta_{X_{t}}$};
+    \node[latent] (M0) [below = of X0] {$\eta_{M_{t}}$};
+	\node[latent] (Y0) [below = of M0] {$\eta_{Y_{t}}$};
+	\node[latent] (X1) [right = 1cm of X0] {$\eta_{X_{t + 1s}}$};
+	\node[latent] (M1) [right = 1cm of M0] {$\eta_{M_{t + 1s}}$};
+	\node[latent] (Y1) [right = 1cm of Y0] {$\eta_{Y_{t + 1s}}$};
+	\node[latent] (X2) [right = 1cm of X1] {$\dots$};
+	\node[latent] (M2) [right = 1cm of M1] {$\dots$};
+	\node[latent] (Y2) [right = 1cm of Y1] {$\dots$};
+	\node[latent] (X3) [right = 1cm of X2] {$\eta_{X_{t + ls}}$};
+	\node[latent] (M3) [right = 1cm of M2] {$\eta_{M_{t + ls}}$};
+	\node[latent] (Y3) [right = 1cm of Y2] {$\eta_{Y_{t + ls}}$};
+	\node[latent] (X4) [right = 1cm of X3] {$\eta_{X_{t + \Delta t}}$};
+    \node[latent] (M4) [right = 1cm of M3] {$\eta_{M_{t + \Delta t}}$};
+	\node[latent] (Y4) [right = 1cm of Y3] {$\eta_{Y_{t + \Delta t}}$};
+	\draw[path, color = blue] (X0) to node {} (X1);
+    \draw[path, color = blue] (X0) to node {} (Y1);
+	\draw[path, color = blue] (Y0) to node {} (X1);
+    \draw[path, color = blue] (Y0) to node {} (Y1);
+	\draw[path, color = blue] (X1) to node {} (X2);
+    \draw[path, color = blue] (X1) to node {} (Y2);
+	\draw[path, color = blue] (Y1) to node {} (X2);
+    \draw[path, color = blue] (Y1) to node {} (Y2);
+	\draw[path, color = blue] (X2) to node {} (X3);
+    \draw[path, color = blue] (X2) to node {} (Y3);
+	\draw[path, color = blue] (Y2) to node {} (X3);
+    \draw[path, color = blue] (Y2) to node {} (Y3);
+	\draw[path, color = blue] (X3) to node {} (X4);
+    \draw[path, color = blue] (X3) to node {} (Y4);
+	\draw[path, color = blue] (Y3) to node {} (X4);
+    \draw[path, color = blue] (Y3) to node {} (Y4);
+    \draw[dot, color = red] (X0) to node {} (M1);
+	\draw[dot, color = red] (M0) to node {} (X1);
+    \draw[dot, color = red] (M0) to node {} (M1);
+    \draw[dot, color = red] (M0) to node {} (Y1);
+    \draw[dot, color = red] (Y0) to node {} (M1);
+    \draw[dot, color = red] (X1) to node {} (M2);
+	\draw[dot, color = red] (M1) to node {} (X2);
+    \draw[dot, color = red] (M1) to node {} (M2);
+    \draw[dot, color = red] (M1) to node {} (Y2);
+    \draw[dot, color = red] (Y1) to node {} (M2);
+    \draw[dot, color = red] (X2) to node {} (M3);
+	\draw[dot, color = red] (M2) to node {} (X3);
+    \draw[dot, color = red] (M2) to node {} (M3);
+    \draw[dot, color = red] (M2) to node {} (Y3);
+    \draw[dot, color = red] (Y2) to node {} (M3);
+    \draw[dot, color = red] (X3) to node {} (M4);
+	\draw[dot, color = red] (M3) to node {} (X4);
+    \draw[dot, color = red] (M3) to node {} (M4);
+    \draw[dot, color = red] (M3) to node {} (Y4);
+    \draw[dot, color = red] (Y3) to node {} (M4);
+\end{tikzpicture}
+
+\end{document}
+

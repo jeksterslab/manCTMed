@@ -19,7 +19,6 @@
 Data <- function(repid,
                  n) {
   # parameters
-  seed <- NULL
   ns <- seq(
     from = 50,
     to = 1000,
@@ -30,15 +29,19 @@ Data <- function(repid,
     by = 5000,
     length.out = length(ns)
   )
-  for (i in seq_along(ns)) {
-    seed <- seed_base[i] + repid
-  }
+  names(seed_base) <- ns
+  seed <- unname(
+    seed_base[as.character(n)] + repid
+  )
   set.seed(seed)
   time <- 7 * 24
   delta_t <- 1 / 24
   k <- p <- 3
   iden <- diag(k)
-  null_vec <- rep(x = 0, times = k)
+  null_vec <- rep(
+    x = 0,
+    times = k
+  )
   mu0 <- null_vec
   sigma0 <- matrix(
     data = c(
