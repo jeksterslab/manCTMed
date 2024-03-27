@@ -4,7 +4,7 @@
 \alias{Replication}
 \title{Simulation Replication}
 \usage{
-Replication(repid, n, wd, delta_t = c(5, 10, 15, 20), R = 20000L)
+Replication(repid, n, wd, delta_t = 1:24, R = 20000L)
 }
 \arguments{
 \item{repid}{Positive integer.

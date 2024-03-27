@@ -20,7 +20,7 @@
 Replication <- function(repid,
                         n,
                         wd,
-                        delta_t = c(5, 10, 15, 20),
+                        delta_t = 1:24,
                         R = 20000L) {
   # path
   path <- file.path(
@@ -89,7 +89,10 @@ Replication <- function(repid,
       n = n
     )
     fit_dynr <- FitDynr(x = data)
-    ci_dynr <- CI(x = fit_dynr)
+    ci_dynr <- CI(
+      x = fit_dynr,
+      delta_t = delta_t
+    )
     output <- list(
       data = data,
       fit_dynr = fit_dynr,

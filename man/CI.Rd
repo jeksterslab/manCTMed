@@ -5,7 +5,7 @@
 \title{Generate Confidence Intervals
 for the Total, Direct, and Indirect Effects}
 \usage{
-CI(x, delta_t = 1:20, R = 20000L)
+CI(x, delta_t = 1:24, R = 20000L)
 }
 \arguments{
 \item{x}{R object.
