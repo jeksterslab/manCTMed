@@ -128,10 +128,16 @@ Collate <- function(ns,
           )
           if (method == "delta") {
             out$R <- NA
+            out$sig_05 <- out$p < 0.05
+            out$sig_01 <- out$p < 0.01
+            out$sig_001 <- out$p < 0.001
           }
           if (method == "mc") {
             out$z <- NA
             out$p <- NA
+            out$sig_05 <- NA
+            out$sig_01 <- NA
+            out$sig_001 <- NA
           }
           return(
             out
@@ -196,6 +202,30 @@ Collate <- function(ns,
         output[, "parameter"] < output[, "99.95%"]
       )
     )
+    output$zero_hit_05 <- (
+      (
+        output[, "2.5%"] < 0
+      ) & (
+        0 < output[, "97.5%"]
+      )
+    )
+    output$zero_hit_01 <- (
+      (
+        output[, "0.5%"] < 0
+      ) & (
+        0 < output[, "99.5%"]
+      )
+    )
+    output$zero_hit_001 <- (
+      (
+        output[, "0.05%"] < 0
+      ) & (
+        0 < output[, "99.95%"]
+      )
+    )
+    output$one_minus_zero_hit_05 <- 1 - output$zero_hit_05
+    output$one_minus_zero_hit_01 <- 1 - output$zero_hit_01
+    output$one_minus_zero_hit_001 <- 1 - output$zero_hit_001    
     output$width_05 <- (
       (
         output[, "est"] - output[, "2.5%"]

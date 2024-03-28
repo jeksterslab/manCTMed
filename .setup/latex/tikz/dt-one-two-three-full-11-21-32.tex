@@ -54,8 +54,14 @@
 		},
 		path/.style = {
 			->,
-			thick,
+			ultra thick,
 			>=stealth'
+		},
+		dot/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            dashed
 		},
 		cov/.style = {
 			<->,
@@ -75,9 +81,9 @@
 	\node[latent] (X3) [right = of X2] {$\eta_{X_{t + 3}}$};
 	\node[latent] (M3) [right = of M2] {$\eta_{M_{t + 3}}$};
 	\node[latent] (Y3) [right = of Y2] {$\eta_{Y_{t + 3}}$};
-	\draw[path, color = red] (X0) to node {} (X1);
-    \draw[path, color = red] (X1) to node {} (M2);
-    \draw[path, color = red] (M2) to node {} (Y3);
+	\draw[dot, color = red] (X0) to node {} (X1);
+    \draw[dot, color = red] (X1) to node {} (M2);
+    \draw[dot, color = red] (M2) to node {} (Y3);
 \end{tikzpicture}
 
 \end{document}

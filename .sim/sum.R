@@ -7,15 +7,27 @@ ns <- c(
 )
 reps <- 1:1000
 wd <- "/scratch/ibp5092/manCTMed/.sim"
-results <- manCTMed::Collate(
+raw <- manCTMed::Collate(
   ns = ns,
   reps = reps,
   wd = wd,
   ncores = parallel::detectCores()
 )
 results <- manCTMed::Summarize(
-  x = results,
+  x = raw,
   ncores = parallel::detectCores()
+)
+saveRDS(
+  object = do.call(
+    what = "rbind",
+    args = raw
+  ),
+  file = root$find_file(
+    ".setup",
+    "data-raw",
+    "results-raw.Rds"
+  ),
+  compress = "xz"
 )
 saveRDS(
   object = results,

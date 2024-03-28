@@ -57,6 +57,12 @@
 			thick,
 			>=stealth'
 		},
+		dot/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            dashed
+		},
 		cov/.style = {
 			<->,
 			thick,
@@ -102,6 +108,7 @@
 	\draw[path] (Y2) to node {} (X3);
     \draw[path] (Y2) to node {} (M3);
     \draw[path] (Y2) to node {} (Y3);
+    \draw[dot, color = green] (X0) to node {} (Y3);
 \end{tikzpicture}
 
 \end{document}
