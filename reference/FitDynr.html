@@ -87,11 +87,31 @@ Output of the <code><a href="Data.html">Data()</a></code> function.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="Data.html">Data</a></span><span class="op">(</span>repid <span class="op">=</span> <span class="fl">1</span>, n <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">FitDynr</span><span class="op">(</span>x <span class="op">=</span> <span class="va">data</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Get ready!!!!"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> using C compiler: ‘gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Optimization function called.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Starting Hessian calculation ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Finished Hessian calculation.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Original exit flag:  3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Modified exit flag:  3 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Optimization terminated successfully: ftol_rel or ftol_abs was reached. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Original fitted parameters:  -0.2605694 -0.0743651 0.08194417 0.6720199 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.460244 -0.02385756 -0.4523976 0.7365811 -0.6910508 -1.475439 0.2015311 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.2468988 -2.729321 0.2947053 -2.877131 -1.612013 -1.617904 -1.576812 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.1284087 0.06218073 0.2874795 -0.175533 0.2349609 -0.1969349 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Transformed fitted parameters:  -0.2605694 -0.0743651 0.08194417 0.6720199 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.460244 -0.02385756 -0.4523976 0.7365811 -0.6910508 0.2286783 0.04608579 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.0564604 0.07455129 0.007854991 0.07590425 0.1994856 0.198314 0.2066329 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.8794939 0.05468757 0.2528364 0.8424102 0.212856 0.9402482 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Doing end processing</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Successful trial</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Total Time: 3.808979 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Backend Time: 3.801092 </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
