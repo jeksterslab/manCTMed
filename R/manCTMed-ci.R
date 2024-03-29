@@ -13,11 +13,13 @@
 #'   Number of Monte Carlo replications.
 #'
 #' @examples
+#' \dontrun{
 #' # dynr
 #' library(dynr)
 #' data <- Data(repid = 1, n = 50)
 #' fit <- FitDynr(x = data)
 #' CI(fit)
+#' }
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @import cTMed

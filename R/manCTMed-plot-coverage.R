@@ -10,6 +10,7 @@
 #' @export
 PlotCoverage <- function(x) {
   interval <- hit_05 <- NULL
+  x <- x[which(x[, "parameter"] > 0), ]
   Method <- as.character(
     x$method
   )

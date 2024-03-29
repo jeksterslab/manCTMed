@@ -9,7 +9,9 @@
 #'   Sample size.
 #'
 #' @examples
+#' \dontrun{
 #' Data(repid = 1, n = 50)
+#' }
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @import simStateSpace
@@ -32,8 +34,8 @@ Data <- function(repid,
     seed_base[as.character(n)] + repid
   )
   set.seed(seed)
-  time <- 7 * 24
-  delta_t <- 1 / 24
+  time <- 6 * 30
+  delta_t <- 1 / 30
   k <- p <- 3
   iden <- diag(k)
   null_vec <- rep(

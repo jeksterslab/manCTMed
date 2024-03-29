@@ -293,7 +293,7 @@ Collate <- function(ns,
     )
     output$one_minus_zero_hit_05 <- 1 - output$zero_hit_05
     output$one_minus_zero_hit_01 <- 1 - output$zero_hit_01
-    output$one_minus_zero_hit_001 <- 1 - output$zero_hit_001
+    output$one_minus_zero_hit_001 <- 1 - output$zero_hit_001    
     output$width_05 <- (
       (
         output[, "est"] - output[, "2.5%"]

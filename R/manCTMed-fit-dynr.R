@@ -6,9 +6,11 @@
 #'   Output of the [Data()] function.
 #'
 #' @examples
+#' \dontrun{
 #' library(dynr)
 #' data <- Data(repid = 1, n = 50)
 #' fit <- FitDynr(x = data)
+#' }
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @importFrom stats coef vcov
