@@ -1,4 +1,4 @@
-#' Plot Coverage Probabilities
+#' Plot Type I Error
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -8,9 +8,9 @@
 #' @family Simulation Functions
 #' @keywords manCTMed
 #' @export
-PlotCoverage <- function(x) {
+PlotType1 <- function(x) {
   interval <- hit_05 <- NULL
-  x <- x[which(x[, "parameter"] > 0), ]
+  x <- x[which(x[, "parameter"] == 0), ]
   Method <- as.character(
     x$method
   )
@@ -69,15 +69,15 @@ PlotCoverage <- function(x) {
     )
   ) +
     ggplot2::geom_hline(
-      yintercept = 0.95,
+      yintercept = 1 - 0.95,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.925,
+      yintercept = 1 - 0.925,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 0.975,
+      yintercept = 1 - 0.975,
       alpha = 0.5
     ) +
     ggplot2::annotate(
@@ -86,8 +86,8 @@ PlotCoverage <- function(x) {
       alpha = 0.50,
       xmin = -Inf,
       xmax = Inf,
-      ymin = 0.925,
-      ymax = 0.975
+      ymin = 1 - 0.975,
+      ymax = 1 - 0.925
     ) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
@@ -98,7 +98,7 @@ PlotCoverage <- function(x) {
       "Time-Interval"
     ) +
     ggplot2::ylab(
-      "Coverage Probability"
+      "Type I Error"
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

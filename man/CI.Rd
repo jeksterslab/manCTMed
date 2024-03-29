@@ -37,6 +37,7 @@ Other Simulation Functions:
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
 \code{\link{PlotCoverage}()},
+\code{\link{PlotType1}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }

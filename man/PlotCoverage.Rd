@@ -19,6 +19,7 @@ Other Simulation Functions:
 \code{\link{Collate}()},
 \code{\link{Data}()},
 \code{\link{FitDynr}()},
+\code{\link{PlotType1}()},
 \code{\link{Replication}()},
 \code{\link{Summarize}()}
 }

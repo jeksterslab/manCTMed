@@ -84,6 +84,17 @@ Collate <- function(ns,
     )
     parameter <- t(med[, -1])
     dim(parameter) <- NULL
+    med0 <- summary(
+      cTMed::Med(
+        phi = phi,
+        delta_t = first$ci_dynr$delta_t,
+        from = "y",
+        to = "x",
+        med = "m"
+      )
+    )
+    parameter0 <- t(med0[, -1])
+    dim(parameter0) <- NULL
     foo <- function(repid,
                     n,
                     wd,
@@ -128,10 +139,16 @@ Collate <- function(ns,
           )
           if (method == "delta") {
             out$R <- NA
+            out$sig_05 <- out$p < 0.05
+            out$sig_01 <- out$p < 0.01
+            out$sig_001 <- out$p < 0.001
           }
           if (method == "mc") {
             out$z <- NA
             out$p <- NA
+            out$sig_05 <- NA
+            out$sig_01 <- NA
+            out$sig_001 <- NA
           }
           return(
             out
@@ -140,6 +157,44 @@ Collate <- function(ns,
         ci = list(
           x$ci_dynr$delta,
           x$ci_dynr$mc
+        ),
+        fit = c("dynr", "dynr"),
+        method = c("delta", "mc"),
+        repid = repid,
+        SIMPLIFY = FALSE
+      )
+      ci0 <- mapply(
+        FUN = function(ci,
+                       fit,
+                       method,
+                       repid) {
+          out <- cbind(
+            repid = repid,
+            n = n,
+            summary(ci, alpha = c(0.05, 0.01, 0.001)),
+            fit = fit,
+            method = method
+          )
+          if (method == "delta") {
+            out$R <- NA
+            out$sig_05 <- out$p < 0.05
+            out$sig_01 <- out$p < 0.01
+            out$sig_001 <- out$p < 0.001
+          }
+          if (method == "mc") {
+            out$z <- NA
+            out$p <- NA
+            out$sig_05 <- NA
+            out$sig_01 <- NA
+            out$sig_001 <- NA
+          }
+          return(
+            out
+          )
+        },
+        ci = list(
+          x$ci_dynr$delta0,
+          x$ci_dynr$mc0
         ),
         fit = c("dynr", "dynr"),
         method = c("delta", "mc"),
@@ -157,9 +212,28 @@ Collate <- function(ns,
           )
         }
       )
+      ci0 <- lapply(
+        X = ci0,
+        FUN = function(x) {
+          return(
+            cbind(
+              x,
+              parameter = parameter0
+            )
+          )
+        }
+      )
       ci <- do.call(
         what = "rbind",
         args = ci
+      )
+      ci0 <- do.call(
+        what = "rbind",
+        args = ci0
+      )
+      ci <- rbind(
+        ci,
+        ci0
       )
       return(ci)
     }
@@ -196,6 +270,30 @@ Collate <- function(ns,
         output[, "parameter"] < output[, "99.95%"]
       )
     )
+    output$zero_hit_05 <- (
+      (
+        output[, "2.5%"] < 0
+      ) & (
+        0 < output[, "97.5%"]
+      )
+    )
+    output$zero_hit_01 <- (
+      (
+        output[, "0.5%"] < 0
+      ) & (
+        0 < output[, "99.5%"]
+      )
+    )
+    output$zero_hit_001 <- (
+      (
+        output[, "0.05%"] < 0
+      ) & (
+        0 < output[, "99.95%"]
+      )
+    )
+    output$one_minus_zero_hit_05 <- 1 - output$zero_hit_05
+    output$one_minus_zero_hit_01 <- 1 - output$zero_hit_01
+    output$one_minus_zero_hit_001 <- 1 - output$zero_hit_001
     output$width_05 <- (
       (
         output[, "est"] - output[, "2.5%"]
