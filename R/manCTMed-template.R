@@ -38,6 +38,10 @@
 #'   Task ID.
 #' @param repid Positive integer.
 #'   Replication ID.
+#' @param reps Positive integer.
+#'   Number of replications.
+#' @param ncores Positive integer.
+#'   Number of cores to use.
 #'
 #' @name Template
 NULL
