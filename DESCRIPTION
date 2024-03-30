@@ -26,7 +26,8 @@ Imports:
     dynr,
     cTMed,
     dynUtils,
-    simStateSpace
+    simStateSpace,
+    ggplot2
 Suggests:
     knitr,
     rmarkdown,
@@ -34,4 +35,3 @@ Suggests:
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed
-RoxygenNote: 7.3.1
