@@ -1,4 +1,4 @@
-#' Summarize Simulations - CI Hit
+#' Summarize Simulations - Raw
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -7,7 +7,7 @@
 #' @inheritParams Template
 #' @export
 #' @keywords manCTMed ci summary
-SumHit <- function(taskid,
+SumRaw <- function(taskid,
                    reps,
                    output_folder,
                    output_type,
@@ -69,7 +69,8 @@ SumHit <- function(taskid,
     output$effect <- c(1, 2, 3)
     output <- cbind(
       output,
-      parameter = parameter
+      parameter = parameter,
+      repid = repid
     )
     output$zero_hit <- (
       output[, "2.5%"] < 0
@@ -96,11 +97,9 @@ SumHit <- function(taskid,
     }
     return(output)
   }
-  out <- (
-    1 / reps
-  ) * Reduce(
-    f = `+`,
-    x = parallel::mclapply(
+  out <- do.call(
+    what = "rbind",
+    args = parallel::mclapply(
       X = seq_len(reps),
       FUN = foo,
       taskid = taskid,
