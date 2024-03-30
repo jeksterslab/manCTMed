@@ -1,48 +1,82 @@
-root <- rprojroot::is_rstudio_project
-ns <- c(
-  50,
-  100,
-  150,
-  200
+#!/usr/bin/env Rscript
+
+# SIMULATION ARGUMENTS ---------------------------------------------------------
+suppressMessages(
+  suppressWarnings(
+    library(manCTMed)
+  )
 )
-reps <- 1:1000
-wd <- "/scratch/ibp5092/manCTMed/.sim"
-raw <- manCTMed::Collate(
-  ns = ns,
+source(
+  file.path(
+    "/scratch/ibp5092/manCTMed/.sim/",
+    "sim-args.R"
+  )
+)
+# ------------------------------------------------------------------------------
+
+# RUN --------------------------------------------------------------------------
+sum_hit <- lapply(
+  X = seq_len(tasks),
+  FUN = function(taskid,
+                 reps,
+                 output_folder,
+                 ncores) {
+    return(
+      do.call(
+        what = "rbind",
+        args = lapply(
+          X = c(
+            "dynr-delta-xmy",
+            "dynr-delta-ymx",
+            "dynr-mc-xmy",
+            "dynr-mc-ymx"
+          ),
+          FUN = function(output_type,
+                         taskid,
+                         reps,
+                         output_folder,
+                         ncores) {
+            SumHit(
+              taskid = taskid,
+              reps = reps,
+              output_folder = output_folder,
+              output_type = output_type,
+              params_taskid = params[which(params$taskid == taskid), ],
+              ncores = ncores
+            )
+          },
+          taskid = taskid,
+          reps = reps,
+          output_folder = output_folder,
+          ncores = ncores
+        )
+      )
+    )
+  },
   reps = reps,
-  wd = wd,
+  output_folder = output_folder,
   ncores = parallel::detectCores()
 )
-results <- manCTMed::Summarize(
-  x = raw,
-  ncores = parallel::detectCores()
+sum_hit <- do.call(
+  what = "rbind",
+  args = sum_hit
+)
+sum_hit$effect <- c(
+  "total",
+  "direct",
+  "indirect"
 )
 saveRDS(
-  object = do.call(
-    what = "rbind",
-    args = raw
-  ),
-  file = root$find_file(
-    ".setup",
-    "data-raw",
-    "results-raw.Rds"
-  ),
-  compress = "xz"
-)
-saveRDS(
-  object = results,
-  file = root$find_file(
-    ".setup",
-    "data-raw",
-    "results.Rds"
-  ),
-  compress = "xz"
-)
-save(
-  object = results,
-  file = root$find_file(
-    "data",
-    "results.rda"
+  sum_hit,
+  file = file.path(
+    output_folder,
+    paste0(
+      "sum-hit-",
+      manCTMed:::.SimSuffix(
+        taskid = tasks,
+        repid = reps
+      )
+    )
   ),
   compress = "xz"
 )
