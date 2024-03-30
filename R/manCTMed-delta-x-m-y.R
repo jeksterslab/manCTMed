@@ -19,18 +19,23 @@
 #' @keywords manCTMed ci
 #' @importFrom stats coef vcov
 #' @import dynr
+#' @import cTMed
 #' @export
 DeltaXMY <- function(phi_hat,
                      delta_t = 1:30) {
+  object <- cTMed::DeltaMed(
+    phi = phi_hat$coef,
+    vcov_phi_vec = phi_hat$vcov,
+    delta_t = delta_t,
+    from = "x", # always x for forward
+    to = "y", # always y for forward
+    med = "m",
+    ncores = NULL
+  )
+  ci <- summary(object, alpha = 0.05)
   return(
-    cTMed::DeltaMed(
-      phi = phi_hat$coef,
-      vcov_phi_vec = phi_hat$vcov,
-      delta_t = delta_t,
-      from = "x", # always x for forward
-      to = "y", # always y for forward
-      med = "m",
-      ncores = NULL
+    list(
+      object = object
     )
   )
 }
