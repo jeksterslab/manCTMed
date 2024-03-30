@@ -2,13 +2,9 @@ pandoc: 3.1.1
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
-  data: data.html
-  delta: delta.html
   manCTMed: manCTMed.html
-  mc: mc.html
-  ou: ou.html
-  session: session.html
-last_built: 2024-03-29T01:33Z
+  session: session/session.html
+last_built: 2024-03-30T06:49Z
 urls:
   reference: https://github.com/jeksterslab/manCTMed/reference
   article: https://github.com/jeksterslab/manCTMed/articles

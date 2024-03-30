@@ -10,25 +10,13 @@
     <loc>https://github.com/jeksterslab/manCTMed/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/data.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/delta.html</loc>
-  </url>
-  <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/index.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/manCTMed.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/mc.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/ou.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/session.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/session/session.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/authors.html</loc>
@@ -40,40 +28,64 @@
     <loc>https://github.com/jeksterslab/manCTMed/news/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/CI.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/DeltaXMY.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/Collate.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/Data.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/DeltaYMX.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/FitDynr.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/PlotCoverage.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/GenData.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/PlotType1.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/MCXMY.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/Replication.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/MCYMX.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/Summarize.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/PhiHat.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/deboeck2015.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/RandomMeasurement.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/deboeck2015phi.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/Sim.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimDynrDeltaXMY.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimDynrDeltaYMX.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimDynrMCXMY.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimDynrMCYMX.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimFN.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimFitDynr.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimGenData.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/SimProj.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/index.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/manCTMed-package.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/params.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/ryan2021.html</loc>
