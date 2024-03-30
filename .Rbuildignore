@@ -1,0 +1,5 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^manCTMed\.Rcheck$
+^manCTMed.*\.tar\.gz$
+^manCTMed.*\.tgz$

@@ -17,8 +17,6 @@
 #' plot(ci)
 #' }
 #' @keywords manCTMed ci
-#' @importFrom stats coef vcov
-#' @import dynr
 #' @export
 DeltaYMX <- function(phi_hat,
                      delta_t = 1:30) {

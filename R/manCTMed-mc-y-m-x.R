@@ -20,7 +20,8 @@
 #' @export
 MCYMX <- function(phi_hat,
                   delta_t = 1:30,
-                  R = 20000L) {
+                  R = 20000L,
+                  seed) {
   return(
     cTMed::MCMed(
       phi = phi_hat$coef,
@@ -30,6 +31,7 @@ MCYMX <- function(phi_hat,
       to = "x", # always x for backward
       med = "m",
       R = R,
+      seed = seed,
       ncores = NULL
     )
   )
