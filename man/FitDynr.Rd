@@ -4,31 +4,23 @@
 \alias{FitDynr}
 \title{Fit the Model using the dynr Package}
 \usage{
-FitDynr(x)
+FitDynr(data)
 }
 \arguments{
-\item{x}{R object.
-Output of the \code{\link[=Data]{Data()}} function.}
+\item{data}{R object.
+Output of the \code{\link[=RandomMeasurement]{RandomMeasurement()}} function.}
 }
 \description{
 The function fits the model using the \link{dynr} package.
 }
 \examples{
 \dontrun{
+set.seed(42)
 library(dynr)
-data <- Data(repid = 1, n = 50)
-fit <- FitDynr(x = data)
+sim <- GenData(n = 50)
+data <- RandomMeasurement(sim)
+FitDynr(data)
 }
 }
-\seealso{
-Other Simulation Functions: 
-\code{\link{CI}()},
-\code{\link{Collate}()},
-\code{\link{Data}()},
-\code{\link{PlotCoverage}()},
-\code{\link{PlotType1}()},
-\code{\link{Replication}()},
-\code{\link{Summarize}()}
-}
-\concept{Simulation Functions}
+\keyword{fit}
 \keyword{manCTMed}

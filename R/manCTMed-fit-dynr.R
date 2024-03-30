@@ -2,44 +2,49 @@
 #'
 #' The function fits the model using the [dynr] package.
 #'
-#' @param x R object.
-#'   Output of the [Data()] function.
+#' @inheritParams Template
 #'
 #' @examples
 #' \dontrun{
+#' set.seed(42)
 #' library(dynr)
-#' data <- Data(repid = 1, n = 50)
-#' fit <- FitDynr(x = data)
+#' sim <- GenData(n = 50)
+#' data <- RandomMeasurement(sim)
+#' FitDynr(data)
 #' }
-#' @family Simulation Functions
-#' @keywords manCTMed
-#' @importFrom stats coef vcov
-#' @import dynr
+#' @keywords manCTMed fit
 #' @export
-FitDynr <- function(x) {
-  set.seed(x$args$seed)
+FitDynr <- function(data) {
   dynr_data <- dynr::dynr.data(
-    dataframe = x$data,
+    dataframe = data,
     id = "id",
     time = "time",
     observed = c("x", "m", "y")
   )
   dynr_initial <- dynr::prep.initial(
-    values.inistate = rep(x = 0, times = 3),
-    params.inistate = x$args$mu0,
-    values.inicov = x$args$sigma0,
+    values.inistate = model$mu0,
+    params.inistate = c(
+      "mu0_1",
+      "mu0_2",
+      "mu0_3"
+    ),
+    values.inicov = model$sigma0,
     params.inicov = matrix(
       data = c(
         "sigma0_11", "sigma0_12", "sigma0_13",
         "sigma0_12", "sigma0_22", "sigma0_23",
         "sigma0_13", "sigma0_23", "sigma0_33"
       ),
-      nrow = 3
+      nrow = model$p
     )
   )
   dynr_measurement <- dynr::prep.measurement(
-    values.load = x$args$lambda,
-    params.load = matrix(data = "fixed", nrow = 3, ncol = 3),
+    values.load = model$lambda,
+    params.load = matrix(
+      data = "fixed",
+      nrow = model$k,
+      ncol = model$k
+    ),
     state.names = c("eta_x", "eta_m", "eta_y"),
     obs.names = c("x", "m", "y")
   )
@@ -50,39 +55,39 @@ FitDynr <- function(x) {
       eta_y ~ phi_31 * eta_x + phi_32 * eta_m + phi_33 * eta_y
     ),
     startval = c(
-      phi_11 = x$args$phi[1, 1],
-      phi_12 = x$args$phi[1, 2],
-      phi_13 = x$args$phi[1, 3],
-      phi_21 = x$args$phi[2, 1],
-      phi_22 = x$args$phi[2, 2],
-      phi_23 = x$args$phi[2, 3],
-      phi_31 = x$args$phi[3, 1],
-      phi_32 = x$args$phi[3, 2],
-      phi_33 = x$args$phi[3, 3]
+      phi_11 = model$phi[1, 1],
+      phi_12 = model$phi[1, 2],
+      phi_13 = model$phi[1, 3],
+      phi_21 = model$phi[2, 1],
+      phi_22 = model$phi[2, 2],
+      phi_23 = model$phi[2, 3],
+      phi_31 = model$phi[3, 1],
+      phi_32 = model$phi[3, 2],
+      phi_33 = model$phi[3, 3]
     ),
     isContinuousTime = TRUE
   )
   dynr_noise <- dynr::prep.noise(
-    values.latent = x$args$sigma,
+    values.latent = model$sigma,
     params.latent = matrix(
       data = c(
         "sigma_11", "sigma_12", "sigma_13",
         "sigma_12", "sigma_22", "sigma_23",
         "sigma_13", "sigma_23", "sigma_33"
       ),
-      nrow = 3
+      nrow = model$p
     ),
-    values.observed = x$args$theta,
+    values.observed = model$theta,
     params.observed = matrix(
       data = c(
         "theta_11", "fixed", "fixed",
         "fixed", "theta_22", "fixed",
         "fixed", "fixed", "theta_33"
       ),
-      nrow = 3
+      nrow = model$p
     )
   )
-  model <- dynr::dynr.model(
+  dynr_model <- dynr::dynr.model(
     data = dynr_data,
     initial = dynr_initial,
     measurement = dynr_measurement,
@@ -93,9 +98,9 @@ FitDynr <- function(x) {
       fileext = ".c"
     )
   )
-  model@options$maxeval <- 100000
-  lb <- ub <- rep(NA, times = length(model$xstart))
-  names(ub) <- names(lb) <- names(model$xstart)
+  dynr_model@options$maxeval <- 100000
+  lb <- ub <- rep(NA, times = length(dynr_model$xstart))
+  names(ub) <- names(lb) <- names(dynr_model$xstart)
   lb[
     c(
       "phi_11",
@@ -122,38 +127,13 @@ FitDynr <- function(x) {
       "phi_33"
     )
   ] <- 1.5
-  model$lb <- lb
-  model$ub <- ub
-  dynr_fit <- dynr::dynr.cook(
-    model,
-    debug_flag = TRUE,
-    verbose = FALSE
-  )
-  parnames <- c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-  phi_vec <- coef(dynr_fit)[parnames]
-  phi <- matrix(
-    data = phi_vec,
-    nrow = 3
-  )
-  colnames(phi) <- rownames(phi) <- c("x", "m", "y")
-  vcov <- vcov(dynr_fit)[parnames, parnames]
+  dynr_model$lb <- lb
+  dynr_model$ub <- ub
   return(
-    list(
-      type = "dynr",
-      fit = dynr_fit,
-      phi = phi,
-      vcov = vcov,
-      seed = x$args$seed
+    dynr::dynr.cook(
+      dynr_model,
+      debug_flag = TRUE,
+      verbose = FALSE
     )
   )
 }

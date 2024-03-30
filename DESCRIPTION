@@ -23,12 +23,12 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
-Imports: stats, dynr, cTMed, dynUtils, simStateSpace, ggplot2
+Imports: stats, dynr, cTMed, dynUtils, simStateSpace
 Suggests: knitr, rmarkdown, testthat
 Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
 RoxygenNote: 7.3.1
 NeedsCompilation: no
-Packaged: 2024-03-29 01:33:08 UTC; root
+Packaged: 2024-03-30 06:49:40 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
