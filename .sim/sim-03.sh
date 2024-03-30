@@ -22,32 +22,36 @@ trap 'rm -rf -- "$PARALLEL_TMP_FOLDER"' EXIT
 
 # script -----------------------------------------------------------------------
 # {1} = repid
+# {2} = taskid
 cd /scratch/ibp5092/manCTMed
 parallel                                                      \
         --tmpdir "$PARALLEL_TMP_FOLDER"                       \
         'apptainer exec                                       \
         /scratch/ibp5092/manCTMed/.sim/manctmed.sif           \
-        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 150' \
+        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 3;   \
+        echo simulation repid {1} taskid 3'                   \
         ::: $(seq 1 1000)
 parallel                                                      \
         --tmpdir "$PARALLEL_TMP_FOLDER"                       \
         'apptainer exec                                       \
         /scratch/ibp5092/manCTMed/.sim/manctmed.sif           \
-        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 150' \
+        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 3;   \
+        echo simulation repid {1} taskid 3'                   \
         ::: $(seq 1000 -1 1)
 parallel                                                      \
         --tmpdir "$PARALLEL_TMP_FOLDER"                       \
         'apptainer exec                                       \
         /scratch/ibp5092/manCTMed/.sim/manctmed.sif           \
-        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 100' \
+        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 2;   \
+        echo simulation repid {1} taskid 2'                   \
         ::: $(seq 1000 -1 1)
 parallel                                                      \
         --tmpdir "$PARALLEL_TMP_FOLDER"                       \
         'apptainer exec                                       \
         /scratch/ibp5092/manCTMed/.sim/manctmed.sif           \
-        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} {2}' \
-        ::: $(seq 1 1000)                                     \
-        ::: $(seq 50 50 200)
+        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} 2;   \
+        echo simulation repid {1} taskid 2'                   \
+        ::: $(seq 1 1000)
 echo "sim-03.sh done"
 # ------------------------------------------------------------------------------
 

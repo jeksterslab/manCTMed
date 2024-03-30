@@ -22,7 +22,7 @@ trap 'rm -rf -- "$PARALLEL_TMP_FOLDER"' EXIT
 
 # script -----------------------------------------------------------------------
 # {1} = repid
-# {2} = sample size n
+# {2} = taskid
 cd /scratch/ibp5092/manCTMed
 parallel                                                      \
         --tmpdir "$PARALLEL_TMP_FOLDER"                       \
@@ -30,7 +30,7 @@ parallel                                                      \
         /scratch/ibp5092/manCTMed/.sim/manctmed.sif           \
         Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} {2}' \
         ::: $(seq 1 1000)                                     \
-        ::: $(seq 50 50 200)
+        ::: $(seq 1 5)
 echo "sim.sh done"
 # ------------------------------------------------------------------------------
 
