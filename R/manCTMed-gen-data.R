@@ -11,6 +11,7 @@
 #' sim <- GenData(n = 50)
 #' plot(sim)
 #' }
+#' @family Data Generation Functions
 #' @keywords manCTMed gendata
 #' @import simStateSpace
 #' @export

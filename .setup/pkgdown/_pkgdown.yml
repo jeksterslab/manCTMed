@@ -7,3 +7,37 @@ template:
     base_font: {google: "Roboto"}
     heading_font: {google: "Roboto Slab"}
     code_font: {google: "JetBrains Mono"}
+
+reference:
+- title: Data Generation Functions
+  contents:
+  - has_concept("Data Generation Functions")
+- title: Model Fitting Functions
+  contents:
+  - has_concept("Model Fitting Functions")
+- title: Confidence Interval Functions
+  contents:
+  - has_concept("Confidence Interval Functions")
+- title: Simulation Functions
+  contents:
+  - has_keyword("simulation")
+- title: Summary Functions
+  contents:
+  - has_keyword("summary")
+- title: Data
+  contents:
+  - has_keyword("data")
+- title: Figures
+  contents:
+  - has_keyword("figure")
+- title: All Functions
+  contents:
+  - has_keyword("manCTMed")
+
+articles:
+- title: manCTMed
+  contents:
+  - manCTMed
+- title: Session
+  contents:
+  - session/session

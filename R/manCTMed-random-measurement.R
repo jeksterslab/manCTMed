@@ -11,6 +11,7 @@
 #' sim <- GenData(n = 50)
 #' RandomMeasurement(sim)
 #' }
+#' @family Data Generation Functions
 #' @keywords manCTMed gendata
 #' @import simStateSpace
 #' @export

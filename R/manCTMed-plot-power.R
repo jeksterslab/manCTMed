@@ -4,8 +4,8 @@
 #'
 #' @param x Summary results data frame.
 #'
-#' @family Simulation Functions
-#' @keywords manCTMed
+#' @family Figure Functions
+#' @keywords manCTMed plot
 #' @export
 PlotPower <- function(x) {
   interval <- zero_hit <- NULL
