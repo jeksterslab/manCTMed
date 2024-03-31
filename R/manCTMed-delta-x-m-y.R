@@ -16,6 +16,7 @@
 #' ci <- DeltaXMY(phi_hat)
 #' plot(ci)
 #' }
+#' @family Confidence Interval Functions
 #' @keywords manCTMed ci
 #' @importFrom stats coef vcov
 #' @import dynr

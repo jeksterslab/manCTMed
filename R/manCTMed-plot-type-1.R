@@ -4,8 +4,8 @@
 #'
 #' @param x Summary results data frame.
 #'
-#' @family Simulation Functions
-#' @keywords manCTMed
+#' @family Figure Functions
+#' @keywords manCTMed plot
 #' @export
 PlotType1 <- function(x) {
   interval <- theta_hit <- NULL

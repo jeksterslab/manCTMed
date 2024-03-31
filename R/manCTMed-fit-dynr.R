@@ -12,6 +12,7 @@
 #' data <- RandomMeasurement(sim)
 #' FitDynr(data)
 #' }
+#' @family Model Fitting Functions
 #' @keywords manCTMed fit
 #' @export
 FitDynr <- function(data) {

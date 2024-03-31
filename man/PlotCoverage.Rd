@@ -13,12 +13,13 @@ PlotCoverage(x)
 Plot Coverage Probabilities
 }
 \seealso{
-Other Simulation Functions: 
+Other Figure Functions: 
 \code{\link{PlotPower}()},
 \code{\link{PlotType1}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
 }
-\concept{Simulation Functions}
+\concept{Figure Functions}
 \keyword{manCTMed}
+\keyword{plot}

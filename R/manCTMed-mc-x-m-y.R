@@ -16,6 +16,7 @@
 #' ci <- MCXMY(phi_hat)
 #' plot(ci)
 #' }
+#' @family Confidence Interval Functions
 #' @keywords manCTMed ci
 #' @export
 MCXMY <- function(phi_hat,

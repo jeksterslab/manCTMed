@@ -16,6 +16,7 @@
 #' ci <- DeltaYMX(phi_hat)
 #' plot(ci)
 #' }
+#' @family Confidence Interval Functions
 #' @keywords manCTMed ci
 #' @export
 DeltaYMX <- function(phi_hat,

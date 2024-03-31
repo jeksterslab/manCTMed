@@ -35,5 +35,13 @@ ci <- MCXMY(phi_hat)
 plot(ci)
 }
 }
+\seealso{
+Other Confidence Interval Functions: 
+\code{\link{DeltaXMY}()},
+\code{\link{DeltaYMX}()},
+\code{\link{MCYMX}()},
+\code{\link{PhiHat}()}
+}
+\concept{Confidence Interval Functions}
 \keyword{ci}
 \keyword{manCTMed}

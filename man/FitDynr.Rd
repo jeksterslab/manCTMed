@@ -22,5 +22,6 @@ data <- RandomMeasurement(sim)
 FitDynr(data)
 }
 }
+\concept{Model Fitting Functions}
 \keyword{fit}
 \keyword{manCTMed}

@@ -24,5 +24,13 @@ fit <- FitDynr(data)
 PhiHat(fit)
 }
 }
+\seealso{
+Other Confidence Interval Functions: 
+\code{\link{DeltaXMY}()},
+\code{\link{DeltaYMX}()},
+\code{\link{MCXMY}()},
+\code{\link{MCYMX}()}
+}
+\concept{Confidence Interval Functions}
 \keyword{ci}
 \keyword{manCTMed}

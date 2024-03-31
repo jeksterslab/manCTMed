@@ -21,5 +21,10 @@ sim <- GenData(n = 50)
 RandomMeasurement(sim)
 }
 }
+\seealso{
+Other Data Generation Functions: 
+\code{\link{GenData}()}
+}
+\concept{Data Generation Functions}
 \keyword{gendata}
 \keyword{manCTMed}

@@ -13,12 +13,13 @@ PlotPower(x)
 Plot Statistical Power
 }
 \seealso{
-Other Simulation Functions: 
+Other Figure Functions: 
 \code{\link{PlotCoverage}()},
 \code{\link{PlotType1}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
 }
-\concept{Simulation Functions}
+\concept{Figure Functions}
 \keyword{manCTMed}
+\keyword{plot}

@@ -13,12 +13,13 @@ PlotType1(x)
 Plot Type I Error
 }
 \seealso{
-Other Simulation Functions: 
+Other Figure Functions: 
 \code{\link{PlotCoverage}()},
 \code{\link{PlotPower}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
 }
-\concept{Simulation Functions}
+\concept{Figure Functions}
 \keyword{manCTMed}
+\keyword{plot}
