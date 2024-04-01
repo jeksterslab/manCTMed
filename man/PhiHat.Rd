@@ -25,12 +25,9 @@ PhiHat(fit)
 }
 }
 \seealso{
-Other Confidence Interval Functions: 
-\code{\link{DeltaXMY}()},
-\code{\link{DeltaYMX}()},
-\code{\link{MCXMY}()},
-\code{\link{MCYMX}()}
+Other Model Fitting Functions: 
+\code{\link{FitDynr}()}
 }
-\concept{Confidence Interval Functions}
-\keyword{ci}
+\concept{Model Fitting Functions}
+\keyword{fit}
 \keyword{manCTMed}

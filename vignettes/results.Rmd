@@ -1,0 +1,40 @@
+---
+title: "Simulation Results"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Simulation Results}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+#| include = FALSE
+options(DT.warn.size = FALSE)
+```
+
+```{r}
+#| message = FALSE
+library(manCTMed)
+```
+
+```{r}
+#| echo = FALSE,
+#| message = FALSE
+DT::datatable(
+  results,
+  options = list(
+    scrollX = TRUE
+  )
+)
+```
+
+See `results()` documentation for more information.

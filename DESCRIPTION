@@ -31,7 +31,8 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    DT
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed

@@ -22,6 +22,10 @@ data <- RandomMeasurement(sim)
 FitDynr(data)
 }
 }
+\seealso{
+Other Model Fitting Functions: 
+\code{\link{PhiHat}()}
+}
 \concept{Model Fitting Functions}
 \keyword{fit}
 \keyword{manCTMed}

@@ -39,8 +39,7 @@ plot(ci)
 Other Confidence Interval Functions: 
 \code{\link{DeltaXMY}()},
 \code{\link{DeltaYMX}()},
-\code{\link{MCYMX}()},
-\code{\link{PhiHat}()}
+\code{\link{MCYMX}()}
 }
 \concept{Confidence Interval Functions}
 \keyword{ci}

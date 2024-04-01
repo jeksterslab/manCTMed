@@ -72,27 +72,23 @@ SumHit <- function(taskid,
       parameter = parameter
     )
     output$zero_hit <- (
-      output[, "2.5%"] < 0
+      output[, "2.5%"] <= 0
     ) & (
-      0 < output[, "97.5%"]
+      0 <= output[, "97.5%"]
     )
     output$theta_hit <- (
-      output[, "2.5%"] < output[, "parameter"]
+      output[, "2.5%"] <= output[, "parameter"]
     ) & (
-      output[, "parameter"] < output[, "97.5%"]
+      output[, "parameter"] <= output[, "97.5%"]
     )
     if (method == "mc") {
-      output$z <- NA
-      output$p <- NA
-      output$sig_05 <- NA
-      output$sig_01 <- NA
-      output$sig_001 <- NA
+      output$z <- 0
+      output$p <- 0
+      output$sig <- 0
     }
     if (method == "delta") {
-      output$R <- NA
-      output$sig_05 <- output$p < 0.05
-      output$sig_01 <- output$p < 0.01
-      output$sig_001 <- output$p < 0.001
+      output$R <- 0
+      output$sig <- output$p < 0.05
     }
     return(output)
   }
@@ -115,15 +111,24 @@ SumHit <- function(taskid,
     "direct",
     "indirect"
   )
+  out <- cbind(
+    taskid = taskid,
+    replications = reps,
+    n = params_taskid$n,
+    method = method,
+    out,
+    output_type = output_type,
+    xmy = xmy
+  )
+  if (method == "delta") {
+    out$R <- NA
+  }
+  if (method == "mc") {
+    out$z <- NA
+    out$p <- NA
+    out$sig <- NA
+  }
   return(
-    cbind(
-      taskid = taskid,
-      replications = reps,
-      n = params_taskid$n,
-      method = method,
-      out,
-      output_type = output_type,
-      xmy = xmy
-    )
+    out
   )
 }

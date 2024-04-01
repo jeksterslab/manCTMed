@@ -38,6 +38,19 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
+- title: Single Replication from the Simulation Study
+  contents:
+  - replication
+- title: Results
+  contents:
+  - results
+- title: Plots
+  contents:
+  - fig-scatter-plots
+- title: Empirical Example
+  contents:
+  - empirical
+
 - title: Session
   contents:
   - session/session

@@ -1,0 +1,79 @@
+---
+title: "Single Replication from the Simulation Study"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Single Replication from the Simulation Study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-replication-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>"
+)
+```
+
+```{r}
+library(manCTMed)
+```
+
+## Data Generation
+
+```{r}
+set.seed(42)
+sim <- GenData(n = 50)
+plot(sim)
+data <- RandomMeasurement(sim)
+str(data)
+```
+
+## Model Fitting
+
+```{r}
+fit <- FitDynr(data)
+summary(fit)
+phi_hat <- PhiHat(fit)
+```
+
+## Confidence Intervals
+
+### Model $\eta_X \to \eta_M \to \eta_Y$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaXMY(phi_hat)
+plot(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCXMY(phi_hat, seed = 42)
+plot(mc)
+```
+
+### Model $\eta_Y \to \eta_M \to \eta_M$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaYMX(phi_hat)
+plot(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCYMX(phi_hat, seed = 42)
+plot(mc)
+```

@@ -1,0 +1,93 @@
+---
+title: "Scatter Plots"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scatter Plots}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+```r
+library(manCTMed)
+```
+
+## Population Total, Direct, and Indirect Effects
+
+Total, direct, and indirect effects for the drift matrix
+
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         -0.357 & 0 & 0 \\
+         0.771 & -0.511 & 0 \\
+         -0.450 & 0.729 & -0.693 \\
+    \end{array}
+    \right)
+\end{equation}
+
+
+```r
+FigPlotEffects()
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-3-1.png" width="3300" />
+
+## Evaluation of Confidence Intervals
+
+Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \ to \eta_X$ model.
+
+
+```r
+data(results, package = "manCTMed")
+```
+
+### Coverage Probabilities
+
+#### Time-Intervals 1 to 28
+
+
+```r
+FigScatterPlotCoverage(results, delta_t = 1:28)
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-5-1.png" width="3300" />
+
+#### Time-Intervals 1 to 4
+
+
+```r
+FigScatterPlotCoverage(results, delta_t = 1:4)
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-6-1.png" width="3300" />
+
+#### Time-Intervals 5 to 28
+
+
+```r
+FigScatterPlotCoverage(results, delta_t = 5:28)
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-7-1.png" width="3300" />
+
+### Statistical Power
+
+
+```r
+FigScatterPlotPower(results, 1:28)
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-8-1.png" width="3300" />
+
+### Type I Error Rate
+
+
+```r
+FigScatterPlotType1(results, 1:28)
+```
+
+<img src="fig-vignettes-scatter-plots-unnamed-chunk-9-1.png" width="3300" />

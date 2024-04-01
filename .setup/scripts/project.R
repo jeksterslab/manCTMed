@@ -20,7 +20,8 @@ project <- "manCTMed"
 pkg_cran <- c(
   "simStateSpace",
   "ctsem",
-  "dynr"
+  "dynr",
+  "DT"
 )
 
 pkg_github <- c(
