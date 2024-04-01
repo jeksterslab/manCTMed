@@ -73,27 +73,23 @@ SumRaw <- function(taskid,
       repid = repid
     )
     output$zero_hit <- (
-      output[, "2.5%"] < 0
+      output[, "2.5%"] <= 0
     ) & (
-      0 < output[, "97.5%"]
+      0 <= output[, "97.5%"]
     )
     output$theta_hit <- (
-      output[, "2.5%"] < output[, "parameter"]
+      output[, "2.5%"] <= output[, "parameter"]
     ) & (
-      output[, "parameter"] < output[, "97.5%"]
+      output[, "parameter"] <= output[, "97.5%"]
     )
     if (method == "mc") {
       output$z <- NA
       output$p <- NA
-      output$sig_05 <- NA
-      output$sig_01 <- NA
-      output$sig_001 <- NA
+      output$sig <- NA
     }
     if (method == "delta") {
       output$R <- NA
-      output$sig_05 <- output$p < 0.05
-      output$sig_01 <- output$p < 0.01
-      output$sig_001 <- output$p < 0.001
+      output$sig <- output$p < 0.05
     }
     return(output)
   }

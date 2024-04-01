@@ -1,17 +1,29 @@
-#' Plot Coverage Probabilities
+#' Plot Statistical Power
+#'
+#' Statistical power for the model \eqn{X \to M \to Y}.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param x Summary results data frame.
+#' @inheritParams FigScatterPlotCoverage
+#'
+#' @examples
+#' data(results, package = "manCTMed")
+#' FigScatterPlotPower(results)
+#' FigScatterPlotPower(results, delta_t = 1:14)
+#' FigScatterPlotPower(results, delta_t = 15:30)
 #'
 #' @family Figure Functions
-#' @keywords manCTMed plot
+#' @keywords manCTMed figure
 #' @export
-PlotCoverage <- function(x) {
-  interval <- theta_hit <- NULL
-  x <- x[which(x$xmy), ]
+FigScatterPlotPower <- function(results,
+                                delta_t = NULL) {
+  if (!is.null(delta_t)) {
+    results <- results[which(results$interval %in% delta_t), ]
+  }
+  interval <- zero_hit <- NULL
+  results <- results[which(results$xmy), ]
   Method <- as.character(
-    x$method
+    results$method
   )
   Method <- ifelse(
     test = Method == "delta",
@@ -23,9 +35,9 @@ PlotCoverage <- function(x) {
     yes = "MC",
     no = Method
   )
-  x$Method <- Method
+  results$Method <- Method
   effect_label <- as.character(
-    x$effect
+    results$effect
   )
   effect_label <- ifelse(
     test = effect_label == "total",
@@ -42,25 +54,25 @@ PlotCoverage <- function(x) {
     yes = "Indirect Effect",
     no = effect_label
   )
-  x$effect_label <- effect_label
-  x$n_label <- paste0(
+  results$effect_label <- effect_label
+  results$n_label <- paste0(
     "n:",
-    x$n
+    results$n
   )
-  x$n_label <- factor(
-    x$n_label,
+  results$n_label <- factor(
+    results$n_label,
     levels = c(
       paste0(
         "n:",
-        sort(unique(x$n))
+        sort(unique(results$n))
       )
     )
   )
   p <- ggplot2::ggplot(
-    data = x,
+    data = results,
     ggplot2::aes(
       x = interval,
-      y = theta_hit,
+      y = 1 - zero_hit,
       shape = Method,
       color = Method,
       group = Method,
@@ -68,25 +80,8 @@ PlotCoverage <- function(x) {
     )
   ) +
     ggplot2::geom_hline(
-      yintercept = 0.95,
+      yintercept = 0.80,
       alpha = 0.5
-    ) +
-    ggplot2::geom_hline(
-      yintercept = 0.925,
-      alpha = 0.5
-    ) +
-    ggplot2::geom_hline(
-      yintercept = 0.975,
-      alpha = 0.5
-    ) +
-    ggplot2::annotate(
-      geom = "rect",
-      fill = "grey",
-      alpha = 0.50,
-      xmin = -Inf,
-      xmax = Inf,
-      ymin = 0.925,
-      ymax = 0.975
     ) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
@@ -97,7 +92,7 @@ PlotCoverage <- function(x) {
       "Time-Interval"
     ) +
     ggplot2::ylab(
-      "Coverage Probability"
+      "Statistical Power"
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

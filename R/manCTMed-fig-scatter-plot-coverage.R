@@ -1,17 +1,31 @@
-#' Plot Type I Error
+#' Plot Coverage Probabilities
+#'
+#' Coverage probabilities for the model \eqn{X \to M \to Y}.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param x Summary results data frame.
+#' @param results Summary results data frame.
+#' @param delta_t Vector of time-interval value.
+#'   If `delta_t = NULL`, use all available time-intervals
+#'
+#' @examples
+#' data(results, package = "manCTMed")
+#' FigScatterPlotCoverage(results)
+#' FigScatterPlotCoverage(results, delta_t = 1:14)
+#' FigScatterPlotCoverage(results, delta_t = 15:30)
 #'
 #' @family Figure Functions
-#' @keywords manCTMed plot
+#' @keywords manCTMed figure
 #' @export
-PlotType1 <- function(x) {
+FigScatterPlotCoverage <- function(results,
+                                   delta_t = NULL) {
+  if (!is.null(delta_t)) {
+    results <- results[which(results$interval %in% delta_t), ]
+  }
   interval <- theta_hit <- NULL
-  x <- x[which(x$xmy == FALSE), ]
+  results <- results[which(results$xmy), ]
   Method <- as.character(
-    x$method
+    results$method
   )
   Method <- ifelse(
     test = Method == "delta",
@@ -23,9 +37,9 @@ PlotType1 <- function(x) {
     yes = "MC",
     no = Method
   )
-  x$Method <- Method
+  results$Method <- Method
   effect_label <- as.character(
-    x$effect
+    results$effect
   )
   effect_label <- ifelse(
     test = effect_label == "total",
@@ -42,22 +56,22 @@ PlotType1 <- function(x) {
     yes = "Indirect Effect",
     no = effect_label
   )
-  x$effect_label <- effect_label
-  x$n_label <- paste0(
+  results$effect_label <- effect_label
+  results$n_label <- paste0(
     "n:",
-    x$n
+    results$n
   )
-  x$n_label <- factor(
-    x$n_label,
+  results$n_label <- factor(
+    results$n_label,
     levels = c(
       paste0(
         "n:",
-        sort(unique(x$n))
+        sort(unique(results$n))
       )
     )
   )
   p <- ggplot2::ggplot(
-    data = x,
+    data = results,
     ggplot2::aes(
       x = interval,
       y = theta_hit,
@@ -68,15 +82,15 @@ PlotType1 <- function(x) {
     )
   ) +
     ggplot2::geom_hline(
-      yintercept = 1 - 0.95,
+      yintercept = 0.95,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 1 - 0.925,
+      yintercept = 0.925,
       alpha = 0.5
     ) +
     ggplot2::geom_hline(
-      yintercept = 1 - 0.975,
+      yintercept = 0.975,
       alpha = 0.5
     ) +
     ggplot2::annotate(
@@ -85,8 +99,8 @@ PlotType1 <- function(x) {
       alpha = 0.50,
       xmin = -Inf,
       xmax = Inf,
-      ymin = 1 - 0.975,
-      ymax = 1 - 0.925
+      ymin = 0.925,
+      ymax = 0.975
     ) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
@@ -97,7 +111,7 @@ PlotType1 <- function(x) {
       "Time-Interval"
     ) +
     ggplot2::ylab(
-      "Type I Error"
+      "Coverage Probability"
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

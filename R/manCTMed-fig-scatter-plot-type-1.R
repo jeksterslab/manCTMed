@@ -1,17 +1,29 @@
-#' Plot Statistical Power
+#' Plot Type I Error
+#'
+#' Type I error for the model \eqn{Y \to M \to X}.
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @param x Summary results data frame.
+#' @inheritParams FigScatterPlotCoverage
+#'
+#' @examples
+#' data(results, package = "manCTMed")
+#' FigScatterPlotType1(results)
+#' FigScatterPlotType1(results, delta_t = 1:14)
+#' FigScatterPlotType1(results, delta_t = 15:30)
 #'
 #' @family Figure Functions
-#' @keywords manCTMed plot
+#' @keywords manCTMed figure
 #' @export
-PlotPower <- function(x) {
-  interval <- zero_hit <- NULL
-  x <- x[which(x$xmy), ]
+FigScatterPlotType1 <- function(results,
+                                delta_t = NULL) {
+  if (!is.null(delta_t)) {
+    results <- results[which(results$interval %in% delta_t), ]
+  }
+  interval <- theta_hit <- NULL
+  results <- results[which(results$xmy == FALSE), ]
   Method <- as.character(
-    x$method
+    results$method
   )
   Method <- ifelse(
     test = Method == "delta",
@@ -23,9 +35,9 @@ PlotPower <- function(x) {
     yes = "MC",
     no = Method
   )
-  x$Method <- Method
+  results$Method <- Method
   effect_label <- as.character(
-    x$effect
+    results$effect
   )
   effect_label <- ifelse(
     test = effect_label == "total",
@@ -42,25 +54,25 @@ PlotPower <- function(x) {
     yes = "Indirect Effect",
     no = effect_label
   )
-  x$effect_label <- effect_label
-  x$n_label <- paste0(
+  results$effect_label <- effect_label
+  results$n_label <- paste0(
     "n:",
-    x$n
+    results$n
   )
-  x$n_label <- factor(
-    x$n_label,
+  results$n_label <- factor(
+    results$n_label,
     levels = c(
       paste0(
         "n:",
-        sort(unique(x$n))
+        sort(unique(results$n))
       )
     )
   )
   p <- ggplot2::ggplot(
-    data = x,
+    data = results,
     ggplot2::aes(
       x = interval,
-      y = 1 - zero_hit,
+      y = 1 - theta_hit,
       shape = Method,
       color = Method,
       group = Method,
@@ -68,8 +80,25 @@ PlotPower <- function(x) {
     )
   ) +
     ggplot2::geom_hline(
-      yintercept = 0.80,
+      yintercept = 1 - 0.95,
       alpha = 0.5
+    ) +
+    ggplot2::geom_hline(
+      yintercept = 1 - 0.925,
+      alpha = 0.5
+    ) +
+    ggplot2::geom_hline(
+      yintercept = 1 - 0.975,
+      alpha = 0.5
+    ) +
+    ggplot2::annotate(
+      geom = "rect",
+      fill = "grey",
+      alpha = 0.50,
+      xmin = -Inf,
+      xmax = Inf,
+      ymin = 1 - 0.975,
+      ymax = 1 - 0.925
     ) +
     ggplot2::geom_point() +
     ggplot2::geom_line() +
@@ -80,7 +109,7 @@ PlotPower <- function(x) {
       "Time-Interval"
     ) +
     ggplot2::ylab(
-      "Statistical Power"
+      "Type I Error"
     ) +
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +

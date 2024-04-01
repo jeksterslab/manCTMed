@@ -14,8 +14,8 @@
 #' fit <- FitDynr(data)
 #' PhiHat(fit)
 #' }
-#' @family Confidence Interval Functions
-#' @keywords manCTMed ci
+#' @family Model Fitting Functions
+#' @keywords manCTMed fit
 #' @importFrom stats coef vcov
 #' @import dynr
 #' @export
