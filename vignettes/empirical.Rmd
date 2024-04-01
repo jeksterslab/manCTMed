@@ -251,8 +251,10 @@ plot(mc)
 
 <img src="fig-vignettes-empirical-unnamed-chunk-12-1.png" width="3300" /><img src="fig-vignettes-empirical-unnamed-chunk-12-2.png" width="3300" /><img src="fig-vignettes-empirical-unnamed-chunk-12-3.png" width="3300" />
 
-## Code Used Fit the Model 
-
+<details>
+<summary>
+Code used fit the model.
+</summary>
 ```r
 data(ryan2021, package = "manCTMed")
 data <- ryan2021
@@ -472,3 +474,4 @@ ryan2021phi <- list(
   vcov = vcov_phi_vec
 )
 ```
+</details>
