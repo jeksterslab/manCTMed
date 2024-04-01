@@ -27,8 +27,11 @@ library(manCTMed)
 library(cTMed)
 ```
 
+## Estimate of the Drift Matrix
+
 ```{r}
 data(ryan2021phi, package = "manCTMed")
+ryan2021phi
 ```
 
 ## Effects

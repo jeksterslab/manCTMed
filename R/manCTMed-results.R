@@ -2,7 +2,7 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @format A dataframe with 1440 rows and X columns:
+#' @format A dataframe with 1440 rows and 19 columns:
 #'
 #' \describe{
 #'   \item{taskid}{

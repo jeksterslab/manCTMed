@@ -1,5 +1,5 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 4
+tasks <- 10L
 reps <- 1000L
 overwrite <- FALSE
 R <- 20000L

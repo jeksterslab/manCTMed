@@ -5,7 +5,7 @@
 \alias{results}
 \title{Simulation Results}
 \format{
-A dataframe with 1440 rows and X columns:
+A dataframe with 1440 rows and 19 columns:
 
 \describe{
 \item{taskid}{
