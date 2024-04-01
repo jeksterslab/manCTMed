@@ -10,10 +10,22 @@
     <loc>https://github.com/jeksterslab/manCTMed/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/empirical.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/fig-scatter-plots.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/index.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/manCTMed.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/replication.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/results.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/session/session.html</loc>
@@ -34,6 +46,18 @@
     <loc>https://github.com/jeksterslab/manCTMed/reference/DeltaYMX.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/FigPlotEffects.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/FigScatterPlotCoverage.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/FigScatterPlotPower.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/FigScatterPlotType1.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/FitDynr.html</loc>
   </url>
   <url>
@@ -47,15 +71,6 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/PhiHat.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/PlotCoverage.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/PlotPower.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/PlotType1.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/RandomMeasurement.html</loc>
@@ -103,6 +118,12 @@
     <loc>https://github.com/jeksterslab/manCTMed/reference/params.html</loc>
   </url>
   <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/results.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/ryan2021.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/reference/ryan2021phi.html</loc>
   </url>
 </urlset>
