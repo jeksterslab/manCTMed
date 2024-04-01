@@ -44,7 +44,7 @@ med <- Med(
   from = "s",
   to = "f",
   med = "i",
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(med)
 ```
@@ -57,7 +57,7 @@ med <- Med(
   from = "s",
   to = "f",
   med = "r",
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(med)
 ```
@@ -70,7 +70,7 @@ med <- Med(
   from = "s",
   to = "f",
   med = c("i", "r"),
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(med)
 ```
@@ -86,7 +86,7 @@ delta <- DeltaMed(
   from = "s",
   to = "f",
   med = "i",
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(delta)
 ```
@@ -98,7 +98,7 @@ mc <- MCMed(
   from = "s",
   to = "f",
   med = "i",
-  delta_t = seq(from = 0, to = 20, length.out = 1000),
+  delta_t = seq(from = 0, to = 15, length.out = 1000),
   R = 20000L
 )
 plot(mc)
@@ -113,7 +113,7 @@ delta <- DeltaMed(
   from = "s",
   to = "f",
   med = "r",
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(delta)
 ```
@@ -125,7 +125,7 @@ mc <- MCMed(
   from = "s",
   to = "f",
   med = "r",
-  delta_t = seq(from = 0, to = 20, length.out = 1000),
+  delta_t = seq(from = 0, to = 15, length.out = 1000),
   R = 20000L
 )
 plot(mc)
@@ -140,7 +140,7 @@ delta <- DeltaMed(
   from = "s",
   to = "f",
   med = c("i", "r"),
-  delta_t = seq(from = 0, to = 20, length.out = 1000)
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
 )
 plot(delta)
 ```
@@ -152,7 +152,7 @@ mc <- MCMed(
   from = "s",
   to = "f",
   med = c("i", "r"),
-  delta_t = seq(from = 0, to = 20, length.out = 1000),
+  delta_t = seq(from = 0, to = 15, length.out = 1000),
   R = 20000L
 )
 plot(mc)
