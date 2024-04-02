@@ -127,6 +127,7 @@
 % direct <- results[which(results[, "effect"] == "direct"), ]
 % indirect <- results[which(results[, "effect"] == "indirect"), ]
 % effects <- data.frame(
+%   interval = 1:30,
 %   total = total$parameter,
 %   direct = direct$parameter,
 %   indirect = indirect$parameter

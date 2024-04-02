@@ -41,6 +41,9 @@ articles:
 - title: Single Replication from the Simulation Study
   contents:
   - replication
+- title: Parameters
+  contents:
+  - params
 - title: Results
   contents:
   - results

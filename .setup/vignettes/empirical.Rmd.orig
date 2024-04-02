@@ -34,132 +34,150 @@ data(ryan2021phi, package = "manCTMed")
 ryan2021phi
 ```
 
-## Effects
+## Physical (Fatigue) to Cognition (Self-Doubt) Mediated by Affect (Irritable and Restless)
 
-### Irritable as Mediator 
-
-```{r}
-med <- Med(
-  phi = ryan2021phi$phi,
-  from = "s",
-  to = "f",
-  med = "i",
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
-)
-plot(med)
-```
-
-### Restless as Mediator 
+### Effects
 
 ```{r}
-med <- Med(
-  phi = ryan2021phi$phi,
-  from = "s",
-  to = "f",
-  med = "r",
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
-)
-plot(med)
+phi <- ryan2021phi$phi
+vcov_phi_vec <- ryan2021phi$vcov
+from <- "f" # fatigue
+to <- "s" # self-doubt
+med <- c("i", "r") # irritable and restless
+delta_t <- seq(from = 0, to = 20, length.out = 1000)
 ```
-
-### Irritable and Restless as Mediators
 
 ```{r}
-med <- Med(
-  phi = ryan2021phi$phi,
-  from = "s",
-  to = "f",
-  med = c("i", "r"),
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
+effects <- Med(
+  phi = phi,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t
 )
-plot(med)
+plot(effects)
 ```
 
-## Confidence Intervals
-
-### Irritable as Mediator 
+### Confidence Intervals
 
 ```{r}
 delta <- DeltaMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = "i",
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t,
+  ncores = parallel::detectCores()
 )
 plot(delta)
 ```
 
 ```{r}
+#| echo = FALSE
+delta <- summary(delta, alpha = 0.05)
+ll <- delta[, "2.5%"]
+ul <- delta[, "97.5%"]
+delta$sig <- !(ll <= 0 & 0 <= ul)
+delta
+```
+
+```{r}
 mc <- MCMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = "i",
-  delta_t = seq(from = 0, to = 15, length.out = 1000),
-  R = 20000L
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t,
+  R = 20000L,
+  seed = 42,
+  ncores = parallel::detectCores()
 )
 plot(mc)
 ```
 
-### Restless as Mediator 
+```{r}
+#| echo = FALSE
+mc <- summary(mc, alpha = 0.05)
+ll <- mc[, "2.5%"]
+ul <- mc[, "97.5%"]
+mc$sig <- !(ll <= 0 & 0 <= ul)
+mc
+```
+
+## Cognition (Self-Doubt) to Physical (Fatigue) Mediated by Affect (Irritable and Restless)
+
+### Effects
+
+```{r}
+from <- "s" # self-doubt
+to <- "f" # fatigue
+```
+
+```{r}
+effects <- Med(
+  phi = phi,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t
+)
+plot(effects)
+```
+
+### Confidence Intervals
 
 ```{r}
 delta <- DeltaMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = "r",
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t,
+  ncores = parallel::detectCores()
 )
 plot(delta)
 ```
 
 ```{r}
-mc <- MCMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = "r",
-  delta_t = seq(from = 0, to = 15, length.out = 1000),
-  R = 20000L
-)
-plot(mc)
-```
-
-### Irritable and Restless as Mediators
-
-```{r}
-delta <- DeltaMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = c("i", "r"),
-  delta_t = seq(from = 0, to = 15, length.out = 1000)
-)
-plot(delta)
+#| echo = FALSE
+delta <- summary(delta, alpha = 0.05)
+ll <- delta[, "2.5%"]
+ul <- delta[, "97.5%"]
+delta$sig <- !(ll <= 0 & 0 <= ul)
+delta
 ```
 
 ```{r}
 mc <- MCMed(
-  phi = ryan2021phi$phi,
-  vcov_phi_vec = ryan2021phi$vcov,
-  from = "s",
-  to = "f",
-  med = c("i", "r"),
-  delta_t = seq(from = 0, to = 15, length.out = 1000),
-  R = 20000L
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = from,
+  to = to,
+  med = med,
+  delta_t = delta_t,
+  R = 20000L,
+  seed = 42,
+  ncores = parallel::detectCores()
 )
 plot(mc)
 ```
 
-## Code Used Fit the Model 
+```{r}
+#| echo = FALSE
+mc <- summary(mc, alpha = 0.05)
+ll <- mc[, "2.5%"]
+ul <- mc[, "97.5%"]
+mc$sig <- !(ll <= 0 & 0 <= ul)
+mc
+```
 
+<details>
+<summary>
+Code used fit the model.
+</summary>
 ```r
 data(ryan2021, package = "manCTMed")
 data <- ryan2021
@@ -379,3 +397,4 @@ ryan2021phi <- list(
   vcov = vcov_phi_vec
 )
 ```
+</details>
