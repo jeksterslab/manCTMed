@@ -95,7 +95,13 @@ FitDynr <- function(data) {
     dynamics = dynr_dynamics,
     noise = dynr_noise,
     outfile = tempfile(
-      "src",
+      paste0(
+        "src-",
+        format(
+          Sys.time(),
+          "%Y-%m-%d-%H-%M-%OS3"
+        )
+      ),
       fileext = ".c"
     )
   )
