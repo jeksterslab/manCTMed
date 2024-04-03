@@ -93,7 +93,83 @@ Agaloos Pesigan</h4>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">ryan2021phi</span>, package <span class="op">=</span> <span class="st">"manCTMed"</span><span class="op">)</span></span>
-<span><span class="va">ryan2021phi</span></span></code></pre></div>
+<span><span class="va">ryan2021phi</span></span>
+<span><span class="co">#&gt; $phi</span></span>
+<span><span class="co">#&gt;             s           f         i           r</span></span>
+<span><span class="co">#&gt; s -1.16771101  0.04744771 -1.038479  1.27252784</span></span>
+<span><span class="co">#&gt; f -0.04027589 -0.78125315  0.217683 -0.01846452</span></span>
+<span><span class="co">#&gt; i -0.65072311  0.08669968 -2.822523  2.06711984</span></span>
+<span><span class="co">#&gt; r  0.79889017 -0.26320494  1.401960 -2.08555162</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $vcov</span></span>
+<span><span class="co">#&gt;              phi_11        phi_21       phi_31       phi_41        phi_12</span></span>
+<span><span class="co">#&gt; phi_11  0.046738029  0.0094480233  0.051763088 -0.031775834 -0.0074731025</span></span>
+<span><span class="co">#&gt; phi_21  0.009448023  0.0210610829  0.007640554  0.003102624  0.0003668151</span></span>
+<span><span class="co">#&gt; phi_31  0.051763088  0.0076405544  0.102562306 -0.045636417 -0.0083619487</span></span>
+<span><span class="co">#&gt; phi_41 -0.031775834  0.0031026241 -0.045636417  0.059958510  0.0037020071</span></span>
+<span><span class="co">#&gt; phi_12 -0.007473102  0.0003668151 -0.008361949  0.003702007  0.0090470516</span></span>
+<span><span class="co">#&gt; phi_22 -0.001870407 -0.0047315726 -0.001109413 -0.001040443  0.0014556287</span></span>
+<span><span class="co">#&gt; phi_32 -0.007564409  0.0026785591 -0.018491754  0.005814229  0.0096594971</span></span>
+<span><span class="co">#&gt; phi_42  0.004917584 -0.0032159619  0.008892485 -0.011035050 -0.0052483675</span></span>
+<span><span class="co">#&gt; phi_13  0.079786386  0.0178398745  0.097529147 -0.054975754 -0.0152871499</span></span>
+<span><span class="co">#&gt; phi_23  0.018168113  0.0382333177  0.013608621  0.004773075 -0.0004034743</span></span>
+<span><span class="co">#&gt; phi_33  0.083329554  0.0143841453  0.192565024 -0.078623744 -0.0177730426</span></span>
+<span><span class="co">#&gt; phi_43 -0.049275648  0.0052789709 -0.082414968  0.100365576  0.0079035721</span></span>
+<span><span class="co">#&gt; phi_14 -0.091187795 -0.0203298629 -0.107509182  0.065908811  0.0139045889</span></span>
+<span><span class="co">#&gt; phi_24 -0.019919904 -0.0425034146 -0.015183859 -0.005973931 -0.0003179366</span></span>
+<span><span class="co">#&gt; phi_34 -0.096840824 -0.0170080621 -0.210887692  0.093000139  0.0158822248</span></span>
+<span><span class="co">#&gt; phi_44  0.057604439 -0.0052274011  0.090439673 -0.116296596 -0.0067147099</span></span>
+<span><span class="co">#&gt;               phi_22        phi_32       phi_42       phi_13        phi_23</span></span>
+<span><span class="co">#&gt; phi_11 -0.0018704069 -0.0075644090  0.004917584  0.079786386  0.0181681125</span></span>
+<span><span class="co">#&gt; phi_21 -0.0047315726  0.0026785591 -0.003215962  0.017839875  0.0382333177</span></span>
+<span><span class="co">#&gt; phi_31 -0.0011094128 -0.0184917537  0.008892485  0.097529147  0.0136086212</span></span>
+<span><span class="co">#&gt; phi_41 -0.0010404426  0.0058142285 -0.011035050 -0.054975754  0.0047730750</span></span>
+<span><span class="co">#&gt; phi_12  0.0014556287  0.0096594971 -0.005248368 -0.015287150 -0.0004034743</span></span>
+<span><span class="co">#&gt; phi_22  0.0053930807  0.0004529844  0.001548615 -0.003937697 -0.0098547697</span></span>
+<span><span class="co">#&gt; phi_32  0.0004529844  0.0197767239 -0.007944994 -0.017843971  0.0040085100</span></span>
+<span><span class="co">#&gt; phi_42  0.0015486149 -0.0079449945  0.010445854  0.010291644 -0.0065076199</span></span>
+<span><span class="co">#&gt; phi_13 -0.0039376975 -0.0178439707  0.010291644  0.217245001  0.0490415461</span></span>
+<span><span class="co">#&gt; phi_23 -0.0098547697  0.0040085100 -0.006507620  0.049041546  0.1077624118</span></span>
+<span><span class="co">#&gt; phi_33 -0.0024909983 -0.0443354952  0.020147934  0.253969408  0.0375213944</span></span>
+<span><span class="co">#&gt; phi_43 -0.0018797351  0.0144183726 -0.021684114 -0.136392351  0.0168058991</span></span>
+<span><span class="co">#&gt; phi_14  0.0039076096  0.0151976308 -0.009960687 -0.216174567 -0.0502958410</span></span>
+<span><span class="co">#&gt; phi_24  0.0093652898 -0.0054584054  0.007096891 -0.048552184 -0.1061677366</span></span>
+<span><span class="co">#&gt; phi_34  0.0025134351  0.0393397135 -0.019142234 -0.255951508 -0.0395929808</span></span>
+<span><span class="co">#&gt; phi_44  0.0017230075 -0.0119291234  0.021237917  0.138453889 -0.0140582047</span></span>
+<span><span class="co">#&gt;              phi_33       phi_43       phi_14        phi_24       phi_34</span></span>
+<span><span class="co">#&gt; phi_11  0.083329554 -0.049275648 -0.091187795 -0.0199199038 -0.096840824</span></span>
+<span><span class="co">#&gt; phi_21  0.014384145  0.005278971 -0.020329863 -0.0425034146 -0.017008062</span></span>
+<span><span class="co">#&gt; phi_31  0.192565024 -0.082414968 -0.107509182 -0.0151838588 -0.210887692</span></span>
+<span><span class="co">#&gt; phi_41 -0.078623744  0.100365576  0.065908811 -0.0059739308  0.093000139</span></span>
+<span><span class="co">#&gt; phi_12 -0.017773043  0.007903572  0.013904589 -0.0003179366  0.015882225</span></span>
+<span><span class="co">#&gt; phi_22 -0.002490998 -0.001879735  0.003907610  0.0093652898  0.002513435</span></span>
+<span><span class="co">#&gt; phi_32 -0.044335495  0.014418373  0.015197631 -0.0054584054  0.039339713</span></span>
+<span><span class="co">#&gt; phi_42  0.020147934 -0.021684114 -0.009960687  0.0070968906 -0.019142234</span></span>
+<span><span class="co">#&gt; phi_13  0.253969408 -0.136392351 -0.216174567 -0.0485521844 -0.255951508</span></span>
+<span><span class="co">#&gt; phi_23  0.037521394  0.016805899 -0.050295841 -0.1061677366 -0.039592981</span></span>
+<span><span class="co">#&gt; phi_33  0.581640505 -0.225135122 -0.245763035 -0.0373588931 -0.561070966</span></span>
+<span><span class="co">#&gt; phi_43 -0.225135122  0.260699845  0.140280403 -0.0167098673  0.231588814</span></span>
+<span><span class="co">#&gt; phi_14 -0.245763035  0.140280403  0.230125516  0.0521958035  0.264574771</span></span>
+<span><span class="co">#&gt; phi_24 -0.037358893 -0.016709867  0.052195804  0.1106667689  0.041513751</span></span>
+<span><span class="co">#&gt; phi_34 -0.561070966  0.231588814  0.264574771  0.0415137506  0.574194916</span></span>
+<span><span class="co">#&gt; phi_44  0.217629538 -0.265178742 -0.152824241  0.0152907088 -0.238673627</span></span>
+<span><span class="co">#&gt;              phi_44</span></span>
+<span><span class="co">#&gt; phi_11  0.057604439</span></span>
+<span><span class="co">#&gt; phi_21 -0.005227401</span></span>
+<span><span class="co">#&gt; phi_31  0.090439673</span></span>
+<span><span class="co">#&gt; phi_41 -0.116296596</span></span>
+<span><span class="co">#&gt; phi_12 -0.006714710</span></span>
+<span><span class="co">#&gt; phi_22  0.001723007</span></span>
+<span><span class="co">#&gt; phi_32 -0.011929123</span></span>
+<span><span class="co">#&gt; phi_42  0.021237917</span></span>
+<span><span class="co">#&gt; phi_13  0.138453889</span></span>
+<span><span class="co">#&gt; phi_23 -0.014058205</span></span>
+<span><span class="co">#&gt; phi_33  0.217629538</span></span>
+<span><span class="co">#&gt; phi_43 -0.265178742</span></span>
+<span><span class="co">#&gt; phi_14 -0.152824241</span></span>
+<span><span class="co">#&gt; phi_24  0.015290709</span></span>
+<span><span class="co">#&gt; phi_34 -0.238673627</span></span>
+<span><span class="co">#&gt; phi_44  0.286485470</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="physical-fatigue-to-cognition-self-doubt-mediated-by-affect-irritable-and-restless">Physical (Fatigue) to Cognition (Self-Doubt) Mediated by Affect
@@ -118,7 +194,7 @@ Agaloos Pesigan</h4>
 <span>  delta_t <span class="op">=</span> <span class="va">delta_t</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">effects</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-4-1.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-effects-1-1.png" width="3300"></p>
 </div>
 <div class="section level3">
 <h3 id="confidence-intervals">Confidence Intervals<a class="anchor" aria-label="anchor" href="#confidence-intervals"></a>
@@ -134,7 +210,7 @@ Agaloos Pesigan</h4>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-5-1.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-5-2.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-5-3.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-delta-1-1.png" width="3300"><img src="fig-vignettes-empirical-delta-1-2.png" width="3300"><img src="fig-vignettes-empirical-delta-1-3.png" width="3300"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MCMed.html" class="external-link">MCMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
@@ -143,12 +219,12 @@ Agaloos Pesigan</h4>
 <span>  to <span class="op">=</span> <span class="va">to</span>,</span>
 <span>  med <span class="op">=</span> <span class="va">med</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
-<span>  R <span class="op">=</span> <span class="fl">5000L</span>,</span>
+<span>  R <span class="op">=</span> <span class="fl">20000L</span>,</span>
 <span>  seed <span class="op">=</span> <span class="fl">42</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-6-1.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-6-2.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-6-3.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-mc-1-1.png" width="3300"><img src="fig-vignettes-empirical-mc-1-2.png" width="3300"><img src="fig-vignettes-empirical-mc-1-3.png" width="3300"></p>
 </div>
 </div>
 <div class="section level2">
@@ -170,7 +246,7 @@ Agaloos Pesigan</h4>
 <span>  delta_t <span class="op">=</span> <span class="va">delta_t</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">effects</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-7-1.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-effects-2-1.png" width="3300"></p>
 </div>
 <div class="section level3">
 <h3 id="confidence-intervals-1">Confidence Intervals<a class="anchor" aria-label="anchor" href="#confidence-intervals-1"></a>
@@ -186,7 +262,7 @@ Agaloos Pesigan</h4>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-8-1.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-8-2.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-8-3.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-delta-2-1.png" width="3300"><img src="fig-vignettes-empirical-delta-2-2.png" width="3300"><img src="fig-vignettes-empirical-delta-2-3.png" width="3300"></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MCMed.html" class="external-link">MCMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
@@ -195,12 +271,12 @@ Agaloos Pesigan</h4>
 <span>  to <span class="op">=</span> <span class="va">to</span>,</span>
 <span>  med <span class="op">=</span> <span class="va">med</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
-<span>  R <span class="op">=</span> <span class="fl">5000L</span>,</span>
+<span>  R <span class="op">=</span> <span class="fl">20000L</span>,</span>
 <span>  seed <span class="op">=</span> <span class="fl">42</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-unnamed-chunk-9-1.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-9-2.png" width="3300"><img src="fig-vignettes-empirical-unnamed-chunk-9-3.png" width="3300"></p>
+<p><img src="fig-vignettes-empirical-mc-2-1.png" width="3300"><img src="fig-vignettes-empirical-mc-2-2.png" width="3300"><img src="fig-vignettes-empirical-mc-2-3.png" width="3300"></p>
 <details><summary>
 Code used fit the model.
 </summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
