@@ -54,7 +54,7 @@ data(results, package = "manCTMed")
 FigScatterPlotCoverage(results, delta_t = 1:28)
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-5-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-coverage-1-28-1.png" width="3300" />
 
 #### Time-Intervals 1 to 4
 
@@ -63,7 +63,7 @@ FigScatterPlotCoverage(results, delta_t = 1:28)
 FigScatterPlotCoverage(results, delta_t = 1:4)
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-6-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-coverage-1-4-1.png" width="3300" />
 
 #### Time-Intervals 5 to 28
 
@@ -72,7 +72,7 @@ FigScatterPlotCoverage(results, delta_t = 1:4)
 FigScatterPlotCoverage(results, delta_t = 5:28)
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-7-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-coverage-5-28-1.png" width="3300" />
 
 ### Statistical Power
 
@@ -81,7 +81,7 @@ FigScatterPlotCoverage(results, delta_t = 5:28)
 FigScatterPlotPower(results, 1:28)
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-8-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-power-1.png" width="3300" />
 
 ### Type I Error Rate
 
@@ -90,4 +90,4 @@ FigScatterPlotPower(results, 1:28)
 FigScatterPlotType1(results, 1:28)
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-9-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-type1-1.png" width="3300" />
