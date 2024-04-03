@@ -63,7 +63,7 @@ data_process_ryan2021_dynr <- function(overwrite = FALSE) {
         0, # -1.0465,
         0, # -1.2712,
         0, # -1.0601,
-        0 # -1.0811
+        0  # -1.0811
       ),
       params.inistate = c(
         "fixed",

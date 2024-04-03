@@ -38,7 +38,7 @@ FigPlotEffects()
 
 ## Evaluation of Confidence Intervals
 
-Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \to \eta_X$ model.
+Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \ to \eta_X$ model.
 
 
 ```r

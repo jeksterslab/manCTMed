@@ -24,6 +24,9 @@ reference:
 - title: Summary Functions
   contents:
   - has_keyword("summary")
+- title: Compression Functions
+  contents:
+  - has_keyword("compress")
 - title: Data
   contents:
   - has_keyword("data")
