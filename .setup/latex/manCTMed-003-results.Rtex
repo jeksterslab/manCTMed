@@ -94,7 +94,7 @@
 
 %% begin.rcode
 % head(results)
-% PlotCoverage(results)
+% summary(results)
 %% end.rcode
 
 See \texttt{results()} documentation for more information.

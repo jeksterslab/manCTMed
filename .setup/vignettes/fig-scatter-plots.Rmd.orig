@@ -18,7 +18,8 @@ knitr::opts_chunk$set(
   fig.height = 8,
   fig.retina = 2,
   dpi = 300,
-  comment = "#>"
+  comment = "#>",
+  dev = "ragg_png"
 )
 ```
 
@@ -54,10 +55,10 @@ data(results, package = "manCTMed")
 
 ### Coverage Probabilities
 
-#### Time-Intervals 1 to 28
+#### Time-Intervals 1 to 25
 
-```{r, coverage-1-28}
-FigScatterPlotCoverage(results, delta_t = 1:28)
+```{r, coverage-1-25}
+FigScatterPlotCoverage(results, delta_t = 1:25)
 ```
 
 #### Time-Intervals 1 to 4
@@ -66,20 +67,26 @@ FigScatterPlotCoverage(results, delta_t = 1:28)
 FigScatterPlotCoverage(results, delta_t = 1:4)
 ```
 
-#### Time-Intervals 5 to 28
+#### Time-Intervals 5 to 25
 
-```{r, coverage-5-28}
-FigScatterPlotCoverage(results, delta_t = 5:28)
+```{r, coverage-5-25}
+FigScatterPlotCoverage(results, delta_t = 5:25)
+```
+
+#### Time-Intervals 25 to 30
+
+```{r, coverage-25-30}
+FigScatterPlotCoverage(results, delta_t = 25:30)
 ```
 
 ### Statistical Power
 
 ```{r, power}
-FigScatterPlotPower(results, 1:28)
+FigScatterPlotPower(results)
 ```
 
 ### Type I Error Rate
 
 ```{r, type1}
-FigScatterPlotType1(results, 1:28)
+FigScatterPlotType1(results)
 ```

@@ -34,11 +34,11 @@ Total, direct, and indirect effects for the drift matrix
 FigPlotEffects()
 ```
 
-<img src="fig-vignettes-scatter-plots-unnamed-chunk-3-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-effects-1.png" width="3300" />
 
 ## Evaluation of Confidence Intervals
 
-Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \ to \eta_X$ model.
+Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \to \eta_X$ model.
 
 
 ```r
@@ -47,14 +47,14 @@ data(results, package = "manCTMed")
 
 ### Coverage Probabilities
 
-#### Time-Intervals 1 to 28
+#### Time-Intervals 1 to 25
 
 
 ```r
-FigScatterPlotCoverage(results, delta_t = 1:28)
+FigScatterPlotCoverage(results, delta_t = 1:25)
 ```
 
-<img src="fig-vignettes-scatter-plots-coverage-1-28-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-coverage-1-25-1.png" width="3300" />
 
 #### Time-Intervals 1 to 4
 
@@ -65,20 +65,29 @@ FigScatterPlotCoverage(results, delta_t = 1:4)
 
 <img src="fig-vignettes-scatter-plots-coverage-1-4-1.png" width="3300" />
 
-#### Time-Intervals 5 to 28
+#### Time-Intervals 5 to 25
 
 
 ```r
-FigScatterPlotCoverage(results, delta_t = 5:28)
+FigScatterPlotCoverage(results, delta_t = 5:25)
 ```
 
-<img src="fig-vignettes-scatter-plots-coverage-5-28-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-coverage-5-25-1.png" width="3300" />
+
+#### Time-Intervals 25 to 30
+
+
+```r
+FigScatterPlotCoverage(results, delta_t = 25:30)
+```
+
+<img src="fig-vignettes-scatter-plots-coverage-25-30-1.png" width="3300" />
 
 ### Statistical Power
 
 
 ```r
-FigScatterPlotPower(results, 1:28)
+FigScatterPlotPower(results)
 ```
 
 <img src="fig-vignettes-scatter-plots-power-1.png" width="3300" />
@@ -87,7 +96,7 @@ FigScatterPlotPower(results, 1:28)
 
 
 ```r
-FigScatterPlotType1(results, 1:28)
+FigScatterPlotType1(results)
 ```
 
 <img src="fig-vignettes-scatter-plots-type1-1.png" width="3300" />

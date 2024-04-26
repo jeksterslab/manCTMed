@@ -1,0 +1,61 @@
+---
+title: "Empirical Example"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Empirical Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```
+
+
+```
+#> Warning in gzfile(file, "rb"): cannot open compressed file
+#> '/home/rstudio/working-dir/.setup/data-raw/ci-empirical.Rds', probable reason
+#> 'No such file or directory'
+#> Error in gzfile(file, "rb"): cannot open the connection
+```

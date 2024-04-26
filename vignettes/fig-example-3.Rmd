@@ -1,0 +1,65 @@
+---
+title: "Hypothetical Example 3 - Regions of Significance"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Hypothetical Example 3 - Regions of Significance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+## Knowledge mediates the association between marital conflict and behavioral competence
+
+<img src="fig-vignettes-example-3-xmy-direct-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-direct-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-indirect-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-indirect-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-total-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-total-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-direct-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-direct-mc-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-indirect-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-indirect-mc-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-total-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xmy-total-mc-500-1.png" width="1700" />
+
+## Behavioral competence mediates the association between marital conflict and knowledge
+
+<img src="fig-vignettes-example-3-xym-direct-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-direct-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-indirect-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-indirect-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-total-delta-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-total-mc-100-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-direct-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-direct-mc-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-indirect-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-indirect-mc-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-total-delta-500-1.png" width="1700" />
+
+<img src="fig-vignettes-example-3-xym-total-mc-500-1.png" width="1700" />

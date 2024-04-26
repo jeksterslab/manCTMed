@@ -1,5 +1,13 @@
 \documentclass[tikz, border = 1mm]{standalone}
 
+\usepackage{xcolor}
+
+\definecolor{direct}{HTML}{2C7BB6}
+\definecolor{indirect}{HTML}{D7191C}
+\definecolor{total}{HTML}{5E3C99}
+                      
+\usepackage{sansmathfonts}
+
 \begin{document}
 
 \usetikzlibrary{
@@ -54,8 +62,20 @@
 		},
 		path/.style = {
 			->,
-			thick,
+			ultra thick,
 			>=stealth'
+		},
+		dot/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            densely dotted
+		},
+		dashed/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            loosely dashed
 		},
 		cov/.style = {
 			<->,

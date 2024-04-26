@@ -1,5 +1,13 @@
 \documentclass[tikz, border=1mm]{standalone}
 
+\usepackage{xcolor}
+
+\definecolor{direct}{HTML}{2C7BB6}
+\definecolor{indirect}{HTML}{D7191C}
+\definecolor{total}{HTML}{5E3C99}
+
+\usepackage{sansmathfonts}
+
 \begin{document}
 
 \usetikzlibrary{
@@ -61,7 +69,13 @@
 			->,
 			ultra thick,
 			>=stealth',
-            dashed
+            densely dotted
+		},
+		dashed/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            loosely dashed
 		},
 		cov/.style = {
 			<->,
@@ -84,42 +98,43 @@
 	\node[latent] (X4) [right = 1cm of X3] {$\eta_{X_{t + \Delta t}}$};
     \node[latent] (M4) [right = 1cm of M3] {$\eta_{M_{t + \Delta t}}$};
 	\node[latent] (Y4) [right = 1cm of Y3] {$\eta_{Y_{t + \Delta t}}$};
-	\draw[path, color = blue] (X0) to node {} (X1);
-    \draw[path, color = blue] (X0) to node {} (Y1);
-	\draw[path, color = blue] (Y0) to node {} (X1);
-    \draw[path, color = blue] (Y0) to node {} (Y1);
-	\draw[path, color = blue] (X1) to node {} (X2);
-    \draw[path, color = blue] (X1) to node {} (Y2);
-	\draw[path, color = blue] (Y1) to node {} (X2);
-    \draw[path, color = blue] (Y1) to node {} (Y2);
-	\draw[path, color = blue] (X2) to node {} (X3);
-    \draw[path, color = blue] (X2) to node {} (Y3);
-	\draw[path, color = blue] (Y2) to node {} (X3);
-    \draw[path, color = blue] (Y2) to node {} (Y3);
-	\draw[path, color = blue] (X3) to node {} (X4);
-    \draw[path, color = blue] (X3) to node {} (Y4);
-	\draw[path, color = blue] (Y3) to node {} (X4);
-    \draw[path, color = blue] (Y3) to node {} (Y4);
-    \draw[dot, color = red] (X0) to node {} (M1);
-	\draw[dot, color = red] (M0) to node {} (X1);
-    \draw[dot, color = red] (M0) to node {} (M1);
-    \draw[dot, color = red] (M0) to node {} (Y1);
-    \draw[dot, color = red] (Y0) to node {} (M1);
-    \draw[dot, color = red] (X1) to node {} (M2);
-	\draw[dot, color = red] (M1) to node {} (X2);
-    \draw[dot, color = red] (M1) to node {} (M2);
-    \draw[dot, color = red] (M1) to node {} (Y2);
-    \draw[dot, color = red] (Y1) to node {} (M2);
-    \draw[dot, color = red] (X2) to node {} (M3);
-	\draw[dot, color = red] (M2) to node {} (X3);
-    \draw[dot, color = red] (M2) to node {} (M3);
-    \draw[dot, color = red] (M2) to node {} (Y3);
-    \draw[dot, color = red] (Y2) to node {} (M3);
-    \draw[dot, color = red] (X3) to node {} (M4);
-	\draw[dot, color = red] (M3) to node {} (X4);
-    \draw[dot, color = red] (M3) to node {} (M4);
-    \draw[dot, color = red] (M3) to node {} (Y4);
-    \draw[dot, color = red] (Y3) to node {} (M4);
+	\draw[dot, color = direct] (X0) to node {} (X1);
+    \draw[dot, color = direct] (X0) to node {} (Y1);
+	\draw[dot, color = direct] (Y0) to node {} (X1);
+    \draw[dot, color = direct] (Y0) to node {} (Y1);
+	\draw[dot, color = direct] (X1) to node {} (X2);
+    \draw[dot, color = direct] (X1) to node {} (Y2);
+	\draw[dot, color = direct] (Y1) to node {} (X2);
+    \draw[dot, color = direct] (Y1) to node {} (Y2);
+	\draw[dot, color = direct] (X2) to node {} (X3);
+    \draw[dot, color = direct] (X2) to node {} (Y3);
+	\draw[dot, color = direct] (Y2) to node {} (X3);
+    \draw[dot, color = direct] (Y2) to node {} (Y3);
+	\draw[dot, color = direct] (X3) to node {} (X4);
+    \draw[dot, color = direct] (X3) to node {} (Y4);
+	\draw[dot, color = direct] (Y3) to node {} (X4);
+    \draw[dot, color = direct] (Y3) to node {} (Y4);
+    \draw[path, color = indirect] (X0) to node {} (M1);
+	\draw[path, color = indirect] (M0) to node {} (X1);
+    \draw[path, color = indirect] (M0) to node {} (M1);
+    \draw[path, color = indirect] (M0) to node {} (Y1);
+    \draw[path, color = indirect] (Y0) to node {} (M1);
+    \draw[path, color = indirect] (X1) to node {} (M2);
+	\draw[path, color = indirect] (M1) to node {} (X2);
+    \draw[path, color = indirect] (M1) to node {} (M2);
+    \draw[path, color = indirect] (M1) to node {} (Y2);
+    \draw[path, color = indirect] (Y1) to node {} (M2);
+    \draw[path, color = indirect] (X2) to node {} (M3);
+	\draw[path, color = indirect] (M2) to node {} (X3);
+    \draw[path, color = indirect] (M2) to node {} (M3);
+    \draw[path, color = indirect] (M2) to node {} (Y3);
+    \draw[path, color = indirect] (Y2) to node {} (M3);
+    \draw[path, color = indirect] (X3) to node {} (M4);
+	\draw[path, color = indirect] (M3) to node {} (X4);
+    \draw[path, color = indirect] (M3) to node {} (M4);
+    \draw[path, color = indirect] (M3) to node {} (Y4);
+    \draw[path, color = indirect] (Y3) to node {} (M4);
+    \draw[dashed, color = total] (X0) to node {} (Y4);
 \end{tikzpicture}
 
 \end{document}

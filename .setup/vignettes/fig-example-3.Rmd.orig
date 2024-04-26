@@ -1,0 +1,255 @@
+---
+title: "Hypothetical Example 3 - Regions of Significance"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Hypothetical Example 3 - Regions of Significance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-example-3-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+data_process_example_med_plot <- function(n,
+                                          model,
+                                          effect,
+                                          method,
+                                          delta_t_max = 4) {
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  ci_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      n,
+      ".Rds"
+    )
+  )
+  ci <- readRDS(
+    ci_file
+  )   
+  ci <- ci[which(ci$interval <= delta_t_max), ]
+  ci <- ci[which(ci$model == model), ]
+  if (method == "delta") {
+    method_label <- "Delta Method"
+  }
+  if (method == "mc") {
+    method_label <- "MC Method"
+  }
+  graphics::plot.default(
+    x = 0,
+    y = 0,
+    xlim = range(ci$interval),
+    ylim = range(c(ci$est, ci$ll, ci$ul)),
+    type = "n",
+    xlab = "Time-Interval",
+    ylab = "Estimate",
+    main =  paste0(
+      gsub(
+        pattern = "(^|[[:space:]])([[:alpha:]])",
+        replacement = "\\1\\U\\2",
+        x = effect,
+        perl = TRUE
+      ),
+      " Effect",
+      " | ",
+      method_label,
+      " | ",
+      "n = ",
+      n
+    )
+  )
+  ci <- ci[which(ci$effect == effect), ]
+  ci <- ci[which(ci$method == method), ]
+  if (effect == "total") {
+    col <- "#5e3c99"
+  }
+  if (effect == "direct") {
+    col <- "#2c7bb6"
+  }
+  if (effect == "indirect") {
+    col <- "#d7191c"
+  }
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  graphics::abline(
+    h = 0
+  )
+  # delta
+  graphics::lines(
+    x = ci$interval,
+    y = ci$est,
+    type = "l",
+    col = col,
+    lty = 1,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ll,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ul,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+}
+```
+
+## Knowledge mediates the association between marital conflict and behavioral competence
+
+```{r, xmy-direct-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "delta")
+```
+
+```{r, xmy-direct-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-indirect-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "delta")
+```
+
+```{r, xmy-indirect-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-total-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method = "delta")
+```
+
+```{r, xmy-total-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method = "mc")
+```
+
+```{r, xmy-direct-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method = "delta")
+```
+
+```{r, xmy-direct-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-indirect-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", method = "delta")
+```
+
+```{r, xmy-indirect-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-total-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method = "delta")
+```
+
+```{r, xmy-total-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method = "mc")
+```
+
+## Behavioral competence mediates the association between marital conflict and knowledge
+
+```{r, xym-direct-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "direct", method = "delta")
+```
+
+```{r, xym-direct-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-indirect-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "indirect", method = "delta")
+```
+
+```{r, xym-indirect-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "indirect", method = "mc")
+```
+
+```{r, xym-total-delta-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "total", method = "delta")
+```
+
+```{r, xym-total-mc-100}
+#| echo = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "total", method = "mc")
+```
+
+```{r, xym-direct-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method = "delta")
+```
+
+```{r, xym-direct-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-indirect-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", method = "delta")
+```
+
+```{r, xym-indirect-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", method = "mc")
+```
+
+```{r, xym-total-delta-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "total", method = "delta")
+```
+
+```{r, xym-total-mc-500}
+#| echo = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "total", method = "mc")
+```

@@ -41,6 +41,9 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
+- title: Hypothetical Example 3 - Regions of Significance
+  contents:
+  - fig-example-3
 - title: Single Replication from the Simulation Study
   contents:
   - replication
@@ -55,7 +58,7 @@ articles:
   - fig-scatter-plots
 - title: Empirical Example
   contents:
-  - empirical
+  - fig-empirical
 
 - title: Session
   contents:

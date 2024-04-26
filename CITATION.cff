@@ -1,7 +1,7 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v1.0.0
+# --------------------------------------------
+# CITATION file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# --------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "manCTMed" in publications use:'
@@ -51,3 +51,4 @@ identifiers:
   value: https://osf.io/qwnmf/?view_only=855be2012b554f05bbc679946845bab8
 - type: url
   value: https://doi.org/10.0000/0000000000
+

@@ -1,5 +1,13 @@
 \documentclass[tikz, border = 1mm]{standalone}
 
+\usepackage{xcolor}
+
+\definecolor{direct}{HTML}{2C7BB6}
+\definecolor{indirect}{HTML}{D7191C}
+\definecolor{total}{HTML}{5E3C99}
+                      
+\usepackage{sansmathfonts}
+
 \begin{document}
 
 \usetikzlibrary{
@@ -61,7 +69,13 @@
 			->,
 			ultra thick,
 			>=stealth',
-            dashed
+            densely dotted
+		},
+		dashed/.style = {
+			->,
+			ultra thick,
+			>=stealth',
+            loosely dashed
 		},
 		cov/.style = {
 			<->,
@@ -90,7 +104,7 @@
 	\draw[path] (Y0) to node {} (X3);
     \draw[path] (Y0) to node {} (M3);
     \draw[path] (Y0) to node {} (Y3);
-    \draw[dot, color = green] (X0) to node {} (Y3);
+    \draw[dashed, color = total] (X0) to node {} (Y3);
 \end{tikzpicture}
 
 \end{document}

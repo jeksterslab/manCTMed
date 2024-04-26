@@ -16,7 +16,9 @@
 #' @keywords manCTMed figure
 #' @export
 FigScatterPlotPower <- function(results,
-                                delta_t = NULL) {
+                                delta_t = NULL,
+                                R = 20000) {
+  results <- results[which(results$R == R | is.na(results$R)), ]
   if (!is.null(delta_t)) {
     results <- results[which(results$interval %in% delta_t), ]
   }
