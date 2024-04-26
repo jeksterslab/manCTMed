@@ -10,7 +10,10 @@
     <loc>https://github.com/jeksterslab/manCTMed/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://github.com/jeksterslab/manCTMed/articles/empirical.html</loc>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/fig-empirical.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/jeksterslab/manCTMed/articles/fig-example-3.html</loc>
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/articles/fig-scatter-plots.html</loc>
@@ -125,11 +128,5 @@
   </url>
   <url>
     <loc>https://github.com/jeksterslab/manCTMed/reference/results.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/ryan2021.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/jeksterslab/manCTMed/reference/ryan2021phi.html</loc>
   </url>
 </urlset>
