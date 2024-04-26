@@ -4,13 +4,17 @@
 \alias{FigScatterPlotPower}
 \title{Plot Statistical Power}
 \usage{
-FigScatterPlotPower(results, delta_t = NULL)
+FigScatterPlotPower(results, delta_t = NULL, R = 20000)
 }
 \arguments{
 \item{results}{Summary results data frame.}
 
 \item{delta_t}{Vector of time-interval value.
 If \code{delta_t = NULL}, use all available time-intervals}
+
+\item{R}{Integer.
+Number of replications for the Monte Carlo method.
+Possible values are 1000, 20000, and 100000.}
 }
 \description{
 Statistical power for the model \eqn{X \to M \to Y}.

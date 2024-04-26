@@ -13,7 +13,7 @@
 #' data <- RandomMeasurement(sim)
 #' fit <- FitDynr(data)
 #' phi_hat <- PhiHat(fit)
-#' ci <- MCYMX(phi_hat)
+#' ci <- MCYMX(phi_hat, seed = 42)
 #' plot(ci)
 #' }
 #' @family Confidence Interval Functions
