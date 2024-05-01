@@ -2,7 +2,11 @@ pandoc: 3.1.1
 pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
+  containers: containers.html
+  fig-empirical-mislabeled: fig-empirical-mislabeled.html
   fig-empirical: fig-empirical.html
+  fig-example-1: fig-example-1.html
+  fig-example-2: fig-example-2.html
   fig-example-3: fig-example-3.html
   fig-scatter-plots: fig-scatter-plots.html
   manCTMed: manCTMed.html
@@ -10,7 +14,7 @@ articles:
   replication: replication.html
   results: results.html
   session: session/session.html
-last_built: 2024-04-26T14:34Z
+last_built: 2024-05-01T04:56Z
 urls:
   reference: https://github.com/jeksterslab/manCTMed/reference
   article: https://github.com/jeksterslab/manCTMed/articles
