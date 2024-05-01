@@ -1,0 +1,151 @@
+---
+title: "Hypothetical Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Hypothetical Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+
+
+
+```r
+library(dynr)
+library(cTMed)
+```
+
+## Summary of CT-VAR Estimates
+
+
+```r
+summary(fit)
+#> Coefficients:
+#>            Estimate Std. Error t value   ci.lower   ci.upper Pr(>|t|)    
+#> phi_11   -0.0335015  0.0115834  -2.892 -0.0562045 -0.0107985  0.00192 ** 
+#> phi_12    0.0378995  0.0190828   1.986  0.0004979  0.0753011  0.02352 *  
+#> phi_13   -0.0132453  0.0170977  -0.775 -0.0467563  0.0202656  0.21927    
+#> phi_21   -0.1517373  0.0314688  -4.822 -0.2134150 -0.0900596  < 2e-16 ***
+#> phi_22   -0.5861297  0.0908420  -6.452 -0.7641768 -0.4080827  < 2e-16 ***
+#> phi_23    0.2282876  0.0585998   3.896  0.1134340  0.3431411    5e-05 ***
+#> phi_31   -0.1003889  0.0291247  -3.447 -0.1574722 -0.0433056  0.00028 ***
+#> phi_32    0.1040908  0.0551386   1.888 -0.0039789  0.2121605  0.02954 *  
+#> phi_33   -0.5118440  0.0752570  -6.801 -0.6593451 -0.3643429  < 2e-16 ***
+#> sigma_11  0.0579308  0.0119040   4.867  0.0345995  0.0812621  < 2e-16 ***
+#> sigma_12 -0.0086746  0.0154201  -0.563 -0.0388974  0.0215483  0.28688    
+#> sigma_13  0.0102638  0.0145734   0.704 -0.0182996  0.0388271  0.24063    
+#> sigma_22  0.7424345  0.1621833   4.578  0.4245610  1.0603081  < 2e-16 ***
+#> sigma_23  0.1011136  0.0425308   2.377  0.0177547  0.1844725  0.00872 ** 
+#> sigma_33  0.8388809  0.1509879   5.556  0.5429501  1.1348116  < 2e-16 ***
+#> theta_11  0.1054679  0.0086864  12.142  0.0884428  0.1224929  < 2e-16 ***
+#> theta_22  0.1752225  0.0508289   3.447  0.0755996  0.2748453  0.00028 ***
+#> theta_33  0.0815182  0.0474585   1.718 -0.0114988  0.1745351  0.04294 *  
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#> 
+#> -2 log-likelihood value at convergence = 13453.10
+#> AIC = 13489.10
+#> BIC = 13626.78
+```
+
+## Extract Elements of the Drift Matrix
+
+
+```r
+varnames <- c(
+  "phi_11",
+  "phi_21",
+  "phi_31",
+  "phi_12",
+  "phi_22",
+  "phi_32",
+  "phi_13",
+  "phi_23",
+  "phi_33"
+)
+phi <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
+colnames(phi) <- rownames(phi) <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+vcov_phi_vec <- vcov(fit)[varnames, varnames]
+```
+
+## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Here we use time-intervals 1, 2, and 3.
+
+
+```r
+DeltaMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = c(1, 2, 3)
+)
+#> 
+#> Total, Direct, and Indirect Effects
+#> 
+#> $`1`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           1 -0.0828 0.0220 -3.7593 0.0002 -0.1260 -0.0396
+#> direct          1 -0.0772 0.0225 -3.4291 0.0006 -0.1213 -0.0331
+#> indirect        1 -0.0057 0.0031 -1.8051 0.0711 -0.0118  0.0005
+#> 
+#> $`2`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           2 -0.1373 0.0345 -3.9776 0.0001 -0.2050 -0.0697
+#> direct          2 -0.1210 0.0358 -3.3757 0.0007 -0.1912 -0.0507
+#> indirect        2 -0.0164 0.0089 -1.8414 0.0656 -0.0338  0.0011
+#> 
+#> $`3`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           3 -0.1718 0.0418 -4.1146 0.0000 -0.2537 -0.0900
+#> direct          3 -0.1449 0.0438 -3.3077 0.0009 -0.2307 -0.0590
+#> indirect        3 -0.0269 0.0145 -1.8598 0.0629 -0.0553  0.0015
+```
+
+## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+
+```r
+MCMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = c(1, 2, 3),
+  seed = 42,
+  R = 20000L
+)
+#> 
+#> Total, Direct, and Indirect Effects
+#> 
+#> $`1`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           1 -0.0828 0.0221 20000 -0.1260 -0.0397
+#> direct          1 -0.0772 0.0225 20000 -0.1220 -0.0332
+#> indirect        1 -0.0057 0.0032 20000 -0.0122  0.0002
+#> 
+#> $`2`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           2 -0.1373 0.0347 20000 -0.2059 -0.0697
+#> direct          2 -0.1210 0.0360 20000 -0.1940 -0.0517
+#> indirect        2 -0.0164 0.0090 20000 -0.0345  0.0010
+#> 
+#> $`3`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           3 -0.1718 0.0422 20000 -0.2555 -0.0898
+#> direct          3 -0.1449 0.0443 20000 -0.2366 -0.0616
+#> indirect        3 -0.0269 0.0147 20000 -0.0558  0.0023
+```

@@ -1,0 +1,117 @@
+This is TeX, Version 3.141592653 (TeX Live 2023) (preloaded format=tex 2024.1.21)  3 FEB 2024 03:51
+**apa7.dtx
+(./apa7.dtx (/opt/TinyTeX/texmf-dist/tex/latex/base/docstrip.tex
+\blockLevel=\count26
+\emptyLines=\count27
+\processedLines=\count28
+\commentsRemoved=\count29
+\commentsPassed=\count30
+\codeLinesPassed=\count31
+\TotalprocessedLines=\count32
+\TotalcommentsRemoved=\count33
+\TotalcommentsPassed=\count34
+\TotalcodeLinesPassed=\count35
+\NumberOfFiles=\count36
+\inFile=\read0
+\inputcheck=\read1
+\@tempcnta=\count37
+\off@0=\count38
+\off@1=\count39
+\off@2=\count40
+\off@3=\count41
+\off@4=\count42
+\off@5=\count43
+\off@6=\count44
+\off@7=\count45
+\off@8=\count46
+\off@9=\count47
+\off@10=\count48
+\off@11=\count49
+\off@12=\count50
+\off@13=\count51
+\off@14=\count52
+\off@15=\count53
+\@temptokena=\toks12
+\@maxfiles=\count54
+\@maxoutfiles=\count55
+
+Utility: `docstrip' v2.6b <2022-09-03>
+English documentation    <2023-10-10>
+
+**********************************************************
+* This program converts documented macro-files into fast *
+* loadable files by stripping off (nearly) all comments! *
+**********************************************************
+
+********************************************************
+* No Configuration file found, using default settings. *
+********************************************************
+
+)
+
+Generating file(s) apa7.cls 
+
+Processing file apa7.dtx (class) -> apa7.cls
+Lines  processed: 3892
+Comments removed: 1333
+Comments  passed: 46
+Codelines passed: 2463
+
+
+Generating file(s) ./config/APA7american.txt ./config/APA7british.txt ./config/APA7dutch.txt ./config/APA7english.txt ./config/APA7french.txt ./config/APA7german.txt ./config/APA7ngerman.txt ./config/APA7greek.txt ./config/APA7czech.txt ./config/APA7turkish.txt ./config/APA7spanish.txt ./config/APA7hungarian.txt ./config/APA7endfloat.cfg 
+
+Processing file apa7.dtx (american) -> ./config/APA7american.txt
+                         (british) -> ./config/APA7british.txt
+                         (dutch) -> ./config/APA7dutch.txt
+                         (english) -> ./config/APA7english.txt
+                         (french) -> ./config/APA7french.txt
+                         (german) -> ./config/APA7german.txt
+                         (ngerman) -> ./config/APA7ngerman.txt
+                         (greek) -> ./config/APA7greek.txt
+                         (czech) -> ./config/APA7czech.txt
+                         (turkish) -> ./config/APA7turkish.txt
+                         (spanish) -> ./config/APA7spanish.txt
+                         (hungarian) -> ./config/APA7hungarian.txt
+                         (APAendfloat) -> ./config/APA7endfloat.cfg
+Lines  processed: 3892
+Comments removed: 1333
+Comments  passed: 46
+Codelines passed: 2463
+
+
+Generating file(s) ./samples/bibliography.bib ./samples/shortsample.tex ./samples/longsample.tex 
+
+Processing file apa7.dtx (bibliography) -> ./samples/bibliography.bib
+                         (shortsample) -> ./samples/shortsample.tex
+                         (longsample) -> ./samples/longsample.tex
+Lines  processed: 3892
+Comments removed: 1333
+Comments  passed: 46
+Codelines passed: 2463
+
+
+Generating file(s) apa7.ins 
+
+Processing file apa7.dtx (install) -> apa7.ins
+Lines  processed: 3892
+Comments removed: 1333
+Comments  passed: 46
+Codelines passed: 2463
+
+
+Generating file(s) README.txt 
+
+Processing file apa7.dtx (readme) -> README.txt
+Lines  processed: 3892
+Comments removed: 1333
+Comments  passed: 46
+Codelines passed: 2463
+
+Overall statistics:
+Files  processed: 5
+Lines  processed: 19460
+Comments removed: 6665
+Comments  passed: 230
+Codelines passed: 12315
+ )
+No pages of output.

@@ -41,8 +41,10 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
-- title: Hypothetical Example 3 - Regions of Significance
+- title: Hypothetical Examples
   contents:
+  - fig-example-1
+  - fig-example-2
   - fig-example-3
 - title: Single Replication from the Simulation Study
   contents:
@@ -59,6 +61,10 @@ articles:
 - title: Empirical Example
   contents:
   - fig-empirical
+  - fig-empirical-mislabeled
+- title: Containers
+  contents:
+  - containers
 
 - title: Session
   contents:

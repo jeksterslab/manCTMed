@@ -1,4 +1,6 @@
 data_process_params <- function(overwrite = FALSE) {
+  cat("\ndata_process_params\n")
+  set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(

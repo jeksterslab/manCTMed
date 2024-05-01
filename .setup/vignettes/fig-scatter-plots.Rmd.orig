@@ -58,35 +58,47 @@ data(results, package = "manCTMed")
 #### Time-Intervals 1 to 25
 
 ```{r, coverage-1-25}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotCoverage(results, delta_t = 1:25)
 ```
 
 #### Time-Intervals 1 to 4
 
 ```{r, coverage-1-4}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotCoverage(results, delta_t = 1:4)
 ```
 
 #### Time-Intervals 5 to 25
 
 ```{r, coverage-5-25}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotCoverage(results, delta_t = 5:25)
 ```
 
 #### Time-Intervals 25 to 30
 
 ```{r, coverage-25-30}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotCoverage(results, delta_t = 25:30)
 ```
 
 ### Statistical Power
 
 ```{r, power}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotPower(results)
 ```
 
 ### Type I Error Rate
 
 ```{r, type1}
+#| echo = FALSE,
+#| cache = FALSE
 FigScatterPlotType1(results)
 ```

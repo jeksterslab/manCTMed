@@ -19,7 +19,6 @@ project <- "manCTMed"
 
 pkg_cran <- c(
   "simStateSpace",
-  "ctsem",
   "dynr",
   "DT"
 )
@@ -29,19 +28,16 @@ pkg_github <- c(
   "jeksterslab/dynUtils"
 )
 
-pkg_github_ref <- c(
-  "0.9.1",
-  "0.9.1"
-)
+pkg_github_ref <- c()
 
 pkg_ver <- c(
   "simStateSpace",
-  "ctsem"
+  "MASS"
 )
 
 ver <- c(
   "1.2.0",
-  "3.9.1"
+  "7.3-60.2"
 )
 
 # dynr has to be installed on the container used to build this repo

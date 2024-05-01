@@ -1,5 +1,7 @@
 data_process_example_ct <- function(overwrite = FALSE,
                                     n) {
+  cat("\ndata_process_example_ct\n")
+  set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(
@@ -11,6 +13,15 @@ data_process_example_ct <- function(overwrite = FALSE,
     "data-raw",
     paste0(
       "fit-example-ct-",
+      n,
+      ".Rds"
+    )
+  )
+  fit_example_ct_summary <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "fit-example-ct-summary-",
       n,
       ".Rds"
     )
@@ -31,7 +42,6 @@ data_process_example_ct <- function(overwrite = FALSE,
     }
   }
   if (write) {
-    set.seed(42)
     correlations <- matrix(
       data = c(
         1, 0.88, 0.84, 0.82, -0.23, -0.12, -0.18, -0.24, -0.38, -0.4, -0.3, -0.37, -0.06, -0.2, -0.22, -0.21, 0.03, -0.04, -0.15, -0.13,
@@ -63,7 +73,8 @@ data_process_example_ct <- function(overwrite = FALSE,
         x = 0,
         times = dim(correlations)[1]
       ),
-      Sigma = correlations
+      Sigma = correlations,
+      empirical = TRUE
     )
     conflict <- t(
       data[, 1:4]
@@ -222,7 +233,11 @@ data_process_example_ct <- function(overwrite = FALSE,
       noise = dynr_noise,
       outfile = file.path(
         tempdir(),
-        "example-ct-dynr.c"
+        paste0(
+          "example-ct-dynr-",
+          n,
+          ".c"
+        )
       )
     )
     model@options$maxeval <- 100000
@@ -278,15 +293,30 @@ data_process_example_ct <- function(overwrite = FALSE,
     model$lb <- lb
     model$ub <- ub
     fit <- dynr::dynr.cook(
-      model
+      model,
+      verbose = FALSE
     )
+    print(summary(fit))
+    coef(model) <- coef(fit)
+    fit <- dynr::dynr.cook(
+      model,
+      verbose = FALSE
+    )
+    print(summary(fit))
     saveRDS(
       fit,
       file = fit_example_ct,
       compress = "xz"
     )
+    saveRDS(
+      summary(fit),
+      file = fit_example_ct_summary,
+      compress = "xz"
+    )
   }
 }
 data_process_example_ct(n = 100)
+data_process_example_ct(n = 200)
 data_process_example_ct(n = 500)
+data_process_example_ct(n = 1000)
 rm(data_process_example_ct)

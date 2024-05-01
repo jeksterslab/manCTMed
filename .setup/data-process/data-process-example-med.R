@@ -1,5 +1,7 @@
 data_process_example_med <- function(overwrite = FALSE,
                                      n) {
+  cat("\ndata_process_example_med\n")
+  set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(
@@ -400,5 +402,7 @@ data_process_example_med <- function(overwrite = FALSE,
   }
 }
 data_process_example_med(n = 100)
+data_process_example_med(n = 200)
 data_process_example_med(n = 500)
+data_process_example_med(n = 1000)
 rm(data_process_example_med)

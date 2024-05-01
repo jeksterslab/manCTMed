@@ -1,0 +1,239 @@
+---
+title: "Empirical Example - Mislabeled"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Empirical Example - Mislabeled}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-empirical-mislabeled-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "fit-empirical-ct-mislabeled.Rds"
+  )
+)
+```
+
+```{r}
+library(dynr)
+library(cTMed)
+```
+
+## Summary of CT-VAR Estimates
+
+```{r}
+summary(fit)
+```
+
+## Extract Elements of the Drift Matrix
+
+```{r}
+varnames <- c(
+  "phi_11",
+  "phi_21",
+  "phi_31",
+  "phi_12",
+  "phi_22",
+  "phi_32",
+  "phi_13",
+  "phi_23",
+  "phi_33"
+)
+phi <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
+colnames(phi) <- rownames(phi) <- c(
+  "psych_distress",
+  "esteem",
+  "physical_distress"
+)
+vcov_phi_vec <- vcov(fit)[varnames, varnames]
+```
+
+## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+A long sequence of time-interval values makes regions of significance more visible.
+
+```{r}
+delta <- DeltaMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = "physical_distress",
+  to = "esteem",
+  med = "psych_distress",
+  delta_t = seq(from = 0, to = 15, length.out = 1000)
+)
+plot(delta)
+```
+
+## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+```{r}
+mc <- MCMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  from = "physical_distress",
+  to = "esteem",
+  med = "psych_distress",
+  delta_t = seq(from = 0, to = 15, length.out = 1000),
+  seed = 42,
+  R = 20000L
+)
+plot(mc)
+```
+
+```{r}
+#| include = FALSE
+data_process_empirical_mislabeled_med_plot <- function(effect,
+                                                       method,
+                                                       delta_t_max = 15) {
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  ci_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    "ci-empirical-mislabeled.Rds"
+  )
+  ci <- readRDS(
+    ci_file
+  )   
+  ci <- ci[which(ci$interval <= delta_t_max), ]
+  if (method == "delta") {
+    method_label <- "Delta Method"
+  }
+  if (method == "mc") {
+    method_label <- "Monte Carlo Method"
+  }
+  graphics::plot.default(
+    x = 0,
+    y = 0,
+    xlim = range(ci$interval),
+    ylim = range(c(ci$est, ci$ll, ci$ul)),
+    type = "n",
+    xlab = "Time-Interval",
+    ylab = "Estimate",
+    main =  paste0(
+      gsub(
+        pattern = "(^|[[:space:]])([[:alpha:]])",
+        replacement = "\\1\\U\\2",
+        x = effect,
+        perl = TRUE
+      ),
+      " Effect",
+      " | ",
+      method_label
+    )
+  )
+  ci <- ci[which(ci$effect == effect), ]
+  ci <- ci[which(ci$method == method), ]
+  if (effect == "total") {
+    col <- "#5e3c99"
+  }
+  if (effect == "direct") {
+    col <- "#2c7bb6"
+  }
+  if (effect == "indirect") {
+    col <- "#d7191c"
+  }
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  graphics::abline(
+    h = 0
+  )
+  # delta
+  graphics::lines(
+    x = ci$interval,
+    y = ci$est,
+    type = "l",
+    col = col,
+    lty = 1,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ll,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ul,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+}
+```
+
+```{r, direct-delta}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "direct", method = "delta")
+```
+
+```{r, direct-mc}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "direct", method = "mc")
+```
+
+```{r, indirect-delta}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "indirect", method = "delta")
+```
+
+```{r, indirect-mc}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "indirect", method = "mc")
+```
+
+```{r, total-delta}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "total", method = "delta")
+```
+
+```{r, total-mc}
+#| include = FALSE,
+#| cache = FALSE
+data_process_empirical_mislabeled_med_plot(effect = "total", method = "mc")
+```

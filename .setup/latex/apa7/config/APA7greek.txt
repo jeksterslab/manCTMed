@@ -1,0 +1,82 @@
+%%
+%% This is file `./config/APA7greek.txt',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `greek')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2022 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------
+%% 
+\ProvidesFile{APA7greek.txt}[2020/12/02 v1.02 apa7 configuration for Greek]
+
+\renewcommand{\lastauthorseparator}{^^ce^^ba^^ce^^b1^^ce^^b9}% and
+\renewcommand{\acksname}{^^ce^^a3^^ce^^b7^^ce^^bc^^ce^^b5^^ce^^af^^cf^^89^^cf^^83^^ce^^b7 ^^cf^^84^^ce^^bf^^cf^^85 ^^cf^^83^^cf^^85^^ce^^b3^^ce^^b3^^cf^^81^^ce^^b1^^cf^^86^^ce^^ad^^ce^^b1}% Author Note
+\renewcommand{\keywordname}{^^ce^^bb^^ce^^ad^^ce^^be^^ce^^b5^^ce^^b9^^cf^^82-^^ce^^ba^^ce^^bb^^ce^^b5^^ce^^b9^^ce^^b4^^ce^^b9^^ce^^ac}% Keywords
+\renewcommand{\notesname}{^^cf^^85^^cf^^80^^ce^^bf^^cf^^83^^ce^^b7^^ce^^bc^^ce^^b5^^ce^^af^^cf^^89^^cf^^83^^ce^^b7}% Footnotes
+\renewcommand{\notelabel}{^^ce^^a3^^ce^^b7^^ce^^bc^^ce^^b5^^ce^^af^^cf^^89^^cf^^83^^ce^^b7}%Note
+
+%% 
+%% Copyright (C) 2022 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7french.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7spanish.txt,
+%%                                 APA7hungarian.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./config/APA7greek.txt'.

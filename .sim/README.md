@@ -31,7 +31,7 @@ The simulation scripts are in the following folder.
 
 [comment]: <> (The manctmed.sif used is in https://osf.io/5d43c/)
 
-Run the following to for `manctmed.sif` to be executable and accessible to anyone.
+Run the following for `manctmed.sif` to be executable and accessible to anyone.
 
 ```bash
 chmod 777 /scratch/ibp5092/manCTMed/.sim/manctmed.sif

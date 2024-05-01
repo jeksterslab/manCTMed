@@ -63,14 +63,14 @@ FigScatterPlotCoverage <- function(results,
   )
   results$effect_label <- effect_label
   results$n_label <- paste0(
-    "n:",
+    "n = ",
     results$n
   )
   results$n_label <- factor(
     results$n_label,
     levels = c(
       paste0(
-        "n:",
+        "n = ",
         sort(unique(results$n))
       )
     )
