@@ -14,7 +14,7 @@ vignette: >
 
 ## Apptainer/Singularity Image File
 
-The simulation was performed using the [Apptainer/Singularity](https://apptainer.org/) `manctmed.sif` image file. The image is a linux container with the `manCTMed` package  and all the dependencies pre-installed.
+The simulation was performed using the [Apptainer/Singularity](https://apptainer.org/) `manctmed.sif` image file. The image is a linux container with the `manCTMed` package and all the dependencies pre-installed.
 
 To build the Apptainer/Singularity image file (`manctmed.sif`),
 run the following.

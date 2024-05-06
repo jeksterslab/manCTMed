@@ -1,7 +1,7 @@
 manCTMed
 ================
 Ivan Jacob Agaloos Pesigan
-2024-05-01
+2024-05-06
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -16,7 +16,11 @@ A., Chow, S.-M. (In Preparation). Standard Errors and Confidence
 Intervals for Total, Direct, and Indirect Effects in Continuous-Time
 Mediation Models. <https://doi.org/10.0000/0000000000>
 
-## Acknowledgment
+## Acknowledgments
+
+This research was made possible by the Prevention and Methodology
+Training Program (PAMT) funded by a T32 training grant from the National
+Institute on Drug Abuse (NIDA).
 
 Computations for this research were performed on the Pennsylvania State
 University’s Institute for Computational and Data Sciences’ Roar
@@ -33,6 +37,14 @@ You can install `manCTMed` from
 if (!require("remotes")) install.packages("remotes")
 remotes::install_github("jeksterslab/manCTMed")
 ```
+
+## R Package
+
+Standard errors and confidence intervals for the direct, indirect, and
+total effects for continuous-time mediation models as well as
+visualization tools are available in the `cTMed` package. Documentation
+and examples can be found in the accompanying website
+(<https://jeksterslab.github.io/cTMed>).
 
 ## More Information
 
