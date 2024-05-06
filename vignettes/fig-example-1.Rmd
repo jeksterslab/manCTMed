@@ -13,6 +13,8 @@ vignette: >
 
 
 
+
+
 ```r
 library(dynr)
 library(cTMed)
@@ -111,7 +113,7 @@ med <- Med(
 plot(med)
 ```
 
-<img src="fig-vignettes-example-1-unnamed-chunk-7-1.png" width="1700" />
+<img src="fig-vignettes-example-1-unnamed-chunk-8-1.png" width="1700" />
 
 <details>
 <summary>

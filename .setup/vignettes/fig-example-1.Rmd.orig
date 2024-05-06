@@ -41,6 +41,13 @@ fit <- readRDS(
 ```
 
 ```{r}
+#| include = FALSE
+library(dynr)
+library(cTMed)
+```
+
+```{r}
+#| eval = FALSE
 library(dynr)
 library(cTMed)
 ```

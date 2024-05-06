@@ -13,6 +13,8 @@ vignette: >
 
 
 
+
+
 ```r
 library(dynr)
 library(cTMed)

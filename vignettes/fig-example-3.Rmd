@@ -13,6 +13,8 @@ vignette: >
 
 
 
+
+
 ```r
 library(dynr)
 library(cTMed)
@@ -95,7 +97,7 @@ delta <- DeltaMed(
 plot(delta)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-6-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-6-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-6-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-7-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-3.png" width="1700" />
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
@@ -114,7 +116,7 @@ mc <- MCMed(
 plot(mc)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-7-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-8-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-8-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-8-3.png" width="1700" />
 
 
 
