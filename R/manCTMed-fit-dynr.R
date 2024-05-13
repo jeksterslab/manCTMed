@@ -85,7 +85,7 @@ FitDynr <- function(data) {
         "fixed", "theta_22", "fixed",
         "fixed", "fixed", "theta_33"
       ),
-      nrow = model$p
+      nrow = model$k
     )
   )
   dynr_model <- dynr::dynr.model(

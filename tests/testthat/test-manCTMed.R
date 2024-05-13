@@ -1,4 +1,4 @@
-## ---- test-manCTMed-gen-data
+## ---- test-manCTMed
 lapply(
   X = 1,
   FUN = function(i,
@@ -13,5 +13,5 @@ lapply(
       }
     )
   },
-  text = "test-manCTMed-gen-data"
+  text = "test-manCTMed"
 )
