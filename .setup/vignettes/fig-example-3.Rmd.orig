@@ -8,6 +8,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+This vignette accompanies Hypothetical Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+
 ```{r}
 #| include = FALSE
 knitr::opts_chunk$set(
@@ -26,7 +28,7 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 500
+n <- 1000
 fit <- readRDS(
   root$find_file(
     ".setup",
@@ -54,11 +56,15 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
+The object `fit` contains the fitted `dynr` model.
+
 ```{r}
 summary(fit)
 ```
 
 ## Extract Elements of the Drift Matrix
+
+We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 ```{r}
 varnames <- c(
@@ -86,7 +92,7 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-A long sequence of time-interval values makes regions of significance more visible.
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 ```{r}
 delta <- DeltaMed(
@@ -101,6 +107,8 @@ plot(delta)
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 ```{r}
 mc <- MCMed(
@@ -221,7 +229,7 @@ data_process_example_med_plot <- function(n,
     xlim = range(ci_combined$interval),
     ylim = range(c(ci_combined$est, ci_combined$ll, ci_combined$ul)),
     type = "n",
-    xlab = "Time-Interval",
+    xlab = "Time Interval",
     ylab = "Estimate",
     main =  paste0(
       gsub(
@@ -579,4 +587,391 @@ data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method 
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method = "mc")
+```
+
+```{r}
+#| include = FALSE
+data_process_example_med_sim_plot <- function(n,
+                                              model,
+                                              effect,
+                                              delta_t_max = 10) {
+  method <- "delta"
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  
+  # all -----------------------------------------
+  ci_file_100 <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      100,
+      ".Rds"
+    )
+  )
+  ci_100 <- readRDS(
+    ci_file_100
+  )
+  ci_100 <- ci_100[which(ci_100$interval <= delta_t_max), ]
+  ci_100 <- ci_100[which(ci_100$model == model), ]
+  
+  ci_file_200 <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      200,
+      ".Rds"
+    )
+  )
+  ci_200 <- readRDS(
+    ci_file_200
+  )
+  ci_200 <- ci_200[which(ci_200$interval <= delta_t_max), ]
+  ci_200 <- ci_200[which(ci_200$model == model), ]
+  
+  ci_file_500 <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      500,
+      ".Rds"
+    )
+  )
+  ci_500 <- readRDS(
+    ci_file_500
+  )
+  ci_500 <- ci_500[which(ci_500$interval <= delta_t_max), ]
+  ci_500 <- ci_500[which(ci_500$model == model), ]
+  
+  ci_file_1000 <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      1000,
+      ".Rds"
+    )
+  )
+  ci_1000 <- readRDS(
+    ci_file_1000
+  )
+  ci_1000 <- ci_1000[which(ci_1000$interval <= delta_t_max), ]
+  ci_1000 <- ci_1000[which(ci_1000$model == model), ]
+  ci_combined <- rbind(
+    ci_100,
+    ci_200,
+    ci_500,
+    ci_1000
+  )
+  # all -----------------------------------------
+  
+  method_label <- "Simulation CIs"
+  graphics::plot.default(
+    x = 0,
+    y = 0,
+    xlim = range(ci_combined$interval),
+    ylim = range(c(ci_combined$est, ci_combined$ll, ci_combined$ul)),
+    type = "n",
+    xlab = "Time Interval",
+    ylab = "Estimate",
+    main =  paste0(
+      gsub(
+        pattern = "(^|[[:space:]])([[:alpha:]])",
+        replacement = "\\1\\U\\2",
+        x = effect,
+        perl = TRUE
+      ),
+      " Effect",
+      " | ",
+      method_label,
+      " | ",
+      "n = ",
+      n
+    )
+  )
+  if (effect == "total") {
+    col <- "#5e3c99"
+  }
+  if (effect == "direct") {
+    col <- "#2c7bb6"
+  }
+  if (effect == "indirect") {
+    col <- "#d7191c"
+  }
+  fit_example_ct_sim <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "fit-example-ct-sim-",
+      n,
+      ".Rds"
+    )
+  )
+  sim <- readRDS(fit_example_ct_sim)
+  sim <- sim[which(sim$interval <= delta_t_max), ]
+  sim <- sim[which(sim$model == model), ]
+  sim <- sim[which(sim$n == n), ]
+  sim <- sim[, c("interval", effect)]
+  delta_t <- unique(sim$interval)
+  ci <- do.call(
+    what = "rbind",
+    args = lapply(
+      X = delta_t,
+      FUN = function(i) {
+        return(
+          c(
+            interval = i,
+            quantile(
+              x = sim[which(sim$interval == i), effect],
+              probs = c(0.025, 0.975)
+            )
+          )
+        )
+      }
+    )
+  )
+  ci <- as.data.frame(ci)
+  colnames(ci) <- c("interval", "ll", "ul")
+  # estimates
+  library(cTMed)
+  fit <- readRDS(
+    root$find_file(
+      ".setup",
+      "data-raw",
+      paste0(
+        "fit-example-ct-",
+        n,
+        ".Rds"
+      )
+    )
+  )
+  varnames <- c(
+    "phi_11",
+    "phi_21",
+    "phi_31",
+    "phi_12",
+    "phi_22",
+    "phi_32",
+    "phi_13",
+    "phi_23",
+    "phi_33"
+  )
+  phi <- matrix(
+    data = coef(fit)[varnames],
+    nrow = 3
+  )
+  colnames(phi) <- rownames(phi) <- c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+  est <- summary(
+    Med(
+      phi = phi,
+      from = "conflict",
+      to = "competence",
+      med = "knowledge",
+      delta_t = delta_t
+    )
+  )[, effect]
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  graphics::abline(
+    h = 0
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = est,
+    type = "l",
+    col = col,
+    lty = 1,
+    lwd = 3
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ll,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ul,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+}
+```
+
+```{r, xmy-direct-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "direct")
+```
+
+```{r, xmy-direct-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "direct")
+```
+
+```{r, xmy-direct-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "direct")
+```
+
+```{r, xmy-direct-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "direct")
+```
+
+```{r, xmy-indirect-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "indirect")
+```
+
+```{r, xmy-indirect-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "indirect")
+```
+
+```{r, xmy-indirect-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "indirect")
+```
+
+```{r, xmy-indirect-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "indirect")
+```
+
+```{r, xmy-total-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "total")
+```
+
+```{r, xmy-total-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "total")
+```
+
+```{r, xmy-total-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "total")
+```
+
+```{r, xmy-total-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "total")
+```
+
+```{r, xym-direct-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xym", effect = "direct")
+```
+
+```{r, xym-direct-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xym", effect = "direct")
+```
+
+```{r, xym-direct-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xym", effect = "direct")
+```
+
+```{r, xym-direct-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "direct")
+```
+
+```{r, xym-indirect-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xym", effect = "indirect")
+```
+
+```{r, xym-indirect-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xym", effect = "indirect")
+```
+
+```{r, xym-indirect-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xym", effect = "indirect")
+```
+
+```{r, xym-indirect-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "indirect")
+```
+
+```{r, xym-total-true-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 100, model = "xym", effect = "total")
+```
+
+```{r, xym-total-true-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 200, model = "xym", effect = "total")
+```
+
+```{r, xym-total-true-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 500, model = "xym", effect = "total")
+```
+
+```{r, xym-total-true-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "total")
 ```

@@ -31,7 +31,7 @@
 
 \renewcommand{\lastauthorseparator}{et}% and
 \renewcommand{\acksname}{Note de l'auteur}% Author Note
-\renewcommand{\keywordname}{Mots Cl^^c3^^a9s}% Keywords
+\renewcommand{\keywordname}{Mots Clés}% Keywords
 \renewcommand{\notesname}{Notes de bas de page}% Footnotes
 \renewcommand{\notelabel}{Note}%Note
 

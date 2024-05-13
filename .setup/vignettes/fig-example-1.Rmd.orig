@@ -8,6 +8,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+This vignette accompanies Hypothetical Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+
 ```{r}
 #| include = FALSE
 knitr::opts_chunk$set(
@@ -26,7 +28,7 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 500
+n <- 1000
 fit <- readRDS(
   root$find_file(
     ".setup",
@@ -54,11 +56,15 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
+The object `fit` contains the fitted `dynr` model.
+
 ```{r}
 summary(fit)
 ```
 
 ## Extract Elements of the Drift Matrix
+
+We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 ```{r}
 varnames <- c(
@@ -84,7 +90,9 @@ colnames(phi) <- rownames(phi) <- c(
 vcov_phi_vec <- vcov(fit)[varnames, varnames]
 ```
 
-## Direct, Indirect, and Total Effects of a Time-Interval of One
+## Direct, Indirect, and Total Effects of a Time Interval of One
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of one are given below.
 
 ```{r}
 library(cTMed)
@@ -97,7 +105,9 @@ Med(
 )
 ```
 
-## Direct, Indirect, and Total Effects of a Time-Interval of Zero to Three
+## Direct, Indirect, and Total Effects of a Time Interval of Zero to Three
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 3 are plotted below.
 
 ```{r}
 med <- Med(

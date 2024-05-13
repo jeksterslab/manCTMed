@@ -27,14 +27,14 @@ The simulation scripts are in the following folder.
 "/scratch/ibp5092/manCTMed/.sim"
 ```
 
-> **NOTE**: Build or request for `manctmed.sif` and place it in `"/scratch/ibp5092/manCTMed/.sim"`.
+> **NOTE**: Build or request for `manctmed.sif` and place it in `"/scratch/ibp5092/manCTMed/.sif"`.
 
 [comment]: <> (The manctmed.sif used is in https://osf.io/5d43c/)
 
 Run the following for `manctmed.sif` to be executable and accessible to anyone.
 
 ```bash
-chmod 777 /scratch/ibp5092/manCTMed/.sim/manctmed.sif
+chmod 777 /scratch/ibp5092/manCTMed/.sif/manctmed.sif
 ```
 
 In order to save the output files in the `"/scratch/ibp5092/manCTMed/.sim"` directory, make sure that `$PWD` is equal to `"/scratch/ibp5092/manCTMed/.sim"`.

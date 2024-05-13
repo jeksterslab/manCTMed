@@ -1,0 +1,153 @@
+Cloning into 'dotfiles'...
+find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
+find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
+Loading required package: ggplot2
+Warning messages:
+1: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: phi_11, phi_12, phi_13, phi_21, phi_22, phi_23, phi_31, phi_32, phi_33, sigma_11, sigma_12, sigma_13, sigma_22, sigma_23, sigma_33 
+2: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: phi_11, phi_12, phi_13, phi_21, phi_22, phi_23, phi_31, phi_32, phi_33, sigma_11, sigma_12, sigma_13, sigma_22, sigma_23, sigma_33, theta_11, theta_22, theta_33 
+3: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: phi_11, phi_12, phi_13, phi_21, phi_22, phi_23, phi_31, phi_32, phi_33, sigma_11, sigma_12, sigma_13, sigma_22, sigma_23, sigma_33, theta_11, theta_22, theta_33 
+4: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: phi_11, phi_12, phi_13, phi_21, phi_22, phi_23, phi_31, phi_32, phi_33, sigma_11, sigma_12, sigma_13, sigma_22, sigma_23, sigma_33, theta_11, theta_22, theta_33 
+5: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: beta_11, beta_12, beta_13, beta_21, beta_22, beta_23, beta_31, beta_32, beta_33, psi_11, psi_12, psi_13, psi_22, psi_23, psi_33, theta_11, theta_22, theta_33 
+6: Hessian is not invertible; used pseudo-inverse.
+Model might not be identified or is not at an optimal solution.
+Regard standard errors suspiciously. 
+7: These parameters may have untrustworthy standard errors: . 
+8: Hessian is not invertible; used pseudo-inverse.
+Model might not be identified or is not at an optimal solution.
+Regard standard errors suspiciously. 
+9: These parameters may have untrustworthy standard errors: . 
+10: Some parameters were left at their starting values.
+Model might not be identified, need bounds, or need different starting values.
+Parameters that were unmoved: psi_22, psi_23, theta_33 
+ℹ Updating manCTMed documentation
+First time using roxygen2. Upgrading automatically...
+Setting `RoxygenNote` to "7.3.1"
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+Writing 'NAMESPACE'
+Writing 'Compress.Rd'
+Writing 'DeltaXMY.Rd'
+Writing 'DeltaYMX.Rd'
+Writing 'FigPlotEffects.Rd'
+Writing 'FigScatterPlotCoverage.Rd'
+Writing 'FigScatterPlotPower.Rd'
+Writing 'FigScatterPlotType1.Rd'
+Writing 'FitDynr.Rd'
+Writing 'GenData.Rd'
+Writing 'MCXMY.Rd'
+Writing 'MCYMX.Rd'
+Writing 'manCTMed-package.Rd'
+Writing 'params.Rd'
+Writing 'PhiHat.Rd'
+Writing 'RandomMeasurement.Rd'
+Writing 'results.Rd'
+Writing 'SimDynrDeltaXMY.Rd'
+Writing 'SimDynrDeltaYMX.Rd'
+Writing 'SimDynrMCXMY.Rd'
+Writing 'SimDynrMCYMX.Rd'
+Writing 'SimFitDynr.Rd'
+Writing 'SimFN.Rd'
+Writing 'SimGenData.Rd'
+Writing 'SimProj.Rd'
+Writing 'Sim.Rd'
+Writing 'SumHit.Rd'
+Writing 'SumRaw.Rd'
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-empirical-mislabeled.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-empirical-mislabeled.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-empirical.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-empirical.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
+
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/manCTMed/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX ..
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (136 entries accepted, 0 rejected).
+Sorting entries....done (992 comparisons).
+Generating output file Rd2.ind....done (165 lines written, 3 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (136 entries accepted, 0 rejected).
+Sorting entries....done (987 comparisons).
+Generating output file Rd2.ind....done (165 lines written, 4 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
+output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-manuscript.tex
+
+Use of uninitialized value in concatenation (.) or string at (eval 10) line 1.
+Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-manuscript.bbl' in following:
+ No file manCTMed-manuscript.bbl.
+Latexmk: ====Undefined refs and citations with line #s in .tex file:
+  Reference `tab:manCTMed-empirical-phi' on page 29 undefined on input line 1217
+── Installing package manCTMed into temporary library ──────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────

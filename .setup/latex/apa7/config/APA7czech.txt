@@ -30,9 +30,9 @@
 \ProvidesFile{APA7czech.txt}[2020/12/02 v1.02 apa7 configuration for Czech]
 
 \renewcommand{\lastauthorseparator}{a}% and
-\renewcommand{\acksname}{Pozn^^c3^^a1mka~autora}% Author Note
-\renewcommand{\keywordname}{Kl^^c3^^adcov^^c3^^a1~1slova}% Keywords
-\renewcommand{\notesname}{Pozn^^c3^^a1mky}% Footnotes
+\renewcommand{\acksname}{Poznámka~autora}% Author Note
+\renewcommand{\keywordname}{Klícová~1slova}% Keywords
+\renewcommand{\notesname}{Poznámky}% Footnotes
 \renewcommand{\notelabel}{Nota}%Note
 
 %% 

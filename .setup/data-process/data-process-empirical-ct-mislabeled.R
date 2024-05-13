@@ -27,7 +27,16 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
       recursive = TRUE
     )
   }
-  if (!file.exists(fit_empirical_ct_mislabeled)) {
+  if (
+    !all(
+      file.exists(
+        c(
+          fit_empirical_ct_mislabeled,
+          fit_empirical_ct_mislabeled_summary
+        )
+      )
+    )
+  ) {
     write <- TRUE
   } else {
     if (overwrite) {
@@ -112,7 +121,6 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
       time = time,
       data_esm
     )
-    # mislabeled time intervals
     data$time <- 0:(length(time) - 1)
     data <- dynUtils::InsertNA(
       data = data,
@@ -212,7 +220,7 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
       noise = dynr_noise,
       outfile = file.path(
         tempdir(),
-        "empirical-ct-mislabeled-dynr.c"
+        "empirical-ct-dynr.c"
       )
     )
     model@options$maxeval <- 100000

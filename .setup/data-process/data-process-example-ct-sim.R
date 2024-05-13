@@ -326,7 +326,18 @@ data_process_example_ct_sim <- function(overwrite = FALSE,
       )
       vcov_phi_vec <- vcov(fit)[varnames, varnames]
       library(cTMed)
-      delta_t <- seq(from = 0, to = 10, length.out = 1000)
+      delta_t <- sort(
+        unique(
+          c(
+            0:10,
+            seq(
+              from = 0,
+              to = 10,
+              length.out = 1000
+            )
+          )
+        )
+      )
       xmy <- as.data.frame(
         summary(
           Med(
@@ -383,4 +394,6 @@ data_process_example_ct_sim <- function(overwrite = FALSE,
 }
 data_process_example_ct_sim(n = 100)
 data_process_example_ct_sim(n = 200)
+data_process_example_ct_sim(n = 500)
+data_process_example_ct_sim(n = 1000)
 rm(data_process_example_ct_sim)

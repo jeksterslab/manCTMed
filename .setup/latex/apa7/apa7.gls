@@ -1,0 +1,81 @@
+
+ \begin{theglossary} 
+
+    \makeatletter\scan@allowedfalse
+
+  \item v1.00\efill 
+ \subitem General:\ Initial release\pfill \hdpindex{}{1}
+  \item v1.01\efill 
+ \subitem General:\ Clarified that apacite and natbib are in 6th edition style.\pfill 
+		\hdpindex{}{1}
+      \subsubitem Corrected figure caption styles for doc format.\pfill 
+		\hdpindex{}{1}
+  \item v1.02\efill 
+ \subitem General:\ Fixed filename issue with language localization files.\pfill 
+		\hdpindex{}{1}
+  \item v1.03\efill 
+ \subitem General:\ Updated class to detect babel package in document and localize accordingly.\pfill 
+		\hdpindex{}{1}
+  \item v1.04\efill 
+ \subitem General:\ Added table of contents. Updated documentation and added correct license statement to cls for apa6 package.\pfill 
+		\hdpindex{}{1}
+  \item v1.05\efill 
+ \subitem General:\ Fixed float placement at end for man and stu mode to ensure one correctly placed figure/table per page. Thanks WC.\pfill 
+		\hdpindex{}{1}
+  \item v1.06\efill 
+ \subitem General:\ Added figurenote command.\pfill \hdpindex{}{1}
+  \item v1.07\efill 
+ \subitem General:\ Fixed bug in figurenote command. Fixed figure title formatting in doc mode. Thanks RH.\pfill 
+		\hdpindex{}{1}
+  \item v1.08\efill 
+ \subitem General:\ Added support for optional running head (shorttitle) in stu mode.\pfill 
+		\hdpindex{}{1}
+  \item v1.09\efill 
+ \subitem General:\ Fixed note command (will no longer print "Author Note" header).\pfill 
+		\hdpindex{}{1}
+  \item v2.01\efill 
+ \subitem General:\ Re-wrote author and affiliation to be APA7 compliant. Fixed spacing on Title Page for title and author. \pfill 
+		\hdpindex{}{1}
+  \item v2.02\efill 
+ \subitem General:\ Added the "and" in multiple author list to localization files. \pfill 
+		\hdpindex{}{1}
+  \item v2.03\efill 
+ \subitem General:\ Added French localization. \pfill \hdpindex{}{1}
+  \item v2.04\efill 
+ \subitem General:\ Updated ORCID link style for jou mode. \pfill \hdpindex{}{1}
+  \item v2.05\efill 
+ \subitem General:\ Fixed a bug with the noextraspace option and added donotrepeattitle option to the documentation. \pfill 
+		\hdpindex{}{1}
+  \item v2.06\efill 
+ \subitem General:\ Added tablenote command. Added "Note." for table/figure notes to localization files. \pfill 
+		\hdpindex{}{1}
+  \item v2.07\efill 
+ \subitem General:\ Extended mask command to also mask in stu mode. \pfill \hdpindex{}{1}
+  \item v2.08\efill 
+ \subitem General:\ Updated BibLaTex to allow overriding bibliography title. \pfill 
+		\hdpindex{}{1}
+  \item v2.09\efill 
+ \subitem General:\ Updated APA7endfloat.cfg file to use more modern DeclareDelayedFloatFlavor. This fixes the bug where longtable can be shown on the same page as another table. \pfill 
+		\hdpindex{}{1}
+  \item v2.10\efill 
+ \subitem General:\ Update BibLaTex instructions to remove DeclareLanguageMapping and remove commands that are no longer required. \pfill 
+		\hdpindex{}{1}
+  \item v2.11\efill 
+ \subitem General:\ Updated linebreaks in caption separators to prevent warning. \pfill 
+		\hdpindex{}{1}
+  \item v2.12\efill 
+ \subitem General:\ Reset equation counter for every appendix (like for figures and tables). Thanks mmrabe. \pfill 
+		\hdpindex{}{1}
+  \item v2.13\efill 
+ \subitem General:\ Fix headers for jou style when journal command is provided. \pfill 
+		\hdpindex{}{1}
+  \item v2.14\efill 
+ \subitem General:\ Added Spanish localization. Fixed compatibility with Version 4.0 of flushend.sty. Clarify installation in readme. \pfill 
+		\hdpindex{}{1}
+  \item v2.15\efill 
+ \subitem General:\ Spacing updated to more closely match APA 7th Edition Manual.\pfill 
+		\hdpindex{}{1}
+  \item v2.16\efill 
+ \subitem General:\ Add Hungarian localization.\pfill \hdpindex{}{1}
+
+ \end{theglossary}

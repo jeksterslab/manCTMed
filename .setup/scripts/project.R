@@ -32,12 +32,14 @@ pkg_github_ref <- c()
 
 pkg_ver <- c(
   "simStateSpace",
-  "MASS"
+  "MASS",
+  "ctsem"
 )
 
 ver <- c(
   "1.2.0",
-  "7.3-60.2"
+  "7.3-60.2",
+  "3.10.0"
 )
 
 # dynr has to be installed on the container used to build this repo

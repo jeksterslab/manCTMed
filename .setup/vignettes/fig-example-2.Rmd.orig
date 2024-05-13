@@ -8,6 +8,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+This vignette accompanies Hypothetical Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+
 ```{r}
 #| include = FALSE
 knitr::opts_chunk$set(
@@ -26,7 +28,7 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 500
+n <- 1000
 fit <- readRDS(
   root$find_file(
     ".setup",
@@ -54,11 +56,15 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
+The object `fit` contains the fitted `dynr` model.
+
 ```{r}
 summary(fit)
 ```
 
 ## Extract Elements of the Drift Matrix
+
+We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 ```{r}
 varnames <- c(
@@ -86,7 +92,7 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-Here we use time-intervals 1, 2, and 3.
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
 DeltaMed(
@@ -100,6 +106,8 @@ DeltaMed(
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
 MCMed(

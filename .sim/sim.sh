@@ -27,7 +27,7 @@ cd /scratch/ibp5092/manCTMed
 parallel                                                               \
         --tmpdir "$PARALLEL_TMP_FOLDER"                                \
         'apptainer exec                                                \
-        /scratch/ibp5092/manCTMed/.sim/manctmed.sif                    \
+        /scratch/ibp5092/manCTMed/.sif/manctmed.sif                    \
         Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} {2};          \
         echo sim taskid $(printf "%05d" 1) repid $(printf "%05d" {1})' \
         ::: $(seq 1 1000)                                              \

@@ -27,7 +27,16 @@ data_process_empirical_ct <- function(overwrite = FALSE) {
       recursive = TRUE
     )
   }
-  if (!file.exists(fit_empirical_ct)) {
+  if (
+    !all(
+      file.exists(
+        c(
+          fit_empirical_ct,
+          fit_empirical_ct_summary
+        )
+      )
+    )
+  ) {
     write <- TRUE
   } else {
     if (overwrite) {

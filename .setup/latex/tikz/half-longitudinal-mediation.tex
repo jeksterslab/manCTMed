@@ -79,9 +79,9 @@
     \node[inv] (inv) [right = of X] {};
 	\node[manifest] (M) [below = of inv] {$M_{t + 1}$};
 	\node[manifest] (Y) [above = of inv] {$Y_{t + 1}$};
-	\draw[path, color = indirect] (M) to node {} (Y);
+	\draw[path, color = indirect] (M) to node {$\beta$} (Y);
 	\draw[dot, color = direct] (X) to node {} (Y);
-	\draw[path, color = indirect] (X) to node {} (M);
+	\draw[path, color = indirect] (X) to node {$\alpha$} (M);
 \end{tikzpicture}
 
 \end{document}

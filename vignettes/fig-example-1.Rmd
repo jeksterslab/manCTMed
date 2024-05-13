@@ -8,6 +8,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+This vignette accompanies Hypothetical Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+
 
 
 
@@ -22,38 +24,42 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
+The object `fit` contains the fitted `dynr` model.
+
 
 ```r
 summary(fit)
 #> Coefficients:
-#>            Estimate Std. Error t value   ci.lower   ci.upper Pr(>|t|)    
-#> phi_11   -0.0335015  0.0115834  -2.892 -0.0562045 -0.0107985  0.00192 ** 
-#> phi_12    0.0378995  0.0190828   1.986  0.0004979  0.0753011  0.02352 *  
-#> phi_13   -0.0132453  0.0170977  -0.775 -0.0467563  0.0202656  0.21927    
-#> phi_21   -0.1517373  0.0314688  -4.822 -0.2134150 -0.0900596  < 2e-16 ***
-#> phi_22   -0.5861297  0.0908420  -6.452 -0.7641768 -0.4080827  < 2e-16 ***
-#> phi_23    0.2282876  0.0585998   3.896  0.1134340  0.3431411    5e-05 ***
-#> phi_31   -0.1003889  0.0291247  -3.447 -0.1574722 -0.0433056  0.00028 ***
-#> phi_32    0.1040908  0.0551386   1.888 -0.0039789  0.2121605  0.02954 *  
-#> phi_33   -0.5118440  0.0752570  -6.801 -0.6593451 -0.3643429  < 2e-16 ***
-#> sigma_11  0.0579308  0.0119040   4.867  0.0345995  0.0812621  < 2e-16 ***
-#> sigma_12 -0.0086746  0.0154201  -0.563 -0.0388974  0.0215483  0.28688    
-#> sigma_13  0.0102638  0.0145734   0.704 -0.0182996  0.0388271  0.24063    
-#> sigma_22  0.7424345  0.1621833   4.578  0.4245610  1.0603081  < 2e-16 ***
-#> sigma_23  0.1011136  0.0425308   2.377  0.0177547  0.1844725  0.00872 ** 
-#> sigma_33  0.8388809  0.1509879   5.556  0.5429501  1.1348116  < 2e-16 ***
-#> theta_11  0.1054679  0.0086864  12.142  0.0884428  0.1224929  < 2e-16 ***
-#> theta_22  0.1752225  0.0508289   3.447  0.0755996  0.2748453  0.00028 ***
-#> theta_33  0.0815182  0.0474585   1.718 -0.0114988  0.1745351  0.04294 *  
+#>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
+#> phi_11   -0.033462   0.008195  -4.083 -0.049524 -0.017399    2e-05 ***
+#> phi_12    0.037927   0.013559   2.797  0.011352  0.064502  0.00258 ** 
+#> phi_13   -0.013249   0.012160  -1.090 -0.037083  0.010585  0.13796    
+#> phi_21   -0.151606   0.022253  -6.813 -0.195221 -0.107992  < 2e-16 ***
+#> phi_22   -0.585370   0.064079  -9.135 -0.710962 -0.459777  < 2e-16 ***
+#> phi_23    0.227932   0.041428   5.502  0.146735  0.309128  < 2e-16 ***
+#> phi_31   -0.100379   0.020593  -4.874 -0.140741 -0.060018  < 2e-16 ***
+#> phi_32    0.103791   0.039147   2.651  0.027065  0.180517  0.00401 ** 
+#> phi_33   -0.511093   0.053724  -9.513 -0.616390 -0.405796  < 2e-16 ***
+#> sigma_11  0.057973   0.008431   6.876  0.041448  0.074498  < 2e-16 ***
+#> sigma_12 -0.008697   0.010969  -0.793 -0.030197  0.012802  0.21393    
+#> sigma_13  0.010256   0.010404   0.986 -0.010134  0.030647  0.16211    
+#> sigma_22  0.741687   0.114262   6.491  0.517737  0.965637  < 2e-16 ***
+#> sigma_23  0.101495   0.030132   3.368  0.042438  0.160552  0.00038 ***
+#> sigma_33  0.838008   0.108025   7.758  0.626284  1.049733  < 2e-16 ***
+#> theta_11  0.105586   0.006152  17.163  0.093529  0.117644  < 2e-16 ***
+#> theta_22  0.175885   0.035841   4.907  0.105639  0.246132  < 2e-16 ***
+#> theta_33  0.082160   0.033989   2.417  0.015542  0.148777  0.00782 ** 
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> -2 log-likelihood value at convergence = 13453.10
-#> AIC = 13489.10
-#> BIC = 13626.78
+#> -2 log-likelihood value at convergence = 26917.91
+#> AIC = 26953.91
+#> BIC = 27104.06
 ```
 
 ## Extract Elements of the Drift Matrix
+
+We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 
 ```r
@@ -80,7 +86,9 @@ colnames(phi) <- rownames(phi) <- c(
 vcov_phi_vec <- vcov(fit)[varnames, varnames]
 ```
 
-## Direct, Indirect, and Total Effects of a Time-Interval of One
+## Direct, Indirect, and Total Effects of a Time Interval of One
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of one are given below.
 
 
 ```r
@@ -96,10 +104,12 @@ Med(
 #> Total, Direct, and Indirect Effects
 #> 
 #>      interval   total  direct indirect
-#> [1,]        1 -0.0828 -0.0772  -0.0057
+#> [1,]        1 -0.0828 -0.0772  -0.0056
 ```
 
-## Direct, Indirect, and Total Effects of a Time-Interval of Zero to Three
+## Direct, Indirect, and Total Effects of a Time Interval of Zero to Three
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 3 are plotted below.
 
 
 ```r

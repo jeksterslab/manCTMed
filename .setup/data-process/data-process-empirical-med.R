@@ -34,12 +34,29 @@ data_process_empirical_med <- function(overwrite = FALSE) {
     "data-raw",
     "ci-empirical.Rds"
   )
+  ci_beta_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    "ci-empirical-beta.Rds"
+  )
+  fit_empirical_ct_summary <- root$find_file(
+    ".setup",
+    "data-raw",
+    "fit-empirical-ct-summary.Rds"
+  )
+  empirical_table_coef <- root$find_file(
+    ".setup",
+    "data-raw",
+    "empirical-table-coef.Rds"
+  )
   if (
     !all(
       file.exists(
         c(
           med_file,
-          ci_file
+          ci_file,
+          ci_beta_file,
+          empirical_table_coef
         )
       )
     )
@@ -79,12 +96,47 @@ data_process_empirical_med <- function(overwrite = FALSE) {
     )
     vcov_phi_vec <- vcov(fit)[varnames, varnames]
     library(cTMed)
+    delta_t <- sort(
+      unique(
+        c(
+          0:15,
+          seq(
+            from = 0,
+            to = 15,
+            length.out = 1000
+          )
+        )
+      )
+    )
+    beta_delta <- summary(
+      DeltaBeta(
+        phi = phi,
+        vcov_phi_vec = vcov_phi_vec,
+        delta_t = delta_t,
+        ncores = parallel::detectCores()
+      )
+    )
+    beta_mc <- summary(
+      MCBeta(
+        phi = phi,
+        vcov_phi_vec = vcov_phi_vec,
+        delta_t = delta_t,
+        R = 20000L,
+        test_phi = TRUE,
+        ncores = parallel::detectCores(),
+        seed = 42
+      )
+    )
+    beta <- list(
+      delta = beta_delta,
+      mc = beta_mc
+    )
     med <- Med(
       phi = phi,
       from = "phy",
       to = "est",
       med = "neg",
-      delta_t = seq(from = 0, to = 15, length.out = 1000)
+      delta_t = delta_t
     )
     saveRDS(
       med,
@@ -97,7 +149,7 @@ data_process_empirical_med <- function(overwrite = FALSE) {
       from = "phy",
       to = "est",
       med = "neg",
-      delta_t = seq(from = 0, to = 15, length.out = 1000),
+      delta_t = delta_t,
       ncores = parallel::detectCores()
     )
     mc <- MCMed(
@@ -106,7 +158,7 @@ data_process_empirical_med <- function(overwrite = FALSE) {
       from = "phy",
       to = "est",
       med = "neg",
-      delta_t = seq(from = 0, to = 15, length.out = 1000),
+      delta_t = delta_t,
       ncores = parallel::detectCores(),
       R = 20000L,
       seed = 42
@@ -135,7 +187,7 @@ data_process_empirical_med <- function(overwrite = FALSE) {
     delta$effect <- effect
     rownames(delta) <- NULL
     delta$method <- "delta"
-    delta <- delta[, c("interval", "est", "ll", "ul", "effect", "method")]
+    delta <- delta[, c("interval", "est", "se", "ll", "ul", "effect", "method")]
     mc <- cTMed:::.MCCI(
       object = mc,
       alpha = 0.05
@@ -159,7 +211,7 @@ data_process_empirical_med <- function(overwrite = FALSE) {
     mc$effect <- effect
     rownames(mc) <- NULL
     mc$method <- "mc"
-    mc <- mc[, c("interval", "est", "ll", "ul", "effect", "method")]
+    mc <- mc[, c("interval", "est", "se", "ll", "ul", "effect", "method")]
     ci <- rbind(
       delta,
       mc
@@ -167,6 +219,60 @@ data_process_empirical_med <- function(overwrite = FALSE) {
     saveRDS(
       ci,
       file = ci_file,
+      compress = "xz"
+    )
+    saveRDS(
+      beta,
+      file = ci_beta_file,
+      compress = "xz"
+    )
+    # Table of coefficients
+    fit_summary <- readRDS(fit_empirical_ct_summary)$Coefficients
+    phi <- cbind(
+      est = fit_summary[varnames, "Estimate"],
+      se = fit_summary[varnames, "Std. Error"],
+      ll = fit_summary[varnames, "ci.lower"],
+      ul = fit_summary[varnames, "ci.upper"]
+    )
+    beta_delta <- beta_delta[
+      which(beta_delta[, "interval"] == 1),
+      c("est", "se", "2.5%", "97.5%")
+    ]
+    colnames(beta_delta) <- paste0(
+      "beta_delta_",
+      c("est", "se", "ll", "ul")
+    )
+    beta_mc <- beta_mc[
+      which(beta_mc[, "interval"] == 1),
+      c("est", "se", "2.5%", "97.5%")
+    ]
+    colnames(beta_mc) <- paste0(
+      "beta_mc_",
+      c("est", "se", "ll", "ul")
+    )
+    coefs <- cbind(
+      phi,
+      beta_delta,
+      beta_mc
+    )
+    coefs <- data.frame(
+      parameters = c(
+        "Negative affect to negative affect ($M \\to M$)", # 1 - 5
+        "Negative affect to self-esteem ($M \\to Y$)", # 2 - 6
+        "Negative affect to physical discomfort ($M \\to X$)", # 3 - 4
+        "Self-esteem to negative affect ($Y \\to M$)", # 4 - 8
+        "Self-esteem to self-esteem ($Y \\to Y$)", # 5 - 9
+        "Self-esteem to physical discomfort ($Y \\to X$)", # 6 - 7
+        "Physical discomfort to negative affect ($X \\to M$)", # 7 - 2
+        "Physical discomfort to self-esteem ($X \\to Y$)", # 8 - 3
+        "Physical discomfort to physical discomfort ($X \\to X$)" # 9 - 1
+      ),
+      coefs
+    )
+    coefs <- coefs[c(9, 7, 8, 3, 1, 2, 6, 4, 5), ]
+    saveRDS(
+      coefs,
+      file = empirical_table_coef,
       compress = "xz"
     )
   }

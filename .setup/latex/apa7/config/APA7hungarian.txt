@@ -29,11 +29,11 @@
 %% 
 \ProvidesFile{APA7hungarian.txt}[2022/07/25 v1.00 apa7 configuration for Hungarian - added by Robert Fodor]
 
-\renewcommand{\lastauthorseparator}{^^c3^^a9s}% and
-\renewcommand{\acksname}{Szerz^^c5^^91i megjegyz^^c3^^a9s}% Author Note
+\renewcommand{\lastauthorseparator}{és}% and
+\renewcommand{\acksname}{Szerzői megjegyzés}% Author Note
 \renewcommand{\keywordname}{Kulcsszavak}% Keywords
-\renewcommand{\notesname}{L^^c3^^a1bjegyzet}% Footnotes
-\renewcommand{\notelabel}{Megjegyz^^c3^^a9s}% Note
+\renewcommand{\notesname}{Lábjegyzet}% Footnotes
+\renewcommand{\notelabel}{Megjegyzés}% Note
 
 %% 
 %% Copyright (C) 2022 by Daniel A. Weiss <daniel.weiss.led at gmail.com>

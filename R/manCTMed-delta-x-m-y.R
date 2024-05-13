@@ -18,7 +18,6 @@
 #' }
 #' @family Confidence Interval Functions
 #' @keywords manCTMed ci
-#' @importFrom stats coef vcov
 #' @import dynr
 #' @import cTMed
 #' @export

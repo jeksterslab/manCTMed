@@ -32,7 +32,7 @@
 \renewcommand{\lastauthorseparator}{und}% and
 \renewcommand{\acksname}{Autorenhinweis}% Author Note
 \renewcommand{\keywordname}{Schl\"usselw\"orter}% Keywords
-\renewcommand{\notesname}{Fu^^c3^^9fnoten}% Footnotes
+\renewcommand{\notesname}{Fußnoten}% Footnotes
 \renewcommand{\notelabel}{Anmerkung}%Note
 
 %% 
