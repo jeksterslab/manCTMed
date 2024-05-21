@@ -1,14 +1,14 @@
 ---
-title: "Hypothetical Example 3 - Regions of Significance"
+title: "Illustrative Example 3 - Regions of Significance"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Hypothetical Example 3 - Regions of Significance}
+  %\VignetteIndexEntry{Illustrative Example 3 - Regions of Significance}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Hypothetical Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+This vignette accompanies Illustrative Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
 
 
 
@@ -17,7 +17,7 @@ This vignette accompanies Hypothetical Example 3. The goal of the example is to 
 
 
 
-```r
+``` r
 library(dynr)
 library(cTMed)
 ```
@@ -27,7 +27,7 @@ library(cTMed)
 The object `fit` contains the fitted `dynr` model.
 
 
-```r
+``` r
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
@@ -62,7 +62,7 @@ summary(fit)
 We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 
-```r
+``` r
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -91,7 +91,7 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 
-```r
+``` r
 delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
@@ -110,7 +110,7 @@ plot(delta)
 Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 
-```r
+``` r
 mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,

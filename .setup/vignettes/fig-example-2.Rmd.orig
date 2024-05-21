@@ -1,14 +1,14 @@
 ---
-title: "Hypothetical Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects"
+title: "Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Hypothetical Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
+  %\VignetteIndexEntry{Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Hypothetical Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+This vignette accompanies Illustrative Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed` and `MCMed` functions from the `cTMed` package.
 
 ```{r}
 #| include = FALSE

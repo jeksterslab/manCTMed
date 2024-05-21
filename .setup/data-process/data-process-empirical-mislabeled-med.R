@@ -4,8 +4,15 @@ data_process_empirical_mislabeled_med <- function(overwrite = FALSE) {
   # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(
-    "data"
+    ".setup",
+    "data-raw"
   )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
   source(
     root$find_file(
       ".setup",
@@ -18,12 +25,6 @@ data_process_empirical_mislabeled_med <- function(overwrite = FALSE) {
     "data-raw",
     "fit-empirical-ct-mislabeled.Rds"
   )
-  if (!dir.exists(data_folder)) {
-    dir.create(
-      data_folder,
-      recursive = TRUE
-    )
-  }
   med_file <- root$find_file(
     ".setup",
     "data-raw",

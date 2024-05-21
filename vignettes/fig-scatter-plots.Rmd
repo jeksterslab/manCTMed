@@ -11,7 +11,7 @@ vignette: >
 
 
 
-```r
+``` r
 library(manCTMed)
 ```
 
@@ -30,7 +30,7 @@ Total, direct, and indirect effects for the drift matrix
 \end{equation}
 
 
-```r
+``` r
 FigPlotEffects()
 ```
 
@@ -41,7 +41,7 @@ FigPlotEffects()
 Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \to \eta_X$ model.
 
 
-```r
+``` r
 data(results, package = "manCTMed")
 ```
 

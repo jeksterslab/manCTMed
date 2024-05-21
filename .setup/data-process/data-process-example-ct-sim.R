@@ -2,12 +2,17 @@ data_process_example_ct_sim <- function(overwrite = FALSE,
                                         n) {
   cat("\ndata_process_example_ct_sim\n")
   set.seed(42)
-  # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(
     ".setup",
     "data-raw"
   )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
   fit_example_ct_sim <- root$find_file(
     ".setup",
     "data-raw",
@@ -26,12 +31,6 @@ data_process_example_ct_sim <- function(overwrite = FALSE,
       ".Rds"
     )
   )
-  if (!dir.exists(data_folder)) {
-    dir.create(
-      data_folder,
-      recursive = TRUE
-    )
-  }
   if (!file.exists(fit_example_ct_sim)) {
     write <- TRUE
   } else {

@@ -61,6 +61,7 @@ articles:
 - title: Empirical Example
   contents:
   - fig-empirical
+  - fig-empirical-plot
   - fig-empirical-mislabeled
 - title: Containers
   contents:

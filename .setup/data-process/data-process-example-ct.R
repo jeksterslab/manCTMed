@@ -8,6 +8,12 @@ data_process_example_ct <- function(overwrite = FALSE,
     ".setup",
     "data-raw"
   )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
   fit_example_ct <- root$find_file(
     ".setup",
     "data-raw",
@@ -26,12 +32,6 @@ data_process_example_ct <- function(overwrite = FALSE,
       ".Rds"
     )
   )
-  if (!dir.exists(data_folder)) {
-    dir.create(
-      data_folder,
-      recursive = TRUE
-    )
-  }
   if (!file.exists(fit_example_ct)) {
     write <- TRUE
   } else {

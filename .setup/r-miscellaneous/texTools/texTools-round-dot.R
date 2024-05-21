@@ -1,0 +1,24 @@
+#' Round to Specified Number of Digits
+#'
+#' @author Ivan Jacob Agaloos Pesigan
+#'
+#' @returns Returns a character string.
+#'
+#' @param x Numeric vector.
+#' @param digits Digits for numeric values.
+#'
+#' @family Rounding Functions
+#' @keywords texTools round internal
+#' @noRd
+.Round <- function(x,
+                   digits = 2) {
+  return(
+    format(
+      x = round(
+        x = x,
+        digits = digits
+      ),
+      nsmall = digits
+    )
+  )
+}

@@ -1,14 +1,14 @@
 ---
-title: "Hypothetical Example 1 - Direct, Indirect, and Total Effects"
+title: "Illustrative Example 1 - Direct, Indirect, and Total Effects"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Hypothetical Example 1 - Direct, Indirect, and Total Effects}
+  %\VignetteIndexEntry{Illustrative Example 1 - Direct, Indirect, and Total Effects}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Hypothetical Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
 
 ```{r}
 #| include = FALSE

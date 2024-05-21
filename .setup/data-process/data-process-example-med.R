@@ -8,6 +8,12 @@ data_process_example_med <- function(overwrite = FALSE,
     ".setup",
     "data-raw"
   )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
   fit_example_ct <- root$find_file(
     ".setup",
     "data-raw",
@@ -24,12 +30,6 @@ data_process_example_med <- function(overwrite = FALSE,
       "data-process-example-ct.R"
     )
   )
-  if (!dir.exists(data_folder)) {
-    dir.create(
-      data_folder,
-      recursive = TRUE
-    )
-  }
   med_xmy_file <- root$find_file(
     ".setup",
     "data-raw",

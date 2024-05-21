@@ -4,8 +4,15 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
   # find root directory
   root <- rprojroot::is_rstudio_project
   data_folder <- root$find_file(
-    "data"
+    ".setup",
+    "data-raw"
   )
+  if (!dir.exists(data_folder)) {
+    dir.create(
+      data_folder,
+      recursive = TRUE
+    )
+  }
   data_empirical_ct_mislabeled <- root$find_file(
     ".setup",
     "data-raw",
@@ -21,12 +28,6 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
     "data-raw",
     "fit-empirical-ct-mislabeled-summary.Rds"
   )
-  if (!dir.exists(data_folder)) {
-    dir.create(
-      data_folder,
-      recursive = TRUE
-    )
-  }
   if (
     !all(
       file.exists(
@@ -202,7 +203,7 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
         nrow = n_latent
       ),
       values.observed = matrix(
-        0,
+        data = 0,
         nrow = n_manifest,
         ncol = n_manifest
       ),
@@ -261,16 +262,22 @@ data_process_empirical_ct_mislabeled <- function(overwrite = FALSE) {
     ] <- .Machine$double.xmin
     model$lb <- lb
     model$ub <- ub
+    old <- Sys.time()
     fit <- dynr::dynr.cook(
       model,
       verbose = FALSE
     )
+    new <- Sys.time()
+    print(new - old)
     print(summary(fit))
     coef(model) <- coef(fit)
+    old <- Sys.time()
     fit <- dynr::dynr.cook(
       model,
       verbose = FALSE
     )
+    new <- Sys.time()
+    print(new - old)
     print(summary(fit))
     saveRDS(
       fit,

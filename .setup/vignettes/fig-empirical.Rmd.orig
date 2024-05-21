@@ -275,7 +275,7 @@ dynr_noise <- dynr::prep.noise(
     nrow = n_latent
   ),
   values.observed = matrix(
-    0,
+    data = 0,
     nrow = n_manifest,
     ncol = n_manifest
   ),

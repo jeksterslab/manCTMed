@@ -1,14 +1,14 @@
 ---
-title: "Hypothetical Example 3 - Regions of Significance"
+title: "Illustrative Example 3 - Regions of Significance"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Hypothetical Example 3 - Regions of Significance}
+  %\VignetteIndexEntry{Illustrative Example 3 - Regions of Significance}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Hypothetical Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+This vignette accompanies Illustrative Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
 
 ```{r}
 #| include = FALSE

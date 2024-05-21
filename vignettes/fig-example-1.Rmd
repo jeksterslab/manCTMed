@@ -1,14 +1,14 @@
 ---
-title: "Hypothetical Example 1 - Direct, Indirect, and Total Effects"
+title: "Illustrative Example 1 - Direct, Indirect, and Total Effects"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Hypothetical Example 1 - Direct, Indirect, and Total Effects}
+  %\VignetteIndexEntry{Illustrative Example 1 - Direct, Indirect, and Total Effects}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Hypothetical Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
 
 
 
@@ -17,7 +17,7 @@ This vignette accompanies Hypothetical Example 1. The goal of the example is to 
 
 
 
-```r
+``` r
 library(dynr)
 library(cTMed)
 ```
@@ -27,7 +27,7 @@ library(cTMed)
 The object `fit` contains the fitted `dynr` model.
 
 
-```r
+``` r
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
@@ -62,7 +62,7 @@ summary(fit)
 We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 
-```r
+``` r
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -91,7 +91,7 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of one are given below.
 
 
-```r
+``` r
 library(cTMed)
 Med(
   phi = phi,
@@ -112,7 +112,7 @@ Med(
 Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 3 are plotted below.
 
 
-```r
+``` r
 med <- Med(
   phi = phi,
   from = "conflict",

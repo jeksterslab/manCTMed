@@ -25,19 +25,20 @@ pkg_cran <- c(
 
 pkg_github <- c(
   "jeksterslab/cTMed",
-  "jeksterslab/dynUtils"
+  "jeksterslab/dynUtils",
+  "jeksterslab/simStateSpace"
 )
 
 pkg_github_ref <- c()
 
 pkg_ver <- c(
-  "simStateSpace",
+  # "simStateSpace",
   "MASS",
   "ctsem"
 )
 
 ver <- c(
-  "1.2.0",
+  # "1.2.0",
   "7.3-60.2",
   "3.10.0"
 )

@@ -11,14 +11,14 @@ vignette: >
 
 
 
-```r
+``` r
 library(manCTMed)
 ```
 
 ## Data Generation
 
 
-```r
+``` r
 set.seed(42)
 sim <- GenData(n = 50)
 plot(sim)
@@ -26,7 +26,7 @@ plot(sim)
 
 <img src="fig-vignettes-replication-unnamed-chunk-3-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-3-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-3-3.png" width="3300" />
 
-```r
+``` r
 data <- RandomMeasurement(sim)
 str(data)
 #> 'data.frame':	9000 obs. of  5 variables:
@@ -40,7 +40,7 @@ str(data)
 ## Model Fitting
 
 
-```r
+``` r
 fit <- FitDynr(data)
 #> [1] "Get ready!!!!"
 #> using C compiler: ‘gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
@@ -64,8 +64,11 @@ fit <- FitDynr(data)
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 9.060393 
-#> Backend Time: 9.04953
+#> Total Time: 8.990788 
+#> Backend Time: 8.979314
+```
+
+``` r
 summary(fit)
 #> Coefficients:
 #>            Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
@@ -102,6 +105,9 @@ summary(fit)
 #> -2 log-likelihood value at convergence = 21149.28
 #> AIC = 21203.28
 #> BIC = 21395.12
+```
+
+``` r
 phi_hat <- PhiHat(fit)
 ```
 
@@ -112,7 +118,7 @@ phi_hat <- PhiHat(fit)
 #### Delta Method
 
 
-```r
+``` r
 delta <- DeltaXMY(phi_hat)
 plot(delta)
 ```
@@ -122,7 +128,7 @@ plot(delta)
 #### Monte Carlo Method
 
 
-```r
+``` r
 mc <- MCXMY(phi_hat, seed = 42)
 plot(mc)
 ```
@@ -134,7 +140,7 @@ plot(mc)
 #### Delta Method
 
 
-```r
+``` r
 delta <- DeltaYMX(phi_hat)
 plot(delta)
 ```
@@ -144,7 +150,7 @@ plot(delta)
 #### Monte Carlo Method
 
 
-```r
+``` r
 mc <- MCYMX(phi_hat, seed = 42)
 plot(mc)
 ```

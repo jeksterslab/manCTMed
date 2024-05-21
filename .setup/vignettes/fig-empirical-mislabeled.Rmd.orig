@@ -125,11 +125,6 @@ Code to fit the CT-VAR model in the `dynr` package.
 </summary>
 ```r
 rawdata <- read.csv("ESMdata.csv")
-rawdata <- read.csv(
-  data_empirical_ct_mislabeled,
-  header = TRUE,
-  stringsAsFactors = FALSE
-)
 # reverse
 rawdata$pat_concent <- 8 - rawdata$pat_concent
 rawdata$se_ashamed <- 8 - rawdata$se_ashamed
@@ -281,7 +276,7 @@ dynr_noise <- dynr::prep.noise(
     nrow = n_latent
   ),
   values.observed = matrix(
-    0,
+    data = 0,
     nrow = n_manifest,
     ncol = n_manifest
   ),

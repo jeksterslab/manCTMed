@@ -17,7 +17,7 @@ This vignette accompanies the Empirical Example. The goal of the example is to v
 
 
 
-```r
+``` r
 library(dynr)
 library(cTMed)
 ```
@@ -27,7 +27,7 @@ library(cTMed)
 The object `fit` contains the fitted `dynr` model.
 
 
-```r
+``` r
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
@@ -59,7 +59,7 @@ summary(fit)
 We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
 
 
-```r
+``` r
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -88,7 +88,7 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 
-```r
+``` r
 delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
@@ -107,7 +107,7 @@ plot(delta)
 Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 
-```r
+``` r
 mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
@@ -279,7 +279,7 @@ dynr_noise <- dynr::prep.noise(
     nrow = n_latent
   ),
   values.observed = matrix(
-    0,
+    data = 0,
     nrow = n_manifest,
     ncol = n_manifest
   ),
