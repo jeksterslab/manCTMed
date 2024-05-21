@@ -4,6 +4,7 @@ pkgdown_sha: ~
 articles:
   containers: containers.html
   fig-empirical-mislabeled: fig-empirical-mislabeled.html
+  fig-empirical-plot: fig-empirical-plot.html
   fig-empirical: fig-empirical.html
   fig-example-1: fig-example-1.html
   fig-example-2: fig-example-2.html
@@ -14,7 +15,7 @@ articles:
   replication: replication.html
   results: results.html
   session: session/session.html
-last_built: 2024-05-13T14:59Z
+last_built: 2024-05-21T16:52Z
 urls:
   reference: https://github.com/jeksterslab/manCTMed/reference
   article: https://github.com/jeksterslab/manCTMed/articles

@@ -213,11 +213,6 @@ intervals used.</p>
 Code to fit the CT-VAR model in the <code>dynr</code> package.
 </summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rawdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"ESMdata.csv"</span><span class="op">)</span></span>
-<span><span class="va">rawdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span></span>
-<span>  <span class="va">data_empirical_ct_mislabeled</span>,</span>
-<span>  header <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  stringsAsFactors <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span>
 <span><span class="co"># reverse</span></span>
 <span><span class="va">rawdata</span><span class="op">$</span><span class="va">pat_concent</span> <span class="op">&lt;-</span> <span class="fl">8</span> <span class="op">-</span> <span class="va">rawdata</span><span class="op">$</span><span class="va">pat_concent</span></span>
 <span><span class="va">rawdata</span><span class="op">$</span><span class="va">se_ashamed</span> <span class="op">&lt;-</span> <span class="fl">8</span> <span class="op">-</span> <span class="va">rawdata</span><span class="op">$</span><span class="va">se_ashamed</span></span>
@@ -369,7 +364,7 @@ Code to fit the CT-VAR model in the <code>dynr</code> package.
 <span>    nrow <span class="op">=</span> <span class="va">n_latent</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  values.observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>    <span class="fl">0</span>,</span>
+<span>    data <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>    nrow <span class="op">=</span> <span class="va">n_manifest</span>,</span>
 <span>    ncol <span class="op">=</span> <span class="va">n_manifest</span></span>
 <span>  <span class="op">)</span>,</span>

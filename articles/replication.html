@@ -132,9 +132,10 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Doing end processing</span></span>
 <span><span class="co">#&gt; Successful trial</span></span>
-<span><span class="co">#&gt; Total Time: 9.060393 </span></span>
-<span><span class="co">#&gt; Backend Time: 9.04953</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Total Time: 8.990788 </span></span>
+<span><span class="co">#&gt; Backend Time: 8.979314</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt;            Estimate Std. Error t value  ci.lower  ci.upper Pr(&gt;|t|)    </span></span>
 <span><span class="co">#&gt; phi_11    -0.464665   0.091836  -5.060 -0.644661 -0.284670   &lt;2e-16 ***</span></span>
@@ -169,8 +170,9 @@ Agaloos Pesigan</h4>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; -2 log-likelihood value at convergence = 21149.28</span></span>
 <span><span class="co">#&gt; AIC = 21203.28</span></span>
-<span><span class="co">#&gt; BIC = 21395.12</span></span>
-<span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/PhiHat.html">PhiHat</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; BIC = 21395.12</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/PhiHat.html">PhiHat</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="confidence-intervals">Confidence Intervals<a class="anchor" aria-label="anchor" href="#confidence-intervals"></a>
@@ -182,7 +184,7 @@ Agaloos Pesigan</h4>
 <div class="section level4">
 <h4 id="delta-method">Delta Method<a class="anchor" aria-label="anchor" href="#delta-method"></a>
 </h4>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">delta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DeltaXMY.html">DeltaXMY</a></span><span class="op">(</span><span class="va">phi_hat</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-replication-unnamed-chunk-5-1.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-5-2.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-5-3.png" width="3300"></p>
@@ -190,7 +192,7 @@ Agaloos Pesigan</h4>
 <div class="section level4">
 <h4 id="monte-carlo-method">Monte Carlo Method<a class="anchor" aria-label="anchor" href="#monte-carlo-method"></a>
 </h4>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MCXMY.html">MCXMY</a></span><span class="op">(</span><span class="va">phi_hat</span>, seed <span class="op">=</span> <span class="fl">42</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-replication-unnamed-chunk-6-1.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-6-2.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-6-3.png" width="3300"></p>
@@ -203,7 +205,7 @@ Agaloos Pesigan</h4>
 <div class="section level4">
 <h4 id="delta-method-1">Delta Method<a class="anchor" aria-label="anchor" href="#delta-method-1"></a>
 </h4>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">delta</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/DeltaYMX.html">DeltaYMX</a></span><span class="op">(</span><span class="va">phi_hat</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-replication-unnamed-chunk-7-1.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-7-2.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-7-3.png" width="3300"></p>
@@ -211,7 +213,7 @@ Agaloos Pesigan</h4>
 <div class="section level4">
 <h4 id="monte-carlo-method-1">Monte Carlo Method<a class="anchor" aria-label="anchor" href="#monte-carlo-method-1"></a>
 </h4>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/MCYMX.html">MCYMX</a></span><span class="op">(</span><span class="va">phi_hat</span>, seed <span class="op">=</span> <span class="fl">42</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-replication-unnamed-chunk-8-1.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-8-2.png" width="3300"><img src="fig-vignettes-replication-unnamed-chunk-8-3.png" width="3300"></p>
