@@ -9,7 +9,6 @@
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{changes}
-\usepackage{tabularx}
 
 \setlength {\marginparwidth }{2cm} 
 \usepackage{todonotes}
@@ -150,7 +149,7 @@ The data and materials for this study are available on OSF (\url{https://osf.io/
 
 \subsection{cTMed R Package}
 
-Source code and documentation for the \texttt{cTMed} \texttt{R} package is available on GitHub (\url{https://github.com/jeksterslab/cTMed}, \url{https://jeksterslab.github.io/cTMed/index.html}).
+Source code and documentation for the \texttt{cTMed} \texttt{R} package are available on GitHub (\url{https://github.com/jeksterslab/cTMed}, \url{https://jeksterslab.github.io/cTMed/index.html}).
 
 \subsection{Illustrative Example 1}
 

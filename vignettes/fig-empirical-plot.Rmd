@@ -238,10 +238,7 @@ x <- Trajectory(
   phi = phi,
   med = "Negative affect"
 )
-#> Error in Trajectory(mu0 = c(3, 3, -3), time = 50, phi = phi, med = "Negative affect"): could not find function "Trajectory"
+plot(x)
 ```
 
-``` r
-plot(x)
-#> Error in eval(expr, envir, enclos): object 'x' not found
-```
+<img src="fig-vignettes-empirical-plot-trajectory-1.png" width="1700" /><img src="fig-vignettes-empirical-plot-trajectory-2.png" width="1700" /><img src="fig-vignettes-empirical-plot-trajectory-3.png" width="1700" />
