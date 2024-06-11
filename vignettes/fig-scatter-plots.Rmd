@@ -34,7 +34,7 @@ Total, direct, and indirect effects for the drift matrix
 FigPlotEffects()
 ```
 
-<img src="fig-vignettes-scatter-plots-effects-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-effects-1.png" width="1700" />
 
 ## Evaluation of Confidence Intervals
 

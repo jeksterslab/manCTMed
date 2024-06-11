@@ -26,7 +26,7 @@ To build the Apptainer/Singularity image file (`manctmed.sif`),
 run the following.
 
 ```bash
-apptainer pull docker://ijapesigan/manctmed:latest
+apptainer pull manctmed.sif docker://ijapesigan/manctmed:latest
 ```
 
 > **NOTE**: For complete reproducibility of the software stack, the actual `manctmed.sif` used in the simulations can be requested from the maintainer of this GitHub repository.

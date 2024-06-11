@@ -226,9 +226,46 @@ plot(y_phi_direct)
 
 <img src="fig-vignettes-empirical-plot-unnamed-chunk-14-1.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-14-2.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-14-3.png" width="1700" />
 
+### Using the Modified Drift Matrix (`indirect`)
+
+We modify the drift matrix by getting the difference between `phi` and `phi_direct`. We add back the diagonal elements to the matrix to ensure stability.
+
+
+``` r
+phi_indirect <- phi - phi_direct
+diag(phi_indirect) <- diag(phi)
+phi_indirect
+#>                     Physical discomfort Negative affect Self-esteem
+#> Physical discomfort          -0.8982366      0.04100777   0.0000000
+#> Negative affect              -0.1545879     -0.68228879  -0.2308814
+#> Self-esteem                   0.0000000     -0.25594788  -0.8298912
+```
+
+We use `phi_indirect` to generate data.
+
+
+``` r
+y_phi_indirect <- SimSSMOUFixed(
+  n = 1,
+  time = 100,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = null_mat,
+  mu = null_vec,
+  phi = phi_indirect,
+  sigma_l = null_mat,
+  nu = null_vec,
+  lambda = iden_mat,
+  theta_l = null_mat
+)
+plot(y_phi_indirect)
+```
+
+<img src="fig-vignettes-empirical-plot-unnamed-chunk-16-1.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-16-2.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-16-3.png" width="1700" />
+
 ## Combine the plots
 
-The `Trajectory` function and the `plot` method in the `cTMed` package automates the process described earlier and combines the plots for easier interpretation. The argument `mu0` can be used to modify the initial condition. Note that `Total` corresponds to the plots for `phi` and `Direct` corresponds to the plots for `phi_direct`.
+The `Trajectory` function and the `plot` method in the `cTMed` package automates the process described earlier and combines the plots for easier interpretation. The argument `mu0` can be used to modify the initial condition. Note that `Total` corresponds to the plots for `phi`, `Direct` corresponds to the plots for `phi_direct`, and `Indirect` corresponds to the plots for `phi_indirect`.
 
 
 ``` r
@@ -241,4 +278,6 @@ x <- Trajectory(
 plot(x)
 ```
 
-<img src="fig-vignettes-empirical-plot-trajectory-1.png" width="1700" /><img src="fig-vignettes-empirical-plot-trajectory-2.png" width="1700" /><img src="fig-vignettes-empirical-plot-trajectory-3.png" width="1700" />
+<img src="fig-vignettes-empirical-plot-unnamed-chunk-17-1.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-17-2.png" width="1700" /><img src="fig-vignettes-empirical-plot-unnamed-chunk-17-3.png" width="1700" />
+
+

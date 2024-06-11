@@ -206,11 +206,40 @@ y_phi_direct <- SimSSMOUFixed(
 plot(y_phi_direct)
 ```
 
+### Using the Modified Drift Matrix (`indirect`)
+
+We modify the drift matrix by getting the difference between `phi` and `phi_direct`. We add back the diagonal elements to the matrix to ensure stability.
+
+```{r}
+phi_indirect <- phi - phi_direct
+diag(phi_indirect) <- diag(phi)
+phi_indirect
+```
+
+We use `phi_indirect` to generate data.
+
+```{r}
+y_phi_indirect <- SimSSMOUFixed(
+  n = 1,
+  time = 100,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = null_mat,
+  mu = null_vec,
+  phi = phi_indirect,
+  sigma_l = null_mat,
+  nu = null_vec,
+  lambda = iden_mat,
+  theta_l = null_mat
+)
+plot(y_phi_indirect)
+```
+
 ## Combine the plots
 
-The `Trajectory` function and the `plot` method in the `cTMed` package automates the process described earlier and combines the plots for easier interpretation. The argument `mu0` can be used to modify the initial condition. Note that `Total` corresponds to the plots for `phi` and `Direct` corresponds to the plots for `phi_direct`.
+The `Trajectory` function and the `plot` method in the `cTMed` package automates the process described earlier and combines the plots for easier interpretation. The argument `mu0` can be used to modify the initial condition. Note that `Total` corresponds to the plots for `phi`, `Direct` corresponds to the plots for `phi_direct`, and `Indirect` corresponds to the plots for `phi_indirect`.
 
-```{r, trajectory}
+```{r}
 x <- Trajectory(
   mu0 = c(3, 3, -3),
   time = 50,
@@ -218,4 +247,10 @@ x <- Trajectory(
   med = "Negative affect"
 )
 plot(x)
+```
+
+```{r, trajectory}
+#| include = FALSE,
+#| cache = FALSE
+plot(x, total = FALSE)
 ```

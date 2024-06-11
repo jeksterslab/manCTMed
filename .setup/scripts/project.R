@@ -17,33 +17,23 @@
 
 project <- "manCTMed"
 
+# installed using the container
+# "simStateSpace",
+# "dynr",
+# "cTMed",
+# "dynUtils"
+
 pkg_cran <- c(
-  "simStateSpace",
-  "dynr",
   "DT"
 )
 
-pkg_github <- c(
-  "jeksterslab/cTMed",
-  "jeksterslab/dynUtils",
-  "jeksterslab/simStateSpace"
-)
+pkg_github <- c()
 
 pkg_github_ref <- c()
 
-pkg_ver <- c(
-  # "simStateSpace",
-  "MASS",
-  "ctsem"
-)
+pkg_ver <- c()
 
-ver <- c(
-  # "1.2.0",
-  "7.3-60.2",
-  "3.10.0"
-)
-
-# dynr has to be installed on the container used to build this repo
+ver <- c()
 
 ignore <- "^vignettes$"
 

@@ -1,4 +1,4 @@
-\documentclass[man, 12 pt]{apa7}
+\documentclass[man]{apa7}
 
 \usepackage[american]{babel}
 \usepackage{amsmath}
@@ -8,26 +8,18 @@
 \usepackage{endnotes}
 \usepackage{setspace}
 \usepackage{booktabs}
-\usepackage{changes}
-
 \setlength {\marginparwidth }{2cm} 
-\usepackage{todonotes}
-
 \usepackage{subcaption}
-
 \usepackage[belowskip = 2pt, aboveskip = 2pt]{caption}
-
 \captionsetup{
     textfont = {it,normal},
     labelsep = newline,
     justification = raggedright,
     singlelinecheck = false
 }
-
 \captionsetup[subfigure]{
     size = footnotesize
 }
-
 \usepackage{rotating}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,34 +85,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% kbordermatrix
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%% begin.rcode
-% #| label = "kbordermatrix",
-% #| echo = FALSE,
-% #| message = FALSE,
-% #| warning = FALSE,
-% #| results = "asis"
-% cat(
-%   paste0(
-%     "\n",
-%     "\\usepackage{",
-%     root$find_file(
-%       ".setup",
-%       "latex",
-%       "sty",
-%       "kbordermatrix"
-%     ),
-%     "}",
-%     "\n"
-%   )
-% )
-% cat("\n\\renewcommand{\\kbldelim}{(}% Left delimiter")
-% cat("\n\\renewcommand{\\kbrdelim}{)}% Right delimiter")
-%% end.rcode
-
 \title{Standard Errors and Confidence Intervals for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models (Supplementary Materials)}
 \shorttitle{CI for CT Mediation}
 
@@ -181,9 +145,659 @@ Source code and documentation for the \texttt{cTMed} \texttt{R} package are avai
 
 \url{https://jeksterslab.github.io/manCTMed/articles/containers.html}
 
+\section{Tables}
+
+\listoftables
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-coef-1000.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for Data Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+		\label{tab:manCTMed-example-1}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package. These results are based on simulated data with $n = 1,000$.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-100.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_100 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-200.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_200 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-500.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_500 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-1000.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_1000 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{table*}
+	\begin{threeparttable}
+		\footnotesize
+		\caption{Point Estimates, SEs, and 95\% CIs of the Direct, Indirect, and Total Effects for Data Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+		\label{tab:manCTMed-example-2}
+		\begin{tabular}{@{}clccccccccc@{}}
+			\toprule
+			$\Delta t$            & Effect & Estimate & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ \\ \midrule
+			& & & \multicolumn{4}{c}{Delta} & \multicolumn{4}{c}{MC} \\
+			\cmidrule(lr){4-7}
+			\cmidrule(lr){8-11}
+			& & & \multicolumn{8}{c}{$n = 100$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_100} \midrule
+			& & & \multicolumn{8}{c}{$n = 200$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_200} \midrule
+			& & & \multicolumn{8}{c}{$n = 500$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_500} \midrule
+			& & & \multicolumn{8}{c}{$n = 1,000$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_1000} \midrule
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\scriptsize
+				\textit{Note.} Delta and MC SEs and CIs are calculated using the \texttt{DeltaMed} and \texttt{MCMed} functions from the \texttt{cTMed} package, respectively.
+								    
+				$^{\ast}$The symmetry of the CIs is assessed using the absolute value of $2.5\% - \mathrm{estimate} + 97.5\% - \mathrm{estimate}$. Values greater than zero indicate asymmetry.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_ci)
+%% end.rcode
+
 \section{Figures}
 
 \listoffigures
+
+\begin{figure*}
+	\caption{Cross-Sectional and Longitudinal Mediation Models}
+		
+	\begin{subfigure}{.5\textwidth}
+		\caption{Cross-sectional mediation model.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/cross-sectional-mediation.png}
+		\label{fig:manCTMed-cross-sectional-mediation}
+	\end{subfigure}%
+	~
+	\begin{subfigure}{.5\textwidth}
+		\caption{Three-wave longitudinal mediation model.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/longitudinal-mediation.png}
+		\label{fig:manCTMed-longitudinal-mediation}
+	\end{subfigure}
+		 
+	\begin{subfigure}{.5\textwidth}
+		\caption{Unidirectional DT-VAR.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/dt-var-mediation-unidirectional.png}
+		\label{fig:manCTMed-dt-var-mediation-unidirectional}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		\caption{Bidirectional DT-VAR.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/dt-var-mediation-bidirectional.png}
+		\label{fig:manCTMed-dt-var-mediation-bidirectional}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The indirect effect of $M$ on the path from $X$ to $Y$ is the product of $\alpha$ and $\beta$. For cross-sectional mediation (\ref{fig:manCTMed-cross-sectional-mediation}), variables are typically measured at the same time point. The three-wave longitudinal mediation is an improvement to cross-sectional mediation (\ref{fig:manCTMed-longitudinal-mediation}) where variables are measured at three distinct time points. Waves 1, 2, and 3 may or may not be equally spaced. DT-VAR mediation goes further by allowing variables to have effects on themselves. Here $t$, $t + 1$, and $t + 2$ typically represent equally spaced time points. The dots indicate that the model can accommodate more time points. We distinguish between the unidirectional model (\ref{fig:manCTMed-dt-var-mediation-unidirectional}), where paths from $M$ to $X$, $Y$ to $M$ and $Y$ to $X$ are constrained to zero and the bidirectional model (\ref{fig:manCTMed-dt-var-mediation-bidirectional}), where all paths from the previous time point to the current are estimated.
+	\label{fig::manCTMed-mediation}
+\end{figure*}
+
+\begin{figure*}
+	\caption{Decomposing the Direct and Indirect Effects from the Total Effect}
+	\begin{subfigure}{\textwidth}
+		\caption{DT-VAR with a time interval of one. The dashed path represents the total effect of $X$ on $Y$ at a time interval of three.}
+		\centering
+		\includegraphics[scale = .68]{.setup/latex/figures/png/dt-one-two-three-full.png}
+		\label{fig:manCTMed-beta-delta-3}
+	\end{subfigure}
+				
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{1, 1} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-11-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-11-31}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{1, 2} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-12-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-12-31}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{1, 3} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-13-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-13-31}
+	\end{subfigure}
+					
+	\medskip
+					
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{2, 1} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-21-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-21-32}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{2, 2} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-22-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-22-32}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{2, 3} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-23-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-23-32}
+	\end{subfigure}
+					
+	\medskip
+					
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{3, 1} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-31-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-31-33}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{3, 2} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-32-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-32-33}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{3, 3} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-33-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-33-33}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} Panel (\ref{fig:manCTMed-beta-delta-3}) represents the total effect of $\eta_X$ on $\eta_Y$ at a time interval of three is a function of the lagged parameters for a time interval of one. Panels (\ref{fig:manCTMed-beta-delta-3-full-11-11-31}) to (\ref{fig:manCTMed-beta-delta-3-full-31-33-33}) represent the decomposition of the total effect (dashed path in Panel \ref{fig:manCTMed-beta-delta-3}) into direct (dashed paths) and indirect (solid paths) effects.
+	\label{fig:manCTMed-beta-bidirectional}
+\end{figure*}
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-coef-1000.Rds"
+%   )
+% )
+% phi <- matrix(data = x[, 2], nrow = 3)
+% delta_t <- 3
+% total <- expm::expm(delta_t * phi)
+% dm <- matrix(
+%   data = c(1, 0, 0, 0, 0, 0, 0, 0, 1),
+%   nrow = 3
+% )
+% direct <- expm::expm(delta_t * (dm %*% phi %*% dm))
+% indirect <- total - direct
+% eq_phi <- .Array(
+%   x = phi,
+%   digits = 3
+% )
+% eq_total <- .Array(
+%   x = total,
+%   digits = 3
+% )
+% eq_dm <- .Array(
+%   x = dm,
+%   digits = 0
+% )
+% eq_direct <- .Array(
+%   x = direct,
+%   digits = 3
+% )
+% eq_indirect <- .Array(
+%   x = indirect,
+%   digits = 3
+% )
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(delta_t)
+% rm(phi)
+% rm(total)
+% rm(dm)
+% rm(direct)
+% rm(indirect)
+% rm(eq_phi)
+% rm(eq_total)
+% rm(eq_dm)
+% rm(eq_direct)
+% rm(eq_indirect)
+%% end.rcode
+
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-100-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-100-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-100-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-100-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-100-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-100-1.png}
+	\end{subfigure}
+		
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-200-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-200-1.png}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+	\label{fig:manCTMed-example-3-xmy-100-200}
+\end{figure*}
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-500-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-500-1.png}
+	\end{subfigure}
+		
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-1000-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-1000-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-1000-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-1000-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-1000-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-1000-1.png}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+	\label{fig:manCTMed-example-3-xmy-500-1000}
+\end{figure*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(interval)
+% rm(direct)
+% rm(indirect)
+% rm(total)
+% rm(x)
+% rm(table_parameters)
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% options(scipen = 999)
+% interval <- as.character(effects$xmy[, "interval"])
+% direct <- effects$xmy[, "direct"]
+% indirect <- effects$xmy[, "indirect"]
+% total <- effects$xmy[, "total"]
+% x <- data.frame(interval, direct, indirect, total)
+% table_parameters <- .Tabular(
+%   x = x,
+%   digits = 4
+% )
+%% end.rcode
+
+\begin{table*}
+	\begin{threeparttable}
+		\caption{Simulation Parameters}
+		\label{tab:simulation-parameters}
+		\begin{tabular}{@{}cccc@{}}
+			\toprule
+			$\Delta t$ & Direct Effect & Indirect Effect & Total Effect \\ \midrule
+			\rinline{table_parameters}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Sample sizes $n$ used include \rinline{params$n[-length(params$n)]}, and \rinline{params$n[length(params$n)]}.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(interval)
+% rm(direct)
+% rm(indirect)
+% rm(total)
+% rm(x)
+% rm(table_parameters)
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% k <- model$k
+% p <- model$p
+% mu0 <- model$mu0
+% sigma0 <- model$sigma0
+% mu <- model$mu
+% phi <- model$phi
+% sigma <- model$sigma
+% nu <- model$nu
+% lambda <- model$lambda
+% theta <- model$theta
+% # time
+% t1 <- 30
+% t2 <- 6
+% time <- t2 * t1
+% delta_t <- 1 / t1
+% # discrete-time var
+% beta_1 <- expm::expm(
+%   phi
+% )
+% alpha_1 <- rep(
+%   x = 0,
+%   times = k
+% )
+% psi_1 <- 0.10 * diag(p)
+% # sample
+% ns <- params$n
+% delta_ts <- 1:30
+% eq_beta_1 <- .Array(
+%   x = beta_1,
+%   digits = 2
+% )
+% eq_alpha_1 <- .Array(
+%   x = matrix(
+%     data = alpha_1,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_psi_1 <- .Array(
+%   x = psi_1,
+%   digits = 2
+% )
+% eq_phi <- .Array(
+%   x = phi,
+%   digits = 2
+% )
+% eq_mu <- .Array(
+%   x = matrix(
+%     data = mu,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_sigma <- .Array(
+%   x = sigma,
+%   digits = 2
+% )
+% eq_nu <- .Array(
+%   x = matrix(
+%     data = nu,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_lambda <- .Array(
+%   x = lambda,
+%   digits = 0
+% )
+% eq_theta <- .Array(
+%   x = theta,
+%   digits = 2
+% )
+%% end.rcode
+
+\begin{figure*}
+	\caption{Total, Direct, and Indirect Effects Used in the Monte Carlo Simulation Study}
+	\centering
+	\includegraphics[scale = .7]{.setup/latex/figures/png/fig-vignettes-scatter-plots-effects-1.png}
+	\label{fig:simulation-effects}
+\end{figure*}
 
 \begin{sidewaysfigure*}
 	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25)}
@@ -212,5 +826,247 @@ Source code and documentation for the \texttt{cTMed} \texttt{R} package are avai
 	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-type1-1.png}
 	\label{fig:simulation-type1}
 \end{sidewaysfigure*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(k)
+% rm(p)
+% rm(mu0)
+% rm(sigma0)
+% rm(mu)
+% rm(phi)
+% rm(sigma)
+% rm(nu)
+% rm(lambda)
+% rm(theta)
+% rm(t1)
+% rm(t2)
+% rm(time)
+% rm(delta_t)
+% rm(beta_1)
+% rm(alpha_1)
+% rm(psi_1)
+% rm(ns)
+% rm(delta_ts)
+% rm(eq_beta_1)
+% rm(eq_alpha_1)
+% rm(eq_psi_1)
+% rm(eq_phi)
+% rm(eq_mu)
+% rm(eq_sigma)
+% rm(eq_nu)
+% rm(eq_lambda)
+% rm(eq_theta)
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for the Empirical Data Set from \textcite{Wichers-Groot-Psychosystems-2016}}
+		\label{tab:manCTMed-empirical-1}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Physical Discomfort $\to$ Negative Affect $\to$ Self-Esteem)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-direct-delta-1.png}
+		\label{fig:manCTMed-empirical-a}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-indirect-delta-1.png}
+		\label{fig:manCTMed-empirical-b}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-total-delta-1.png}
+		\label{fig:manCTMed-empirical-c}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-direct-mc-1.png}
+		\label{fig:manCTMed-empirical-d}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-indirect-mc-1.png}
+		\label{fig:manCTMed-empirical-e}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-total-mc-1.png}
+		\label{fig:manCTMed-empirical-f}
+	\end{subfigure}
+				
+	\medskip
+			
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-direct-delta-1.png}
+		\label{fig:manCTMed-empirical-g}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-indirect-delta-1.png}
+		\label{fig:manCTMed-empirical-h}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-total-delta-1.png}
+		\label{fig:manCTMed-empirical-i}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-direct-mc-1.png}
+		\label{fig:manCTMed-empirical-j}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-indirect-mc-1.png}
+		\label{fig:manCTMed-empirical-k}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-total-mc-1.png}
+		\label{fig:manCTMed-empirical-l}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The first two rows correspond to the model where the time intervals are correctly labeled. The last two rows correspond to the model where the time intervals are incorrectly labeled.
+	\label{fig:manCTMed-empirical}
+\end{figure*}
+
+\begin{figure*}
+	\caption{Trajectory of Self-Esteem Over Time}
+	\begin{center}
+		\includegraphics[scale = .7]{.setup/latex/figures/png/fig-vignettes-empirical-plot-trajectory-3.png}
+	\end{center}
+	\footnotesize
+	\emph{Note:} \textit{Direct} refers to the trajectory without the effect coming from and going to negative affect. \textit{Indirect} refers to the trajectory without the direct effect of physical discomfort on self-esteem. This plot was generated using the \texttt{Trajectory} function in the \texttt{cTMed} package.
+	\label{fig:manCTMed-empirical-trajectory}
+\end{figure*}
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-mislabeled-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for the Empirical Data Set from \textcite{Wichers-Groot-Psychosystems-2016} with mislabeled time intervals}
+		\label{tab:manCTMed-empirical-2}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+\printbibliography
 
 \end{document}

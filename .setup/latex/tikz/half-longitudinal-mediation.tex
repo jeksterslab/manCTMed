@@ -54,7 +54,7 @@
 		},
 		path/.style = {
 			->,
-			thick,
+			ultra thick,
 			>=stealth'
 		},
 		dot/.style = {
@@ -80,7 +80,7 @@
 	\node[manifest] (M) [below = of inv] {$M_{t + 1}$};
 	\node[manifest] (Y) [above = of inv] {$Y_{t + 1}$};
 	\draw[path, color = indirect] (M) to node {$\beta$} (Y);
-	\draw[dot, color = direct] (X) to node {} (Y);
+	\draw[dot, color = direct] (X) to node {$\tau^{\prime}$} (Y);
 	\draw[path, color = indirect] (X) to node {$\alpha$} (M);
 \end{tikzpicture}
 
