@@ -12,15 +12,16 @@ Ivan Jacob Agaloos Pesigan
 ## Description
 
 Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
-A., Chow, S.-M. (In Preparation). Standard Errors and Confidence
-Intervals for Total, Direct, and Indirect Effects in Continuous-Time
-Mediation Models. <https://doi.org/10.0000/0000000000>
+A., Chow, S.-M. (Under Review). Standard Errors and Confidence Intervals
+for Total, Direct, and Indirect Effects in Continuous-Time Mediation
+Models. <https://doi.org/10.0000/0000000000>
 
 ## Acknowledgments
 
 This research was made possible by the Prevention and Methodology
-Training Program (PAMT) funded by a T32 training grant from the National
-Institute on Drug Abuse (NIDA).
+Training Program (PAMT) funded by a T32 training grant (T32 DA017629
+MPIs: J. Maggs & S. Lanza) from the National Institute on Drug Abuse
+(NIDA).
 
 Computations for this research were performed on the Pennsylvania State
 University’s Institute for Computational and Data Sciences’ Roar

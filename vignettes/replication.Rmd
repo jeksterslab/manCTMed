@@ -64,8 +64,8 @@ fit <- FitDynr(data)
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 9.102055 
-#> Backend Time: 9.091121
+#> Total Time: 9.076738 
+#> Backend Time: 9.0662
 ```
 
 ``` r

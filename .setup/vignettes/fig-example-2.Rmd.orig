@@ -56,7 +56,7 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
-The object `fit` contains the fitted `dynr` model.
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 1000.
 
 ```{r}
 summary(fit)
