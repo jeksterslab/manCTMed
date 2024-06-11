@@ -280,6 +280,38 @@ autoeffect.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">y_phi_direct</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-empirical-plot-unnamed-chunk-14-1.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-14-2.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-14-3.png" width="1700"></p>
 </div>
+<div class="section level3">
+<h3 id="using-the-modified-drift-matrix-indirect">Using the Modified Drift Matrix (<code>indirect</code>)<a class="anchor" aria-label="anchor" href="#using-the-modified-drift-matrix-indirect"></a>
+</h3>
+<p>We modify the drift matrix by getting the difference between
+<code>phi</code> and <code>phi_direct</code>. We add back the diagonal
+elements to the matrix to ensure stability.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">phi_indirect</span> <span class="op">&lt;-</span> <span class="va">phi</span> <span class="op">-</span> <span class="va">phi_direct</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="va">phi_indirect</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="va">phi</span><span class="op">)</span></span>
+<span><span class="va">phi_indirect</span></span>
+<span><span class="co">#&gt;                     Physical discomfort Negative affect Self-esteem</span></span>
+<span><span class="co">#&gt; Physical discomfort          -0.8982366      0.04100777   0.0000000</span></span>
+<span><span class="co">#&gt; Negative affect              -0.1545879     -0.68228879  -0.2308814</span></span>
+<span><span class="co">#&gt; Self-esteem                   0.0000000     -0.25594788  -0.8298912</span></span></code></pre></div>
+<p>We use <code>phi_indirect</code> to generate data.</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">y_phi_indirect</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/SimSSMOUFixed.html" class="external-link">SimSSMOUFixed</a></span><span class="op">(</span></span>
+<span>  n <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  time <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="fl">0.10</span>,</span>
+<span>  mu0 <span class="op">=</span> <span class="va">mu0</span>,</span>
+<span>  sigma0_l <span class="op">=</span> <span class="va">null_mat</span>,</span>
+<span>  mu <span class="op">=</span> <span class="va">null_vec</span>,</span>
+<span>  phi <span class="op">=</span> <span class="va">phi_indirect</span>,</span>
+<span>  sigma_l <span class="op">=</span> <span class="va">null_mat</span>,</span>
+<span>  nu <span class="op">=</span> <span class="va">null_vec</span>,</span>
+<span>  lambda <span class="op">=</span> <span class="va">iden_mat</span>,</span>
+<span>  theta_l <span class="op">=</span> <span class="va">null_mat</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">y_phi_indirect</span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-empirical-plot-unnamed-chunk-16-1.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-16-2.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-16-3.png" width="1700"></p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="combine-the-plots">Combine the plots<a class="anchor" aria-label="anchor" href="#combine-the-plots"></a>
@@ -288,10 +320,11 @@ autoeffect.</p>
 in the <code>cTMed</code> package automates the process described
 earlier and combines the plots for easier interpretation. The argument
 <code>mu0</code> can be used to modify the initial condition. Note that
-<code>Total</code> corresponds to the plots for <code>phi</code> and
+<code>Total</code> corresponds to the plots for <code>phi</code>,
 <code>Direct</code> corresponds to the plots for
-<code>phi_direct</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code>phi_direct</code>, and <code>Indirect</code> corresponds to the
+plots for <code>phi_indirect</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/Trajectory.html" class="external-link">Trajectory</a></span><span class="op">(</span></span>
 <span>  mu0 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">3</span>, <span class="op">-</span><span class="fl">3</span><span class="op">)</span>,</span>
 <span>  time <span class="op">=</span> <span class="fl">50</span>,</span>
@@ -299,7 +332,7 @@ earlier and combines the plots for easier interpretation. The argument
 <span>  med <span class="op">=</span> <span class="st">"Negative affect"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-empirical-plot-trajectory-1.png" width="1700"><img src="fig-vignettes-empirical-plot-trajectory-2.png" width="1700"><img src="fig-vignettes-empirical-plot-trajectory-3.png" width="1700"></p>
+<p><img src="fig-vignettes-empirical-plot-unnamed-chunk-17-1.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-17-2.png" width="1700"><img src="fig-vignettes-empirical-plot-unnamed-chunk-17-3.png" width="1700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
