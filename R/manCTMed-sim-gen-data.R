@@ -12,7 +12,6 @@
 SimGenData <- function(taskid,
                        repid,
                        output_folder,
-                       params_taskid,
                        seed,
                        suffix,
                        overwrite,
@@ -34,7 +33,7 @@ SimGenData <- function(taskid,
     con <- file(fn_output)
     saveRDS(
       object = GenData(
-        n = params_taskid$n
+        taskid = taskid
       ),
       file = con
     )

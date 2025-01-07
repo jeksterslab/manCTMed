@@ -4,11 +4,14 @@
 \alias{FitDynr}
 \title{Fit the Model using the dynr Package}
 \usage{
-FitDynr(data)
+FitDynr(data, taskid)
 }
 \arguments{
 \item{data}{R object.
 Output of the \code{\link[=RandomMeasurement]{RandomMeasurement()}} function.}
+
+\item{taskid}{Positive integer.
+Task ID.}
 }
 \description{
 The function fits the model using the \link{dynr} package.
@@ -17,14 +20,16 @@ The function fits the model using the \link{dynr} package.
 \dontrun{
 set.seed(42)
 library(dynr)
-sim <- GenData(n = 50)
+sim <- GenData(taskid = 1)
 data <- RandomMeasurement(sim)
-FitDynr(data)
+FitDynr(data, taskid = 1)
 }
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{PhiHat}()}
+\code{\link{FitMx}()},
+\code{\link{PhiHat}()},
+\code{\link{ThetaHat}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

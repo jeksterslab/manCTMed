@@ -9,9 +9,9 @@
 #' \dontrun{
 #' set.seed(42)
 #' library(dynr)
-#' sim <- GenData(n = 50)
+#' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
-#' fit <- FitDynr(data)
+#' fit <- FitDynr(data, taskid = 1)
 #' phi_hat <- PhiHat(fit)
 #' ci <- DeltaYMX(phi_hat)
 #' plot(ci)

@@ -5,7 +5,7 @@
 \alias{results}
 \title{Simulation Results}
 \format{
-A dataframe with 1440 rows and 19 columns:
+A dataframe with 1440 rows and 21 columns:
 
 \describe{
 \item{taskid}{
@@ -20,6 +20,16 @@ Simulation output type.
 \item{xmy}{
 If \code{TRUE}, the mediation model is \eqn{X \to M \to Y}.
 If \code{FALSE}, the mediation model is \eqn{Y \to M \to X}.
+}
+\item{std}{
+If \code{TRUE}, standardized total, direct, and indirect effects.
+If \code{FALSE}, unstandardized total, direct, and indirect effects.
+}
+\item{dynamics}{
+Dynamics.
+\code{0} for original drift matrix,
+\code{-1} for near-neutral dynamics, and
+\code{1} for stronger damping.
 }
 \item{n}{
 Sample size.
@@ -73,7 +83,7 @@ If \code{TRUE}, \eqn{p < 0.05}.
 }
 }
 \usage{
-results
+data(results)
 }
 \description{
 Simulation Results

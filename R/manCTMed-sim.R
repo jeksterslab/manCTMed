@@ -12,9 +12,10 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
-                params_taskid,
                 delta_t,
-                R) {
+                R,
+                B,
+                run_boot = FALSE) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -49,7 +50,6 @@ Sim <- function(taskid,
     taskid = taskid,
     repid = repid,
     output_folder = output_folder,
-    params_taskid = params_taskid,
     seed = seed,
     suffix = suffix,
     overwrite = overwrite,
@@ -106,4 +106,98 @@ Sim <- function(taskid,
     delta_t = delta_t,
     R = R
   )
+  SimDynrDeltaStdXMY(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity,
+    delta_t = delta_t
+  )
+  SimDynrDeltaStdYMX(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity,
+    delta_t = delta_t
+  )
+  SimDynrMCStdXMY(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity,
+    delta_t = delta_t,
+    R = R
+  )
+  SimDynrMCStdYMX(
+    taskid = taskid,
+    repid = repid,
+    output_folder = output_folder,
+    seed = seed,
+    suffix = suffix,
+    overwrite = overwrite,
+    integrity = integrity,
+    delta_t = delta_t,
+    R = R
+  )
+  if (run_boot) {
+    SimBootPara(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      B = B
+    )
+    SimBootParaXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimBootParaYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimBootParaStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimBootParaStdYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+  }
 }

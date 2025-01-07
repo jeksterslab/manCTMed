@@ -2,7 +2,10 @@
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
-#' @format A dataframe with 1440 rows and 19 columns:
+#' @docType data
+#' @name results
+#' @usage data(results)
+#' @format A dataframe with 1440 rows and 21 columns:
 #'
 #' \describe{
 #'   \item{taskid}{
@@ -17,6 +20,16 @@
 #'   \item{xmy}{
 #'     If `TRUE`, the mediation model is \eqn{X \to M \to Y}.
 #'     If `FALSE`, the mediation model is \eqn{Y \to M \to X}.
+#'   }
+#'   \item{std}{
+#'     If `TRUE`, standardized total, direct, and indirect effects.
+#'     If `FALSE`, unstandardized total, direct, and indirect effects.
+#'   }
+#'   \item{dynamics}{
+#'     Dynamics.
+#'     `0` for original drift matrix,
+#'     `-1` for near-neutral dynamics, and
+#'     `1` for stronger damping.
 #'   }
 #'   \item{n}{
 #'     Sample size.

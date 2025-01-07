@@ -26,7 +26,9 @@ PhiHat(fit)
 }
 \seealso{
 Other Model Fitting Functions: 
-\code{\link{FitDynr}()}
+\code{\link{FitDynr}()},
+\code{\link{FitMx}()},
+\code{\link{ThetaHat}()}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

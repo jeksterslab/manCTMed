@@ -9,9 +9,9 @@
 #' \dontrun{
 #' set.seed(42)
 #' library(dynr)
-#' sim <- GenData(n = 50)
+#' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
-#' fit <- FitDynr(data)
+#' fit <- FitDynr(data, taskid = 1)
 #' phi_hat <- PhiHat(fit)
 #' ci <- MCXMY(phi_hat, seed = 42)
 #' plot(ci)
@@ -22,7 +22,7 @@
 MCXMY <- function(phi_hat,
                   delta_t = 1:30,
                   R = 20000L,
-                  seed) {
+                  seed = NULL) {
   return(
     cTMed::MCMed(
       phi = phi_hat$coef,

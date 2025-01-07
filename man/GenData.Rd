@@ -4,11 +4,11 @@
 \alias{GenData}
 \title{Simulate Data}
 \usage{
-GenData(n)
+GenData(taskid)
 }
 \arguments{
-\item{n}{Positive integer.
-Sample size.}
+\item{taskid}{Positive integer.
+Task ID.}
 }
 \description{
 The function simulates data using
@@ -17,7 +17,7 @@ the \code{\link[simStateSpace:SimSSMOUFixed]{simStateSpace::SimSSMOUFixed()}} fu
 \examples{
 \dontrun{
 set.seed(42)
-sim <- GenData(n = 50)
+sim <- GenData(taskid = 1)
 plot(sim)
 }
 }

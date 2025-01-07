@@ -1,6 +1,6 @@
 Package: manCTMed
 Title: Continuous Time Mediation
-Version: 0.9.1
+Version: 0.9.2
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -22,12 +22,13 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
-Imports: stats, dynr, cTMed, dynUtils, simStateSpace, ggplot2
+Imports: utils, stats, dynr, OpenMx, cTMed, dynUtils, simStateSpace,
+        ggplot2
 Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2024-06-11 23:25:30 UTC; root
+Packaged: 2025-01-07 19:48:13 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

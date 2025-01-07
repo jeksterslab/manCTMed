@@ -11,30 +11,103 @@ SumHit <- function(taskid,
                    reps,
                    output_folder,
                    output_type,
-                   params_taskid,
                    ncores) {
+  param <- params[taskid, ]
+  if (param$dynamics == 0) {
+    phi <- model$phi_zero
+    sigma <- model$sigma_zero
+  }
+  if (param$dynamics == 1) {
+    phi <- model$phi_pos
+    sigma <- model$sigma_pos
+  }
+  if (param$dynamics == -1) {
+    phi <- model$phi_neg
+    sigma <- model$sigma_neg
+  }
+  colnames(phi) <- rownames(phi) <- c("x", "m", "y")
   # Summary is limited to alpha = 0.05
   if (output_type == "dynr-delta-xmy") {
     method <- "delta"
     xmy <- TRUE
+    std <- FALSE
   }
   if (output_type == "dynr-delta-ymx") {
     method <- "delta"
     xmy <- FALSE
+    std <- FALSE
   }
   if (output_type == "dynr-mc-xmy") {
     method <- "mc"
     xmy <- TRUE
+    std <- FALSE
   }
   if (output_type == "dynr-mc-ymx") {
     method <- "mc"
     xmy <- FALSE
+    std <- FALSE
+  }
+  if (output_type == "dynr-delta-std-xmy") {
+    method <- "delta"
+    xmy <- TRUE
+    std <- TRUE
+  }
+  if (output_type == "dynr-delta-std-ymx") {
+    method <- "delta"
+    xmy <- FALSE
+    std <- TRUE
+  }
+  if (output_type == "dynr-mc-std-xmy") {
+    method <- "mc"
+    xmy <- TRUE
+    std <- TRUE
+  }
+  if (output_type == "dynr-mc-std-ymx") {
+    method <- "mc"
+    xmy <- FALSE
+    std <- TRUE
   }
   if (xmy) {
-    parameter <- t(effects$xmy[, -1])
+    if (std) {
+      xmy_effects <- cTMed::MedStd(
+        phi = phi,
+        sigma = sigma,
+        delta_t = 1:30,
+        from = "x",
+        to = "y",
+        med = "m"
+      )$output
+    } else {
+      xmy_effects <- cTMed::Med(
+        phi = phi,
+        delta_t = 1:30,
+        from = "x",
+        to = "y",
+        med = "m"
+      )$output
+    }
+    parameter <- t(xmy_effects[, -4])
     dim(parameter) <- NULL
   } else {
-    parameter <- t(effects$ymx[, -1])
+    if (std) {
+      ymx_effects <- cTMed::MedStd(
+        phi = phi,
+        sigma = sigma,
+        delta_t = 1:30,
+        from = "y",
+        to = "x",
+        med = "m"
+      )$output
+    } else {
+      ymx_effects <- cTMed::Med(
+        phi = phi,
+        delta_t = 1:30,
+        from = "y",
+        to = "x",
+        med = "m"
+      )$output
+    }
+    parameter <- t(ymx_effects[, -4])
     dim(parameter) <- NULL
   }
   output_folder <- file.path(
@@ -51,7 +124,7 @@ SumHit <- function(taskid,
   foo <- function(repid,
                   taskid,
                   output_folder,
-                  params_taskid,
+                  param,
                   parameter) {
     suffix <- .SimSuffix(
       taskid = taskid,
@@ -101,7 +174,7 @@ SumHit <- function(taskid,
       FUN = foo,
       taskid = taskid,
       output_folder = output_folder,
-      params_taskid = params_taskid,
+      param = param,
       parameter = parameter,
       mc.cores = ncores
     )
@@ -114,11 +187,13 @@ SumHit <- function(taskid,
   out <- cbind(
     taskid = taskid,
     replications = reps,
-    n = params_taskid$n,
+    n = param$n,
     method = method,
     out,
     output_type = output_type,
-    xmy = xmy
+    xmy = xmy,
+    std = std,
+    dynamics = param$dynamics
   )
   if (method == "delta") {
     out$R <- NA

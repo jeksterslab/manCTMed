@@ -4,7 +4,7 @@
 \alias{FigScatterPlotCoverage}
 \title{Plot Coverage Probabilities}
 \usage{
-FigScatterPlotCoverage(results, delta_t = NULL, R = 20000)
+FigScatterPlotCoverage(results, delta_t = NULL, dynamics = 0, std = FALSE)
 }
 \arguments{
 \item{results}{Summary results data frame.}
@@ -12,9 +12,14 @@ FigScatterPlotCoverage(results, delta_t = NULL, R = 20000)
 \item{delta_t}{Vector of time-interval value.
 If \code{delta_t = NULL}, use all available time-intervals}
 
-\item{R}{Integer.
-Number of replications for the Monte Carlo method.
-Possible values are 1000, 20000, and 100000.}
+\item{dynamics}{Integer.
+\code{dynamics = 0} for original drift matrix,
+\code{dynamics = -1} for near-neutral dynamics, and
+\code{dynamics = 1} for stronger damping.}
+
+\item{std}{Logical.
+If \code{std = TRUE}, standardized total, direct, and indirect effects.
+If \code{std = FALSE}, unstandardized total, direct, and indirect effects.}
 }
 \description{
 Coverage probabilities for the model \eqn{X \to M \to Y}.

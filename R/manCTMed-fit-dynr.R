@@ -8,14 +8,28 @@
 #' \dontrun{
 #' set.seed(42)
 #' library(dynr)
-#' sim <- GenData(n = 50)
+#' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
-#' FitDynr(data)
+#' FitDynr(data, taskid = 1)
 #' }
 #' @family Model Fitting Functions
 #' @keywords manCTMed fit
 #' @export
-FitDynr <- function(data) {
+FitDynr <- function(data,
+                    taskid) {
+  param <- params[taskid, ]
+  if (param$dynamics == 0) {
+    phi <- model$phi_zero
+    sigma <- model$sigma_zero
+  }
+  if (param$dynamics == 1) {
+    phi <- model$phi_pos
+    sigma <- model$sigma_pos
+  }
+  if (param$dynamics == -1) {
+    phi <- model$phi_neg
+    sigma <- model$sigma_neg
+  }
   dynr_data <- dynr::dynr.data(
     dataframe = data,
     id = "id",
@@ -56,20 +70,20 @@ FitDynr <- function(data) {
       eta_y ~ phi_31 * eta_x + phi_32 * eta_m + phi_33 * eta_y
     ),
     startval = c(
-      phi_11 = model$phi[1, 1],
-      phi_12 = model$phi[1, 2],
-      phi_13 = model$phi[1, 3],
-      phi_21 = model$phi[2, 1],
-      phi_22 = model$phi[2, 2],
-      phi_23 = model$phi[2, 3],
-      phi_31 = model$phi[3, 1],
-      phi_32 = model$phi[3, 2],
-      phi_33 = model$phi[3, 3]
+      phi_11 = phi[1, 1],
+      phi_12 = phi[1, 2],
+      phi_13 = phi[1, 3],
+      phi_21 = phi[2, 1],
+      phi_22 = phi[2, 2],
+      phi_23 = phi[2, 3],
+      phi_31 = phi[3, 1],
+      phi_32 = phi[3, 2],
+      phi_33 = phi[3, 3]
     ),
     isContinuousTime = TRUE
   )
   dynr_noise <- dynr::prep.noise(
-    values.latent = model$sigma,
+    values.latent = sigma,
     params.latent = matrix(
       data = c(
         "sigma_11", "sigma_12", "sigma_13",
@@ -88,26 +102,60 @@ FitDynr <- function(data) {
       nrow = model$k
     )
   )
+  outfile <- tempfile(
+    paste0(
+      "src-",
+      paste0(
+        sample(
+          x = c(
+            letters,
+            LETTERS,
+            0:9
+          ),
+          size = 8,
+          replace = TRUE
+        ),
+        collapse = ""
+      ),
+      format(
+        Sys.time(),
+        "%Y-%m-%d-%H-%M-%OS3"
+      )
+    )
+  )
+  on.exit(
+    unlink(
+      paste0(
+        outfile,
+        c(
+          ".c",
+          ".s",
+          ".so"
+        )
+      )
+    )
+  )
   dynr_model <- dynr::dynr.model(
     data = dynr_data,
     initial = dynr_initial,
     measurement = dynr_measurement,
     dynamics = dynr_dynamics,
     noise = dynr_noise,
-    outfile = tempfile(
-      paste0(
-        "src-",
-        format(
-          Sys.time(),
-          "%Y-%m-%d-%H-%M-%OS3"
-        )
-      ),
-      fileext = ".c"
+    outfile = paste0(
+      outfile,
+      ".c"
     )
   )
-  dynr_model@options$maxeval <- 100000
+  # dynr_model@options$maxeval <- 1000000
   lb <- ub <- rep(NA, times = length(dynr_model$xstart))
   names(ub) <- names(lb) <- names(dynr_model$xstart)
+  lb[
+    c(
+      "sigma0_11",
+      "sigma0_22",
+      "sigma0_33"
+    )
+  ] <- .Machine$double.xmin
   lb[
     c(
       "phi_11",
@@ -120,7 +168,7 @@ FitDynr <- function(data) {
       "phi_23",
       "phi_33"
     )
-  ] <- -1.5
+  ] <- -4
   ub[
     c(
       "phi_11",
@@ -133,12 +181,34 @@ FitDynr <- function(data) {
       "phi_23",
       "phi_33"
     )
-  ] <- 1.5
+  ] <- 4
+  ub[
+    c(
+      "phi_11",
+      "phi_22",
+      "phi_33"
+    )
+  ] <- .Machine$double.xmin
+  lb[
+    c(
+      "sigma_11",
+      "sigma_22",
+      "sigma_33"
+    )
+  ] <- .Machine$double.xmin
+  lb[
+    c(
+      "theta_11",
+      "theta_22",
+      "theta_33"
+    )
+  ] <- .Machine$double.xmin
   dynr_model$lb <- lb
   dynr_model$ub <- ub
   return(
     dynr::dynr.cook(
       dynr_model,
+      hessian_flag = TRUE,
       debug_flag = TRUE,
       verbose = FALSE
     )

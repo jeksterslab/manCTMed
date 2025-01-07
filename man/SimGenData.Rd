@@ -4,16 +4,7 @@
 \alias{SimGenData}
 \title{Simulation Replication - GenData}
 \usage{
-SimGenData(
-  taskid,
-  repid,
-  output_folder,
-  params_taskid,
-  seed,
-  suffix,
-  overwrite,
-  integrity
-)
+SimGenData(taskid, repid, output_folder, seed, suffix, overwrite, integrity)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -24,9 +15,6 @@ Replication ID.}
 
 \item{output_folder}{Character string.
 Output folder.}
-
-\item{params_taskid}{Data frame with a single row.
-Simulation parameters for a specific \code{taskid}.}
 
 \item{seed}{Integer.
 Random seed.}

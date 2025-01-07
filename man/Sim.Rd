@@ -10,9 +10,10 @@ Sim(
   output_folder,
   overwrite,
   integrity,
-  params_taskid,
   delta_t,
-  R
+  R,
+  B,
+  run_boot = FALSE
 )
 }
 \arguments{
@@ -32,14 +33,17 @@ Overwrite existing output in \code{output_folder}.}
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
 
-\item{params_taskid}{Data frame with a single row.
-Simulation parameters for a specific \code{taskid}.}
-
 \item{delta_t}{Numeric vector.
 Vector of time intervals.}
 
 \item{R}{Positive integer.
 Number of random drift matrices to generate.}
+
+\item{B}{Positive integer.
+Number of bootstrap samples.}
+
+\item{run_boot}{Logical.
+If \code{run_boot = TRUE}, run bootstrap.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.
