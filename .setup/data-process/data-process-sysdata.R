@@ -3,13 +3,6 @@ data_process_sysdata <- function() {
   set.seed(42)
   # find root directory
   root <- rprojroot::is_rstudio_project
-  effects <- readRDS(
-    root$find_file(
-      ".setup",
-      "data-raw",
-      "effects.Rds"
-    )
-  )
   model <- readRDS(
     root$find_file(
       ".setup",
@@ -18,7 +11,6 @@ data_process_sysdata <- function() {
     )
   )
   usethis::use_data(
-    effects,
     model,
     internal = TRUE,
     overwrite = TRUE

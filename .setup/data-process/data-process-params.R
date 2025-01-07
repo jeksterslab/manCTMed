@@ -1,4 +1,4 @@
-data_process_params <- function(overwrite = FALSE) {
+data_process_params <- function(overwrite = TRUE) {
   cat("\ndata_process_params\n")
   set.seed(42)
   # find root directory
@@ -31,12 +31,21 @@ data_process_params <- function(overwrite = FALSE) {
       to = 500,
       by = 50
     )
+    orig <- rep(x = 0, times = length(n))
+    neutral <- rep(x = -1, times = length(n))
+    strong <- rep(x = 1, times = length(n))
+    dynamics <- c(
+      orig,
+      neutral,
+      strong
+    )
     taskid <- seq_len(
-      length(n)
+      length(dynamics)
     )
     params <- data.frame(
       taskid = taskid,
-      n = n
+      n = n,
+      dynamics = dynamics
     )
     rownames(params) <- params$taskid
     save(

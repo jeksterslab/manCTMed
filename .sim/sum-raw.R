@@ -29,7 +29,11 @@ sum_raw <- lapply(
             "dynr-delta-xmy",
             "dynr-delta-ymx",
             "dynr-mc-xmy",
-            "dynr-mc-ymx"
+            "dynr-mc-ymx",
+            "dynr-delta-std-xmy",
+            "dynr-delta-std-ymx",
+            "dynr-mc-std-xmy",
+            "dynr-mc-std-ymx"
           ),
           FUN = function(output_type,
                          taskid,
@@ -41,7 +45,6 @@ sum_raw <- lapply(
               reps = reps,
               output_folder = output_folder,
               output_type = output_type,
-              params_taskid = params[which(params$taskid == taskid), ],
               ncores = ncores
             )
           },

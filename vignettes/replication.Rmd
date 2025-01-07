@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Single Replication from the Simulation Study}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -19,8 +19,8 @@ library(manCTMed)
 
 
 ``` r
-set.seed(42)
-sim <- GenData(n = 50)
+set.seed(1)
+sim <- GenData(taskid = 1)
 plot(sim)
 ```
 
@@ -32,86 +32,81 @@ str(data)
 #> 'data.frame':	9000 obs. of  5 variables:
 #>  $ id  : num  1 1 1 1 1 1 1 1 1 1 ...
 #>  $ time: num  0 0.0333 0.0667 0.1 0.1333 ...
-#>  $ x   : num  -0.35 NA NA NA -1.21 ...
-#>  $ m   : num  0.419 NA NA NA 0.21 ...
-#>  $ y   : num  2.61 NA NA NA 1.98 ...
+#>  $ x   : num  -1.427 -0.67 -2.044 -0.977 -0.604 ...
+#>  $ m   : num  -0.972 -1.492 -1.343 -0.702 -0.842 ...
+#>  $ y   : num  -0.0563 0.4158 0.1407 -0.1219 -0.119 ...
 ```
 
 ## Model Fitting
 
 
 ``` r
-fit <- FitDynr(data)
+fit <- FitDynr(data = data, taskid = 1)
 #> [1] "Get ready!!!!"
-#> using C compiler: ‘gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0’
+#> using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
 #> Optimization function called.
 #> Starting Hessian calculation ...
 #> Finished Hessian calculation.
 #> Original exit flag:  3 
 #> Modified exit flag:  3 
 #> Optimization terminated successfully: ftol_rel or ftol_abs was reached. 
-#> Original fitted parameters:  -0.4646654 0.03915088 0.03260841 0.713087 
-#> -0.5024501 0.03569385 -0.4967591 0.7242458 -0.7206101 -1.375187 0.07575868 
-#> -0.2263203 -2.480705 0.2371408 -2.756323 -1.610639 -1.659554 -1.589466 
-#> -0.09377873 0.02714444 -0.033758 -0.02606706 0.1390054 0.113438 -0.2681591 
-#> -0.01077969 0.2001513 
+#> Original fitted parameters:  -0.3346013 0.02166289 -0.01933279 0.7706831 
+#> -0.5507161 0.008072293 -0.5077725 0.7861072 -0.7079146 -1.646831 0.1363935 
+#> -0.1794374 -2.668642 0.1643978 -2.856534 -1.617031 -1.639487 -1.553734 
+#> 0.1037222 -0.02241764 0.1438094 0.02120675 0.3877461 0.3593095 -0.4531352 
+#> 0.1506019 -0.4459209 
 #> 
-#> Transformed fitted parameters:  -0.4646654 0.03915088 0.03260841 0.713087 
-#> -0.5024501 0.03569385 -0.4967591 0.7242458 -0.7206101 0.2527924 0.01915122 
-#> -0.05721204 0.08513504 0.01551062 0.0811792 0.19976 0.1902238 0.2040345 
-#> -0.09377873 0.02714444 -0.033758 0.9742698 0.1354287 0.1105192 0.7836114 
-#> 0.007118601 1.234213 
+#> Transformed fitted parameters:  -0.3346013 0.02166289 -0.01933279 0.7706831 
+#> -0.5507161 0.008072293 -0.5077725 0.7861072 -0.7079146 0.1926596 0.02627752 
+#> -0.03457033 0.07293042 0.006685215 0.06554499 0.198487 0.1940796 0.2114569 
+#> 0.1037222 -0.02241764 0.1438094 1.021433 0.3960568 0.3670106 0.7892017 
+#> 0.2380344 0.7865216 
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 9.076738 
-#> Backend Time: 9.0662
-```
-
-``` r
+#> Total Time: 9.423558 
+#> Backend Time: 9.413476
 summary(fit)
 #> Coefficients:
 #>            Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11    -0.464665   0.091836  -5.060 -0.644661 -0.284670   <2e-16 ***
-#> phi_12     0.039151   0.080240   0.488 -0.118116  0.196418   0.3128    
-#> phi_13     0.032608   0.070342   0.464 -0.105259  0.170476   0.3215    
-#> phi_21     0.713087   0.061174  11.657  0.593188  0.832986   <2e-16 ***
-#> phi_22    -0.502450   0.053536  -9.385 -0.607380 -0.397521   <2e-16 ***
-#> phi_23     0.035694   0.046259   0.772 -0.054972  0.126360   0.2202    
-#> phi_31    -0.496759   0.062363  -7.966 -0.618989 -0.374529   <2e-16 ***
-#> phi_32     0.724246   0.054473  13.296  0.617481  0.831010   <2e-16 ***
-#> phi_33    -0.720610   0.047243 -15.253 -0.813205 -0.628015   <2e-16 ***
-#> sigma_11   0.252792   0.023950  10.555  0.205851  0.299734   <2e-16 ***
-#> sigma_12   0.019151   0.010941   1.750 -0.002293  0.040596   0.0400 *  
-#> sigma_13  -0.057212   0.011740  -4.873 -0.080222 -0.034202   <2e-16 ***
-#> sigma_22   0.085135   0.009857   8.637  0.065815  0.104455   <2e-16 ***
-#> sigma_23   0.015511   0.007207   2.152  0.001386  0.029635   0.0157 *  
-#> sigma_33   0.081179   0.010962   7.406  0.059695  0.102664   <2e-16 ***
-#> theta_11   0.199760   0.004655  42.909  0.190636  0.208884   <2e-16 ***
-#> theta_22   0.190224   0.004150  45.832  0.182089  0.198359   <2e-16 ***
-#> theta_33   0.204034   0.004488  45.462  0.195238  0.212831   <2e-16 ***
-#> mu0_1     -0.093779   0.143876  -0.652 -0.375770  0.188213   0.2573    
-#> mu0_2      0.027144   0.128117   0.212 -0.223960  0.278249   0.4161    
-#> mu0_3     -0.033758   0.160511  -0.210 -0.348354  0.280838   0.4167    
-#> sigma0_11  0.974270   0.206836   4.710  0.568878  1.379661   <2e-16 ***
-#> sigma0_12  0.135429   0.131638   1.029 -0.122577  0.393435   0.1518    
-#> sigma0_13  0.110519   0.163843   0.675 -0.210607  0.431645   0.2500    
-#> sigma0_22  0.783611   0.164778   4.756  0.460653  1.106570   <2e-16 ***
-#> sigma0_23  0.007119   0.145934   0.049 -0.278907  0.293144   0.4805    
-#> sigma0_33  1.234213   0.255268   4.835  0.733898  1.734529   <2e-16 ***
+#> phi_11    -0.334601   0.094078  -3.557 -0.518991 -0.150211   0.0002 ***
+#> phi_12     0.021663   0.090875   0.238 -0.156448  0.199774   0.4058    
+#> phi_13    -0.019333   0.074466  -0.260 -0.165283  0.126617   0.3976    
+#> phi_21     0.770683   0.068892  11.187  0.635656  0.905710   <2e-16 ***
+#> phi_22    -0.550716   0.067048  -8.214 -0.682128 -0.419305   <2e-16 ***
+#> phi_23     0.008072   0.053580   0.151 -0.096942  0.113087   0.4401    
+#> phi_31    -0.507772   0.068188  -7.447 -0.641419 -0.374126   <2e-16 ***
+#> phi_32     0.786107   0.066051  11.902  0.656650  0.915565   <2e-16 ***
+#> phi_33    -0.707915   0.053656 -13.194 -0.813078 -0.602751   <2e-16 ***
+#> sigma_11   0.192660   0.019483   9.888  0.154473  0.230846   <2e-16 ***
+#> sigma_12   0.026278   0.009713   2.705  0.007239  0.045316   0.0034 ** 
+#> sigma_13  -0.034570   0.009843  -3.512 -0.053861 -0.015279   0.0002 ***
+#> sigma_22   0.072930   0.009634   7.570  0.054048  0.091813   <2e-16 ***
+#> sigma_23   0.006685   0.006742   0.992 -0.006529  0.019900   0.1607    
+#> sigma_33   0.065545   0.009791   6.695  0.046356  0.084734   <2e-16 ***
+#> theta_11   0.198487   0.004542  43.698  0.189584  0.207390   <2e-16 ***
+#> theta_22   0.194080   0.004240  45.769  0.185769  0.202391   <2e-16 ***
+#> theta_33   0.211457   0.004604  45.933  0.202434  0.220480   <2e-16 ***
+#> mu0_1      0.103722   0.145704   0.712 -0.181853  0.389297   0.2383    
+#> mu0_2     -0.022418   0.128088  -0.175 -0.273465  0.228630   0.4305    
+#> mu0_3      0.143809   0.128032   1.123 -0.107129  0.394747   0.1307    
+#> sigma0_11  1.021433   0.211348   4.833  0.607199  1.435667   <2e-16 ***
+#> sigma0_12  0.396057   0.143821   2.754  0.114173  0.677940   0.0030 ** 
+#> sigma0_13  0.367011   0.143034   2.566  0.086669  0.647353   0.0052 ** 
+#> sigma0_22  0.789202   0.165089   4.780  0.465632  1.112771   <2e-16 ***
+#> sigma0_23  0.238034   0.122124   1.949 -0.001324  0.477393   0.0257 *  
+#> sigma0_33  0.786522   0.166425   4.726  0.460334  1.112709   <2e-16 ***
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> -2 log-likelihood value at convergence = 21149.28
-#> AIC = 21203.28
-#> BIC = 21395.12
-```
-
-``` r
+#> -2 log-likelihood value at convergence = 21100.40
+#> AIC = 21154.40
+#> BIC = 21346.24
 phi_hat <- PhiHat(fit)
+theta_hat <- ThetaHat(fit)
 ```
 
-## Confidence Intervals
+## Confidence Intervals (Unstandardized)
 
 ### Model $\eta_X \to \eta_M \to \eta_Y$
 
@@ -156,3 +151,49 @@ plot(mc)
 ```
 
 <img src="fig-vignettes-replication-unnamed-chunk-8-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-8-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-8-3.png" width="3300" />
+
+## Confidence Intervals (Standardized)
+
+### Model $\eta_X \to \eta_M \to \eta_Y$
+
+#### Delta Method
+
+
+``` r
+delta <- DeltaStdXMY(theta_hat)
+plot(delta)
+```
+
+<img src="fig-vignettes-replication-unnamed-chunk-9-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-9-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-9-3.png" width="3300" />
+
+#### Monte Carlo Method
+
+
+``` r
+mc <- MCStdXMY(theta_hat, seed = 1)
+plot(mc)
+```
+
+<img src="fig-vignettes-replication-unnamed-chunk-10-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-10-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-10-3.png" width="3300" />
+
+### Model $\eta_Y \to \eta_M \to \eta_M$
+
+#### Delta Method
+
+
+``` r
+delta <- DeltaStdYMX(theta_hat)
+plot(delta)
+```
+
+<img src="fig-vignettes-replication-unnamed-chunk-11-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-11-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-11-3.png" width="3300" />
+
+#### Monte Carlo Method
+
+
+``` r
+mc <- MCStdYMX(theta_hat, seed = 1)
+plot(mc)
+```
+
+<img src="fig-vignettes-replication-unnamed-chunk-12-1.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-12-2.png" width="3300" /><img src="fig-vignettes-replication-unnamed-chunk-12-3.png" width="3300" />

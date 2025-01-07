@@ -1,6 +1,6 @@
 Package: manCTMed
 Title: Continuous Time Mediation
-Version: 0.9.1
+Version: 0.9.2
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -22,8 +22,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 3.5.0)
 Imports:
+    utils,
     stats,
     dynr,
+    OpenMx,
     cTMed,
     dynUtils,
     simStateSpace,
@@ -36,4 +38,4 @@ Suggests:
 Remotes:
     jeksterslab/dynUtils,
     jeksterslab/cTMed
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

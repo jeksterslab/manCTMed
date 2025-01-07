@@ -17,8 +17,10 @@
 #' @export
 FigScatterPlotPower <- function(results,
                                 delta_t = NULL,
-                                R = 20000) {
-  results <- results[which(results$R == R | is.na(results$R)), ]
+                                dynamics = 0,
+                                std = FALSE) {
+  results <- results[which(results$dynamics == dynamics), ]
+  results <- results[which(results$std == std), ]
   if (!is.null(delta_t)) {
     results <- results[which(results$interval %in% delta_t), ]
   }

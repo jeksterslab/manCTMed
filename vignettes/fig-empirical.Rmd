@@ -4,11 +4,13 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Empirical Example}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
 This vignette accompanies the Empirical Example. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+
+> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
 
 
 

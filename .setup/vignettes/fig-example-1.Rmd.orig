@@ -4,11 +4,13 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Illustrative Example 1 - Direct, Indirect, and Total Effects}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
+
+> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
 
 ```{r}
 #| include = FALSE
@@ -62,11 +64,12 @@ The object `fit` contains the fitted `dynr` model for the data set with a sample
 summary(fit)
 ```
 
-## Extract Elements of the Drift Matrix
+## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
-We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
+We extract the elements of the drift matrix and the process noise covariance matrix from the `fit` object.
 
 ```{r}
+# drift matrix
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -87,7 +90,25 @@ colnames(phi) <- rownames(phi) <- c(
   "knowledge",
   "competence"
 )
-vcov_phi_vec <- vcov(fit)[varnames, varnames]
+```
+
+```{r}
+# process noise covariance matrix
+varnames <- c(
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_12",
+  "sigma_22",
+  "sigma_23",
+  "sigma_13",
+  "sigma_23",
+  "sigma_33"
+)
+sigma <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
 ```
 
 ## Direct, Indirect, and Total Effects of a Time Interval of One
@@ -95,7 +116,6 @@ vcov_phi_vec <- vcov(fit)[varnames, varnames]
 Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of one are given below.
 
 ```{r}
-library(cTMed)
 Med(
   phi = phi,
   from = "conflict",
@@ -105,9 +125,9 @@ Med(
 )
 ```
 
-## Direct, Indirect, and Total Effects of a Time Interval of Zero to Three
+## Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
 
-Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 3 are plotted below.
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
 
 ```{r}
 med <- Med(
@@ -118,6 +138,37 @@ med <- Med(
   delta_t = seq(from = 0, to = 10, length.out = 1000)
 )
 plot(med)
+```
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of One
+
+Using the `MedStd` function from the `cTMed` package, the standardized direct, indirect, and total effects for a time interval of one are given below.
+
+```{r}
+MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = 1
+)
+```
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
+
+Using the `Med` function from the `cTMed` package, the standardized direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
+
+```{r}
+med_std <- MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = seq(from = 0, to = 10, length.out = 1000)
+)
+plot(med_std)
 ```
 
 <details>

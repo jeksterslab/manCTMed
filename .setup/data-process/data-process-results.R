@@ -1,4 +1,4 @@
-data_process_results <- function(overwrite = FALSE) {
+data_process_results <- function(overwrite = TRUE) {
   cat("\ndata_process_results\n")
   set.seed(42)
   # find root directory
@@ -40,6 +40,8 @@ data_process_results <- function(overwrite = FALSE) {
         "replications",
         "output_type",
         "xmy",
+        "std",
+        "dynamics",
         "n",
         "method",
         "effect",

@@ -41,6 +41,9 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
+- title: dynr
+  contents:
+  - fit-ct-var-dynr
 - title: Illustrative Examples
   contents:
   - fig-example-1
@@ -57,7 +60,9 @@ articles:
   - results
 - title: Plots
   contents:
-  - fig-scatter-plots
+  - fig-scatter-plots-zero
+  - fig-scatter-plots-neg
+  - fig-scatter-plots-pos
 - title: Empirical Example
   contents:
   - fig-empirical

@@ -4,11 +4,13 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Illustrative Example 1 - Direct, Indirect, and Total Effects}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` function from the `cTMed` package.
+This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
+
+> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
 
 
 
@@ -31,24 +33,24 @@ The object `fit` contains the fitted `dynr` model for the data set with a sample
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033462   0.008195  -4.083 -0.049524 -0.017399    2e-05 ***
-#> phi_12    0.037927   0.013559   2.797  0.011352  0.064502  0.00258 ** 
-#> phi_13   -0.013249   0.012160  -1.090 -0.037083  0.010585  0.13796    
-#> phi_21   -0.151606   0.022253  -6.813 -0.195221 -0.107992  < 2e-16 ***
-#> phi_22   -0.585370   0.064079  -9.135 -0.710962 -0.459777  < 2e-16 ***
-#> phi_23    0.227932   0.041428   5.502  0.146735  0.309128  < 2e-16 ***
-#> phi_31   -0.100379   0.020593  -4.874 -0.140741 -0.060018  < 2e-16 ***
-#> phi_32    0.103791   0.039147   2.651  0.027065  0.180517  0.00401 ** 
-#> phi_33   -0.511093   0.053724  -9.513 -0.616390 -0.405796  < 2e-16 ***
-#> sigma_11  0.057973   0.008431   6.876  0.041448  0.074498  < 2e-16 ***
-#> sigma_12 -0.008697   0.010969  -0.793 -0.030197  0.012802  0.21393    
-#> sigma_13  0.010256   0.010404   0.986 -0.010134  0.030647  0.16211    
-#> sigma_22  0.741687   0.114262   6.491  0.517737  0.965637  < 2e-16 ***
-#> sigma_23  0.101495   0.030132   3.368  0.042438  0.160552  0.00038 ***
-#> sigma_33  0.838008   0.108025   7.758  0.626284  1.049733  < 2e-16 ***
-#> theta_11  0.105586   0.006152  17.163  0.093529  0.117644  < 2e-16 ***
-#> theta_22  0.175885   0.035841   4.907  0.105639  0.246132  < 2e-16 ***
-#> theta_33  0.082160   0.033989   2.417  0.015542  0.148777  0.00782 ** 
+#> phi_11   -0.033462   0.008196  -4.083 -0.049525 -0.017399    2e-05 ***
+#> phi_12    0.037927   0.013550   2.799  0.011369  0.064484  0.00256 ** 
+#> phi_13   -0.013249   0.012176  -1.088 -0.037113  0.010615  0.13827    
+#> phi_21   -0.151606   0.022211  -6.826 -0.195140 -0.108073  < 2e-16 ***
+#> phi_22   -0.585371   0.063543  -9.212 -0.709914 -0.460829  < 2e-16 ***
+#> phi_23    0.227932   0.041150   5.539  0.147281  0.308584  < 2e-16 ***
+#> phi_31   -0.100379   0.020598  -4.873 -0.140751 -0.060008  < 2e-16 ***
+#> phi_32    0.103790   0.038758   2.678  0.027825  0.179755  0.00371 ** 
+#> phi_33   -0.511091   0.052376  -9.758 -0.613747 -0.408436  < 2e-16 ***
+#> sigma_11  0.057973   0.008438   6.870  0.041435  0.074511  < 2e-16 ***
+#> sigma_12 -0.008698   0.010937  -0.795 -0.030133  0.012738  0.21324    
+#> sigma_13  0.010256   0.010438   0.983 -0.010203  0.030715  0.16293    
+#> sigma_22  0.741690   0.113207   6.552  0.519807  0.963572  < 2e-16 ***
+#> sigma_23  0.101494   0.029935   3.391  0.042824  0.160165  0.00035 ***
+#> sigma_33  0.838004   0.104520   8.018  0.633147  1.042860  < 2e-16 ***
+#> theta_11  0.105586   0.006156  17.152  0.093521  0.117652  < 2e-16 ***
+#> theta_22  0.175885   0.035516   4.952  0.106274  0.245495  < 2e-16 ***
+#> theta_33  0.082161   0.032843   2.502  0.017790  0.146532  0.00618 ** 
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
@@ -57,12 +59,13 @@ summary(fit)
 #> BIC = 27104.06
 ```
 
-## Extract Elements of the Drift Matrix
+## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
-We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
+We extract the elements of the drift matrix and the process noise covariance matrix from the `fit` object.
 
 
 ``` r
+# drift matrix
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -83,7 +86,26 @@ colnames(phi) <- rownames(phi) <- c(
   "knowledge",
   "competence"
 )
-vcov_phi_vec <- vcov(fit)[varnames, varnames]
+```
+
+
+``` r
+# process noise covariance matrix
+varnames <- c(
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_12",
+  "sigma_22",
+  "sigma_23",
+  "sigma_13",
+  "sigma_23",
+  "sigma_33"
+)
+sigma <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
 ```
 
 ## Direct, Indirect, and Total Effects of a Time Interval of One
@@ -92,7 +114,6 @@ Using the `Med` function from the `cTMed` package, the direct, indirect, and tot
 
 
 ``` r
-library(cTMed)
 Med(
   phi = phi,
   from = "conflict",
@@ -107,9 +128,9 @@ Med(
 #> [1,]        1 -0.0828 -0.0772  -0.0056
 ```
 
-## Direct, Indirect, and Total Effects of a Time Interval of Zero to Three
+## Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
 
-Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 3 are plotted below.
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
 
 
 ``` r
@@ -123,7 +144,47 @@ med <- Med(
 plot(med)
 ```
 
-<img src="fig-vignettes-example-1-unnamed-chunk-8-1.png" width="1700" />
+<img src="fig-vignettes-example-1-unnamed-chunk-9-1.png" width="1700" />
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of One
+
+Using the `MedStd` function from the `cTMed` package, the standardized direct, indirect, and total effects for a time interval of one are given below.
+
+
+``` r
+MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = 1
+)
+#> 
+#> Total, Direct, and Indirect Effects
+#> 
+#>      interval   total  direct indirect
+#> [1,]        1 -0.0954 -0.0889  -0.0065
+```
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
+
+Using the `Med` function from the `cTMed` package, the standardized direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
+
+
+``` r
+med_std <- MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = seq(from = 0, to = 10, length.out = 1000)
+)
+plot(med_std)
+```
+
+<img src="fig-vignettes-example-1-unnamed-chunk-11-1.png" width="1700" />
 
 <details>
 <summary>

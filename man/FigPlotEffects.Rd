@@ -4,7 +4,20 @@
 \alias{FigPlotEffects}
 \title{Plot Total, Direct, and Indirect Effects}
 \usage{
-FigPlotEffects()
+FigPlotEffects(dynamics = 0, std = FALSE, max_delta_t = 30)
+}
+\arguments{
+\item{dynamics}{Integer.
+\code{dynamics = 0} for original drift matrix,
+\code{dynamics = -1} for near-neutral dynamics, and
+\code{dynamics = 1} for stronger damping.}
+
+\item{std}{Logical.
+If \code{std = TRUE}, standardized total, direct, and indirect effects.
+If \code{std = FALSE}, unstandardized total, direct, and indirect effects.}
+
+\item{max_delta_t}{Numeric.
+Maximum time interval.}
 }
 \description{
 Effects for the model \eqn{X \to M \to Y}.
@@ -21,17 +34,6 @@ Other Figure Functions:
 }
 \author{
 Ivan Jacob Agaloos Pesigan
-
-Total, direct, and indirect effects for the drift matrix
-\deqn{
-    \left(
-    \begin{array}{ccc}
-         -0.357 & 0 & 0 \\
-         0.771 & -0.511 & 0 \\
-         -0.450 & 0.729 & -0.693 \\
-    \end{array}
-    \right)
-}
 }
 \concept{Figure Functions}
 \keyword{figure}

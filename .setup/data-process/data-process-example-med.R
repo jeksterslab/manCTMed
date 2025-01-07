@@ -30,6 +30,15 @@ data_process_example_med <- function(overwrite = FALSE,
       "data-process-example-ct.R"
     )
   )
+  pb_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "pb-example-",
+      n,
+      ".Rds"
+    )
+  )
   med_xmy_file <- root$find_file(
     ".setup",
     "data-raw",
@@ -66,6 +75,24 @@ data_process_example_med <- function(overwrite = FALSE,
       ".Rds"
     )
   )
+  pb_pc_xmy_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "pb-pc-example-xmy-",
+      n,
+      ".Rds"
+    )
+  )
+  pb_bc_xmy_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "pb-bc-example-xmy-",
+      n,
+      ".Rds"
+    )
+  )
   delta_xym_file <- root$find_file(
     ".setup",
     "data-raw",
@@ -80,6 +107,24 @@ data_process_example_med <- function(overwrite = FALSE,
     "data-raw",
     paste0(
       "mc-example-xym-",
+      n,
+      ".Rds"
+    )
+  )
+  pb_pc_xym_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "pb-pc-example-xym-",
+      n,
+      ".Rds"
+    )
+  )
+  pb_bc_xym_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "pb-bc-example-xym-",
       n,
       ".Rds"
     )
@@ -134,12 +179,17 @@ data_process_example_med <- function(overwrite = FALSE,
     !all(
       file.exists(
         c(
+          pb_file,
           med_xmy_file,
           med_xym_file,
           delta_xmy_file,
           mc_xmy_file,
+          pb_pc_xmy_file,
+          pb_bc_xmy_file,
           delta_xym_file,
           mc_xym_file,
+          pb_pc_xym_file,
+          pb_bc_xym_file,
           ci_file,
           ci_beta_file,
           example_table_coef,
@@ -158,6 +208,8 @@ data_process_example_med <- function(overwrite = FALSE,
   }
   if (write) {
     library(dynr)
+    library(cTMed)
+    library(simStateSpace)
     fit <- readRDS(
       file = fit_example_ct
     )
@@ -182,7 +234,49 @@ data_process_example_med <- function(overwrite = FALSE,
       "competence"
     )
     vcov_phi_vec <- vcov(fit)[varnames, varnames]
-    library(cTMed)
+    varnames <- c(
+      "sigma_11",
+      "sigma_12",
+      "sigma_13",
+      "sigma_12",
+      "sigma_22",
+      "sigma_23",
+      "sigma_13",
+      "sigma_23",
+      "sigma_33"
+    )
+    sigma <- matrix(
+      data = coef(fit)[varnames],
+      nrow = 3
+    )
+    varnames <- c(
+      "theta_11",
+      "theta_22",
+      "theta_33"
+    )
+    theta <- diag(3)
+    diag(theta) <- coef(fit)[varnames]
+    varnames <- c(
+      "phi_11",
+      "phi_21",
+      "phi_31",
+      "phi_12",
+      "phi_22",
+      "phi_32",
+      "phi_13",
+      "phi_23",
+      "phi_33",
+      "sigma_11",
+      "sigma_12",
+      "sigma_13",
+      "sigma_22",
+      "sigma_23",
+      "sigma_33"
+    )
+    vcov_theta <- matrix(
+      data = vcov(fit)[varnames, varnames],
+      nrow = length(varnames)
+    )
     delta_t <- sort(
       unique(
         c(
@@ -214,9 +308,69 @@ data_process_example_med <- function(overwrite = FALSE,
         seed = 42
       )
     )
+    pb <- PBSSMOUFixed(
+      R = 5000L,
+      path = root$find_file(
+        ".setup",
+        "data-raw"
+      ),
+      prefix = paste0(
+        "pb_example_",
+        n
+      ),
+      n = n,
+      time = 30,
+      delta_t = 0.10,
+      mu0 = c(0, 0, 0),
+      sigma0_l = t(
+        chol(
+          matrix(
+            data = c(
+              1.00, -0.06, 0.03,
+              -0.06, 1.00, 0.32,
+              0.03, 0.32, 1.00
+            ),
+            nrow = 3,
+            ncol = 3
+          )
+        )
+      ),
+      mu = c(0, 0, 0),
+      phi = phi,
+      sigma_l = t(chol(sigma)),
+      nu = c(0, 0, 0),
+      lambda = diag(3),
+      theta_l = t(chol(theta)),
+      mu0_fixed = TRUE,
+      sigma0_fixed = TRUE,
+      type = 0,
+      ncores = parallel::detectCores(),
+      seed = 42
+    )
+    saveRDS(
+      pb,
+      file = pb_file,
+      compress = "xz"
+    )
+    beta_pb <- BootBeta(
+      phi = extract(object = pb, what = "phi"),
+      phi_hat = phi,
+      delta_t = delta_t,
+      ncores = parallel::detectCores()
+    )
+    beta_pb_pc <- summary(
+      beta_pb,
+      type = "pc"
+    )
+    beta_pb_bc <- summary(
+      beta_pb,
+      type = "bc"
+    )
     beta <- list(
       delta = beta_delta,
-      mc = beta_mc
+      mc = beta_mc,
+      pb_pc = beta_pb_pc,
+      pb_bc = beta_pb_bc
     )
     med_xmy <- Med(
       phi = phi,
@@ -274,6 +428,27 @@ data_process_example_med <- function(overwrite = FALSE,
     saveRDS(
       mc_xmy,
       file = mc_xmy_file,
+      compress = "xz"
+    )
+    pb_xmy <- BootMed(
+      phi = extract(object = pb, what = "phi"),
+      phi_hat = phi,
+      delta_t = 0:4,
+      from = "conflict",
+      to = "competence",
+      med = "knowledge",
+      ncores = parallel::detectCores()
+    )
+    pb_pc_xmy <- summary(pb_xmy, type = "pc")
+    pb_bc_xmy <- summary(pb_xmy, type = "bc")
+    saveRDS(
+      pb_pc_xmy,
+      file = pb_pc_xmy_file,
+      compress = "xz"
+    )
+    saveRDS(
+      pb_bc_xmy,
+      file = pb_bc_xmy_file,
       compress = "xz"
     )
     delta_xym <- summary(
@@ -349,6 +524,27 @@ data_process_example_med <- function(overwrite = FALSE,
       ncores = parallel::detectCores(),
       R = 20000L,
       seed = 42
+    )
+    pb_xym <- BootMed(
+      phi = extract(object = pb, what = "phi"),
+      phi_hat = phi,
+      delta_t = 0:4,
+      from = "conflict",
+      to = "knowledge",
+      med = "competence",
+      ncores = parallel::detectCores()
+    )
+    pb_pc_xym <- summary(pb_xym, type = "pc")
+    pb_bc_xym <- summary(pb_xym, type = "bc")
+    saveRDS(
+      pb_pc_xym,
+      file = pb_pc_xym_file,
+      compress = "xz"
+    )
+    saveRDS(
+      pb_bc_xym,
+      file = pb_bc_xym_file,
+      compress = "xz"
     )
     delta_xmy <- cTMed:::.DeltaCI(
       object = delta_xmy,
@@ -464,9 +660,127 @@ data_process_example_med <- function(overwrite = FALSE,
       mc_xmy,
       mc_xym
     )
+    pb_pc_xmy <- cTMed:::.BootCI(
+      object = pb_xmy,
+      alpha = 0.05,
+      type = "pc"
+    )
+    pb_pc_xmy <- do.call(
+      what = "rbind",
+      args = pb_pc_xmy
+    )
+    colnames(pb_pc_xmy) <- c(
+      "interval",
+      "est",
+      "se",
+      "R",
+      "ll",
+      "ul"
+    )
+    effect <- rownames(pb_pc_xmy)
+    pb_pc_xmy <- as.data.frame(
+      pb_pc_xmy
+    )
+    pb_pc_xmy$effect <- effect
+    rownames(pb_pc_xmy) <- NULL
+    pb_pc_xmy$method <- "pb_pc"
+    pb_pc_xmy$n <- n
+    pb_pc_xmy$model <- "xmy"
+    pb_pc_xmy <- pb_pc_xmy[, c("interval", "est", "se", "ll", "ul", "effect", "method", "n", "model")]
+    pb_pc_xym <- cTMed:::.BootCI(
+      object = pb_xym,
+      alpha = 0.05,
+      type = "pc"
+    )
+    pb_pc_xym <- do.call(
+      what = "rbind",
+      args = pb_pc_xym
+    )
+    colnames(pb_pc_xym) <- c(
+      "interval",
+      "est",
+      "se",
+      "R",
+      "ll",
+      "ul"
+    )
+    effect <- rownames(pb_pc_xym)
+    pb_pc_xym <- as.data.frame(
+      pb_pc_xym
+    )
+    pb_pc_xym$effect <- effect
+    rownames(pb_pc_xym) <- NULL
+    pb_pc_xym$method <- "pb_pc"
+    pb_pc_xym$n <- n
+    pb_pc_xym$model <- "xym"
+    pb_pc_xym <- pb_pc_xym[, c("interval", "est", "se", "ll", "ul", "effect", "method", "n", "model")]
+    pb_pc <- rbind(
+      pb_pc_xmy,
+      pb_pc_xym
+    )
+    pb_bc_xmy <- cTMed:::.BootCI(
+      object = pb_xmy,
+      alpha = 0.05,
+      type = "bc"
+    )
+    pb_bc_xmy <- do.call(
+      what = "rbind",
+      args = pb_bc_xmy
+    )
+    colnames(pb_bc_xmy) <- c(
+      "interval",
+      "est",
+      "se",
+      "R",
+      "ll",
+      "ul"
+    )
+    effect <- rownames(pb_bc_xmy)
+    pb_bc_xmy <- as.data.frame(
+      pb_bc_xmy
+    )
+    pb_bc_xmy$effect <- effect
+    rownames(pb_bc_xmy) <- NULL
+    pb_bc_xmy$method <- "pb_bc"
+    pb_bc_xmy$n <- n
+    pb_bc_xmy$model <- "xmy"
+    pb_bc_xmy <- pb_bc_xmy[, c("interval", "est", "se", "ll", "ul", "effect", "method", "n", "model")]
+    pb_bc_xym <- cTMed:::.BootCI(
+      object = pb_xym,
+      alpha = 0.05,
+      type = "bc"
+    )
+    pb_bc_xym <- do.call(
+      what = "rbind",
+      args = pb_bc_xym
+    )
+    colnames(pb_bc_xym) <- c(
+      "interval",
+      "est",
+      "se",
+      "R",
+      "ll",
+      "ul"
+    )
+    effect <- rownames(pb_bc_xym)
+    pb_bc_xym <- as.data.frame(
+      pb_bc_xym
+    )
+    pb_bc_xym$effect <- effect
+    rownames(pb_bc_xym) <- NULL
+    pb_bc_xym$method <- "pb_bc"
+    pb_bc_xym$n <- n
+    pb_bc_xym$model <- "xym"
+    pb_bc_xym <- pb_bc_xym[, c("interval", "est", "se", "ll", "ul", "effect", "method", "n", "model")]
+    pb_bc <- rbind(
+      pb_bc_xmy,
+      pb_bc_xym
+    )
     ci <- rbind(
       delta,
-      mc
+      mc,
+      pb_pc,
+      pb_bc
     )
     saveRDS(
       ci,
@@ -480,6 +794,17 @@ data_process_example_med <- function(overwrite = FALSE,
     )
     # Table of coefficients
     fit_summary <- readRDS(fit_example_ct_summary)$Coefficients
+    varnames <- c(
+      "phi_11",
+      "phi_21",
+      "phi_31",
+      "phi_12",
+      "phi_22",
+      "phi_32",
+      "phi_13",
+      "phi_23",
+      "phi_33"
+    )
     phi <- cbind(
       est = fit_summary[varnames, "Estimate"],
       se = fit_summary[varnames, "Std. Error"],
@@ -502,10 +827,28 @@ data_process_example_med <- function(overwrite = FALSE,
       "beta_mc_",
       c("est", "se", "ll", "ul")
     )
+    beta_pb_pc <- beta_pb_pc[
+      which(beta_pb_pc[, "interval"] == 1),
+      c("est", "se", "2.5%", "97.5%")
+    ]
+    colnames(beta_pb_pc) <- paste0(
+      "beta_pb_pc_",
+      c("est", "se", "ll", "ul")
+    )
+    beta_pb_bc <- beta_pb_bc[
+      which(beta_pb_bc[, "interval"] == 1),
+      c("est", "se", "2.5%", "97.5%")
+    ]
+    colnames(beta_pb_bc) <- paste0(
+      "beta_pb_bc_",
+      c("est", "se", "ll", "ul")
+    )
     coefs <- cbind(
       phi,
       beta_delta,
-      beta_mc
+      beta_mc,
+      beta_pb_pc,
+      beta_pb_bc
     )
     coefs <- data.frame(
       parameters = c(
@@ -579,10 +922,62 @@ data_process_example_med <- function(overwrite = FALSE,
           c("est", "se", "ll", "ul")
         )
       )
+      pb_pc <- pb_pc_xmy[
+        which(pb_pc_xmy[, "interval"] == interval),
+        c("effect", "est", "se", "ll", "ul")
+      ]
+      rownames(pb_pc) <- gsub(
+        pattern = "(^[[:alpha:]])",
+        replacement = "\\U\\1",
+        x = pb_pc[, "effect"],
+        perl = TRUE
+      )
+      pb_pc <- pb_pc[
+        c("Direct", "Indirect", "Total"),
+        c("est", "se", "ll", "ul")
+      ]
+      pb_pc <- data.frame(
+        effect = c("Direct", "Indirect", "Total"),
+        pb_pc
+      )
+      colnames(pb_pc) <- c(
+        "effect",
+        paste0(
+          "pb_pc_",
+          c("est", "se", "ll", "ul")
+        )
+      )
+      pb_bc <- pb_bc_xmy[
+        which(pb_bc_xmy[, "interval"] == interval),
+        c("effect", "est", "se", "ll", "ul")
+      ]
+      rownames(pb_bc) <- gsub(
+        pattern = "(^[[:alpha:]])",
+        replacement = "\\U\\1",
+        x = pb_bc[, "effect"],
+        perl = TRUE
+      )
+      pb_bc <- pb_bc[
+        c("Direct", "Indirect", "Total"),
+        c("est", "se", "ll", "ul")
+      ]
+      pb_bc <- data.frame(
+        effect = c("Direct", "Indirect", "Total"),
+        pb_bc
+      )
+      colnames(pb_bc) <- c(
+        "effect",
+        paste0(
+          "pb_bc_",
+          c("est", "se", "ll", "ul")
+        )
+      )
       return(
         cbind(
           delta,
-          mc
+          mc,
+          pb_pc,
+          pb_bc
         )
       )
     }
@@ -592,7 +987,7 @@ data_process_example_med <- function(overwrite = FALSE,
         X = 1:3,
         FUN = foo
       )
-    )[, c(1, 2, 3, 4, 5, 7, 8, 9, 10)]
+    )[, c(1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 20)]
     saveRDS(
       ci,
       file = example_table_ci,

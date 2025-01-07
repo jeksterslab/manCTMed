@@ -4,7 +4,7 @@
 \alias{MCXMY}
 \title{Monte Carlo Method Confidence Intervals for X-M-Y}
 \usage{
-MCXMY(phi_hat, delta_t = 1:30, R = 20000L, seed)
+MCXMY(phi_hat, delta_t = 1:30, R = 20000L, seed = NULL)
 }
 \arguments{
 \item{phi_hat}{R object.
@@ -27,9 +27,9 @@ for the mediation model \eqn{X \to M \to Y}.
 \dontrun{
 set.seed(42)
 library(dynr)
-sim <- GenData(n = 50)
+sim <- GenData(taskid = 1)
 data <- RandomMeasurement(sim)
-fit <- FitDynr(data)
+fit <- FitDynr(data, taskid = 1)
 phi_hat <- PhiHat(fit)
 ci <- MCXMY(phi_hat, seed = 42)
 plot(ci)
@@ -37,8 +37,17 @@ plot(ci)
 }
 \seealso{
 Other Confidence Interval Functions: 
+\code{\link{BootPara}()},
+\code{\link{BootParaStdXMY}()},
+\code{\link{BootParaStdYMX}()},
+\code{\link{BootParaXMY}()},
+\code{\link{BootParaYMX}()},
+\code{\link{DeltaStdXMY}()},
+\code{\link{DeltaStdYMX}()},
 \code{\link{DeltaXMY}()},
 \code{\link{DeltaYMX}()},
+\code{\link{MCStdXMY}()},
+\code{\link{MCStdYMX}()},
 \code{\link{MCYMX}()}
 }
 \concept{Confidence Interval Functions}

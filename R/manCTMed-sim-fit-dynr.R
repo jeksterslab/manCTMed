@@ -12,7 +12,6 @@
 SimFitDynr <- function(taskid,
                        repid,
                        output_folder,
-                       params_taskid,
                        seed,
                        suffix,
                        overwrite,
@@ -41,7 +40,8 @@ SimFitDynr <- function(taskid,
       object = FitDynr(
         data = RandomMeasurement(
           sim = readRDS(fn_input)
-        )
+        ),
+        taskid = taskid
       ),
       file = con
     )

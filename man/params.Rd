@@ -5,7 +5,7 @@
 \alias{params}
 \title{Simulation Parameters}
 \format{
-A dataframe with 20 rows and 2 columns:
+A dataframe with 30 rows and 3 columns:
 
 \describe{
 \item{taskid}{
@@ -14,10 +14,16 @@ Simulation Task ID.
 \item{n}{
 Sample size.
 }
+\item{dynamics}{
+Dynamics.
+\code{0} for original drift matrix,
+\code{-1} for near-neutral dynamics, and
+\code{1} for stronger damping.
+}
 }
 }
 \usage{
-params
+data(params)
 }
 \description{
 Simulation Parameters

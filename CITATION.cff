@@ -8,8 +8,13 @@ message: 'To cite package "manCTMed" in publications use:'
 type: software
 license: MIT
 title: 'manCTMed: Continuous Time Mediation'
-version: 0.9.1
+version: 0.9.2
 doi: 10.0000/0000000000
+identifiers:
+- type: url
+  value: https://osf.io/qwnmf/
+- type: url
+  value: https://doi.org/10.0000/0000000000
 abstract: Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A.,
   Chow, S.-M. (In Preparation). Standard Errors and Confidence Intervals for Total,
   Direct, and Indirect Effects in Continuous-Time Mediation Models. <https://doi.org/10.0000/0000000000>.
@@ -38,7 +43,7 @@ preferred-citation:
   year: '2024'
   doi: 10.0000/0000000000
   journal: JOURNAL_TITLE_HERE
-  notes: R package version 0.9.1
+  notes: R package version 0.9.2
 repository-code: https://github.com/jeksterslab/manCTMed
 url: https://jeksterslab.github.io/manCTMed/
 contact:
@@ -46,9 +51,4 @@ contact:
   given-names: Ivan Jacob Agaloos
   email: r.jeksterslab@gmail.com
   orcid: https://orcid.org/0000-0000-0000-0000
-identifiers:
-- type: url
-  value: https://osf.io/qwnmf/
-- type: url
-  value: https://doi.org/10.0000/0000000000
 

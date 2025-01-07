@@ -1,9 +1,10 @@
 manCTMed
 ================
 Ivan Jacob Agaloos Pesigan
-2024-06-11
+2025-01-07
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
+
 <!-- badges: start -->
 
 [![DOI](https://zenodo.org/badge/DOI/10.0000/0000000000.svg)](https://doi.org/10.0000/0000000000)

@@ -22,12 +22,17 @@ project <- "manCTMed"
 # "dynr",
 # "cTMed",
 # "dynUtils"
+# "OpenMx"
 
 pkg_cran <- c(
-  "DT"
+  "DT",
+  "OpenMx"
 )
 
-pkg_github <- c()
+pkg_github <- c(
+  "jeksterslab/dynUtils",
+  "jeksterslab/cTMed"
+)
 
 pkg_github_ref <- c()
 

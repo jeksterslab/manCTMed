@@ -4,7 +4,7 @@
 \alias{SumHit}
 \title{Summarize Simulations - CI Hit}
 \usage{
-SumHit(taskid, reps, output_folder, output_type, params_taskid, ncores)
+SumHit(taskid, reps, output_folder, output_type, ncores)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -25,9 +25,6 @@ Valid values include
 \code{"dynr-delta-ymx"},
 \code{"dynr-mc-xmy"}, and
 \code{"dynr-mc-ymx"}}
-
-\item{params_taskid}{Data frame with a single row.
-Simulation parameters for a specific \code{taskid}.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}

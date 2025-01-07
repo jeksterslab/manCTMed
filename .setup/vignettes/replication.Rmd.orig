@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Single Replication from the Simulation Study}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -30,8 +30,8 @@ library(manCTMed)
 ## Data Generation
 
 ```{r}
-set.seed(42)
-sim <- GenData(n = 50)
+set.seed(1)
+sim <- GenData(taskid = 1)
 plot(sim)
 data <- RandomMeasurement(sim)
 str(data)
@@ -40,12 +40,13 @@ str(data)
 ## Model Fitting
 
 ```{r}
-fit <- FitDynr(data)
+fit <- FitDynr(data = data, taskid = 1)
 summary(fit)
 phi_hat <- PhiHat(fit)
+theta_hat <- ThetaHat(fit)
 ```
 
-## Confidence Intervals
+## Confidence Intervals (Unstandardized)
 
 ### Model $\eta_X \to \eta_M \to \eta_Y$
 
@@ -76,5 +77,39 @@ plot(delta)
 
 ```{r}
 mc <- MCYMX(phi_hat, seed = 42)
+plot(mc)
+```
+
+## Confidence Intervals (Standardized)
+
+### Model $\eta_X \to \eta_M \to \eta_Y$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaStdXMY(theta_hat)
+plot(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCStdXMY(theta_hat, seed = 1)
+plot(mc)
+```
+
+### Model $\eta_Y \to \eta_M \to \eta_M$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaStdYMX(theta_hat)
+plot(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCStdYMX(theta_hat, seed = 1)
 plot(mc)
 ```

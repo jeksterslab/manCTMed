@@ -1,8 +1,9 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
-tasks <- 10L
+tasks <- 30L
 reps <- 1000L
 overwrite <- FALSE
 R <- 20000L
+B <- 1000L
 delta_t <- 1:30
 # ------------------------------------------------------------------------------
 output_root <- "/scratch/ibp5092/manCTMed/.sim"

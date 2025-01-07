@@ -4,11 +4,13 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+This vignette accompanies Illustrative Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
+
+> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
 
 
 
@@ -19,6 +21,7 @@ This vignette accompanies Illustrative Example 2. The goal of the example is to 
 
 ``` r
 library(dynr)
+library(simStateSpace)
 library(cTMed)
 ```
 
@@ -31,24 +34,24 @@ The object `fit` contains the fitted `dynr` model for the data set with a sample
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033462   0.008195  -4.083 -0.049524 -0.017399    2e-05 ***
-#> phi_12    0.037927   0.013559   2.797  0.011352  0.064502  0.00258 ** 
-#> phi_13   -0.013249   0.012160  -1.090 -0.037083  0.010585  0.13796    
-#> phi_21   -0.151606   0.022253  -6.813 -0.195221 -0.107992  < 2e-16 ***
-#> phi_22   -0.585370   0.064079  -9.135 -0.710962 -0.459777  < 2e-16 ***
-#> phi_23    0.227932   0.041428   5.502  0.146735  0.309128  < 2e-16 ***
-#> phi_31   -0.100379   0.020593  -4.874 -0.140741 -0.060018  < 2e-16 ***
-#> phi_32    0.103791   0.039147   2.651  0.027065  0.180517  0.00401 ** 
-#> phi_33   -0.511093   0.053724  -9.513 -0.616390 -0.405796  < 2e-16 ***
-#> sigma_11  0.057973   0.008431   6.876  0.041448  0.074498  < 2e-16 ***
-#> sigma_12 -0.008697   0.010969  -0.793 -0.030197  0.012802  0.21393    
-#> sigma_13  0.010256   0.010404   0.986 -0.010134  0.030647  0.16211    
-#> sigma_22  0.741687   0.114262   6.491  0.517737  0.965637  < 2e-16 ***
-#> sigma_23  0.101495   0.030132   3.368  0.042438  0.160552  0.00038 ***
-#> sigma_33  0.838008   0.108025   7.758  0.626284  1.049733  < 2e-16 ***
-#> theta_11  0.105586   0.006152  17.163  0.093529  0.117644  < 2e-16 ***
-#> theta_22  0.175885   0.035841   4.907  0.105639  0.246132  < 2e-16 ***
-#> theta_33  0.082160   0.033989   2.417  0.015542  0.148777  0.00782 ** 
+#> phi_11   -0.033462   0.008196  -4.083 -0.049525 -0.017399    2e-05 ***
+#> phi_12    0.037927   0.013550   2.799  0.011369  0.064484  0.00256 ** 
+#> phi_13   -0.013249   0.012176  -1.088 -0.037113  0.010615  0.13827    
+#> phi_21   -0.151606   0.022211  -6.826 -0.195140 -0.108073  < 2e-16 ***
+#> phi_22   -0.585371   0.063543  -9.212 -0.709914 -0.460829  < 2e-16 ***
+#> phi_23    0.227932   0.041150   5.539  0.147281  0.308584  < 2e-16 ***
+#> phi_31   -0.100379   0.020598  -4.873 -0.140751 -0.060008  < 2e-16 ***
+#> phi_32    0.103790   0.038758   2.678  0.027825  0.179755  0.00371 ** 
+#> phi_33   -0.511091   0.052376  -9.758 -0.613747 -0.408436  < 2e-16 ***
+#> sigma_11  0.057973   0.008438   6.870  0.041435  0.074511  < 2e-16 ***
+#> sigma_12 -0.008698   0.010937  -0.795 -0.030133  0.012738  0.21324    
+#> sigma_13  0.010256   0.010438   0.983 -0.010203  0.030715  0.16293    
+#> sigma_22  0.741690   0.113207   6.552  0.519807  0.963572  < 2e-16 ***
+#> sigma_23  0.101494   0.029935   3.391  0.042824  0.160165  0.00035 ***
+#> sigma_33  0.838004   0.104520   8.018  0.633147  1.042860  < 2e-16 ***
+#> theta_11  0.105586   0.006156  17.152  0.093521  0.117652  < 2e-16 ***
+#> theta_22  0.175885   0.035516   4.952  0.106274  0.245495  < 2e-16 ***
+#> theta_33  0.082161   0.032843   2.502  0.017790  0.146532  0.00618 ** 
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
@@ -57,12 +60,13 @@ summary(fit)
 #> BIC = 27104.06
 ```
 
-## Extract Elements of the Drift Matrix
+## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
-We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
+We extract the elements of the drift matrix and the process noise covariance matrix and their corresponding sampling covariance matrix from the `fit` object.
 
 
 ``` r
+# drift matrix
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -78,12 +82,71 @@ phi <- matrix(
   data = coef(fit)[varnames],
   nrow = 3
 )
+# column names and row names are needed to define the indirect effects
 colnames(phi) <- rownames(phi) <- c(
   "conflict",
   "knowledge",
   "competence"
 )
 vcov_phi_vec <- vcov(fit)[varnames, varnames]
+```
+
+
+``` r
+# process noise covariance matrix
+varnames <- c(
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_12",
+  "sigma_22",
+  "sigma_23",
+  "sigma_13",
+  "sigma_23",
+  "sigma_33"
+)
+sigma <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
+```
+
+
+``` r
+# measurement error covariance matrix
+varnames <- c(
+  "theta_11",
+  "theta_22",
+  "theta_33"
+)
+theta <- diag(3)
+diag(theta) <- coef(fit)[varnames]
+```
+
+
+``` r
+# combining the drift matrix and the process noise covariance matrix
+varnames <- c(
+  "phi_11",
+  "phi_21",
+  "phi_31",
+  "phi_12",
+  "phi_22",
+  "phi_32",
+  "phi_13",
+  "phi_23",
+  "phi_33",
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_22",
+  "sigma_23",
+  "sigma_33"
+)
+vcov_theta <- matrix(
+  data = vcov(fit)[varnames, varnames],
+  nrow = length(varnames)
+)
 ```
 
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -95,31 +158,31 @@ Using the `DeltaMed` function from the `cTMed` package, confidence intervals for
 DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge",
-  delta_t = c(1, 2, 3)
+  med = "knowledge"
 )
 #> 
 #> Total, Direct, and Indirect Effects
 #> 
 #> $`1`
 #>          interval     est     se       z      p    2.5%   97.5%
-#> total           1 -0.0828 0.0156 -5.3156 0.0000 -0.1134 -0.0523
-#> direct          1 -0.0772 0.0159 -4.8503 0.0000 -0.1084 -0.0460
-#> indirect        1 -0.0056 0.0022 -2.5355 0.0112 -0.0100 -0.0013
+#> total           1 -0.0828 0.0156 -5.3138 0.0000 -0.1134 -0.0523
+#> direct          1 -0.0772 0.0159 -4.8490 0.0000 -0.1084 -0.0460
+#> indirect        1 -0.0056 0.0022 -2.5576 0.0105 -0.0100 -0.0013
 #> 
 #> $`2`
 #>          interval     est     se       z      p    2.5%   97.5%
-#> total           2 -0.1374 0.0244 -5.6239 0.0000 -0.1852 -0.0895
-#> direct          2 -0.1210 0.0254 -4.7742 0.0000 -0.1707 -0.0714
-#> indirect        2 -0.0163 0.0063 -2.5868 0.0097 -0.0287 -0.0040
+#> total           2 -0.1374 0.0244 -5.6221 0.0000 -0.1853 -0.0895
+#> direct          2 -0.1210 0.0253 -4.7754 0.0000 -0.1707 -0.0714
+#> indirect        2 -0.0163 0.0063 -2.6073 0.0091 -0.0286 -0.0041
 #> 
 #> $`3`
-#>          interval     est     se       z     p    2.5%   97.5%
-#> total           3 -0.1719 0.0295 -5.8176 0.000 -0.2298 -0.1140
-#> direct          3 -0.1450 0.0310 -4.6769 0.000 -0.2058 -0.0842
-#> indirect        3 -0.0269 0.0103 -2.6128 0.009 -0.0470 -0.0067
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           3 -0.1719 0.0296 -5.8160 0.0000 -0.2298 -0.1140
+#> direct          3 -0.1450 0.0310 -4.6813 0.0000 -0.2057 -0.0843
+#> indirect        3 -0.0269 0.0102 -2.6315 0.0085 -0.0469 -0.0069
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -131,12 +194,12 @@ Using the `MCMed` function from the `cTMed` package, confidence intervals for th
 MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
   med = "knowledge",
-  delta_t = c(1, 2, 3),
-  seed = 42,
-  R = 20000L
+  R = 20000L,
+  seed = 42
 )
 #> 
 #> Total, Direct, and Indirect Effects
@@ -144,18 +207,432 @@ MCMed(
 #> $`1`
 #>          interval     est     se     R    2.5%   97.5%
 #> total           1 -0.0828 0.0156 20000 -0.1134 -0.0523
-#> direct          1 -0.0772 0.0159 20000 -0.1088 -0.0460
-#> indirect        1 -0.0056 0.0022 20000 -0.0102 -0.0014
+#> direct          1 -0.0772 0.0159 20000 -0.1088 -0.0461
+#> indirect        1 -0.0056 0.0022 20000 -0.0102 -0.0015
 #> 
 #> $`2`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           2 -0.1374 0.0245 20000 -0.1854 -0.0895
-#> direct          2 -0.1210 0.0254 20000 -0.1722 -0.0719
-#> indirect        2 -0.0163 0.0063 20000 -0.0291 -0.0040
+#> total           2 -0.1374 0.0245 20000 -0.1855 -0.0895
+#> direct          2 -0.1210 0.0254 20000 -0.1721 -0.0719
+#> indirect        2 -0.0163 0.0063 20000 -0.0290 -0.0041
 #> 
 #> $`3`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           3 -0.1719 0.0297 20000 -0.2306 -0.1141
-#> direct          3 -0.1450 0.0312 20000 -0.2087 -0.0856
-#> indirect        3 -0.0269 0.0104 20000 -0.0473 -0.0064
+#> total           3 -0.1719 0.0297 20000 -0.2307 -0.1141
+#> direct          3 -0.1450 0.0312 20000 -0.2084 -0.0856
+#> indirect        3 -0.0269 0.0103 20000 -0.0471 -0.0066
 ```
+
+## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `simStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `simStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+
+> **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
+
+
+``` r
+R <- 5000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "pb_example_1000"
+```
+
+
+``` r
+phi_hat <- phi
+sigma_hat <- sigma
+nu <- mu0 <- c(0, 0, 0)
+sigma0 <- matrix(
+  data = c(
+    1.00, -0.06, 0.03,
+    -0.06, 1.00, 0.32,
+    0.03, 0.32, 1.00
+  ),
+  nrow = 3,
+  ncol = 3
+)
+lambda <- diag(3)
+```
+
+
+``` r
+boot <- PBSSMOUFixed(
+  R = R,
+  path = path,
+  prefix = prefix,
+  n = 1000,
+  time = 30,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = t(chol(sigma0)),
+  mu = c(0, 0, 0),
+  phi = phi,
+  sigma_l = t(chol(sigma)),
+  nu = nu,
+  lambda = lambda,
+  theta_l = t(chol(theta)),
+  mu0_fixed = TRUE,
+  sigma0_fixed = TRUE,
+  ncores = parallel::detectCores(),
+  seed = 42
+)
+```
+
+Using the `BootMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+ci <- BootMed(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  phi_hat = phi_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge"
+)
+summary(ci)
+#>     effect interval          est          se    R         2.5%        97.5%
+#> 1    total        1 -0.082836529 0.013961998 5000 -0.109705692 -0.055191309
+#> 2   direct        1 -0.077199141 0.014008916 5000 -0.104573145 -0.049131908
+#> 3 indirect        1 -0.005637388 0.001414606 5000 -0.008504953 -0.003014814
+#> 4    total        2 -0.137369560 0.022018034 5000 -0.179482479 -0.094030680
+#> 5   direct        2 -0.121044797 0.022005578 5000 -0.163535967 -0.076970542
+#> 6 indirect        2 -0.016324763 0.004084602 5000 -0.024482777 -0.008679953
+#> 7    total        3 -0.171869343 0.026679473 5000 -0.222997421 -0.118965584
+#> 8   direct        3 -0.145009520 0.026469976 5000 -0.195792345 -0.092197975
+#> 9 indirect        3 -0.026859824 0.006755420 5000 -0.040499840 -0.014091198
+summary(ci, type = "bc") # bias-corrected
+#>     effect interval          est          se    R         2.5%        97.5%
+#> 1    total        1 -0.082836529 0.013961998 5000 -0.108624505 -0.053594996
+#> 2   direct        1 -0.077199141 0.014008916 5000 -0.103510586 -0.048402099
+#> 3 indirect        1 -0.005637388 0.001414606 5000 -0.008605258 -0.003065820
+#> 4    total        2 -0.137369560 0.022018034 5000 -0.178114790 -0.091255234
+#> 5   direct        2 -0.121044797 0.022005578 5000 -0.162585446 -0.075907872
+#> 6 indirect        2 -0.016324763 0.004084602 5000 -0.024788340 -0.008802572
+#> 7    total        3 -0.171869343 0.026679473 5000 -0.221644641 -0.116026236
+#> 8   direct        3 -0.145009520 0.026469976 5000 -0.194869625 -0.090967267
+#> 9 indirect        3 -0.026859824 0.006755420 5000 -0.040813022 -0.014400411
+```
+
+## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+DeltaMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge"
+)
+#> 
+#> Total, Direct, and Indirect Effects
+#> 
+#> $`1`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           1 -0.0954 0.0203 -4.6982 0.0000 -0.1352 -0.0556
+#> direct          1 -0.0889 0.0203 -4.3881 0.0000 -0.1286 -0.0492
+#> indirect        1 -0.0065 0.0027 -2.4294 0.0151 -0.0117 -0.0013
+#> 
+#> $`2`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           2 -0.1582 0.0321 -4.9284 0.0000 -0.2211 -0.0953
+#> direct          2 -0.1394 0.0319 -4.3645 0.0000 -0.2020 -0.0768
+#> indirect        2 -0.0188 0.0076 -2.4751 0.0133 -0.0337 -0.0039
+#> 
+#> $`3`
+#>          interval     est     se       z      p    2.5%   97.5%
+#> total           3 -0.1979 0.0389 -5.0855 0.0000 -0.2742 -0.1216
+#> direct          3 -0.1670 0.0386 -4.3226 0.0000 -0.2427 -0.0913
+#> indirect        3 -0.0309 0.0124 -2.4994 0.0124 -0.0552 -0.0067
+```
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  R = 20000L,
+  seed = 42
+)
+#> 
+#> Total, Direct, and Indirect Effects
+#> 
+#> $`1`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           1 -0.0954 0.0204 20000 -0.1373 -0.0567
+#> direct          1 -0.0889 0.0204 20000 -0.1301 -0.0506
+#> indirect        1 -0.0065 0.0027 20000 -0.0121 -0.0016
+#> 
+#> $`2`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           2 -0.1582 0.0323 20000 -0.2238 -0.0968
+#> direct          2 -0.1394 0.0321 20000 -0.2051 -0.0793
+#> indirect        2 -0.0188 0.0076 20000 -0.0345 -0.0046
+#> 
+#> $`3`
+#>          interval     est     se     R    2.5%   97.5%
+#> total           3 -0.1979 0.0393 20000 -0.2780 -0.1235
+#> direct          3 -0.1670 0.0389 20000 -0.2474 -0.0952
+#> indirect        3 -0.0309 0.0124 20000 -0.0561 -0.0074
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+pb <- BootMedStd(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
+  phi_hat = phi_hat,
+  sigma_hat = sigma_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge"
+)
+summary(pb)
+#>     effect interval          est          se    R        2.5%        97.5%
+#> 1    total        1 -0.095376961 0.018022864 5000 -0.13165099 -0.061077160
+#> 2   direct        1 -0.088886143 0.017828013 5000 -0.12456367 -0.054596853
+#> 3 indirect        1 -0.006490819 0.001726601 5000 -0.01006584 -0.003382129
+#> 4    total        2 -0.158165623 0.028674248 5000 -0.21562158 -0.103450095
+#> 5   direct        2 -0.139369492 0.027946075 5000 -0.19539607 -0.085154687
+#> 6 indirect        2 -0.018796131 0.004986228 5000 -0.02895022 -0.009767457
+#> 7    total        3 -0.197888250 0.034884858 5000 -0.26773883 -0.131216872
+#> 8   direct        3 -0.166962179 0.033494309 5000 -0.23420327 -0.101884542
+#> 9 indirect        3 -0.030926071 0.008237534 5000 -0.04771097 -0.015902991
+summary(pb, type = "bc") # bias-corrected
+#>     effect interval          est          se    R        2.5%        97.5%
+#> 1    total        1 -0.095376961 0.018022864 5000 -0.13140615 -0.060992252
+#> 2   direct        1 -0.088886143 0.017828013 5000 -0.12426054 -0.054336048
+#> 3 indirect        1 -0.006490819 0.001726601 5000 -0.01028856 -0.003525718
+#> 4    total        2 -0.158165623 0.028674248 5000 -0.21540959 -0.103185137
+#> 5   direct        2 -0.139369492 0.027946075 5000 -0.19525777 -0.084990971
+#> 6 indirect        2 -0.018796131 0.004986228 5000 -0.02957574 -0.010082510
+#> 7    total        3 -0.197888250 0.034884858 5000 -0.26826055 -0.131933122
+#> 8   direct        3 -0.166962179 0.033494309 5000 -0.23309338 -0.101317477
+#> 9 indirect        3 -0.030926071 0.008237534 5000 -0.04866629 -0.016541707
+```
+
+<details>
+<summary>
+Code to fit the CT-VAR model.
+</summary>
+```r
+varnames <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+data <- dynUtils::InsertNA(
+  data = data,
+  id = "id",
+  time = "time",
+  observed = varnames,
+  delta_t = 0.10,
+  ncores = parallel::detectCores()
+)
+n_manifest <- 3
+n_latent <- 3
+# starting values
+phi_11 <- 0
+phi_12 <- 0
+phi_13 <- 0
+phi_21 <- 0
+phi_22 <- 0
+phi_23 <- 0
+phi_31 <- 0
+phi_32 <- 0
+phi_33 <- 0
+sigma_11 <- .10
+sigma_12 <- 0
+sigma_13 <- 0
+sigma_22 <- .10
+sigma_23 <- 0
+sigma_33 <- .10
+theta_11 <- .10
+theta_22 <- .10
+theta_33 <- .10
+sigma <- matrix(
+  data = c(
+    sigma_11, sigma_12, sigma_13,
+    sigma_12, sigma_22, sigma_23,
+    sigma_13, sigma_23, sigma_33
+  ),
+  nrow = n_latent
+)
+theta <- diag(
+  c(
+    theta_11,
+    theta_22,
+    theta_33
+  ),
+  nrow = n_latent
+)
+library(dynr)
+dynr_data <- dynr::dynr.data(
+  dataframe = data,
+  id = "id",
+  time = "time",
+  observed = varnames
+)
+data_0 <- data[which(data[, "time"] == 0), ]
+dynr_initial <- dynr::prep.initial(
+  values.inistate = colMeans(data_0)[varnames],
+  params.inistate = rep(x = "fixed", times = n_latent),
+  values.inicov = cov(data_0)[varnames, varnames],
+  params.inicov = matrix(
+    data = "fixed",
+    nrow = n_latent,
+    ncol = n_latent
+  )
+)
+dynr_measurement <- dynr::prep.measurement(
+  values.load = diag(n_manifest),
+  params.load = matrix(
+    data = "fixed",
+    nrow = n_manifest,
+    ncol = n_manifest
+  ),
+  state.names = paste0(
+    "eta_",
+    varnames
+  ),
+  obs.names = varnames
+)
+dynr_dynamics <- dynr::prep.formulaDynamics(
+  formula = list(
+    eta_conflict ~ (phi_11 * eta_conflict) + (phi_12 * eta_knowledge) + (phi_13 * eta_competence),
+    eta_knowledge ~ (phi_21 * eta_conflict) + (phi_22 * eta_knowledge) + (phi_23 * eta_competence),
+    eta_competence ~ (phi_31 * eta_conflict) + (phi_32 * eta_knowledge) + (phi_33 * eta_competence)
+  ),
+  startval = c(
+    phi_11 = phi_11,
+    phi_12 = phi_12,
+    phi_13 = phi_13,
+    phi_21 = phi_21,
+    phi_22 = phi_22,
+    phi_23 = phi_23,
+    phi_31 = phi_31,
+    phi_32 = phi_32,
+    phi_33 = phi_33
+  ),
+  isContinuousTime = TRUE
+)
+dynr_noise <- dynr::prep.noise(
+  values.latent = sigma,
+  params.latent = matrix(
+    data = c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    ),
+    nrow = n_latent
+  ),
+  values.observed = theta,
+  params.observed = matrix(
+    data = c(
+      "theta_11", "fixed", "fixed",
+      "fixed", "theta_22", "fixed",
+      "fixed", "fixed", "theta_33"
+    ),
+    nrow = n_manifest,
+    ncol = n_manifest
+  )
+)
+model <- dynr::dynr.model(
+  data = dynr_data,
+  initial = dynr_initial,
+  measurement = dynr_measurement,
+  dynamics = dynr_dynamics,
+  noise = dynr_noise,
+  outfile = file.path(
+    tempdir(),
+    paste0(
+      "example-ct-dynr-",
+      n,
+      ".c"
+    )
+  )
+)
+model@options$maxeval <- 100000
+lb <- ub <- rep(NA, times = length(model$xstart))
+names(ub) <- names(lb) <- names(model$xstart)
+lb[
+  c(
+    "phi_11",
+    "phi_21",
+    "phi_31",
+    "phi_12",
+    "phi_22",
+    "phi_32",
+    "phi_13",
+    "phi_23",
+    "phi_33"
+  )
+] <- -10
+ub[
+  c(
+    "phi_11",
+    "phi_21",
+    "phi_31",
+    "phi_12",
+    "phi_22",
+    "phi_32",
+    "phi_13",
+    "phi_23",
+    "phi_33"
+  )
+] <- 10
+ub[
+  c(
+    "phi_11",
+    "phi_22",
+    "phi_33"
+  )
+] <- 0
+lb[
+  c(
+    "sigma_11",
+    "sigma_22",
+    "sigma_33"
+  )
+] <- .Machine$double.xmin
+lb[
+  c(
+    "theta_11",
+    "theta_22",
+    "theta_33"
+  )
+] <- .Machine$double.xmin
+model$lb <- lb
+model$ub <- ub
+fit <- dynr::dynr.cook(
+  model,
+  verbose = FALSE
+)
+coef(model) <- coef(fit)
+fit <- dynr::dynr.cook(
+  model,
+  verbose = FALSE
+)
+```
+</details>

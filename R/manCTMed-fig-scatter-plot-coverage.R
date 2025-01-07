@@ -7,9 +7,7 @@
 #' @param results Summary results data frame.
 #' @param delta_t Vector of time-interval value.
 #'   If `delta_t = NULL`, use all available time-intervals
-#' @param R Integer.
-#'   Number of replications for the Monte Carlo method.
-#'   Possible values are 1000, 20000, and 100000.
+#' @inheritParams FigPlotEffects
 #'
 #' @examples
 #' data(results, package = "manCTMed")
@@ -22,8 +20,10 @@
 #' @export
 FigScatterPlotCoverage <- function(results,
                                    delta_t = NULL,
-                                   R = 20000) {
-  results <- results[which(results$R == R | is.na(results$R)), ]
+                                   dynamics = 0,
+                                   std = FALSE) {
+  results <- results[which(results$dynamics == dynamics), ]
+  results <- results[which(results$std == std), ]
   if (!is.null(delta_t)) {
     results <- results[which(results$interval %in% delta_t), ]
   }

@@ -21,9 +21,9 @@ for the mediation model \eqn{Y \to M \to X}.
 \dontrun{
 set.seed(42)
 library(dynr)
-sim <- GenData(n = 50)
+sim <- GenData(taskid = 1)
 data <- RandomMeasurement(sim)
-fit <- FitDynr(data)
+fit <- FitDynr(data, taskid = 1)
 phi_hat <- PhiHat(fit)
 ci <- DeltaYMX(phi_hat)
 plot(ci)
@@ -31,7 +31,16 @@ plot(ci)
 }
 \seealso{
 Other Confidence Interval Functions: 
+\code{\link{BootPara}()},
+\code{\link{BootParaStdXMY}()},
+\code{\link{BootParaStdYMX}()},
+\code{\link{BootParaXMY}()},
+\code{\link{BootParaYMX}()},
+\code{\link{DeltaStdXMY}()},
+\code{\link{DeltaStdYMX}()},
 \code{\link{DeltaXMY}()},
+\code{\link{MCStdXMY}()},
+\code{\link{MCStdYMX}()},
 \code{\link{MCXMY}()},
 \code{\link{MCYMX}()}
 }

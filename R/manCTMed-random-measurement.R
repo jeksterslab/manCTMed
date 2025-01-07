@@ -8,7 +8,7 @@
 #' @examples
 #' \dontrun{
 #' set.seed(42)
-#' sim <- GenData(n = 50)
+#' sim <- GenData(taskid = 1)
 #' RandomMeasurement(sim)
 #' }
 #' @family Data Generation Functions

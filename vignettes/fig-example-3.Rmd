@@ -4,11 +4,11 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Illustrative Example 3 - Regions of Significance}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{quarto::quarto}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed` and `MCMed` functions from the `cTMed` package.
+This vignette accompanies Illustrative Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
 
 
 
@@ -19,6 +19,7 @@ This vignette accompanies Illustrative Example 3. The goal of the example is to 
 
 ``` r
 library(dynr)
+library(simStateSpace)
 library(cTMed)
 ```
 
@@ -31,24 +32,24 @@ The object `fit` contains the fitted `dynr` model for the data set with a sample
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033462   0.008195  -4.083 -0.049524 -0.017399    2e-05 ***
-#> phi_12    0.037927   0.013559   2.797  0.011352  0.064502  0.00258 ** 
-#> phi_13   -0.013249   0.012160  -1.090 -0.037083  0.010585  0.13796    
-#> phi_21   -0.151606   0.022253  -6.813 -0.195221 -0.107992  < 2e-16 ***
-#> phi_22   -0.585370   0.064079  -9.135 -0.710962 -0.459777  < 2e-16 ***
-#> phi_23    0.227932   0.041428   5.502  0.146735  0.309128  < 2e-16 ***
-#> phi_31   -0.100379   0.020593  -4.874 -0.140741 -0.060018  < 2e-16 ***
-#> phi_32    0.103791   0.039147   2.651  0.027065  0.180517  0.00401 ** 
-#> phi_33   -0.511093   0.053724  -9.513 -0.616390 -0.405796  < 2e-16 ***
-#> sigma_11  0.057973   0.008431   6.876  0.041448  0.074498  < 2e-16 ***
-#> sigma_12 -0.008697   0.010969  -0.793 -0.030197  0.012802  0.21393    
-#> sigma_13  0.010256   0.010404   0.986 -0.010134  0.030647  0.16211    
-#> sigma_22  0.741687   0.114262   6.491  0.517737  0.965637  < 2e-16 ***
-#> sigma_23  0.101495   0.030132   3.368  0.042438  0.160552  0.00038 ***
-#> sigma_33  0.838008   0.108025   7.758  0.626284  1.049733  < 2e-16 ***
-#> theta_11  0.105586   0.006152  17.163  0.093529  0.117644  < 2e-16 ***
-#> theta_22  0.175885   0.035841   4.907  0.105639  0.246132  < 2e-16 ***
-#> theta_33  0.082160   0.033989   2.417  0.015542  0.148777  0.00782 ** 
+#> phi_11   -0.033462   0.008196  -4.083 -0.049525 -0.017399    2e-05 ***
+#> phi_12    0.037927   0.013550   2.799  0.011369  0.064484  0.00256 ** 
+#> phi_13   -0.013249   0.012176  -1.088 -0.037113  0.010615  0.13827    
+#> phi_21   -0.151606   0.022211  -6.826 -0.195140 -0.108073  < 2e-16 ***
+#> phi_22   -0.585371   0.063543  -9.212 -0.709914 -0.460829  < 2e-16 ***
+#> phi_23    0.227932   0.041150   5.539  0.147281  0.308584  < 2e-16 ***
+#> phi_31   -0.100379   0.020598  -4.873 -0.140751 -0.060008  < 2e-16 ***
+#> phi_32    0.103790   0.038758   2.678  0.027825  0.179755  0.00371 ** 
+#> phi_33   -0.511091   0.052376  -9.758 -0.613747 -0.408436  < 2e-16 ***
+#> sigma_11  0.057973   0.008438   6.870  0.041435  0.074511  < 2e-16 ***
+#> sigma_12 -0.008698   0.010937  -0.795 -0.030133  0.012738  0.21324    
+#> sigma_13  0.010256   0.010438   0.983 -0.010203  0.030715  0.16293    
+#> sigma_22  0.741690   0.113207   6.552  0.519807  0.963572  < 2e-16 ***
+#> sigma_23  0.101494   0.029935   3.391  0.042824  0.160165  0.00035 ***
+#> sigma_33  0.838004   0.104520   8.018  0.633147  1.042860  < 2e-16 ***
+#> theta_11  0.105586   0.006156  17.152  0.093521  0.117652  < 2e-16 ***
+#> theta_22  0.175885   0.035516   4.952  0.106274  0.245495  < 2e-16 ***
+#> theta_33  0.082161   0.032843   2.502  0.017790  0.146532  0.00618 ** 
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
@@ -57,12 +58,13 @@ summary(fit)
 #> BIC = 27104.06
 ```
 
-## Extract Elements of the Drift Matrix
+## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
-We extract the elements of the drift matrix and the corresponding sampling variance-covariance matrix from the `fit` object.
+We extract the elements of the drift matrix and the process noise covariance matrix and their corresponding sampling covariance matrix from the `fit` object.
 
 
 ``` r
+# drift matrix
 varnames <- c(
   "phi_11",
   "phi_21",
@@ -78,6 +80,7 @@ phi <- matrix(
   data = coef(fit)[varnames],
   nrow = 3
 )
+# column names and row names are needed to define the indirect effects
 colnames(phi) <- rownames(phi) <- c(
   "conflict",
   "knowledge",
@@ -86,45 +89,260 @@ colnames(phi) <- rownames(phi) <- c(
 vcov_phi_vec <- vcov(fit)[varnames, varnames]
 ```
 
+
+``` r
+# process noise covariance matrix
+varnames <- c(
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_12",
+  "sigma_22",
+  "sigma_23",
+  "sigma_13",
+  "sigma_23",
+  "sigma_33"
+)
+sigma <- matrix(
+  data = coef(fit)[varnames],
+  nrow = 3
+)
+```
+
+
+``` r
+# measurement error covariance matrix
+varnames <- c(
+  "theta_11",
+  "theta_22",
+  "theta_33"
+)
+theta <- diag(3)
+diag(theta) <- coef(fit)[varnames]
+```
+
+
+``` r
+# combining the drift matrix and the process noise covariance matrix
+varnames <- c(
+  "phi_11",
+  "phi_21",
+  "phi_31",
+  "phi_12",
+  "phi_22",
+  "phi_32",
+  "phi_13",
+  "phi_23",
+  "phi_33",
+  "sigma_11",
+  "sigma_12",
+  "sigma_13",
+  "sigma_22",
+  "sigma_23",
+  "sigma_33"
+)
+vcov_theta <- matrix(
+  data = vcov(fit)[varnames, varnames],
+  nrow = length(varnames)
+)
+```
+
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
+
 
 
 ``` r
 delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
   from = "conflict",
   to = "competence",
   med = "knowledge",
-  delta_t = seq(from = 0, to = 10, length.out = 1000)
+  ncores = parallel::detectCores()
 )
 plot(delta)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-7-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-7-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-10-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-3.png" width="1700" />
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
 
 
 ``` r
 mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
   from = "conflict",
   to = "competence",
   med = "knowledge",
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
-  seed = 42,
-  R = 20000L
+  R = 20000L,
+  ncores = parallel::detectCores(), # use multiple cores
+  seed = 42
 )
 plot(mc)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-8-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-8-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-8-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-11-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-11-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-11-3.png" width="1700" />
+
+## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `simStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `simStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+
+> **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
+
+
+``` r
+R <- 5000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "pb_example_1000"
+```
+
+
+``` r
+phi_hat <- phi
+sigma_hat <- sigma
+nu <- mu0 <- c(0, 0, 0)
+sigma0 <- matrix(
+  data = c(
+    1.00, -0.06, 0.03,
+    -0.06, 1.00, 0.32,
+    0.03, 0.32, 1.00
+  ),
+  nrow = 3,
+  ncol = 3
+)
+lambda <- diag(3)
+```
+
+
+``` r
+boot <- PBSSMOUFixed(
+  R = R,
+  path = path,
+  prefix = prefix,
+  n = 1000,
+  time = 30,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = t(chol(sigma0)),
+  mu = c(0, 0, 0),
+  phi = phi,
+  sigma_l = t(chol(sigma)),
+  nu = nu,
+  lambda = lambda,
+  theta_l = t(chol(theta)),
+  mu0_fixed = TRUE,
+  sigma0_fixed = TRUE,
+  ncores = parallel::detectCores(),
+  seed = 42
+)
+```
+
+Using the `BootMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `BootMed` presents the regions of significance visually represented by shaded areas in the plot.
+
+
+``` r
+pb <- BootMed(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  phi_hat = phi_hat,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(pb)
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-15-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-15-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-15-3.png" width="1700" />
+
+``` r
+plot(pb, type = "bc") # bias-corrected
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-15-4.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-15-5.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-15-6.png" width="1700" />
+
+## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated.
+
+
+``` r
+delta_std <- DeltaMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(delta_std)
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-16-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-16-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-16-3.png" width="1700" />
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+mc_std <- MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  R = 20000L,
+  ncores = parallel::detectCores(),
+  seed = 42
+)
+plot(mc_std)
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-17-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-17-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-17-3.png" width="1700" />
+
+## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+pb <- BootMedStd(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
+  phi_hat = phi_hat,
+  sigma_hat = sigma_hat,
+  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(pb)
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-18-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-3.png" width="1700" />
+
+``` r
+plot(pb, type = "bc")
+```
+
+<img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-5.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-6.png" width="1700" />
+
 
 
 
