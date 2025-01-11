@@ -146,7 +146,6 @@ FitDynr <- function(data,
       ".c"
     )
   )
-  # dynr_model@options$maxeval <- 1000000
   lb <- ub <- rep(NA, times = length(dynr_model$xstart))
   names(ub) <- names(lb) <- names(dynr_model$xstart)
   lb[
