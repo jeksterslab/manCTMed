@@ -414,6 +414,12 @@ data_process_example_med_plot <- function(n,
   if (method == "mc") {
     method_label <- "MC Method"
   }
+  if (method == "pb_pc") {
+    method_label <- "PB PC Method"
+  }
+  if (method == "pb_bc") {
+    method_label <- "PB BC Method"
+  }
   graphics::plot.default(
     x = 0,
     y = 0,
@@ -491,7 +497,6 @@ data_process_example_med_plot <- function(n,
 }
 ```
 
-
 ```{r, xmy-direct-delta-100}
 #| include = FALSE,
 #| cache = FALSE
@@ -502,6 +507,18 @@ data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method 
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-direct-pb_pc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-pb_bc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "pb_bc")
 ```
 
 ```{r, xmy-indirect-delta-100}
@@ -516,6 +533,18 @@ data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", metho
 data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "mc")
 ```
 
+```{r, xmy-indirect-pb-pc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "pb_bc")
+```
+
 ```{r, xmy-total-delta-100}
 #| include = FALSE,
 #| cache = FALSE
@@ -526,6 +555,18 @@ data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method =
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method = "mc")
+```
+
+```{r, xmy-total-pb-pc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-pb-bc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "total", method = "pb_bc")
 ```
 
 ```{r, xmy-direct-delta-200}
@@ -540,6 +581,18 @@ data_process_example_med_plot(n = 200, model = "xmy", effect = "direct", method 
 data_process_example_med_plot(n = 200, model = "xmy", effect = "direct", method = "mc")
 ```
 
+```{r, xmy-direct-pb_pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-pb_bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "direct", method = "pb_bc")
+```
+
 ```{r, xmy-indirect-delta-200}
 #| include = FALSE,
 #| cache = FALSE
@@ -550,6 +603,18 @@ data_process_example_med_plot(n = 200, model = "xmy", effect = "indirect", metho
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 200, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-indirect-pb-pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "indirect", method = "pb_bc")
 ```
 
 ```{r, xmy-total-delta-200}
@@ -564,6 +629,18 @@ data_process_example_med_plot(n = 200, model = "xmy", effect = "total", method =
 data_process_example_med_plot(n = 200, model = "xmy", effect = "total", method = "mc")
 ```
 
+```{r, xmy-total-pb-pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-pb-bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xmy", effect = "total", method = "pb_bc")
+```
+
 ```{r, xmy-direct-delta-500}
 #| include = FALSE,
 #| cache = FALSE
@@ -574,6 +651,18 @@ data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method 
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-direct-pb_pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-pb_bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "direct", method = "pb_bc")
 ```
 
 ```{r, xmy-indirect-delta-500}
@@ -588,6 +677,18 @@ data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", metho
 data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", method = "mc")
 ```
 
+```{r, xmy-indirect-pb-pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "indirect", method = "pb_bc")
+```
+
 ```{r, xmy-total-delta-500}
 #| include = FALSE,
 #| cache = FALSE
@@ -598,6 +699,18 @@ data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method =
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method = "mc")
+```
+
+```{r, xmy-total-pb-pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-pb-bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xmy", effect = "total", method = "pb_bc")
 ```
 
 ```{r, xmy-direct-delta-1000}
@@ -612,6 +725,18 @@ data_process_example_med_plot(n = 1000, model = "xmy", effect = "direct", method
 data_process_example_med_plot(n = 1000, model = "xmy", effect = "direct", method = "mc")
 ```
 
+```{r, xmy-direct-pb_pc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-pb_bc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "direct", method = "pb_bc")
+```
+
 ```{r, xmy-indirect-delta-1000}
 #| include = FALSE,
 #| cache = FALSE
@@ -622,6 +747,18 @@ data_process_example_med_plot(n = 1000, model = "xmy", effect = "indirect", meth
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 1000, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-indirect-pb-pc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "indirect", method = "pb_bc")
 ```
 
 ```{r, xmy-total-delta-1000}
@@ -636,28 +773,64 @@ data_process_example_med_plot(n = 1000, model = "xmy", effect = "total", method 
 data_process_example_med_plot(n = 1000, model = "xmy", effect = "total", method = "mc")
 ```
 
+```{r, xmy-total-pb-pc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-pb-bc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xmy", effect = "total", method = "pb_bc")
+```
+
 ```{r, xym-direct-delta-100}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_plot(n = 100, model = "xym", effect = "direct", method = "delta")
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "delta")
 ```
 
-```{r, xym-direct-mc-100}
+```{r, xmy-direct-mc-100}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_plot(n = 100, model = "xym", effect = "direct", method = "mc")
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "mc")
 ```
 
-```{r, xym-indirect-delta-100}
+```{r, xmy-direct-pb_pc-100}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_plot(n = 100, model = "xym", effect = "indirect", method = "delta")
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "pb_pc")
 ```
 
-```{r, xym-indirect-mc-100}
+```{r, xmy-direct-pb_bc-100}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_plot(n = 100, model = "xym", effect = "indirect", method = "mc")
+data_process_example_med_plot(n = 100, model = "xmy", effect = "direct", method = "pb_bc")
+```
+
+```{r, xmy-indirect-delta-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "delta")
+```
+
+```{r, xmy-indirect-mc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-indirect-pb-pc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xmy", effect = "indirect", method = "pb_bc")
 ```
 
 ```{r, xym-total-delta-100}
@@ -672,6 +845,18 @@ data_process_example_med_plot(n = 100, model = "xym", effect = "total", method =
 data_process_example_med_plot(n = 100, model = "xym", effect = "total", method = "mc")
 ```
 
+```{r, xym-total-pb-pc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "total", method = "pb_pc")
+```
+
+```{r, xym-total-pb-bc-100}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 100, model = "xym", effect = "total", method = "pb_bc")
+```
+
 ```{r, xym-direct-delta-200}
 #| include = FALSE,
 #| cache = FALSE
@@ -682,6 +867,18 @@ data_process_example_med_plot(n = 200, model = "xym", effect = "direct", method 
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 200, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-direct-pb_pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "direct", method = "pb_pc")
+```
+
+```{r, xym-direct-pb_bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "direct", method = "pb_bc")
 ```
 
 ```{r, xym-indirect-delta-200}
@@ -696,6 +893,18 @@ data_process_example_med_plot(n = 200, model = "xym", effect = "indirect", metho
 data_process_example_med_plot(n = 200, model = "xym", effect = "indirect", method = "mc")
 ```
 
+```{r, xym-indirect-pb-pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xym-indirect-pb-bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "indirect", method = "pb_bc")
+```
+
 ```{r, xym-total-delta-200}
 #| include = FALSE,
 #| cache = FALSE
@@ -706,6 +915,18 @@ data_process_example_med_plot(n = 200, model = "xym", effect = "total", method =
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 200, model = "xym", effect = "total", method = "mc")
+```
+
+```{r, xym-total-pb-pc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "total", method = "pb_pc")
+```
+
+```{r, xym-total-pb-bc-200}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 200, model = "xym", effect = "total", method = "pb_bc")
 ```
 
 ```{r, xym-direct-delta-500}
@@ -720,6 +941,18 @@ data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method 
 data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method = "mc")
 ```
 
+```{r, xym-direct-pb_pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method = "pb_pc")
+```
+
+```{r, xym-direct-pb_bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "direct", method = "pb_bc")
+```
+
 ```{r, xym-indirect-delta-500}
 #| include = FALSE,
 #| cache = FALSE
@@ -730,6 +963,18 @@ data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", metho
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", method = "mc")
+```
+
+```{r, xym-indirect-pb-pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xym-indirect-pb-bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "indirect", method = "pb_bc")
 ```
 
 ```{r, xym-total-delta-500}
@@ -744,6 +989,18 @@ data_process_example_med_plot(n = 500, model = "xym", effect = "total", method =
 data_process_example_med_plot(n = 500, model = "xym", effect = "total", method = "mc")
 ```
 
+```{r, xym-total-pb-pc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "total", method = "pb_pc")
+```
+
+```{r, xym-total-pb-bc-500}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 500, model = "xym", effect = "total", method = "pb_bc")
+```
+
 ```{r, xym-direct-delta-1000}
 #| include = FALSE,
 #| cache = FALSE
@@ -754,6 +1011,18 @@ data_process_example_med_plot(n = 1000, model = "xym", effect = "direct", method
 #| include = FALSE,
 #| cache = FALSE
 data_process_example_med_plot(n = 1000, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-direct-pb_pc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xym", effect = "direct", method = "pb_pc")
+```
+
+```{r, xym-direct-pb_bc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xym", effect = "direct", method = "pb_bc")
 ```
 
 ```{r, xym-indirect-delta-1000}
@@ -768,6 +1037,18 @@ data_process_example_med_plot(n = 1000, model = "xym", effect = "indirect", meth
 data_process_example_med_plot(n = 1000, model = "xym", effect = "indirect", method = "mc")
 ```
 
+```{r, xym-indirect-pb-pc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xym", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xym-indirect-pb-bc-1000}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 1000, model = "xym", effect = "indirect", method = "pb_bc")
+```
+
 ```{r, xym-total-delta-1000}
 #| include = FALSE,
 #| cache = FALSE
@@ -780,389 +1061,14 @@ data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method 
 data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method = "mc")
 ```
 
-```{r}
-#| include = FALSE
-data_process_example_med_sim_plot <- function(n,
-                                              model,
-                                              effect,
-                                              delta_t_max = 10) {
-  method <- "delta"
-  # find root directory
-  root <- rprojroot::is_rstudio_project
-  
-  # all -----------------------------------------
-  ci_file_100 <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "ci-example-",
-      100,
-      ".Rds"
-    )
-  )
-  ci_100 <- readRDS(
-    ci_file_100
-  )
-  ci_100 <- ci_100[which(ci_100$interval <= delta_t_max), ]
-  ci_100 <- ci_100[which(ci_100$model == model), ]
-  
-  ci_file_200 <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "ci-example-",
-      200,
-      ".Rds"
-    )
-  )
-  ci_200 <- readRDS(
-    ci_file_200
-  )
-  ci_200 <- ci_200[which(ci_200$interval <= delta_t_max), ]
-  ci_200 <- ci_200[which(ci_200$model == model), ]
-  
-  ci_file_500 <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "ci-example-",
-      500,
-      ".Rds"
-    )
-  )
-  ci_500 <- readRDS(
-    ci_file_500
-  )
-  ci_500 <- ci_500[which(ci_500$interval <= delta_t_max), ]
-  ci_500 <- ci_500[which(ci_500$model == model), ]
-  
-  ci_file_1000 <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "ci-example-",
-      1000,
-      ".Rds"
-    )
-  )
-  ci_1000 <- readRDS(
-    ci_file_1000
-  )
-  ci_1000 <- ci_1000[which(ci_1000$interval <= delta_t_max), ]
-  ci_1000 <- ci_1000[which(ci_1000$model == model), ]
-  ci_combined <- rbind(
-    ci_100,
-    ci_200,
-    ci_500,
-    ci_1000
-  )
-  # all -----------------------------------------
-  
-  method_label <- "Simulation CIs"
-  graphics::plot.default(
-    x = 0,
-    y = 0,
-    xlim = range(ci_combined$interval),
-    ylim = range(c(ci_combined$est, ci_combined$ll, ci_combined$ul)),
-    type = "n",
-    xlab = "Time Interval",
-    ylab = "Estimate",
-    main =  paste0(
-      gsub(
-        pattern = "(^|[[:space:]])([[:alpha:]])",
-        replacement = "\\1\\U\\2",
-        x = effect,
-        perl = TRUE
-      ),
-      " Effect",
-      " | ",
-      method_label,
-      " | ",
-      "n = ",
-      n
-    )
-  )
-  if (effect == "total") {
-    col <- "#5e3c99"
-  }
-  if (effect == "direct") {
-    col <- "#2c7bb6"
-  }
-  if (effect == "indirect") {
-    col <- "#d7191c"
-  }
-  fit_example_ct_sim <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "fit-example-ct-sim-",
-      n,
-      ".Rds"
-    )
-  )
-  sim <- readRDS(fit_example_ct_sim)
-  sim <- sim[which(sim$interval <= delta_t_max), ]
-  sim <- sim[which(sim$model == model), ]
-  sim <- sim[which(sim$n == n), ]
-  sim <- sim[, c("interval", effect)]
-  delta_t <- unique(sim$interval)
-  ci <- do.call(
-    what = "rbind",
-    args = lapply(
-      X = delta_t,
-      FUN = function(i) {
-        return(
-          c(
-            interval = i,
-            quantile(
-              x = sim[which(sim$interval == i), effect],
-              probs = c(0.025, 0.975)
-            )
-          )
-        )
-      }
-    )
-  )
-  ci <- as.data.frame(ci)
-  colnames(ci) <- c("interval", "ll", "ul")
-  # estimates
-  library(cTMed)
-  fit <- readRDS(
-    root$find_file(
-      ".setup",
-      "data-raw",
-      paste0(
-        "fit-example-ct-",
-        n,
-        ".Rds"
-      )
-    )
-  )
-  varnames <- c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-  phi <- matrix(
-    data = coef(fit)[varnames],
-    nrow = 3
-  )
-  colnames(phi) <- rownames(phi) <- c(
-    "conflict",
-    "knowledge",
-    "competence"
-  )
-  est <- summary(
-    Med(
-      phi = phi,
-      from = "conflict",
-      to = "competence",
-      med = "knowledge",
-      delta_t = delta_t
-    )
-  )[, effect]
-  for (i in seq_along(ci$interval)) {
-    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
-      graphics::segments(
-        x0 = ci$interval[i],
-        y0 = ci$ll[i],
-        x1 = ci$interval[i],
-        y1 = ci$ul[i],
-        col = col,
-        lty = 3,
-        lwd = 1
-      )
-    }
-  }
-  for (i in seq_along(ci$interval)) {
-    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
-      graphics::segments(
-        x0 = ci$interval[i],
-        y0 = ci$ll[i],
-        x1 = ci$interval[i],
-        y1 = ci$ul[i],
-        col = col,
-        lty = 3,
-        lwd = 1
-      )
-    }
-  }
-  graphics::abline(
-    h = 0
-  )
-  graphics::lines(
-    x = ci$interval,
-    y = est,
-    type = "l",
-    col = col,
-    lty = 1,
-    lwd = 3
-  )
-  graphics::lines(
-    x = ci$interval,
-    y = ci$ll,
-    type = "l",
-    col = col,
-    lty = 3,
-    lwd = 2
-  )
-  graphics::lines(
-    x = ci$interval,
-    y = ci$ul,
-    type = "l",
-    col = col,
-    lty = 3,
-    lwd = 2
-  )
-}
-```
-
-```{r, xmy-direct-true-100}
+```{r, xym-total-pb-pc-1000}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "direct")
+data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method = "pb_pc")
 ```
 
-```{r, xmy-direct-true-200}
+```{r, xym-total-pb-bc-1000}
 #| include = FALSE,
 #| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "direct")
-```
-
-```{r, xmy-direct-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "direct")
-```
-
-```{r, xmy-direct-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "direct")
-```
-
-```{r, xmy-indirect-true-100}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "indirect")
-```
-
-```{r, xmy-indirect-true-200}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "indirect")
-```
-
-```{r, xmy-indirect-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "indirect")
-```
-
-```{r, xmy-indirect-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "indirect")
-```
-
-```{r, xmy-total-true-100}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xmy", effect = "total")
-```
-
-```{r, xmy-total-true-200}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xmy", effect = "total")
-```
-
-```{r, xmy-total-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xmy", effect = "total")
-```
-
-```{r, xmy-total-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xmy", effect = "total")
-```
-
-```{r, xym-direct-true-100}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xym", effect = "direct")
-```
-
-```{r, xym-direct-true-200}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xym", effect = "direct")
-```
-
-```{r, xym-direct-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xym", effect = "direct")
-```
-
-```{r, xym-direct-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "direct")
-```
-
-```{r, xym-indirect-true-100}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xym", effect = "indirect")
-```
-
-```{r, xym-indirect-true-200}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xym", effect = "indirect")
-```
-
-```{r, xym-indirect-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xym", effect = "indirect")
-```
-
-```{r, xym-indirect-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "indirect")
-```
-
-```{r, xym-total-true-100}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 100, model = "xym", effect = "total")
-```
-
-```{r, xym-total-true-200}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 200, model = "xym", effect = "total")
-```
-
-```{r, xym-total-true-500}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 500, model = "xym", effect = "total")
-```
-
-```{r, xym-total-true-1000}
-#| include = FALSE,
-#| cache = FALSE
-data_process_example_med_sim_plot(n = 1000, model = "xym", effect = "total")
+data_process_example_med_plot(n = 1000, model = "xym", effect = "total", method = "pb_bc")
 ```

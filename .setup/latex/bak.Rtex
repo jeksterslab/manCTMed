@@ -1,0 +1,1969 @@
+\documentclass[man]{apa7}
+
+\raggedbottom
+\widowpenalty = 10000
+\clubpenalty = 10000
+% \usepackage{lineno}
+% \linenumbers
+\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{blkarray}
+\usepackage{csquotes}
+\usepackage{endnotes}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{changes}
+\setlength {\marginparwidth }{2cm}
+\usepackage{todonotes}
+\usepackage{subcaption}
+\usepackage[belowskip = 2pt, aboveskip = 2pt]{caption}
+\captionsetup{
+    textfont = {it,normal},
+    labelsep = newline,
+    justification = raggedright,
+    singlelinecheck = false
+}
+\captionsetup[subfigure]{
+    size = footnotesize
+}
+\usepackage{rotating}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require("rProject")) {
+%   Bib(
+%     path = dirname(
+%       root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleBiblatexCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kbordermatrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "kbordermatrix",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% cat(
+%   paste0(
+%     "\n",
+%     "\\usepackage{",
+%     root$find_file(
+%       ".setup",
+%       "latex",
+%       "sty",
+%       "kbordermatrix"
+%     ),
+%     "}",
+%     "\n"
+%   )
+% )
+% cat("\n\\renewcommand{\\kbldelim}{(}% Left delimiter")
+% cat("\n\\renewcommand{\\kbrdelim}{)}% Right delimiter")
+%% end.rcode
+
+\title{Standard Errors and Confidence Intervals for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models}
+\shorttitle{CI for CT Mediation}
+
+\authorsnames[1, {1, 2}, 3]{Ivan Jacob Agaloos Pesigan, Michael A. Russell, Sy-Miin Chow}
+\authorsaffiliations{{Edna Bennett Pierce Prevention Research Center, The Pennsylvania State University}, {Department of Biobehavioral Health, The Pennsylvania State University}, {Department of Human Development and Family Studies, The Pennsylvania State University}}
+
+\leftheader{Pesigan, Russell, \& Chow}
+
+\abstract{Mediation modeling using longitudinal data is an exciting field that captures the interrelations in dynamic changes, such as mediated changes, over time. Even though discrete-time vector autoregressive (DT-VAR) approaches are commonly used to estimate indirect effects in longitudinal data, they have known limitations due to the dependency of inferential results on the time intervals between successive occasions and the assumption of regular spacing between measurements. Continuous-time vector autoregressive (CT-VAR) models have been proposed as an alternative to address these issues. Previous work in the area \parencite[e.g., ][]{Deboeck-Preacher-2015, Ryan-Hamaker-2021} has shown how the direct, indirect, and total effects, for a range of time interval values, can be calculated using parameters estimated from CT-VAR models for causal inferential purposes. However, methods for calculating the uncertainty around the direct, indirect, and total effects in continuous-time mediation have yet to be explored. Drawing from the mediation model literature, we present and compare results using the delta and Monte Carlo (MC) methods to calculate standard errors (SEs) and confidence intervals (CIs) for the direct, indirect, and total effects in continuous-time mediation for inferential purposes. Options to automate these inferential procedures and facilitate interpretations are available in the \texttt{cTMed} \texttt{R} package.}
+
+\keywords{mediation, continuous-time, delta method, Monte Carlo method, regions of significance, R package, cTMed}
+
+\authornote{\addORCIDlink{Ivan Jacob Agaloos Pesigan}{0000-0003-4818-8420}; \addORCIDlink{Michael A. Russell}{0000-0002-3956-604X}; \addORCIDlink{Sy-Miin Chow}{0000-0003-1938-027X}.
+
+This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 MPIs: J. Maggs \& S. Lanza) from the National Institute on Drug Abuse (NIDA).
+  
+Computations for this research were performed on the Pennsylvania State University's Institute for Computational and Data Sciences' Roar supercomputer.
+
+\textcolor{blue}{Some of the data and ideas in the manuscript were presented at the Society for Prevention Research Conference in May 2024 and the International Meeting of Psychometric Society in July 2024.}
+
+Correspondence concerning this article should be addressed to Ivan Jacob Agaloos Pesigan, Edna Bennett Pierce Prevention Research Center, College of Health and Human Development, The Pennsylvania State University, 320 Biobehavioral Health Building, University Park, PA 16802 or by email (ijapesigan@psu.edu).}
+
+\begin{document}
+
+\maketitle
+
+Mediation is a widely adopted model across the social, behavioral, and health sciences. A recent Google Scholar search, conducted as of 8 May 2024, using search terms \texttt{"indirect effect OR mediation AND social science OR behavioral science OR health science"}, yielded over five million entries. Even though most mediation work is formulated predominantly as cross-sectional models (Figure \ref{fig:manCTMed-cross-sectional-mediation}), there is a growing trend toward employing longitudinal designs  (e.g., Figures \ref{fig:manCTMed-longitudinal-mediation}, \ref{fig:manCTMed-dt-var-mediation-unidirectional}, and \ref{fig:manCTMed-dt-var-mediation-bidirectional}) to address the critical issue of temporal ordering needed to facilitate (causal) interpretations of mediation effects \parencite{Rogosa-1979, Cole-Maxwell-2003, Maxwell-Cole-2007, Maxwell-Cole-Mitchell-2011, OLaughlin-Martin-Ferrer-2018, Georgeson-AlvarezBartolo-MacKinnon-2023}. Mediation models help us uncover the intermediate steps through which an independent variable $X$ (such as an intervention) influences a dependent variable $Y$ (such as an outcome) through one or more mediator variables $M$ \parencite[e.g.,][]{Baron-Kenny-1986, MacKinnon-2008}. By identifying these mediating variables, we gain insights into the direct and indirect causal pathways that connect interventions to their effects \parencite{Mackinnon-Dwyer-1993, MacKinnon-1994, Fairchild-MacKinnon-2014, ORourke-MacKinnon-2018, ORourke-MacKinnon-2019}.
+
+This manuscript aims to provide methods to quantify and visualize the uncertainty associated with point estimates of direct, indirect, and total effects as they change across a range of time interval values in continuous time (CT) using the continuous-time vector autoregressive (CT-VAR) framework. We do this with repeated measurements over time as a stronger basis for causal inference\footnote{For observational data, we limit our treatment of causality following the definition provided by \textcite{Granger-1969}, that is, when one variable, denoted as $X$, Granger-causes another variable, denoted as $Y$, it implies that past values of $X$ contain information that helps predict future values of $Y$ beyond what can be predicted using only past values of $Y$ itself.} in contrast to cross-sectional designs \parencite{Gollob-Reichardt-1987, Gollob-Reichardt-1991}. Furthermore, we take the CT framework as previous research \parencite[e.g.,][]{Deboeck-Preacher-2015, Ryan-Hamaker-2021} has shown its benefits, particularly in addressing the time interval dependency problem, that is, direct, indirect, and total effect sizes change as a function of the time interval used to measure the variables. Our novel contributions in this article are to introduce and evaluate use of the delta method \parencite{VerHoef-2012, Oehlert-1992, Casella-Berger-2002} and the Monte Carlo method \parencite[MC,][]{MacKinnon-Lockwood-Williams-2004, Preacher-Selig-2012, Pesigan-Cheung-2023} as ways to quantify the uncertainty associated with point estimates of direct, indirect, and total effects across a range of time intervals. Furthermore, we propose using the delta and MC methods to generate regions of significance to help depict and visualize over which range of time interval values the direct, indirect, and total effects are statistically different from zero. Lastly, the methods we developed and visualization tools are available in a free and open-source \texttt{R} package \texttt{cTMed}.
+
+This manuscript is organized into the following sections: (1) introduction of CT mediation and the need to quantify the uncertainty associated with mediation effects; (2) to illustrate, using benchmark examples from the CT mediation literature, the utility of performing inferences on mediation effects in CT using confidence intervals (CIs) obtained from the delta and MC methods, and regions of significance across a range of time intervals; (3) a Monte Carlo simulation study examining the respective finite-sample performance of these CIs; and (4) an application of the proposed inferential approaches to an empirical experience sampling data set studying the indirect effect of physical discomfort on self-esteem through negative affect. We close with a summary of our novel contributions, limitations of the current work, and future directions.
+
+\section{Mediation Using Longitudinal Data}
+
+This section discusses the rationale for moving from DT to CT mediation. We provide an overview of the CT modeling framework, namely the linear stochastic differential equation model. Whereas applications of the CT framework for mediation models exist in the literature \parencite[e.g.,][]{Deboeck-Preacher-2015, Ryan-Hamaker-2021}, methods for quantifying the uncertainty associated with mediation effects for inferential purposes are yet to be developed. The last part of this section outlines how we address this research gap.
+
+\subsection{From Discrete-Time to Continuous-Time Mediation}
+
+Mediation and causality have always been linked. From the \textit{causal steps} approach \parencite[e.g.,][]{Baron-Kenny-1986, Judd-Kenny-1981, James-Brett-1984} to the longitudinal framework \parencite[e.g.,][]{Cole-Maxwell-2003, Maxwell-Cole-2007, Maxwell-Cole-Mitchell-2011, Gollob-Reichardt-1987, Gollob-Reichardt-1991}, the idea is that causality operates not only directly ($X \to Y$), but also indirectly ($X \to M \to Y$). \Textcite{Gollob-Reichardt-1991} proposed three principles of causality, namely: (1) ``causes take time to exert their effects and, therefore, causal variables must occur before outcome variables''; (2) ``variables can have effects in themselves''; (3) ``size of the effect typically varies with the length of time lag'' (p. 245--247).
+
+Principles 1 and 2 emphasize that cross-sectional mediation (Figure \ref{fig:manCTMed-cross-sectional-mediation}) fails to capture the direct and indirect causal links between variables $X$, $M$, and $Y$. While three-wave longitudinal models (Figure \ref{fig:manCTMed-longitudinal-mediation}) allow effects to unfold over time, they still fall short of satisfying the second principle. Instead, we should adopt an autoregressive cross-lagged mediation model (Figures \ref{fig:manCTMed-dt-var-mediation-unidirectional} and \ref{fig:manCTMed-dt-var-mediation-bidirectional}) that considers the previous variable values to predict their current values. The term autoregressive (AR) refers to allowing the variables to have effects on themselves over time, and the term cross-lagged or crossregressive (CR) refers to using previous values of other variables to predict the current values of a variable. The umbrella term used for these types of models is the discrete-time vector autoregressive model (DT-VAR). The term \textit{vector} autoregressive (VAR) means that there is more than one variable in the system. The term discrete-time (DT) means that we observe the variables at equally spaced time intervals \parencite{HaanRietdijk-Voelkle-Keijsers-Hamaker-2017}. DT-VAR encompasses variations such as cross-lagged panel models, suitable for panel data with a limited number of time points \parencite[e.g., less than 5. See][]{Rogosa-1980, Finkel-1995, Zyphur-Allison-Tay-etal-2019, Zyphur-Voelkle-Tay-etal-2019, Usami-Murayama-Hamaker-2019, Usami-2020}, and intensive longitudinal variations tailored to data with many repeated observations \parencite[e.g., with 50 or more time points. See][]{Hamilton-1994, Lutkepohl-2005}.
+
+Principle 3 underscores the time interval dependency, that is, in DT-VAR, effect sizes change as a function of the time interval used to measure the variables \parencite[e.g.,][]{Wang-Zhang-2020, Deboeck-Preacher-2015, Ryan-Hamaker-2021}. This means that, given the same underlying causal process, the time elapsed (e.g., daily, monthly, yearly) between a ``cause'' (i.e., the independent variable) and its effect (i.e., the dependent variable) influences the sizes of the effects we observe. 
+
+\begin{figure*}
+	\caption{Cross-Sectional and Longitudinal Mediation Models}
+		
+	\begin{subfigure}{.5\textwidth}
+		\caption{Cross-sectional mediation model.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/cross-sectional-mediation.png}
+		\label{fig:manCTMed-cross-sectional-mediation}
+	\end{subfigure}%
+	~
+	\begin{subfigure}{.5\textwidth}
+		\caption{Three-wave longitudinal mediation model.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/longitudinal-mediation.png}
+		\label{fig:manCTMed-longitudinal-mediation}
+	\end{subfigure}
+		 
+	\begin{subfigure}{.5\textwidth}
+		\caption{Unidirectional DT-VAR.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/dt-var-mediation-unidirectional.png}
+		\label{fig:manCTMed-dt-var-mediation-unidirectional}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.5\textwidth}
+		\caption{Bidirectional DT-VAR.}
+		\centering
+		\includegraphics[scale = .8]{.setup/latex/figures/png/dt-var-mediation-bidirectional.png}
+		\label{fig:manCTMed-dt-var-mediation-bidirectional}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The indirect effect of $M$ on the path from $X$ to $Y$ is the product of $\alpha$ and $\beta$. For cross-sectional mediation (\ref{fig:manCTMed-cross-sectional-mediation}), variables are typically measured at the same time point. The three-wave longitudinal mediation (\ref{fig:manCTMed-longitudinal-mediation}) is an improvement to cross-sectional mediation where variables are measured at three distinct time points. Waves 1, 2, and 3 may or may not be equally spaced. DT-VAR mediation goes further by allowing variables to have effects on themselves. Here $t$, $t + 1$, and $t + 2$ typically represent equally spaced time points. The dots indicate that the model can accommodate more time points. We distinguish between the unidirectional model (\ref{fig:manCTMed-dt-var-mediation-unidirectional}), where paths from $M$ to $X$, $Y$ to $M$ and $Y$ to $X$ are constrained to zero and the bidirectional model (\ref{fig:manCTMed-dt-var-mediation-bidirectional}), where all paths from the previous time point to the current are estimated.
+	\label{fig::manCTMed-mediation}
+\end{figure*}
+
+In a cross-sectional mediation, if $X$ changes by one unit, then $Y$ changes by $\tau^{\prime}$ units, holding $M$ constant. This is the direct effect of $X$ on $Y$. If $X$ changes by one unit, then $M$ changes by $\alpha$ units as a result. Similarly, if $M$ changes by one unit, then $Y$ changes by $\beta$ units as a result. The resulting change of $\alpha$ units on $M$ produced by a unit change in $X$ would then produce a corresponding change of $\beta$ units on $Y$. Thus, $Y$ changes by $\alpha \beta$ units through $M$ as $X$ changes by one unit. This is the indirect effect. The total effect is the sum of direct and indirect effects. In DT-VAR, this idea of decomposing effects also holds. However, we are tracing effects from previous values of the variables to the next. The indirect effect of $X$ at time $t$ on $Y$ at time $t + 2$ is the product of the path from $X$ at time $t$ to $M$ at time $t + 1$ and the path from $M$ at time $t + 1$ to $Y$ at time $t + 2$. While many mediation models still rely on cross-sectional data, there is a growing trend toward employing DT-VAR models, as evidenced by the decrease in cross-sectional studies from the systematic review by \textcite{Maxwell-Cole-2007} to that reported in \textcite{OLaughlin-Martin-Ferrer-2018}. However, the indirect effects and all the other effects we observe in DT-VAR change on account of the time elapsed between the observed variables. Thus, temporal precedence, one of the properties that make causal interpretations plausible, also generates new challenges, especially in cross-validating mediation results across studies and designs. A change in the modeling framework from DT to CT can address this issue.
+
+The challenges associated with DT-VAR can be addressed by adopting a CT-VAR modeling framework. CT-VAR parameters are defined at any time interval, as such we can obtain the direct, indirect, and total effects for any time interval. From this framework, we can explore how effects change as a function of time intervals. Additionally, unlike DT-VAR, which assumes equally spaced data points, CT-VAR accommodates unequally spaced data---a common occurrence in intensive longitudinal studies. These models allow us to capture the evolving dynamics of parameters across a range of time intervals \parencite{Boker-2002, Oud-Delsing-2010, vanMontfort-Oud-Voelkle-2018, Voelkle-Oud-Davidov-etal-2012}. However, embracing a CT perspective necessitates a conceptual shift in the definition of ``total'' effect \parencite{Aalen-Roysland-Gran-etal-2012, Aalen-Roysland-Gran-etal-2016, Deboeck-Preacher-2015, Ryan-Hamaker-2021} using CT terminologies, which we review briefly next.
+
+\subsection{CT Modeling Using Linear Stochastic Differential Equation (SDE)}
+
+In our modeling approach, we consider processes that evolve continuously over time. This means that the variables can assume values at any given moment. To capture this behavior, we employ linear stochastic differential equations (SDEs). Specifically, we focus on a special type of SDE known as the Ornstein–Uhlenbeck model \parencite{Uhlenbeck-Ornstein-1930, Oravecz-Tuerlinckx-Vandekerckhove-2011, Chow-Losardo-Park-etal-2023}.
+
+Similar to structural equation modeling, we can break down our model into two key components: the measurement component and the structural component \parencite{Chow-Ho-Hamaker-etal-2010}. The measurement model describes the relationship between observed variables and latent (unobserved) variables. Specifically, consider the following equation:
+\begin{equation}
+	\begin{gathered}
+		\mathbf{y}_{i, t_{m}}
+		=
+		\boldsymbol{\nu} + \boldsymbol{\Lambda} \boldsymbol{\eta}_{i, t_{m}} + \boldsymbol{\varepsilon}_{i, t_{m}},
+		\indent \boldsymbol{\varepsilon}_{i, t_{m}} \sim \mathcal{N} \left( \mathbf{0}, \boldsymbol{\Theta} \right)
+		\label{eq:manCTMed-ou-measurement}
+	\end{gathered}
+\end{equation}
+where $\mathbf{y}_{i, t_{m}}$ represents a vector of observed random variables, $\boldsymbol{\eta}_{i, t_{m}}$ a vector of latent random variables, and $\boldsymbol{\varepsilon}_{i, t_{m}}$ a vector of normally distributed random measurement errors, for time $t$ at measurement occasion $m$ and individual $i$. $\boldsymbol{\nu}$ denotes a vector of intercepts, $\boldsymbol{\Lambda}$ a matrix of factor loadings, and $\boldsymbol{\Theta}$ the covariance matrix of $\boldsymbol{\varepsilon}$. In the context of a mediation model with three variables where the effect of the variable $X$ on the variable $Y$ is mediated by the variable $M$, we define $\mathbf{y}$ and $\boldsymbol{\eta}$ as follows:
+\begin{equation}
+	\mathbf{y}
+	=
+	\left(
+	\begin{array}{c}
+		X \\ M \\ Y \\
+	\end{array}
+	\right) ,
+	\quad \mathrm{and} \quad
+	\boldsymbol{\eta}
+	=
+	\left(
+	\begin{array}{c}
+		\eta_X \\ \eta_M \\ \eta_Y \\
+	\end{array}
+	\right) .
+	\label{eq:manCTMed-ou-mediation}
+\end{equation}
+
+The structural model for $\boldsymbol{\eta}$ in a linear SDE framework focuses on delineating how $\boldsymbol{\eta}$ changes over an infinitely small time interval, $\Delta t$, as $\Delta t$ approaches 0. Using the Ornstein-Uhlenbeck model as the representation for change, for example, the structural model is commonly referred to as the \textit{dynamic} model, and it is given by
+\begin{equation}
+	\mathrm{d} \boldsymbol{\eta}_{i, t}
+	=
+	\boldsymbol{\Phi} \left( \boldsymbol{\eta}_{i, t} - \boldsymbol{\mu} \right) \mathrm{d}t + \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \mathbf{W}_{i, t}
+	\label{eq:manCTMed-ou-dynamic}
+\end{equation}
+where $\boldsymbol{\mu}$ is the equilibrium or mean value, $\boldsymbol{\Phi}$ is the drift matrix, $\boldsymbol{\Sigma}$ is the matrix of volatility or randomness in the process (also known as the diffusion matrix), and $\mathrm{d}\boldsymbol{W}$ is a Wiener process or Brownian motion, which represents random fluctuations. The Ornstein–Uhlenbeck process centers around a central tendency denoted by $\boldsymbol{\mu}$. When the process deviates from this mean, it naturally gravitates back toward it when the stability condition is satisfied, namely, the real parts of all eigenvalues of the matrix $\boldsymbol{\Phi}$ are less than zero \parencite{Ryan-Kuiper-Hamaker-2018}. We can think of $\boldsymbol{\mu}$ as an \textit{attractor} that pulls the process back to its typical value. When we specify the model such that the latent state variables have a stable mean vector $\boldsymbol{\mu}$ consisting of zeros, Equation \ref{eq:manCTMed-ou-dynamic} simplifies to
+\begin{equation}
+	\mathrm{d} \boldsymbol{\eta}_{i, t}
+	=
+	\left( \boldsymbol{\Phi} \boldsymbol{\eta}_{i, t} \right) \mathrm{d}t + \boldsymbol{\Sigma}^{\frac{1}{2}} \mathrm{d} \mathbf{W}_{i, t} .
+\end{equation}
+
+Elements of the matrix $\boldsymbol{\Phi}$ control the speed at which each of the processes reverts to its equilibrium value, $\boldsymbol{\mu}$. The diagonal elements in $\boldsymbol{\Phi}$, referred to as the auto effects, govern how quickly the variable returns to its mean after being perturbed in the absence of influences from other processes. The off-diagonal elements of $\boldsymbol{\Phi}$ represent associations between variables and their rates of change. A negative cross effect indicates that if one variable takes on a positive value, there is a resulting decrease in another variable's value. The magnitude of this effect is determined by the absolute value. The diagonal elements of the matrix $\boldsymbol{\Sigma}$ determine the magnitude of volatility around the central tendency $\boldsymbol{\mu}$. Larger values indicate greater fluctuations or noise in the process, while smaller values result in smoother trajectories. Essentially, $\boldsymbol{\Sigma}$ quantifies the degree of randomness or shock-induced variability. The off-diagonal elements of $\boldsymbol{\Sigma}$ represent correlations between random shocks across variables in the system. In summary, under the stability condition, the Ornstein–Uhlenbeck process is a mean-reverting stochastic process. Over time, it drifts toward and stays at its equilibrium value $\boldsymbol{\mu}$ unless unmeasured shocks (the magnitudes of which are captured by $\boldsymbol{\Sigma}$) push it away from the equilibrium, in which case it then reverts to the mean with a rate determined by $\boldsymbol{\Phi}$. For the context of this manuscript, we refer to the Ornstein–Uhlenbeck model as the first-order CT-VAR.
+
+The drift matrix $\boldsymbol{\Phi}$ holds particular significance in the context of mediation models. It serves as a conduit for understanding the associations between the states of the variables under investigation. Notably, within a trivariate model, involving $\eta_X$, $\eta_M$, and $\eta_Y$, numerous paths from one variable to another can be explored. This comprehensive connectivity arises because we can construct the model such that all variables are interconnected. Consequently, beyond the classic mediation model $\eta_X \to \eta_M \to \eta_Y$, we can also investigate alternative mediation pathways, such as $\eta_Y \to \eta_M \to \eta_X$, using the same data set. For our current focus, we will delve into the specific $\eta_X \to \eta_M \to \eta_Y$ path. In the subsequent section, we will explore the relationship between CT-VAR and DT-VAR models, emphasizing the pivotal role played by the drift matrix $\boldsymbol{\Phi}$ within the $\eta_X \to \eta_M \to \eta_Y$ mediation model.
+
+\subsubsection{Link Between CT-VAR and DT-VAR}
+
+To understand the connection between CT-VAR and DT-VAR models, we need to examine the state space model parameterization of the CT-VAR model which is the DT solution in integral form given by
+\begin{equation}
+	\boldsymbol{\eta}_{i, t_{{m_{i}}}}
+	=
+	\boldsymbol{\alpha}_{\Delta t_{{m_{i}}}} + \boldsymbol{\beta}_{\Delta t_{{m_{i}}}} \boldsymbol{\eta}_{i, t_{m_{i} - 1}} + \boldsymbol{\zeta}_{i, t_{{m_{i}}}},
+	\indent
+	\boldsymbol{\zeta}_{i, t_{{m_{i}}}} \sim \mathcal{N} \left( \mathbf{0}, \boldsymbol{\Psi}_{\Delta t_{{m_{i}}}} \right)
+	\label{eq:manCTMed-discrete-ssm}
+\end{equation}
+where $\boldsymbol{\eta}_{i, t_{{m_{i}}}}$ and $\boldsymbol{\eta}_{i, t_{m_{i} - 1}}$ represent the vector of latent variables in the current and previous measurement occasion $m$ while $\boldsymbol{\zeta}_{i, t_{{m_{i}}}}$ is the normally distributed error term in the current measurement occasion. The model parameter $\boldsymbol{\alpha}$ denotes a vector of intercepts, $\boldsymbol{\beta}$ a matrix of coefficients describing the impact of the lagged values $\boldsymbol{\eta}_{i, t_{m - 1}}$ on the current value $\boldsymbol{\eta}_{i, t_{m}}$ (AR coefficients on the diagonal and CR coefficients on the off-diagonal), and $\boldsymbol{\Psi}$ the covariance matrix of $\boldsymbol{\zeta}$. Notice that the parameters have subscript $\Delta t$, representing that their values are dependent on the time interval, that is, given the same continuous process, their values change depending on the time interval. Note that, here, we assume stationarity, particularly weak stationarity, that is, the time series has a constant mean, and the covariance remains invariant over time.
+
+In the context of CT-VAR models, the underlying process can take values at any arbitrary time point. However, our observations occur discretely. This means that while the process itself operates continuously, we only observe it at specific discrete time instances. Let's compare this to DT-VAR, where observations are made at specific discrete time intervals (usually positive integers). In a DT-VAR example, suppose we collect data every hour from 7 AM to 10 AM for four measurement occasions. We make discrete observations in time $t$, scaled by the hour, on specific measurement occasions $m = \left\{ 1, \cdots, 4 \right\}$. These occasions correspond to time points: $t_1 = 7$, $t_2 = 8$, $t_3 = 9$, and $t_4 = 10$. The time interval from one measurement occasion to the next is constant and equal to 1 hour. In the CT-VAR model, observations can occur at any time between 7 AM and 10 AM for the same four measurement occasions. Specifically, the time points are given by: $t_1 = 7.166667$ (equivalent to 7:10 AM), $t_2 = 8.283333$ (equivalent to 8:17 AM), $t_3 = 9.45$ (equivalent to 9:27 AM), and $t_4 = 10$ (equivalent to 10:00 AM). Notably, the time interval from one measurement occasion to the next varies allowing for irregularly spaced observations. We denote this time interval as $\Delta t$, representing the difference between the current measurement occasion $m$ and the previous measurement occasion $m - 1$. From here we can see that if $\Delta t$ is constant as in DT-VAR, the model is simply a CT-VAR model where $\Delta t$ is constant. As such, the DT-VAR model is a special case of the CT-VAR model.
+
+Let us look at the link between the CT-VAR and the DT solution parameters. Whereas, the parameter $\boldsymbol{\Phi}$ describes the moment-to-moment association of one variable on the rate of change in another, the parameter $\boldsymbol{\beta}$ is a matrix of lagged parameters, that is, the effect of the variable on a previous measurement occasion to the current measurement occasion, given a particular time interval $\Delta t$. The DT $\boldsymbol{\beta}$ can be obtained from the CT $\boldsymbol{\Phi}$ using
+\begin{equation}
+	\boldsymbol{\beta}
+	=
+	\exp{ \left( \Delta t \boldsymbol{\Phi} \right) }
+	\label{eq:manCTMed-ou-to-ssm-beta}
+\end{equation}
+where $\exp{\left( \cdot \right)}$ represents the matrix exponential function.
+
+In addition, we can convert the CT process noise covariance matrix $\boldsymbol{\Sigma}$ to the DT counterpart $\boldsymbol{\Psi}$ as:
+\begin{equation}
+	\mathrm{vec}
+	\left(
+	\boldsymbol{\Psi}
+	\right)
+	=
+	\mathbf{C}
+	\left[
+		\exp
+		\left(
+		\Delta t
+		\mathbf{C}
+		\right)
+		-
+		\mathbf{I}
+	\right]
+	\mathrm{vec}
+	\left(
+	\boldsymbol{\Sigma}
+	\right), 
+	\indent
+	\mathbf{C}
+	=
+	\left(
+	\boldsymbol{\Phi} \otimes \mathbf{I}
+	\right)
+	+
+	\left(
+	\mathbf{I} \otimes \boldsymbol{\Phi}
+	\right)
+	\label{eq:manCTMed-ou-to-ssm-psi}
+\end{equation}
+where $\mathbf{I}$ is an identity matrix, $\mathrm{vec} \left( \cdot \right)$ stacks the values from a matrix into a vector by column, and $\otimes$ is the Kronecker product\footnote{The notation presented here is mathematically equivalent to the notation presented in the works of \textcite{Arnold-1974, Voelkle-Oud-2012, Oud-Jansen-2000}. We prefer this notation because it facilitates straightforward calculations in statistical packages that support standard linear algebra operations.}.
+
+In summary, we can see the DT-VAR parameters are related to CT-VAR parameters. We can also see that DT-VAR is a special case of CT-VAR where the time interval $\Delta t$ is constant across time and individuals. As $\Delta t$ is part of the calculation of the DT parameters, their values change as a function of the time interval. For more information on CT-VAR models see \Textcite{Ryan-Kuiper-Hamaker-2018, Oravecz-Tuerlinckx-Vandekerckhove-2011, Chow-Losardo-Park-etal-2023, Voelkle-Oud-2012}.
+
+
+\subsubsection{\textcolor{blue}{Lagged Parameters $\boldsymbol{\beta}$ as Matrix of Total Effects}}
+
+\textcolor{blue}{An important element of CT mediation modeling involves a conceptual shift to viewing lagged parameters $\boldsymbol{\beta}$ as total rather than direct effects. This view is supported by works such as \Textcite{Aalen-Roysland-Gran-etal-2012, Aalen-Roysland-Gran-etal-2016}, \Textcite{Deboeck-Preacher-2015}, and \Textcite{Ryan-Hamaker-2021}. This shift is particularly relevant in CT modeling and emphasizes understanding relationships as integrated impacts over time rather than discrete, isolated causations. One key rationale for this approach is the issue of time-interval dependency inherent in DT-VAR models. As noted by \Textcite{Gollob-Reichardt-1987} and expanded upon by \Textcite{Ryan-Hamaker-2021}, lagged parameters in DT models depend on the specific time intervals between observations. This dependency complicates the comparison of findings across studies with different sampling intervals. CT models address this challenge by providing lag-independent parameters, allowing for consistent interpretation over various time intervals.}
+
+\textcolor{blue}{Another significant reason for treating lagged parameters as total effects is the integrated nature of causality over time. \Textcite{Aalen-Roysland-Gran-etal-2012, Aalen-Roysland-Gran-etal-2016} argue that causality in complex systems should be modeled as a continuous process that evolves over time, rather than being represented by discrete, isolated direct effects at specific lags. This perspective reflects how cumulative relationships between variables operate and influence one another, capturing both direct and indirect pathways in a comprehensive manner. This approach is particularly insightful in mediation models within autoregressive frameworks, as it accounts for the cumulative impact of mediators and outcomes over time, providing a more complete picture of causality.}
+
+\textcolor{blue}{The shift to total effects also aligns with a mechanistic understanding of processes, a concept emphasized by \Textcite{Aalen-Roysland-Gran-etal-2012, Aalen-Roysland-Gran-etal-2016}. The mechanistic perspective prioritizes understanding the dynamic behavior of entire systems rather than focusing solely on isolated relationships. This is valuable when studying mediation, as it offers a more holistic view of how relationships between variables collectively influence outcomes over time. By interpreting lagged parameters as total effects, researchers can better capture the complexity of the system and the pathways that contribute to the observed results.}
+
+\textcolor{blue}{There are several advantages to conceptualizing lagged parameters as total effects. One primary benefit is the ability to conduct comprehensive analyses that reflect the accumulated impact of relationships over time. This provides a more realistic and integrated view of how variables influence each other in real-world processes. Additionally, CT models enable consistent interpretations across different time scales, avoiding the issue of time-interval dependency and making results more generalizable. This approach also supports deeper insights into the mechanisms underlying observed effects, facilitating a richer understanding of how outcomes are produced.}
+
+\subsection{Quantifying Uncertainty in Direct, Indirect, and Total Effects in Continuous-Time Mediation Models}
+
+The work of \textcite{Deboeck-Preacher-2015} provided a starting point for structuring mediation processes in CT-VAR. However, their work focused on point estimates and did not provide explicit direction on how to calculate SEs and CIs. Complete inferences require the availability of reasonable SE estimates and ways of quantifying the uncertainty around the direct, indirect, and total effects in mediation in CT. Of particular interest in the mediation literature are inferences concerning indirect effects. Although a point estimate of the indirect effect can be obtained straightforwardly as a product of regression coefficients, the sampling distribution of the product of normally distributed random variables is not necessarily normal \parencite{Aroian-1947, Craig-1936}, leading to complexities in computing $p$-values for the indirect effect. Because of this, CIs have been used to quantify uncertainty for the point estimates. Using the delta method, CIs that are asymptotically normally distributed have been proposed \parencite{Sobel-1982, Sobel-1986, Sobel-1987, Aroian-1947, Goodman-1960}. 
+
+Alternative approaches that take into account the asymmetry have also been proposed including: (1) The distribution of the product method, which analytically examines the sampling distribution of the product of normally distributed coefficients \parencite{MacKinnon-Lockwood-Williams-2004, MacKinnon-Fritz-Williams-etal-2007}; (2) Nonparametric bootstrapping, involving resampling the original data and fitting the model multiple times to create a sampling distribution of the indirect effect \parencite{Bollen-Stine-1990, Shrout-Bolger-2002, Preacher-Hayes-2008}; (3) Parametric bootstrapping, involving simulating raw data using the estimated parameters and fitting the model similar to nonparametric bootstrapping \parencite{Preacher-Selig-2012}; (4) MC, which uses the estimated point and standard errors (SEs) to form parametric distributions from which to draw values of regression coefficients to form a sampling distribution of the indirect effect \parencite{MacKinnon-Lockwood-Williams-2004, Preacher-Selig-2012, Pesigan-Cheung-2023}; (5) Profile likelihood-based approach that estimate CIs using the likelihood ratio test \parencite{Venzon-Moolgavkar-1988, Cheung-2009a, Cheung-2009b, Pawitan-2013, Pesigan-Cheung-2020}. From these approaches, nonparametric bootstrap has become the preferred method \parencite{Bollen-Stine-1990, Shrout-Bolger-2002, Preacher-Hayes-2008}. However, the need to iterate the estimation process repeatedly for all the (usually thousands of) bootstrap data sets creates a considerable computational burden, especially for complex models \parencite[see][for the case of mediation models with missing data]{Pesigan-Cheung-2023}. MC is as good as nonparametric bootstrap approaches in many situations \parencite{Tofighi-Kelley-2019, Tofighi-Kelley-2020, Pesigan-Cheung-2023}. Because the empirical sampling distributions of parameter estimates are generated and not obtained via multiple model fitting, MC is much more computationally efficient than nonparametric bootstrapping.
+
+In this manuscript, drawing from the mediation literature \parencite[e.g.,][]{Sobel-1986, MacKinnon-Lockwood-Williams-2004, Preacher-Selig-2012, Pesigan-Cheung-2023}, we provide estimation procedures to complete the inferential process in CT-VAR mediation using the delta and MC methods. We chose the delta method because of its generality and ease of implementation and MC as a more computationally efficient alternative to the bootstrap. \textcolor{blue}{The accompanying \texttt{R} package \texttt{cTMed} offers routines that go beyond existing software such as \texttt{dynr} \parencite{Ou-Hunter-Chow-2019}, \texttt{OpenMx} \parencite{Neale-Hunter-Pritikin-etal-2015}, \texttt{ctsem} \parencite{Driver-Oud-Voelkle-2017, Driver-Voelkle-2018}, and \texttt{Mplus} \parencite{Muthen-Muthen-2017}, providing readily available tools to calculate point estimates, SEs, and CIs specifically for the total, direct, and indirect effects within CT mediation models. By supporting both delta- and Monte Carlo-based CIs, the \texttt{cTMed} package enables researchers to quantify the uncertainty of mediation effects dynamically over varying time intervals and includes plotting tools to visualize how these effects change over time. This intuitive, user-friendly interface fills a gap in the CT mediation literature, facilitating comprehensive inferential analysis and enhancing interpretability through visualization.}
+
+\section{Illustrative Examples}
+
+In this section, we use illustrative examples within the CT-VAR framework to (1) elaborate on what we mean by direct, indirect, and total effects within this modeling framework, (2) develop the delta and MC methods for generating SEs and CIs for the effects previously defined, and (3) introduce regions of significance using the delta and MC methods to visualize statistically significant results across a range of time intervals. \textcolor{blue}{Our motivation for providing these illustrative examples is to highlight different challenges that arise within the context of CT mediation modeling.}
+
+\subsection{Illustrative Example 1: Understanding Direct, Indirect, and Total Mediation Effects in CT-VAR Models}
+
+In this section, we illustrate how to compute direct, indirect, and total effects from the estimated drift matrix $\boldsymbol{\Phi}$ in a three-variable CT-VAR model with bidirectional influences. We also examine how these effects change as a function of time intervals. In both cross-sectional and autoregressive models, mediation analysis involves decomposing the total effect into direct and indirect components. This approach helps us understand how the mediator variable $M$ influences the relationship between $X$ and $Y$. However, in the context of autoregressive models, some authors \parencite[e.g.,][]{Aalen-Roysland-Gran-etal-2012, Aalen-Roysland-Gran-etal-2016, Deboeck-Preacher-2015, Ryan-Hamaker-2021} propose a conceptual shift when thinking about the lagged parameters $\boldsymbol{\beta}$. Here, $\boldsymbol{\beta}$ is treated as the matrix of total effects rather than direct effects. This shift has implications for mediation in VAR models, particularly when decomposing the total effect into direct and indirect effects. \textcolor{blue}{In particular, we focus on the ``difference approach'' in CT mediation models which involves calculating the indirect effect by removing the direct effect from the total effect. This approach contrasts with the traditional method, where the indirect effect is obtained by multiplying path coefficients along the mediation pathway. In CT mediation models, the total, direct, and indirect effects are represented as sums of products of coefficients over time. Specifically, the indirect effect is derived by subtracting the direct effect (which holds mediators constant) from the total effect (which includes all possible pathways).}
+
+In this illustrative example, as in \textcite{Deboeck-Preacher-2015}, we use simulated data based on descriptive statistics reported by \textcite{Grundy-Gondoli-BlodgettSalafia-2007} to demonstrate the decomposition of direct and indirect effects from the total effect. We generated multivariate normal data using the correlation matrix reported in Table 1 of their study with the \texttt{mvrnorm}\footnote{We used the argument \texttt{empirical = TRUE} in \texttt{mvrnorm} for the function to reproduce the specified \texttt{Sigma} for all simulated data. This makes the estimated drift matrix $\boldsymbol{\Phi}$ the same regardless of the sample size used.} function from the \texttt{MASS} \texttt{R} package \parencite{Venables-Ripley-2002}. The original research examined whether maternal knowledge mediated the association between mother-reported marital conflict and child-reported behavioral competence, including a reciprocal effect from behavioral competence to knowledge. We extended the illustration by fitting a CT-VAR model in the \texttt{dynr}\footnote{The development version available in \href{https://github.com/mhunter1/dynr}{https://github.com/mhunter1/dynr} particularly commit \texttt{40277ff6efcfecf04027afa975f7287c6aa81782} was used.} \texttt{R} package \parencite{Ou-Hunter-Chow-2019}, estimating both measurement and dynamic structures. Additionally, we allow for bidirectional paths by estimating all possible paths from one variable to another in the drift matrix $\boldsymbol{\Phi}$. To explore the impact of sample size, we considered different sample sizes ($200$ and $500$). Prior to model fitting, we inserted missing values between discrete measurement occasions using $0.10$ increments to aid in optimization \parencite{Singer-2012, Voelkle-Oud-2012}.
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-coef-1000.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for Data Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+		\label{tab:manCTMed-example-1}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package. These results are based on simulated data with $n = 1,000$.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+We labeled the independent variable marital conflict $X$, the mediator variable maternal knowledge $M$, and the dependent variable behavioral competence $Y$. Since, we are incorporating a measurement model, the latent variables $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$ represent the latent variables in the model with $X$, $M$, and $Y$ as observed indicators. Elements of the estimated CT-VAR drift matrix $\boldsymbol{\Phi}$ are presented in Table \ref{tab:manCTMed-example-1}. In the study, time $t$ is scaled in years, and $\Delta t = 1$ is a time interval of one year between measurement occasions given in Figure \ref{fig:manCTMed-beta-delta-3}. Given Equation \ref{eq:manCTMed-ou-to-ssm-beta} we can calculate the matrix of lagged coefficients for a time interval $\Delta t = 1$ from the drift matrix $\boldsymbol{\Phi}$ which is also presented in Table \ref{tab:manCTMed-example-1} as follows:
+\begin{equation}
+	\boldsymbol{\beta}_{\Delta t \left( 1 \right)}
+	=
+	\exp{
+		\left(
+		\boldsymbol{\Phi}
+		\right)
+	}
+	=
+	\kbordermatrix{
+		& \eta_{X_{t}} & \eta_{M_{t}} & \eta_{X_{t}} \\
+		\eta_{X_{t + 1}} & \beta_{1, 1} & \beta_{1, 2} & \beta_{1, 3} \\
+		\eta_{M_{t + 1}} & \beta_{2, 1} & \beta_{2, 2} & \beta_{2, 3} \\
+		\eta_{Y_{t + 1}} & \beta_{3, 1} & \beta_{3, 2} & \beta_{3, 3} \\
+	} .
+	\label{eq:manCTMed-beta-1}
+\end{equation}
+
+Now we look at the case of a DT-VAR model from the same continuous process except that the time interval used is three years ($\Delta t = 3$) between measurement occasions. From the time-series literature \parencite[e.g.,][]{Hamilton-1994} we can derive $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ from $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$ using matrix powers. The key is to raise the matrix with the smaller time interval by the factor in which the time interval increased to the larger time interval. For example, the change from $\Delta t = 1$ to $\Delta t = 3$ is a factor of three, thus $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}^{3} = \boldsymbol{\beta}_{\Delta t \left( 3 \right)}$. Therefore, we can say that $\boldsymbol{\beta}_{\Delta t \left( 3 \right)} = \exp{ \left( 3 \boldsymbol{\Phi} \right)} = \boldsymbol{\beta}_{\Delta t \left( 1 \right)}^{3}$. Let us explore the relationship of the elements of $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ as a function of the elements of $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$. In particular, we focus on the third row and first column in $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ pertaining to the association of marital conflict ($\eta_{X}$) at time $t$ and behavioral competence ($\eta_{Y}$) at time $t + 3$. The dashed path in Panel \ref{fig:manCTMed-beta-delta-3} in Figure \ref{fig:manCTMed-beta-bidirectional} represents the total effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$. This total effect is decomposed as a function of the lagged parameters in $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$. By raising Equation \ref{eq:manCTMed-beta-1} to the third power and subsetting the third row and the first column of the resulting matrix we get
+\begin{equation}
+	\begin{split}
+		\mathrm{Total}
+		& = 
+		\boldsymbol{\beta}_{\Delta t \left( 3 \right)} \left[ 3, 1 \right]
+		=
+		\beta_{1, 1} \beta_{1, 1} \beta_{3, 1} +
+		\beta_{2, 1} \beta_{1, 2} \beta_{3, 1} +
+		\beta_{3, 1} \beta_{1, 3} \beta_{3, 1}
+		+
+		\beta_{1, 1} \beta_{2, 1} \beta_{3, 2} \\
+        & +
+		\beta_{2, 1} \beta_{2, 2} \beta_{3, 2} +
+		\beta_{3, 1} \beta_{2, 3} \beta_{3, 2}
+		+
+		\beta_{1, 1} \beta_{3, 1} \beta_{3, 3} +
+		\beta_{2, 1} \beta_{3, 2} \beta_{3, 3} + 
+		\beta_{3, 1} \beta_{3, 3} \beta_{3, 3} ,
+	\end{split}
+	\label{eq:manCTMed-beta-delta-3-3-1}
+\end{equation}
+where each term represents distinct paths from marital conflict ($\eta_{X}$) at time $t$ to behavioral competence ($\eta_{Y}$) at time $t + 3$ graphically represented by Panels \ref{fig:manCTMed-beta-delta-3-full-11-11-31} to \ref{fig:manCTMed-beta-delta-3-full-31-33-33} in Figure \ref{fig:manCTMed-beta-bidirectional}. Note that solid paths are paths where maternal knowledge ($\eta_M$) is traversed. We define these solid paths as indirect effects of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$ through maternal knowledge ($\eta_M$). The sum of these solid paths constitutes the overall indirect effect. The dashed paths are the direct effects and their sum constitutes the overall direct effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$. The sum of the direct and indirect effects represents the total effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$.
+
+\begin{figure*}
+	\caption{Decomposing the Direct and Indirect Effects from the Total Effect}
+	\begin{subfigure}{\textwidth}
+		\caption{DT-VAR with a time interval of one. The dashed path represents the total effect of $X$ on $Y$ at a time interval of three.}
+		\centering
+		\includegraphics[scale = .68]{.setup/latex/figures/png/dt-one-two-three-full.png}
+		\label{fig:manCTMed-beta-delta-3}
+	\end{subfigure}
+				
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{1, 1} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-11-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-11-31}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{1, 2} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-12-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-12-31}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{1, 3} \beta_{3, 1}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-13-31.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-13-31}
+	\end{subfigure}
+					
+	\medskip
+					
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{2, 1} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-21-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-21-32}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{2, 2} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-22-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-22-32}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{2, 3} \beta_{3, 2}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-23-32.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-23-32}
+	\end{subfigure}
+					
+	\medskip
+					
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{1, 1} \beta_{3, 1} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-11-31-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-11-31-33}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{2, 1} \beta_{3, 2} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-21-32-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-21-32-33}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\caption{$\beta_{3, 1} \beta_{3, 3} \beta_{3, 3}$}
+		\centering
+		\includegraphics[scale = .60]{.setup/latex/figures/png/dt-one-two-three-full-31-33-33.png}
+		\label{fig:manCTMed-beta-delta-3-full-31-33-33}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} Panel (\ref{fig:manCTMed-beta-delta-3}) represents the total effect of $\eta_X$ on $\eta_Y$ at a time interval of three is a function of the lagged parameters for a time interval of one. Panels (\ref{fig:manCTMed-beta-delta-3-full-11-11-31}) to (\ref{fig:manCTMed-beta-delta-3-full-31-33-33}) represent the decomposition of the total effect (dashed path in Panel \ref{fig:manCTMed-beta-delta-3}) into direct (dashed paths) and indirect (solid paths) effects.
+	\label{fig:manCTMed-beta-bidirectional}
+\end{figure*}
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "fit-example-ct-summary-1000.Rds"
+%   )
+% )
+% x <- x$Coefficients
+% phi <- matrix(
+%   data = x[
+%     c(
+%       "phi_11",
+%       "phi_21",
+%       "phi_31",
+%       "phi_12",
+%       "phi_22",
+%       "phi_32",
+%       "phi_13",
+%       "phi_23",
+%       "phi_33"
+%     ),
+%     "Estimate"
+%   ],
+%   nrow = 3
+% )
+% sigma <- matrix(
+%   data = x[
+%     c(
+%       "sigma_11", "sigma_12", "sigma_13",
+%       "sigma_12", "sigma_22", "sigma_23",
+%       "sigma_13", "sigma_23", "sigma_33"
+%     ),
+%     "Estimate"
+%   ],
+%   nrow = 3
+% )
+% delta_t <- 3
+% c_cap <- kronecker(phi, diag(3)) + kronecker(diag(3), phi)
+% psi <- matrix(
+%   data = c_cap %*% (
+%     expm::expm(delta_t * c_cap) - diag(3 * 3)
+%   ) %*% matrix(
+%     data = c(sigma),
+%     ncol = 1
+%   ),
+%   nrow = 3
+% )
+% total <- expm::expm(delta_t * phi)
+% dm <- matrix(
+%   data = c(1, 0, 0, 0, 0, 0, 0, 0, 1),
+%   nrow = 3
+% )
+% direct <- expm::expm(delta_t * (dm %*% phi %*% dm))
+% indirect <- total - direct
+% eq_phi <- .Array(
+%   x = phi,
+%   digits = 3
+% )
+% eq_sigma <- .Array(
+%   x = sigma,
+%   digits = 3
+% )
+% eq_psi <- .Array(
+%   x = psi,
+%   digits = 3
+% )
+% eq_total <- .Array(
+%   x = total,
+%   digits = 3
+% )
+% eq_dm <- .Array(
+%   x = dm,
+%   digits = 0
+% )
+% eq_direct <- .Array(
+%   x = direct,
+%   digits = 3
+% )
+% eq_indirect <- .Array(
+%   x = indirect,
+%   digits = 3
+% )
+% cov_eta <- matrix(
+%   data = solve(
+%     diag(3 * 3) - kronecker(total, total)
+%   ) %*% matrix(
+%     data = c(psi),
+%     ncol = 1
+%   ),
+%   nrow = 3,
+%   ncol = 3
+% )
+% eq_cov_eta <- .Array(
+%   x = cov_eta,
+%   digits = 3
+% )
+% total_star <- total[3, 1] * (sqrt(cov_eta[1, 1]) / sqrt(cov_eta[3, 3]))
+% direct_star <- direct[3, 1] * (sqrt(cov_eta[1, 1]) / sqrt(cov_eta[3, 3]))
+% indirect_star <- total_star - direct_star
+%% end.rcode
+
+Now we divide any arbitrary time interval $\Delta t$ into infinitely many smaller parts and insert these infinitely many latent variables between values at time $t$ and time $t + \Delta t$. The idea in the CT-VAR approach is that the lagged parameters from the DT integral solution represent the sum of all the effects from the infinitely many smaller parts in between time $t$ and time $t + \Delta t$. The decomposition we discussed earlier still applies. The total effect is straightforward as it is simply the result of exponentiating the product of the drift matrix and the time interval. Using the estimated drift matrix presented in Table \ref{tab:manCTMed-example-1} and a time interval $\Delta t = 3$, the total effect matrix is given by
+\begin{equation}
+	\mathrm{Total}
+	=
+	\exp{
+		\left(
+		\Delta t
+		\boldsymbol{\Phi}
+		\right)
+	}
+	=
+	\exp{
+		\left[
+			\rinline{delta_t}
+			\left(
+			\begin{array}{ccc}
+				\rinline{eq_phi} 
+			\end{array}
+			\right)
+		\right]
+		}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_total} 
+	\end{array}
+	\right) .
+	\label{eq:manCTMed-beta-3}
+\end{equation}
+
+Following \textcite{Ryan-Hamaker-2021}, the matrix of direct effects is obtained by removing the effects in the drift matrix $\boldsymbol{\Phi}$ that originates from and/or goes to the mediator (or mediators) from $\boldsymbol{\Phi}$ before converting it into its DT counterpart, $\boldsymbol{\beta}$, for a given time interval, $\Delta t$. We do this by pre- and post-multiplying the drift matrix $\boldsymbol{\Phi}$ with a diagonal matrix $\mathbf{D}_{\mathbf{m}}$ where the $i^{\mathrm{th}}$ and $j^{\mathrm{th}}$ index pertaining to the mediators are set to zero. In our current example where maternal knowledge ($\eta_{M}$) is treated as the mediator variable, the direct effect matrix is given by
+\begin{equation}
+	\begin{split}
+		\mathrm{Direct}
+		& =
+		\exp
+		\left(
+		\Delta t
+		\mathbf{D}_{\mathbf{m}}
+		\boldsymbol{\Phi}
+		\mathbf{D}_{\mathbf{m}}
+		\right) \\
+		& =
+		\exp
+		\left[
+			\rinline{delta_t}
+			\left(
+			\begin{array}{ccc}
+				\rinline{eq_dm} 
+			\end{array}
+			\right)
+			\left(
+			\begin{array}{ccc}
+				\rinline{eq_phi} 
+			\end{array}
+			\right)
+			\left(
+			\begin{array}{ccc}
+				\rinline{eq_dm} 
+			\end{array}
+			\right)
+		\right] \\
+		& =
+		\left(
+		\begin{array}{ccc}
+			\rinline{eq_direct} 
+		\end{array}
+		\right) .
+	\end{split}
+	\label{eq:manCTMed-direct}
+\end{equation}
+
+In other words, the direct effects may be conceptualized as effects that are due only to direct linkages (i.e., arrows) between the ``independent variable'' and ``dependent variable.'' The indirect effect, in contrast, can be understood as all the influences that involve paths that go through the mediators, which can now be obtained by subtracting the direct effect matrix from the total effect matrix as:
+\begin{equation}
+	\mathrm{Indirect}
+	=
+	\mathrm{Total} - \mathrm{Direct}
+	=
+	\exp
+	\left(
+	\Delta t
+	\boldsymbol{\Phi}
+	\right)
+	-
+	\exp
+	\left(
+	\Delta t
+	\mathbf{D}_{\mathbf{m}}
+	\boldsymbol{\Phi}
+	\mathbf{D}_{\mathbf{m}}
+	\right)
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_indirect} 
+	\end{array}
+	\right) .
+	\label{eq:manCTMed-indirect}
+\end{equation}
+
+We subset the $i^{\mathrm{th}}$ row and $j^{\mathrm{th}}$ column of the resulting matrices for the direct, indirect, and total effects of the mediator variable/s on the path from the $j^{\mathrm{th}}$ column variable (1 for marital conflict in our case) to the $i^{\mathrm{th}}$ row variable (3 for behavioral competence in our case). The direct, indirect, and total effects of marital conflict ($\eta_{X}$) on behavioral competence ($\eta_{Y}$) through maternal knowledge ($\eta_{M}$), for a time interval of $\rinline{delta_t}$, are $\rinline{.Round(direct[3, 1], digits = 3)}$, $\rinline{.Round(indirect[3, 1], digits = 3)}$, and $\rinline{.Round(total[3, 1], digits = 3)}$, respectively\footnote{The \texttt{Med} function in the \texttt{cTMed} package calculates the direct, indirect, and total effects for a specific time interval or a range of time intervals. A plot method for the \texttt{Med} function can be used to visualize the effects as a function of time intervals.}.
+
+The sum of all the effects that pass from marital conflict to behavioral competence, which we call the total effect, is $\rinline{.Round(total[3, 1], digits = 3)}$. This is the accumulated effect up until the third year (given $\Delta t = 3$ and time $t$ scaled in terms of years). We can decompose this total effect in terms of the effect that passes from marital conflict to behavioral competence without passing through maternal knowledge which is the direct effect, that is, $\rinline{.Round(direct[3, 1], digits = 3)}$ as well as the effects that pass from marital conflict to behavioral competence through maternal knowledge which is the indirect effect, that is, $\rinline{.Round(indirect[3, 1], digits = 3)}$. From this decomposition, we can see based on the absolute values of the direct and indirect effects, that much of the effect of maternal conflict on behavioral competence is direct but some effects pass through maternal knowledge.
+
+\subsubsection{\textcolor{blue}{Effect Sizes: Standardized Total, Direct, and Indirect Effects}}
+
+\textcolor{blue}{Effect sizes in mediation models have become essential tools for quantifying the magnitude and practical significance of indirect effects, moving beyond the limitations of significance testing. Mediation models decompose the total effect of an independent variable on a dependent variable into direct and indirect effects, where the latter is transmitted through a mediator. Effect sizes offer a way to measure these relationships, enabling researchers to better understand and communicate the strength of mediated effects \parencite{Mackinnon-Dwyer-1993, Lachowicz-Preacher-Kelley-2018, Kelley-Preacher-2012}.}
+
+\textcolor{blue}{Several types of effect sizes have been proposed for mediation models, each with distinct advantages and limitations. Unstandardized indirect effects, calculated from raw regression coefficients, are straightforward to compute and interpret within a specific study but are limited by their dependence on variable scales, which hinders cross-study comparisons \parencite{Fairchild-MacKinnon-Taborga-etal-2009, Cheung-2009a}. Proportion mediated measures, which indicate the percentage of the total effect that is mediated, are particularly useful in models with multiple mediators. However, these measures can become unstable in small samples and problematic when inconsistent mediation arises, such as when direct and indirect effects have opposite signs \parencite{Fairchild-MacKinnon-Taborga-etal-2009, Cheung-2009a}. Similarly, $R^2$-based measures provide insight into the variance explained by the mediator and independent variable but are sensitive to model specifications and the overall fit of the model \parencite{Fairchild-MacKinnon-Taborga-etal-2009, Preacher-Kelley-2011}.}
+
+\textcolor{blue}{Among these measures, the standardized indirect effect has emerged as a preferred approach due to its desirable properties. Derived from standardized regression coefficients, this measure adjusts for differences in variable scales, making it interpretable and comparable across studies. The standardized indirect effect quantifies the mediated effect in standard deviation units, providing a consistent metric for evaluating the strength of mediation. This scale invariance makes it especially valuable for fields like psychology, education, and health sciences, where measurement units can vary significantly \parencite{Preacher-Kelley-2011, Lachowicz-Preacher-Kelley-2018, Cheung-2009a}.}
+
+\textcolor{blue}{The advantages of standardized indirect effects are manifold. First, their interpretability enhances the communication of research findings, making them accessible to diverse audiences, including applied researchers and practitioners. Second, their scale independence facilitates comparisons across studies and supports meta-analytic techniques, which are critical for cumulative knowledge in mediation research. Third, standardized indirect effects are robust and perform well even in smaller sample sizes, provided that appropriate confidence intervals are used to account for estimation uncertainty \parencite{Cheung-2009a, Lachowicz-Preacher-Kelley-2018, Preacher-Kelley-2011}.}
+
+% \parencite{Alwin-Hauser-1975}
+
+% \parencite{Sobel-1982}
+
+% \parencite{Cheung-2009a}
+
+% \parencite{Preacher-Kelley-2011}
+
+% \parencite{Fairchild-MacKinnon-Taborga-etal-2009}
+
+% \parencite{Lachowicz-Preacher-Kelley-2018}
+
+% \parencite{Mackinnon-Dwyer-1993}
+
+% \parencite{Kelley-Preacher-2012}
+
+\textcolor{blue}{Following the standardization proposed by \Textcite{Schuurman-Ferrer-deBoerSonnenschein-etal-2016}, assuming that the matrix of lagged coefficients $\boldsymbol{\beta}_{\Delta t}$ and process noise covariance matrix $\boldsymbol{\Psi}_{\Delta t}$ are the same for each individual, we derive the standardized total, direct, and indirect effect as follows}
+\begin{equation}
+    \textcolor{blue}{
+    \mathrm{Total}^{\ast}_{i, j}
+    =
+    \mathrm{Total}_{i, j} \left( \frac{\sigma_{i}}{\sigma_{j}} \right) ,
+    }
+\end{equation}
+\begin{equation}
+    \textcolor{blue}{
+    \mathrm{Direct}^{\ast}_{i, j}
+    =
+    \mathrm{Direct}_{i, j} \left( \frac{\sigma_{i}}{\sigma_{j}} \right) , \quad \mathrm{and}
+    }
+\end{equation}
+\begin{equation}
+    \textcolor{blue}{
+    \mathrm{Indirect}^{\ast}_{i, j} = \mathrm{Total}^{\ast}_{i, j} - \mathrm{Direct}^{\ast}_{i, j}
+    }
+\end{equation}
+\textcolor{blue}{where $\sigma_{i}$ and $\sigma_{j}$ are the model-implied standard deviations of the state independent and dependent variables, respectively and the model-implied state covariance matrix be given by}
+\begin{equation}
+    \textcolor{blue}{
+    \mathrm{vec} \left( \mathrm{Cov} \left( \boldsymbol{\eta} \right) \right)
+    =
+    \left( \boldsymbol{I} - \boldsymbol{\beta}_{\Delta t} \otimes  \boldsymbol{\beta}_{\Delta t} \right)^{-1}
+    \mathrm{vec} \left( \boldsymbol{\Psi}_{\Delta t} \right) .
+    }
+\end{equation}
+
+\textcolor{blue}{The standardized total effect, representing the sum of all standardized effects from marital conflict to behavioral competence, is quantified as $\rinline{.Round(total_star, digits = 3)}$. This value reflects the cumulative impact observed by the third year (with $\Delta t = 3$ and time $t$ scaled in years). Within this total, the standardized direct effect, $\rinline{.Round(direct_star, digits = 3)}$, accounts for the portion of the effect that bypasses maternal knowledge. Conversely, the standardized indirect effect, $\rinline{.Round(indirect_star, digits = 3)}$, captures the pathways where maternal knowledge mediates the relationship. From this breakdown, it is evident that while the standardized direct effect constitutes the majority of the influence from marital conflict to behavioral competence, a smaller but notable portion operates through maternal knowledge.}
+
+\subsection{Illustrative Example 2: Quantifying Uncertainty in Direct, Indirect, and Total Mediation Effects in CT-VAR Models}
+
+In the previous section, we showed how to calculate point estimates for the direct, indirect, and total effects for a given time interval from the CT-VAR drift matrix $\boldsymbol{\Phi}$. In particular, we know the direct, indirect, and total effects of marital conflict ($\eta_{X}$) on behavioral competence ($\eta_{Y}$) through maternal knowledge ($\eta_{M}$), for a time interval of $\rinline{delta_t}$, are $\rinline{.Round(direct[3, 1], digits = 3)}$, $\rinline{.Round(indirect[3, 1], digits = 3)}$, and $\rinline{.Round(total[3, 1], digits = 3)}$, respectively. However, we still do not have a way to assess these effects from an inferential point of view. In this section, we extend the previous section by providing methods for quantifying the uncertainty in the direct, indirect, and total effects we have defined. In the following sections, we introduce the delta and the MC methods. We chose these approaches because they are relatively easy to compute even for complex models and provide a contrast in inferential results when the assumption of symmetry is imposed on the sampling distribution of the indirect effect (as in the delta method) as compared to when asymmetry is accounted for (as in the MC method). We discuss these methods in general and then apply them to the context of generating SEs and CIs as a way to quantify the uncertainty for the direct, indirect, and total effects.
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(phi)
+% rm(sigma)
+% rm(delta_t)
+% rm(c_cap)
+% rm(psi)
+% rm(total)
+% rm(dm)
+% rm(direct)
+% rm(indirect)
+% rm(eq_phi)
+% rm(eq_sigma)
+% rm(eq_psi)
+% rm(eq_total)
+% rm(eq_dm)
+% rm(eq_direct)
+% rm(eq_indirect)  
+% rm(cov_eta)
+% rm(eq_cov_eta)
+% rm(total_star)
+% rm(direct_star)
+% rm(indirect_star)
+%% end.rcode
+
+\subsubsection{The Delta Method}
+
+The delta method is a powerful statistical technique used to derive the asymptotic distribution of a random variable. It becomes particularly handy when dealing with functions of other random variables that are asymptotically Gaussian, that is, their distributions converge to a Gaussian distribution as sample size increases. As previously mentioned, it has been applied in psychological research to generate SEs and CIs for the indirect effect \parencite{Aroian-1947, Goodman-1960, Sobel-1986, Sobel-1987}. It has also been applied to other functions of parameters such as the standardized regression coefficients \parencite{Yuan-Chan-2011, Jones-Waller-2015, Pesigan-Sun-Cheung-2023}. Currently, popular SEM software packages such as \texttt{Mplus} \parencite{Muthen-Muthen-2017} and \texttt{lavaan} \parencite{Rosseel-2012} use the delta method as the standard approach to generating SEs and CIs for defined functions of SEM parameters. In \texttt{R}, the \texttt{Delta} and \texttt{DeltaGeneric} functions in the \texttt{betaDelta} \parencite{Pesigan-Sun-Cheung-2023} package can generate SEs and CIs for functions of parameters of fitted models as long as the estimates and the sampling variance-covariance matrix are provided.
+
+We define the delta method following the multivariate central limit theorem. Let $\boldsymbol{\theta}$ be $\mathrm{vec} \left( \boldsymbol{\Phi} \right)$, that is, the elements of the drift matrix $\boldsymbol{\Phi}$ in vector form sorted column-wise. Let $\hat{\boldsymbol{\theta}}$ be $\mathrm{vec} \left( \hat{\boldsymbol{\Phi}} \right)$, that is, the estimates of the elements of the drift matrix. The uncertainty around any functions of the estimates for $\hat{\boldsymbol{\theta}}$ is assumed to be characterized as:
+\begin{equation}
+	\sqrt{n}
+	\left(
+	\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)
+	-
+	\mathbf{g} \left( \boldsymbol{\theta} \right)
+	\right)
+	\xrightarrow[]{
+		\mathrm{D}
+	}
+	\mathcal{N}
+	\left(
+	0,
+	\mathbf{J}
+	\boldsymbol{\Gamma}
+	\mathbf{J}^{\prime}
+	\right)
+\end{equation}
+where $\mathbf{g}$ is a vector of functions, $\mathbf{J}$ is the matrix of first-order derivatives of the functions in $\mathbf{g}$ with respect to the elements of $\boldsymbol{\theta}$ and $\boldsymbol{\Gamma}$ is the asymptotic variance-covariance matrix of $\hat{\boldsymbol{\theta}}$. From the former, we can derive the distribution of $\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)$ for a sample size $n$ as follows
+\begin{equation}
+	\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)
+	\approx
+	\mathcal{N}
+	\left(
+	\mathbf{g} \left( \boldsymbol{\theta} \right)
+	,
+	n^{-1}
+	\mathbf{J}
+	\boldsymbol{\Gamma}
+	\mathbf{J}^{\prime}
+	\right) .
+\end{equation}
+The uncertainty associated with the estimator $\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)$ is, therefore, given by $n^{-1} \mathbf{J} \boldsymbol{\Gamma} \mathbf{J}^{\prime}$. When $\boldsymbol{\Gamma}$ is unknown, by substitution, we can use the estimated sampling variance-covariance matrix of $\hat{\boldsymbol{\theta}}$, that is, $\hat{\mathbb{V}} \left( \hat{\boldsymbol{\theta}} \right)$ for $n^{-1} \boldsymbol{\Gamma}$. Therefore, the sampling variance-covariance matrix of  $\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)$ is given by
+\begin{equation}
+	\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)
+	\approx
+	\mathcal{N}
+	\left(
+	\mathbf{g} \left( \boldsymbol{\theta} \right)
+	,
+	\mathbf{J}
+	\hat{\mathbb{V}} \left( \hat{\boldsymbol{\theta}} \right)
+	\mathbf{J}^{\prime}
+	\right) .
+\end{equation}
+
+From this general approach, we can generate the sampling variance-covariance matrix of any function of the drift matrix $\boldsymbol{\Phi}$. The SEs, that is, the square root of the diagonal elements of the sampling variance-covariance matrix are used to generate symmetric CIs around the point estimates of any function of the drift matrix $\boldsymbol{\Phi}$. In the current application, let the function $\mathbf{g}$ be a vector of the direct, indirect, and total effects of a specific independent variable on a dependent variable through one or more mediator variables. The \texttt{DeltaMed} function in the \texttt{cTMed} package applies the delta method to generate SEs, test statistics, $p$-values, and CIs for these effects for a specific time interval or a range of time intervals.
+
+\subsubsection{The Monte Carlo Method}
+
+MC was introduced in the mediation literature by \textcite{MacKinnon-Lockwood-Williams-2004} and formalized by \textcite{Preacher-Selig-2012} as a resampling technique for generating CIs for the indirect effect. It has been shown to be as good as nonparametric bootstrap \parencite{Tofighi-Kelley-2019, Tofighi-Kelley-2020, Tofighi-MacKinnon-2015, Pesigan-Cheung-2023}. As a resampling technique, it is similar to the bootstrap such that the sampling distribution of the function of parameters does not need to be normal. Unlike the bootstrap, however, it is more computationally efficient as it does not involve multiple model fitting. The \texttt{R} package \texttt{semmcci} provides a general approach to applying MC for generating CIs for a function of any SEM parameters. The \texttt{MCFunc} and \texttt{MCGeneric} functions in the \texttt{semmcci} \parencite{Pesigan-Cheung-2023} package can generate SEs and CIs for functions of parameters of fitted models as long as the estimates and the sampling variance-covariance matrix are provided.
+
+Based on the asymptotic properties of maximum likelihood estimators, we can assume that they are normally distributed around the population parameters
+\begin{equation}
+	\hat{\boldsymbol{\theta}}
+	\sim
+	\mathcal{N}
+	\left(
+	\boldsymbol{\theta},
+	\mathbb{V} \left( \hat{\boldsymbol{\theta}} \right)
+	\right) .
+\end{equation}
+Using this distributional assumption, a sampling distribution of $\hat{\boldsymbol{\theta}}$ which we refer to as $\hat{\boldsymbol{\theta}}^{\ast}$ can be generated by replacing the population parameters with sample estimates, that is,
+\begin{equation}
+	\hat{\boldsymbol{\theta}}^{\ast}
+	\sim
+	\mathcal{N}
+	\left(
+	\hat{\boldsymbol{\theta}},
+	\hat{\mathbb{V}} \left( \hat{\boldsymbol{\theta}} \right)
+	\right) .
+\end{equation}
+A sampling distribution of $\mathbf{g} \left( \hat{\boldsymbol{\theta}} \right)$, which we refer to as $\mathbf{g} \left( \hat{\boldsymbol{\theta}}^{\ast} \right)$, can be generated by using the simulated estimates to calculate $\mathbf{g}$. The standard deviations of the simulated estimates are the SEs. In resampling approaches, it is customary to use the percentiles of the generated distribution as CIs instead of the SEs. This approach allows the confidence limits to be asymmetric around the point estimates, unlike the delta method which is always symmetric. Percentiles corresponding to $100 \left( 1 - \alpha \right) \%$ are the CIs where $\alpha$ is the significance level (e.g., $0.05$).
+
+From this general approach, we can generate the empirical sampling distribution of any function of the drift matrix $\boldsymbol{\Phi}$. There are constraints, however, on the randomly generated values of $\boldsymbol{\Phi}$. First, the diagonal values should be from zero to negative infinity. Second, the real part of all eigenvalues is less than zero. These two can be implemented using a replacement sampling approach, that is, discarding randomly generated values where the two constraints do not hold. Again, let the function $\mathbf{g}$ be a vector of the direct, indirect, and total effects of a specific independent variable on a dependent variable through one or more mediator variables. The \texttt{MCMed} function in the \texttt{cTMed} package applies MC to generate the SEs and CIs for these effects for a specific time interval or a range of time intervals.
+
+\subsubsection{Parametric Bootstrap Method}
+
+bootstrapping in the mediation literature require data from independent subjects
+
+CT-VAR - model for time series data where a key feature is sequential dependence among observations at adjacent time points
+
+we present a parametric bootstrap approach that respects the structure of the observations
+
+The bootstrap is an inferential statistics method for solving
+complex problems. It trades difficult mathematical
+derivations with intensive computation. The quality of
+bootstrap analysis depends on how the bootstrap samples
+are generated. The bootstrap test of PFA requires bootstrap
+samples to meet two conditions: (a) the bootstrap
+samples need to preserve the data dependence in multivariate
+time series (Lahiri, 2003); and (b) the bootstrap
+samples are generated according to the model of interest.
+
+The usual bootstrap is a nonparametric bootstrap
+where bootstrap samples are generated by re-sampling
+individual data points from the original sample. The
+bootstrap of re-sampling individual data points is inappropriate
+for time series data (Efron \& Tibshirani, 1993,
+chap. 8) because it does not meet condition (a). A modified
+version of the bootstrap, the moving block bootstrap
+(Efron \& Tibshirani, 1993; Lahiri, 2003; Zhang \& Browne,
+2010a), can be used to generated bootstrap samples for
+time series data. The moving block bootstrap forms bootstrap
+samples from a block of data rather than individual
+data points. The sequential dependence of adjacent time
+points is captured in the blocks. Therefore, the sequential
+dependence in the original time series is preserved in
+bootstrap samples of time series. The moving block
+bootstrap satisfies condition (a) but not condition (b).
+Consequently, it produces appropriate standard errors for
+PFA, but it does not produce appropriate test statistics.
+
+Parametric bootstrap -
+
+Step 1. Estimate the parameters of the CT-VAR model
+Step 2. Generate data using the estimated parameters in Step 1
+Step 3. Estimate the parameters of the CT-VAR model using data generated in Step 2.
+Step 4. Derive the total, direct, and indirect effects from the estimated CT-VAR parameters in Step 3.
+
+Repeat steps 2 to 4 $B$ number of times to generate an empirical sampling distribution of total, direct, and indirect effects
+
+Step 1: dynr or OpenMx
+Step 2-3: simStateSpace package
+Step 4: cTMed package
+
+Standard errors - standard deviation
+Confidence intervals - percentile - quantiles that correspond to alpha
+bias-corrected
+
+\subsubsection{CIs for the Direct, Indirect, and Total Effects}
+
+Using the delta and MC methods as implemented by the \texttt{cTMed} package, the SEs and CIs for the direct, indirect, and total effects of marital conflict ($\eta_{X}$) on behavioral competence ($\eta_{Y}$) through maternal knowledge ($\eta_{M}$), for time intervals $\Delta t$ of $1$, $2$, and $3$ are presented in Table \ref{tab:manCTMed-example-2} for sample sizes $100$, $200$, $500$, and $1,000$. We chose these time intervals as they are the time intervals available in the data set. Based on the results we highlight a few observations. The direct, indirect, and total effects change across time intervals. The absolute value of the direct, indirect, and total effects increased as time intervals increased implying stronger effects at larger time gaps between measurements. Looking at the CIs, we see that for a sample size of $100$, all the CIs overlapped with zero regardless of the time interval. This suggests that the direct, indirect, and total effects are not significant for time intervals 1, 2, and 3 at a sample size of 100 for both delta and MC methods. Increasing the sample size to $200$, we see that the direct and total effects are significant but the indirect effect remains not significant. Only a sample size of $1,000$ resulted in a significant indirect effect. The conclusions for the delta and MC methods are identical for the sample sizes and time intervals evaluated. However, looking at the symmetry of the CIs shows that the delta method is always symmetric but the MC allows for some asymmetry. The asymmetry in MC is more noticeable at smaller sample sizes for example $n = 100$. At a sample size of $n = 1,000$, MC CIs are close to symmetric. From a substantive point of view, this shows that the association between marital conflict ($\eta_{X}$) and behavioral competence ($\eta_{Y}$) is mediated by maternal knowledge ($\eta_{M}$) given time intervals of one, two, and three years only a sample size of $1,000$.
+
+%% begin.rcode
+% #| include = FALSE
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-100.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_100 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-200.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_200 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-500.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_500 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+% x <- readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "example-table-ci-1000.Rds"
+%   )
+% )
+% x <- x[, c(1:5, 7:9)]
+% x <- data.frame(
+%   x,
+%   delta_t = as.character(c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+% )
+% x <- x[, c(9, 1:8)]
+% delta_sym <- abs((x[, "delta_ll"] - x[, "delta_est"]) + (x[, "delta_ul"] - x[, "delta_est"]))
+% mc_sym <- abs((x[, "mc_ll"] - x[, "delta_est"]) + (x[, "mc_ul"] - x[, "delta_est"]))
+% x <- cbind(
+%   x[, c(1:6)],
+%   delta_sym,
+%   x[, c(7:9)],
+%   mc_sym
+% )
+% table_ci_1000 <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{table*}
+	\begin{threeparttable}
+		\footnotesize
+		\caption{Point Estimates, SEs, and 95\% CIs of the Direct, Indirect, and Total Effects for Data Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+		\label{tab:manCTMed-example-2}
+		\begin{tabular}{@{}clccccccccc@{}}
+			\toprule
+			$\Delta t$            & Effect & Estimate & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ \\ \midrule
+			& & & \multicolumn{4}{c}{Delta} & \multicolumn{4}{c}{MC} \\
+			\cmidrule(lr){4-7}
+			\cmidrule(lr){8-11}
+			& & & \multicolumn{8}{c}{$n = 200$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_200} \midrule
+			& & & \multicolumn{8}{c}{$n = 500$} \\
+			\cmidrule(lr){4-11}
+			\rinline{table_ci_500} \midrule
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\scriptsize
+				\textit{Note.} Delta and MC SEs and CIs are calculated using the \texttt{DeltaMed} and \texttt{MCMed} functions from the \texttt{cTMed} package, respectively.
+								    
+				$^{\ast}$The symmetry of the CIs is assessed using the absolute value of $2.5\% - \mathrm{estimate} + 97.5\% - \mathrm{estimate}$. Values greater than zero indicate asymmetry.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table*}
+
+% \begin{table*}
+% 	\begin{threeparttable}
+% 		\footnotesize
+% 		\caption{Point Estimates, SEs, and 95\% CIs of the Direct, Indirect, and Total Effects for Data Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+% 		\label{tab:manCTMed-example-2}
+% 		\begin{tabular}{@{}clccccccccc@{}}
+% 			\toprule
+% 			$\Delta t$            & Effect & Estimate & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ & SE & 2.5\% & 97.5\% & $\mathrm{Sym}^{\ast}$ \\ \midrule
+% 			& & & \multicolumn{4}{c}{Delta} & \multicolumn{4}{c}{MC} \\
+% 			\cmidrule(lr){4-7}
+% 			\cmidrule(lr){8-11}
+% 			& & & \multicolumn{8}{c}{$n = 100$} \\
+% 			\cmidrule(lr){4-11}
+% 			\rinline{table_ci_100} \midrule
+% 			& & & \multicolumn{8}{c}{$n = 200$} \\
+% 			\cmidrule(lr){4-11}
+% 			\rinline{table_ci_200} \midrule
+% 			& & & \multicolumn{8}{c}{$n = 500$} \\
+% 			\cmidrule(lr){4-11}
+% 			\rinline{table_ci_500} \midrule
+% 			& & & \multicolumn{8}{c}{$n = 1,000$} \\
+% 			\cmidrule(lr){4-11}
+% 			\rinline{table_ci_1000} \midrule
+% 			\bottomrule
+% 		\end{tabular}
+% 		\begin{tablenotes}[para,flushleft]
+% 			{\scriptsize
+% 				\textit{Note.} Delta and MC SEs and CIs are calculated using the \texttt{DeltaMed} and \texttt{MCMed} functions from the \texttt{cTMed} package, respectively.
+								    
+% 				$^{\ast}$The symmetry of the CIs is assessed using the absolute value of $2.5\% - \mathrm{estimate} + 97.5\% - \mathrm{estimate}$. Values greater than zero indicate asymmetry.
+% 			}
+% 		\end{tablenotes}
+% 	\end{threeparttable}
+% \end{table*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_ci)
+%% end.rcode
+
+\subsection{Illustrative Example 3: Using Regions of Significance in Direct, Indirect, and Total Effects to Inform Designs of Longitudinal Mediation Studies}
+
+The Johnson-Neyman technique \parencite{Johnson-Neyman-1936, Johnson-Fay-1950, Bauer-Curran-2005, Preacher-Curran-Bauer-2006} is a statistical method utilized for analyzing interactions in regression models. It addresses the limitations of the simple slopes method by offering a more systematic approach to determining the \textit{regions of significance} for interaction effects. Rather than selecting arbitrary conditional values of the moderator variable, this technique computes the range of values of the moderator that result in a significant difference in the relationship between the predictor and the outcome variable. By computing the conditional values needed to yield test statistics (e.g., $t$-statistic) that exceed a pre-determined critical threshold (typically to achieve a $p$-value of $.05$), the Johnson-Neyman technique delineates the regions of significance for the moderator variable, which signify the range of moderator values within which the relationship between the predictor and the outcome variable is statistically significant. 
+
+We aim to extend this concept from the regression framework to the CT mediation. Specifically, we seek to identify regions of significance for the direct, indirect, and total effects---that is, the time interval values for which these effects are statistically significant. As noted earlier, the parameters in the DT solution of CT-VAR are defined for any time interval. As such, we can generate a spectrum of time intervals $\Delta t$, and compute the corresponding direct, indirect, and total effects using the CT-VAR drift matrix $\boldsymbol{\Phi}$. Using the delta and MC methods, CIs can be generated to depict the regions of significance for the direct, indirect, and total effects for these time interval values, as analogous to the Johnson-Neyman technique. Whereas previous research has focused on point estimates and finding the maximal effects \parencite[e.g.,][]{Deboeck-Preacher-2015, Wang-Zhang-2020, Hecht-Zitzmann-2021}, the methods we have developed in previous sections adds the ability to visualize regions where the direct, indirect, and total effects are significantly different from zero.
+
+Figures \ref{fig:manCTMed-example-3-xmy-100-200} and \ref{fig:manCTMed-example-3-xmy-500-1000} show the effect of sample size on the regions of significance. As expected, increasing $n$ from $100$ to $1,000$ yielded incrementally wider region of time interval values for which the direct and total effects were significant. For instance, at $n = 200$, regions of significance for the total effect included the entire range of time intervals considered $>0$ to $10$. Here we see a discrepancy between the results of the delta and MC methods for the direct effect. That is, time interval values that were greater than 6 were required to detect a significant direct effect using the delta method whereas the MC method could detect this effect as significant across all the time interval values considered. In contrast, detection of the indirect effect required $n = 1,000$ under both the delta and MC methods. Thus, marital conflict influences behavioral competence mostly directly for time intervals $> 0$ to $10$. There is a small indirect effect through maternal knowledge that required a sample size of $1,000$ to be detected.
+
+Beyond time intervals, regions of significance can be used in conjunction with CT modeling to facilitate examination of the interplay between factors that influence statistical significance such as time intervals, sample size, effect sizes, and even the inferential method used (e.g., delta vs. MC). Caution has to be made, however, when interpreting results for time interval values outside of the empirical values. For instance, here we evaluated time interval values from $> 0$ to $10$. But the empirical time intervals are $1$, $2$, and $3$. Researchers should take note that results for time intervals greater than $3$ are essentially extrapolations from the model.
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-200-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-200-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-200-1.png}
+	\end{subfigure}
+		
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-500-1.png}
+	\end{subfigure}
+			
+	\medskip
+		
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-500-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-500-1.png}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+	\label{fig:manCTMed-example-3-xmy-200-500}
+\end{figure*}
+
+% \begin{figure*}
+% 	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-100-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-100-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-100-1.png}
+% 	\end{subfigure}
+			
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-100-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-100-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-100-1.png}
+% 	\end{subfigure}
+		
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-200-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-200-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-200-1.png}
+% 	\end{subfigure}
+			
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-200-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-200-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-200-1.png}
+% 	\end{subfigure}
+% 	\footnotesize
+% 	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+% 	\label{fig:manCTMed-example-3-xmy-100-200}
+% \end{figure*}
+
+% \begin{figure*}
+% 	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-500-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-500-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-500-1.png}
+% 	\end{subfigure}
+			
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-500-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-500-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-500-1.png}
+% 	\end{subfigure}
+		
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-1000-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-1000-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-1000-1.png}
+% 	\end{subfigure}
+			
+% 	\medskip
+		
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-1000-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-1000-1.png}
+% 	\end{subfigure}%
+% 	~ 
+% 	\begin{subfigure}{.333333\textwidth}
+% 		\centering
+% 		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-1000-1.png}
+% 	\end{subfigure}
+% 	\footnotesize
+% 	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+% 	\label{fig:manCTMed-example-3-xmy-500-1000}
+% \end{figure*}
+
+\section{Monte Carlo Simulation Study}
+
+In our Monte Carlo simulation study, we explored the finite sample performance of the delta and MC methods for CI estimation. The MC method involved generating $20,000$ drift matrices $\boldsymbol{\Phi}$ for each application. We compared these approaches across varying sample sizes (ranging from $50$ to $500$), different time intervals ($\Delta t$ values from $1$ to $30$), and various magnitudes of direct, indirect, and total effects as a result of varying the time intervals. Our model parameters were based on the ``benchmark'' example from \textcite{Deboeck-Preacher-2015}, which exhibits a suppression effect or inconsistent mediation \parencite{MacKinnon-Krull-Lockwood-2000, Shrout-Bolger-2002}, where the direct effect has the opposite sign as the indirect effect. We focused on assessing differences in the delta and MC methods' performance in quantifying uncertainty within a mediation context, considering coverage probability, statistical power, and Type I error rates for the CIs.
+
+%% begin.rcode
+% #| include = FALSE
+% rm(interval)
+% rm(direct)
+% rm(indirect)
+% rm(total)
+% rm(x)
+% rm(table_parameters)
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% k <- model$k
+% p <- model$p
+% mu0 <- model$mu0
+% sigma0 <- model$sigma0
+% mu <- model$mu
+% phi <- model$phi_zero
+% sigma <- model$sigma_zero
+% nu <- model$nu
+% lambda <- model$lambda
+% theta <- model$theta
+% # time
+% t1 <- 30
+% t2 <- 6
+% time <- t2 * t1
+% delta_t <- 1 / t1
+% # discrete-time var
+% beta_1 <- expm::expm(
+%   phi
+% )
+% alpha_1 <- rep(
+%   x = 0,
+%   times = k
+% )
+% psi_1 <- 0.10 * diag(p)
+% # sample
+% ns <- params$n
+% delta_ts <- 1:30
+% eq_beta_1 <- .Array(
+%   x = beta_1,
+%   digits = 2
+% )
+% eq_alpha_1 <- .Array(
+%   x = matrix(
+%     data = alpha_1,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_psi_1 <- .Array(
+%   x = psi_1,
+%   digits = 2
+% )
+% eq_phi <- .Array(
+%   x = phi,
+%   digits = 2
+% )
+% eq_mu <- .Array(
+%   x = matrix(
+%     data = mu,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_sigma <- .Array(
+%   x = sigma,
+%   digits = 2
+% )
+% eq_nu <- .Array(
+%   x = matrix(
+%     data = nu,
+%     ncol = 1
+%   ),
+%   digits = 0
+% )
+% eq_lambda <- .Array(
+%   x = lambda,
+%   digits = 0
+% )
+% eq_theta <- .Array(
+%   x = theta,
+%   digits = 2
+% )
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% eq_phi_pos <- .Array(
+%   x =  model$phi_pos,
+%   digits = 2
+% )
+% eq_sigma_pos <- .Array(
+%   x =  model$sigma_pos,
+%   digits = 2
+% )
+% eq_phi_neg <- .Array(
+%   x =  model$phi_neg,
+%   digits = 2
+% )
+% eq_sigma_neg <- .Array(
+%   x =  model$sigma_neg,
+%   digits = 2
+% )
+%% end.rcode
+
+\subsection{Parameters}
+
+\Textcite{Deboeck-Preacher-2015} generated data from a DT-VAR model using a fixed time interval of one unit with the following parameters
+\begin{equation*}
+	\boldsymbol{\alpha}_{\Delta t \left( 1 \right)}
+	=
+	\left(
+	\begin{array}{c}
+		\rinline{eq_alpha_1} 
+	\end{array}
+	\right) ,
+    \quad
+	\boldsymbol{\beta}_{\Delta t \left( 1 \right)}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_beta_1} 
+	\end{array}
+	\right) ,
+    \quad
+    \text{and}
+    \quad
+	\boldsymbol{\Psi}_{\Delta t \left( 1 \right)}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_psi_1} 
+	\end{array}
+	\right)
+\end{equation*}
+and initial values of $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$ sampled from a standard multivariate normal distribution. Using the DT-VAR parameters above, we derived the CT-VAR parameters following the approach proposed by \Textcite{Chow-Losardo-Park-etal-2023}, arriving at the following
+\begin{equation*}
+	\boldsymbol{\mu}
+	=
+	\left(
+	\begin{array}{c}
+		\rinline{eq_mu} 
+	\end{array}
+	\right) ,
+    \quad
+	\boldsymbol{\Phi}_{\textcolor{blue}{1}}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_phi} 
+	\end{array}
+	\right) ,
+    \quad
+    \text{and}
+    \quad
+	\boldsymbol{\Sigma}_{\textcolor{blue}{1}}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_sigma} 
+	\end{array}
+	\right) .
+\end{equation*}
+We used the same mean vector and covariance matrix to generate the initial values of $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$. In addition to \Textcite{Deboeck-Preacher-2015}, we included a measurement model for the observed variables with the following parameters
+\begin{equation*}
+	\boldsymbol{\nu}
+	=
+	\left(
+	\begin{array}{c}
+		\rinline{eq_nu} 
+	\end{array}
+	\right) ,
+    \quad
+	\boldsymbol{\Lambda}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_lambda} 
+	\end{array}
+	\right) ,
+    \quad
+    \text{and}
+    \quad
+	\boldsymbol{\Theta}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_theta} 
+	\end{array}
+	\right) .
+\end{equation*}
+
+\textcolor{blue}{To capture diverse dynamics, we included two additional sets of drift matrices and process noise covariance matrices:}
+\begin{equation*}
+    \textcolor{blue}{
+	\boldsymbol{\Phi}_{2}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_phi_pos} 
+	\end{array}
+	\right) ,
+    \quad
+	\boldsymbol{\Sigma}_{2}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_sigma_pos} 
+	\end{array}
+	\right) \quad \mathrm{and}
+    }
+\end{equation*}
+
+\begin{equation*}
+    \textcolor{blue}{
+	\boldsymbol{\Phi}_{3}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_phi_neg} 
+	\end{array}
+	\right) ,
+    \quad
+	\boldsymbol{\Sigma}_{3}
+	=
+	\left(
+	\begin{array}{ccc}
+		\rinline{eq_sigma_neg} 
+	\end{array}
+	\right) .
+    }
+\end{equation*}
+\textcolor{blue}{These matrices represent three dynamic regimes: (1) moderate coupling (intermediate decay, meaningful interactions), (2) strong coupling (rapid decay, intensified interactions), and (3) weak coupling (slow decay, minimal interactions). This variability enables a comprehensive examination of system dynamics, from tightly coupled fast-evolving processes to near-independent slow evolution, ensuring robust and generalizable insights into system behavior. The process noise covariance matrices were chosen such that the model-implied state covariance matrix for the three cases are essentially the same.} The direct, indirect, and total effects that correspond to the drift matri\textcolor{blue}{ces $\boldsymbol{\Phi}_{1}$, $\boldsymbol{\Phi}_{2}$, and $\boldsymbol{\Phi}_{3}$} are plotted in Figure \ref{fig:simulation-effects}.
+
+\begin{figure*}
+	\caption{Total, Direct, and Indirect Effects Used in the Monte Carlo Simulation Study}
+	\begin{subfigure}{\textwidth}
+        \caption{Moderate Coupling ($\boldsymbol{\Phi}_{1}$)}
+		\centering
+	    \includegraphics[scale = .76, trim = 0 0 0 50, clip]{.setup/latex/figures/png/fig-vignettes-scatter-plots-effects-zero-1.png}
+		\label{fig:manCTMed-effects-1}
+	\end{subfigure}
+    \medskip
+	\begin{subfigure}{\textwidth}
+        \caption{Strong Coupling ($\boldsymbol{\Phi}_{2}$)}
+		\centering
+	    \includegraphics[scale = .76, trim = 0 0 0 50, clip]{.setup/latex/figures/png/fig-vignettes-scatter-plots-effects-pos-1.png}
+		\label{fig:manCTMed-effects-2}
+	\end{subfigure}
+    \medskip
+	\begin{subfigure}{\textwidth}
+        \caption{Weak Coupling ($\boldsymbol{\Phi}_{3}$)}
+		\centering
+	    \includegraphics[scale = .76, trim = 0 0 0 50, clip]{.setup/latex/figures/png/fig-vignettes-scatter-plots-effects-neg-1.png}
+		\label{fig:manCTMed-effects-3}
+	\end{subfigure}
+	\label{fig:simulation-effects}
+\end{figure*}
+
+\subsection{Data Generation}
+
+We simulated values for three variables---$X$, $M$, and $Y$ for individual $i$ at time $t$ and measurement occasion $m$. Varying the sample size $n$ ($\rinline{min(ns)}$ to $\rinline{max(ns)}$), we explored the impact on CI methods, with a focus on the delta method, which requires a large sample size. Measurement occasions spanned daily measurements over \rinline{time} days, represented by the vector $m = \left\{ 0, \cdots, \rinline{time - 1} \right\}$. The vector of time is given by $t = m \times \Delta t$, where $\Delta t = \frac{1}{\rinline{t1}}$ (equivalent to a day in a month). Irregularly spaced data resulted from randomly selecting $100$ observations per individual and flagging unselected observations as missing values. Latent variables $\eta_X$, $\eta_M$, and $\eta_Y$ were generated using the DT integral solution of CT-VAR (Equation \ref{eq:manCTMed-discrete-ssm}), and observed variables followed the measurement model (Equation \ref{eq:manCTMed-ou-measurement}). Data was simulated using the wrapper function \texttt{manCTMed::Data}\footnote{\texttt{manCTMed} is an \texttt{R} package hosted in GitHub (\url{https://github.com/jeksterslab/manCTMed}) serving as a research compendium for this manuscript. It contains all the scripts and other supplementary materials used throughout this work.} which utilized the \texttt{SimSSMOUFixed} function from the \texttt{simStateSpace}\footnote{See \href{https://CRAN.R-project.org/package=simStateSpace}{https://CRAN.R-project.org/package=simStateSpace}. The specific version used is $1.2.1$.} R package.
+
+\subsection{Model Fitting and CIs}
+
+The CT-VAR model parameters were estimated using the \texttt{manCTMed::FitDynr} wrapper function, which utilized the \texttt{dynr} package. Specifically, the $\boldsymbol{\Lambda}$ matrix was fixed as a diagonal matrix, the $\boldsymbol{\mu}$ vector was set to a null vector, and the off-diagonal elements of the $\boldsymbol{\Theta}$ matrix were fixed at zero while the diagonal elements were estimated. The remaining parameters were estimated as well.
+
+From the fitted model, we extracted the estimated $\boldsymbol{\Phi}$ matrix and its corresponding sampling variance-covariance matrix. Using these, we generated CIs via delta and MC methods for time intervals ranging from $\rinline{delta_ts[1]}$ to $\rinline{delta_ts[length(delta_ts)]}$. We considered two mediation models: one involving the path $\eta_X \to \eta_M \to \eta_Y$ and the other involving $\eta_Y \to \eta_M \to \eta_X$. In the first model, although effects approach zero at higher time intervals, we anticipate non-zero direct, indirect, and total effects within the range of $\Delta t$ from $\rinline{delta_ts[1]}$ to $\rinline{delta_ts[length(delta_ts)]}$. Conversely, in the second model, we expect all effects to be zero across all $\Delta t$ values. The \texttt{manCTMed::CI} wrapper function employed the \texttt{DeltaMed} and \texttt{MCMed} functions from the \texttt{cTMed} package to generate these CIs.
+
+\subsection{Monte Carlo Simulation Study Results}
+
+The Type I error rate reflects the proportion of replications where the CI did not include zero, even when the population parameter was zero. In other words, it quantifies the probability of falsely rejecting the null hypothesis when it is true. We assessed Type I error rates for the mediation model $\eta_Y \to \eta_M \to \eta_X$, where all direct, indirect, and total effects were zero, regardless of the time interval value. Statistical power represents the probability of correctly detecting an effect when it exists. We evaluated statistical power for the mediation model $\eta_X \to \eta_M \to \eta_Y$ where the effects were not zero but decreased with increasing time intervals. A statistical power of $0.80$ or higher was considered robust \parencite{Cohen-1988}. Coverage probabilities indicate the proportion of replications where the CIs contain the population effect. We deemed coverage probabilities within the range of $0.925$ to $0.975$ as robust for a $95\%$ CI \parencite{Bradley-1978}. Results are presented in Figures \ref{fig:simulation-coverage-head}, \ref{fig:simulation-power}, and \ref{fig:simulation-type1}.
+
+\subsubsection{Coverage Probabilities}
+
+For $\Delta t$ values from $1$ to $4$, both direct and total effects met the robustness criteria in terms of coverage probabilities using the delta method. However, beyond $\Delta t$ values greater than $4$ but less than $28$, the delta method encountered coverage issues, particularly affecting the direct effect. The CIs became inflated, resulting in coverage probabilities equal to one. In contrast, MC consistently maintained robust coverage for indirect and total effects across various $\Delta t$ values, even exceeding $28$. Notably, the direct effect's coverage dropped significantly at $\Delta t$ exceeding $28$, where the effect size was extremely small. Researchers should dismiss effects from such large time intervals as not worth examining as these effects are extremely close to zero. Overall, MC outperformed the delta method, except at $\Delta t$ values greater than $28$ for the direct effect. Additionally, sample size $n$ influenced the delta method's performance: large sample sizes achieved robust CIs for smaller $\Delta t$ values, but even with a sample size of $500$, robustness was not achieved for larger $\Delta t$. In contrast, MC remained robust regardless of sample size, except for extremely large $\Delta t$ where the effect size approached zero. In summary, MC was the better choice for CI coverage. 
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-coverage-1-25-1.png}
+	\label{fig:simulation-coverage-head}
+\end{sidewaysfigure*}
+
+\subsubsection{Statistical Power}
+
+As $\Delta t$ increased, the absolute effect size approached zero, leading to an expected decrease in statistical power. Notably, the total effect exhibited robust power ($ \geq 0.8$) for $\Delta t$ values from $1$ to $4$. However, at $\Delta t = 8$, the delta method's power declined below $0.8$, especially with smaller sample sizes. MC also experienced reduced power starting at $\Delta t = 12$. Overall, while both methods showed decreasing power with increasing $\Delta t$, the delta method declined earlier and faster than MC. Sample size $n$ played a role: MC demonstrated improved power as $n$ increased, surpassing the delta method. For indirect and total effects, MC consistently outperformed the delta method. In summary, MC is the more reliable choice for constructing CIs, particularly when addressing statistical power considerations.
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-power-1.png}
+	\label{fig:simulation-power}
+\end{sidewaysfigure*}
+
+\subsubsection{Type I Error Rate}
+
+In the delta method, Type I error rates remained robust for direct and total effects within $\Delta t$ values from $1$ to $6$. However, beyond $\Delta t = 6$, the delta method's error rates deflated to zero. MC exhibited distinct behavior: while some cases deviated from the robustness criteria (especially at higher $\Delta t$ values), rates remained close to the nominal level of $0.05$. Notably, MC maintained robustness even with increasing $\Delta t$. Interestingly, the method behaved differently for indirect effects compared to direct and total effects. The delta method consistently yielded a deflated Type I error rate of zero, whereas MC's rates, though not entirely deflated, did not meet the robustness criteria. Prior research by \Textcite{Pesigan-Cheung-2023, Cheung-2009a} reported similar patterns. Specifically, when both coefficients $\alpha$ and $\beta$ were true zeros in a simple mediation model, the resulting Type I error rate tended to be lower than the nominal $\alpha$ level. Considering all factors, MC emerged as the more robust choice for constructing CIs, particularly when addressing Type I errors.
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-type1-1.png}
+	\label{fig:simulation-type1}
+\end{sidewaysfigure*}
+
+\subsection{Conclusions from the Monte Carlo Simulation Study}
+
+In a Monte Carlo simulation study, we compared the delta and MC methods for CI estimation in CT mediation models. Our evaluation considered different sample sizes, time intervals, and effect sizes. The MC method consistently achieved robust coverage for indirect and total effects across various time intervals, even exceeding $28$. However, coverage dropped significantly for the direct effect at intervals greater than $28$. Notably, the delta method exhibited less robustness at higher intervals. Overall, our findings suggest that MC outperforms the delta method and should be the preferred choice for generating CIs for direct, indirect, and total effects in CT mediation.
+
+%% begin.rcode
+% #| include = FALSE
+% rm(k)
+% rm(p)
+% rm(mu0)
+% rm(sigma0)
+% rm(mu)
+% rm(phi)
+% rm(sigma)
+% rm(nu)
+% rm(lambda)
+% rm(theta)
+% rm(t1)
+% rm(t2)
+% rm(time)
+% rm(delta_t)
+% rm(beta_1)
+% rm(alpha_1)
+% rm(psi_1)
+% rm(ns)
+% rm(delta_ts)
+% rm(eq_beta_1)
+% rm(eq_alpha_1)
+% rm(eq_psi_1)
+% rm(eq_phi)
+% rm(eq_mu)
+% rm(eq_sigma)
+% rm(eq_nu)
+% rm(eq_lambda)
+% rm(eq_theta)
+%% end.rcode
+
+\section{Empirical Example}
+
+In this section, we explored the application of a CT mediation model using empirical experience sampling data from an individual with a history of major depressive disorder. Specifically, we estimated the CT-VAR drift matrix $\boldsymbol{\Phi}$ and the sampling covariance matrix. These estimates allowed us to generate CIs using both the delta and MC methods. Our primary focus was on examining direct, indirect, and total effects within a model that investigates associations between physical discomfort, negative affect, and self-esteem.
+
+Pain, although ultimately a subjective and private phenomenon, is invariably described in terms of sensory and affective properties. This underscores the critical role of emotions in understanding the consequences of chronic pain. Emotional distress is commonly observed in individuals experiencing chronic pain. Numerous studies have demonstrated a significant relationship between emotions and pain intensity, unpleasantness, affective components of pain, and emotional distress among chronic pain patients and their families \parencite{Engel-1977, Jensen-Turk-2014, Gatchel-Peng-Peters-etal-2007}.
+
+Our specific interest lies in exploring how physical discomfort impacts self-esteem through negative affect. Living with chronic pain can exacerbate negative affect, which, in turn, diminishes feelings of self-worth. Individuals dealing with pain often find it challenging to cope effectively, leading to a complex interplay between emotional states and their overall well-being. When individuals experience chronic pain, their ability to accomplish daily tasks diminishes. Whether due to physical limitations or discomfort, they find themselves unable to perform as they once did or as they desire. This persistent struggle can lead to feelings of inadequacy and unproductivity, gradually eroding self-esteem over time. The connection between pain and self-esteem is intricate, influenced by indirect factors such as negative affect. From a CT mediation perspective, we hypothesize that heightened physical discomfort levels correlate with increased negative affect. Consequently, this emotional burden impedes the return of self-esteem to its equilibrium or mean value.
+
+To explore the dynamic interplay between physical discomfort and self-esteem as mediated by negative affect, we explored an empirical data set originally published by \textcite{Wichers-Groot-Psychosystems-2016} and utilized for secondary analysis by \textcite{Kossakowski-Groot-Haslbeck-2017} and in a CT mediation context by \textcite{Ryan-Hamaker-2021}. The data set comprised of $1,476$ semi-random measurement occasions spanning $239$ days. These measurements were collected from a $57$-year-old male participant with a history of major depressive disorder. The participant responded to queries multiple times a day. The time intervals between measurement occasions varied, with a minimum of 13.5 minutes and a maximum of 42.1 hours. We focused on the following variables: physical discomfort, negative affect, and self-esteem. For physical discomfort, we created a composite score for the following items: ``I am hungry'', ``I am tired'', ``I am in pain'', ``I feel dizzy'', ``I have a dry mouth'', ``I feel nauseous'', ``I have a headache'', and ``I am sleepy''. For negative affect, we created a composite score for the following items: ``I feel restless'', ``I feel agitated'', ``I worry'', and ``I can concentrate well'' (reversed). Finally, for self-esteem, we created a composite score for the following items: ``I like myself'', ``I am ashamed of myself'' (reversed), ``I doubt myself'' (reversed), and ``I can handle anything''. All items were measured using a 7-point Likert scale, and the means of these items were calculated to create the composite scores.
+
+\subsection{Data Preparation}
+
+Before delving into the analysis, we followed a specific data preparation procedure, building upon the approach outlined by \textcite{Ryan-Hamaker-2021}. We created a vector of time values by considering the smallest and largest observed values ($0$ and $5724.554$, respectively). These time values were incremented by $0.10$. The newly generated time vector was appended to the existing empirical time vector. We sorted the combined time vector and any duplicated time values were removed. If a time value from the new time vector existed in the original data set, we labeled the observations accordingly. For time values not present in the original data set, we inserted missing values.
+
+\subsection{Data Analysis}
+
+We fitted the CT-VAR model using the \texttt{dynr} package. We estimated the drift $\boldsymbol{\Phi}$ and diffusion $\boldsymbol{\Sigma}$ matrices. Since the variables were scaled before model fitting, we assumed that the centralizing tendency $\boldsymbol{\mu}$ is a vector of zeros. To simplify the model, we did not estimate the measurement model. Leveraging the estimated drift matrix $\boldsymbol{\Phi}$ and the corresponding sampling variance-covariance matrix, we calculated the direct, indirect, and total effects of the model where the association between self-esteem and physical discomfort is mediated by positive affect using the \texttt{cTMed} package. We examined the mediated model across a range of time intervals (from $> 0$ to $15$). CIs were estimated using the delta and MC methods.
+
+\subsection{Empirical Example Results}
+
+The estimated CT-VAR parameters are presented in Table \ref{tab:manCTMed-empirical-1}. The direct and total effects were not significant for the time intervals we investigated. The indirect effect was significant for time intervals greater than $0.6$ and less than $3.4$ for the delta method, and for less than $8.70$ for MC. The results are presented in the first two rows of Figure \ref{fig:manCTMed-empirical}. Furthermore, we plotted the trajectories of the variables without process noise in Figure \ref{fig:manCTMed-empirical-trajectory}. We modified the estimated drift matrix $\boldsymbol{\Phi}$ by setting paths that were not statistically significant to zero to aid in interpretation. For the direct effect trajectory, the drift matrix was further modified by setting coefficients that originated from or went into the mediator (negative effect) to zero except for the auto effect for the mediator. For the indirect effect trajectory, the drift matrix used was the difference between the initial drift matrix and the drift matrix used for the direct effect trajectory. The auto effect of the mediator was added back to the drift matrix for the indirect effect trajectory to maintain stability. We set the initial values at $t_0$ to construct a hypothetical scenario with high initial physical discomfort and negative affect, and low initial self-esteem to highlight how quickly self-esteem was projected to return to the mean with an increase in physical discomfort in the presence and absence of the indirect effect through negative affect. It can be seen that in the absence of an indirect effect (direct effect trajectory), self-esteem reached the mean quickly. Whereas, when the direct effect was removed and only the indirect effect was driving the trajectory (indirect effect trajectory), the return of self-esteem to its mean was slower. This suggests that high physical discomfort leads to a slower return to the mean for self-esteem as mediated by the high negative affect value.
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for the Empirical Data Set from \textcite{Wichers-Groot-Psychosystems-2016}}
+		\label{tab:manCTMed-empirical-1}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Physical Discomfort $\to$ Negative Affect $\to$ Self-Esteem)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-direct-delta-1.png}
+		\label{fig:manCTMed-empirical-a}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-indirect-delta-1.png}
+		\label{fig:manCTMed-empirical-b}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-total-delta-1.png}
+		\label{fig:manCTMed-empirical-c}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-direct-mc-1.png}
+		\label{fig:manCTMed-empirical-d}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-indirect-mc-1.png}
+		\label{fig:manCTMed-empirical-e}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-total-mc-1.png}
+		\label{fig:manCTMed-empirical-f}
+	\end{subfigure}
+				
+	\medskip
+			
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-direct-delta-1.png}
+		\label{fig:manCTMed-empirical-g}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-indirect-delta-1.png}
+		\label{fig:manCTMed-empirical-h}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-total-delta-1.png}
+		\label{fig:manCTMed-empirical-i}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-direct-mc-1.png}
+		\label{fig:manCTMed-empirical-j}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-indirect-mc-1.png}
+		\label{fig:manCTMed-empirical-k}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-empirical-mislabeled-total-mc-1.png}
+		\label{fig:manCTMed-empirical-l}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The first two rows correspond to the model where the time intervals are correctly labeled. The last two rows correspond to the model where the time intervals are incorrectly labeled.
+	\label{fig:manCTMed-empirical}
+\end{figure*}
+
+\begin{figure*}
+	\caption{Trajectory of Self-Esteem Over Time}
+	\begin{center}
+		\includegraphics[scale = .7]{.setup/latex/figures/png/fig-vignettes-empirical-plot-trajectory-3.png}
+	\end{center}
+	\footnotesize
+	\emph{Note:} \textit{Direct} refers to the trajectory without the effect coming from and going to negative affect. \textit{Indirect} refers to the trajectory without the direct effect of physical discomfort on self-esteem. This plot was generated using the \texttt{Trajectory} function in the \texttt{cTMed} package.
+	\label{fig:manCTMed-empirical-trajectory}
+\end{figure*}
+
+\subsection{Conclusions from the Empirical Example}
+
+The results showed that the association between physical discomfort and self-esteem was mediated by negative affect. Notably, both direct and total effects were not significant for the time intervals considered, suggesting the importance of mediator variables in the mechanism linking somatic distress to an individual's overall evaluation of their worth. The trajectory plot also revealed that in a scenario where both physical discomfort and negative affect were high, it took longer for self-esteem to return to the mean when negative affect was considered, highlighting negative affect's importance in the association between physical discomfort and self-esteem. Returning to the biopsychosocial perspective, we observed that physical discomfort affected self-esteem through negative affect. It was not simply the direct effect of physical discomfort that resulted in self-esteem issues; rather, the mechanism occurred through the indirect effect passing through negative affect. This underscores how crucial it was to take into consideration the affective component of the pain experience, as it was through the mechanism of negative affect that physical discomfort eroded self-esteem.
+
+\subsection{Mislabeled Time Intervals}
+
+We fitted a model where the time intervals were mislabeled. Instead of considering the actual observation times, we assumed that the $1,476$ measurement occasions were equally spaced, recoding the time variable from $0$ to $1,475$. However, the actual intervals varied from $13.5$ minutes to $42.1$ hours in the empirical data set. The CT-VAR drift matrix for this mislabeled model is presented in Table \ref{tab:manCTMed-empirical-2}. The regions of significance for the direct, indirect, and total effects are presented in the last two rows of Figure \ref{fig:manCTMed-empirical}. The mislabeling here resulted in shorter gaps between observations. This pushed the curves to the left and exaggerated the peak, especially for the direct and total effects. This led to stronger effects, with significant results for all time intervals using the Monte Carlo method. For the delta method, indirect and total effects were significant for all intervals below $2.83$. The mislabeled case exaggerated the effects, suggesting quicker and stronger unfolding across time. This has implications for substantive research, potentially leading to erroneous conclusions about the impact of physical discomfort on self-esteem. For example, based on the results for the mislabeled case, we can erroneously say that physical discomfort has significant direct, indirect, and total effects on self-esteem, whereas, in the correctly specified model, the effect of physical discomfort on self-esteem is only indirect through negative affect. In the mislabeled case, we can also erroneously assume that the indirect effect peaks faster and diminishes faster compared to the correctly labeled case.
+
+%% begin.rcode
+% #| include = FALSE
+% x = readRDS(
+%   root$find_file(
+%     ".setup",
+%     "data-raw",
+%     "empirical-mislabeled-table-coef.Rds"
+%   )
+% )
+% x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13)]
+% table_coef <- .Tabular(
+%   x = x,
+%   digits = 3
+% )
+%% end.rcode
+
+\begin{sidewaystable*}
+	\begin{threeparttable}
+		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for the Empirical Data Set from \textcite{Wichers-Groot-Psychosystems-2016} with mislabeled time intervals}
+		\label{tab:manCTMed-empirical-2}
+		\begin{tabular}{@{}lcccccccc@{}}
+			\toprule
+			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+			& \multicolumn{3}{c}{$CT-VAR$} & \multicolumn{5}{c}{DT-VAR} \\
+			\cmidrule(lr){2-4}
+			\cmidrule(lr){5-9}
+			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} \\
+			\cmidrule(lr){6-7}
+			\cmidrule(lr){8-9}
+			\rinline{table_coef}
+			\bottomrule
+		\end{tabular}
+		\begin{tablenotes}[para,flushleft]
+			{\small
+				\textit{Note.}
+				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+				Estimates for the DT-VAR are calculated
+				using the \texttt{DeltaBeta} (delta method) and \texttt{MCBeta} (MC) functions from the \texttt{cTMed} package.
+			}
+		\end{tablenotes}
+	\end{threeparttable}
+\end{sidewaystable*}
+
+%% begin.rcode
+% #| include = FALSE
+% rm(x)
+% rm(table_coef)
+%% end.rcode
+
+\section{Discussion}
+
+Taking inspiration from the mediation literature, we have extended the work of \textcite{Deboeck-Preacher-2015} and \textcite{Ryan-Hamaker-2021} by proposing the delta and MC methods as ways to quantify the uncertainty in the point estimates of direct, indirect, and total effects in CT mediation. We have shown how we build on and extend previous work through the three illustrative examples. Furthermore, we discussed the implications of our contributions to substantive research. We have shown through the simulation study that the MC CI is superior to the delta method in terms of coverage, power, and Type I error. We have shown through the empirical example that the delta and MC methods would have some divergence in conclusion showing that the choice of method has implications on the substantive interpretation of the results. We recommend the use of the delta method as a quick way of exploring regions of significance and then using MC as a way to fine-tune the results. Furthermore, the model fitted with mislabeled time intervals can exaggerate the effects and regions of significance. We have also provided a free and open-source \texttt{R} package \texttt{cTMed} to implement the methods we have proposed together with miscellaneous functions to make the interpretation and presentation of the results easier. Of particular importance is the plotting capabilities of the package which facilitates visualizing how effects change over time and regions of statistical significance with respect to the time interval. The package will be a valuable tool for applied researchers in using the methods we proposed in their substantive area of research.
+
+In our study, we made specific data analytic decisions to address key issues. First, we estimated the measurement model to account for measurement error. Using single indicators for each latent variable with fixed factor loadings of one and freely estimated residual variances, we avoided the common practice of ignoring the measurement model, which can impact parameter estimates in the dynamic structure \parencite{Staudenmayer-Buonaccorsi-2005, Schuurman-Hamaker-2019, Schuurman-Houtveen-Hamaker-2015}. Additionally, we handled irregularly spaced data by treating it as a missing data problem within the context of the CT framework. We employed an oversampling technique \parencite{Singer-2012, Voelkle-Oud-2012} where a small time interval $\Delta t$ was chosen, and missing data were inserted between observed cases to aid in fitting CT models. While this improved convergence, it also extended the optimization process due to the insertion of missing values. Despite this solution, other numerical challenges persisted. In \texttt{dynr}, the SDEs are solved via numerical integration as opposed to using direct analytic solutions. Doing so allows for the possibility of fitting nonlinear SDEs, but this approach could also create more numerical problems in the estimation and Hessian computation process.
+
+\subsection{Limitations and Future Directions}
+
+We acknowledge some of the limitations of our work and propose future directions. In our Monte Carlo simulation study, we manipulated the sample size $n$, while keeping the number of measurement occasions fixed at 180. The length of the time series has the potential to impact the point estimates and SEs of the CT-VAR model. These estimates, in turn, affect the CIs for direct, indirect, and total effects. Future research could investigate the performance of delta and MC methods on data with varying measurement occasions.
+
+The current study employed a frequentist approach for modeling CT-VAR using the \texttt{dynr} package. In the current approach, the parameters are fixed and do not vary across individuals. A multilevel mediation perspective where the repeated measures are nested within an individual \parencite{Kenny-Kashy-Bolger-1998} is a logical extension of CT mediation. In this approach, coefficients for each individual have fixed and random components. Work on the Bayesian mediation model \parencite[e.g.,][]{Yuan-MacKinnon-2009, Enders-Fairchild-MacKinnon-2013} makes multilevel mediation easier compared to the frequentist approach. A Bayesian hierarchical or multilevel CT-VAR model is a more flexible alternative to the current approach \parencite{Oravecz-Tuerlinckx-Vandekerckhove-2011, Driver-Voelkle-2018, Hecht-Zitzmann-2020a, Oravecz-Wood-Ram-2018}. In the Bayesian CT-VAR framework, distributions of the direct, indirect, and total effects can be generated by calculating them from the posterior distribution of the drift matrix $\boldsymbol{\Phi}$. Credible intervals using the appropriate percentiles can be obtained from these distributions. To implement this approach, we can use the \texttt{PosteriorMed} function in the \texttt{cTMed} package. Alternatively, we can treat the posterior mean vector and covariance matrix of the posterior distribution of the drift matrix $\boldsymbol{\Phi}$ as frequentist estimates which can then be used in the delta and MC methods. Further exploration and investigation of these ideas are warranted to better understand their implications and performance.
+
+The current study did not explore the use of bootstrapping due to its computational expense. However, we recognize that it could potentially be applied in our current context. Here are two approaches to consider. Nonparametric bootstrapping where we resample the data by individual with replacement. Essentially, it is similar to typical nonparametric bootstrapping with a wide data set. Parametric bootstrapping where we generate raw data from the estimated CT-VAR model. In both cases, the CT-VAR model needs to be fitted on each bootstrap sample. However, the bottleneck arises from multiple model fitting. Future research should explore optimization procedures to make these computations less expensive, potentially enabling bootstrapping as a viable option for VAR models. In the meantime, the delta and MC methods can serve as alternatives to bootstrapping.
+
+Our study considered a perspective where all variables are interconnected. While this works for small models, it becomes problematic for large, high-dimensional systems due to parameter explosion. To address this, we recommend using regularization techniques, specifically the lasso introduced by \textcite{Tibshirani-1996, Tibshirani-2011}. The lasso method shrinks parameters, introducing sparsity in the drift matrix $\boldsymbol{\Phi}$. The implications of this regularization approach extend to calculating direct, indirect, and total effects in high-dimensional systems. Notably, parameters that are reduced to zero by lasso can be treated as fixed when applying the delta and MC methods. However, to validate the performance of these adjustments in practice, further investigation is needed.
+
+In our current work, we adopted a path-tracing perspective, focusing on clarifying the temporal relationships between variables. However, we did not explore the network analysis perspective, such as centrality \parencite[see e.g.,][]{Ryan-Hamaker-2021}, which might help identify effective intervention targets for bringing about desired changes in the network structure and dynamics. Further investigation is needed to assess the empirical utility and finite-sample performance of the estimation of these network summary statistics\footnote{The \texttt{cTMed} package provides methods for estimating total and indirect effect centrality \parencite{Ryan-Hamaker-2021} and quantifying associated uncertainty using the delta and MC methods.}.
+
+In intensive longitudinal studies spanning multiple days, the night gap problem arises due to missing observations between the last measurement of one day and the first measurement of the next day. We treated this gap as missing data and model dynamics at a single level, assuming continuity during the gap. However, this assumption may not hold for all variables. Future studies can adopt a multilevel approach, nesting observations within days to address the night gap problem.
+
+Autoregressive models often fail to account for persistent trait-like and time-invariant factors. To address this limitation, the random intercepts cross-lagged panel model (RI-CLPM) introduces random intercepts, separating within-person processes from stable between-person differences \parencite{Hamaker-Kuiper-Grasman-2015}. By doing so, it aims to provide more accurate estimates of causal relationships over time and mitigate spurious results due to confounding between-person differences and within-person processes. Developing random intercept models within the CT-VAR framework is a promising avenue for future research.
+
+Lastly, we focused on normally distributed data. However, considering the diversity of data types encountered in substantive research (e.g., categorical, ordinal, and count data), it is essential to explore suitable estimation methods for nonnormal data in CT mediation models. Additionally, understanding the implications of using nonnormal data is crucial.
+
+\subsection{Concluding Remarks}
+
+The paper contributes to the methodology for estimating direct, indirect, and total effects in CT mediation models. It offers valuable insights for researchers in longitudinal data analysis and mediation modeling, emphasizing uncertainty quantification. Additionally, it introduces the open-source software package \texttt{cTMed} for implementing these methods and provides visualization tools for result interpretation.
+
+\printbibliography
+
+\end{document}
