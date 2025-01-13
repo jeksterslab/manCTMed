@@ -311,7 +311,7 @@ data_process_example_med_std <- function(overwrite = FALSE,
       )
     )
     pb <- PBSSMOUFixed(
-      R = 5000L,
+      R = 1000L,
       path = root$find_file(
         ".setup",
         "data-raw"
