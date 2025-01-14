@@ -85,35 +85,35 @@ package.</p>
 <h2 id="summary-of-ct-var-estimates">Summary of CT-VAR Estimates<a class="anchor" aria-label="anchor" href="#summary-of-ct-var-estimates"></a>
 </h2>
 <p>The object <code>fit</code> contains the fitted <code>dynr</code>
-model for the data set with a sample size of 1000.</p>
+model for the data set with a sample size of 133.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt;           Estimate Std. Error t value  ci.lower  ci.upper Pr(&gt;|t|)    </span></span>
-<span><span class="co">#&gt; phi_11   -0.033462   0.008196  -4.083 -0.049525 -0.017399    2e-05 ***</span></span>
-<span><span class="co">#&gt; phi_12    0.037927   0.013550   2.799  0.011369  0.064484  0.00256 ** </span></span>
-<span><span class="co">#&gt; phi_13   -0.013249   0.012176  -1.088 -0.037113  0.010615  0.13827    </span></span>
-<span><span class="co">#&gt; phi_21   -0.151606   0.022211  -6.826 -0.195140 -0.108073  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; phi_22   -0.585371   0.063543  -9.212 -0.709914 -0.460829  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; phi_23    0.227932   0.041150   5.539  0.147281  0.308584  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; phi_31   -0.100379   0.020598  -4.873 -0.140751 -0.060008  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; phi_32    0.103790   0.038758   2.678  0.027825  0.179755  0.00371 ** </span></span>
-<span><span class="co">#&gt; phi_33   -0.511091   0.052376  -9.758 -0.613747 -0.408436  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; sigma_11  0.057973   0.008438   6.870  0.041435  0.074511  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; sigma_12 -0.008698   0.010937  -0.795 -0.030133  0.012738  0.21324    </span></span>
-<span><span class="co">#&gt; sigma_13  0.010256   0.010438   0.983 -0.010203  0.030715  0.16293    </span></span>
-<span><span class="co">#&gt; sigma_22  0.741690   0.113207   6.552  0.519807  0.963572  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; sigma_23  0.101494   0.029935   3.391  0.042824  0.160165  0.00035 ***</span></span>
-<span><span class="co">#&gt; sigma_33  0.838004   0.104520   8.018  0.633147  1.042860  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; theta_11  0.105586   0.006156  17.152  0.093521  0.117652  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; theta_22  0.175885   0.035516   4.952  0.106274  0.245495  &lt; 2e-16 ***</span></span>
-<span><span class="co">#&gt; theta_33  0.082161   0.032843   2.502  0.017790  0.146532  0.00618 ** </span></span>
+<span><span class="co">#&gt; phi_11   -0.033660   0.022452  -1.499 -0.077665  0.010346   0.0670 .  </span></span>
+<span><span class="co">#&gt; phi_12    0.037812   0.036990   1.022 -0.034688  0.110312   0.1534    </span></span>
+<span><span class="co">#&gt; phi_13   -0.013204   0.033136  -0.398 -0.078149  0.051742   0.3452    </span></span>
+<span><span class="co">#&gt; phi_21   -0.152328   0.061236  -2.488 -0.272348 -0.032308   0.0065 ** </span></span>
+<span><span class="co">#&gt; phi_22   -0.590292   0.176377  -3.347 -0.935986 -0.244599   0.0004 ***</span></span>
+<span><span class="co">#&gt; phi_23    0.230222   0.113756   2.024  0.007264  0.453180   0.0215 *  </span></span>
+<span><span class="co">#&gt; phi_31   -0.100440   0.056630  -1.774 -0.211432  0.010553   0.0381 *  </span></span>
+<span><span class="co">#&gt; phi_32    0.105504   0.106899   0.987 -0.104015  0.315023   0.1619    </span></span>
+<span><span class="co">#&gt; phi_33   -0.515121   0.145912  -3.530 -0.801103 -0.229139   0.0002 ***</span></span>
+<span><span class="co">#&gt; sigma_11  0.057709   0.022959   2.514  0.012710  0.102708   0.0060 ** </span></span>
+<span><span class="co">#&gt; sigma_12 -0.008653   0.029841  -0.290 -0.067140  0.049834   0.3859    </span></span>
+<span><span class="co">#&gt; sigma_13  0.010219   0.028178   0.363 -0.045009  0.065447   0.3584    </span></span>
+<span><span class="co">#&gt; sigma_22  0.746297   0.314849   2.370  0.129204  1.363389   0.0089 ** </span></span>
+<span><span class="co">#&gt; sigma_23  0.099176   0.082421   1.203 -0.062366  0.260718   0.1145    </span></span>
+<span><span class="co">#&gt; sigma_33  0.841669   0.292439   2.878  0.268499  1.414839   0.0020 ** </span></span>
+<span><span class="co">#&gt; theta_11  0.104822   0.016744   6.260  0.072004  0.137639   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; theta_22  0.171724   0.098249   1.748 -0.020839  0.364288   0.0403 *  </span></span>
+<span><span class="co">#&gt; theta_33  0.078653   0.091566   0.859 -0.100812  0.258118   0.1952    </span></span>
 <span><span class="co">#&gt; ---</span></span>
 <span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; -2 log-likelihood value at convergence = 26917.91</span></span>
-<span><span class="co">#&gt; AIC = 26953.91</span></span>
-<span><span class="co">#&gt; BIC = 27104.06</span></span></code></pre></div>
+<span><span class="co">#&gt; -2 log-likelihood value at convergence = 3569.91</span></span>
+<span><span class="co">#&gt; AIC = 3605.91</span></span>
+<span><span class="co">#&gt; BIC = 3719.75</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="extract-elements-of-the-drift-matrix-and-the-process-noise-covariance-matrix">Extract Elements of the Drift Matrix and the Process Noise
@@ -269,12 +269,12 @@ function to use all available CPU cores in the system.</p>
 times is computationally intensive.</p>
 </blockquote>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">R</span> <span class="op">&lt;-</span> <span class="fl">5000L</span></span>
+<code class="sourceCode R"><span><span class="va">R</span> <span class="op">&lt;-</span> <span class="fl">1000L</span></span>
 <span><span class="va">path</span> <span class="op">&lt;-</span> <span class="va">root</span><span class="op">$</span><span class="fu">find_file</span><span class="op">(</span></span>
 <span>  <span class="st">".setup"</span>,</span>
 <span>  <span class="st">"data-raw"</span></span>
 <span><span class="op">)</span></span>
-<span><span class="va">prefix</span> <span class="op">&lt;-</span> <span class="st">"pb_example_1000"</span></span></code></pre></div>
+<span><span class="va">prefix</span> <span class="op">&lt;-</span> <span class="st">"pb_example_133"</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="va">phi</span></span>
 <span><span class="va">sigma_hat</span> <span class="op">&lt;-</span> <span class="va">sigma</span></span>
@@ -294,7 +294,7 @@ times is computationally intensive.</p>
 <span>  R <span class="op">=</span> <span class="va">R</span>,</span>
 <span>  path <span class="op">=</span> <span class="va">path</span>,</span>
 <span>  prefix <span class="op">=</span> <span class="va">prefix</span>,</span>
-<span>  n <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>  n <span class="op">=</span> <span class="fl">133</span>,</span>
 <span>  time <span class="op">=</span> <span class="fl">30</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fl">0.10</span>,</span>
 <span>  mu0 <span class="op">=</span> <span class="va">mu0</span>,</span>
@@ -404,7 +404,8 @@ below.</p>
 <p><img src="fig-vignettes-example-3-unnamed-chunk-18-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-3.png" width="1700"></p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-5.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-6.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700"></p>
+<pre><code><span><span class="co">#&gt; Error in plot.window(...): need finite 'ylim' values</span></span></code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
