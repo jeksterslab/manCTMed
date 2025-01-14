@@ -63,11 +63,6 @@ articles:
   - fig-scatter-plots-zero
   - fig-scatter-plots-neg
   - fig-scatter-plots-pos
-- title: Empirical Example
-  contents:
-  - fig-empirical
-  - fig-empirical-plot
-  - fig-empirical-mislabeled
 - title: Containers
   contents:
   - containers

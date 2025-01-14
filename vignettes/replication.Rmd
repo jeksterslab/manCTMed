@@ -64,8 +64,8 @@ fit <- FitDynr(data = data, taskid = 1)
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 9.423558 
-#> Backend Time: 9.413476
+#> Total Time: 9.686451 
+#> Backend Time: 9.676194
 summary(fit)
 #> Coefficients:
 #>            Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    

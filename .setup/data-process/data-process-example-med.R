@@ -485,6 +485,27 @@ data_process_example_med <- function(overwrite = FALSE,
       file = mc_xym_file,
       compress = "xz"
     )
+    pb_xym <- BootMed(
+      phi = extract(object = pb, what = "phi"),
+      phi_hat = phi,
+      delta_t = 0:4,
+      from = "conflict",
+      to = "knowledge",
+      med = "competence",
+      ncores = parallel::detectCores()
+    )
+    pb_pc_xym <- summary(pb_xym, type = "pc")
+    pb_bc_xym <- summary(pb_xym, type = "bc")
+    saveRDS(
+      pb_pc_xym,
+      file = pb_pc_xym_file,
+      compress = "xz"
+    )
+    saveRDS(
+      pb_bc_xym,
+      file = pb_bc_xym_file,
+      compress = "xz"
+    )
     delta_xmy <- DeltaMed(
       phi = phi,
       vcov_phi_vec = vcov_phi_vec,
@@ -525,26 +546,23 @@ data_process_example_med <- function(overwrite = FALSE,
       R = 20000L,
       seed = 42
     )
+    pb_xmy <- BootMed(
+      phi = extract(object = pb, what = "phi"),
+      phi_hat = phi,
+      delta_t = delta_t,
+      from = "conflict",
+      to = "competence",
+      med = "knowledge",
+      ncores = parallel::detectCores()
+    )
     pb_xym <- BootMed(
       phi = extract(object = pb, what = "phi"),
       phi_hat = phi,
-      delta_t = 0:4,
+      delta_t = delta_t,
       from = "conflict",
       to = "knowledge",
       med = "competence",
       ncores = parallel::detectCores()
-    )
-    pb_pc_xym <- summary(pb_xym, type = "pc")
-    pb_bc_xym <- summary(pb_xym, type = "bc")
-    saveRDS(
-      pb_pc_xym,
-      file = pb_pc_xym_file,
-      compress = "xz"
-    )
-    saveRDS(
-      pb_bc_xym,
-      file = pb_bc_xym_file,
-      compress = "xz"
     )
     delta_xmy <- cTMed:::.DeltaCI(
       object = delta_xmy,
@@ -995,8 +1013,5 @@ data_process_example_med <- function(overwrite = FALSE,
     )
   }
 }
-data_process_example_med(n = 100)
-data_process_example_med(n = 200)
-data_process_example_med(n = 500)
-data_process_example_med(n = 1000)
+data_process_example_med(n = 133)
 rm(data_process_example_med)

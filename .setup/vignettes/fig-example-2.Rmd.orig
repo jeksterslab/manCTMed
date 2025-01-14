@@ -30,7 +30,7 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 1000
+n <- 133
 fit <- readRDS(
   root$find_file(
     ".setup",
@@ -60,7 +60,7 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 1000.
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133.
 
 ```{r}
 summary(fit)
@@ -190,12 +190,12 @@ The parametric bootstrap approach involves generating data from the parametric m
 > **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
 
 ```{r}
-R <- 5000L
+R <- 1000L
 path <- root$find_file(
   ".setup",
   "data-raw"
 )
-prefix <- "pb_example_1000"
+prefix <- "pb_example_133"
 ```
 
 ```{r}
@@ -219,7 +219,7 @@ boot <- PBSSMOUFixed(
   R = R,
   path = path,
   prefix = prefix,
-  n = 1000,
+  n = 133,
   time = 30,
   delta_t = 0.10,
   mu0 = mu0,
@@ -446,7 +446,6 @@ model <- dynr::dynr.model(
     )
   )
 )
-model@options$maxeval <- 100000
 lb <- ub <- rep(NA, times = length(model$xstart))
 names(ub) <- names(lb) <- names(model$xstart)
 lb[
@@ -461,7 +460,7 @@ lb[
     "phi_23",
     "phi_33"
   )
-] <- -10
+] <- -1.5
 ub[
   c(
     "phi_11",
@@ -474,7 +473,7 @@ ub[
     "phi_23",
     "phi_33"
   )
-] <- 10
+] <- 1.5
 ub[
   c(
     "phi_11",
@@ -502,6 +501,7 @@ fit <- dynr::dynr.cook(
   model,
   verbose = FALSE
 )
+print(summary(fit))
 coef(model) <- coef(fit)
 fit <- dynr::dynr.cook(
   model,

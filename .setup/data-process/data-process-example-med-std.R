@@ -497,6 +497,29 @@ data_process_example_med_std <- function(overwrite = FALSE,
       file = mc_xym_file,
       compress = "xz"
     )
+    pb_xym <- BootMedStd(
+      phi = extract(object = pb, what = "phi"),
+      sigma = extract(object = pb, what = "sigma"),
+      phi_hat = phi,
+      sigma_hat = sigma,
+      delta_t = 0:4,
+      from = "conflict",
+      to = "knowledge",
+      med = "competence",
+      ncores = parallel::detectCores()
+    )
+    pb_pc_xym <- summary(pb_xym, type = "pc")
+    pb_bc_xym <- summary(pb_xym, type = "bc")
+    saveRDS(
+      pb_pc_xym,
+      file = pb_pc_xym_file,
+      compress = "xz"
+    )
+    saveRDS(
+      pb_bc_xym,
+      file = pb_bc_xym_file,
+      compress = "xz"
+    )
     delta_xmy <- DeltaMedStd(
       phi = phi,
       sigma = sigma,
@@ -541,28 +564,27 @@ data_process_example_med_std <- function(overwrite = FALSE,
       R = 20000L,
       seed = 42
     )
+    pb_xmy <- BootMedStd(
+      phi = extract(object = pb, what = "phi"),
+      sigma = extract(object = pb, what = "sigma"),
+      phi_hat = phi,
+      sigma_hat = sigma,
+      delta_t = delta_t,
+      from = "conflict",
+      to = "competence",
+      med = "knowledge",
+      ncores = parallel::detectCores()
+    )
     pb_xym <- BootMedStd(
       phi = extract(object = pb, what = "phi"),
       sigma = extract(object = pb, what = "sigma"),
       phi_hat = phi,
       sigma_hat = sigma,
-      delta_t = 0:4,
+      delta_t = delta_t,
       from = "conflict",
       to = "knowledge",
       med = "competence",
       ncores = parallel::detectCores()
-    )
-    pb_pc_xym <- summary(pb_xym, type = "pc")
-    pb_bc_xym <- summary(pb_xym, type = "bc")
-    saveRDS(
-      pb_pc_xym,
-      file = pb_pc_xym_file,
-      compress = "xz"
-    )
-    saveRDS(
-      pb_bc_xym,
-      file = pb_bc_xym_file,
-      compress = "xz"
     )
     delta_xmy <- cTMed:::.DeltaCI(
       object = delta_xmy,
@@ -1013,8 +1035,5 @@ data_process_example_med_std <- function(overwrite = FALSE,
     )
   }
 }
-data_process_example_med_std(n = 100)
-data_process_example_med_std(n = 200)
-data_process_example_med_std(n = 500)
-data_process_example_med_std(n = 1000)
+data_process_example_med_std(n = 133)
 rm(data_process_example_med_std)

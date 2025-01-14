@@ -240,7 +240,6 @@ data_process_example_ct <- function(overwrite = FALSE,
         )
       )
     )
-    model@options$maxeval <- 100000
     lb <- ub <- rep(NA, times = length(model$xstart))
     names(ub) <- names(lb) <- names(model$xstart)
     lb[
@@ -255,7 +254,7 @@ data_process_example_ct <- function(overwrite = FALSE,
         "phi_23",
         "phi_33"
       )
-    ] <- -10
+    ] <- -1.5
     ub[
       c(
         "phi_11",
@@ -268,7 +267,7 @@ data_process_example_ct <- function(overwrite = FALSE,
         "phi_23",
         "phi_33"
       )
-    ] <- 10
+    ] <- 1.5
     ub[
       c(
         "phi_11",
@@ -315,8 +314,5 @@ data_process_example_ct <- function(overwrite = FALSE,
     )
   }
 }
-data_process_example_ct(n = 100)
-data_process_example_ct(n = 200)
-data_process_example_ct(n = 500)
-data_process_example_ct(n = 1000)
+data_process_example_ct(n = 133)
 rm(data_process_example_ct)

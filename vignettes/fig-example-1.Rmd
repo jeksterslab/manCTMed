@@ -26,37 +26,37 @@ library(cTMed)
 
 ## Summary of CT-VAR Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 1000. See the script used to fit the CT-VAR model below.
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See the script used to fit the CT-VAR model below.
 
 
 ``` r
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033462   0.008196  -4.083 -0.049525 -0.017399    2e-05 ***
-#> phi_12    0.037927   0.013550   2.799  0.011369  0.064484  0.00256 ** 
-#> phi_13   -0.013249   0.012176  -1.088 -0.037113  0.010615  0.13827    
-#> phi_21   -0.151606   0.022211  -6.826 -0.195140 -0.108073  < 2e-16 ***
-#> phi_22   -0.585371   0.063543  -9.212 -0.709914 -0.460829  < 2e-16 ***
-#> phi_23    0.227932   0.041150   5.539  0.147281  0.308584  < 2e-16 ***
-#> phi_31   -0.100379   0.020598  -4.873 -0.140751 -0.060008  < 2e-16 ***
-#> phi_32    0.103790   0.038758   2.678  0.027825  0.179755  0.00371 ** 
-#> phi_33   -0.511091   0.052376  -9.758 -0.613747 -0.408436  < 2e-16 ***
-#> sigma_11  0.057973   0.008438   6.870  0.041435  0.074511  < 2e-16 ***
-#> sigma_12 -0.008698   0.010937  -0.795 -0.030133  0.012738  0.21324    
-#> sigma_13  0.010256   0.010438   0.983 -0.010203  0.030715  0.16293    
-#> sigma_22  0.741690   0.113207   6.552  0.519807  0.963572  < 2e-16 ***
-#> sigma_23  0.101494   0.029935   3.391  0.042824  0.160165  0.00035 ***
-#> sigma_33  0.838004   0.104520   8.018  0.633147  1.042860  < 2e-16 ***
-#> theta_11  0.105586   0.006156  17.152  0.093521  0.117652  < 2e-16 ***
-#> theta_22  0.175885   0.035516   4.952  0.106274  0.245495  < 2e-16 ***
-#> theta_33  0.082161   0.032843   2.502  0.017790  0.146532  0.00618 ** 
+#> phi_11   -0.033660   0.022452  -1.499 -0.077665  0.010346   0.0670 .  
+#> phi_12    0.037812   0.036990   1.022 -0.034688  0.110312   0.1534    
+#> phi_13   -0.013204   0.033136  -0.398 -0.078149  0.051742   0.3452    
+#> phi_21   -0.152328   0.061236  -2.488 -0.272348 -0.032308   0.0065 ** 
+#> phi_22   -0.590292   0.176377  -3.347 -0.935986 -0.244599   0.0004 ***
+#> phi_23    0.230222   0.113756   2.024  0.007264  0.453180   0.0215 *  
+#> phi_31   -0.100440   0.056630  -1.774 -0.211432  0.010553   0.0381 *  
+#> phi_32    0.105504   0.106899   0.987 -0.104015  0.315023   0.1619    
+#> phi_33   -0.515121   0.145912  -3.530 -0.801103 -0.229139   0.0002 ***
+#> sigma_11  0.057709   0.022959   2.514  0.012710  0.102708   0.0060 ** 
+#> sigma_12 -0.008653   0.029841  -0.290 -0.067140  0.049834   0.3859    
+#> sigma_13  0.010219   0.028178   0.363 -0.045009  0.065447   0.3584    
+#> sigma_22  0.746297   0.314849   2.370  0.129204  1.363389   0.0089 ** 
+#> sigma_23  0.099176   0.082421   1.203 -0.062366  0.260718   0.1145    
+#> sigma_33  0.841669   0.292439   2.878  0.268499  1.414839   0.0020 ** 
+#> theta_11  0.104822   0.016744   6.260  0.072004  0.137639   <2e-16 ***
+#> theta_22  0.171724   0.098249   1.748 -0.020839  0.364288   0.0403 *  
+#> theta_33  0.078653   0.091566   0.859 -0.100812  0.258118   0.1952    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> -2 log-likelihood value at convergence = 26917.91
-#> AIC = 26953.91
-#> BIC = 27104.06
+#> -2 log-likelihood value at convergence = 3569.91
+#> AIC = 3605.91
+#> BIC = 3719.75
 ```
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
@@ -125,7 +125,7 @@ Med(
 #> Total, Direct, and Indirect Effects
 #> 
 #>      interval   total  direct indirect
-#> [1,]        1 -0.0828 -0.0772  -0.0056
+#> [1,]        1 -0.0828 -0.0771  -0.0057
 ```
 
 ## Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
@@ -163,8 +163,8 @@ MedStd(
 #> 
 #> Total, Direct, and Indirect Effects
 #> 
-#>      interval   total  direct indirect
-#> [1,]        1 -0.0954 -0.0889  -0.0065
+#>      interval   total direct indirect
+#> [1,]        1 -0.0956 -0.089  -0.0066
 ```
 
 ## Standardized Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
@@ -327,7 +327,6 @@ model <- dynr::dynr.model(
     )
   )
 )
-model@options$maxeval <- 100000
 lb <- ub <- rep(NA, times = length(model$xstart))
 names(ub) <- names(lb) <- names(model$xstart)
 lb[
@@ -342,7 +341,7 @@ lb[
     "phi_23",
     "phi_33"
   )
-] <- -10
+] <- -1.5
 ub[
   c(
     "phi_11",
@@ -355,7 +354,7 @@ ub[
     "phi_23",
     "phi_33"
   )
-] <- 10
+] <- 1.5
 ub[
   c(
     "phi_11",
@@ -383,6 +382,7 @@ fit <- dynr::dynr.cook(
   model,
   verbose = FALSE
 )
+print(summary(fit))
 coef(model) <- coef(fit)
 fit <- dynr::dynr.cook(
   model,
