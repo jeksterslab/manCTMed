@@ -58,13 +58,9 @@ library(simStateSpace)
 library(cTMed)
 ```
 
-## Summary of CT-VAR Estimates
+## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133.
-
-```{r}
-summary(fit)
-```
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
@@ -201,17 +197,33 @@ prefix <- "pb_example_133"
 ```{r}
 phi_hat <- phi
 sigma_hat <- sigma
-nu <- mu0 <- c(0, 0, 0)
-sigma0 <- matrix(
-  data = c(
-    1.00, -0.06, 0.03,
-    -0.06, 1.00, 0.32,
-    0.03, 0.32, 1.00
-  ),
-  nrow = 3,
-  ncol = 3
-)
+nu <- c(0, 0, 0)
 lambda <- diag(3)
+```
+
+```{r}
+# fixed mu0 and sigma0
+data("grundy2007", package = "manCTMed")
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
+mu0 <- colMeans(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
+sigma0 <- cov(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  ),
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
 ```
 
 ```{r}
@@ -304,208 +316,3 @@ pb <- BootMedStd(
 summary(pb)
 summary(pb, type = "bc") # bias-corrected
 ```
-
-<details>
-<summary>
-Code to fit the CT-VAR model.
-</summary>
-```r
-varnames <- c(
-  "conflict",
-  "knowledge",
-  "competence"
-)
-data <- dynUtils::InsertNA(
-  data = data,
-  id = "id",
-  time = "time",
-  observed = varnames,
-  delta_t = 0.10,
-  ncores = parallel::detectCores()
-)
-n_manifest <- 3
-n_latent <- 3
-# starting values
-phi_11 <- 0
-phi_12 <- 0
-phi_13 <- 0
-phi_21 <- 0
-phi_22 <- 0
-phi_23 <- 0
-phi_31 <- 0
-phi_32 <- 0
-phi_33 <- 0
-sigma_11 <- .10
-sigma_12 <- 0
-sigma_13 <- 0
-sigma_22 <- .10
-sigma_23 <- 0
-sigma_33 <- .10
-theta_11 <- .10
-theta_22 <- .10
-theta_33 <- .10
-sigma <- matrix(
-  data = c(
-    sigma_11, sigma_12, sigma_13,
-    sigma_12, sigma_22, sigma_23,
-    sigma_13, sigma_23, sigma_33
-  ),
-  nrow = n_latent
-)
-theta <- diag(
-  c(
-    theta_11,
-    theta_22,
-    theta_33
-  ),
-  nrow = n_latent
-)
-library(dynr)
-dynr_data <- dynr::dynr.data(
-  dataframe = data,
-  id = "id",
-  time = "time",
-  observed = varnames
-)
-data_0 <- data[which(data[, "time"] == 0), ]
-dynr_initial <- dynr::prep.initial(
-  values.inistate = colMeans(data_0)[varnames],
-  params.inistate = rep(x = "fixed", times = n_latent),
-  values.inicov = cov(data_0)[varnames, varnames],
-  params.inicov = matrix(
-    data = "fixed",
-    nrow = n_latent,
-    ncol = n_latent
-  )
-)
-dynr_measurement <- dynr::prep.measurement(
-  values.load = diag(n_manifest),
-  params.load = matrix(
-    data = "fixed",
-    nrow = n_manifest,
-    ncol = n_manifest
-  ),
-  state.names = paste0(
-    "eta_",
-    varnames
-  ),
-  obs.names = varnames
-)
-dynr_dynamics <- dynr::prep.formulaDynamics(
-  formula = list(
-    eta_conflict ~ (phi_11 * eta_conflict) + (phi_12 * eta_knowledge) + (phi_13 * eta_competence),
-    eta_knowledge ~ (phi_21 * eta_conflict) + (phi_22 * eta_knowledge) + (phi_23 * eta_competence),
-    eta_competence ~ (phi_31 * eta_conflict) + (phi_32 * eta_knowledge) + (phi_33 * eta_competence)
-  ),
-  startval = c(
-    phi_11 = phi_11,
-    phi_12 = phi_12,
-    phi_13 = phi_13,
-    phi_21 = phi_21,
-    phi_22 = phi_22,
-    phi_23 = phi_23,
-    phi_31 = phi_31,
-    phi_32 = phi_32,
-    phi_33 = phi_33
-  ),
-  isContinuousTime = TRUE
-)
-dynr_noise <- dynr::prep.noise(
-  values.latent = sigma,
-  params.latent = matrix(
-    data = c(
-      "sigma_11", "sigma_12", "sigma_13",
-      "sigma_12", "sigma_22", "sigma_23",
-      "sigma_13", "sigma_23", "sigma_33"
-    ),
-    nrow = n_latent
-  ),
-  values.observed = theta,
-  params.observed = matrix(
-    data = c(
-      "theta_11", "fixed", "fixed",
-      "fixed", "theta_22", "fixed",
-      "fixed", "fixed", "theta_33"
-    ),
-    nrow = n_manifest,
-    ncol = n_manifest
-  )
-)
-model <- dynr::dynr.model(
-  data = dynr_data,
-  initial = dynr_initial,
-  measurement = dynr_measurement,
-  dynamics = dynr_dynamics,
-  noise = dynr_noise,
-  outfile = file.path(
-    tempdir(),
-    paste0(
-      "example-ct-dynr-",
-      n,
-      ".c"
-    )
-  )
-)
-lb <- ub <- rep(NA, times = length(model$xstart))
-names(ub) <- names(lb) <- names(model$xstart)
-lb[
-  c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-] <- -1.5
-ub[
-  c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-] <- 1.5
-ub[
-  c(
-    "phi_11",
-    "phi_22",
-    "phi_33"
-  )
-] <- 0
-lb[
-  c(
-    "sigma_11",
-    "sigma_22",
-    "sigma_33"
-  )
-] <- .Machine$double.xmin
-lb[
-  c(
-    "theta_11",
-    "theta_22",
-    "theta_33"
-  )
-] <- .Machine$double.xmin
-model$lb <- lb
-model$ub <- ub
-fit <- dynr::dynr.cook(
-  model,
-  verbose = FALSE
-)
-print(summary(fit))
-coef(model) <- coef(fit)
-fit <- dynr::dynr.cook(
-  model,
-  verbose = FALSE
-)
-```
-</details>

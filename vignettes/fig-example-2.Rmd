@@ -25,40 +25,9 @@ library(simStateSpace)
 library(cTMed)
 ```
 
-## Summary of CT-VAR Estimates
+## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133.
-
-
-``` r
-summary(fit)
-#> Coefficients:
-#>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033660   0.022452  -1.499 -0.077665  0.010346   0.0670 .  
-#> phi_12    0.037812   0.036990   1.022 -0.034688  0.110312   0.1534    
-#> phi_13   -0.013204   0.033136  -0.398 -0.078149  0.051742   0.3452    
-#> phi_21   -0.152328   0.061236  -2.488 -0.272348 -0.032308   0.0065 ** 
-#> phi_22   -0.590292   0.176377  -3.347 -0.935986 -0.244599   0.0004 ***
-#> phi_23    0.230222   0.113756   2.024  0.007264  0.453180   0.0215 *  
-#> phi_31   -0.100440   0.056630  -1.774 -0.211432  0.010553   0.0381 *  
-#> phi_32    0.105504   0.106899   0.987 -0.104015  0.315023   0.1619    
-#> phi_33   -0.515121   0.145912  -3.530 -0.801103 -0.229139   0.0002 ***
-#> sigma_11  0.057709   0.022959   2.514  0.012710  0.102708   0.0060 ** 
-#> sigma_12 -0.008653   0.029841  -0.290 -0.067140  0.049834   0.3859    
-#> sigma_13  0.010219   0.028178   0.363 -0.045009  0.065447   0.3584    
-#> sigma_22  0.746297   0.314849   2.370  0.129204  1.363389   0.0089 ** 
-#> sigma_23  0.099176   0.082421   1.203 -0.062366  0.260718   0.1145    
-#> sigma_33  0.841669   0.292439   2.878  0.268499  1.414839   0.0020 ** 
-#> theta_11  0.104822   0.016744   6.260  0.072004  0.137639   <2e-16 ***
-#> theta_22  0.171724   0.098249   1.748 -0.020839  0.364288   0.0403 *  
-#> theta_33  0.078653   0.091566   0.859 -0.100812  0.258118   0.1952    
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> -2 log-likelihood value at convergence = 3569.91
-#> AIC = 3605.91
-#> BIC = 3719.75
-```
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
@@ -168,21 +137,21 @@ DeltaMed(
 #> 
 #> $`1`
 #>          interval     est     se       z      p    2.5%  97.5%
-#> total           1 -0.0828 0.0428 -1.9366 0.0528 -0.1667 0.0010
-#> direct          1 -0.0771 0.0437 -1.7648 0.0776 -0.1627 0.0085
-#> indirect        1 -0.0057 0.0061 -0.9420 0.3462 -0.0177 0.0062
+#> total           1 -0.0828 0.0428 -1.9360 0.0529 -0.1667 0.0010
+#> direct          1 -0.0771 0.0437 -1.7643 0.0777 -0.1627 0.0085
+#> indirect        1 -0.0057 0.0061 -0.9416 0.3464 -0.0177 0.0062
 #> 
 #> $`2`
 #>          interval     est     se       z      p    2.5%   97.5%
-#> total           2 -0.1373 0.0670 -2.0504 0.0403 -0.2685 -0.0061
-#> direct          2 -0.1207 0.0694 -1.7377 0.0823 -0.2568  0.0154
-#> indirect        2 -0.0166 0.0173 -0.9616 0.3362 -0.0504  0.0172
+#> total           2 -0.1373 0.0670 -2.0497 0.0404 -0.2685 -0.0060
+#> direct          2 -0.1207 0.0695 -1.7371 0.0824 -0.2568  0.0155
+#> indirect        2 -0.0166 0.0173 -0.9612 0.3365 -0.0504  0.0172
 #> 
 #> $`3`
 #>          interval     est     se       z      p    2.5%   97.5%
-#> total           3 -0.1716 0.0809 -2.1218 0.0339 -0.3302 -0.0131
-#> direct          3 -0.1444 0.0848 -1.7031 0.0885 -0.3105  0.0218
-#> indirect        3 -0.0273 0.0281 -0.9717 0.3312 -0.0823  0.0277
+#> total           3 -0.1716 0.0809 -2.1210 0.0339 -0.3302 -0.0130
+#> direct          3 -0.1443 0.0848 -1.7025 0.0887 -0.3105  0.0218
+#> indirect        3 -0.0273 0.0281 -0.9712 0.3314 -0.0822  0.0277
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -207,19 +176,19 @@ MCMed(
 #> $`1`
 #>          interval     est     se     R    2.5%  97.5%
 #> total           1 -0.0828 0.0429 20000 -0.1669 0.0012
-#> direct          1 -0.0771 0.0438 20000 -0.1649 0.0081
-#> indirect        1 -0.0057 0.0064 20000 -0.0195 0.0060
+#> direct          1 -0.0771 0.0438 20000 -0.1650 0.0081
+#> indirect        1 -0.0057 0.0064 20000 -0.0194 0.0060
 #> 
 #> $`2`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           2 -0.1373 0.0679 20000 -0.2718 -0.0038
+#> total           2 -0.1373 0.0679 20000 -0.2717 -0.0037
 #> direct          2 -0.1207 0.0704 20000 -0.2666  0.0124
 #> indirect        2 -0.0166 0.0181 20000 -0.0536  0.0193
 #> 
 #> $`3`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           3 -0.1716 0.0832 20000 -0.3394 -0.0087
-#> direct          3 -0.1444 0.0873 20000 -0.3338  0.0148
+#> total           3 -0.1716 0.0832 20000 -0.3395 -0.0087
+#> direct          3 -0.1443 0.0873 20000 -0.3338  0.0148
 #> indirect        3 -0.0273 0.0298 20000 -0.0860  0.0351
 ```
 
@@ -243,17 +212,34 @@ prefix <- "pb_example_133"
 ``` r
 phi_hat <- phi
 sigma_hat <- sigma
-nu <- mu0 <- c(0, 0, 0)
-sigma0 <- matrix(
-  data = c(
-    1.00, -0.06, 0.03,
-    -0.06, 1.00, 0.32,
-    0.03, 0.32, 1.00
-  ),
-  nrow = 3,
-  ncol = 3
-)
+nu <- c(0, 0, 0)
 lambda <- diag(3)
+```
+
+
+``` r
+# fixed mu0 and sigma0
+data("grundy2007", package = "manCTMed")
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
+mu0 <- colMeans(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
+sigma0 <- cov(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  ),
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
 ```
 
 
@@ -294,26 +280,26 @@ ci <- BootMed(
 )
 summary(ci)
 #>     effect interval          est          se    R        2.5%        97.5%
-#> 1    total        1 -0.082838145 0.037718522 1000 -0.15702023 -0.009351313
-#> 2   direct        1 -0.077094050 0.038356809 1000 -0.15284987 -0.002193627
-#> 3 indirect        1 -0.005744095 0.004078585 1000 -0.01411933  0.001513496
-#> 4    total        2 -0.137278046 0.058673764 1000 -0.25119255 -0.021467484
-#> 5   direct        2 -0.120678910 0.060052186 1000 -0.23904765 -0.003493888
-#> 6 indirect        2 -0.016599136 0.011659196 1000 -0.04013830  0.004940313
-#> 7    total        3 -0.171632794 0.070457101 1000 -0.31141551 -0.035571805
-#> 8   direct        3 -0.144370657 0.072132928 1000 -0.28383570 -0.004234816
-#> 9 indirect        3 -0.027262136 0.019158579 1000 -0.06587586  0.008232386
+#> 1    total        1 -0.082830099 0.039456616 1000 -0.16284923 -0.010994346
+#> 2   direct        1 -0.077087636 0.039772657 1000 -0.16008343 -0.006255609
+#> 3 indirect        1 -0.005742463 0.004133327 1000 -0.01555325  0.001241063
+#> 4    total        2 -0.137257463 0.061888066 1000 -0.25996915 -0.023678371
+#> 5   direct        2 -0.120663647 0.062331627 1000 -0.24934282 -0.009813090
+#> 6 indirect        2 -0.016593816 0.011832263 1000 -0.04373597  0.004523996
+#> 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.034070993
+#> 8   direct        3 -0.144345904 0.074933758 1000 -0.29469861 -0.011141898
+#> 9 indirect        3 -0.027252286 0.019452214 1000 -0.07032936  0.008444769
 summary(ci, type = "bc") # bias-corrected
 #>     effect interval          est          se    R        2.5%         97.5%
-#> 1    total        1 -0.082838145 0.037718522 1000 -0.15963083 -0.0104981362
-#> 2   direct        1 -0.077094050 0.038356809 1000 -0.15316312 -0.0022470327
-#> 3 indirect        1 -0.005744095 0.004078585 1000 -0.01473847  0.0007423573
-#> 4    total        2 -0.137278046 0.058673764 1000 -0.26358892 -0.0297804044
-#> 5   direct        2 -0.120678910 0.060052186 1000 -0.24267933 -0.0042989612
-#> 6 indirect        2 -0.016599136 0.011659196 1000 -0.04229753  0.0024852929
-#> 7    total        3 -0.171632794 0.070457101 1000 -0.31472948 -0.0417396616
-#> 8   direct        3 -0.144370657 0.072132928 1000 -0.28809467 -0.0054129892
-#> 9 indirect        3 -0.027262136 0.019158579 1000 -0.06824194  0.0048368338
+#> 1    total        1 -0.082830099 0.039456616 1000 -0.16038014 -0.0091305394
+#> 2   direct        1 -0.077087636 0.039772657 1000 -0.15566861 -0.0018895685
+#> 3 indirect        1 -0.005742463 0.004133327 1000 -0.01612152  0.0003286905
+#> 4    total        2 -0.137257463 0.061888066 1000 -0.25654779 -0.0201167161
+#> 5   direct        2 -0.120663647 0.062331627 1000 -0.24578012 -0.0046286287
+#> 6 indirect        2 -0.016593816 0.011832263 1000 -0.04585858  0.0012026448
+#> 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.0340709929
+#> 8   direct        3 -0.144345904 0.074933758 1000 -0.29408751 -0.0064706294
+#> 9 indirect        3 -0.027252286 0.019452214 1000 -0.07524567  0.0026212193
 ```
 
 ## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -336,21 +322,21 @@ DeltaMedStd(
 #> 
 #> $`1`
 #>          interval     est     se       z      p    2.5%  97.5%
-#> total           1 -0.0956 0.0558 -1.7134 0.0866 -0.2050 0.0138
-#> direct          1 -0.0890 0.0557 -1.5988 0.1099 -0.1980 0.0201
-#> indirect        1 -0.0066 0.0074 -0.8936 0.3715 -0.0212 0.0079
+#> total           1 -0.0956 0.0558 -1.7133 0.0867 -0.2051 0.0138
+#> direct          1 -0.0890 0.0557 -1.5987 0.1099 -0.1981 0.0201
+#> indirect        1 -0.0066 0.0074 -0.8933 0.3717 -0.0212 0.0079
 #> 
 #> $`2`
 #>          interval     est     se       z      p    2.5%  97.5%
-#> total           2 -0.1584 0.0881 -1.7987 0.0721 -0.3311 0.0142
-#> direct          2 -0.1393 0.0876 -1.5903 0.1118 -0.3109 0.0324
-#> indirect        2 -0.0192 0.0210 -0.9117 0.3620 -0.0603 0.0220
+#> total           2 -0.1585 0.0881 -1.7986 0.0721 -0.3312 0.0142
+#> direct          2 -0.1393 0.0876 -1.5901 0.1118 -0.3111 0.0324
+#> indirect        2 -0.0192 0.0210 -0.9112 0.3622 -0.0604 0.0221
 #> 
 #> $`3`
 #>          interval     est     se       z      p    2.5%  97.5%
-#> total           3 -0.1981 0.1067 -1.8569 0.0633 -0.4072 0.0110
-#> direct          3 -0.1666 0.1058 -1.5749 0.1153 -0.3740 0.0407
-#> indirect        3 -0.0315 0.0341 -0.9216 0.3567 -0.0984 0.0354
+#> total           3 -0.1982 0.1067 -1.8567 0.0634 -0.4073 0.0110
+#> direct          3 -0.1667 0.1058 -1.5747 0.1153 -0.3741 0.0408
+#> indirect        3 -0.0315 0.0342 -0.9212 0.3570 -0.0984 0.0355
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -375,21 +361,21 @@ MCMedStd(
 #> 
 #> $`1`
 #>          interval     est     se     R    2.5%  97.5%
-#> total           1 -0.0956 0.0676 20000 -0.2331 0.0036
-#> direct          1 -0.0890 0.0666 20000 -0.2258 0.0103
-#> indirect        1 -0.0066 0.0086 20000 -0.0263 0.0066
+#> total           1 -0.0956 0.0677 20000 -0.2333 0.0036
+#> direct          1 -0.0890 0.0666 20000 -0.2260 0.0104
+#> indirect        1 -0.0066 0.0086 20000 -0.0262 0.0066
 #> 
 #> $`2`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           2 -0.1584 0.1079 20000 -0.3809 -0.0013
-#> direct          2 -0.1393 0.1051 20000 -0.3583  0.0164
+#> total           2 -0.1585 0.1080 20000 -0.3811 -0.0013
+#> direct          2 -0.1393 0.1052 20000 -0.3584  0.0164
 #> indirect        2 -0.0192 0.0243 20000 -0.0728  0.0208
 #> 
 #> $`3`
 #>          interval     est     se     R    2.5%   97.5%
-#> total           3 -0.1981 0.1323 20000 -0.4757 -0.0067
-#> direct          3 -0.1666 0.1283 20000 -0.4419  0.0196
-#> indirect        3 -0.0315 0.0396 20000 -0.1170  0.0375
+#> total           3 -0.1982 0.1325 20000 -0.4760 -0.0065
+#> direct          3 -0.1667 0.1284 20000 -0.4423  0.0197
+#> indirect        3 -0.0315 0.0396 20000 -0.1170  0.0377
 ```
 
 ## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -409,230 +395,25 @@ pb <- BootMedStd(
   med = "knowledge"
 )
 summary(pb)
-#>     effect interval          est         se   R        2.5%        97.5%
-#> 1    total        1 -0.095603243 0.04877071 999 -0.20413645 -0.010066020
-#> 2   direct        1 -0.088974000 0.04902833 999 -0.19720108 -0.001894048
-#> 3 indirect        1 -0.006629243 0.00500163 999 -0.01815689  0.001662792
-#> 4    total        2 -0.158432161 0.07646978 999 -0.32277523 -0.022074280
-#> 5   direct        2 -0.139275150 0.07665768 999 -0.30105312 -0.002960434
-#> 6 indirect        2 -0.019157011 0.01430386 999 -0.05161245  0.005331509
-#> 7    total        3 -0.198080867 0.09210774 999 -0.39137417 -0.036769698
-#> 8   direct        3 -0.166617722 0.09175894 999 -0.35982916 -0.003532856
-#> 9 indirect        3 -0.031463146 0.02348459 999 -0.08448171  0.009120241
+#>     effect interval          est          se   R        2.5%        97.5%
+#> 1    total        1 -0.095646850 0.052158365 999 -0.21311717 -0.012914328
+#> 2   direct        1 -0.089015825 0.051709454 999 -0.20585646 -0.006891620
+#> 3 indirect        1 -0.006631025 0.005185066 999 -0.01866832  0.001621714
+#> 4    total        2 -0.158496057 0.082575891 999 -0.34330620 -0.025706028
+#> 5   direct        2 -0.139334589 0.080765866 999 -0.32155526 -0.010042838
+#> 6 indirect        2 -0.019161468 0.014858878 999 -0.05329162  0.005177845
+#> 7    total        3 -0.198150511 0.100107291 999 -0.42652613 -0.034664929
+#> 8   direct        3 -0.166681330 0.096557779 999 -0.39372015 -0.011406325
+#> 9 indirect        3 -0.031469181 0.024410738 999 -0.08613108  0.010047344
 summary(pb, type = "bc") # bias-corrected
-#>     effect interval          est         se   R 2.5% 97.5%
-#> 1    total        1 -0.095603243 0.04877071 999   NA    NA
-#> 2   direct        1 -0.088974000 0.04902833 999   NA    NA
-#> 3 indirect        1 -0.006629243 0.00500163 999   NA    NA
-#> 4    total        2 -0.158432161 0.07646978 999   NA    NA
-#> 5   direct        2 -0.139275150 0.07665768 999   NA    NA
-#> 6 indirect        2 -0.019157011 0.01430386 999   NA    NA
-#> 7    total        3 -0.198080867 0.09210774 999   NA    NA
-#> 8   direct        3 -0.166617722 0.09175894 999   NA    NA
-#> 9 indirect        3 -0.031463146 0.02348459 999   NA    NA
+#>     effect interval          est          se   R        2.5%         97.5%
+#> 1    total        1 -0.095646850 0.052158365 999 -0.21757995 -1.424544e-02
+#> 2   direct        1 -0.089015825 0.051709454 999 -0.21153629 -9.042165e-03
+#> 3 indirect        1 -0.006631025 0.005185066 999 -0.02089449  8.759714e-05
+#> 4    total        2 -0.158496057 0.082575891 999 -0.35062349 -2.687946e-02
+#> 5   direct        2 -0.139334589 0.080765866 999 -0.33500097 -1.505899e-02
+#> 6 indirect        2 -0.019161468 0.014858878 999 -0.05927079  1.181983e-03
+#> 7    total        3 -0.198150511 0.100107291 999 -0.42910381 -3.716610e-02
+#> 8   direct        3 -0.166681330 0.096557779 999 -0.41148785 -2.017584e-02
+#> 9 indirect        3 -0.031469181 0.024410738 999 -0.09799099  3.132993e-03
 ```
-
-<details>
-<summary>
-Code to fit the CT-VAR model.
-</summary>
-```r
-varnames <- c(
-  "conflict",
-  "knowledge",
-  "competence"
-)
-data <- dynUtils::InsertNA(
-  data = data,
-  id = "id",
-  time = "time",
-  observed = varnames,
-  delta_t = 0.10,
-  ncores = parallel::detectCores()
-)
-n_manifest <- 3
-n_latent <- 3
-# starting values
-phi_11 <- 0
-phi_12 <- 0
-phi_13 <- 0
-phi_21 <- 0
-phi_22 <- 0
-phi_23 <- 0
-phi_31 <- 0
-phi_32 <- 0
-phi_33 <- 0
-sigma_11 <- .10
-sigma_12 <- 0
-sigma_13 <- 0
-sigma_22 <- .10
-sigma_23 <- 0
-sigma_33 <- .10
-theta_11 <- .10
-theta_22 <- .10
-theta_33 <- .10
-sigma <- matrix(
-  data = c(
-    sigma_11, sigma_12, sigma_13,
-    sigma_12, sigma_22, sigma_23,
-    sigma_13, sigma_23, sigma_33
-  ),
-  nrow = n_latent
-)
-theta <- diag(
-  c(
-    theta_11,
-    theta_22,
-    theta_33
-  ),
-  nrow = n_latent
-)
-library(dynr)
-dynr_data <- dynr::dynr.data(
-  dataframe = data,
-  id = "id",
-  time = "time",
-  observed = varnames
-)
-data_0 <- data[which(data[, "time"] == 0), ]
-dynr_initial <- dynr::prep.initial(
-  values.inistate = colMeans(data_0)[varnames],
-  params.inistate = rep(x = "fixed", times = n_latent),
-  values.inicov = cov(data_0)[varnames, varnames],
-  params.inicov = matrix(
-    data = "fixed",
-    nrow = n_latent,
-    ncol = n_latent
-  )
-)
-dynr_measurement <- dynr::prep.measurement(
-  values.load = diag(n_manifest),
-  params.load = matrix(
-    data = "fixed",
-    nrow = n_manifest,
-    ncol = n_manifest
-  ),
-  state.names = paste0(
-    "eta_",
-    varnames
-  ),
-  obs.names = varnames
-)
-dynr_dynamics <- dynr::prep.formulaDynamics(
-  formula = list(
-    eta_conflict ~ (phi_11 * eta_conflict) + (phi_12 * eta_knowledge) + (phi_13 * eta_competence),
-    eta_knowledge ~ (phi_21 * eta_conflict) + (phi_22 * eta_knowledge) + (phi_23 * eta_competence),
-    eta_competence ~ (phi_31 * eta_conflict) + (phi_32 * eta_knowledge) + (phi_33 * eta_competence)
-  ),
-  startval = c(
-    phi_11 = phi_11,
-    phi_12 = phi_12,
-    phi_13 = phi_13,
-    phi_21 = phi_21,
-    phi_22 = phi_22,
-    phi_23 = phi_23,
-    phi_31 = phi_31,
-    phi_32 = phi_32,
-    phi_33 = phi_33
-  ),
-  isContinuousTime = TRUE
-)
-dynr_noise <- dynr::prep.noise(
-  values.latent = sigma,
-  params.latent = matrix(
-    data = c(
-      "sigma_11", "sigma_12", "sigma_13",
-      "sigma_12", "sigma_22", "sigma_23",
-      "sigma_13", "sigma_23", "sigma_33"
-    ),
-    nrow = n_latent
-  ),
-  values.observed = theta,
-  params.observed = matrix(
-    data = c(
-      "theta_11", "fixed", "fixed",
-      "fixed", "theta_22", "fixed",
-      "fixed", "fixed", "theta_33"
-    ),
-    nrow = n_manifest,
-    ncol = n_manifest
-  )
-)
-model <- dynr::dynr.model(
-  data = dynr_data,
-  initial = dynr_initial,
-  measurement = dynr_measurement,
-  dynamics = dynr_dynamics,
-  noise = dynr_noise,
-  outfile = file.path(
-    tempdir(),
-    paste0(
-      "example-ct-dynr-",
-      n,
-      ".c"
-    )
-  )
-)
-lb <- ub <- rep(NA, times = length(model$xstart))
-names(ub) <- names(lb) <- names(model$xstart)
-lb[
-  c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-] <- -1.5
-ub[
-  c(
-    "phi_11",
-    "phi_21",
-    "phi_31",
-    "phi_12",
-    "phi_22",
-    "phi_32",
-    "phi_13",
-    "phi_23",
-    "phi_33"
-  )
-] <- 1.5
-ub[
-  c(
-    "phi_11",
-    "phi_22",
-    "phi_33"
-  )
-] <- 0
-lb[
-  c(
-    "sigma_11",
-    "sigma_22",
-    "sigma_33"
-  )
-] <- .Machine$double.xmin
-lb[
-  c(
-    "theta_11",
-    "theta_22",
-    "theta_33"
-  )
-] <- .Machine$double.xmin
-model$lb <- lb
-model$ub <- ub
-fit <- dynr::dynr.cook(
-  model,
-  verbose = FALSE
-)
-print(summary(fit))
-coef(model) <- coef(fit)
-fit <- dynr::dynr.cook(
-  model,
-  verbose = FALSE
-)
-```
-</details>

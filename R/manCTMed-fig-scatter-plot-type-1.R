@@ -104,8 +104,12 @@ FigScatterPlotType1 <- function(results,
       ymin = 1 - 0.975,
       ymax = 1 - 0.925
     ) +
-    ggplot2::geom_point() +
-    ggplot2::geom_line() +
+    ggplot2::geom_point(
+      na.rm = TRUE
+    ) +
+    ggplot2::geom_line(
+      na.rm = TRUE
+    ) +
     ggplot2::facet_grid(
       n_label ~ effect_label
     ) +

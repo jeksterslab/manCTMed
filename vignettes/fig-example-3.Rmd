@@ -23,40 +23,9 @@ library(simStateSpace)
 library(cTMed)
 ```
 
-## Summary of CT-VAR Estimates
+## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133.
-
-
-``` r
-summary(fit)
-#> Coefficients:
-#>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
-#> phi_11   -0.033660   0.022452  -1.499 -0.077665  0.010346   0.0670 .  
-#> phi_12    0.037812   0.036990   1.022 -0.034688  0.110312   0.1534    
-#> phi_13   -0.013204   0.033136  -0.398 -0.078149  0.051742   0.3452    
-#> phi_21   -0.152328   0.061236  -2.488 -0.272348 -0.032308   0.0065 ** 
-#> phi_22   -0.590292   0.176377  -3.347 -0.935986 -0.244599   0.0004 ***
-#> phi_23    0.230222   0.113756   2.024  0.007264  0.453180   0.0215 *  
-#> phi_31   -0.100440   0.056630  -1.774 -0.211432  0.010553   0.0381 *  
-#> phi_32    0.105504   0.106899   0.987 -0.104015  0.315023   0.1619    
-#> phi_33   -0.515121   0.145912  -3.530 -0.801103 -0.229139   0.0002 ***
-#> sigma_11  0.057709   0.022959   2.514  0.012710  0.102708   0.0060 ** 
-#> sigma_12 -0.008653   0.029841  -0.290 -0.067140  0.049834   0.3859    
-#> sigma_13  0.010219   0.028178   0.363 -0.045009  0.065447   0.3584    
-#> sigma_22  0.746297   0.314849   2.370  0.129204  1.363389   0.0089 ** 
-#> sigma_23  0.099176   0.082421   1.203 -0.062366  0.260718   0.1145    
-#> sigma_33  0.841669   0.292439   2.878  0.268499  1.414839   0.0020 ** 
-#> theta_11  0.104822   0.016744   6.260  0.072004  0.137639   <2e-16 ***
-#> theta_22  0.171724   0.098249   1.748 -0.020839  0.364288   0.0403 *  
-#> theta_33  0.078653   0.091566   0.859 -0.100812  0.258118   0.1952    
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> -2 log-likelihood value at convergence = 3569.91
-#> AIC = 3605.91
-#> BIC = 3719.75
-```
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
@@ -166,7 +135,7 @@ delta <- DeltaMed(
 plot(delta)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-10-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-9-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-9-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-9-3.png" width="1700" />
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
@@ -188,7 +157,7 @@ mc <- MCMed(
 plot(mc)
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-11-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-11-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-11-3.png" width="1700" />
+<img src="fig-vignettes-example-3-unnamed-chunk-10-1.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-2.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-10-3.png" width="1700" />
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
@@ -210,17 +179,34 @@ prefix <- "pb_example_133"
 ``` r
 phi_hat <- phi
 sigma_hat <- sigma
-nu <- mu0 <- c(0, 0, 0)
-sigma0 <- matrix(
-  data = c(
-    1.00, -0.06, 0.03,
-    -0.06, 1.00, 0.32,
-    0.03, 0.32, 1.00
-  ),
-  nrow = 3,
-  ncol = 3
-)
+nu <- c(0, 0, 0)
 lambda <- diag(3)
+```
+
+
+``` r
+# fixed mu0 and sigma0
+data("grundy2007", package = "manCTMed")
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
+mu0 <- colMeans(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
+sigma0 <- cov(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  ),
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
 ```
 
 
@@ -341,12 +327,7 @@ plot(pb)
 plot(pb, type = "bc")
 ```
 
-<img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700" />
-
-```
-#> Error in plot.window(...): need finite 'ylim' values
-```
-
+<img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-5.png" width="1700" /><img src="fig-vignettes-example-3-unnamed-chunk-18-6.png" width="1700" />
 
 
 

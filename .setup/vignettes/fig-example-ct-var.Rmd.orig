@@ -1,0 +1,270 @@
+---
+title: "Fitting the Continuous-Time Vector Autoregressive Model"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Fitting the Continuous-Time Vector Autoregressive Model}
+  %\VignetteEngine{quarto::quarto}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette demonstrates how to fit the continuous-time vector autoregressive model using the `dynr` package.
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-example-ct-var-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+library(dynr)
+```
+
+```{r}
+library(dynr)
+```
+
+## Load the data set
+
+```{r}
+data("grundy2007", package = "manCTMed")
+```
+
+## Prepare the Data
+
+```{r}
+dynr_data <- dynr::dynr.data(
+  dataframe = grundy2007,
+  id = "id",
+  time = "time",
+  observed = c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+)
+```
+
+## Prepare the Initial Condition
+
+```{r}
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
+dynr_initial <- dynr::prep.initial(
+  values.inistate = colMeans(data_0)[
+    c(
+      "conflict",
+      "knowledge",
+      "competence"
+    )
+  ],
+  params.inistate = rep(x = "fixed", times = 3),
+  values.inicov = cov(data_0)[
+    c(
+      "conflict",
+      "knowledge",
+      "competence"
+    ),
+    c(
+      "conflict",
+      "knowledge",
+      "competence"
+    )
+  ],
+  params.inicov = matrix(
+    data = "fixed",
+    nrow = 3,
+    ncol = 3
+  )
+)
+```
+
+## Prepare Measurement Model
+
+```{r}
+dynr_measurement <- dynr::prep.measurement(
+  values.load = diag(3),
+  params.load = matrix(
+    data = "fixed",
+    nrow = 3,
+    ncol = 3
+  ),
+  state.names = paste0(
+    "eta_",
+    c(
+      "conflict",
+      "knowledge",
+      "competence"
+    )
+  ),
+  obs.names =     c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+)
+```
+
+# Prepare Dynamic Model
+
+```{r}
+dynr_dynamics <- dynr::prep.formulaDynamics(
+  formula = list(
+    eta_conflict ~ (phi_11 * eta_conflict) + (phi_12 * eta_knowledge) + (phi_13 * eta_competence),
+    eta_knowledge ~ (phi_21 * eta_conflict) + (phi_22 * eta_knowledge) + (phi_23 * eta_competence),
+    eta_competence ~ (phi_31 * eta_conflict) + (phi_32 * eta_knowledge) + (phi_33 * eta_competence)
+  ),
+  startval = c(
+    phi_11 = 0,
+    phi_12 = 0,
+    phi_13 = 0,
+    phi_21 = 0,
+    phi_22 = 0,
+    phi_23 = 0,
+    phi_31 = 0,
+    phi_32 = 0,
+    phi_33 = 0
+  ),
+  isContinuousTime = TRUE
+)
+```
+
+## Prepare Noise
+
+```{r}
+dynr_noise <- dynr::prep.noise(
+  values.latent = matrix(
+    data = c(
+      .10, .00, .00,
+      .00, .10, .00,
+      .00, .00, .10
+    ),
+    nrow = 3
+  ),
+  params.latent = matrix(
+    data = c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    ),
+    nrow = 3
+  ),
+  values.observed = matrix(
+    data = c(
+      .10, .00, .00,
+      .00, .10, .00,
+      .00, .00, .10
+    ),
+    nrow = 3
+  ),
+  params.observed = matrix(
+    data = c(
+      "theta_11", "fixed", "fixed",
+      "fixed", "theta_22", "fixed",
+      "fixed", "fixed", "theta_33"
+    ),
+    nrow = 3,
+    ncol = 3
+  )
+)
+```
+
+## Pepare the Model
+
+```{r}
+model <- dynr::dynr.model(
+  data = dynr_data,
+  initial = dynr_initial,
+  measurement = dynr_measurement,
+  dynamics = dynr_dynamics,
+  noise = dynr_noise,
+  outfile = "ct-var.c"
+)
+```
+
+## Add Model Constraints to Aid in Optimization
+
+```{r}
+lb <- ub <- rep(NA, times = length(model$xstart))
+names(ub) <- names(lb) <- names(model$xstart)
+lb[
+  c(
+    "phi_11",
+    "phi_21",
+    "phi_31",
+    "phi_12",
+    "phi_22",
+    "phi_32",
+    "phi_13",
+    "phi_23",
+    "phi_33"
+  )
+] <- -1.5
+ub[
+  c(
+    "phi_11",
+    "phi_21",
+    "phi_31",
+    "phi_12",
+    "phi_22",
+    "phi_32",
+    "phi_13",
+    "phi_23",
+    "phi_33"
+  )
+] <- 1.5
+ub[
+  c(
+    "phi_11",
+    "phi_22",
+    "phi_33"
+  )
+] <- 0
+lb[
+  c(
+    "sigma_11",
+    "sigma_22",
+    "sigma_33"
+  )
+] <- .Machine$double.xmin
+lb[
+  c(
+    "theta_11",
+    "theta_22",
+    "theta_33"
+  )
+] <- .Machine$double.xmin
+model$lb <- lb
+model$ub <- ub
+```
+
+## Fit the Model
+
+```{r}
+fit <- dynr::dynr.cook(
+  model,
+  verbose = FALSE
+)
+summary(fit)
+```
+
+```{r}
+#| include = FALSE
+unlink(
+  c(
+    "ct-var.c",
+    "ct-var.s",
+    "ct-var.o",
+    "ct-var.so"
+  )
+)
+```

@@ -56,13 +56,9 @@ library(simStateSpace)
 library(cTMed)
 ```
 
-## Summary of CT-VAR Estimates
+## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133.
-
-```{r}
-summary(fit)
-```
+The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
@@ -204,17 +200,33 @@ prefix <- "pb_example_133"
 ```{r}
 phi_hat <- phi
 sigma_hat <- sigma
-nu <- mu0 <- c(0, 0, 0)
-sigma0 <- matrix(
-  data = c(
-    1.00, -0.06, 0.03,
-    -0.06, 1.00, 0.32,
-    0.03, 0.32, 1.00
-  ),
-  nrow = 3,
-  ncol = 3
-)
+nu <- c(0, 0, 0)
 lambda <- diag(3)
+```
+
+```{r}
+# fixed mu0 and sigma0
+data("grundy2007", package = "manCTMed")
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
+mu0 <- colMeans(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
+sigma0 <- cov(data_0)[
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  ),
+  c(
+    "conflict",
+    "knowledge",
+    "competence"
+  )
+]
 ```
 
 ```{r}
@@ -314,7 +326,6 @@ plot(pb)
 plot(pb, type = "bc")
 ```
 
-
 ```{r}
 #| include = FALSE
 data_process_example_med_plot <- function(n,
@@ -369,10 +380,7 @@ data_process_example_med_plot <- function(n,
       ),
       " Effect",
       " | ",
-      method_label,
-      " | ",
-      "n = ",
-      n
+      method_label
     )
   )
   ci <- ci[which(ci$effect == effect), ]
@@ -627,10 +635,7 @@ data_process_example_med_std_plot <- function(n,
       ),
       " Effect",
       " | ",
-      method_label,
-      " | ",
-      "n = ",
-      n
+      method_label
     )
   )
   ci <- ci[which(ci$effect == effect), ]

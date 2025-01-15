@@ -6,14 +6,15 @@
 #SBATCH --output=make.out
 #SBATCH --error=make.err
 
-# cp /scratch/ibp5092/sif/docs.sif /scratch/ibp5092/manCTMed_temp/.sif
-# rm /scratch/ibp5092/manCTMed_temp/.setup/latex/figures/png/*.png
+#cp /scratch/ibp5092/sif/docs.sif /scratch/ibp5092/manCTMed/.sif
+#rm /scratch/ibp5092/manCTMed/.setup/latex/figures/png/*.png
 
-cd /scratch/ibp5092/manCTMed_temp
-# apptainer exec /scratch/ibp5092/manCTMed_temp/.sif/docs.sif make all
+#cd /scratch/ibp5092/manCTMed
+#apptainer exec /scratch/ibp5092/manCTMed/.sif/docs.sif make all
 
 # remake
 
-# cp /scratch/ibp5092/manCTMed_temp/vignettes/*.png /scratch/ibp5092/manCTMed_temp/.setup/latex/figures/png
-# apptainer exec /scratch/ibp5092/manCTMed_temp/.sif/docs.sif make all
-apptainer exec /scratch/ibp5092/manCTMed_temp/.sif/docs.sif make auto
+cd /scratch/ibp5092/manCTMed
+cp /scratch/ibp5092/manCTMed/vignettes/*.png /scratch/ibp5092/manCTMed/.setup/latex/figures/png
+# apptainer exec /scratch/ibp5092/manCTMed/.sif/docs.sif make all
+apptainer exec /scratch/ibp5092/manCTMed/.sif/docs.sif make auto

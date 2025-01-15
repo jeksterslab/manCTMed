@@ -308,6 +308,18 @@ data_process_example_med <- function(overwrite = FALSE,
         seed = 42
       )
     )
+    grundy2007_file <- root$find_file(
+      "data",
+      "grundy2007.rda"
+    )
+    load(grundy2007_file)
+    data <- grundy2007
+    varnames <- c(
+      "conflict",
+      "knowledge",
+      "competence"
+    )
+    data_0 <- data[which(data[, "time"] == 0), ]
     pb <- PBSSMOUFixed(
       R = 1000L,
       path = root$find_file(
@@ -321,18 +333,10 @@ data_process_example_med <- function(overwrite = FALSE,
       n = n,
       time = 30,
       delta_t = 0.10,
-      mu0 = c(0, 0, 0),
+      mu0 = colMeans(data_0)[varnames],
       sigma0_l = t(
         chol(
-          matrix(
-            data = c(
-              1.00, -0.06, 0.03,
-              -0.06, 1.00, 0.32,
-              0.03, 0.32, 1.00
-            ),
-            nrow = 3,
-            ncol = 3
-          )
+          cov(data_0)[varnames, varnames]
         )
       ),
       mu = c(0, 0, 0),

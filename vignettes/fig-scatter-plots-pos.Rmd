@@ -40,7 +40,7 @@ FigPlotEffects(dynamics = 1)
 #> y -0.900  1.458 -1.386
 ```
 
-<img src="fig-vignettes-scatter-plots-neg-effects-1.png" width="1700" />
+<img src="fig-vignettes-scatter-plots-pos-effects-1.png" width="1700" />
 
 Standardized total, direct, and indirect effects for the drift matrix
 \begin{equation}
@@ -80,7 +80,7 @@ FigPlotEffects(dynamics = 1, std = TRUE)
 #> [3,] -0.1001 0.0308  0.1511
 ```
 
-<img src="fig-vignettes-scatter-plots-neg-effects-std-1.png" width="1700" />
+<img src="fig-vignettes-scatter-plots-pos-effects-std-1.png" width="1700" />
 
 ## Evaluation of Confidence Intervals
 
@@ -95,49 +95,49 @@ data(results, package = "manCTMed")
 
 #### Time Intervals 1 to 25
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-1-25-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-1-25-1.png" width="3300" />
 
 #### Time Intervals 1 to 4
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-1-4-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-1-4-1.png" width="3300" />
 
 #### Time Intervals 5 to 25
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-5-25-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-5-25-1.png" width="3300" />
 
 #### Time Intervals 25 to 30
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-25-30-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-25-30-1.png" width="3300" />
 
 ### Statistical Power
 
-<img src="fig-vignettes-scatter-plots-neg-power-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-power-1.png" width="3300" />
 
 ### Type I Error Rate
 
-<img src="fig-vignettes-scatter-plots-neg-type1-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-type1-1.png" width="3300" />
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png" width="3300" />
 
 #### Time Intervals 1 to 4
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-std-1-4-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-std-1-4-1.png" width="3300" />
 
 #### Time Intervals 5 to 25
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-std-5-25-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-std-5-25-1.png" width="3300" />
 
 #### Time Intervals 25 to 30
 
-<img src="fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png" width="3300" />
 
 ### Statistical Power (Standardized)
 
-<img src="fig-vignettes-scatter-plots-neg-power-std-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-power-std-1.png" width="3300" />
 
 ### Type I Error Rate (Standardized)
 
-<img src="fig-vignettes-scatter-plots-neg-type1-std-1.png" width="3300" />
+<img src="fig-vignettes-scatter-plots-pos-type1-std-1.png" width="3300" />

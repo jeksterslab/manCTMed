@@ -41,9 +41,10 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
-- title: dynr
+- title: Data Generation and Model Fitting for the Illustrative Examples
   contents:
-  - fit-ct-var-dynr
+  - fig-example-data-gen
+  - fig-example-ct-var
 - title: Illustrative Examples
   contents:
   - fig-example-1
