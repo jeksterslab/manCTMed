@@ -86,38 +86,12 @@ of this vignette.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/simStateSpace" class="external-link">simStateSpace</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="summary-of-ct-var-estimates">Summary of CT-VAR Estimates<a class="anchor" aria-label="anchor" href="#summary-of-ct-var-estimates"></a>
+<h2 id="continuous-time-vector-autoregressive-model-estimates">Continuous-Time Vector Autoregressive Model Estimates<a class="anchor" aria-label="anchor" href="#continuous-time-vector-autoregressive-model-estimates"></a>
 </h2>
 <p>The object <code>fit</code> contains the fitted <code>dynr</code>
-model for the data set with a sample size of 133.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Coefficients:</span></span>
-<span><span class="co">#&gt;           Estimate Std. Error t value  ci.lower  ci.upper Pr(&gt;|t|)    </span></span>
-<span><span class="co">#&gt; phi_11   -0.033660   0.022452  -1.499 -0.077665  0.010346   0.0670 .  </span></span>
-<span><span class="co">#&gt; phi_12    0.037812   0.036990   1.022 -0.034688  0.110312   0.1534    </span></span>
-<span><span class="co">#&gt; phi_13   -0.013204   0.033136  -0.398 -0.078149  0.051742   0.3452    </span></span>
-<span><span class="co">#&gt; phi_21   -0.152328   0.061236  -2.488 -0.272348 -0.032308   0.0065 ** </span></span>
-<span><span class="co">#&gt; phi_22   -0.590292   0.176377  -3.347 -0.935986 -0.244599   0.0004 ***</span></span>
-<span><span class="co">#&gt; phi_23    0.230222   0.113756   2.024  0.007264  0.453180   0.0215 *  </span></span>
-<span><span class="co">#&gt; phi_31   -0.100440   0.056630  -1.774 -0.211432  0.010553   0.0381 *  </span></span>
-<span><span class="co">#&gt; phi_32    0.105504   0.106899   0.987 -0.104015  0.315023   0.1619    </span></span>
-<span><span class="co">#&gt; phi_33   -0.515121   0.145912  -3.530 -0.801103 -0.229139   0.0002 ***</span></span>
-<span><span class="co">#&gt; sigma_11  0.057709   0.022959   2.514  0.012710  0.102708   0.0060 ** </span></span>
-<span><span class="co">#&gt; sigma_12 -0.008653   0.029841  -0.290 -0.067140  0.049834   0.3859    </span></span>
-<span><span class="co">#&gt; sigma_13  0.010219   0.028178   0.363 -0.045009  0.065447   0.3584    </span></span>
-<span><span class="co">#&gt; sigma_22  0.746297   0.314849   2.370  0.129204  1.363389   0.0089 ** </span></span>
-<span><span class="co">#&gt; sigma_23  0.099176   0.082421   1.203 -0.062366  0.260718   0.1145    </span></span>
-<span><span class="co">#&gt; sigma_33  0.841669   0.292439   2.878  0.268499  1.414839   0.0020 ** </span></span>
-<span><span class="co">#&gt; theta_11  0.104822   0.016744   6.260  0.072004  0.137639   &lt;2e-16 ***</span></span>
-<span><span class="co">#&gt; theta_22  0.171724   0.098249   1.748 -0.020839  0.364288   0.0403 *  </span></span>
-<span><span class="co">#&gt; theta_33  0.078653   0.091566   0.859 -0.100812  0.258118   0.1952    </span></span>
-<span><span class="co">#&gt; ---</span></span>
-<span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; -2 log-likelihood value at convergence = 3569.91</span></span>
-<span><span class="co">#&gt; AIC = 3605.91</span></span>
-<span><span class="co">#&gt; BIC = 3719.75</span></span></code></pre></div>
+model for the data set with a sample size of 133. See <a href="https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html" class="external-link">Fitting
+the Continuous-Time Vector Autoregressive Model</a> for more
+details.</p>
 </div>
 <div class="section level2">
 <h2 id="extract-elements-of-the-drift-matrix-and-the-process-noise-covariance-matrix">Extract Elements of the Drift Matrix and the Process Noise
@@ -126,7 +100,7 @@ Covariance Matrix<a class="anchor" aria-label="anchor" href="#extract-elements-o
 <p>We extract the elements of the drift matrix and the process noise
 covariance matrix and their corresponding sampling covariance matrix
 from the <code>fit</code> object.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># drift matrix</span></span>
 <span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"phi_11"</span>,</span>
@@ -150,7 +124,7 @@ from the <code>fit</code> object.</p>
 <span>  <span class="st">"competence"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">vcov_phi_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/vcov.html" class="external-link">vcov</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span>, <span class="va">varnames</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># process noise covariance matrix</span></span>
 <span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"sigma_11"</span>,</span>
@@ -167,7 +141,7 @@ from the <code>fit</code> object.</p>
 <span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># measurement error covariance matrix</span></span>
 <span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"theta_11"</span>,</span>
@@ -176,7 +150,7 @@ from the <code>fit</code> object.</p>
 <span><span class="op">)</span></span>
 <span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="va">theta</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># combining the drift matrix and the process noise covariance matrix</span></span>
 <span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"phi_11"</span>,</span>
@@ -207,7 +181,7 @@ Total Effects<a class="anchor" aria-label="anchor" href="#delta-method-confidenc
 <p>Using the <code>DeltaMed</code> function from the <code>cTMed</code>
 package, confidence intervals for the direct, indirect, and total
 effects for a time interval of one, two, and three are given below.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/DeltaMed.html" class="external-link">DeltaMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  vcov_phi_vec <span class="op">=</span> <span class="va">vcov_phi_vec</span>,</span>
@@ -221,21 +195,21 @@ effects for a time interval of one, two, and three are given below.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`1`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%  97.5%</span></span>
-<span><span class="co">#&gt; total           1 -0.0828 0.0428 -1.9366 0.0528 -0.1667 0.0010</span></span>
-<span><span class="co">#&gt; direct          1 -0.0771 0.0437 -1.7648 0.0776 -0.1627 0.0085</span></span>
-<span><span class="co">#&gt; indirect        1 -0.0057 0.0061 -0.9420 0.3462 -0.0177 0.0062</span></span>
+<span><span class="co">#&gt; total           1 -0.0828 0.0428 -1.9360 0.0529 -0.1667 0.0010</span></span>
+<span><span class="co">#&gt; direct          1 -0.0771 0.0437 -1.7643 0.0777 -0.1627 0.0085</span></span>
+<span><span class="co">#&gt; indirect        1 -0.0057 0.0061 -0.9416 0.3464 -0.0177 0.0062</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`2`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           2 -0.1373 0.0670 -2.0504 0.0403 -0.2685 -0.0061</span></span>
-<span><span class="co">#&gt; direct          2 -0.1207 0.0694 -1.7377 0.0823 -0.2568  0.0154</span></span>
-<span><span class="co">#&gt; indirect        2 -0.0166 0.0173 -0.9616 0.3362 -0.0504  0.0172</span></span>
+<span><span class="co">#&gt; total           2 -0.1373 0.0670 -2.0497 0.0404 -0.2685 -0.0060</span></span>
+<span><span class="co">#&gt; direct          2 -0.1207 0.0695 -1.7371 0.0824 -0.2568  0.0155</span></span>
+<span><span class="co">#&gt; indirect        2 -0.0166 0.0173 -0.9612 0.3365 -0.0504  0.0172</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`3`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           3 -0.1716 0.0809 -2.1218 0.0339 -0.3302 -0.0131</span></span>
-<span><span class="co">#&gt; direct          3 -0.1444 0.0848 -1.7031 0.0885 -0.3105  0.0218</span></span>
-<span><span class="co">#&gt; indirect        3 -0.0273 0.0281 -0.9717 0.3312 -0.0823  0.0277</span></span></code></pre></div>
+<span><span class="co">#&gt; total           3 -0.1716 0.0809 -2.1210 0.0339 -0.3302 -0.0130</span></span>
+<span><span class="co">#&gt; direct          3 -0.1443 0.0848 -1.7025 0.0887 -0.3105  0.0218</span></span>
+<span><span class="co">#&gt; indirect        3 -0.0273 0.0281 -0.9712 0.3314 -0.0822  0.0277</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="monte-carlo-method-confidence-intervals-for-the-direct-indirect-and-total-effects">Monte Carlo Method Confidence Intervals For The Direct, Indirect,
@@ -244,7 +218,7 @@ and Total Effects<a class="anchor" aria-label="anchor" href="#monte-carlo-method
 <p>Using the <code>MCMed</code> function from the <code>cTMed</code>
 package, confidence intervals for the direct, indirect, and total
 effects for a time interval of one, two, and three are given below.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MCMed.html" class="external-link">MCMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  vcov_phi_vec <span class="op">=</span> <span class="va">vcov_phi_vec</span>,</span>
@@ -261,19 +235,19 @@ effects for a time interval of one, two, and three are given below.</p>
 <span><span class="co">#&gt; $`1`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%  97.5%</span></span>
 <span><span class="co">#&gt; total           1 -0.0828 0.0429 20000 -0.1669 0.0012</span></span>
-<span><span class="co">#&gt; direct          1 -0.0771 0.0438 20000 -0.1649 0.0081</span></span>
-<span><span class="co">#&gt; indirect        1 -0.0057 0.0064 20000 -0.0195 0.0060</span></span>
+<span><span class="co">#&gt; direct          1 -0.0771 0.0438 20000 -0.1650 0.0081</span></span>
+<span><span class="co">#&gt; indirect        1 -0.0057 0.0064 20000 -0.0194 0.0060</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`2`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           2 -0.1373 0.0679 20000 -0.2718 -0.0038</span></span>
+<span><span class="co">#&gt; total           2 -0.1373 0.0679 20000 -0.2717 -0.0037</span></span>
 <span><span class="co">#&gt; direct          2 -0.1207 0.0704 20000 -0.2666  0.0124</span></span>
 <span><span class="co">#&gt; indirect        2 -0.0166 0.0181 20000 -0.0536  0.0193</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`3`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           3 -0.1716 0.0832 20000 -0.3394 -0.0087</span></span>
-<span><span class="co">#&gt; direct          3 -0.1444 0.0873 20000 -0.3338  0.0148</span></span>
+<span><span class="co">#&gt; total           3 -0.1716 0.0832 20000 -0.3395 -0.0087</span></span>
+<span><span class="co">#&gt; direct          3 -0.1443 0.0873 20000 -0.3338  0.0148</span></span>
 <span><span class="co">#&gt; indirect        3 -0.0273 0.0298 20000 -0.0860  0.0351</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -296,27 +270,41 @@ function to use all available CPU cores in the system.</p>
 <p><strong><em>NOTE:</em></strong> Fitting the CT-VAR model multiple
 times is computationally intensive.</p>
 </blockquote>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">R</span> <span class="op">&lt;-</span> <span class="fl">1000L</span></span>
 <span><span class="va">path</span> <span class="op">&lt;-</span> <span class="va">root</span><span class="op">$</span><span class="fu">find_file</span><span class="op">(</span></span>
 <span>  <span class="st">".setup"</span>,</span>
 <span>  <span class="st">"data-raw"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">prefix</span> <span class="op">&lt;-</span> <span class="st">"pb_example_133"</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="va">phi</span></span>
 <span><span class="va">sigma_hat</span> <span class="op">&lt;-</span> <span class="va">sigma</span></span>
-<span><span class="va">nu</span> <span class="op">&lt;-</span> <span class="va">mu0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
-<span><span class="va">sigma0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="fl">1.00</span>, <span class="op">-</span><span class="fl">0.06</span>, <span class="fl">0.03</span>,</span>
-<span>    <span class="op">-</span><span class="fl">0.06</span>, <span class="fl">1.00</span>, <span class="fl">0.32</span>,</span>
-<span>    <span class="fl">0.03</span>, <span class="fl">0.32</span>, <span class="fl">1.00</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  nrow <span class="op">=</span> <span class="fl">3</span>,</span>
-<span>  ncol <span class="op">=</span> <span class="fl">3</span></span>
-<span><span class="op">)</span></span>
+<span><span class="va">nu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">lambda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># fixed mu0 and sigma0</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grundy2007"</span>, package <span class="op">=</span> <span class="st">"manCTMed"</span><span class="op">)</span></span>
+<span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">grundy2007</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">grundy2007</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
+<span><span class="va">mu0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"conflict"</span>,</span>
+<span>    <span class="st">"knowledge"</span>,</span>
+<span>    <span class="st">"competence"</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">]</span></span>
+<span><span class="va">sigma0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cov</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"conflict"</span>,</span>
+<span>    <span class="st">"knowledge"</span>,</span>
+<span>    <span class="st">"competence"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"conflict"</span>,</span>
+<span>    <span class="st">"knowledge"</span>,</span>
+<span>    <span class="st">"competence"</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">]</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
 <span>  R <span class="op">=</span> <span class="va">R</span>,</span>
@@ -352,26 +340,26 @@ effects for a time interval of one, two, and three are given below.</p>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     effect interval          est          se    R        2.5%        97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082838145 0.037718522 1000 -0.15702023 -0.009351313</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077094050 0.038356809 1000 -0.15284987 -0.002193627</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005744095 0.004078585 1000 -0.01411933  0.001513496</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137278046 0.058673764 1000 -0.25119255 -0.021467484</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120678910 0.060052186 1000 -0.23904765 -0.003493888</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016599136 0.011659196 1000 -0.04013830  0.004940313</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171632794 0.070457101 1000 -0.31141551 -0.035571805</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144370657 0.072132928 1000 -0.28383570 -0.004234816</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027262136 0.019158579 1000 -0.06587586  0.008232386</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.039456616 1000 -0.16284923 -0.010994346</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.039772657 1000 -0.16008343 -0.006255609</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004133327 1000 -0.01555325  0.001241063</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.061888066 1000 -0.25996915 -0.023678371</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.062331627 1000 -0.24934282 -0.009813090</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011832263 1000 -0.04373597  0.004523996</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.034070993</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.074933758 1000 -0.29469861 -0.011141898</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019452214 1000 -0.07032936  0.008444769</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
 <span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082838145 0.037718522 1000 -0.15963083 -0.0104981362</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077094050 0.038356809 1000 -0.15316312 -0.0022470327</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005744095 0.004078585 1000 -0.01473847  0.0007423573</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137278046 0.058673764 1000 -0.26358892 -0.0297804044</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120678910 0.060052186 1000 -0.24267933 -0.0042989612</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016599136 0.011659196 1000 -0.04229753  0.0024852929</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171632794 0.070457101 1000 -0.31472948 -0.0417396616</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144370657 0.072132928 1000 -0.28809467 -0.0054129892</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027262136 0.019158579 1000 -0.06824194  0.0048368338</span></span></code></pre></div>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.039456616 1000 -0.16038014 -0.0091305394</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.039772657 1000 -0.15566861 -0.0018895685</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004133327 1000 -0.01612152  0.0003286905</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.061888066 1000 -0.25654779 -0.0201167161</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.062331627 1000 -0.24578012 -0.0046286287</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011832263 1000 -0.04585858  0.0012026448</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.0340709929</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.074933758 1000 -0.29408751 -0.0064706294</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019452214 1000 -0.07524567  0.0026212193</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="delta-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Delta Method Confidence Intervals For The Standardized Direct,
@@ -396,21 +384,21 @@ three are given below.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`1`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%  97.5%</span></span>
-<span><span class="co">#&gt; total           1 -0.0956 0.0558 -1.7134 0.0866 -0.2050 0.0138</span></span>
-<span><span class="co">#&gt; direct          1 -0.0890 0.0557 -1.5988 0.1099 -0.1980 0.0201</span></span>
-<span><span class="co">#&gt; indirect        1 -0.0066 0.0074 -0.8936 0.3715 -0.0212 0.0079</span></span>
+<span><span class="co">#&gt; total           1 -0.0956 0.0558 -1.7133 0.0867 -0.2051 0.0138</span></span>
+<span><span class="co">#&gt; direct          1 -0.0890 0.0557 -1.5987 0.1099 -0.1981 0.0201</span></span>
+<span><span class="co">#&gt; indirect        1 -0.0066 0.0074 -0.8933 0.3717 -0.0212 0.0079</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`2`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%  97.5%</span></span>
-<span><span class="co">#&gt; total           2 -0.1584 0.0881 -1.7987 0.0721 -0.3311 0.0142</span></span>
-<span><span class="co">#&gt; direct          2 -0.1393 0.0876 -1.5903 0.1118 -0.3109 0.0324</span></span>
-<span><span class="co">#&gt; indirect        2 -0.0192 0.0210 -0.9117 0.3620 -0.0603 0.0220</span></span>
+<span><span class="co">#&gt; total           2 -0.1585 0.0881 -1.7986 0.0721 -0.3312 0.0142</span></span>
+<span><span class="co">#&gt; direct          2 -0.1393 0.0876 -1.5901 0.1118 -0.3111 0.0324</span></span>
+<span><span class="co">#&gt; indirect        2 -0.0192 0.0210 -0.9112 0.3622 -0.0604 0.0221</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`3`</span></span>
 <span><span class="co">#&gt;          interval     est     se       z      p    2.5%  97.5%</span></span>
-<span><span class="co">#&gt; total           3 -0.1981 0.1067 -1.8569 0.0633 -0.4072 0.0110</span></span>
-<span><span class="co">#&gt; direct          3 -0.1666 0.1058 -1.5749 0.1153 -0.3740 0.0407</span></span>
-<span><span class="co">#&gt; indirect        3 -0.0315 0.0341 -0.9216 0.3567 -0.0984 0.0354</span></span></code></pre></div>
+<span><span class="co">#&gt; total           3 -0.1982 0.1067 -1.8567 0.0634 -0.4073 0.0110</span></span>
+<span><span class="co">#&gt; direct          3 -0.1667 0.1058 -1.5747 0.1153 -0.3741 0.0408</span></span>
+<span><span class="co">#&gt; indirect        3 -0.0315 0.0342 -0.9212 0.3570 -0.0984 0.0355</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="monte-carlo-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Monte Carlo Method Confidence Intervals For The Standardized Direct,
@@ -437,21 +425,21 @@ below.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`1`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%  97.5%</span></span>
-<span><span class="co">#&gt; total           1 -0.0956 0.0676 20000 -0.2331 0.0036</span></span>
-<span><span class="co">#&gt; direct          1 -0.0890 0.0666 20000 -0.2258 0.0103</span></span>
-<span><span class="co">#&gt; indirect        1 -0.0066 0.0086 20000 -0.0263 0.0066</span></span>
+<span><span class="co">#&gt; total           1 -0.0956 0.0677 20000 -0.2333 0.0036</span></span>
+<span><span class="co">#&gt; direct          1 -0.0890 0.0666 20000 -0.2260 0.0104</span></span>
+<span><span class="co">#&gt; indirect        1 -0.0066 0.0086 20000 -0.0262 0.0066</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`2`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           2 -0.1584 0.1079 20000 -0.3809 -0.0013</span></span>
-<span><span class="co">#&gt; direct          2 -0.1393 0.1051 20000 -0.3583  0.0164</span></span>
+<span><span class="co">#&gt; total           2 -0.1585 0.1080 20000 -0.3811 -0.0013</span></span>
+<span><span class="co">#&gt; direct          2 -0.1393 0.1052 20000 -0.3584  0.0164</span></span>
 <span><span class="co">#&gt; indirect        2 -0.0192 0.0243 20000 -0.0728  0.0208</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`3`</span></span>
 <span><span class="co">#&gt;          interval     est     se     R    2.5%   97.5%</span></span>
-<span><span class="co">#&gt; total           3 -0.1981 0.1323 20000 -0.4757 -0.0067</span></span>
-<span><span class="co">#&gt; direct          3 -0.1666 0.1283 20000 -0.4419  0.0196</span></span>
-<span><span class="co">#&gt; indirect        3 -0.0315 0.0396 20000 -0.1170  0.0375</span></span></code></pre></div>
+<span><span class="co">#&gt; total           3 -0.1982 0.1325 20000 -0.4760 -0.0065</span></span>
+<span><span class="co">#&gt; direct          3 -0.1667 0.1284 20000 -0.4423  0.0197</span></span>
+<span><span class="co">#&gt; indirect        3 -0.0315 0.0396 20000 -0.1170  0.0377</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="parametric-bootstrap-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Parametric Bootstrap Method Confidence Intervals For The
@@ -473,228 +461,27 @@ below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     effect interval          est         se   R        2.5%        97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095603243 0.04877071 999 -0.20413645 -0.010066020</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.088974000 0.04902833 999 -0.19720108 -0.001894048</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006629243 0.00500163 999 -0.01815689  0.001662792</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158432161 0.07646978 999 -0.32277523 -0.022074280</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139275150 0.07665768 999 -0.30105312 -0.002960434</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019157011 0.01430386 999 -0.05161245  0.005331509</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198080867 0.09210774 999 -0.39137417 -0.036769698</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166617722 0.09175894 999 -0.35982916 -0.003532856</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031463146 0.02348459 999 -0.08448171  0.009120241</span></span>
+<span><span class="co">#&gt;     effect interval          est          se   R        2.5%        97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052158365 999 -0.21311717 -0.012914328</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.051709454 999 -0.20585646 -0.006891620</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005185066 999 -0.01866832  0.001621714</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.082575891 999 -0.34330620 -0.025706028</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.080765866 999 -0.32155526 -0.010042838</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014858878 999 -0.05329162  0.005177845</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.100107291 999 -0.42652613 -0.034664929</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.096557779 999 -0.39372015 -0.011406325</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024410738 999 -0.08613108  0.010047344</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
-<span><span class="co">#&gt;     effect interval          est         se   R 2.5% 97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095603243 0.04877071 999   NA    NA</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.088974000 0.04902833 999   NA    NA</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006629243 0.00500163 999   NA    NA</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158432161 0.07646978 999   NA    NA</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139275150 0.07665768 999   NA    NA</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019157011 0.01430386 999   NA    NA</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198080867 0.09210774 999   NA    NA</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166617722 0.09175894 999   NA    NA</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031463146 0.02348459 999   NA    NA</span></span></code></pre></div>
-<details><summary>
-Code to fit the CT-VAR model.
-</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">"conflict"</span>,</span>
-<span>  <span class="st">"knowledge"</span>,</span>
-<span>  <span class="st">"competence"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">dynUtils</span><span class="fu">::</span><span class="fu"><a href="https://github.com/jeksterslab/dynUtils/reference/InsertNA.html" class="external-link">InsertNA</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">data</span>,</span>
-<span>  id <span class="op">=</span> <span class="st">"id"</span>,</span>
-<span>  time <span class="op">=</span> <span class="st">"time"</span>,</span>
-<span>  observed <span class="op">=</span> <span class="va">varnames</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fl">0.10</span>,</span>
-<span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">n_manifest</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
-<span><span class="va">n_latent</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
-<span><span class="co"># starting values</span></span>
-<span><span class="va">phi_11</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_12</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_13</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_21</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_22</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_23</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_31</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_32</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">phi_33</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">sigma_11</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">sigma_12</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">sigma_13</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">sigma_22</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">sigma_23</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">sigma_33</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">theta_11</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">theta_22</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">theta_33</span> <span class="op">&lt;-</span> <span class="fl">.10</span></span>
-<span><span class="va">sigma</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="va">sigma_11</span>, <span class="va">sigma_12</span>, <span class="va">sigma_13</span>,</span>
-<span>    <span class="va">sigma_12</span>, <span class="va">sigma_22</span>, <span class="va">sigma_23</span>,</span>
-<span>    <span class="va">sigma_13</span>, <span class="va">sigma_23</span>, <span class="va">sigma_33</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  nrow <span class="op">=</span> <span class="va">n_latent</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="va">theta_11</span>,</span>
-<span>    <span class="va">theta_22</span>,</span>
-<span>    <span class="va">theta_33</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  nrow <span class="op">=</span> <span class="va">n_latent</span></span>
-<span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
-<span><span class="va">dynr_data</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.data.html" class="external-link">dynr.data</a></span><span class="op">(</span></span>
-<span>  dataframe <span class="op">=</span> <span class="va">data</span>,</span>
-<span>  id <span class="op">=</span> <span class="st">"id"</span>,</span>
-<span>  time <span class="op">=</span> <span class="st">"time"</span>,</span>
-<span>  observed <span class="op">=</span> <span class="va">varnames</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">data</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
-<span><span class="va">dynr_initial</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.initial.html" class="external-link">prep.initial</a></span><span class="op">(</span></span>
-<span>  values.inistate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span>,</span>
-<span>  params.inistate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"fixed"</span>, times <span class="op">=</span> <span class="va">n_latent</span><span class="op">)</span>,</span>
-<span>  values.inicov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cov</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span>, <span class="va">varnames</span><span class="op">]</span>,</span>
-<span>  params.inicov <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>    data <span class="op">=</span> <span class="st">"fixed"</span>,</span>
-<span>    nrow <span class="op">=</span> <span class="va">n_latent</span>,</span>
-<span>    ncol <span class="op">=</span> <span class="va">n_latent</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">dynr_measurement</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.measurement.html" class="external-link">prep.measurement</a></span><span class="op">(</span></span>
-<span>  values.load <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="va">n_manifest</span><span class="op">)</span>,</span>
-<span>  params.load <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>    data <span class="op">=</span> <span class="st">"fixed"</span>,</span>
-<span>    nrow <span class="op">=</span> <span class="va">n_manifest</span>,</span>
-<span>    ncol <span class="op">=</span> <span class="va">n_manifest</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  state.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span></span>
-<span>    <span class="st">"eta_"</span>,</span>
-<span>    <span class="va">varnames</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  obs.names <span class="op">=</span> <span class="va">varnames</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">dynr_dynamics</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.formulaDynamics.html" class="external-link">prep.formulaDynamics</a></span><span class="op">(</span></span>
-<span>  formula <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
-<span>    <span class="va">eta_conflict</span> <span class="op">~</span> <span class="op">(</span><span class="va">phi_11</span> <span class="op">*</span> <span class="va">eta_conflict</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_12</span> <span class="op">*</span> <span class="va">eta_knowledge</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_13</span> <span class="op">*</span> <span class="va">eta_competence</span><span class="op">)</span>,</span>
-<span>    <span class="va">eta_knowledge</span> <span class="op">~</span> <span class="op">(</span><span class="va">phi_21</span> <span class="op">*</span> <span class="va">eta_conflict</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_22</span> <span class="op">*</span> <span class="va">eta_knowledge</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_23</span> <span class="op">*</span> <span class="va">eta_competence</span><span class="op">)</span>,</span>
-<span>    <span class="va">eta_competence</span> <span class="op">~</span> <span class="op">(</span><span class="va">phi_31</span> <span class="op">*</span> <span class="va">eta_conflict</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_32</span> <span class="op">*</span> <span class="va">eta_knowledge</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span><span class="va">phi_33</span> <span class="op">*</span> <span class="va">eta_competence</span><span class="op">)</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  startval <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    phi_11 <span class="op">=</span> <span class="va">phi_11</span>,</span>
-<span>    phi_12 <span class="op">=</span> <span class="va">phi_12</span>,</span>
-<span>    phi_13 <span class="op">=</span> <span class="va">phi_13</span>,</span>
-<span>    phi_21 <span class="op">=</span> <span class="va">phi_21</span>,</span>
-<span>    phi_22 <span class="op">=</span> <span class="va">phi_22</span>,</span>
-<span>    phi_23 <span class="op">=</span> <span class="va">phi_23</span>,</span>
-<span>    phi_31 <span class="op">=</span> <span class="va">phi_31</span>,</span>
-<span>    phi_32 <span class="op">=</span> <span class="va">phi_32</span>,</span>
-<span>    phi_33 <span class="op">=</span> <span class="va">phi_33</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  isContinuousTime <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">dynr_noise</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.noise.html" class="external-link">prep.noise</a></span><span class="op">(</span></span>
-<span>  values.latent <span class="op">=</span> <span class="va">sigma</span>,</span>
-<span>  params.latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>    data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>      <span class="st">"sigma_11"</span>, <span class="st">"sigma_12"</span>, <span class="st">"sigma_13"</span>,</span>
-<span>      <span class="st">"sigma_12"</span>, <span class="st">"sigma_22"</span>, <span class="st">"sigma_23"</span>,</span>
-<span>      <span class="st">"sigma_13"</span>, <span class="st">"sigma_23"</span>, <span class="st">"sigma_33"</span></span>
-<span>    <span class="op">)</span>,</span>
-<span>    nrow <span class="op">=</span> <span class="va">n_latent</span></span>
-<span>  <span class="op">)</span>,</span>
-<span>  values.observed <span class="op">=</span> <span class="va">theta</span>,</span>
-<span>  params.observed <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>    data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>      <span class="st">"theta_11"</span>, <span class="st">"fixed"</span>, <span class="st">"fixed"</span>,</span>
-<span>      <span class="st">"fixed"</span>, <span class="st">"theta_22"</span>, <span class="st">"fixed"</span>,</span>
-<span>      <span class="st">"fixed"</span>, <span class="st">"fixed"</span>, <span class="st">"theta_33"</span></span>
-<span>    <span class="op">)</span>,</span>
-<span>    nrow <span class="op">=</span> <span class="va">n_manifest</span>,</span>
-<span>    ncol <span class="op">=</span> <span class="va">n_manifest</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.model.html" class="external-link">dynr.model</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="va">dynr_data</span>,</span>
-<span>  initial <span class="op">=</span> <span class="va">dynr_initial</span>,</span>
-<span>  measurement <span class="op">=</span> <span class="va">dynr_measurement</span>,</span>
-<span>  dynamics <span class="op">=</span> <span class="va">dynr_dynamics</span>,</span>
-<span>  noise <span class="op">=</span> <span class="va">dynr_noise</span>,</span>
-<span>  outfile <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span></span>
-<span>      <span class="st">"example-ct-dynr-"</span>,</span>
-<span>      <span class="va">n</span>,</span>
-<span>      <span class="st">".c"</span></span>
-<span>    <span class="op">)</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">ub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>, times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ub</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">lb</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span></span>
-<span><span class="va">lb</span><span class="op">[</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"phi_11"</span>,</span>
-<span>    <span class="st">"phi_21"</span>,</span>
-<span>    <span class="st">"phi_31"</span>,</span>
-<span>    <span class="st">"phi_12"</span>,</span>
-<span>    <span class="st">"phi_22"</span>,</span>
-<span>    <span class="st">"phi_32"</span>,</span>
-<span>    <span class="st">"phi_13"</span>,</span>
-<span>    <span class="st">"phi_23"</span>,</span>
-<span>    <span class="st">"phi_33"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">1.5</span></span>
-<span><span class="va">ub</span><span class="op">[</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"phi_11"</span>,</span>
-<span>    <span class="st">"phi_21"</span>,</span>
-<span>    <span class="st">"phi_31"</span>,</span>
-<span>    <span class="st">"phi_12"</span>,</span>
-<span>    <span class="st">"phi_22"</span>,</span>
-<span>    <span class="st">"phi_32"</span>,</span>
-<span>    <span class="st">"phi_13"</span>,</span>
-<span>    <span class="st">"phi_23"</span>,</span>
-<span>    <span class="st">"phi_33"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1.5</span></span>
-<span><span class="va">ub</span><span class="op">[</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"phi_11"</span>,</span>
-<span>    <span class="st">"phi_22"</span>,</span>
-<span>    <span class="st">"phi_33"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="va">lb</span><span class="op">[</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"sigma_11"</span>,</span>
-<span>    <span class="st">"sigma_22"</span>,</span>
-<span>    <span class="st">"sigma_33"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.xmin</span></span>
-<span><span class="va">lb</span><span class="op">[</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"theta_11"</span>,</span>
-<span>    <span class="st">"theta_22"</span>,</span>
-<span>    <span class="st">"theta_33"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.xmin</span></span>
-<span><span class="va">model</span><span class="op">$</span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">lb</span></span>
-<span><span class="va">model</span><span class="op">$</span><span class="va">ub</span> <span class="op">&lt;-</span> <span class="va">ub</span></span>
-<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.cook.html" class="external-link">dynr.cook</a></span><span class="op">(</span></span>
-<span>  <span class="va">model</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.cook.html" class="external-link">dynr.cook</a></span><span class="op">(</span></span>
-<span>  <span class="va">model</span>,</span>
-<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-</details>
+<span><span class="co">#&gt;     effect interval          est          se   R        2.5%         97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052158365 999 -0.21757995 -1.424544e-02</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.051709454 999 -0.21153629 -9.042165e-03</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005185066 999 -0.02089449  8.759714e-05</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.082575891 999 -0.35062349 -2.687946e-02</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.080765866 999 -0.33500097 -1.505899e-02</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014858878 999 -0.05927079  1.181983e-03</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.100107291 999 -0.42910381 -3.716610e-02</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.096557779 999 -0.41148785 -2.017584e-02</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024410738 999 -0.09799099  3.132993e-03</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

@@ -6,16 +6,17 @@ articles:
   fig-example-1: fig-example-1.html
   fig-example-2: fig-example-2.html
   fig-example-3: fig-example-3.html
+  fig-example-ct-var: fig-example-ct-var.html
+  fig-example-data-gen: fig-example-data-gen.html
   fig-scatter-plots-neg: fig-scatter-plots-neg.html
   fig-scatter-plots-pos: fig-scatter-plots-pos.html
   fig-scatter-plots-zero: fig-scatter-plots-zero.html
-  fit-ct-var-dynr: fit-ct-var-dynr.html
   manCTMed: manCTMed.html
   params: params.html
   replication: replication.html
   results: results.html
   session/session: session/session.html
-last_built: 2025-01-14T16:28Z
+last_built: 2025-01-15T16:02Z
 urls:
   reference: https://github.com/jeksterslab/manCTMed/reference
   article: https://github.com/jeksterslab/manCTMed/articles
