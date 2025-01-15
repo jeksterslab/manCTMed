@@ -20,7 +20,7 @@ FigScatterPlotPower <- function(results,
                                 dynamics = 0,
                                 std = FALSE) {
   results <- results[which(results$dynamics == dynamics), ]
-  results <- results[which(results$std == std), ]
+  # results <- results[which(results$std == std), ]
   if (!is.null(delta_t)) {
     results <- results[which(results$interval %in% delta_t), ]
   }
@@ -37,6 +37,11 @@ FigScatterPlotPower <- function(results,
   Method <- ifelse(
     test = Method == "mc",
     yes = "MC",
+    no = Method
+  )
+  Method <- ifelse(
+    test = results$std,
+    yes = paste0(Method, " (std)"),
     no = Method
   )
   results$Method <- Method
@@ -87,8 +92,12 @@ FigScatterPlotPower <- function(results,
       yintercept = 0.80,
       alpha = 0.5
     ) +
-    ggplot2::geom_point() +
-    ggplot2::geom_line() +
+    ggplot2::geom_point(
+      na.rm = TRUE
+    ) +
+    ggplot2::geom_line(
+      na.rm = TRUE
+    ) +
     ggplot2::facet_grid(
       n_label ~ effect_label
     ) +
