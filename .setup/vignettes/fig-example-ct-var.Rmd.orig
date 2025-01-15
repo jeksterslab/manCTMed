@@ -114,7 +114,7 @@ dynr_measurement <- dynr::prep.measurement(
 )
 ```
 
-# Prepare Dynamic Model
+## Prepare Dynamic Model
 
 ```{r}
 dynr_dynamics <- dynr::prep.formulaDynamics(
@@ -178,7 +178,7 @@ dynr_noise <- dynr::prep.noise(
 )
 ```
 
-## Pepare the Model
+## Prepare the Model
 
 ```{r}
 model <- dynr::dynr.model(
@@ -247,6 +247,17 @@ model$lb <- lb
 model$ub <- ub
 ```
 
+## Model Formula
+
+```{r}
+dynr::plotFormula(
+  dynrModel = model,
+  ParameterAs = model$"param.names",
+  printDyn = TRUE,
+  printMeas = TRUE
+)
+```
+
 ## Fit the Model
 
 ```{r}
@@ -254,6 +265,11 @@ fit <- dynr::dynr.cook(
   model,
   verbose = FALSE
 )
+```
+
+## Summary
+
+```{r}
 summary(fit)
 ```
 

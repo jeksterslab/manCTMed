@@ -8,9 +8,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
-
-> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
+This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a specific time interval or a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
 
 ```{r}
 #| include = FALSE
@@ -66,21 +64,23 @@ We extract the elements of the drift matrix and the process noise covariance mat
 
 ```{r}
 # drift matrix
-varnames <- c(
-  "phi_11",
-  "phi_21",
-  "phi_31",
-  "phi_12",
-  "phi_22",
-  "phi_32",
-  "phi_13",
-  "phi_23",
-  "phi_33"
-)
 phi <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[
+    c(
+      "phi_11",
+      "phi_21",
+      "phi_31",
+      "phi_12",
+      "phi_22",
+      "phi_32",
+      "phi_13",
+      "phi_23",
+      "phi_33"
+    )
+  ],
   nrow = 3
 )
+# column names and row names are needed to define the indirect effects
 colnames(phi) <- rownames(phi) <- c(
   "conflict",
   "knowledge",
@@ -90,26 +90,27 @@ colnames(phi) <- rownames(phi) <- c(
 
 ```{r}
 # process noise covariance matrix
-varnames <- c(
-  "sigma_11",
-  "sigma_12",
-  "sigma_13",
-  "sigma_12",
-  "sigma_22",
-  "sigma_23",
-  "sigma_13",
-  "sigma_23",
-  "sigma_33"
-)
 sigma <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[
+    c(
+      "sigma_11",
+      "sigma_12",
+      "sigma_13",
+      "sigma_12",
+      "sigma_22",
+      "sigma_23",
+      "sigma_13",
+      "sigma_23",
+      "sigma_33"
+    )
+  ],
   nrow = 3
 )
 ```
 
-## Direct, Indirect, and Total Effects of a Time Interval of One
+## Direct, Indirect, and Total Effects of a Time Interval of Three
 
-Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of one are given below.
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of three are given below.
 
 ```{r}
 Med(
@@ -117,7 +118,7 @@ Med(
   from = "conflict",
   to = "competence",
   med = "knowledge",
-  delta_t = 1
+  delta_t = 3
 )
 ```
 
@@ -136,9 +137,9 @@ med <- Med(
 plot(med)
 ```
 
-## Standardized Direct, Indirect, and Total Effects of a Time Interval of One
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of Three
 
-Using the `MedStd` function from the `cTMed` package, the standardized direct, indirect, and total effects for a time interval of one are given below.
+Using the `MedStd` function from the `cTMed` package, the standardized direct, indirect, and total effects for a time interval of three are given below.
 
 ```{r}
 MedStd(

@@ -1,16 +1,93 @@
+make: Warning: File 'Makefile' has modification time 17142 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
 ✔ Setting active project to "/scratch/ibp5092/manCTMed".
 ✔ Saving "model" to "R/sysdata.rda".
 ℹ Updating manCTMed documentation
+First time using roxygen2. Upgrading automatically...
+Setting `RoxygenNote` to "7.3.2"
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
+Writing 'NAMESPACE'
+Writing 'BootParaStdXMY.Rd'
+Writing 'BootParaStdYMX.Rd'
+Writing 'BootParaXMY.Rd'
+Writing 'BootParaYMX.Rd'
+Writing 'BootPara.Rd'
+Writing 'Compress.Rd'
+Writing 'DeltaStdXMY.Rd'
+Writing 'DeltaStdYMX.Rd'
+Writing 'DeltaXMY.Rd'
+Writing 'DeltaYMX.Rd'
+Writing 'FigPlotEffects.Rd'
+Writing 'FigScatterPlotCoverage.Rd'
+Writing 'FigScatterPlotPower.Rd'
+Writing 'FigScatterPlotType1.Rd'
+Writing 'FitDynr.Rd'
+Writing 'FitMx.Rd'
+Writing 'GenData.Rd'
+Writing 'grundy2007.Rd'
+Writing 'MCStdXMY.Rd'
+Writing 'MCStdYMX.Rd'
+Writing 'MCXMY.Rd'
+Writing 'MCYMX.Rd'
+Writing 'manCTMed-package.Rd'
+Writing 'params.Rd'
+Writing 'PhiHat.Rd'
+Writing 'RandomMeasurement.Rd'
+Writing 'results.Rd'
+Writing 'SimBootParaStdXMY.Rd'
+Writing 'SimBootParaStdYMX.Rd'
+Writing 'SimBootParaXMY.Rd'
+Writing 'SimBootParaYMX.Rd'
+Writing 'SimBootPara.Rd'
+Writing 'SimDynrDeltaStdXMY.Rd'
+Writing 'SimDynrDeltaStdYMX.Rd'
+Writing 'SimDynrDeltaXMY.Rd'
+Writing 'SimDynrDeltaYMX.Rd'
+Writing 'SimDynrMCStdXMY.Rd'
+Writing 'SimDynrMCStdYMX.Rd'
+Writing 'SimDynrMCXMY.Rd'
+Writing 'SimDynrMCYMX.Rd'
+Writing 'SimFitDynr.Rd'
+Writing 'SimFN.Rd'
+Writing 'SimGenData.Rd'
+Writing 'SimProj.Rd'
+Writing 'Sim.Rd'
+Writing 'SumHit.Rd'
+Writing 'SumRaw.Rd'
+Writing 'ThetaHat.Rd'
 ℹ Updating manCTMed documentation
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
 ✔ Setting active project to "/scratch/ibp5092/manCTMed".
 ✔ Saving "model" to "R/sysdata.rda".
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd
+
 
 
 processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd.orig
@@ -30,6 +107,11 @@ output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
 
 processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
 output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
 
 ℹ Updating manCTMed documentation
 ℹ Loading manCTMed
@@ -65,6 +147,121 @@ sh: 1: /usr/bin/xdg-open: not found
 Warning in system(paste(preview, output)) : error in running command
 ✔ 'CITATION.cff' generated
 ✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex
+
+Quitting from lines 349-362 [unnamed-chunk-5] (/scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex)
+Error in gzfile(file, "rb") : cannot open the connection
+Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
 Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
  No file bak.bbl.
 Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
@@ -101,6 +298,8 @@ Latexmk: ====Undefined refs and citations with line #s in .tex file:
  And 131 more --- see log file '.setup/latex/pdf/bak.log'
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 7300 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
@@ -148,7 +347,15 @@ sh: 1: /usr/bin/xdg-open: not found
 Warning in system(paste(preview, output)) : error in running command
 ✔ 'CITATION.cff' generated
 ✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex
+
+Quitting from lines 349-362 [unnamed-chunk-5] (/scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex)
+Error in gzfile(file, "rb") : cannot open the connection
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 6861 s in the future
 Cloning into 'manCTMed'...
-Updating files:  12% (343/2675)Updating files:  13% (348/2675)Updating files:  14% (375/2675)Updating files:  15% (402/2675)Updating files:  16% (428/2675)Updating files:  17% (455/2675)Updating files:  18% (482/2675)Updating files:  19% (509/2675)Updating files:  20% (535/2675)Updating files:  21% (562/2675)Updating files:  22% (589/2675)Updating files:  23% (616/2675)Updating files:  23% (629/2675)Updating files:  24% (642/2675)Updating files:  25% (669/2675)Updating files:  26% (696/2675)Updating files:  27% (723/2675)Updating files:  28% (749/2675)Updating files:  29% (776/2675)Updating files:  30% (803/2675)Updating files:  31% (830/2675)Updating files:  32% (856/2675)Updating files:  33% (883/2675)Updating files:  34% (910/2675)Updating files:  34% (929/2675)Updating files:  35% (937/2675)Updating files:  36% (963/2675)Updating files:  37% (990/2675)Updating files:  38% (1017/2675)Updating files:  39% (1044/2675)Updating files:  40% (1070/2675)Updating files:  41% (1097/2675)Updating files:  42% (1124/2675)Updating files:  43% (1151/2675)Updating files:  44% (1177/2675)Updating files:  45% (1204/2675)Updating files:  46% (1231/2675)Updating files:  46% (1233/2675)Updating files:  47% (1258/2675)Updating files:  48% (1284/2675)Updating files:  49% (1311/2675)Updating files:  50% (1338/2675)Updating files:  51% (1365/2675)Updating files:  52% (1391/2675)Updating files:  53% (1418/2675)Updating files:  54% (1445/2675)Updating files:  55% (1472/2675)Updating files:  56% (1498/2675)Updating files:  57% (1525/2675)Updating files:  58% (1552/2675)Updating files:  58% (1560/2675)Updating files:  59% (1579/2675)Updating files:  60% (1605/2675)Updating files:  61% (1632/2675)Updating files:  62% (1659/2675)Updating files:  63% (1686/2675)Updating files:  64% (1712/2675)Updating files:  65% (1739/2675)Updating files:  65% (1755/2675)Updating files:  66% (1766/2675)Updating files:  67% (1793/2675)Updating files:  68% (1819/2675)Updating files:  69% (1846/2675)Updating files:  70% (1873/2675)Updating files:  71% (1900/2675)Updating files:  72% (1926/2675)Updating files:  72% (1938/2675)Updating files:  73% (1953/2675)Updating files:  74% (1980/2675)Updating files:  75% (2007/2675)Updating files:  76% (2033/2675)Updating files:  77% (2060/2675)Updating files:  78% (2087/2675)Updating files:  79% (2114/2675)Updating files:  80% (2140/2675)Updating files:  81% (2167/2675)Updating files:  81% (2174/2675)Updating files:  82% (2194/2675)Updating files:  83% (2221/2675)Updating files:  84% (2247/2675)Updating files:  85% (2274/2675)Updating files:  86% (2301/2675)Updating files:  86% (2305/2675)Updating files:  87% (2328/2675)Updating files:  88% (2354/2675)Updating files:  89% (2381/2675)Updating files:  90% (2408/2675)Updating files:  91% (2435/2675)Updating files:  92% (2461/2675)Updating files:  93% (2488/2675)Updating files:  94% (2515/2675)Updating files:  95% (2542/2675)Updating files:  96% (2568/2675)Updating files:  97% (2595/2675)Updating files:  98% (2622/2675)Updating files:  99% (2649/2675)Updating files:  99% (2661/2675)Updating files: 100% (2675/2675)Updating files: 100% (2675/2675), done.
+Updating files:  13% (356/2675)Updating files:  14% (375/2675)Updating files:  15% (402/2675)Updating files:  16% (428/2675)Updating files:  17% (455/2675)Updating files:  18% (482/2675)Updating files:  19% (509/2675)Updating files:  20% (535/2675)Updating files:  21% (562/2675)Updating files:  22% (589/2675)Updating files:  23% (616/2675)Updating files:  24% (642/2675)Updating files:  25% (669/2675)Updating files:  26% (696/2675)Updating files:  27% (723/2675)Updating files:  27% (731/2675)Updating files:  28% (749/2675)Updating files:  29% (776/2675)Updating files:  30% (803/2675)Updating files:  31% (830/2675)Updating files:  32% (856/2675)Updating files:  33% (883/2675)Updating files:  34% (910/2675)Updating files:  35% (937/2675)Updating files:  36% (963/2675)Updating files:  37% (990/2675)Updating files:  38% (1017/2675)Updating files:  39% (1044/2675)Updating files:  40% (1070/2675)Updating files:  41% (1097/2675)Updating files:  42% (1124/2675)Updating files:  43% (1151/2675)Updating files:  43% (1152/2675)Updating files:  44% (1177/2675)Updating files:  45% (1204/2675)Updating files:  46% (1231/2675)Updating files:  47% (1258/2675)Updating files:  48% (1284/2675)Updating files:  49% (1311/2675)Updating files:  50% (1338/2675)Updating files:  51% (1365/2675)Updating files:  52% (1391/2675)Updating files:  53% (1418/2675)Updating files:  54% (1445/2675)Updating files:  55% (1472/2675)Updating files:  56% (1498/2675)Updating files:  56% (1510/2675)Updating files:  57% (1525/2675)Updating files:  58% (1552/2675)Updating files:  59% (1579/2675)Updating files:  60% (1605/2675)Updating files:  61% (1632/2675)Updating files:  62% (1659/2675)Updating files:  63% (1686/2675)Updating files:  64% (1712/2675)Updating files:  65% (1739/2675)Updating files:  66% (1766/2675)Updating files:  67% (1793/2675)Updating files:  68% (1819/2675)Updating files:  69% (1846/2675)Updating files:  70% (1873/2675)Updating files:  70% (1874/2675)Updating files:  71% (1900/2675)Updating files:  72% (1926/2675)Updating files:  73% (1953/2675)Updating files:  74% (1980/2675)Updating files:  75% (2007/2675)Updating files:  76% (2033/2675)Updating files:  77% (2060/2675)Updating files:  78% (2087/2675)Updating files:  79% (2114/2675)Updating files:  80% (2140/2675)Updating files:  81% (2167/2675)Updating files:  82% (2194/2675)Updating files:  82% (2197/2675)Updating files:  83% (2221/2675)Updating files:  84% (2247/2675)Updating files:  85% (2274/2675)Updating files:  86% (2301/2675)Updating files:  87% (2328/2675)Updating files:  88% (2354/2675)Updating files:  89% (2381/2675)Updating files:  90% (2408/2675)Updating files:  91% (2435/2675)Updating files:  92% (2461/2675)Updating files:  93% (2488/2675)Updating files:  94% (2515/2675)Updating files:  95% (2542/2675)Updating files:  95% (2550/2675)Updating files:  96% (2568/2675)Updating files:  97% (2595/2675)Updating files:  98% (2622/2675)Updating files:  99% (2649/2675)Updating files: 100% (2675/2675)Updating files: 100% (2675/2675), done.

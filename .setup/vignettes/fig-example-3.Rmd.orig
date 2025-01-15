@@ -66,7 +66,7 @@ We extract the elements of the drift matrix and the process noise covariance mat
 
 ```{r}
 # drift matrix
-varnames <- c(
+phi_names <- c(
   "phi_11",
   "phi_21",
   "phi_31",
@@ -78,7 +78,7 @@ varnames <- c(
   "phi_33"
 )
 phi <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[phi_names],
   nrow = 3
 )
 # column names and row names are needed to define the indirect effects
@@ -87,12 +87,12 @@ colnames(phi) <- rownames(phi) <- c(
   "knowledge",
   "competence"
 )
-vcov_phi_vec <- vcov(fit)[varnames, varnames]
+vcov_phi_vec <- vcov(fit)[phi_names, phi_names]
 ```
 
 ```{r}
 # process noise covariance matrix
-varnames <- c(
+sigma_names <- c(
   "sigma_11",
   "sigma_12",
   "sigma_13",
@@ -104,25 +104,25 @@ varnames <- c(
   "sigma_33"
 )
 sigma <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[sigma_names],
   nrow = 3
 )
 ```
 
 ```{r}
 # measurement error covariance matrix
-varnames <- c(
+theta_names <- c(
   "theta_11",
   "theta_22",
   "theta_33"
 )
 theta <- diag(3)
-diag(theta) <- coef(fit)[varnames]
+diag(theta) <- coef(fit)[theta_names]
 ```
 
 ```{r}
 # combining the drift matrix and the process noise covariance matrix
-varnames <- c(
+phi_sigma_names <- c(
   "phi_11",
   "phi_21",
   "phi_31",
@@ -140,8 +140,8 @@ varnames <- c(
   "sigma_33"
 )
 vcov_theta <- matrix(
-  data = vcov(fit)[varnames, varnames],
-  nrow = length(varnames)
+  data = vcov(fit)[phi_sigma_names, phi_sigma_names],
+  nrow = length(phi_sigma_names)
 )
 ```
 
@@ -208,25 +208,13 @@ lambda <- diag(3)
 # fixed mu0 and sigma0
 data("grundy2007", package = "manCTMed")
 data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
-mu0 <- colMeans(data_0)[
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  )
-]
-sigma0 <- cov(data_0)[
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  ),
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  )
-]
+varnames <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+mu0 <- colMeans(data_0)[varnames]
+sigma0 <- cov(data_0)[varnames, varnames]
 ```
 
 ```{r}

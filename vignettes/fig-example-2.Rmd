@@ -10,8 +10,6 @@ vignette: >
 
 This vignette accompanies Illustrative Example 2. The goal of the example is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
 
-> **_NOTE:_**  The code to fit the continous-time vector autoregressive model in `dynr` is provided at the end of this vignette.
-
 
 
 
@@ -36,7 +34,7 @@ We extract the elements of the drift matrix and the process noise covariance mat
 
 ``` r
 # drift matrix
-varnames <- c(
+phi_names <- c(
   "phi_11",
   "phi_21",
   "phi_31",
@@ -48,7 +46,7 @@ varnames <- c(
   "phi_33"
 )
 phi <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[phi_names],
   nrow = 3
 )
 # column names and row names are needed to define the indirect effects
@@ -57,13 +55,13 @@ colnames(phi) <- rownames(phi) <- c(
   "knowledge",
   "competence"
 )
-vcov_phi_vec <- vcov(fit)[varnames, varnames]
+vcov_phi_vec <- vcov(fit)[phi_names, phi_names]
 ```
 
 
 ``` r
 # process noise covariance matrix
-varnames <- c(
+sigma_names <- c(
   "sigma_11",
   "sigma_12",
   "sigma_13",
@@ -75,7 +73,7 @@ varnames <- c(
   "sigma_33"
 )
 sigma <- matrix(
-  data = coef(fit)[varnames],
+  data = coef(fit)[sigma_names],
   nrow = 3
 )
 ```
@@ -83,19 +81,19 @@ sigma <- matrix(
 
 ``` r
 # measurement error covariance matrix
-varnames <- c(
+theta_names <- c(
   "theta_11",
   "theta_22",
   "theta_33"
 )
 theta <- diag(3)
-diag(theta) <- coef(fit)[varnames]
+diag(theta) <- coef(fit)[theta_names]
 ```
 
 
 ``` r
 # combining the drift matrix and the process noise covariance matrix
-varnames <- c(
+phi_sigma_names <- c(
   "phi_11",
   "phi_21",
   "phi_31",
@@ -113,8 +111,8 @@ varnames <- c(
   "sigma_33"
 )
 vcov_theta <- matrix(
-  data = vcov(fit)[varnames, varnames],
-  nrow = length(varnames)
+  data = vcov(fit)[phi_sigma_names, phi_sigma_names],
+  nrow = length(phi_sigma_names)
 )
 ```
 
@@ -221,25 +219,13 @@ lambda <- diag(3)
 # fixed mu0 and sigma0
 data("grundy2007", package = "manCTMed")
 data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
-mu0 <- colMeans(data_0)[
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  )
-]
-sigma0 <- cov(data_0)[
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  ),
-  c(
-    "conflict",
-    "knowledge",
-    "competence"
-  )
-]
+varnames <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+mu0 <- colMeans(data_0)[varnames]
+sigma0 <- cov(data_0)[varnames, varnames]
 ```
 
 
@@ -279,27 +265,27 @@ ci <- BootMed(
   med = "knowledge"
 )
 summary(ci)
-#>     effect interval          est          se    R        2.5%        97.5%
-#> 1    total        1 -0.082830099 0.039456616 1000 -0.16284923 -0.010994346
-#> 2   direct        1 -0.077087636 0.039772657 1000 -0.16008343 -0.006255609
-#> 3 indirect        1 -0.005742463 0.004133327 1000 -0.01555325  0.001241063
-#> 4    total        2 -0.137257463 0.061888066 1000 -0.25996915 -0.023678371
-#> 5   direct        2 -0.120663647 0.062331627 1000 -0.24934282 -0.009813090
-#> 6 indirect        2 -0.016593816 0.011832263 1000 -0.04373597  0.004523996
-#> 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.034070993
-#> 8   direct        3 -0.144345904 0.074933758 1000 -0.29469861 -0.011141898
-#> 9 indirect        3 -0.027252286 0.019452214 1000 -0.07032936  0.008444769
+#>     effect interval          est          se    R        2.5%         97.5%
+#> 1    total        1 -0.082830099 0.038839149 1000 -0.15857211 -0.0067447338
+#> 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973
+#> 3 indirect        1 -0.005742463 0.004132077 1000 -0.01486750  0.0009337155
+#> 4    total        2 -0.137257463 0.061181585 1000 -0.25798543 -0.0166954224
+#> 5   direct        2 -0.120663647 0.061572293 1000 -0.23958489  0.0004530425
+#> 6 indirect        2 -0.016593816 0.011795758 1000 -0.04200704  0.0027314095
+#> 7    total        3 -0.171598190 0.074225990 1000 -0.32394299 -0.0243010211
+#> 8   direct        3 -0.144345904 0.074293526 1000 -0.29040288  0.0005657691
+#> 9 indirect        3 -0.027252286 0.019357469 1000 -0.06865166  0.0053818978
 summary(ci, type = "bc") # bias-corrected
 #>     effect interval          est          se    R        2.5%         97.5%
-#> 1    total        1 -0.082830099 0.039456616 1000 -0.16038014 -0.0091305394
-#> 2   direct        1 -0.077087636 0.039772657 1000 -0.15566861 -0.0018895685
-#> 3 indirect        1 -0.005742463 0.004133327 1000 -0.01612152  0.0003286905
-#> 4    total        2 -0.137257463 0.061888066 1000 -0.25654779 -0.0201167161
-#> 5   direct        2 -0.120663647 0.062331627 1000 -0.24578012 -0.0046286287
-#> 6 indirect        2 -0.016593816 0.011832263 1000 -0.04585858  0.0012026448
-#> 7    total        3 -0.171598190 0.074774468 1000 -0.31872743 -0.0340709929
-#> 8   direct        3 -0.144345904 0.074933758 1000 -0.29408751 -0.0064706294
-#> 9 indirect        3 -0.027252286 0.019452214 1000 -0.07524567  0.0026212193
+#> 1    total        1 -0.082830099 0.038839149 1000 -0.15827071 -0.0067284469
+#> 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973
+#> 3 indirect        1 -0.005742463 0.004132077 1000 -0.01677540  0.0001650497
+#> 4    total        2 -0.137257463 0.061181585 1000 -0.25773872 -0.0164675508
+#> 5   direct        2 -0.120663647 0.061572293 1000 -0.24341285 -0.0006077631
+#> 6 indirect        2 -0.016593816 0.011795758 1000 -0.04670110  0.0008068482
+#> 7    total        3 -0.171598190 0.074225990 1000 -0.32412418 -0.0248197412
+#> 8   direct        3 -0.144345904 0.074293526 1000 -0.29542857 -0.0026213182
+#> 9 indirect        3 -0.027252286 0.019357469 1000 -0.07560494  0.0024325605
 ```
 
 ## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -395,25 +381,25 @@ pb <- BootMedStd(
   med = "knowledge"
 )
 summary(pb)
-#>     effect interval          est          se   R        2.5%        97.5%
-#> 1    total        1 -0.095646850 0.052158365 999 -0.21311717 -0.012914328
-#> 2   direct        1 -0.089015825 0.051709454 999 -0.20585646 -0.006891620
-#> 3 indirect        1 -0.006631025 0.005185066 999 -0.01866832  0.001621714
-#> 4    total        2 -0.158496057 0.082575891 999 -0.34330620 -0.025706028
-#> 5   direct        2 -0.139334589 0.080765866 999 -0.32155526 -0.010042838
-#> 6 indirect        2 -0.019161468 0.014858878 999 -0.05329162  0.005177845
-#> 7    total        3 -0.198150511 0.100107291 999 -0.42652613 -0.034664929
-#> 8   direct        3 -0.166681330 0.096557779 999 -0.39372015 -0.011406325
-#> 9 indirect        3 -0.031469181 0.024410738 999 -0.08613108  0.010047344
+#>     effect interval          est          se   R        2.5%         97.5%
+#> 1    total        1 -0.095646850 0.050188622 999 -0.20368381 -0.0067932439
+#> 2   direct        1 -0.089015825 0.049719287 999 -0.19241664  0.0002108455
+#> 3 indirect        1 -0.006631025 0.005158217 999 -0.01882737  0.0010841985
+#> 4    total        2 -0.158496057 0.079867920 999 -0.33781326 -0.0176140363
+#> 5   direct        2 -0.139334589 0.077972907 999 -0.30524055  0.0003450431
+#> 6 indirect        2 -0.019161468 0.014738021 999 -0.05317883  0.0035171688
+#> 7    total        3 -0.198150511 0.097330287 999 -0.41728092 -0.0244380601
+#> 8   direct        3 -0.166681330 0.093594630 999 -0.36956048  0.0004302193
+#> 9 indirect        3 -0.031469181 0.024165354 999 -0.08734549  0.0064530805
 summary(pb, type = "bc") # bias-corrected
 #>     effect interval          est          se   R        2.5%         97.5%
-#> 1    total        1 -0.095646850 0.052158365 999 -0.21757995 -1.424544e-02
-#> 2   direct        1 -0.089015825 0.051709454 999 -0.21153629 -9.042165e-03
-#> 3 indirect        1 -0.006631025 0.005185066 999 -0.02089449  8.759714e-05
-#> 4    total        2 -0.158496057 0.082575891 999 -0.35062349 -2.687946e-02
-#> 5   direct        2 -0.139334589 0.080765866 999 -0.33500097 -1.505899e-02
-#> 6 indirect        2 -0.019161468 0.014858878 999 -0.05927079  1.181983e-03
-#> 7    total        3 -0.198150511 0.100107291 999 -0.42910381 -3.716610e-02
-#> 8   direct        3 -0.166681330 0.096557779 999 -0.41148785 -2.017584e-02
-#> 9 indirect        3 -0.031469181 0.024410738 999 -0.09799099  3.132993e-03
+#> 1    total        1 -0.095646850 0.050188622 999 -0.20737779 -0.0091184523
+#> 2   direct        1 -0.089015825 0.049719287 999 -0.19746337 -0.0011981283
+#> 3 indirect        1 -0.006631025 0.005158217 999 -0.02055410  0.0001106158
+#> 4    total        2 -0.158496057 0.079867920 999 -0.34685496 -0.0216382718
+#> 5   direct        2 -0.139334589 0.077972907 999 -0.31385489 -0.0027954931
+#> 6 indirect        2 -0.019161468 0.014738021 999 -0.05900613  0.0007659007
+#> 7    total        3 -0.198150511 0.097330287 999 -0.42909365 -0.0311469829
+#> 8   direct        3 -0.166681330 0.093594630 999 -0.37484786 -0.0030606408
+#> 9 indirect        3 -0.031469181 0.024165354 999 -0.09535630  0.0019420703
 ```

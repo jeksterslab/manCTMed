@@ -103,7 +103,7 @@ dynr_measurement <- dynr::prep.measurement(
 )
 ```
 
-# Prepare Dynamic Model
+## Prepare Dynamic Model
 
 
 ``` r
@@ -169,7 +169,7 @@ dynr_noise <- dynr::prep.noise(
 )
 ```
 
-## Pepare the Model
+## Prepare the Model
 
 
 ``` r
@@ -240,6 +240,20 @@ model$lb <- lb
 model$ub <- ub
 ```
 
+## Model Formula
+
+
+``` r
+dynr::plotFormula(
+  dynrModel = model,
+  ParameterAs = model$"param.names",
+  printDyn = TRUE,
+  printMeas = TRUE
+)
+```
+
+<img src="fig-vignettes-example-ct-var-unnamed-chunk-12-1.png" width="1700" />
+
 ## Fit the Model
 
 
@@ -266,8 +280,14 @@ fit <- dynr::dynr.cook(
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 1.988289 
-#> Backend Time: 1.977045
+#> Total Time: 1.970678 
+#> Backend Time: 1.95964
+```
+
+## Summary
+
+
+``` r
 summary(fit)
 #> Coefficients:
 #>           Estimate Std. Error t value  ci.lower  ci.upper Pr(>|t|)    
