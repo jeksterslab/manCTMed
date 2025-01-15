@@ -100,6 +100,12 @@ summary(data)
 #>  3rd Qu.:100   3rd Qu.:2.3   3rd Qu.: 0.658   3rd Qu.: 0.688   3rd Qu.: 0.686  
 #>  Max.   :133   Max.   :3.0   Max.   : 3.387   Max.   : 2.468   Max.   : 3.578  
 #>                              NA's   :3591     NA's   :3591     NA's   :3591
-summary(head)
-#> Error in object[[i]]: object of type 'closure' is not subsettable
+head(data)
+#>   id time   conflict knowledge competence
+#> 1  1  0.0 -0.6111444  -2.57277  -1.489571
+#> 2  1  0.1         NA        NA         NA
+#> 3  1  0.2         NA        NA         NA
+#> 4  1  0.3         NA        NA         NA
+#> 5  1  0.4         NA        NA         NA
+#> 6  1  0.5         NA        NA         NA
 ```

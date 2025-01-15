@@ -104,5 +104,5 @@ data <- dynUtils::InsertNA(
   ncores = parallel::detectCores()
 )
 summary(data)
-summary(head)
+head(data)
 ```

@@ -1,2 +1,154 @@
+Cloning into 'dotfiles'...
+find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
+find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
+✔ Setting active project to "/scratch/ibp5092/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+✔ Setting active project to "/scratch/ibp5092/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
+
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/manCTMed/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX ....
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (389 entries accepted, 0 rejected).
+Sorting entries......done (3848 comparisons).
+Generating output file Rd2.ind....done (299 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (389 entries accepted, 0 rejected).
+Sorting entries......done (3848 comparisons).
+Generating output file Rd2.ind....done (299 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
+ No file bak.bbl.
+Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
+Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
+  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
+  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
+  in case the incomplete bcf file was a result of error in
+  'pdflatex' caused by an error in the bbl file.
+Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
+ No file bak.bbl.
+Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
+Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
+  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
+  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
+  in case the incomplete bcf file was a result of error in
+  'pdflatex' caused by an error in the bbl file.
+Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
+ No file bak.bbl.
+Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
+Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
+  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
+  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
+  in case the incomplete bcf file was a result of error in
+  'pdflatex' caused by an error in the bbl file.
+Failure to make '.setup/latex/pdf/bak.pdf'
+Latexmk: ====Undefined refs and citations with line #s in .tex file:
+  Citation 'Deboeck-Preacher-2015' on page 3 undefined on input line 92
+  Citation 'Ryan-Hamaker-2021' on page 3 undefined on input line 92
+  Reference `fig:manCTMed-cross-sectional-mediation' on page 4 undefined on input line 94
+  Reference `fig:manCTMed-longitudinal-mediation' on page 4 undefined on input line 94
+  Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 4 undefined on input line 94
+  Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 4 undefined on input line 94
+  Citation 'Rogosa-1979' on page 4 undefined on input line 94
+ And 131 more --- see log file '.setup/latex/pdf/bak.log'
+── Installing package manCTMed into temporary library ──────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────
+Cloning into 'dotfiles'...
+find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
+find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
+✔ Setting active project to "/scratch/ibp5092/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+✔ Setting active project to "/scratch/ibp5092/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/manCTMed/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX ....
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (389 entries accepted, 0 rejected).
+Sorting entries......done (3848 comparisons).
+Generating output file Rd2.ind....done (299 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (389 entries accepted, 0 rejected).
+Sorting entries......done (3848 comparisons).
+Generating output file Rd2.ind....done (299 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+── Installing package manCTMed into temporary library ──────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────
 Cloning into 'manCTMed'...
-Updating files:  16% (400/2473)Updating files:  17% (421/2473)Updating files:  18% (446/2473)Updating files:  19% (470/2473)Updating files:  20% (495/2473)Updating files:  21% (520/2473)Updating files:  22% (545/2473)Updating files:  23% (569/2473)Updating files:  24% (594/2473)Updating files:  25% (619/2473)Updating files:  26% (643/2473)Updating files:  27% (668/2473)Updating files:  28% (693/2473)Updating files:  28% (704/2473)Updating files:  29% (718/2473)Updating files:  30% (742/2473)Updating files:  31% (767/2473)Updating files:  32% (792/2473)Updating files:  33% (817/2473)Updating files:  34% (841/2473)Updating files:  35% (866/2473)Updating files:  36% (891/2473)Updating files:  37% (916/2473)Updating files:  38% (940/2473)Updating files:  39% (965/2473)Updating files:  40% (990/2473)Updating files:  41% (1014/2473)Updating files:  42% (1039/2473)Updating files:  43% (1064/2473)Updating files:  44% (1089/2473)Updating files:  45% (1113/2473)Updating files:  46% (1138/2473)Updating files:  46% (1142/2473)Updating files:  47% (1163/2473)Updating files:  48% (1188/2473)Updating files:  49% (1212/2473)Updating files:  50% (1237/2473)Updating files:  51% (1262/2473)Updating files:  52% (1286/2473)Updating files:  53% (1311/2473)Updating files:  54% (1336/2473)Updating files:  55% (1361/2473)Updating files:  56% (1385/2473)Updating files:  57% (1410/2473)Updating files:  58% (1435/2473)Updating files:  58% (1449/2473)Updating files:  59% (1460/2473)Updating files:  60% (1484/2473)Updating files:  61% (1509/2473)Updating files:  62% (1534/2473)Updating files:  63% (1558/2473)Updating files:  64% (1583/2473)Updating files:  65% (1608/2473)Updating files:  66% (1633/2473)Updating files:  67% (1657/2473)Updating files:  68% (1682/2473)Updating files:  69% (1707/2473)Updating files:  70% (1732/2473)Updating files:  71% (1756/2473)Updating files:  71% (1773/2473)Updating files:  72% (1781/2473)Updating files:  73% (1806/2473)Updating files:  74% (1831/2473)Updating files:  75% (1855/2473)Updating files:  76% (1880/2473)Updating files:  77% (1905/2473)Updating files:  78% (1929/2473)Updating files:  79% (1954/2473)Updating files:  80% (1979/2473)Updating files:  80% (1982/2473)Updating files:  81% (2004/2473)Updating files:  82% (2028/2473)Updating files:  83% (2053/2473)Updating files:  84% (2078/2473)Updating files:  85% (2103/2473)Updating files:  86% (2127/2473)Updating files:  87% (2152/2473)Updating files:  88% (2177/2473)Updating files:  89% (2201/2473)Updating files:  90% (2226/2473)Updating files:  91% (2251/2473)Updating files:  92% (2276/2473)Updating files:  93% (2300/2473)Updating files:  94% (2325/2473)Updating files:  95% (2350/2473)Updating files:  96% (2375/2473)Updating files:  97% (2399/2473)Updating files:  98% (2424/2473)Updating files:  98% (2432/2473)Updating files:  99% (2449/2473)Updating files: 100% (2473/2473)Updating files: 100% (2473/2473), done.
+Updating files:  12% (343/2675)Updating files:  13% (348/2675)Updating files:  14% (375/2675)Updating files:  15% (402/2675)Updating files:  16% (428/2675)Updating files:  17% (455/2675)Updating files:  18% (482/2675)Updating files:  19% (509/2675)Updating files:  20% (535/2675)Updating files:  21% (562/2675)Updating files:  22% (589/2675)Updating files:  23% (616/2675)Updating files:  23% (629/2675)Updating files:  24% (642/2675)Updating files:  25% (669/2675)Updating files:  26% (696/2675)Updating files:  27% (723/2675)Updating files:  28% (749/2675)Updating files:  29% (776/2675)Updating files:  30% (803/2675)Updating files:  31% (830/2675)Updating files:  32% (856/2675)Updating files:  33% (883/2675)Updating files:  34% (910/2675)Updating files:  34% (929/2675)Updating files:  35% (937/2675)Updating files:  36% (963/2675)Updating files:  37% (990/2675)Updating files:  38% (1017/2675)Updating files:  39% (1044/2675)Updating files:  40% (1070/2675)Updating files:  41% (1097/2675)Updating files:  42% (1124/2675)Updating files:  43% (1151/2675)Updating files:  44% (1177/2675)Updating files:  45% (1204/2675)Updating files:  46% (1231/2675)Updating files:  46% (1233/2675)Updating files:  47% (1258/2675)Updating files:  48% (1284/2675)Updating files:  49% (1311/2675)Updating files:  50% (1338/2675)Updating files:  51% (1365/2675)Updating files:  52% (1391/2675)Updating files:  53% (1418/2675)Updating files:  54% (1445/2675)Updating files:  55% (1472/2675)Updating files:  56% (1498/2675)Updating files:  57% (1525/2675)Updating files:  58% (1552/2675)Updating files:  58% (1560/2675)Updating files:  59% (1579/2675)Updating files:  60% (1605/2675)Updating files:  61% (1632/2675)Updating files:  62% (1659/2675)Updating files:  63% (1686/2675)Updating files:  64% (1712/2675)Updating files:  65% (1739/2675)Updating files:  65% (1755/2675)Updating files:  66% (1766/2675)Updating files:  67% (1793/2675)Updating files:  68% (1819/2675)Updating files:  69% (1846/2675)Updating files:  70% (1873/2675)Updating files:  71% (1900/2675)Updating files:  72% (1926/2675)Updating files:  72% (1938/2675)Updating files:  73% (1953/2675)Updating files:  74% (1980/2675)Updating files:  75% (2007/2675)Updating files:  76% (2033/2675)Updating files:  77% (2060/2675)Updating files:  78% (2087/2675)Updating files:  79% (2114/2675)Updating files:  80% (2140/2675)Updating files:  81% (2167/2675)Updating files:  81% (2174/2675)Updating files:  82% (2194/2675)Updating files:  83% (2221/2675)Updating files:  84% (2247/2675)Updating files:  85% (2274/2675)Updating files:  86% (2301/2675)Updating files:  86% (2305/2675)Updating files:  87% (2328/2675)Updating files:  88% (2354/2675)Updating files:  89% (2381/2675)Updating files:  90% (2408/2675)Updating files:  91% (2435/2675)Updating files:  92% (2461/2675)Updating files:  93% (2488/2675)Updating files:  94% (2515/2675)Updating files:  95% (2542/2675)Updating files:  96% (2568/2675)Updating files:  97% (2595/2675)Updating files:  98% (2622/2675)Updating files:  99% (2649/2675)Updating files:  99% (2661/2675)Updating files: 100% (2675/2675)Updating files: 100% (2675/2675), done.
