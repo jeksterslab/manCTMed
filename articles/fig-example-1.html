@@ -70,14 +70,9 @@ Agaloos Pesigan</h4>
 example is to calculate the direct, indirect, and total effects from the
 continuous-time vector autoregressive model drift matrix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚽</mi><annotation encoding="application/x-tex">\boldsymbol{\Phi}</annotation></semantics></math>
-for a range of time intervals. This example features the
-<code>Med</code> and <code>MedStd</code> functions from the
+for a specific time interval or a range of time intervals. This example
+features the <code>Med</code> and <code>MedStd</code> functions from the
 <code>cTMed</code> package.</p>
-<blockquote>
-<p><strong><em>NOTE:</em></strong> The code to fit the continous-time
-vector autoregressive model in <code>dynr</code> is provided at the end
-of this vignette.</p>
-</blockquote>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
@@ -97,21 +92,23 @@ Covariance Matrix<a class="anchor" aria-label="anchor" href="#extract-elements-o
 covariance matrix from the <code>fit</code> object.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># drift matrix</span></span>
-<span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">"phi_11"</span>,</span>
-<span>  <span class="st">"phi_21"</span>,</span>
-<span>  <span class="st">"phi_31"</span>,</span>
-<span>  <span class="st">"phi_12"</span>,</span>
-<span>  <span class="st">"phi_22"</span>,</span>
-<span>  <span class="st">"phi_32"</span>,</span>
-<span>  <span class="st">"phi_13"</span>,</span>
-<span>  <span class="st">"phi_23"</span>,</span>
-<span>  <span class="st">"phi_33"</span></span>
-<span><span class="op">)</span></span>
 <span><span class="va">phi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span>,</span>
+<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"phi_11"</span>,</span>
+<span>      <span class="st">"phi_21"</span>,</span>
+<span>      <span class="st">"phi_31"</span>,</span>
+<span>      <span class="st">"phi_12"</span>,</span>
+<span>      <span class="st">"phi_22"</span>,</span>
+<span>      <span class="st">"phi_32"</span>,</span>
+<span>      <span class="st">"phi_13"</span>,</span>
+<span>      <span class="st">"phi_23"</span>,</span>
+<span>      <span class="st">"phi_33"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">]</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span>
+<span><span class="co"># column names and row names are needed to define the indirect effects</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">phi</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">phi</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"conflict"</span>,</span>
 <span>  <span class="st">"knowledge"</span>,</span>
@@ -119,41 +116,42 @@ covariance matrix from the <code>fit</code> object.</p>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># process noise covariance matrix</span></span>
-<span><span class="va">varnames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>  <span class="st">"sigma_11"</span>,</span>
-<span>  <span class="st">"sigma_12"</span>,</span>
-<span>  <span class="st">"sigma_13"</span>,</span>
-<span>  <span class="st">"sigma_12"</span>,</span>
-<span>  <span class="st">"sigma_22"</span>,</span>
-<span>  <span class="st">"sigma_23"</span>,</span>
-<span>  <span class="st">"sigma_13"</span>,</span>
-<span>  <span class="st">"sigma_23"</span>,</span>
-<span>  <span class="st">"sigma_33"</span></span>
-<span><span class="op">)</span></span>
 <span><span class="va">sigma</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span>,</span>
+<span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"sigma_11"</span>,</span>
+<span>      <span class="st">"sigma_12"</span>,</span>
+<span>      <span class="st">"sigma_13"</span>,</span>
+<span>      <span class="st">"sigma_12"</span>,</span>
+<span>      <span class="st">"sigma_22"</span>,</span>
+<span>      <span class="st">"sigma_23"</span>,</span>
+<span>      <span class="st">"sigma_13"</span>,</span>
+<span>      <span class="st">"sigma_23"</span>,</span>
+<span>      <span class="st">"sigma_33"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">]</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="direct-indirect-and-total-effects-of-a-time-interval-of-one">Direct, Indirect, and Total Effects of a Time Interval of One<a class="anchor" aria-label="anchor" href="#direct-indirect-and-total-effects-of-a-time-interval-of-one"></a>
+<h2 id="direct-indirect-and-total-effects-of-a-time-interval-of-three">Direct, Indirect, and Total Effects of a Time Interval of Three<a class="anchor" aria-label="anchor" href="#direct-indirect-and-total-effects-of-a-time-interval-of-three"></a>
 </h2>
 <p>Using the <code>Med</code> function from the <code>cTMed</code>
 package, the direct, indirect, and total effects for a time interval of
-one are given below.</p>
+three are given below.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/Med.html" class="external-link">Med</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fl">1</span></span>
+<span>  delta_t <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Total, Direct, and Indirect Effects</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;      interval   total  direct indirect</span></span>
-<span><span class="co">#&gt; [1,]        1 -0.0828 -0.0771  -0.0057</span></span></code></pre></div>
+<span><span class="co">#&gt; [1,]        3 -0.1716 -0.1443  -0.0273</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="direct-indirect-and-total-effects-of-a-time-interval-of-zero-to-ten">Direct, Indirect, and Total Effects of a Time Interval of Zero to
@@ -174,12 +172,12 @@ interval values from 0 to 10 are plotted below.</p>
 <p><img src="fig-vignettes-example-1-unnamed-chunk-8-1.png" width="1700"></p>
 </div>
 <div class="section level2">
-<h2 id="standardized-direct-indirect-and-total-effects-of-a-time-interval-of-one">Standardized Direct, Indirect, and Total Effects of a Time Interval
-of One<a class="anchor" aria-label="anchor" href="#standardized-direct-indirect-and-total-effects-of-a-time-interval-of-one"></a>
+<h2 id="standardized-direct-indirect-and-total-effects-of-a-time-interval-of-three">Standardized Direct, Indirect, and Total Effects of a Time Interval
+of Three<a class="anchor" aria-label="anchor" href="#standardized-direct-indirect-and-total-effects-of-a-time-interval-of-three"></a>
 </h2>
 <p>Using the <code>MedStd</code> function from the <code>cTMed</code>
 package, the standardized direct, indirect, and total effects for a time
-interval of one are given below.</p>
+interval of three are given below.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MedStd.html" class="external-link">MedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>

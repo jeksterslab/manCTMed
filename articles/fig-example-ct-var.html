@@ -70,15 +70,15 @@ Agaloos Pesigan</h4>
 autoregressive model using the <code>dynr</code> package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="load-the-data-set">Load the data set<a class="anchor" aria-label="anchor" href="#load-the-data-set"></a>
-</h3>
+<div class="section level2">
+<h2 id="load-the-data-set">Load the data set<a class="anchor" aria-label="anchor" href="#load-the-data-set"></a>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grundy2007"</span>, package <span class="op">=</span> <span class="st">"manCTMed"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="prepare-the-data">Prepare the Data<a class="anchor" aria-label="anchor" href="#prepare-the-data"></a>
-</h3>
+<div class="section level2">
+<h2 id="prepare-the-data">Prepare the Data<a class="anchor" aria-label="anchor" href="#prepare-the-data"></a>
+</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dynr_data</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.data.html" class="external-link">dynr.data</a></span><span class="op">(</span></span>
 <span>  dataframe <span class="op">=</span> <span class="va">grundy2007</span>,</span>
@@ -91,9 +91,9 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="prepare-the-initial-condition">Prepare the Initial Condition<a class="anchor" aria-label="anchor" href="#prepare-the-initial-condition"></a>
-</h3>
+<div class="section level2">
+<h2 id="prepare-the-initial-condition">Prepare the Initial Condition<a class="anchor" aria-label="anchor" href="#prepare-the-initial-condition"></a>
+</h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">grundy2007</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">grundy2007</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
 <span><span class="va">dynr_initial</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.initial.html" class="external-link">prep.initial</a></span><span class="op">(</span></span>
@@ -124,9 +124,9 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="prepare-measurement-model">Prepare Measurement Model<a class="anchor" aria-label="anchor" href="#prepare-measurement-model"></a>
-</h3>
+<div class="section level2">
+<h2 id="prepare-measurement-model">Prepare Measurement Model<a class="anchor" aria-label="anchor" href="#prepare-measurement-model"></a>
+</h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dynr_measurement</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.measurement.html" class="external-link">prep.measurement</a></span><span class="op">(</span></span>
 <span>  values.load <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
@@ -173,9 +173,10 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  <span class="op">)</span>,</span>
 <span>  isContinuousTime <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="section level3">
-<h3 id="prepare-noise">Prepare Noise<a class="anchor" aria-label="anchor" href="#prepare-noise"></a>
-</h3>
+</div>
+<div class="section level2">
+<h2 id="prepare-noise">Prepare Noise<a class="anchor" aria-label="anchor" href="#prepare-noise"></a>
+</h2>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dynr_noise</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.noise.html" class="external-link">prep.noise</a></span><span class="op">(</span></span>
 <span>  values.latent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
@@ -213,9 +214,9 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="pepare-the-model">Pepare the Model<a class="anchor" aria-label="anchor" href="#pepare-the-model"></a>
-</h3>
+<div class="section level2">
+<h2 id="prepare-the-model">Prepare the Model<a class="anchor" aria-label="anchor" href="#prepare-the-model"></a>
+</h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.model.html" class="external-link">dynr.model</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="va">dynr_data</span>,</span>
@@ -226,9 +227,9 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  outfile <span class="op">=</span> <span class="st">"ct-var.c"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="add-model-constraints-to-aid-in-optimization">Add Model Constraints to Aid in Optimization<a class="anchor" aria-label="anchor" href="#add-model-constraints-to-aid-in-optimization"></a>
-</h3>
+<div class="section level2">
+<h2 id="add-model-constraints-to-aid-in-optimization">Add Model Constraints to Aid in Optimization<a class="anchor" aria-label="anchor" href="#add-model-constraints-to-aid-in-optimization"></a>
+</h2>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">ub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>, times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ub</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">lb</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span></span>
@@ -282,10 +283,22 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span><span class="va">model</span><span class="op">$</span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">lb</span></span>
 <span><span class="va">model</span><span class="op">$</span><span class="va">ub</span> <span class="op">&lt;-</span> <span class="va">ub</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="fit-the-model">Fit the Model<a class="anchor" aria-label="anchor" href="#fit-the-model"></a>
-</h3>
+<div class="section level2">
+<h2 id="model-formula">Model Formula<a class="anchor" aria-label="anchor" href="#model-formula"></a>
+</h2>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/plotFormula.html" class="external-link">plotFormula</a></span><span class="op">(</span></span>
+<span>  dynrModel <span class="op">=</span> <span class="va">model</span>,</span>
+<span>  ParameterAs <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="st">"param.names"</span>,</span>
+<span>  printDyn <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  printMeas <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-example-ct-var-unnamed-chunk-12-1.png" width="1700"></p>
+</div>
+<div class="section level2">
+<h2 id="fit-the-model">Fit the Model<a class="anchor" aria-label="anchor" href="#fit-the-model"></a>
+</h2>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/dynr.cook.html" class="external-link">dynr.cook</a></span><span class="op">(</span></span>
 <span>  <span class="va">model</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
@@ -308,9 +321,14 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Doing end processing</span></span>
 <span><span class="co">#&gt; Successful trial</span></span>
-<span><span class="co">#&gt; Total Time: 1.988289 </span></span>
-<span><span class="co">#&gt; Backend Time: 1.977045</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Total Time: 1.970678 </span></span>
+<span><span class="co">#&gt; Backend Time: 1.95964</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h2>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt;           Estimate Std. Error t value  ci.lower  ci.upper Pr(&gt;|t|)    </span></span>
 <span><span class="co">#&gt; phi_11   -0.033712   0.022461  -1.501 -0.077735  0.010310   0.0667 .  </span></span>
@@ -337,7 +355,6 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span><span class="co">#&gt; -2 log-likelihood value at convergence = 3569.91</span></span>
 <span><span class="co">#&gt; AIC = 3605.91</span></span>
 <span><span class="co">#&gt; BIC = 3719.75</span></span></code></pre></div>
-</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
