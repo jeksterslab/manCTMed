@@ -24,6 +24,11 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+```{r}
 library(manCTMed)
 ```
 

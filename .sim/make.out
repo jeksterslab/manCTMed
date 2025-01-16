@@ -1,0 +1,1604 @@
+
+
+Building project...
+
+
+Project directory: /scratch/ibp5092/manCTMed 
+
+
+Installing packages...
+
+
+
+
+Building dotfiles...
+
+
+make[1]: Entering directory '/tmp/RtmpXkGuiX/dotfiles'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/bash'
+Building /storage/home/ibp5092/.bashrc
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/ssh'
+Keys already exist and will not be overwritten.
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/tmux'
+[?7l[1m[33m         _
+[33m     ---(_)
+[33m _/  ---  \
+[33m(_) |   |
+ [33m \  --- _/
+    [33m ---(_)
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5156[0m[39D[7C[39m[0m
+[14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
+[14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
+[14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.33.1.el8_10.x86_64[0m
+[14C[33m[1muptime[0m[6D[7C[39m6d 49m[0m
+[14C[33m[1mpkgs[0m[4D[7C[39m583[0m
+[14C[33m[1mmemory[0m[6D[7C[39m8896M / 128808M[0m
+
+[?7hIn tmux press "Prefix + r" to reload configuration.
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpXkGuiX/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpXkGuiX/dotfiles'
+
+
+TinyTex...
+
+
+
+
+Styling...
+
+
+Styling  118  files:
+ .Rprofile                                                                 ℹ 
+ index.qmd                                                                 ✔ 
+ .setup/cran/cran-check.R                                                  ✔ 
+ .setup/cran/validate.R                                                    ✔ 
+ .setup/data-process/data-process-example-ct.R                             ✔ 
+ .setup/data-process/data-process-example-data.R                           ✔ 
+ .setup/data-process/data-process-example-med-std.R                        ✔ 
+ .setup/data-process/data-process-example-med.R                            ✔ 
+ .setup/data-process/data-process-params.R                                 ✔ 
+ .setup/data-process/data-process-results.R                                ✔ 
+ .setup/data-process/data-process-sysdata.R                                ✔ 
+ .setup/latex/r-scripts/detritus.R                                         ✔ 
+ .setup/latex/r-scripts/knitr-options-custom.R                             ✔ 
+ .setup/latex/r-scripts/knitr-options-default.R                            ✔ 
+ .setup/latex/r-scripts/knitr.R                                            ✔ 
+ .setup/latex/r-scripts/tests-benchmark.R                                  ✔ 
+ .setup/latex/r-scripts/tests-external.R                                   ✔ 
+ .setup/latex/r-scripts/tests.R                                            ✔ 
+ .setup/load/load.R                                                        ✔ 
+ .setup/quarto/intro/intro.qmd                                             ✔ 
+ .setup/quarto/r-script/prerender.R                                        ✔ 
+ .setup/quarto/references/references.qmd                                   ✔ 
+ .setup/quarto/session/session.qmd                                         ✔ 
+ .setup/quarto/tags/tags.qmd                                               ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-check-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-chmod-dot.R                   ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-path-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-seed-dot.R                    ✔ 
+ .setup/r-dependencies/simTools/simTools-sim-suffix-dot.R                  ✔ 
+ .setup/r-miscellaneous/texTools/texTools-array-dot.R                      ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-combined-dot.R ✔ 
+ .setup/r-miscellaneous/texTools/texTools-preamble-biblatex-dot.R          ✔ 
+ .setup/r-miscellaneous/texTools/texTools-round-dot.R                      ✔ 
+ .setup/r-miscellaneous/texTools/texTools-tabular-dot.R                    ✔ 
+ .setup/readme/README.Rmd                                                  ✔ 
+ .setup/scripts/make-config.R                                              ✔ 
+ .setup/scripts/make-install.R                                             ✔ 
+ .setup/scripts/make-packages.R                                            ✔ 
+ .setup/scripts/make-project.R                                             ✔ 
+ .setup/scripts/project.R                                                  ✔ 
+ .setup/scripts/secrets.R                                                  ✔ 
+ .sim/sim-args.R                                                           ✔ 
+ .sim/sim.R                                                                ✔ 
+ .sim/sum-hit.R                                                            ✔ 
+ .sim/sum-raw.R                                                            ✔ 
+ .sim/clean/compress.R                                                     ✔ 
+ .sim/make/clean.R                                                         ✔ 
+ .sim/notes/sum.R                                                          ✔ 
+ R/globals.R                                                               ✔ 
+ R/manCTMed-boot-para-std-x-m-y.R                                          ✔ 
+ R/manCTMed-boot-para-std-y-m-x.R                                          ✔ 
+ R/manCTMed-boot-para-x-m-y.R                                              ✔ 
+ R/manCTMed-boot-para-y-m-x.R                                              ✔ 
+ R/manCTMed-boot-para.R                                                    ✔ 
+ R/manCTMed-compress.R                                                     ✔ 
+ R/manCTMed-delta-std-x-m-y.R                                              ✔ 
+ R/manCTMed-delta-std-y-m-x.R                                              ✔ 
+ R/manCTMed-delta-x-m-y.R                                                  ✔ 
+ R/manCTMed-delta-y-m-x.R                                                  ✔ 
+ R/manCTMed-fig-plot-effects.R                                             ✔ 
+ R/manCTMed-fig-scatter-plot-coverage.R                                    ✔ 
+ R/manCTMed-fig-scatter-plot-power.R                                       ✔ 
+ R/manCTMed-fig-scatter-plot-type-1.R                                      ✔ 
+ R/manCTMed-fit-dynr.R                                                     ✔ 
+ R/manCTMed-fit-mx.R                                                       ✔ 
+ R/manCTMed-gen-data.R                                                     ✔ 
+ R/manCTMed-grundy2007.R                                                   ✔ 
+ R/manCTMed-mc-std-x-m-y.R                                                 ✔ 
+ R/manCTMed-mc-std-y-m-x.R                                                 ✔ 
+ R/manCTMed-mc-x-m-y.R                                                     ✔ 
+ R/manCTMed-mc-y-m-x.R                                                     ✔ 
+ R/manCTMed-package.R                                                      ✔ 
+ R/manCTMed-params.R                                                       ✔ 
+ R/manCTMed-phi-hat.R                                                      ✔ 
+ R/manCTMed-random-measurement.R                                           ✔ 
+ R/manCTMed-results.R                                                      ✔ 
+ R/manCTMed-sim-boot-para-std-x-m-y.R                                      ✔ 
+ R/manCTMed-sim-boot-para-std-y-m-x.R                                      ✔ 
+ R/manCTMed-sim-boot-para-x-m-y.R                                          ✔ 
+ R/manCTMed-sim-boot-para-y-m-x.R                                          ✔ 
+ R/manCTMed-sim-boot-para.R                                                ✔ 
+ R/manCTMed-sim-dynr-delta-std-x-m-y.R                                     ✔ 
+ R/manCTMed-sim-dynr-delta-std-y-m-x.R                                     ✔ 
+ R/manCTMed-sim-dynr-delta-x-m-y.R                                         ✔ 
+ R/manCTMed-sim-dynr-delta-y-m-x.R                                         ✔ 
+ R/manCTMed-sim-dynr-mc-std-x-m-y.R                                        ✔ 
+ R/manCTMed-sim-dynr-mc-std-y-m-x.R                                        ✔ 
+ R/manCTMed-sim-dynr-mc-x-m-y.R                                            ✔ 
+ R/manCTMed-sim-dynr-mc-y-m-x.R                                            ✔ 
+ R/manCTMed-sim-fit-dynr.R                                                 ✔ 
+ R/manCTMed-sim-fn.R                                                       ✔ 
+ R/manCTMed-sim-gen-data.R                                                 ✔ 
+ R/manCTMed-sim-proj.R                                                     ✔ 
+ R/manCTMed-sim.R                                                          ✔ 
+ R/manCTMed-sum-hit.R                                                      ✔ 
+ R/manCTMed-sum-raw.R                                                      ✔ 
+ R/manCTMed-template.R                                                     ✔ 
+ R/manCTMed-theta-hat.R                                                    ✔ 
+ R/simTools-sim-check-dot.R                                                ✔ 
+ R/simTools-sim-chmod-dot.R                                                ✔ 
+ R/simTools-sim-path-dot.R                                                 ✔ 
+ R/simTools-sim-seed-dot.R                                                 ✔ 
+ R/simTools-sim-suffix-dot.R                                               ✔ 
+ tests/testthat.R                                                          ✔ 
+ tests/testthat/test-manCTMed.R                                            ✔ 
+ vignettes/containers.Rmd                                                  ✔ 
+ vignettes/fig-example-1.Rmd                                               ✔ 
+ vignettes/fig-example-2.Rmd                                               ✔ 
+ vignettes/fig-example-3.Rmd                                               ✔ 
+ vignettes/fig-example-ct-var.Rmd                                          ✔ 
+ vignettes/fig-example-data-gen.Rmd                                        ✔ 
+ vignettes/fig-scatter-plots-neg.Rmd                                       ✔ 
+ vignettes/fig-scatter-plots-pos.Rmd                                       ✔ 
+ vignettes/fig-scatter-plots-zero.Rmd                                      ✔ 
+ vignettes/manCTMed.Rmd                                                    ✔ 
+ vignettes/params.Rmd                                                      ✔ 
+ vignettes/results.Rmd                                                     ✔ 
+ vignettes/session/session.Rmd                                             ✔ 
+─────────────────────────────────────────────────────────────────────────
+Status	Count	Legend 
+✔ 	117	File unchanged.
+ℹ 	1	File changed.
+✖ 	0	Styling threw an error.
+─────────────────────────────────────────────────────────────────────────
+Please review the changes carefully!
+
+
+Linting...
+
+
+
+
+Building data...
+
+
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_example_data
+
+data_process_example_med_std
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_example_med
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_params
+
+data_process_results
+
+data_process_sysdata
+
+
+Building dependencies...
+
+
+[1] FALSE FALSE FALSE FALSE FALSE
+
+
+Cleaning project...
+
+
+
+
+Initial build...
+
+
+══ Documenting ═════════════════════════════════════════════════════════════════
+
+══ Building ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• CFLAGS    : -Wall -pedantic
+• CXXFLAGS  : -Wall -pedantic
+• CXX11FLAGS: -Wall -pedantic
+• CXX14FLAGS: -Wall -pedantic
+• CXX17FLAGS: -Wall -pedantic
+• CXX20FLAGS: -Wall -pedantic
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+══ Checking ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+• _R_CHECK_CRAN_INCOMING_       : FALSE
+• _R_CHECK_FORCE_SUGGESTS_      : FALSE
+• NOT_CRAN                      : true
+── R CMD check ─────────────────────────────────────────────────────────────────
+* using log directory ‘/tmp/RtmpY0Eqxl/fileecfbf52acbf10/manCTMed.Rcheck’
+* using R version 4.4.2 (2024-10-31)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+* running under: Ubuntu 24.04.1 LTS
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘manCTMed/DESCRIPTION’ ... OK
+* this is package ‘manCTMed’ version ‘0.9.2’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .quarto
+  .quarto/_freeze/.setup
+  .quarto/idx/.setup
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘manCTMed’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+Examples with CPU (user + system) or elapsed time > 5s
+                        user system elapsed
+FigScatterPlotCoverage 4.898  0.293   5.048
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ...
+  Running ‘testthat.R’
+ OK
+* DONE
+
+Status: 1 NOTE
+See
+  ‘/tmp/RtmpY0Eqxl/fileecfbf52acbf10/manCTMed.Rcheck/00check.log’
+for details.
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpY0Eqxl/manCTMed_0.9.2.tar.gz --install-tests 
+* installing to library ‘/scratch/ibp5092/manCTMed/.library’
+* installing *source* package ‘manCTMed’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** tests
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (manCTMed)
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+[1] "/scratch/ibp5092/manCTMed/.setup/build/manCTMed_0.9.2.tar.gz"
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_example_data
+
+data_process_example_med_std
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_example_med
+
+data_process_example_ct
+
+data_process_example_data
+
+data_process_params
+
+data_process_results
+
+data_process_sysdata
+
+
+Precompiling vignettes...
+
+
+1/38                   
+2/38 [unnamed-chunk-1] 
+3/38                   
+4/38 [unnamed-chunk-2] 
+5/38                   
+6/38 [unnamed-chunk-3] 
+7/38                   
+8/38 [unnamed-chunk-4] 
+9/38                   
+10/38 [unnamed-chunk-5] 
+11/38                   
+12/38 [unnamed-chunk-6] 
+13/38                   
+14/38 [unnamed-chunk-7] 
+15/38                   
+16/38 [unnamed-chunk-8] 
+17/38                   
+18/38 [unnamed-chunk-9] 
+19/38                   
+20/38 [unnamed-chunk-10]
+21/38                   
+22/38 [unnamed-chunk-11]
+23/38                   
+24/38 [unnamed-chunk-12]
+25/38                   
+26/38 [unnamed-chunk-13]
+27/38                   
+28/38 [unnamed-chunk-14]
+29/38                   
+30/38 [unnamed-chunk-15]
+31/38                   
+32/38 [unnamed-chunk-16]
+33/38                   
+34/38 [unnamed-chunk-17]
+35/38                   
+36/38 [unnamed-chunk-18]
+37/38                   
+38/38 [unnamed-chunk-19]
+
+
+Building package...
+
+
+══ Documenting ═════════════════════════════════════════════════════════════════
+
+══ Building ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• CFLAGS    : -Wall -pedantic
+• CXXFLAGS  : -Wall -pedantic
+• CXX11FLAGS: -Wall -pedantic
+• CXX14FLAGS: -Wall -pedantic
+• CXX17FLAGS: -Wall -pedantic
+• CXX20FLAGS: -Wall -pedantic
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+══ Checking ════════════════════════════════════════════════════════════════════
+Setting env vars:
+• _R_CHECK_CRAN_INCOMING_REMOTE_: FALSE
+• _R_CHECK_CRAN_INCOMING_       : FALSE
+• _R_CHECK_FORCE_SUGGESTS_      : FALSE
+• NOT_CRAN                      : true
+── R CMD check ─────────────────────────────────────────────────────────────────
+* using log directory ‘/tmp/RtmpGbEwCB/fileede4124b7dd22/manCTMed.Rcheck’
+* using R version 4.4.2 (2024-10-31)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+    GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+* running under: Ubuntu 24.04.1 LTS
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘manCTMed/DESCRIPTION’ ... OK
+* this is package ‘manCTMed’ version ‘0.9.2’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .quarto
+  .quarto/_freeze/.setup
+  .quarto/idx/.setup
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘manCTMed’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking code files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of ‘data’ directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking LazyData ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking R/sysdata.rda ... OK
+* checking examples ... OK
+Examples with CPU (user + system) or elapsed time > 5s
+                        user system elapsed
+FigScatterPlotCoverage 5.171  0.348    5.33
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ...
+  Running ‘testthat.R’
+ OK
+* DONE
+
+Status: 1 NOTE
+See
+  ‘/tmp/RtmpGbEwCB/fileede4124b7dd22/manCTMed.Rcheck/00check.log’
+for details.
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+Running /usr/local/lib/R/bin/R CMD INSTALL \
+  /tmp/RtmpGbEwCB/manCTMed_0.9.2.tar.gz --install-tests 
+* installing to library ‘/scratch/ibp5092/manCTMed/.library’
+* installing *source* package ‘manCTMed’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** tests
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (manCTMed)
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
+* preparing ‘manCTMed’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘manCTMed_0.9.2.tar.gz’
+Warning: invalid uid value replaced by that for user 'nobody'
+Warning: invalid gid value replaced by that for user 'nobody'
+
+[1] "/scratch/ibp5092/manCTMed/.setup/build/manCTMed_0.9.2.tar.gz"
+
+
+Building README.md...
+
+
+1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+/usr/bin/pandoc +RTS -K512m -RTS README.knit.md --to gfm-tex_math_gfm-yaml_metadata_block --from markdown+autolink_bare_uris+tex_math_single_backslash --output /scratch/ibp5092/manCTMed/README.md --template /usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/default.md --citeproc 
+/usr/bin/pandoc +RTS -K512m -RTS /scratch/ibp5092/manCTMed/README.md --to html4 --from gfm-tex_math_gfm --output /scratch/ibp5092/manCTMed/README.html --embed-resources --standalone --highlight-style pygments --template /usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/preview.html --variable 'github-markdown-css:/usr/local/lib/R/site-library/rmarkdown/rmarkdown/templates/github_document/resources/github.css' --metadata pagetitle=PREVIEW --mathjax 
+
+
+Building manual...
+
+
+Hmm ... looks like a package
+Creating pdf output from LaTeX ...
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file Rd2.aux.
+(/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd)
+No file Rd2.toc.
+
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
+Overfull \hbox (29.401pt too wide) in paragraph at lines 89--102
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[2]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 156--169
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[3]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 229--242
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[4]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 302--315
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[5]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 373--386
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[6]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 473--486
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[7]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 530--543
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[8]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 587--600
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 587--600
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[9]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 644--657
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 644--657
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[10]
+Overfull \hbox (41.52989pt too wide) in paragraph at lines 710--714
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+Overfull \hbox (1.52989pt too wide) in paragraph at lines 760--764
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[11]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 813--817
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[12]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 866--870
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]() 
+
+[13]
+[14]
+[15]
+[16]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1090--1103
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1090--1103
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1153--1166
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1153--1166
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[17]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1216--1229
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1216--1229
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[18]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1279--1292
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1279--1292
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[19]
+[20]
+[21]
+[22]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1566--1569
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[23]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1635--1638
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[24]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1699--1702
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[25]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1763--1766
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[26]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1827--1830
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[27]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1891--1894
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[28]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1955--1958
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[29]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2019--2022
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[30]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2083--2086
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[31]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2147--2150
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[32]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2212--2215
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[33]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2280--2283
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[34]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2348--2351
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[35]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2416--2419
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[36]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2474--2477
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2507--2516
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[37]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2564--2567
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[38]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2628--2637
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[39]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2676--2685
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[40]
+No file Rd2.ind.
+
+[41] (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMOUFixed\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (41 pages, 175827 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (./Rd2.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (./Rd2.out) (./Rd2.out) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd) (./Rd2.toc
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}])
+[2]
+Overfull \hbox (29.401pt too wide) in paragraph at lines 89--102
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[3]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 156--169
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[4]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 229--242
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[5]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 302--315
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[6]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 373--386
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[7]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 473--486
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[8]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 530--543
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[9]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 587--600
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 587--600
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[10]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 644--657
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 644--657
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[11]
+Overfull \hbox (41.52989pt too wide) in paragraph at lines 710--714
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+Overfull \hbox (1.52989pt too wide) in paragraph at lines 760--764
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[12]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 813--817
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[13]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 866--870
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]() 
+
+[14]
+[15]
+[16]
+[17]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1090--1103
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1090--1103
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1153--1166
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1153--1166
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[18]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1216--1229
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1216--1229
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[19]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1279--1292
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1279--1292
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[20]
+[21]
+[22]
+[23]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1566--1569
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[24]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1635--1638
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[25]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1699--1702
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[26]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1763--1766
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[27]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1827--1830
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[28]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1891--1894
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[29]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1955--1958
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[30]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2019--2022
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[31]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2083--2086
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[32]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2147--2150
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[33]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2212--2215
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[34]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2280--2283
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[35]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2348--2351
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[36]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2416--2419
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[37]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2474--2477
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2507--2516
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[38]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2564--2567
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[39]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2628--2637
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[40]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2676--2685
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[41] (./Rd2.ind
+[42]
+
+[43]
+
+[44]
+
+[45]) (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMOUFixed\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (45 pages, 195446 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+
+(/opt/TinyTeX/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/bk10.clo)) (/usr/local/lib/R/share/texmf/tex/latex/Rd.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty) (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty) (/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/mathrsfs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/zi4.sty `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (/opt/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex (/opt/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/color.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))) (/opt/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty)
+Writing index file Rd2.idx
+(/opt/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd) (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def) (./Rd2.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (./Rd2.out) (./Rd2.out) (/opt/TinyTeX/texmf-dist/tex/latex/inconsolata/t1zi4.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) (/opt/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd) (./Rd2.toc
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]
+[2])
+Overfull \hbox (29.401pt too wide) in paragraph at lines 89--102
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[3]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 156--169
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[4]
+Overfull \hbox (30.73947pt too wide) in paragraph at lines 229--242
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[5]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 302--315
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[6]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 373--386
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[7]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 473--486
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[8]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 530--543
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[9]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 587--600
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 587--600
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[10]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 644--657
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 644--657
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[11]
+Overfull \hbox (41.52989pt too wide) in paragraph at lines 710--714
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+Overfull \hbox (1.52989pt too wide) in paragraph at lines 760--764
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[12]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 813--817
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotType1[][][]() 
+
+[13]
+Overfull \hbox (16.52989pt too wide) in paragraph at lines 866--870
+[]\T1/ptm/m/n/10 Other Fig-ure Func-tions: [][][]\T1/zi4/m/n/10 FigPlotEffects[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotCoverage[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 FigScatterPlotPower[][][]() 
+
+[14]
+[15]
+[16]
+[17]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1090--1103
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1090--1103
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1153--1166
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (14.401pt too wide) in paragraph at lines 1153--1166
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+[18]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1216--1229
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1216--1229
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[19]
+Overfull \hbox (45.73947pt too wide) in paragraph at lines 1279--1292
+[]\T1/ptm/m/n/10 Other Con-fi-dence In-ter-val Func-tions: [][][]\T1/zi4/m/n/10 BootPara[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 BootParaXMY[][][]()[]\T1/ptm/m/n/10 ,
+
+Overfull \hbox (29.401pt too wide) in paragraph at lines 1279--1292
+[][][]\T1/zi4/m/n/10 BootParaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaStdYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 DeltaYMX[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdXMY[][][]()[]\T1/ptm/m/n/10 , [][][]\T1/zi4/m/n/10 MCStdYMX[][][]()[]\T1/ptm/m/n/10 ,
+
+[20]
+[21]
+[22]
+[23]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1566--1569
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[24]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1635--1638
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[25]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1699--1702
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[26]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1763--1766
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[27]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1827--1830
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[28]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1891--1894
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[29]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 1955--1958
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[30]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2019--2022
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[31]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2083--2086
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[32]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2147--2150
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[33]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2212--2215
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[34]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2280--2283
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[35]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2348--2351
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[36]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2416--2419
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[37]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2474--2477
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2507--2516
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[38]
+Overfull \hbox (5.19925pt too wide) in paragraph at lines 2564--2567
+[]\T1/ptm/m/n/10 Logical. If []\T1/zi4/m/n/10 integrity = TRUE[]\T1/ptm/m/n/10 , check for the out-put file in-tegrity when []\T1/zi4/m/n/10 overwrite
+
+[39]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2628--2637
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[40]
+Overfull \hbox (56.38876pt too wide) in paragraph at lines 2676--2685
+[]\T1/ptm/m/n/10 Character string. Out-put type. Valid val-ues in-clude []\T1/zi4/m/n/10 "data"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "fit-dynr"[]\T1/ptm/m/n/10 , []\T1/zi4/m/n/10 "dynr-delta-xmy"[]\T1/ptm/m/n/10 ,
+
+[41] (./Rd2.ind
+[42]
+
+[43]
+
+[44]
+
+[45]) (./Rd2.aux) )
+(see the transcript file for additional information)
+pdfTeX warning (dest): name{Rfn.simStateSpace::SimSSMOUFixed\(\)} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
+
+</opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (45 pages, 196132 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘manCTMed.pdf’ ...
+Done
+
+
+Building CITATION.cff...
+
+
+══ Validating cff ══════════════════════════════════════════════════════════════
+
+
+Compiling latex...
+
+
+1/39                   
+2/39 [root]            
+3/39                   
+4/39 [knitr]           
+5/39                   
+6/39 [biblatex]        
+7/39                   
+8/39 [kbordermatrix]   
+9/39                   
+10/39 [unnamed-chunk-5] 
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/cross-sectional-mediation.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/cross-sectional-mediation.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/ct-full-direct-indirect.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/ct-full-direct-indirect.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/ct-full-total.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/ct-full-total.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/deboeck2015.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/deboeck2015.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-11-11-31.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-11-11-31.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-11-21-32.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-11-21-32.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-11-31-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-11-31-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-21-12-31.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-21-12-31.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-21-22-32.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-21-22-32.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-21-32-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-21-32-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-31-13-31.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-31-13-31.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-31-23-32.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-31-23-32.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-31-33-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-31-33-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full-total.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full-total.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-full.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-full.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-11-11-31.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-11-11-31.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-11-21-32.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-11-21-32.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-11-31-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-11-31-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-21-22-32.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-21-22-32.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-21-32-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-21-32-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-31-33-33.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-31-33-33.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower-total.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower-total.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-one-two-three-lower.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-one-two-three-lower.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-var-mediation-bidirectional.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-var-mediation-bidirectional.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/dt-var-mediation-unidirectional.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/dt-var-mediation-unidirectional.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/half-longitudinal-mediation.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/half-longitudinal-mediation.pdf) are up-to-date
+
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/tikz/longitudinal-mediation.tex'.
+Latexmk: All targets (.setup/latex/figures/pdf/longitudinal-mediation.pdf) are up-to-date
+
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/bak.tex'.
+Latexmk: All targets (.setup/latex/pdf/bak.pdf) are up-to-date
+Collected error summary (may duplicate other messages):
+  pdflatex: gave an error in previous invocation of latexmk.
+
+[1] FALSE
+
+
+Building pkgdown website...
+
+
+── Building pkgdown site for package manCTMed ──────────────────────────────────
+Reading from: /scratch/ibp5092/manCTMed
+Writing to: /scratch/ibp5092/manCTMed/pkgdown
+── Sitrep ──────────────────────────────────────────────────────────────────────
+✔ URLs ok.
+✔ Favicons ok.
+✔ Open graph metadata ok.
+✔ Articles metadata ok.
+✔ Reference metadata ok.
+── Initialising site ───────────────────────────────────────────────────────────
+── Building home ───────────────────────────────────────────────────────────────
+Reading LICENSE.md
+Reading README.md
+Writing `404.html`
+── Building function reference ─────────────────────────────────────────────────
+Reading man/BootPara.Rd
+Reading man/BootParaStdXMY.Rd
+Reading man/BootParaStdYMX.Rd
+Reading man/BootParaXMY.Rd
+Reading man/BootParaYMX.Rd
+Reading man/Compress.Rd
+Reading man/DeltaStdXMY.Rd
+Reading man/DeltaStdYMX.Rd
+Reading man/DeltaXMY.Rd
+Reading man/DeltaYMX.Rd
+Reading man/FigPlotEffects.Rd
+Reading man/FigScatterPlotCoverage.Rd
+Reading man/FigScatterPlotPower.Rd
+Reading man/FigScatterPlotType1.Rd
+Reading man/FitDynr.Rd
+Reading man/FitMx.Rd
+Reading man/GenData.Rd
+Reading man/MCStdXMY.Rd
+Reading man/MCStdYMX.Rd
+Reading man/MCXMY.Rd
+Reading man/MCYMX.Rd
+Reading man/PhiHat.Rd
+Reading man/RandomMeasurement.Rd
+Reading man/Sim.Rd
+Reading man/SimBootPara.Rd
+Reading man/SimBootParaStdXMY.Rd
+Reading man/SimBootParaStdYMX.Rd
+Reading man/SimBootParaXMY.Rd
+Reading man/SimBootParaYMX.Rd
+Reading man/SimDynrDeltaStdXMY.Rd
+Reading man/SimDynrDeltaStdYMX.Rd
+Reading man/SimDynrDeltaXMY.Rd
+Reading man/SimDynrDeltaYMX.Rd
+Reading man/SimDynrMCStdXMY.Rd
+Reading man/SimDynrMCStdYMX.Rd
+Reading man/SimDynrMCXMY.Rd
+Reading man/SimDynrMCYMX.Rd
+Reading man/SimFN.Rd
+Reading man/SimFitDynr.Rd
+Reading man/SimGenData.Rd
+Reading man/SimProj.Rd
+Reading man/SumHit.Rd
+Reading man/SumRaw.Rd
+Reading man/ThetaHat.Rd
+Reading man/grundy2007.Rd
+Reading man/manCTMed-package.Rd
+Reading man/params.Rd
+Reading man/results.Rd
+── Building articles ───────────────────────────────────────────────────────────
+Reading vignettes/containers.Rmd
+Reading vignettes/fig-example-1.Rmd
+✖ Missing alt-text in 'vignettes/fig-example-1.Rmd'
+• fig-vignettes-example-1-unnamed-chunk-8-1.png
+• fig-vignettes-example-1-unnamed-chunk-10-1.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/fig-example-2.Rmd
+Reading vignettes/fig-example-3.Rmd
+✖ Missing alt-text in 'vignettes/fig-example-3.Rmd'
+• fig-vignettes-example-3-unnamed-chunk-9-1.png
+• fig-vignettes-example-3-unnamed-chunk-9-2.png
+• fig-vignettes-example-3-unnamed-chunk-9-3.png
+• fig-vignettes-example-3-unnamed-chunk-10-1.png
+• fig-vignettes-example-3-unnamed-chunk-10-2.png
+• fig-vignettes-example-3-unnamed-chunk-10-3.png
+• fig-vignettes-example-3-unnamed-chunk-15-1.png
+• fig-vignettes-example-3-unnamed-chunk-15-2.png
+• fig-vignettes-example-3-unnamed-chunk-15-3.png
+• fig-vignettes-example-3-unnamed-chunk-15-4.png
+• fig-vignettes-example-3-unnamed-chunk-15-5.png
+• fig-vignettes-example-3-unnamed-chunk-15-6.png
+• fig-vignettes-example-3-unnamed-chunk-16-1.png
+• fig-vignettes-example-3-unnamed-chunk-16-2.png
+• fig-vignettes-example-3-unnamed-chunk-16-3.png
+• fig-vignettes-example-3-unnamed-chunk-17-1.png
+• fig-vignettes-example-3-unnamed-chunk-17-2.png
+• fig-vignettes-example-3-unnamed-chunk-17-3.png
+• fig-vignettes-example-3-unnamed-chunk-18-1.png
+• fig-vignettes-example-3-unnamed-chunk-18-2.png
+• fig-vignettes-example-3-unnamed-chunk-18-3.png
+• fig-vignettes-example-3-unnamed-chunk-18-4.png
+• fig-vignettes-example-3-unnamed-chunk-18-5.png
+• fig-vignettes-example-3-unnamed-chunk-18-6.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/fig-example-ct-var.Rmd
+✖ Missing alt-text in 'vignettes/fig-example-ct-var.Rmd'
+• fig-vignettes-example-ct-var-unnamed-chunk-12-1.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/fig-example-data-gen.Rmd
+Reading vignettes/fig-scatter-plots-neg.Rmd
+✖ Missing alt-text in 'vignettes/fig-scatter-plots-neg.Rmd'
+• fig-vignettes-scatter-plots-neg-effects-1.png
+• fig-vignettes-scatter-plots-neg-effects-std-1.png
+• fig-vignettes-scatter-plots-neg-coverage-1-25-1.png
+• fig-vignettes-scatter-plots-neg-coverage-1-4-1.png
+• fig-vignettes-scatter-plots-neg-coverage-5-25-1.png
+• fig-vignettes-scatter-plots-neg-coverage-25-30-1.png
+• fig-vignettes-scatter-plots-neg-power-1.png
+• fig-vignettes-scatter-plots-neg-type1-1.png
+• fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png
+• fig-vignettes-scatter-plots-neg-coverage-std-1-4-1.png
+• fig-vignettes-scatter-plots-neg-coverage-std-5-25-1.png
+• fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png
+• fig-vignettes-scatter-plots-neg-power-std-1.png
+• fig-vignettes-scatter-plots-neg-type1-std-1.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/fig-scatter-plots-pos.Rmd
+✖ Missing alt-text in 'vignettes/fig-scatter-plots-pos.Rmd'
+• fig-vignettes-scatter-plots-pos-effects-1.png
+• fig-vignettes-scatter-plots-pos-effects-std-1.png
+• fig-vignettes-scatter-plots-pos-coverage-1-25-1.png
+• fig-vignettes-scatter-plots-pos-coverage-1-4-1.png
+• fig-vignettes-scatter-plots-pos-coverage-5-25-1.png
+• fig-vignettes-scatter-plots-pos-coverage-25-30-1.png
+• fig-vignettes-scatter-plots-pos-power-1.png
+• fig-vignettes-scatter-plots-pos-type1-1.png
+• fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png
+• fig-vignettes-scatter-plots-pos-coverage-std-1-4-1.png
+• fig-vignettes-scatter-plots-pos-coverage-std-5-25-1.png
+• fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png
+• fig-vignettes-scatter-plots-pos-power-std-1.png
+• fig-vignettes-scatter-plots-pos-type1-std-1.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/fig-scatter-plots-zero.Rmd
+✖ Missing alt-text in 'vignettes/fig-scatter-plots-zero.Rmd'
+• fig-vignettes-scatter-plots-zero-effects-1.png
+• fig-vignettes-scatter-plots-zero-effects-std-1.png
+• fig-vignettes-scatter-plots-zero-coverage-1-25-1.png
+• fig-vignettes-scatter-plots-zero-coverage-1-4-1.png
+• fig-vignettes-scatter-plots-zero-coverage-5-25-1.png
+• fig-vignettes-scatter-plots-zero-coverage-25-30-1.png
+• fig-vignettes-scatter-plots-zero-power-1.png
+• fig-vignettes-scatter-plots-zero-type1-1.png
+• fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png
+• fig-vignettes-scatter-plots-zero-coverage-std-1-4-1.png
+• fig-vignettes-scatter-plots-zero-coverage-std-5-25-1.png
+• fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png
+• fig-vignettes-scatter-plots-zero-power-std-1.png
+• fig-vignettes-scatter-plots-zero-type1-std-1.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/manCTMed.Rmd
+Reading vignettes/params.Rmd
+Reading vignettes/replication.Rmd
+Writing `articles/replication.html`
+✖ Missing alt-text in 'vignettes/replication.Rmd'
+• fig-vignettes-replication-unnamed-chunk-4-1.png
+• fig-vignettes-replication-unnamed-chunk-4-2.png
+• fig-vignettes-replication-unnamed-chunk-4-3.png
+• fig-vignettes-replication-unnamed-chunk-6-1.png
+• fig-vignettes-replication-unnamed-chunk-6-2.png
+• fig-vignettes-replication-unnamed-chunk-6-3.png
+• fig-vignettes-replication-unnamed-chunk-7-1.png
+• fig-vignettes-replication-unnamed-chunk-7-2.png
+• fig-vignettes-replication-unnamed-chunk-7-3.png
+• fig-vignettes-replication-unnamed-chunk-10-1.png
+• fig-vignettes-replication-unnamed-chunk-10-2.png
+• fig-vignettes-replication-unnamed-chunk-10-3.png
+• fig-vignettes-replication-unnamed-chunk-10-4.png
+• fig-vignettes-replication-unnamed-chunk-10-5.png
+• fig-vignettes-replication-unnamed-chunk-10-6.png
+• fig-vignettes-replication-unnamed-chunk-11-1.png
+• fig-vignettes-replication-unnamed-chunk-11-2.png
+• fig-vignettes-replication-unnamed-chunk-11-3.png
+• fig-vignettes-replication-unnamed-chunk-12-1.png
+• fig-vignettes-replication-unnamed-chunk-12-2.png
+• fig-vignettes-replication-unnamed-chunk-12-3.png
+• fig-vignettes-replication-unnamed-chunk-13-1.png
+• fig-vignettes-replication-unnamed-chunk-13-2.png
+• fig-vignettes-replication-unnamed-chunk-13-3.png
+• fig-vignettes-replication-unnamed-chunk-13-4.png
+• fig-vignettes-replication-unnamed-chunk-13-5.png
+• fig-vignettes-replication-unnamed-chunk-13-6.png
+• fig-vignettes-replication-unnamed-chunk-14-1.png
+• fig-vignettes-replication-unnamed-chunk-14-2.png
+• fig-vignettes-replication-unnamed-chunk-14-3.png
+• fig-vignettes-replication-unnamed-chunk-15-1.png
+• fig-vignettes-replication-unnamed-chunk-15-2.png
+• fig-vignettes-replication-unnamed-chunk-15-3.png
+• fig-vignettes-replication-unnamed-chunk-16-1.png
+• fig-vignettes-replication-unnamed-chunk-16-2.png
+• fig-vignettes-replication-unnamed-chunk-16-3.png
+• fig-vignettes-replication-unnamed-chunk-16-4.png
+• fig-vignettes-replication-unnamed-chunk-16-5.png
+• fig-vignettes-replication-unnamed-chunk-16-6.png
+• fig-vignettes-replication-unnamed-chunk-17-1.png
+• fig-vignettes-replication-unnamed-chunk-17-2.png
+• fig-vignettes-replication-unnamed-chunk-17-3.png
+• fig-vignettes-replication-unnamed-chunk-18-1.png
+• fig-vignettes-replication-unnamed-chunk-18-2.png
+• fig-vignettes-replication-unnamed-chunk-18-3.png
+• fig-vignettes-replication-unnamed-chunk-19-1.png
+• fig-vignettes-replication-unnamed-chunk-19-2.png
+• fig-vignettes-replication-unnamed-chunk-19-3.png
+• fig-vignettes-replication-unnamed-chunk-19-4.png
+• fig-vignettes-replication-unnamed-chunk-19-5.png
+• fig-vignettes-replication-unnamed-chunk-19-6.png
+ℹ Learn more in `vignette(pkgdown::accessibility)`.
+Reading vignettes/results.Rmd
+Reading vignettes/session/session.Rmd
+Writing `articles/session/session.html`
+── Building news ───────────────────────────────────────────────────────────────
+── Building sitemap ────────────────────────────────────────────────────────────
+── Building redirects ──────────────────────────────────────────────────────────
+── Building search index ───────────────────────────────────────────────────────
+── Checking for problems ───────────────────────────────────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────
+
+
+Rendering quarto...
+
+
+[1m[34m[1/5] index.qmd[39m[22m
+[1m[34m[2/5] .setup/quarto/intro/intro.qmd[39m[22m
+[31m
+
+processing file: intro.qmd
+[39m1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+[31moutput file: intro.knit.md
+
+[39m[1m[34m[3/5] .setup/quarto/references/references.qmd[39m[22m
+[1m[34m[4/5] .setup/quarto/tags/tags.qmd[39m[22m
+[31m
+
+processing file: tags.qmd
+[39m1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+[31moutput file: tags.knit.md
+
+[39m[1m[34m[5/5] .setup/quarto/session/session.qmd[39m[22m
+[31m
+
+processing file: session.qmd
+[39m1/5                  
+2/5 [unnamed-chunk-1]
+3/5                  
+4/5 [unnamed-chunk-2]
+5/5                  
+[31moutput file: session.knit.md
+
+[39m
+Output created: quarto/index.html
+
+
+
+Code coverage...
+
+
