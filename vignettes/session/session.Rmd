@@ -27,3 +27,15 @@ library(manCTMed)
 ```{r}
 sessionInfo()
 ```
+
+# CPU
+
+```{r}
+cat(system("lscpu", intern = TRUE), sep = "\n")
+```
+
+# Memory
+
+```{r}
+cat(system("free -g -h -t", intern = TRUE), sep = "\n")
+```

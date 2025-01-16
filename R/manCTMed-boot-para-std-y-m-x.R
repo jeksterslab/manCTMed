@@ -35,11 +35,11 @@ BootParaStdYMX <- function(boot,
                            ncores = NULL) {
   return(
     cTMed::BootMedStd(
-      phi = extract(
+      phi = simStateSpace::extract(
         object = boot,
         what = "phi"
       ),
-      sigma = extract(
+      sigma = simStateSpace::extract(
         object = boot,
         what = "sigma"
       ),

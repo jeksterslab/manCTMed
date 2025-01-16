@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Scatter Plots - Strong Coupling}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -131,6 +131,7 @@ FigScatterPlotPower(results, dynamics = 1)
 #| cache = FALSE
 FigScatterPlotType1(results, dynamics = 1)
 ```
+
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25

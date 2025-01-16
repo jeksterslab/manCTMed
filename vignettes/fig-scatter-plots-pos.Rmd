@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Scatter Plots - Strong Coupling}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -116,6 +116,7 @@ data(results, package = "manCTMed")
 ### Type I Error Rate
 
 <img src="fig-vignettes-scatter-plots-pos-type1-1.png" width="3300" />
+
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25

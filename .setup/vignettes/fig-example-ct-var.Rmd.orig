@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Fitting the Continuous-Time Vector Autoregressive Model}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 

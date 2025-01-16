@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Illustrative Example 3 - Regions of Significance}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 

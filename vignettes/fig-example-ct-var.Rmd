@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Fitting the Continuous-Time Vector Autoregressive Model}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -280,8 +280,8 @@ fit <- dynr::dynr.cook(
 #> 
 #> Doing end processing
 #> Successful trial
-#> Total Time: 1.970678 
-#> Backend Time: 1.95964
+#> Total Time: 2.064768 
+#> Backend Time: 2.050821
 ```
 
 ## Summary

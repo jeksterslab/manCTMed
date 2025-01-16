@@ -33,11 +33,11 @@ BootParaYMX <- function(boot,
                         ncores = NULL) {
   return(
     cTMed::BootMed(
-      phi = extract(
+      phi = simStateSpace::extract(
         object = boot,
         what = "phi"
       ),
-      phi_hat = phi_hat,
+      phi_hat = phi_hat$coef,
       delta_t = delta_t,
       from = "y", # always y for backward
       to = "x", # always x for backward

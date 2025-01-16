@@ -4,7 +4,7 @@ author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Single Replication from the Simulation Study}
-  %\VignetteEngine{quarto::quarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
@@ -30,8 +30,10 @@ library(manCTMed)
 ## Data Generation
 
 ```{r}
-set.seed(1)
-sim <- GenData(taskid = 1)
+seed <- 1
+set.seed(seed)
+taskid <- 1
+sim <- GenData(taskid = taskid)
 plot(sim)
 data <- RandomMeasurement(sim)
 str(data)
@@ -40,7 +42,7 @@ str(data)
 ## Model Fitting
 
 ```{r}
-fit <- FitDynr(data = data, taskid = 1)
+fit <- FitDynr(data = data, taskid = taskid)
 summary(fit)
 phi_hat <- PhiHat(fit)
 theta_hat <- ThetaHat(fit)
@@ -53,15 +55,48 @@ theta_hat <- ThetaHat(fit)
 #### Delta Method
 
 ```{r}
-delta <- DeltaXMY(phi_hat)
+delta <- DeltaXMY(phi_hat = phi_hat)
 plot(delta)
+summary(delta)
 ```
 
 #### Monte Carlo Method
 
 ```{r}
-mc <- MCXMY(phi_hat, seed = 42)
+mc <- MCXMY(phi_hat = phi_hat, seed = seed)
 plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+B <- 1000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "pb_replication"
+```
+
+```{r}
+boot <- BootPara(
+  fit = fit,
+  path = path,
+  prefix = prefix,
+  taskid = taskid,
+  B = B,
+  ncores = parallel::detectCores(),
+  seed = seed
+)
+```
+
+```{r}
+pb <- BootParaXMY(boot = boot, phi_hat = phi_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
 ```
 
 ### Model $\eta_Y \to \eta_M \to \eta_M$
@@ -69,15 +104,27 @@ plot(mc)
 #### Delta Method
 
 ```{r}
-delta <- DeltaYMX(phi_hat)
+delta <- DeltaYMX(phi_hat = phi_hat)
 plot(delta)
+summary(delta)
 ```
 
 #### Monte Carlo Method
 
 ```{r}
-mc <- MCYMX(phi_hat, seed = 42)
+mc <- MCYMX(phi_hat = phi_hat, seed = seed)
 plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaYMX(boot = boot, phi_hat = phi_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
 ```
 
 ## Confidence Intervals (Standardized)
@@ -87,15 +134,27 @@ plot(mc)
 #### Delta Method
 
 ```{r}
-delta <- DeltaStdXMY(theta_hat)
+delta <- DeltaStdXMY(theta_hat = theta_hat)
 plot(delta)
+summary(delta)
 ```
 
 #### Monte Carlo Method
 
 ```{r}
-mc <- MCStdXMY(theta_hat, seed = 1)
+mc <- MCStdXMY(theta_hat = theta_hat, seed = seed)
 plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaStdXMY(boot = boot, theta_hat = theta_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
 ```
 
 ### Model $\eta_Y \to \eta_M \to \eta_M$
@@ -103,13 +162,25 @@ plot(mc)
 #### Delta Method
 
 ```{r}
-delta <- DeltaStdYMX(theta_hat)
+delta <- DeltaStdYMX(theta_hat = theta_hat)
 plot(delta)
+summary(delta)
 ```
 
 #### Monte Carlo Method
 
 ```{r}
-mc <- MCStdYMX(theta_hat, seed = 1)
+mc <- MCStdYMX(theta_hat = theta_hat, seed = seed)
 plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaStdYMX(boot = boot, theta_hat = theta_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
 ```
