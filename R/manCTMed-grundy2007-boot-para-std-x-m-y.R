@@ -1,5 +1,6 @@
 #' Parametric Bootstrap Confidence Intervals for X-M-Y
 #' (Standardized)
+#' (Grundy, et al. 2007)
 #'
 #' The function generates parametric bootstrap method confidence intervals
 #' for the mediation model \eqn{X \to M \to Y}

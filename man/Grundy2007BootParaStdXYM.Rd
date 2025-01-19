@@ -3,7 +3,8 @@
 \name{Grundy2007BootParaStdXYM}
 \alias{Grundy2007BootParaStdXYM}
 \title{Parametric Bootstrap Confidence Intervals for X-Y-M
-(Standardized)}
+(Standardized)
+(Grundy, et al. 2007)}
 \usage{
 Grundy2007BootParaStdXYM(boot, theta_hat, delta_t = 1:30, ncores = NULL)
 }
