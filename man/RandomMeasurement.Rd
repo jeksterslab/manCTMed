@@ -23,7 +23,8 @@ RandomMeasurement(sim)
 }
 \seealso{
 Other Data Generation Functions: 
-\code{\link{GenData}()}
+\code{\link{GenData}()},
+\code{\link{Grundy2007GenData}()}
 }
 \concept{Data Generation Functions}
 \keyword{gendata}

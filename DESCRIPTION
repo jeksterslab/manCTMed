@@ -21,14 +21,15 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-Depends: R (>= 3.5.0)
-Imports: utils, stats, dynr, OpenMx, cTMed, dynUtils, simStateSpace,
-        ggplot2
+Depends: R (>= 4.0.0)
+Imports: utils, stats, dynr, OpenMx, dynUtils, simStateSpace,
+        bootStateSpace, cTMed, ggplot2, MASS
 Suggests: knitr, rmarkdown, testthat, DT
-Remotes: jeksterslab/dynUtils, jeksterslab/cTMed
+Remotes: jeksterslab/dynUtils, jeksterslab/cTMed,
+        jeksterslab/simStateSpace, jeksterslab/bootStateSpace
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-01-16 16:45:24 UTC; root
+Packaged: 2025-01-19 14:15:44 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

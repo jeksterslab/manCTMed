@@ -28,6 +28,7 @@ FitMx(data, taskid = 1)
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitDynr}()},
+\code{\link{Grundy2007FitDynr}()},
 \code{\link{PhiHat}()},
 \code{\link{ThetaHat}()}
 }

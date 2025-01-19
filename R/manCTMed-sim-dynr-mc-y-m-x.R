@@ -1,4 +1,4 @@
-#' Simulation Replication - MCYMX
+#' Simulation Replication - DynrMCYMX
 #'
 #' @details This function is executed via the `Sim` function.
 #'

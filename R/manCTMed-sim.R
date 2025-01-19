@@ -13,9 +13,7 @@ Sim <- function(taskid,
                 overwrite,
                 integrity,
                 delta_t,
-                R,
-                B,
-                run_boot = FALSE) {
+                R) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -148,56 +146,4 @@ Sim <- function(taskid,
     delta_t = delta_t,
     R = R
   )
-  if (run_boot) {
-    SimBootPara(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity,
-      B = B
-    )
-    SimBootParaXMY(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity,
-      delta_t = delta_t
-    )
-    SimBootParaYMX(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity,
-      delta_t = delta_t
-    )
-    SimBootParaStdXMY(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity,
-      delta_t = delta_t
-    )
-    SimBootParaStdYMX(
-      taskid = taskid,
-      repid = repid,
-      output_folder = output_folder,
-      seed = seed,
-      suffix = suffix,
-      overwrite = overwrite,
-      integrity = integrity,
-      delta_t = delta_t
-    )
-  }
 }

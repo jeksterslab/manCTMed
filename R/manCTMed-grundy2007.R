@@ -1,4 +1,4 @@
-#' Simulation Parameters
+#' grundy2007
 #'
 #' @author Ivan Jacob Agaloos Pesigan
 #'
@@ -14,13 +14,13 @@
 #'   \item{time}{
 #'     Time variable
 #'   }
-#'   \item{conflict}{
+#'   \item{x}{
 #'     Mother-reported marital conflict.
 #'   }
-#'   \item{knowledge}{
+#'   \item{m}{
 #'     Maternal knowledge.
 #'   }
-#'   \item{competence}{
+#'   \item{y}{
 #'     Child-reported behavioral competence.
 #'   }
 #' }
@@ -31,5 +31,5 @@
 #'   Maternal knowledge as a longitudinal mediator.
 #'   Journal of Family Psychology, 21 (4), 675–682.
 #'   \doi{https://doi.org/10.1037/0893-3200.21.4.675}
-#' @keywords data parameters
+#' @keywords data grundy
 "grundy2007"

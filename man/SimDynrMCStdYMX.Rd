@@ -2,7 +2,7 @@
 % Please edit documentation in R/manCTMed-sim-dynr-mc-std-y-m-x.R
 \name{SimDynrMCStdYMX}
 \alias{SimDynrMCStdYMX}
-\title{Simulation Replication - MCStdYMX}
+\title{Simulation Replication - DynrMCStdYMX}
 \usage{
 SimDynrMCStdYMX(
   taskid,
@@ -49,7 +49,7 @@ Number of random drift matrices to generate.}
 The output is saved as an external file in \code{output_folder}.
 }
 \description{
-Simulation Replication - MCStdYMX
+Simulation Replication - DynrMCStdYMX
 }
 \details{
 This function is executed via the \code{Sim} function.

@@ -4,17 +4,7 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(
-  taskid,
-  repid,
-  output_folder,
-  overwrite,
-  integrity,
-  delta_t,
-  R,
-  B,
-  run_boot = FALSE
-)
+Sim(taskid, repid, output_folder, overwrite, integrity, delta_t, R)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -38,12 +28,6 @@ Vector of time intervals.}
 
 \item{R}{Positive integer.
 Number of random drift matrices to generate.}
-
-\item{B}{Positive integer.
-Number of bootstrap samples.}
-
-\item{run_boot}{Logical.
-If \code{run_boot = TRUE}, run bootstrap.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

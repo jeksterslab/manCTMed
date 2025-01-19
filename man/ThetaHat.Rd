@@ -28,6 +28,7 @@ ThetaHat(fit)
 Other Model Fitting Functions: 
 \code{\link{FitDynr}()},
 \code{\link{FitMx}()},
+\code{\link{Grundy2007FitDynr}()},
 \code{\link{PhiHat}()}
 }
 \concept{Model Fitting Functions}
