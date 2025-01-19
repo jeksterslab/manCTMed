@@ -2,7 +2,8 @@
 % Please edit documentation in R/manCTMed-grundy2007-boot-para-x-m-y.R
 \name{Grundy2007BootParaXMY}
 \alias{Grundy2007BootParaXMY}
-\title{Parametric Bootstrap Confidence Intervals for X-M-Y}
+\title{Parametric Bootstrap Confidence Intervals for X-M-Y
+(Grundy, et al. 2007)}
 \usage{
 Grundy2007BootParaXMY(boot, phi_hat, delta_t = 1:30, ncores = NULL)
 }

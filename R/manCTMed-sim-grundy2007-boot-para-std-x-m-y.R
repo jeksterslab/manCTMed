@@ -30,7 +30,7 @@ SimGrundy2007BootParaStdXMY <- function(taskid,
     suffix = suffix
   )
   fn_output <- SimFN(
-    output_type = "grundy2007-dynr-boot-para-xmy",
+    output_type = "grundy2007-dynr-pb-std-xmy",
     output_folder = output_folder,
     suffix = suffix
   )
