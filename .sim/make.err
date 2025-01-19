@@ -1,4 +1,5 @@
-make: Warning: File 'Makefile' has modification time 17254 s in the future
+make: Warning: File 'Makefile' has modification time 17657 s in the future
+Installing 1 packages: httr2
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
@@ -13,6 +14,56 @@ Setting `RoxygenNote` to "7.3.2"
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
 ✔ Setting active project to "/scratch/ibp5092/manCTMed".
 ✔ Saving "model" to "R/sysdata.rda".
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
+
+
+
+processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
+output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
+
 ℹ Updating manCTMed documentation
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
@@ -165,7 +216,7 @@ Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
 make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 16704 s in the future
+make: Warning: File 'Makefile' has modification time 10081 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
@@ -222,6 +273,6 @@ Error in gzfile(file, "rb") : cannot open the connection
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
 make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Warning: File 'Makefile' has modification time 16179 s in the future
+make: Warning: File 'Makefile' has modification time 9554 s in the future
 Cloning into 'manCTMed'...
-Updating files:  15% (426/2802)Updating files:  16% (449/2802)Updating files:  17% (477/2802)Updating files:  18% (505/2802)Updating files:  19% (533/2802)Updating files:  20% (561/2802)Updating files:  21% (589/2802)Updating files:  22% (617/2802)Updating files:  23% (645/2802)Updating files:  24% (673/2802)Updating files:  25% (701/2802)Updating files:  26% (729/2802)Updating files:  27% (757/2802)Updating files:  27% (769/2802)Updating files:  28% (785/2802)Updating files:  29% (813/2802)Updating files:  30% (841/2802)Updating files:  31% (869/2802)Updating files:  32% (897/2802)Updating files:  33% (925/2802)Updating files:  34% (953/2802)Updating files:  35% (981/2802)Updating files:  36% (1009/2802)Updating files:  36% (1032/2802)Updating files:  37% (1037/2802)Updating files:  38% (1065/2802)Updating files:  39% (1093/2802)Updating files:  40% (1121/2802)Updating files:  41% (1149/2802)Updating files:  42% (1177/2802)Updating files:  43% (1205/2802)Updating files:  44% (1233/2802)Updating files:  44% (1255/2802)Updating files:  45% (1261/2802)Updating files:  46% (1289/2802)Updating files:  47% (1317/2802)Updating files:  48% (1345/2802)Updating files:  49% (1373/2802)Updating files:  50% (1401/2802)Updating files:  51% (1430/2802)Updating files:  52% (1458/2802)Updating files:  53% (1486/2802)Updating files:  54% (1514/2802)Updating files:  55% (1542/2802)Updating files:  55% (1558/2802)Updating files:  56% (1570/2802)Updating files:  57% (1598/2802)Updating files:  58% (1626/2802)Updating files:  59% (1654/2802)Updating files:  60% (1682/2802)Updating files:  61% (1710/2802)Updating files:  62% (1738/2802)Updating files:  63% (1766/2802)Updating files:  64% (1794/2802)Updating files:  65% (1822/2802)Updating files:  66% (1850/2802)Updating files:  66% (1856/2802)Updating files:  67% (1878/2802)Updating files:  68% (1906/2802)Updating files:  69% (1934/2802)Updating files:  70% (1962/2802)Updating files:  71% (1990/2802)Updating files:  72% (2018/2802)Updating files:  73% (2046/2802)Updating files:  74% (2074/2802)Updating files:  75% (2102/2802)Updating files:  76% (2130/2802)Updating files:  77% (2158/2802)Updating files:  77% (2185/2802)Updating files:  78% (2186/2802)Updating files:  79% (2214/2802)Updating files:  80% (2242/2802)Updating files:  81% (2270/2802)Updating files:  82% (2298/2802)Updating files:  82% (2308/2802)Updating files:  83% (2326/2802)Updating files:  84% (2354/2802)Updating files:  85% (2382/2802)Updating files:  86% (2410/2802)Updating files:  87% (2438/2802)Updating files:  88% (2466/2802)Updating files:  89% (2494/2802)Updating files:  90% (2522/2802)Updating files:  91% (2550/2802)Updating files:  92% (2578/2802)Updating files:  93% (2606/2802)Updating files:  94% (2634/2802)Updating files:  95% (2662/2802)Updating files:  95% (2683/2802)Updating files:  96% (2690/2802)Updating files:  97% (2718/2802)Updating files:  98% (2746/2802)Updating files:  99% (2774/2802)Updating files: 100% (2802/2802)Updating files: 100% (2802/2802), done.
+Updating files:  17% (494/2802)Updating files:  18% (505/2802)Updating files:  19% (533/2802)Updating files:  20% (561/2802)Updating files:  21% (589/2802)Updating files:  22% (617/2802)Updating files:  23% (645/2802)Updating files:  24% (673/2802)Updating files:  25% (701/2802)Updating files:  26% (729/2802)Updating files:  27% (757/2802)Updating files:  28% (785/2802)Updating files:  29% (813/2802)Updating files:  29% (837/2802)Updating files:  30% (841/2802)Updating files:  31% (869/2802)Updating files:  32% (897/2802)Updating files:  33% (925/2802)Updating files:  34% (953/2802)Updating files:  35% (981/2802)Updating files:  36% (1009/2802)Updating files:  37% (1037/2802)Updating files:  38% (1065/2802)Updating files:  39% (1093/2802)Updating files:  40% (1121/2802)Updating files:  41% (1149/2802)Updating files:  42% (1177/2802)Updating files:  43% (1205/2802)Updating files:  44% (1233/2802)Updating files:  45% (1261/2802)Updating files:  46% (1289/2802)Updating files:  47% (1317/2802)Updating files:  48% (1345/2802)Updating files:  49% (1373/2802)Updating files:  50% (1401/2802)Updating files:  51% (1430/2802)Updating files:  52% (1458/2802)Updating files:  53% (1486/2802)Updating files:  53% (1487/2802)Updating files:  54% (1514/2802)Updating files:  55% (1542/2802)Updating files:  56% (1570/2802)Updating files:  57% (1598/2802)Updating files:  58% (1626/2802)Updating files:  59% (1654/2802)Updating files:  60% (1682/2802)Updating files:  61% (1710/2802)Updating files:  62% (1738/2802)Updating files:  63% (1766/2802)Updating files:  63% (1791/2802)Updating files:  64% (1794/2802)Updating files:  65% (1822/2802)Updating files:  66% (1850/2802)Updating files:  67% (1878/2802)Updating files:  68% (1906/2802)Updating files:  69% (1934/2802)Updating files:  70% (1962/2802)Updating files:  71% (1990/2802)Updating files:  72% (2018/2802)Updating files:  73% (2046/2802)Updating files:  73% (2056/2802)Updating files:  74% (2074/2802)Updating files:  75% (2102/2802)Updating files:  76% (2130/2802)Updating files:  77% (2158/2802)Updating files:  78% (2186/2802)Updating files:  79% (2214/2802)Updating files:  80% (2242/2802)Updating files:  81% (2270/2802)Updating files:  81% (2281/2802)Updating files:  82% (2298/2802)Updating files:  83% (2326/2802)Updating files:  84% (2354/2802)Updating files:  85% (2382/2802)Updating files:  86% (2410/2802)Updating files:  87% (2438/2802)Updating files:  88% (2466/2802)Updating files:  89% (2494/2802)Updating files:  90% (2522/2802)Updating files:  91% (2550/2802)Updating files:  92% (2578/2802)Updating files:  93% (2606/2802)Updating files:  94% (2634/2802)Updating files:  95% (2662/2802)Updating files:  96% (2690/2802)Updating files:  97% (2718/2802)Updating files:  97% (2726/2802)Updating files:  98% (2746/2802)Updating files:  99% (2774/2802)Updating files: 100% (2802/2802)Updating files: 100% (2802/2802), done.

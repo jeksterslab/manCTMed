@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmp1L834c/dotfiles'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpqmPFjD/dotfiles'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5135[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5143[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.33.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m9d 48m[0m
+[14C[33m[1muptime[0m[6D[7C[39m9d 1h 33m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m583[0m
-[14C[33m[1mmemory[0m[6D[7C[39m8813M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m8904M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmp1L834c/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmp1L834c/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmp1L834c/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpqmPFjD/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpqmPFjD/dotfiles'
 
 
 TinyTex...
@@ -55,7 +55,7 @@ TinyTex...
 Styling...
 
 
-Styling  154  files:
+Styling  144  files:
  .Rprofile                                                                 ℹ 
  index.qmd                                                                 ✔ 
  .setup/cran/cran-check.R                                                  ✔ 
@@ -196,23 +196,13 @@ Styling  154  files:
  R/simTools-sim-suffix-dot.R                                               ✔ 
  tests/testthat.R                                                          ✔ 
  tests/testthat/test-manCTMed.R                                            ✔ 
- vignettes/containers.Rmd                                                  ✔ 
- vignettes/fig-example-1.Rmd                                               ✔ 
- vignettes/fig-example-2.Rmd                                               ✔ 
- vignettes/fig-example-3.Rmd                                               ✔ 
- vignettes/fig-example-ct-var.Rmd                                          ✔ 
- vignettes/fig-example-data-gen.Rmd                                        ✔ 
- vignettes/fig-scatter-plots-neg.Rmd                                       ✔ 
- vignettes/fig-scatter-plots-pos.Rmd                                       ✔ 
- vignettes/fig-scatter-plots-zero.Rmd                                      ✔ 
  vignettes/manCTMed.Rmd                                                    ✔ 
  vignettes/params.Rmd                                                      ✔ 
- vignettes/replication.Rmd                                                 ✔ 
  vignettes/results.Rmd                                                     ✔ 
  vignettes/session/session.Rmd                                             ✔ 
 ─────────────────────────────────────────────────────────────────────────
 Status	Count	Legend 
-✔ 	153	File unchanged.
+✔ 	143	File unchanged.
 ℹ 	1	File changed.
 ✖ 	0	Styling threw an error.
 ─────────────────────────────────────────────────────────────────────────
@@ -294,7 +284,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpy29aKh/file1ab0641e3a849d/manCTMed.Rcheck’
+* using log directory ‘/tmp/Rtmps0z57c/file12827b6b2d9f8e/manCTMed.Rcheck’
 * using R version 4.4.2 (2024-10-31)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -311,13 +301,7 @@ Setting env vars:
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .quarto
-  .quarto/_freeze/.setup
-  .quarto/idx/.setup
-These were most likely included in error. See section ‘Package
-structure’ in the ‘Writing R Extensions’ manual.
+* checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘manCTMed’ can be installed ... OK
@@ -357,17 +341,14 @@ structure’ in the ‘Writing R Extensions’ manual.
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.903  0.275   4.983
+FigScatterPlotCoverage 4.881  0.292   4.993
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
  OK
 * DONE
 
-Status: 1 NOTE
-See
-  ‘/tmp/Rtmpy29aKh/file1ab0641e3a849d/manCTMed.Rcheck/00check.log’
-for details.
+Status: OK
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -379,7 +360,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpy29aKh/manCTMed_0.9.2.tar.gz --install-tests 
+  /tmp/Rtmps0z57c/manCTMed_0.9.2.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -436,6 +417,375 @@ data_process_sysdata
 Precompiling vignettes...
 
 
+1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+1/20                   
+2/20 [unnamed-chunk-1] 
+3/20                   
+4/20 [unnamed-chunk-2] 
+5/20                   
+6/20 [unnamed-chunk-3] 
+7/20                   
+8/20 [unnamed-chunk-4] 
+9/20                   
+10/20 [unnamed-chunk-5] 
+11/20                   
+12/20 [unnamed-chunk-6] 
+13/20                   
+14/20 [unnamed-chunk-7] 
+15/20                   
+16/20 [unnamed-chunk-8] 
+17/20                   
+18/20 [unnamed-chunk-9] 
+19/20                   
+20/20 [unnamed-chunk-10]
+1/36                   
+2/36 [unnamed-chunk-1] 
+3/36                   
+4/36 [unnamed-chunk-2] 
+5/36                   
+6/36 [unnamed-chunk-3] 
+7/36                   
+8/36 [unnamed-chunk-4] 
+9/36                   
+10/36 [unnamed-chunk-5] 
+11/36                   
+12/36 [unnamed-chunk-6] 
+13/36                   
+14/36 [unnamed-chunk-7] 
+15/36                   
+16/36 [unnamed-chunk-8] 
+17/36                   
+18/36 [unnamed-chunk-9] 
+19/36                   
+20/36 [unnamed-chunk-10]
+21/36                   
+22/36 [unnamed-chunk-11]
+23/36                   
+24/36 [unnamed-chunk-12]
+25/36                   
+26/36 [unnamed-chunk-13]
+27/36                   
+28/36 [unnamed-chunk-14]
+29/36                   
+30/36 [unnamed-chunk-15]
+31/36                   
+32/36 [unnamed-chunk-16]
+33/36                   
+34/36 [unnamed-chunk-17]
+35/36                   
+36/36 [unnamed-chunk-18]
+1/136                             
+2/136 [unnamed-chunk-1]           
+3/136                             
+4/136 [unnamed-chunk-2]           
+5/136                             
+6/136 [unnamed-chunk-3]           
+7/136                             
+8/136 [unnamed-chunk-4]           
+9/136                             
+10/136 [unnamed-chunk-5]           
+11/136                             
+12/136 [unnamed-chunk-6]           
+13/136                             
+14/136 [unnamed-chunk-7]           
+15/136                             
+16/136 [unnamed-chunk-8]           
+17/136                             
+18/136 [unnamed-chunk-9]           
+19/136                             
+20/136 [unnamed-chunk-10]          
+21/136                             
+22/136 [unnamed-chunk-11]          
+23/136                             
+24/136 [unnamed-chunk-12]          
+25/136                             
+26/136 [unnamed-chunk-13]          
+27/136                             
+28/136 [unnamed-chunk-14]          
+29/136                             
+30/136 [unnamed-chunk-15]          
+31/136                             
+32/136 [unnamed-chunk-16]          
+33/136                             
+34/136 [unnamed-chunk-17]          
+35/136                             
+36/136 [unnamed-chunk-18]          
+37/136                             
+38/136 [unnamed-chunk-19]          
+39/136                             
+40/136 [xmy-direct-delta-133]      
+41/136                             
+42/136 [xmy-direct-mc-133]         
+43/136                             
+44/136 [xmy-direct-pb-pc-133]      
+45/136                             
+46/136 [xmy-direct-pb-bc-133]      
+47/136                             
+48/136 [xmy-indirect-delta-133]    
+49/136                             
+50/136 [xmy-indirect-mc-133]       
+51/136                             
+52/136 [xmy-indirect-pb-pc-133]    
+53/136                             
+54/136 [xmy-indirect-pb-bc-133]    
+55/136                             
+56/136 [xmy-total-delta-133]       
+57/136                             
+58/136 [xmy-total-mc-133]          
+59/136                             
+60/136 [xmy-total-pb-pc-133]       
+61/136                             
+62/136 [xmy-total-pb-bc-133]       
+63/136                             
+64/136 [xym-direct-delta-133]      
+65/136                             
+66/136 [xym-direct-mc-133]         
+67/136                             
+68/136 [xym-direct-pb-pc-133]      
+69/136                             
+70/136 [xym-direct-pb-bc-133]      
+71/136                             
+72/136 [xym-indirect-delta-133]    
+73/136                             
+74/136 [xym-indirect-mc-133]       
+75/136                             
+76/136 [xym-indirect-pb-pc-133]    
+77/136                             
+78/136 [xym-indirect-pb-bc-133]    
+79/136                             
+80/136 [xym-total-delta-133]       
+81/136                             
+82/136 [xym-total-mc-133]          
+83/136                             
+84/136 [xym-total-pb-pc-133]       
+85/136                             
+86/136 [xym-total-pb-bc-133]       
+87/136                             
+88/136 [unnamed-chunk-20]          
+89/136                             
+90/136 [xmy-direct-std-delta-133]  
+91/136                             
+92/136 [xmy-direct-std-mc-133]     
+93/136                             
+94/136 [xmy-direct-std-pb-pc-133]  
+95/136                             
+96/136 [xmy-direct-std-pb-bc-133]  
+97/136                             
+98/136 [xmy-indirect-std-delta-133]
+99/136                             
+100/136 [xmy-indirect-std-mc-133]   
+101/136                             
+102/136 [xmy-indirect-std-pb-pc-133]
+103/136                             
+104/136 [xmy-indirect-std-pb-bc-133]
+105/136                             
+106/136 [xmy-total-std-delta-133]   
+107/136                             
+108/136 [xmy-total-std-mc-133]      
+109/136                             
+110/136 [xmy-total-std-pb-pc-133]   
+111/136                             
+112/136 [xmy-total-std-pb-bc-133]   
+113/136                             
+114/136 [xym-direct-std-delta-133]  
+115/136                             
+116/136 [xym-direct-std-mc-133]     
+117/136                             
+118/136 [xym-direct-std-pb-pc-133]  
+119/136                             
+120/136 [xym-direct-std-pb-bc-133]  
+121/136                             
+122/136 [xym-indirect-std-delta-133]
+123/136                             
+124/136 [xym-indirect-std-mc-133]   
+125/136                             
+126/136 [xym-indirect-std-pb-pc-133]
+127/136                             
+128/136 [xym-indirect-std-pb-bc-133]
+129/136                             
+130/136 [xym-total-std-delta-133]   
+131/136                             
+132/136 [xym-total-std-mc-133]      
+133/136                             
+134/136 [xym-total-std-pb-pc-133]   
+135/136                             
+136/136 [xym-total-std-pb-bc-133]   
+1/30                   
+2/30 [unnamed-chunk-1] 
+3/30                   
+4/30 [unnamed-chunk-2] 
+5/30                   
+6/30 [unnamed-chunk-3] 
+7/30                   
+8/30 [unnamed-chunk-4] 
+9/30                   
+10/30 [unnamed-chunk-5] 
+11/30                   
+12/30 [unnamed-chunk-6] 
+13/30                   
+14/30 [unnamed-chunk-7] 
+15/30                   
+16/30 [unnamed-chunk-8] 
+17/30                   
+18/30 [unnamed-chunk-9] 
+19/30                   
+20/30 [unnamed-chunk-10]
+21/30                   
+22/30 [unnamed-chunk-11]
+23/30                   
+24/30 [unnamed-chunk-12]
+25/30                   
+26/30 [unnamed-chunk-13]
+27/30                   
+28/30 [unnamed-chunk-14]
+29/30                   
+30/30 [unnamed-chunk-15]
+1/4                  
+2/4 [unnamed-chunk-1]
+3/4                  
+4/4 [unnamed-chunk-2]
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
+1/38                   
+2/38 [unnamed-chunk-1] 
+3/38                   
+4/38 [unnamed-chunk-2] 
+5/38                   
+6/38 [unnamed-chunk-3] 
+7/38                   
+8/38 [unnamed-chunk-4] 
+9/38                   
+10/38 [unnamed-chunk-5] 
+11/38                   
+12/38 [unnamed-chunk-6] 
+13/38                   
+14/38 [unnamed-chunk-7] 
+15/38                   
+16/38 [unnamed-chunk-8] 
+17/38                   
+18/38 [unnamed-chunk-9] 
+19/38                   
+20/38 [unnamed-chunk-10]
+21/38                   
+22/38 [unnamed-chunk-11]
+23/38                   
+24/38 [unnamed-chunk-12]
+25/38                   
+26/38 [unnamed-chunk-13]
+27/38                   
+28/38 [unnamed-chunk-14]
+29/38                   
+30/38 [unnamed-chunk-15]
+31/38                   
+32/38 [unnamed-chunk-16]
+33/38                   
+34/38 [unnamed-chunk-17]
+35/38                   
+36/38 [unnamed-chunk-18]
+37/38                   
+38/38 [unnamed-chunk-19]
 
 
 Building package...
@@ -468,7 +818,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpKpWpZu/file1aba6c21892a0c/manCTMed.Rcheck’
+* using log directory ‘/tmp/Rtmp1PNBlv/file374d9d1176d9e4/manCTMed.Rcheck’
 * using R version 4.4.2 (2024-10-31)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -485,13 +835,7 @@ Setting env vars:
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .quarto
-  .quarto/_freeze/.setup
-  .quarto/idx/.setup
-These were most likely included in error. See section ‘Package
-structure’ in the ‘Writing R Extensions’ manual.
+* checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘manCTMed’ can be installed ... OK
@@ -531,17 +875,14 @@ structure’ in the ‘Writing R Extensions’ manual.
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.891  0.291   4.983
+FigScatterPlotCoverage 4.831  0.256   4.887
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
  OK
 * DONE
 
-Status: 1 NOTE
-See
-  ‘/tmp/RtmpKpWpZu/file1aba6c21892a0c/manCTMed.Rcheck/00check.log’
-for details.
+Status: OK
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -553,7 +894,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpKpWpZu/manCTMed_0.9.2.tar.gz --install-tests 
+  /tmp/Rtmp1PNBlv/manCTMed_0.9.2.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -4268,7 +4609,6 @@ Reading LICENSE.md
 Reading README.md
 Writing `404.html`
 ── Building function reference ─────────────────────────────────────────────────
-Writing `reference/index.html`
 Reading man/BootPara.Rd
 Reading man/BootParaStdXMY.Rd
 Reading man/BootParaStdXYM.Rd
@@ -4440,6 +4780,7 @@ Reading vignettes/fig-scatter-plots-zero.Rmd
 Reading vignettes/manCTMed.Rmd
 Reading vignettes/params.Rmd
 Reading vignettes/replication.Rmd
+Writing `articles/replication.html`
 ✖ Missing alt-text in 'vignettes/replication.Rmd'
 • fig-vignettes-replication-unnamed-chunk-4-1.png
 • fig-vignettes-replication-unnamed-chunk-4-2.png
@@ -4562,37 +4903,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpRZNFtH/dotfiles'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpQMQQ75/dotfiles'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5135[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5143[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.33.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m9d 57m[0m
+[14C[33m[1muptime[0m[6D[7C[39m9d 3h 39m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m583[0m
-[14C[33m[1mmemory[0m[6D[7C[39m8818M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m8925M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpRZNFtH/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpRZNFtH/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpQMQQ75/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpQMQQ75/dotfiles'
 
 
 TinyTex...
@@ -4842,7 +5183,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpBN0HB9/file1ad6e156e623c6/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpQVahAn/file376a81426213ff/manCTMed.Rcheck’
 * using R version 4.4.2 (2024-10-31)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -4859,13 +5200,7 @@ Setting env vars:
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .quarto
-  .quarto/_freeze/.setup
-  .quarto/idx/.setup
-These were most likely included in error. See section ‘Package
-structure’ in the ‘Writing R Extensions’ manual.
+* checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘manCTMed’ can be installed ... OK
@@ -4905,17 +5240,14 @@ structure’ in the ‘Writing R Extensions’ manual.
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.816  0.274   4.912
+FigScatterPlotCoverage 4.839   0.28   4.937
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
  OK
 * DONE
 
-Status: 1 NOTE
-See
-  ‘/tmp/RtmpBN0HB9/file1ad6e156e623c6/manCTMed.Rcheck/00check.log’
-for details.
+Status: OK
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -4927,7 +5259,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpBN0HB9/manCTMed_0.9.2.tar.gz --install-tests 
+  /tmp/RtmpQVahAn/manCTMed_0.9.2.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -5016,7 +5348,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpOkAWDD/file1ae0e14aff5fc0/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpMs1ZZs/file37743b28026d70/manCTMed.Rcheck’
 * using R version 4.4.2 (2024-10-31)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -5033,13 +5365,7 @@ Setting env vars:
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .quarto
-  .quarto/_freeze/.setup
-  .quarto/idx/.setup
-These were most likely included in error. See section ‘Package
-structure’ in the ‘Writing R Extensions’ manual.
+* checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘manCTMed’ can be installed ... OK
@@ -5079,17 +5405,14 @@ structure’ in the ‘Writing R Extensions’ manual.
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.853  0.284   4.936
+FigScatterPlotCoverage 5.166   0.46    5.43
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
  OK
 * DONE
 
-Status: 1 NOTE
-See
-  ‘/tmp/RtmpOkAWDD/file1ae0e14aff5fc0/manCTMed.Rcheck/00check.log’
-for details.
+Status: OK
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -5101,7 +5424,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpOkAWDD/manCTMed_0.9.2.tar.gz --install-tests 
+  /tmp/RtmpMs1ZZs/manCTMed_0.9.2.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
