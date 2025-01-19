@@ -19,7 +19,7 @@ This vignette accompanies Illustrative Example 2. The goal of the example is to 
 
 ``` r
 library(dynr)
-library(simStateSpace)
+library(bootStateSpace)
 library(cTMed)
 ```
 
@@ -192,7 +192,7 @@ MCMed(
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `simStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `simStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
 
 > **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
 
@@ -266,26 +266,26 @@ ci <- BootMed(
 )
 summary(ci)
 #>     effect interval          est          se    R        2.5%         97.5%
-#> 1    total        1 -0.082830099 0.038839149 1000 -0.15857211 -0.0067447338
-#> 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973
-#> 3 indirect        1 -0.005742463 0.004132077 1000 -0.01486750  0.0009337155
-#> 4    total        2 -0.137257463 0.061181585 1000 -0.25798543 -0.0166954224
-#> 5   direct        2 -0.120663647 0.061572293 1000 -0.23958489  0.0004530425
-#> 6 indirect        2 -0.016593816 0.011795758 1000 -0.04200704  0.0027314095
-#> 7    total        3 -0.171598190 0.074225990 1000 -0.32394299 -0.0243010211
-#> 8   direct        3 -0.144345904 0.074293526 1000 -0.29040288  0.0005657691
-#> 9 indirect        3 -0.027252286 0.019357469 1000 -0.06865166  0.0053818978
+#> 1    total        1 -0.082830099 0.040277222 1000 -0.16141366 -0.0034289678
+#> 2   direct        1 -0.077087636 0.040662753 1000 -0.15707023  0.0053502754
+#> 3 indirect        1 -0.005742463 0.004215608 1000 -0.01478833  0.0008123522
+#> 4    total        2 -0.137257463 0.063196983 1000 -0.25893091 -0.0110900799
+#> 5   direct        2 -0.120663647 0.063816087 1000 -0.24565283  0.0081153385
+#> 6 indirect        2 -0.016593816 0.012049095 1000 -0.04248535  0.0024827773
+#> 7    total        3 -0.171598190 0.076350801 1000 -0.32197941 -0.0200881622
+#> 8   direct        3 -0.144345904 0.076759668 1000 -0.29843328  0.0094845520
+#> 9 indirect        3 -0.027252286 0.019813810 1000 -0.07025556  0.0048538594
 summary(ci, type = "bc") # bias-corrected
 #>     effect interval          est          se    R        2.5%         97.5%
-#> 1    total        1 -0.082830099 0.038839149 1000 -0.15827071 -0.0067284469
-#> 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973
-#> 3 indirect        1 -0.005742463 0.004132077 1000 -0.01677540  0.0001650497
-#> 4    total        2 -0.137257463 0.061181585 1000 -0.25773872 -0.0164675508
-#> 5   direct        2 -0.120663647 0.061572293 1000 -0.24341285 -0.0006077631
-#> 6 indirect        2 -0.016593816 0.011795758 1000 -0.04670110  0.0008068482
-#> 7    total        3 -0.171598190 0.074225990 1000 -0.32412418 -0.0248197412
-#> 8   direct        3 -0.144345904 0.074293526 1000 -0.29542857 -0.0026213182
-#> 9 indirect        3 -0.027252286 0.019357469 1000 -0.07560494  0.0024325605
+#> 1    total        1 -0.082830099 0.040277222 1000 -0.15657376  3.902251e-04
+#> 2   direct        1 -0.077087636 0.040662753 1000 -0.15679483  7.423718e-03
+#> 3 indirect        1 -0.005742463 0.004215608 1000 -0.01745608  9.471481e-05
+#> 4    total        2 -0.137257463 0.063196983 1000 -0.25592898 -9.830393e-03
+#> 5   direct        2 -0.120663647 0.063816087 1000 -0.24652992  6.928349e-03
+#> 6 indirect        2 -0.016593816 0.012049095 1000 -0.04963851  6.214087e-04
+#> 7    total        3 -0.171598190 0.076350801 1000 -0.32117551 -1.912325e-02
+#> 8   direct        3 -0.144345904 0.076759668 1000 -0.29891678  5.556364e-03
+#> 9 indirect        3 -0.027252286 0.019813810 1000 -0.07914474  1.590159e-03
 ```
 
 ## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -381,25 +381,25 @@ pb <- BootMedStd(
   med = "knowledge"
 )
 summary(pb)
-#>     effect interval          est          se   R        2.5%         97.5%
-#> 1    total        1 -0.095646850 0.050188622 999 -0.20368381 -0.0067932439
-#> 2   direct        1 -0.089015825 0.049719287 999 -0.19241664  0.0002108455
-#> 3 indirect        1 -0.006631025 0.005158217 999 -0.01882737  0.0010841985
-#> 4    total        2 -0.158496057 0.079867920 999 -0.33781326 -0.0176140363
-#> 5   direct        2 -0.139334589 0.077972907 999 -0.30524055  0.0003450431
-#> 6 indirect        2 -0.019161468 0.014738021 999 -0.05317883  0.0035171688
-#> 7    total        3 -0.198150511 0.097330287 999 -0.41728092 -0.0244380601
-#> 8   direct        3 -0.166681330 0.093594630 999 -0.36956048  0.0004302193
-#> 9 indirect        3 -0.031469181 0.024165354 999 -0.08734549  0.0064530805
+#>     effect interval          est          se    R        2.5%         97.5%
+#> 1    total        1 -0.095646850 0.052846649 1000 -0.20534269 -0.0026544623
+#> 2   direct        1 -0.089015825 0.052592859 1000 -0.20045509  0.0052105707
+#> 3 indirect        1 -0.006631025 0.005230303 1000 -0.01914997  0.0008616874
+#> 4    total        2 -0.158496057 0.083746461 1000 -0.33842867 -0.0111119229
+#> 5   direct        2 -0.139334589 0.082471085 1000 -0.31278257  0.0079054204
+#> 6 indirect        2 -0.019161468 0.014964167 1000 -0.05444703  0.0026549459
+#> 7    total        3 -0.198150511 0.101658862 1000 -0.42637346 -0.0209528914
+#> 8   direct        3 -0.166681330 0.098945307 1000 -0.37955788  0.0092427835
+#> 9 indirect        3 -0.031469181 0.024594391 1000 -0.08869882  0.0051907352
 summary(pb, type = "bc") # bias-corrected
-#>     effect interval          est          se   R        2.5%         97.5%
-#> 1    total        1 -0.095646850 0.050188622 999 -0.20737779 -0.0091184523
-#> 2   direct        1 -0.089015825 0.049719287 999 -0.19746337 -0.0011981283
-#> 3 indirect        1 -0.006631025 0.005158217 999 -0.02055410  0.0001106158
-#> 4    total        2 -0.158496057 0.079867920 999 -0.34685496 -0.0216382718
-#> 5   direct        2 -0.139334589 0.077972907 999 -0.31385489 -0.0027954931
-#> 6 indirect        2 -0.019161468 0.014738021 999 -0.05900613  0.0007659007
-#> 7    total        3 -0.198150511 0.097330287 999 -0.42909365 -0.0311469829
-#> 8   direct        3 -0.166681330 0.093594630 999 -0.37484786 -0.0030606408
-#> 9 indirect        3 -0.031469181 0.024165354 999 -0.09535630  0.0019420703
+#>     effect interval          est          se    R        2.5%         97.5%
+#> 1    total        1 -0.095646850 0.052846649 1000 -0.21926657 -5.619566e-03
+#> 2   direct        1 -0.089015825 0.052592859 1000 -0.20978356  4.282886e-05
+#> 3 indirect        1 -0.006631025 0.005230303 1000 -0.02182373 -5.777456e-05
+#> 4    total        2 -0.158496057 0.083746461 1000 -0.35596909 -1.832226e-02
+#> 5   direct        2 -0.139334589 0.082471085 1000 -0.33206110 -1.328090e-03
+#> 6 indirect        2 -0.019161468 0.014964167 1000 -0.06188809  1.782209e-04
+#> 7    total        3 -0.198150511 0.101658862 1000 -0.43406333 -2.944776e-02
+#> 8   direct        3 -0.166681330 0.098945307 1000 -0.40136619 -2.189508e-03
+#> 9 indirect        3 -0.031469181 0.024594391 1000 -0.10052775  8.288347e-04
 ```

@@ -3,7 +3,7 @@
 \docType{data}
 \name{grundy2007}
 \alias{grundy2007}
-\title{Simulation Parameters}
+\title{grundy2007}
 \format{
 A dataframe with 4123 rows and 5 columns:
 
@@ -14,13 +14,13 @@ Participant ID variable.
 \item{time}{
 Time variable
 }
-\item{conflict}{
+\item{x}{
 Mother-reported marital conflict.
 }
-\item{knowledge}{
+\item{m}{
 Maternal knowledge.
 }
-\item{competence}{
+\item{y}{
 Child-reported behavioral competence.
 }
 }
@@ -29,7 +29,7 @@ Child-reported behavioral competence.
 data(grundy2007)
 }
 \description{
-Simulation Parameters
+grundy2007
 }
 \references{
 Grundy, A. M., Gondoli, D. M., & Blodgett Salafia, E. H. (2007).
@@ -42,4 +42,4 @@ Journal of Family Psychology, 21 (4), 675–682.
 Ivan Jacob Agaloos Pesigan
 }
 \keyword{data}
-\keyword{parameters}
+\keyword{grundy}

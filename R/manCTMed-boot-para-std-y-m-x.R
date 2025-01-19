@@ -1,7 +1,9 @@
 #' Parametric Bootstrap Confidence Intervals for Y-M-X
+#' (Standardized)
 #'
 #' The function generates parametric bootstrap method confidence intervals
-#' for the mediation model \eqn{Y \to M \to X}.
+#' for the mediation model \eqn{Y \to M \to X}
+#' (Standardized).
 #'
 #' @inheritParams Template
 #'
@@ -23,8 +25,8 @@
 #' )
 #' theta_hat <- ThetaHat(fit)
 #' ci <- BootParaStdYMX(boot = boot, theta_hat = theta_hat)
-#' summary(ci)
-#' summary(ci, type = "bc")
+#' plot(ci)
+#' plot(ci, type = "bc")
 #' }
 #' @family Confidence Interval Functions
 #' @keywords manCTMed ci
@@ -35,11 +37,11 @@ BootParaStdYMX <- function(boot,
                            ncores = NULL) {
   return(
     cTMed::BootMedStd(
-      phi = simStateSpace::extract(
+      phi = bootStateSpace::extract(
         object = boot,
         what = "phi"
       ),
-      sigma = simStateSpace::extract(
+      sigma = bootStateSpace::extract(
         object = boot,
         what = "sigma"
       ),

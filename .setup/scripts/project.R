@@ -30,6 +30,8 @@ pkg_cran <- c(
 )
 
 pkg_github <- c(
+  "jeksterslab/simStateSpace",
+  "jeksterslab/bootStateSpace",
   "jeksterslab/dynUtils",
   "jeksterslab/cTMed"
 )

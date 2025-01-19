@@ -2,7 +2,7 @@
 % Please edit documentation in R/manCTMed-sim-dynr-delta-std-x-m-y.R
 \name{SimDynrDeltaStdXMY}
 \alias{SimDynrDeltaStdXMY}
-\title{Simulation Replication - DeltaStdXMY}
+\title{Simulation Replication - DynrDeltaStdXMY}
 \usage{
 SimDynrDeltaStdXMY(
   taskid,
@@ -45,7 +45,7 @@ Vector of time intervals.}
 The output is saved as an external file in \code{output_folder}.
 }
 \description{
-Simulation Replication - DeltaStdXMY
+Simulation Replication - DynrDeltaStdXMY
 }
 \details{
 This function is executed via the \code{Sim} function.

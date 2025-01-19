@@ -19,7 +19,7 @@ This vignette accompanies Illustrative Example 3. The goal of the example is to 
 
 ``` r
 library(dynr)
-library(simStateSpace)
+library(bootStateSpace)
 library(cTMed)
 ```
 
@@ -161,7 +161,7 @@ plot(mc)
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `simStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `simStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
 
 > **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
 

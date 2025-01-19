@@ -27,9 +27,9 @@ DeltaStdYMX <- function(theta_hat,
       sigma = theta_hat$sigma,
       vcov_theta = theta_hat$vcov,
       delta_t = delta_t,
-      from = "y", # always y for backward
-      to = "x", # always x for backward
-      med = "m",
+      from = "x", # grundy reciprocal
+      to = "m",
+      med = "y",
       ncores = NULL
     )
   )

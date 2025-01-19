@@ -11,7 +11,10 @@
 #' @keywords texTools tabular internal
 #' @noRd
 .Tabular <- function(x,
-                     digits = 2) {
+                     digits = 2,
+                     open = "$",
+                     close = "$",
+                     init = "") {
   stopifnot(
     is.matrix(x) || is.data.frame(x)
   )
@@ -25,7 +28,7 @@
     for (i in seq_len(dims[1])) {
       if (is.numeric(x[i, j])) {
         y[i, j] <- paste0(
-          "$",
+          open,
           format(
             x = round(
               x = x[i, j],
@@ -33,7 +36,7 @@
             ),
             nsmall = digits
           ),
-          "$"
+          close
         )
       } else {
         y[i, j] <- x[i, j]
@@ -48,6 +51,8 @@
     )
   }
   z <- paste(
+    init,
+    " & ",
     z,
     collapse = " \\\\"
   )

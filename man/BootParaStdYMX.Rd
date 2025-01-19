@@ -2,7 +2,8 @@
 % Please edit documentation in R/manCTMed-boot-para-std-y-m-x.R
 \name{BootParaStdYMX}
 \alias{BootParaStdYMX}
-\title{Parametric Bootstrap Confidence Intervals for Y-M-X}
+\title{Parametric Bootstrap Confidence Intervals for Y-M-X
+(Standardized)}
 \usage{
 BootParaStdYMX(boot, theta_hat, delta_t = 1:30, ncores = NULL)
 }
@@ -21,7 +22,8 @@ Number of cores to use.}
 }
 \description{
 The function generates parametric bootstrap method confidence intervals
-for the mediation model \eqn{Y \to M \to X}.
+for the mediation model \eqn{Y \to M \to X}
+(Standardized).
 }
 \examples{
 \dontrun{
@@ -41,23 +43,42 @@ boot <- BootPara(
 )
 theta_hat <- ThetaHat(fit)
 ci <- BootParaStdYMX(boot = boot, theta_hat = theta_hat)
-summary(ci)
-summary(ci, type = "bc")
+plot(ci)
+plot(ci, type = "bc")
 }
 }
 \seealso{
 Other Confidence Interval Functions: 
 \code{\link{BootPara}()},
 \code{\link{BootParaStdXMY}()},
+\code{\link{BootParaStdXYM}()},
 \code{\link{BootParaXMY}()},
+\code{\link{BootParaXYM}()},
 \code{\link{BootParaYMX}()},
 \code{\link{DeltaStdXMY}()},
+\code{\link{DeltaStdXYM}()},
 \code{\link{DeltaStdYMX}()},
 \code{\link{DeltaXMY}()},
+\code{\link{DeltaXYM}()},
 \code{\link{DeltaYMX}()},
+\code{\link{Grundy2007BootPara}()},
+\code{\link{Grundy2007BootParaStdXMY}()},
+\code{\link{Grundy2007BootParaStdXYM}()},
+\code{\link{Grundy2007BootParaXMY}()},
+\code{\link{Grundy2007BootParaXYM}()},
+\code{\link{Grundy2007DeltaStdXMY}()},
+\code{\link{Grundy2007DeltaStdXYM}()},
+\code{\link{Grundy2007DeltaXMY}()},
+\code{\link{Grundy2007DeltaXYM}()},
+\code{\link{Grundy2007MCStdXMY}()},
+\code{\link{Grundy2007MCStdXYM}()},
+\code{\link{Grundy2007MCXMY}()},
+\code{\link{Grundy2007MCXYM}()},
 \code{\link{MCStdXMY}()},
+\code{\link{MCStdXYM}()},
 \code{\link{MCStdYMX}()},
 \code{\link{MCXMY}()},
+\code{\link{MCXYM}()},
 \code{\link{MCYMX}()}
 }
 \concept{Confidence Interval Functions}

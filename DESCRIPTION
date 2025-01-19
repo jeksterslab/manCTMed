@@ -20,16 +20,18 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.0.0)
 Imports:
     utils,
     stats,
     dynr,
     OpenMx,
-    cTMed,
     dynUtils,
     simStateSpace,
-    ggplot2
+    bootStateSpace,
+    cTMed,
+    ggplot2,
+    MASS
 Suggests:
     knitr,
     rmarkdown,
@@ -37,5 +39,7 @@ Suggests:
     DT
 Remotes:
     jeksterslab/dynUtils,
-    jeksterslab/cTMed
+    jeksterslab/cTMed,
+    jeksterslab/simStateSpace,
+    jeksterslab/bootStateSpace
 RoxygenNote: 7.3.2

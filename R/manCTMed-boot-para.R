@@ -5,7 +5,7 @@
 #' to each generated dataset using the `dynr` package.
 #'
 #' @inheritParams Template
-#' @inheritParams simStateSpace::PBSSMOUFixed
+#' @inheritParams bootStateSpace::PBSSMOUFixed
 #'
 #' @examples
 #' \dontrun{
@@ -102,7 +102,7 @@ BootPara <- function(fit,
       )
     )
   )
-  output <- simStateSpace::PBSSMOUFixed(
+  output <- bootStateSpace::PBSSMOUFixed(
     R = B,
     path = path,
     prefix = prefix,

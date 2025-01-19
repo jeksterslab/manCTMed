@@ -46,8 +46,6 @@
 #'   Number of replications.
 #' @param ncores Positive integer.
 #'   Number of cores to use.
-#' @param run_boot Logical.
-#'   If `run_boot = TRUE`, run bootstrap.
 #'
 #' @name Template
 NULL

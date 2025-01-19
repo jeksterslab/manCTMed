@@ -1,4 +1,4 @@
-#' Simulation Replication - DeltaStdXMY
+#' Simulation Replication - DynrDeltaStdXMY
 #'
 #' @details This function is executed via the `Sim` function.
 #'

@@ -21,8 +21,8 @@
 #' )
 #' phi_hat <- PhiHat(fit)
 #' ci <- BootParaYMX(boot = boot, phi_hat = phi_hat)
-#' summary(ci)
-#' summary(ci, type = "bc")
+#' plot(ci)
+#' plot(ci, type = "bc")
 #' }
 #' @family Confidence Interval Functions
 #' @keywords manCTMed ci
@@ -33,7 +33,7 @@ BootParaYMX <- function(boot,
                         ncores = NULL) {
   return(
     cTMed::BootMed(
-      phi = simStateSpace::extract(
+      phi = bootStateSpace::extract(
         object = boot,
         what = "phi"
       ),
