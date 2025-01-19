@@ -29,7 +29,7 @@ Remotes: jeksterslab/dynUtils, jeksterslab/cTMed,
         jeksterslab/simStateSpace, jeksterslab/bootStateSpace
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-01-19 14:15:44 UTC; root
+Packaged: 2025-01-19 16:31:07 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
