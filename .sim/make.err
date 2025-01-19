@@ -1,150 +1,18 @@
-make: Warning: File 'Makefile' has modification time 17797 s in the future
+make: Warning: File 'Makefile' has modification time 17254 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
 ✔ Setting active project to "/scratch/ibp5092/manCTMed".
 ✔ Saving "model" to "R/sysdata.rda".
 ℹ Updating manCTMed documentation
-First time using roxygen2. Upgrading automatically...
 Setting `RoxygenNote` to "7.3.2"
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
-Writing 'NAMESPACE'
-Writing 'BootParaStdXMY.Rd'
-Writing 'BootParaStdXYM.Rd'
-Writing 'BootParaStdYMX.Rd'
-Writing 'BootParaXMY.Rd'
-Writing 'BootParaXYM.Rd'
-Writing 'BootParaYMX.Rd'
-Writing 'BootPara.Rd'
-Writing 'Compress.Rd'
-Writing 'DeltaStdXMY.Rd'
-Writing 'DeltaStdXYM.Rd'
-Writing 'DeltaStdYMX.Rd'
-Writing 'DeltaXMY.Rd'
-Writing 'DeltaXYM.Rd'
-Writing 'DeltaYMX.Rd'
-Writing 'FigPlotEffects.Rd'
-Writing 'FigScatterPlotCoverage.Rd'
-Writing 'FigScatterPlotPower.Rd'
-Writing 'FigScatterPlotType1.Rd'
-Writing 'FitDynr.Rd'
-Writing 'FitMx.Rd'
-Writing 'GenData.Rd'
-Writing 'Grundy2007BootParaStdXMY.Rd'
-Writing 'Grundy2007BootParaStdXYM.Rd'
-Writing 'Grundy2007BootParaXMY.Rd'
-Writing 'Grundy2007BootParaXYM.Rd'
-Writing 'Grundy2007BootPara.Rd'
-Writing 'Grundy2007DeltaStdXMY.Rd'
-Writing 'Grundy2007DeltaStdXYM.Rd'
-Writing 'Grundy2007DeltaXMY.Rd'
-Writing 'Grundy2007DeltaXYM.Rd'
-Writing 'Grundy2007FitDynr.Rd'
-Writing 'Grundy2007GenData.Rd'
-Writing 'Grundy2007MCStdXMY.Rd'
-Writing 'Grundy2007MCStdXYM.Rd'
-Writing 'Grundy2007MCXMY.Rd'
-Writing 'Grundy2007MCXYM.Rd'
-Writing 'grundy2007.Rd'
-Writing 'MCStdXMY.Rd'
-Writing 'MCStdXYM.Rd'
-Writing 'MCStdYMX.Rd'
-Writing 'MCXMY.Rd'
-Writing 'MCXYM.Rd'
-Writing 'MCYMX.Rd'
-Writing 'manCTMed-package.Rd'
-Writing 'params.Rd'
-Writing 'PhiHat.Rd'
-Writing 'RandomMeasurement.Rd'
-Writing 'results.Rd'
-Writing 'SimDynrDeltaStdXMY.Rd'
-Writing 'SimDynrDeltaStdYMX.Rd'
-Writing 'SimDynrDeltaXMY.Rd'
-Writing 'SimDynrDeltaYMX.Rd'
-Writing 'SimDynrMCStdXMY.Rd'
-Writing 'SimDynrMCStdYMX.Rd'
-Writing 'SimDynrMCXMY.Rd'
-Writing 'SimDynrMCYMX.Rd'
-Writing 'SimFitDynr.Rd'
-Writing 'SimFN.Rd'
-Writing 'SimGenData.Rd'
-Writing 'SimGrundy2007BootParaStdXMY.Rd'
-Writing 'SimGrundy2007BootParaStdXYM.Rd'
-Writing 'SimGrundy2007BootParaXMY.Rd'
-Writing 'SimGrundy2007BootParaXYM.Rd'
-Writing 'SimGrundy2007BootPara.Rd'
-Writing 'SimGrundy2007DynrDeltaStdXMY.Rd'
-Writing 'SimGrundy2007DynrDeltaStdXYM.Rd'
-Writing 'SimGrundy2007DynrDeltaXMY.Rd'
-Writing 'SimGrundy2007DynrDeltaXYM.Rd'
-Writing 'SimGrundy2007DynrMCStdXMY.Rd'
-Writing 'SimGrundy2007DynrMCStdXYM.Rd'
-Writing 'SimGrundy2007DynrMCXMY.Rd'
-Writing 'SimGrundy2007DynrMCXYM.Rd'
-Writing 'SimGrundy2007FitDynr.Rd'
-Writing 'SimGrundy2007GenData.Rd'
-Writing 'SimGrundy2007.Rd'
-Writing 'SimProj.Rd'
-Writing 'Sim.Rd'
-Writing 'SumHit.Rd'
-Writing 'SumRaw.Rd'
-Writing 'ThetaHat.Rd'
 ℹ Updating manCTMed documentation
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
 ✔ Setting active project to "/scratch/ibp5092/manCTMed".
 ✔ Saving "model" to "R/sysdata.rda".
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-ct-var.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-data-gen.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
-
 ℹ Updating manCTMed documentation
 ℹ Loading manCTMed
 ✖ In topic 'Template.Rd': Skipping; no name and/or title.
@@ -294,43 +162,10 @@ Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
   No file TS1xcmss.fd.
 Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
   No file TS1cmsmf.fd.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Failure to make '.setup/latex/pdf/bak.pdf'
-Latexmk: ====Undefined refs and citations with line #s in .tex file:
-  Citation 'Deboeck-Preacher-2015' on page 3 undefined on input line 92
-  Citation 'Ryan-Hamaker-2021' on page 3 undefined on input line 92
-  Reference `fig:manCTMed-cross-sectional-mediation' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-longitudinal-mediation' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 4 undefined on input line 94
-  Citation 'Rogosa-1979' on page 4 undefined on input line 94
- And 131 more --- see log file '.setup/latex/pdf/bak.log'
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
 make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 16704 s in the future
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
@@ -386,5 +221,7 @@ Quitting from lines 349-362 [unnamed-chunk-5] (/scratch/ibp5092/manCTMed/.setup/
 Error in gzfile(file, "rb") : cannot open the connection
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Warning: File 'Makefile' has modification time 16179 s in the future
 Cloning into 'manCTMed'...
-Updating files:  14% (390/2770)Updating files:  15% (416/2770)Updating files:  16% (444/2770)Updating files:  17% (471/2770)Updating files:  18% (499/2770)Updating files:  19% (527/2770)Updating files:  20% (554/2770)Updating files:  21% (582/2770)Updating files:  22% (610/2770)Updating files:  23% (638/2770)Updating files:  24% (665/2770)Updating files:  25% (693/2770)Updating files:  26% (721/2770)Updating files:  26% (740/2770)Updating files:  27% (748/2770)Updating files:  28% (776/2770)Updating files:  29% (804/2770)Updating files:  30% (831/2770)Updating files:  31% (859/2770)Updating files:  32% (887/2770)Updating files:  33% (915/2770)Updating files:  34% (942/2770)Updating files:  35% (970/2770)Updating files:  36% (998/2770)Updating files:  37% (1025/2770)Updating files:  38% (1053/2770)Updating files:  39% (1081/2770)Updating files:  40% (1108/2770)Updating files:  41% (1136/2770)Updating files:  41% (1147/2770)Updating files:  42% (1164/2770)Updating files:  43% (1192/2770)Updating files:  44% (1219/2770)Updating files:  45% (1247/2770)Updating files:  46% (1275/2770)Updating files:  47% (1302/2770)Updating files:  48% (1330/2770)Updating files:  49% (1358/2770)Updating files:  50% (1385/2770)Updating files:  51% (1413/2770)Updating files:  51% (1420/2770)Updating files:  52% (1441/2770)Updating files:  53% (1469/2770)Updating files:  54% (1496/2770)Updating files:  55% (1524/2770)Updating files:  56% (1552/2770)Updating files:  57% (1579/2770)Updating files:  58% (1607/2770)Updating files:  59% (1635/2770)Updating files:  60% (1662/2770)Updating files:  60% (1676/2770)Updating files:  61% (1690/2770)Updating files:  62% (1718/2770)Updating files:  63% (1746/2770)Updating files:  64% (1773/2770)Updating files:  65% (1801/2770)Updating files:  66% (1829/2770)Updating files:  67% (1856/2770)Updating files:  68% (1884/2770)Updating files:  69% (1912/2770)Updating files:  70% (1939/2770)Updating files:  70% (1940/2770)Updating files:  71% (1967/2770)Updating files:  72% (1995/2770)Updating files:  73% (2023/2770)Updating files:  74% (2050/2770)Updating files:  75% (2078/2770)Updating files:  76% (2106/2770)Updating files:  77% (2133/2770)Updating files:  78% (2161/2770)Updating files:  79% (2189/2770)Updating files:  80% (2216/2770)Updating files:  81% (2244/2770)Updating files:  81% (2269/2770)Updating files:  82% (2272/2770)Updating files:  83% (2300/2770)Updating files:  84% (2327/2770)Updating files:  85% (2355/2770)Updating files:  86% (2383/2770)Updating files:  87% (2410/2770)Updating files:  88% (2438/2770)Updating files:  89% (2466/2770)Updating files:  90% (2493/2770)Updating files:  91% (2521/2770)Updating files:  92% (2549/2770)Updating files:  93% (2577/2770)Updating files:  94% (2604/2770)Updating files:  94% (2623/2770)Updating files:  95% (2632/2770)Updating files:  96% (2660/2770)Updating files:  97% (2687/2770)Updating files:  98% (2715/2770)Updating files:  99% (2743/2770)Updating files: 100% (2770/2770)Updating files: 100% (2770/2770), done.
+Updating files:  15% (426/2802)Updating files:  16% (449/2802)Updating files:  17% (477/2802)Updating files:  18% (505/2802)Updating files:  19% (533/2802)Updating files:  20% (561/2802)Updating files:  21% (589/2802)Updating files:  22% (617/2802)Updating files:  23% (645/2802)Updating files:  24% (673/2802)Updating files:  25% (701/2802)Updating files:  26% (729/2802)Updating files:  27% (757/2802)Updating files:  27% (769/2802)Updating files:  28% (785/2802)Updating files:  29% (813/2802)Updating files:  30% (841/2802)Updating files:  31% (869/2802)Updating files:  32% (897/2802)Updating files:  33% (925/2802)Updating files:  34% (953/2802)Updating files:  35% (981/2802)Updating files:  36% (1009/2802)Updating files:  36% (1032/2802)Updating files:  37% (1037/2802)Updating files:  38% (1065/2802)Updating files:  39% (1093/2802)Updating files:  40% (1121/2802)Updating files:  41% (1149/2802)Updating files:  42% (1177/2802)Updating files:  43% (1205/2802)Updating files:  44% (1233/2802)Updating files:  44% (1255/2802)Updating files:  45% (1261/2802)Updating files:  46% (1289/2802)Updating files:  47% (1317/2802)Updating files:  48% (1345/2802)Updating files:  49% (1373/2802)Updating files:  50% (1401/2802)Updating files:  51% (1430/2802)Updating files:  52% (1458/2802)Updating files:  53% (1486/2802)Updating files:  54% (1514/2802)Updating files:  55% (1542/2802)Updating files:  55% (1558/2802)Updating files:  56% (1570/2802)Updating files:  57% (1598/2802)Updating files:  58% (1626/2802)Updating files:  59% (1654/2802)Updating files:  60% (1682/2802)Updating files:  61% (1710/2802)Updating files:  62% (1738/2802)Updating files:  63% (1766/2802)Updating files:  64% (1794/2802)Updating files:  65% (1822/2802)Updating files:  66% (1850/2802)Updating files:  66% (1856/2802)Updating files:  67% (1878/2802)Updating files:  68% (1906/2802)Updating files:  69% (1934/2802)Updating files:  70% (1962/2802)Updating files:  71% (1990/2802)Updating files:  72% (2018/2802)Updating files:  73% (2046/2802)Updating files:  74% (2074/2802)Updating files:  75% (2102/2802)Updating files:  76% (2130/2802)Updating files:  77% (2158/2802)Updating files:  77% (2185/2802)Updating files:  78% (2186/2802)Updating files:  79% (2214/2802)Updating files:  80% (2242/2802)Updating files:  81% (2270/2802)Updating files:  82% (2298/2802)Updating files:  82% (2308/2802)Updating files:  83% (2326/2802)Updating files:  84% (2354/2802)Updating files:  85% (2382/2802)Updating files:  86% (2410/2802)Updating files:  87% (2438/2802)Updating files:  88% (2466/2802)Updating files:  89% (2494/2802)Updating files:  90% (2522/2802)Updating files:  91% (2550/2802)Updating files:  92% (2578/2802)Updating files:  93% (2606/2802)Updating files:  94% (2634/2802)Updating files:  95% (2662/2802)Updating files:  95% (2683/2802)Updating files:  96% (2690/2802)Updating files:  97% (2718/2802)Updating files:  98% (2746/2802)Updating files:  99% (2774/2802)Updating files: 100% (2802/2802)Updating files: 100% (2802/2802), done.
