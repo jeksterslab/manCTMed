@@ -79,7 +79,7 @@ and <code>BootMedStd</code> functions from the <code>cTMed</code>
 package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/simStateSpace" class="external-link">simStateSpace</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/bootStateSpace" class="external-link">bootStateSpace</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="continuous-time-vector-autoregressive-model-estimates">Continuous-Time Vector Autoregressive Model Estimates<a class="anchor" aria-label="anchor" href="#continuous-time-vector-autoregressive-model-estimates"></a>
@@ -229,9 +229,9 @@ Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#parametr
 <p>The parametric bootstrap approach involves generating data from the
 parametric model and fitting the model on the generated data multipke
 times. The data generation and model fitting is hadled by the
-<code>simStateSpace</code> package. The estimated parameters are passed
+<code>bootStateSpace</code> package. The estimated parameters are passed
 as arguments to the <code>PBSSMOUFixed</code> function from the
-<code>simStateSpace</code> package, which generates a parametric
+<code>bootStateSpace</code> package, which generates a parametric
 bootstrap sampling distribution of the parameter estimates. The argument
 <code>R</code> specifies the number of bootstrap replications. The
 generated data and model estimates are be stored in <code>path</code>
@@ -266,7 +266,7 @@ times is computationally intensive.</p>
 <span><span class="va">mu0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span></span>
 <span><span class="va">sigma0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cov</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span>, <span class="va">varnames</span><span class="op">]</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
 <span>  R <span class="op">=</span> <span class="va">R</span>,</span>
 <span>  path <span class="op">=</span> <span class="va">path</span>,</span>
 <span>  prefix <span class="op">=</span> <span class="va">prefix</span>,</span>
@@ -296,7 +296,7 @@ the <code>BootMed</code> presents the regions of significance visually
 represented by shaded areas in the plot.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMed.html" class="external-link">BootMed</a></span><span class="op">(</span></span>
-<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
+<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
@@ -366,8 +366,8 @@ total effects for a time interval of one, two, and three are given
 below.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMedStd.html" class="external-link">BootMedStd</a></span><span class="op">(</span></span>
-<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
-<span>  sigma <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"sigma"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap process noise covariance matrices</span></span>
+<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
+<span>  sigma <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"sigma"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap process noise covariance matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
 <span>  sigma_hat <span class="op">=</span> <span class="va">sigma_hat</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>

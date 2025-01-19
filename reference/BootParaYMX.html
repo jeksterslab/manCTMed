@@ -76,15 +76,34 @@ Number of cores to use.</p></dd>
     <div class="dont-index"><p>Other Confidence Interval Functions:
 <code><a href="BootPara.html">BootPara</a>()</code>,
 <code><a href="BootParaStdXMY.html">BootParaStdXMY</a>()</code>,
+<code><a href="BootParaStdXYM.html">BootParaStdXYM</a>()</code>,
 <code><a href="BootParaStdYMX.html">BootParaStdYMX</a>()</code>,
 <code><a href="BootParaXMY.html">BootParaXMY</a>()</code>,
+<code><a href="BootParaXYM.html">BootParaXYM</a>()</code>,
 <code><a href="DeltaStdXMY.html">DeltaStdXMY</a>()</code>,
+<code><a href="DeltaStdXYM.html">DeltaStdXYM</a>()</code>,
 <code><a href="DeltaStdYMX.html">DeltaStdYMX</a>()</code>,
 <code><a href="DeltaXMY.html">DeltaXMY</a>()</code>,
+<code><a href="DeltaXYM.html">DeltaXYM</a>()</code>,
 <code><a href="DeltaYMX.html">DeltaYMX</a>()</code>,
+<code><a href="Grundy2007BootPara.html">Grundy2007BootPara</a>()</code>,
+<code><a href="Grundy2007BootParaStdXMY.html">Grundy2007BootParaStdXMY</a>()</code>,
+<code><a href="Grundy2007BootParaStdXYM.html">Grundy2007BootParaStdXYM</a>()</code>,
+<code><a href="Grundy2007BootParaXMY.html">Grundy2007BootParaXMY</a>()</code>,
+<code><a href="Grundy2007BootParaXYM.html">Grundy2007BootParaXYM</a>()</code>,
+<code><a href="Grundy2007DeltaStdXMY.html">Grundy2007DeltaStdXMY</a>()</code>,
+<code><a href="Grundy2007DeltaStdXYM.html">Grundy2007DeltaStdXYM</a>()</code>,
+<code><a href="Grundy2007DeltaXMY.html">Grundy2007DeltaXMY</a>()</code>,
+<code><a href="Grundy2007DeltaXYM.html">Grundy2007DeltaXYM</a>()</code>,
+<code><a href="Grundy2007MCStdXMY.html">Grundy2007MCStdXMY</a>()</code>,
+<code><a href="Grundy2007MCStdXYM.html">Grundy2007MCStdXYM</a>()</code>,
+<code><a href="Grundy2007MCXMY.html">Grundy2007MCXMY</a>()</code>,
+<code><a href="Grundy2007MCXYM.html">Grundy2007MCXYM</a>()</code>,
 <code><a href="MCStdXMY.html">MCStdXMY</a>()</code>,
+<code><a href="MCStdXYM.html">MCStdXYM</a>()</code>,
 <code><a href="MCStdYMX.html">MCStdYMX</a>()</code>,
 <code><a href="MCXMY.html">MCXMY</a>()</code>,
+<code><a href="MCXYM.html">MCXYM</a>()</code>,
 <code><a href="MCYMX.html">MCYMX</a>()</code></p></div>
     </div>
 
@@ -105,8 +124,8 @@ Number of cores to use.</p></dd>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="fu"><a href="PhiHat.html">PhiHat</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">ci</span> <span class="op">&lt;-</span> <span class="fu">BootParaYMX</span><span class="op">(</span>boot <span class="op">=</span> <span class="va">boot</span>, phi_hat <span class="op">=</span> <span class="va">phi_hat</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ci</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

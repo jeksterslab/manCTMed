@@ -78,7 +78,7 @@ for a range of time intervals. This example features the
 package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/simStateSpace" class="external-link">simStateSpace</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/bootStateSpace" class="external-link">bootStateSpace</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="continuous-time-vector-autoregressive-model-estimates">Continuous-Time Vector Autoregressive Model Estimates<a class="anchor" aria-label="anchor" href="#continuous-time-vector-autoregressive-model-estimates"></a>
@@ -252,9 +252,9 @@ Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#parametr
 <p>The parametric bootstrap approach involves generating data from the
 parametric model and fitting the model on the generated data multipke
 times. The data generation and model fitting is hadled by the
-<code>simStateSpace</code> package. The estimated parameters are passed
+<code>bootStateSpace</code> package. The estimated parameters are passed
 as arguments to the <code>PBSSMOUFixed</code> function from the
-<code>simStateSpace</code> package, which generates a parametric
+<code>bootStateSpace</code> package, which generates a parametric
 bootstrap sampling distribution of the parameter estimates. The argument
 <code>R</code> specifies the number of bootstrap replications. The
 generated data and model estimates are be stored in <code>path</code>
@@ -289,7 +289,7 @@ times is computationally intensive.</p>
 <span><span class="va">mu0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span></span>
 <span><span class="va">sigma0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cov</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span>, <span class="va">varnames</span><span class="op">]</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
 <span>  R <span class="op">=</span> <span class="va">R</span>,</span>
 <span>  path <span class="op">=</span> <span class="va">path</span>,</span>
 <span>  prefix <span class="op">=</span> <span class="va">prefix</span>,</span>
@@ -314,7 +314,7 @@ package, confidence intervals for the direct, indirect, and total
 effects for a time interval of one, two, and three are given below.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMed.html" class="external-link">BootMed</a></span><span class="op">(</span></span>
-<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
+<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
@@ -323,26 +323,26 @@ effects for a time interval of one, two, and three are given below.</p>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082830099 0.038839149 1000 -0.15857211 -0.0067447338</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004132077 1000 -0.01486750  0.0009337155</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137257463 0.061181585 1000 -0.25798543 -0.0166954224</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.061572293 1000 -0.23958489  0.0004530425</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011795758 1000 -0.04200704  0.0027314095</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171598190 0.074225990 1000 -0.32394299 -0.0243010211</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.074293526 1000 -0.29040288  0.0005657691</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019357469 1000 -0.06865166  0.0053818978</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040277222 1000 -0.16141366 -0.0034289678</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040662753 1000 -0.15707023  0.0053502754</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004215608 1000 -0.01478833  0.0008123522</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063196983 1000 -0.25893091 -0.0110900799</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063816087 1000 -0.24565283  0.0081153385</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.012049095 1000 -0.04248535  0.0024827773</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076350801 1000 -0.32197941 -0.0200881622</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.076759668 1000 -0.29843328  0.0094845520</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019813810 1000 -0.07025556  0.0048538594</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
 <span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082830099 0.038839149 1000 -0.15827071 -0.0067284469</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.039136185 1000 -0.15279503  0.0002762973</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004132077 1000 -0.01677540  0.0001650497</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137257463 0.061181585 1000 -0.25773872 -0.0164675508</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.061572293 1000 -0.24341285 -0.0006077631</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011795758 1000 -0.04670110  0.0008068482</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171598190 0.074225990 1000 -0.32412418 -0.0248197412</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.074293526 1000 -0.29542857 -0.0026213182</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019357469 1000 -0.07560494  0.0024325605</span></span></code></pre></div>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040277222 1000 -0.15657376  3.902251e-04</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040662753 1000 -0.15679483  7.423718e-03</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004215608 1000 -0.01745608  9.471481e-05</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063196983 1000 -0.25592898 -9.830393e-03</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063816087 1000 -0.24652992  6.928349e-03</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.012049095 1000 -0.04963851  6.214087e-04</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076350801 1000 -0.32117551 -1.912325e-02</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.076759668 1000 -0.29891678  5.556364e-03</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019813810 1000 -0.07914474  1.590159e-03</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="delta-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Delta Method Confidence Intervals For The Standardized Direct,
@@ -434,8 +434,8 @@ total effects for a time interval of one, two, and three are given
 below.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMedStd.html" class="external-link">BootMedStd</a></span><span class="op">(</span></span>
-<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
-<span>  sigma <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/simStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"sigma"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap process noise covariance matrices</span></span>
+<span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
+<span>  sigma <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"sigma"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap process noise covariance matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
 <span>  sigma_hat <span class="op">=</span> <span class="va">sigma_hat</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>,</span>
@@ -444,27 +444,27 @@ below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     effect interval          est          se   R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095646850 0.050188622 999 -0.20368381 -0.0067932439</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.049719287 999 -0.19241664  0.0002108455</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005158217 999 -0.01882737  0.0010841985</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158496057 0.079867920 999 -0.33781326 -0.0176140363</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.077972907 999 -0.30524055  0.0003450431</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014738021 999 -0.05317883  0.0035171688</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198150511 0.097330287 999 -0.41728092 -0.0244380601</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.093594630 999 -0.36956048  0.0004302193</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024165354 999 -0.08734549  0.0064530805</span></span>
+<span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052846649 1000 -0.20534269 -0.0026544623</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.052592859 1000 -0.20045509  0.0052105707</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005230303 1000 -0.01914997  0.0008616874</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083746461 1000 -0.33842867 -0.0111119229</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.082471085 1000 -0.31278257  0.0079054204</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014964167 1000 -0.05444703  0.0026549459</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101658862 1000 -0.42637346 -0.0209528914</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.098945307 1000 -0.37955788  0.0092427835</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024594391 1000 -0.08869882  0.0051907352</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
-<span><span class="co">#&gt;     effect interval          est          se   R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095646850 0.050188622 999 -0.20737779 -0.0091184523</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.049719287 999 -0.19746337 -0.0011981283</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005158217 999 -0.02055410  0.0001106158</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158496057 0.079867920 999 -0.34685496 -0.0216382718</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.077972907 999 -0.31385489 -0.0027954931</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014738021 999 -0.05900613  0.0007659007</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198150511 0.097330287 999 -0.42909365 -0.0311469829</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.093594630 999 -0.37484786 -0.0030606408</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024165354 999 -0.09535630  0.0019420703</span></span></code></pre></div>
+<span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052846649 1000 -0.21926657 -5.619566e-03</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.052592859 1000 -0.20978356  4.282886e-05</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005230303 1000 -0.02182373 -5.777456e-05</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083746461 1000 -0.35596909 -1.832226e-02</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.082471085 1000 -0.33206110 -1.328090e-03</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014964167 1000 -0.06188809  1.782209e-04</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101658862 1000 -0.43406333 -2.944776e-02</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.098945307 1000 -0.40136619 -2.189508e-03</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024594391 1000 -0.10052775  8.288347e-04</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
