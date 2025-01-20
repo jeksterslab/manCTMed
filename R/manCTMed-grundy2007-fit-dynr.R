@@ -221,44 +221,50 @@ Grundy2007FitDynr <- function(data) {
   ] <- .Machine$double.xmin
   dynr_model$lb <- lb
   dynr_model$ub <- ub
-  tryCatch(
-    {
-      return(
-        dynr::dynr.cook(
-          dynr_model,
-          hessian_flag = TRUE,
-          debug_flag = TRUE,
-          verbose = FALSE
+  try(
+    fit <- dynr::dynr.cook(
+      dynr_model,
+      hessian_flag = TRUE,
+      debug_flag = TRUE,
+      verbose = FALSE
+    )
+  )
+  rerun <- any(
+    is.nan(
+      sqrt(
+        diag(fit$inv.hessian)
+      )
+    )
+  )
+  if (rerun) {
+    max_iter <- 10000
+    for (i in seq_len(max_iter)) {
+      coef(dynr_model) <- coef(fit) + stats::runif(
+        n = length(coef(fit)),
+        min = -.2,
+        max = +.2
+      )
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        hessian_flag = TRUE,
+        debug_flag = TRUE,
+        verbose = FALSE
+      )
+      rerun <- any(
+        is.nan(
+          sqrt(
+            diag(fit$inv.hessian)
+          )
         )
       )
-    },
-    error = function(e) {
-      fit <- dynr::dynr.cook(
-        dynr_model,
-        hessian_flag = TRUE,
-        debug_flag = TRUE,
-        verbose = FALSE
-      )
-      coef(dynr_model) <- coef(fit)
-      fit <- dynr::dynr.cook(
-        dynr_model,
-        verbose = FALSE
-      )
-      return(fit)
-    },
-    warning = function(w) {
-      fit <- dynr::dynr.cook(
-        dynr_model,
-        hessian_flag = TRUE,
-        debug_flag = TRUE,
-        verbose = FALSE
-      )
-      coef(dynr_model) <- coef(fit)
-      fit <- dynr::dynr.cook(
-        dynr_model,
-        verbose = FALSE
-      )
-      return(fit)
+      if (!rerun) {
+        return(fit)
+      }
+      if (i > max_iter) {
+        stop("Max iterations reached.")
+      }
     }
-  )
+  } else {
+    return(fit)
+  }
 }
