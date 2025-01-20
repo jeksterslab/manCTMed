@@ -239,11 +239,34 @@ Grundy2007FitDynr <- function(data) {
   if (rerun) {
     max_iter <- 10000
     for (i in seq_len(max_iter)) {
-      coef(dynr_model) <- coef(fit) + stats::runif(
-        n = length(coef(fit)),
+      ## jitter the drift matrix
+      est <- coef(fit)
+      est[
+        c(
+          "phi_21",
+          "phi_31",
+          "phi_12",
+          "phi_32",
+          "phi_13",
+          "phi_23"
+        )
+      ] + stats::runif(
+        n = 6,
         min = -.2,
         max = +.2
       )
+      est[
+        c(
+          "phi_11",
+          "phi_22",
+          "phi_33"
+        )
+      ] + stats::runif(
+        n = 3,
+        min = .Machine$double.xmin,
+        max = +.2
+      )
+      coef(dynr_model) <- est
       fit <- dynr::dynr.cook(
         dynr_model,
         hessian_flag = TRUE,
