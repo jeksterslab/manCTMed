@@ -239,17 +239,6 @@ FitDynr <- function(data,
         min = -.2,
         max = +.2
       )
-      est[
-        c(
-          "phi_11",
-          "phi_22",
-          "phi_33"
-        )
-      ] + stats::runif(
-        n = 3,
-        min = .Machine$double.xmin,
-        max = +.2
-      )
       coef(dynr_model) <- est
       fit <- dynr::dynr.cook(
         dynr_model,
