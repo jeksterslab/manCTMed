@@ -256,11 +256,13 @@ Grundy2007FitDynr <- function(data) {
         max = +.2
       )
       coef(dynr_model) <- est
-      fit <- dynr::dynr.cook(
-        dynr_model,
-        hessian_flag = TRUE,
-        debug_flag = TRUE,
-        verbose = FALSE
+      try(
+        fit <- dynr::dynr.cook(
+          dynr_model,
+          hessian_flag = TRUE,
+          debug_flag = TRUE,
+          verbose = FALSE
+        )
       )
       rerun <- any(
         is.nan(
