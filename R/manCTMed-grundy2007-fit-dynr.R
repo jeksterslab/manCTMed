@@ -221,12 +221,44 @@ Grundy2007FitDynr <- function(data) {
   ] <- .Machine$double.xmin
   dynr_model$lb <- lb
   dynr_model$ub <- ub
-  return(
-    dynr::dynr.cook(
-      dynr_model,
-      hessian_flag = TRUE,
-      debug_flag = TRUE,
-      verbose = FALSE
-    )
+  tryCatch(
+    {
+      return(
+        dynr::dynr.cook(
+          dynr_model,
+          hessian_flag = TRUE,
+          debug_flag = TRUE,
+          verbose = FALSE
+        )
+      )
+    },
+    error = function(e) {
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        hessian_flag = TRUE,
+        debug_flag = TRUE,
+        verbose = FALSE
+      )
+      coef(dynr_model) <- coef(fit)
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        verbose = FALSE
+      )
+      return(fit)
+    },
+    warning = function(w) {
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        hessian_flag = TRUE,
+        debug_flag = TRUE,
+        verbose = FALSE
+      )
+      coef(dynr_model) <- coef(fit)
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        verbose = FALSE
+      )
+      return(fit)
+    }
   )
 }
