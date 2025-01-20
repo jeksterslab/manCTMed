@@ -239,7 +239,7 @@ FitDynr <- function(data,
         min = -.2,
         max = +.2
       )
-      coef(dynr_model) <- est 
+      coef(dynr_model) <- est
       fit <- dynr::dynr.cook(
         dynr_model,
         hessian_flag = TRUE,
