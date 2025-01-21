@@ -188,7 +188,7 @@ FitDynr <- function(data,
       "phi_22",
       "phi_33"
     )
-  ] <- .Machine$double.xmin
+  ] <- -1 * .Machine$double.xmin
   lb[
     c(
       "sigma_11",
