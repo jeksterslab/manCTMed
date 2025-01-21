@@ -188,7 +188,7 @@ FitDynr <- function(data,
       "phi_22",
       "phi_33"
     )
-  ] <- .Machine$double.xmin
+  ] <- -1 * .Machine$double.xmin
   lb[
     c(
       "sigma_11",
@@ -239,7 +239,7 @@ FitDynr <- function(data,
         min = -.2,
         max = +.2
       )
-      coef(dynr_model) <- est
+      coef(dynr_model) <- est 
       try(
         fit <- dynr::dynr.cook(
           dynr_model,
