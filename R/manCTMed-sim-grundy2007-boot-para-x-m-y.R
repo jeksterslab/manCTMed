@@ -18,7 +18,7 @@ SimGrundy2007BootParaXMY <- function(taskid,
                                      integrity,
                                      delta_t) {
   # Do not include default arguments here.
-  # Do not run on its own. Use the `Sim` function.
+  # Do not run on its own. Use the `SimGrundy2007` function.
   fn_fit <- SimFN(
     output_type = "grundy2007-fit-dynr",
     output_folder = output_folder,
