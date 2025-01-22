@@ -21,9 +21,9 @@ SimGrundy2007 <- function(taskid,
   output_folder <- file.path(
     output_folder,
     paste0(
-      "grundy2007",
-      "-",
       SimProj(),
+      "-",
+      "grundy2007",
       "-",
       sprintf(
         "%05d",

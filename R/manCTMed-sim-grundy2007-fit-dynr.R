@@ -17,7 +17,7 @@ SimGrundy2007FitDynr <- function(taskid,
                                  overwrite,
                                  integrity) {
   # Do not include default arguments here.
-  # Do not run on its own. Use the `Sim` function.
+  # Do not run on its own. Use the `SimGrundy2007` function.
   fn_input <- SimFN(
     output_type = "grundy2007-data",
     output_folder = output_folder,
