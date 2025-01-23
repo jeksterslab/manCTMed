@@ -222,16 +222,14 @@ Grundy2007FitDynr <- function(data) {
   dynr_model$lb <- lb
   dynr_model$ub <- ub
   try(
-    suppressWarnings(
-      {
-        fit <- dynr::dynr.cook(
-          dynr_model,
-          hessian_flag = TRUE,
-          debug_flag = TRUE,
-          verbose = FALSE
-        )
-      }
-    ),
+    suppressWarnings({
+      fit <- dynr::dynr.cook(
+        dynr_model,
+        hessian_flag = TRUE,
+        debug_flag = TRUE,
+        verbose = FALSE
+      )
+    }),
     silent = TRUE
   )
   rerun <- any(
@@ -264,16 +262,14 @@ Grundy2007FitDynr <- function(data) {
       )
       coef(dynr_model) <- est
       try(
-        suppressWarnings(
-          {
-            fit <- dynr::dynr.cook(
-              dynr_model,
-              hessian_flag = TRUE,
-              debug_flag = TRUE,
-              verbose = FALSE
-            )
-          }
-        ),
+        suppressWarnings({
+          fit <- dynr::dynr.cook(
+            dynr_model,
+            hessian_flag = TRUE,
+            debug_flag = TRUE,
+            verbose = FALSE
+          )
+        }),
         silent = TRUE
       )
       rerun <- any(
