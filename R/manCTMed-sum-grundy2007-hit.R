@@ -1,4 +1,4 @@
-#' Summarize Simulations - Raw
+#' Summarize Simulations - CI Hit
 #' (Grundy, et al. 2007)
 #'
 #' @author Ivan Jacob Agaloos Pesigan
@@ -9,11 +9,11 @@
 #' @export
 #' @keywords manCTMed ci summary
 # nolint start: cyclocomp_linter
-SumGrundyRaw <- function(taskid,
-                         reps,
-                         output_folder,
-                         output_type,
-                         ncores) {
+SumGrundy2007Hit <- function(taskid,
+                             reps,
+                             output_folder,
+                             output_type,
+                             ncores) {
   if (taskid == 1) {
     n <- 133
   } else {
@@ -159,6 +159,8 @@ SumGrundyRaw <- function(taskid,
     paste0(
       SimProj(),
       "-",
+      "grundy2007",
+      "-",
       sprintf(
         "%05d",
         taskid
@@ -231,18 +233,32 @@ SumGrundyRaw <- function(taskid,
     "direct",
     "indirect"
   )
+  out <- cbind(
+    taskid = taskid,
+    replications = reps,
+    n = n,
+    method = method,
+    out,
+    output_type = output_type,
+    xmy = xmy,
+    std = std,
+    dynamics = 0
+  )
+  if (method == "delta") {
+    out$R <- NA
+  }
+  if (method == "mc") {
+    out$z <- NA
+    out$p <- NA
+    out$sig <- NA
+  }
+  if (method == "pb") {
+    out$z <- NA
+    out$p <- NA
+    out$sig <- NA
+  }
   return(
-    cbind(
-      taskid = taskid,
-      replications = reps,
-      n = n,
-      method = method,
-      out,
-      output_type = output_type,
-      xmy = xmy,
-      std = std,
-      dynamics = 0
-    )
+    out
   )
 }
 # nolint end
