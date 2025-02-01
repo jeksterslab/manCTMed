@@ -210,6 +210,7 @@ data_process_example_med <- function(overwrite = FALSE,
     library(dynr)
     library(cTMed)
     library(simStateSpace)
+    library(bootStateSpace)
     fit <- readRDS(
       file = fit_example_ct
     )

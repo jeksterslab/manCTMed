@@ -1,14 +1,14 @@
 ---
-title: "Illustrative Example 1 - Direct, Indirect, and Total Effects"
+title: "Illustration 1 - Direct, Indirect, and Total Effects"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Illustrative Example 1 - Direct, Indirect, and Total Effects}
+  %\VignetteIndexEntry{Illustration 1 - Direct, Indirect, and Total Effects}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 1. The goal of the example is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a specific time interval or a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
+This vignette accompanies Illustration 1. The goal of the illustration is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a specific time interval or a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
 
 
 
@@ -155,3 +155,51 @@ plot(med_std)
 ```
 
 <img src="fig-vignettes-example-1-unnamed-chunk-10-1.png" width="1700" />
+
+## Visualizing Normality of Direct, Indirect, and Total Effects
+
+The sampling distribution of the direct, indirect, and total effects were generated using 1000 samples.
+
+
+
+<img src="fig-vignettes-example-1-direct-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-indirect-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-total-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-direct-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-indirect-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-total-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-direct-3-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-indirect-3-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-total-3-1.png" width="1700" />
+
+## Visualizing Normality of Standardized Direct, Indirect, and Total Effects
+
+The sampling distribution of the standardized direct, indirect, and total effects were generated using 1000 samples.
+
+
+
+<img src="fig-vignettes-example-1-std-direct-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-indirect-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-total-1-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-direct-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-indirect-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-total-2-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-direct-3-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-indirect-3-1.png" width="1700" />
+
+<img src="fig-vignettes-example-1-std-total-3-1.png" width="1700" />

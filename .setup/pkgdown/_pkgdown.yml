@@ -44,11 +44,11 @@ articles:
 - title: manCTMed
   contents:
   - manCTMed
-- title: Data Generation and Model Fitting for the Illustrative Examples
+- title: Data Generation and Model Fitting for the Empirical Example
   contents:
   - fig-example-data-gen
   - fig-example-ct-var
-- title: Illustrative Examples
+- title: Three Illustrations Using an Empirical Data Set
   contents:
   - fig-example-1
   - fig-example-2

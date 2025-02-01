@@ -14,7 +14,7 @@
                      digits = 2,
                      open = "$",
                      close = "$",
-                     init = "") {
+                     init = NULL) {
   stopifnot(
     is.matrix(x) || is.data.frame(x)
   )
@@ -50,12 +50,19 @@
       collapse = " & "
     )
   }
-  z <- paste(
-    init,
-    " & ",
-    z,
-    collapse = " \\\\"
-  )
+  if (is.null(init)) {
+    z <- paste(
+      z,
+      collapse = " \\\\"
+    )
+  } else {
+    z <- paste(
+      init,
+      " & ",
+      z,
+      collapse = " \\\\"
+    )
+  }
   z <- paste0(
     z,
     " \\\\"

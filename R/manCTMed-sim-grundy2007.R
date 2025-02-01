@@ -14,7 +14,9 @@ SimGrundy2007 <- function(taskid,
                           integrity,
                           delta_t,
                           R,
-                          B) {
+                          B,
+                          fit_dynr = FALSE,
+                          seed = NULL) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -39,10 +41,12 @@ SimGrundy2007 <- function(taskid,
     )
     .SimChMod(output_folder)
   }
-  seed <- .SimSeed(
-    taskid = taskid,
-    repid = repid
-  )
+  if (is.null(seed)) {
+    seed <- .SimSeed(
+      taskid = taskid,
+      repid = repid
+    )
+  }
   suffix <- .SimSuffix(
     taskid = taskid,
     repid = repid
@@ -65,138 +69,140 @@ SimGrundy2007 <- function(taskid,
     overwrite = overwrite,
     integrity = integrity
   )
-  SimGrundy2007DynrDeltaXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007DynrDeltaXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007DynrDeltaStdXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007DynrDeltaStdXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007DynrMCXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimGrundy2007DynrMCXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimGrundy2007DynrMCStdXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimGrundy2007DynrMCStdXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimGrundy2007BootPara(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    B = B
-  )
-  SimGrundy2007BootParaXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007BootParaXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007BootParaStdXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimGrundy2007BootParaStdXYM(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
+  if (!fit_dynr) {
+    SimGrundy2007DynrDeltaXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007DynrDeltaXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007DynrDeltaStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007DynrDeltaStdXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007DynrMCXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimGrundy2007DynrMCXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimGrundy2007DynrMCStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimGrundy2007DynrMCStdXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimGrundy2007BootPara(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      B = B
+    )
+    SimGrundy2007BootParaXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007BootParaXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007BootParaStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimGrundy2007BootParaStdXYM(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+  }
 }

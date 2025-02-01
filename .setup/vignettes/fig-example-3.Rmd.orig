@@ -1,14 +1,14 @@
 ---
-title: "Illustrative Example 3 - Regions of Significance"
+title: "Illustration 3 - Regions of Significance"
 author: "Ivan Jacob Agaloos Pesigan"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Illustrative Example 3 - Regions of Significance}
+  %\VignetteIndexEntry{Illustration 3 - Regions of Significance}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-This vignette accompanies Illustrative Example 3. The goal of the example is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
+This vignette accompanies Illustration 3. The goal of the illustration is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
 
 ```{r}
 #| include = FALSE
@@ -145,6 +145,16 @@ vcov_theta <- matrix(
 )
 ```
 
+```{r}
+# range of time intervals
+delta_t <- sort(
+  c(
+    0:10,
+    seq(from = 0, to = 10, length.out = 1000)
+  )
+)
+```
+
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
 Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
@@ -154,7 +164,7 @@ Using the `DeltaMed` function from the `cTMed` package, confidence intervals for
 delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",
@@ -171,7 +181,7 @@ Using the `MCMed` function from the `cTMed` package, confidence intervals for th
 mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",
@@ -246,7 +256,7 @@ Using the `BootMed` function from the `cTMed` package, confidence intervals for 
 pb <- BootMed(
   phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
   phi_hat = phi_hat,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",
@@ -265,7 +275,7 @@ delta_std <- DeltaMedStd(
   phi = phi,
   sigma = sigma,
   vcov_theta = vcov_theta,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",
@@ -283,7 +293,7 @@ mc_std <- MCMedStd(
   phi = phi,
   sigma = sigma,
   vcov_theta = vcov_theta,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",
@@ -304,7 +314,7 @@ pb <- BootMedStd(
   sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
   phi_hat = phi_hat,
   sigma_hat = sigma_hat,
-  delta_t = seq(from = 0, to = 10, length.out = 1000),
+  delta_t = delta_t,
   from = "conflict",
   to = "competence",
   med = "knowledge",

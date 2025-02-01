@@ -58,7 +58,7 @@ dynr_data <- dynr::dynr.data(
 ## Prepare the Initial Condition
 
 ```{r}
-data_0 <- data[which(data[, "time"] == 0), ]
+data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
 dynr_initial <- dynr::prep.initial(
   values.inistate = colMeans(data_0)[
     c(

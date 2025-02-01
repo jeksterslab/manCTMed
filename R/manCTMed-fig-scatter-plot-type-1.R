@@ -39,6 +39,11 @@ FigScatterPlotType1 <- function(results,
     yes = "MC",
     no = Method
   )
+  Method <- ifelse(
+    test = results$std,
+    yes = paste0(Method, " (std)"),
+    no = Method
+  )
   results$Method <- Method
   effect_label <- as.character(
     results$effect

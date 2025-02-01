@@ -28,7 +28,8 @@ tryCatch(
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
       R = R,
       B = B,
-      delta_t = delta_t
+      delta_t = delta_t,
+      fit_dynr = TRUE
     )
   },
   error = function(e) {

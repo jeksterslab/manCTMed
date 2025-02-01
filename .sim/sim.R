@@ -27,7 +27,8 @@ tryCatch(
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
       R = R,
-      delta_t = delta_t
+      delta_t = delta_t,
+      fit_dynr = FALSE
     )
   },
   error = function(e) {

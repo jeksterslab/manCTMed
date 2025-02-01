@@ -17,3 +17,4 @@ cd /scratch/ibp5092/manCTMed
 cp /scratch/ibp5092/manCTMed/vignettes/*.png /scratch/ibp5092/manCTMed/.setup/latex/figures/png
 apptainer exec /scratch/ibp5092/manCTMed/.sif/manctmed.sif make all
 apptainer exec /scratch/ibp5092/manCTMed/.sif/manctmed.sif make auto
+
