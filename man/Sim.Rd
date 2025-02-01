@@ -4,7 +4,17 @@
 \alias{Sim}
 \title{Simulation Replication}
 \usage{
-Sim(taskid, repid, output_folder, overwrite, integrity, delta_t, R)
+Sim(
+  taskid,
+  repid,
+  output_folder,
+  overwrite,
+  integrity,
+  delta_t,
+  R,
+  fit_dynr = FALSE,
+  seed = NULL
+)
 }
 \arguments{
 \item{taskid}{Positive integer.
@@ -28,6 +38,12 @@ Vector of time intervals.}
 
 \item{R}{Positive integer.
 Number of random drift matrices to generate.}
+
+\item{fit_dynr}{Logical.
+Generate data and fit the CT-VAR model only.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

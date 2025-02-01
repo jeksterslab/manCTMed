@@ -46,6 +46,8 @@
 #'   Number of replications.
 #' @param ncores Positive integer.
 #'   Number of cores to use.
+#' @param fit_dynr Logical.
+#'   Generate data and fit the CT-VAR model only.
 #'
 #' @name Template
 NULL

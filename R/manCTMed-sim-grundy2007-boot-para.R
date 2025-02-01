@@ -35,7 +35,7 @@ SimGrundy2007BootPara <- function(taskid,
     suffix = suffix
   )
   prefix <- paste0(
-    "grundy2007-dynr-boot-para-rep",
+    "grundy2007_dynr_boot_para_rep",
     "-",
     sprintf(
       "%05d",

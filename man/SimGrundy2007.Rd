@@ -12,7 +12,9 @@ SimGrundy2007(
   integrity,
   delta_t,
   R,
-  B
+  B,
+  fit_dynr = FALSE,
+  seed = NULL
 )
 }
 \arguments{
@@ -40,6 +42,12 @@ Number of random drift matrices to generate.}
 
 \item{B}{Positive integer.
 Number of bootstrap samples.}
+
+\item{fit_dynr}{Logical.
+Generate data and fit the CT-VAR model only.}
+
+\item{seed}{Integer.
+Random seed.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

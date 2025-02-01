@@ -13,7 +13,9 @@ Sim <- function(taskid,
                 overwrite,
                 integrity,
                 delta_t,
-                R) {
+                R,
+                fit_dynr = FALSE,
+                seed = NULL) {
   # Do not include default arguments here.
   # All arguments should be set in `sim/sim-args.R`.
   # Add taskid to output_folder
@@ -36,10 +38,12 @@ Sim <- function(taskid,
     )
     .SimChMod(output_folder)
   }
-  seed <- .SimSeed(
-    taskid = taskid,
-    repid = repid
-  )
+  if (is.null(seed)) {
+    seed <- .SimSeed(
+      taskid = taskid,
+      repid = repid
+    )
+  }
   suffix <- .SimSuffix(
     taskid = taskid,
     repid = repid
@@ -62,88 +66,90 @@ Sim <- function(taskid,
     overwrite = overwrite,
     integrity = integrity
   )
-  SimDynrDeltaXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimDynrDeltaYMX(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimDynrMCXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimDynrMCYMX(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimDynrDeltaStdXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimDynrDeltaStdYMX(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t
-  )
-  SimDynrMCStdXMY(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
-  SimDynrMCStdYMX(
-    taskid = taskid,
-    repid = repid,
-    output_folder = output_folder,
-    seed = seed,
-    suffix = suffix,
-    overwrite = overwrite,
-    integrity = integrity,
-    delta_t = delta_t,
-    R = R
-  )
+  if (!fit_dynr) {
+    SimDynrDeltaXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimDynrDeltaYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimDynrMCXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimDynrMCYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimDynrDeltaStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimDynrDeltaStdYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t
+    )
+    SimDynrMCStdXMY(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+    SimDynrMCStdYMX(
+      taskid = taskid,
+      repid = repid,
+      output_folder = output_folder,
+      seed = seed,
+      suffix = suffix,
+      overwrite = overwrite,
+      integrity = integrity,
+      delta_t = delta_t,
+      R = R
+    )
+  }
 }
