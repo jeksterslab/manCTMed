@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Illustrative Example 3 - Regions of Significance • manCTMed</title>
+<title>Illustration 3 - Regions of Significance • manCTMed</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.9/font.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link href="../deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustrative Example 3 - Regions of Significance">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustration 3 - Regions of Significance">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Illustrative Example 3 - Regions of Significance</h1>
+      <h1>Illustration 3 - Regions of Significance</h1>
                         <h4 data-toc-skip class="author">Ivan Jacob
 Agaloos Pesigan</h4>
             
@@ -66,12 +66,15 @@ Agaloos Pesigan</h4>
 
     
     
-<p>This vignette accompanies Illustrative Example 3. The goal of the
-example is to visualize regions of significance, that is, a range of
-time intervals, where the effects are significantly different from zero,
-using confidence intervals for the direct, indirect, and total effects
-from the continuous-time vector autoregressive model drift matrix
+<p>This vignette accompanies Illustration 3. The goal of the
+illustration is to visualize regions of significance, that is, a range
+of time intervals, where the effects are significantly different from
+zero, using confidence intervals for the direct, indirect, and total
+effects from the continuous-time vector autoregressive model drift
+matrix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚽</mi><annotation encoding="application/x-tex">\boldsymbol{\Phi}</annotation></semantics></math>
+and process noise covariance matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚺</mi><annotation encoding="application/x-tex">\boldsymbol{\Sigma}</annotation></semantics></math>
 for a range of time intervals. This example features <code>plot</code>
 methods for the <code>DeltaMed</code>, <code>MCMed</code>,
 <code>BootMed</code>, <code>DeltaMedStd</code>, <code>MCMedStd</code>,
@@ -169,6 +172,14 @@ from the <code>fit</code> object.</p>
 <span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/vcov.html" class="external-link">vcov</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="va">phi_sigma_names</span>, <span class="va">phi_sigma_names</span><span class="op">]</span>,</span>
 <span>  nrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">phi_sigma_names</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># range of time intervals</span></span>
+<span><span class="va">delta_t</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="fl">0</span><span class="op">:</span><span class="fl">10</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="delta-method-confidence-intervals-for-the-direct-indirect-and-total-effects">Delta Method Confidence Intervals For The Direct, Indirect, and
@@ -182,18 +193,18 @@ makes regions of significance more visible. Consider using the
 <code>delta_t</code> vector is long. The <code>plot</code> method for
 the <code>DeltaMed</code> presents the regions of significance visually
 represented by shaded areas in the plot.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">delta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/DeltaMed.html" class="external-link">DeltaMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  vcov_phi_vec <span class="op">=</span> <span class="va">vcov_phi_vec</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-9-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-9-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-9-3.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-10-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-10-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-10-3.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="monte-carlo-method-confidence-intervals-for-the-direct-indirect-and-total-effects">Monte Carlo Method Confidence Intervals For The Direct, Indirect,
@@ -207,11 +218,11 @@ makes regions of significance more visible. Consider using the
 <code>delta_t</code> vector is long. The <code>plot</code> method for
 the <code>MCMed</code> presents the regions of significance visually
 represented by shaded areas in the plot.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MCMed.html" class="external-link">MCMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  vcov_phi_vec <span class="op">=</span> <span class="va">vcov_phi_vec</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
@@ -220,7 +231,7 @@ represented by shaded areas in the plot.</p>
 <span>  seed <span class="op">=</span> <span class="fl">42</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-10-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-10-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-10-3.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-11-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-11-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-11-3.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="parametric-bootstrap-method-confidence-intervals-for-the-direct-indirect-and-total-effects">Parametric Bootstrap Method Confidence Intervals For The Direct,
@@ -242,19 +253,19 @@ function to use all available CPU cores in the system.</p>
 <p><strong><em>NOTE:</em></strong> Fitting the CT-VAR model multiple
 times is computationally intensive.</p>
 </blockquote>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">R</span> <span class="op">&lt;-</span> <span class="fl">1000L</span></span>
 <span><span class="va">path</span> <span class="op">&lt;-</span> <span class="va">root</span><span class="op">$</span><span class="fu">find_file</span><span class="op">(</span></span>
 <span>  <span class="st">".setup"</span>,</span>
 <span>  <span class="st">"data-raw"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="va">prefix</span> <span class="op">&lt;-</span> <span class="st">"pb_example_133"</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">phi_hat</span> <span class="op">&lt;-</span> <span class="va">phi</span></span>
 <span><span class="va">sigma_hat</span> <span class="op">&lt;-</span> <span class="va">sigma</span></span>
 <span><span class="va">nu</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">lambda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynr/man/diag-character-method.html" class="external-link">diag</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># fixed mu0 and sigma0</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"grundy2007"</span>, package <span class="op">=</span> <span class="st">"manCTMed"</span><span class="op">)</span></span>
 <span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">grundy2007</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">grundy2007</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
@@ -265,7 +276,7 @@ times is computationally intensive.</p>
 <span><span class="op">)</span></span>
 <span><span class="va">mu0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span><span class="op">]</span></span>
 <span><span class="va">sigma0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cov</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span><span class="va">varnames</span>, <span class="va">varnames</span><span class="op">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">boot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/PBSSMOUFixed.html" class="external-link">PBSSMOUFixed</a></span><span class="op">(</span></span>
 <span>  R <span class="op">=</span> <span class="va">R</span>,</span>
 <span>  path <span class="op">=</span> <span class="va">path</span>,</span>
@@ -294,21 +305,21 @@ makes regions of significance more visible. Consider using the
 <code>delta_t</code> vector is long. The <code>plot</code> method for
 the <code>BootMed</code> presents the regions of significance visually
 represented by shaded areas in the plot.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMed.html" class="external-link">BootMed</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-15-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-15-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-15-3.png" width="1700"></p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<p><img src="fig-vignettes-example-3-unnamed-chunk-16-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-3.png" width="1700"></p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-15-4.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-15-5.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-15-6.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-16-4.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-5.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-6.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="delta-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Delta Method Confidence Intervals For The Standardized Direct,
@@ -318,19 +329,19 @@ Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#delta-me
 <code>cTMed</code> package, confidence intervals for the direct,
 indirect, and total effects for a long sequence of time interval values
 are generated.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">delta_std</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/DeltaMedStd.html" class="external-link">DeltaMedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  sigma <span class="op">=</span> <span class="va">sigma</span>,</span>
 <span>  vcov_theta <span class="op">=</span> <span class="va">vcov_theta</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">delta_std</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-16-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-16-3.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-17-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-17-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-17-3.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="monte-carlo-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Monte Carlo Method Confidence Intervals For The Standardized Direct,
@@ -340,12 +351,12 @@ Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#monte-ca
 package, confidence intervals for the standardized direct, indirect, and
 total effects for a time interval of one, two, and three are given
 below.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mc_std</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MCMedStd.html" class="external-link">MCMedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  sigma <span class="op">=</span> <span class="va">sigma</span>,</span>
 <span>  vcov_theta <span class="op">=</span> <span class="va">vcov_theta</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
@@ -354,7 +365,7 @@ below.</p>
 <span>  seed <span class="op">=</span> <span class="fl">42</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mc_std</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-17-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-17-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-17-3.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-18-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-3.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="parametric-bootstrap-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Parametric Bootstrap Method Confidence Intervals For The
@@ -364,23 +375,23 @@ Standardized Direct, Indirect, and Total Effects<a class="anchor" aria-label="an
 package, confidence intervals for the standardized direct, indirect, and
 total effects for a time interval of one, two, and three are given
 below.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/BootMedStd.html" class="external-link">BootMedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"phi"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap drift matrices</span></span>
 <span>  sigma <span class="op">=</span> <span class="fu"><a href="https://github.com/jeksterslab/bootStateSpace/reference/extract.html" class="external-link">extract</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">boot</span>, what <span class="op">=</span> <span class="st">"sigma"</span><span class="op">)</span>, <span class="co"># extracts the bootstrap process noise covariance matrices</span></span>
 <span>  phi_hat <span class="op">=</span> <span class="va">phi_hat</span>,</span>
 <span>  sigma_hat <span class="op">=</span> <span class="va">sigma_hat</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span>,</span>
+<span>  delta_t <span class="op">=</span> <span class="va">delta_t</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  ncores <span class="op">=</span> <span class="fu">parallel</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html" class="external-link">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-18-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-3.png" width="1700"></p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<p><img src="fig-vignettes-example-3-unnamed-chunk-19-1.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-19-2.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-19-3.png" width="1700"></p>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-3-unnamed-chunk-18-4.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-5.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-18-6.png" width="1700"></p>
+<p><img src="fig-vignettes-example-3-unnamed-chunk-19-4.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-19-5.png" width="1700"><img src="fig-vignettes-example-3-unnamed-chunk-19-6.png" width="1700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

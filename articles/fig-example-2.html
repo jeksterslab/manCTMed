@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects • manCTMed</title>
+<title>Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects • manCTMed</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.9/font.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link href="../deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Illustrative Example 2 - Confidence Intervals for the Direct, Indirect, and Total Effects</h1>
+      <h1>Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects</h1>
                         <h4 data-toc-skip class="author">Ivan Jacob
 Agaloos Pesigan</h4>
             
@@ -66,11 +66,13 @@ Agaloos Pesigan</h4>
 
     
     
-<p>This vignette accompanies Illustrative Example 2. The goal of the
-example is to calculate confidence intervals for the direct, indirect,
-and total effects from the continuous-time vector autoregressive model
-drift matrix
+<p>This vignette accompanies Illustration 2. The goal of the
+illustration is to calculate confidence intervals for the direct,
+indirect, and total effects from the continuous-time vector
+autoregressive model drift matrix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚽</mi><annotation encoding="application/x-tex">\boldsymbol{\Phi}</annotation></semantics></math>
+and process noise covariance matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚺</mi><annotation encoding="application/x-tex">\boldsymbol{\Sigma}</annotation></semantics></math>
 for a range of time intervals. This example features the
 <code>DeltaMed</code>, <code>MCMed</code>, <code>BootMed</code>,
 <code>DeltaMedStd</code>, <code>MCMedStd</code>, and
@@ -322,27 +324,27 @@ effects for a time interval of one, two, and three are given below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040277222 1000 -0.16141366 -0.0034289678</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040662753 1000 -0.15707023  0.0053502754</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004215608 1000 -0.01478833  0.0008123522</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063196983 1000 -0.25893091 -0.0110900799</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063816087 1000 -0.24565283  0.0081153385</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.012049095 1000 -0.04248535  0.0024827773</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076350801 1000 -0.32197941 -0.0200881622</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.076759668 1000 -0.29843328  0.0094845520</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019813810 1000 -0.07025556  0.0048538594</span></span>
+<span><span class="co">#&gt;     effect interval          est          se    R        2.5%        97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040208768 1000 -0.16218522 -0.003091790</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040290305 1000 -0.15704602  0.001572003</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004099959 1000 -0.01469144  0.001190041</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063230746 1000 -0.25877133 -0.013665190</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063005554 1000 -0.24505121  0.002388295</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011732114 1000 -0.04118966  0.003883617</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076525284 1000 -0.31619640 -0.020023437</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.075578994 1000 -0.28958616  0.002784486</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019284264 1000 -0.06693460  0.007299289</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">ci</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
 <span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040277222 1000 -0.15657376  3.902251e-04</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040662753 1000 -0.15679483  7.423718e-03</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004215608 1000 -0.01745608  9.471481e-05</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063196983 1000 -0.25592898 -9.830393e-03</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063816087 1000 -0.24652992  6.928349e-03</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.012049095 1000 -0.04963851  6.214087e-04</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076350801 1000 -0.32117551 -1.912325e-02</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.076759668 1000 -0.29891678  5.556364e-03</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019813810 1000 -0.07914474  1.590159e-03</span></span></code></pre></div>
+<span><span class="co">#&gt; 1    total        1 -0.082830099 0.040208768 1000 -0.15816108  0.0006895716</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.077087636 0.040290305 1000 -0.15364152  0.0051163124</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.005742463 0.004099959 1000 -0.01622852  0.0004170194</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.137257463 0.063230746 1000 -0.25414166 -0.0046821792</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.120663647 0.063005554 1000 -0.24114915  0.0055196221</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.016593816 0.011732114 1000 -0.04581942  0.0014715182</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.171598190 0.076525284 1000 -0.31480165 -0.0180057209</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.144345904 0.075578994 1000 -0.28819825  0.0035206376</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.027252286 0.019284264 1000 -0.07334670  0.0031747260</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="delta-method-confidence-intervals-for-the-standardized-direct-indirect-and-total-effects">Delta Method Confidence Intervals For The Standardized Direct,
@@ -444,27 +446,27 @@ below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span></span>
-<span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052846649 1000 -0.20534269 -0.0026544623</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.052592859 1000 -0.20045509  0.0052105707</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005230303 1000 -0.01914997  0.0008616874</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083746461 1000 -0.33842867 -0.0111119229</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.082471085 1000 -0.31278257  0.0079054204</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014964167 1000 -0.05444703  0.0026549459</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101658862 1000 -0.42637346 -0.0209528914</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.098945307 1000 -0.37955788  0.0092427835</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024594391 1000 -0.08869882  0.0051907352</span></span>
+<span><span class="co">#&gt;     effect interval          est          se   R        2.5%        97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052289253 999 -0.20836530 -0.003127310</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.051727771 999 -0.19805703  0.001707751</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005196111 999 -0.01944076  0.001360433</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083036901 999 -0.34266793 -0.011079553</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.080851910 999 -0.30987422  0.002669454</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014866672 999 -0.05471187  0.004494355</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101000975 999 -0.42052146 -0.019894331</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.096748663 999 -0.36801086  0.003188712</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024400211 999 -0.08718381  0.007913055</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">pb</span>, type <span class="op">=</span> <span class="st">"bc"</span><span class="op">)</span> <span class="co"># bias-corrected</span></span>
-<span><span class="co">#&gt;     effect interval          est          se    R        2.5%         97.5%</span></span>
-<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052846649 1000 -0.21926657 -5.619566e-03</span></span>
-<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.052592859 1000 -0.20978356  4.282886e-05</span></span>
-<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005230303 1000 -0.02182373 -5.777456e-05</span></span>
-<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083746461 1000 -0.35596909 -1.832226e-02</span></span>
-<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.082471085 1000 -0.33206110 -1.328090e-03</span></span>
-<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014964167 1000 -0.06188809  1.782209e-04</span></span>
-<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101658862 1000 -0.43406333 -2.944776e-02</span></span>
-<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.098945307 1000 -0.40136619 -2.189508e-03</span></span>
-<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024594391 1000 -0.10052775  8.288347e-04</span></span></code></pre></div>
+<span><span class="co">#&gt;     effect interval          est          se   R        2.5%         97.5%</span></span>
+<span><span class="co">#&gt; 1    total        1 -0.095646850 0.052289253 999 -0.20753734 -0.0030512406</span></span>
+<span><span class="co">#&gt; 2   direct        1 -0.089015825 0.051727771 999 -0.19814772  0.0015983124</span></span>
+<span><span class="co">#&gt; 3 indirect        1 -0.006631025 0.005196111 999 -0.02186881  0.0003110725</span></span>
+<span><span class="co">#&gt; 4    total        2 -0.158496057 0.083036901 999 -0.34423387 -0.0149721311</span></span>
+<span><span class="co">#&gt; 5   direct        2 -0.139334589 0.080851910 999 -0.31136983  0.0012985075</span></span>
+<span><span class="co">#&gt; 6 indirect        2 -0.019161468 0.014866672 999 -0.06127089  0.0013548904</span></span>
+<span><span class="co">#&gt; 7    total        3 -0.198150511 0.101000975 999 -0.42270234 -0.0209402285</span></span>
+<span><span class="co">#&gt; 8   direct        3 -0.166681330 0.096748663 999 -0.37215197  0.0020077758</span></span>
+<span><span class="co">#&gt; 9 indirect        3 -0.031469181 0.024400211 999 -0.09885142  0.0023848020</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

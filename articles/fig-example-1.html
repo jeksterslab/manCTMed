@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Illustrative Example 1 - Direct, Indirect, and Total Effects • manCTMed</title>
+<title>Illustration 1 - Direct, Indirect, and Total Effects • manCTMed</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.9/font.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link href="../deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustrative Example 1 - Direct, Indirect, and Total Effects">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Illustration 1 - Direct, Indirect, and Total Effects">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Illustrative Example 1 - Direct, Indirect, and Total Effects</h1>
+      <h1>Illustration 1 - Direct, Indirect, and Total Effects</h1>
                         <h4 data-toc-skip class="author">Ivan Jacob
 Agaloos Pesigan</h4>
             
@@ -66,10 +66,12 @@ Agaloos Pesigan</h4>
 
     
     
-<p>This vignette accompanies Illustrative Example 1. The goal of the
-example is to calculate the direct, indirect, and total effects from the
-continuous-time vector autoregressive model drift matrix
+<p>This vignette accompanies Illustration 1. The goal of the
+illustration is to calculate the direct, indirect, and total effects
+from the continuous-time vector autoregressive model drift matrix
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚽</mi><annotation encoding="application/x-tex">\boldsymbol{\Phi}</annotation></semantics></math>
+and process noise covariance matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝚺</mi><annotation encoding="application/x-tex">\boldsymbol{\Sigma}</annotation></semantics></math>
 for a specific time interval or a range of time intervals. This example
 features the <code>Med</code> and <code>MedStd</code> functions from the
 <code>cTMed</code> package.</p>
@@ -211,6 +213,37 @@ range of time interval values from 0 to 10 are plotted below.</p>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med_std</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-example-1-unnamed-chunk-10-1.png" width="1700"></p>
+</div>
+<div class="section level2">
+<h2 id="visualizing-normality-of-direct-indirect-and-total-effects">Visualizing Normality of Direct, Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#visualizing-normality-of-direct-indirect-and-total-effects"></a>
+</h2>
+<p>The sampling distribution of the direct, indirect, and total effects
+were generated using 1000 samples.</p>
+<p><img src="fig-vignettes-example-1-direct-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-indirect-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-total-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-direct-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-indirect-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-total-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-direct-3-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-indirect-3-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-total-3-1.png" width="1700"></p>
+</div>
+<div class="section level2">
+<h2 id="visualizing-normality-of-standardized-direct-indirect-and-total-effects">Visualizing Normality of Standardized Direct, Indirect, and Total
+Effects<a class="anchor" aria-label="anchor" href="#visualizing-normality-of-standardized-direct-indirect-and-total-effects"></a>
+</h2>
+<p>The sampling distribution of the standardized direct, indirect, and
+total effects were generated using 1000 samples.</p>
+<p><img src="fig-vignettes-example-1-std-direct-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-indirect-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-total-1-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-direct-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-indirect-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-total-2-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-direct-3-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-indirect-3-1.png" width="1700"></p>
+<p><img src="fig-vignettes-example-1-std-total-3-1.png" width="1700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

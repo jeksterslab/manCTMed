@@ -95,8 +95,7 @@ autoregressive model using the <code>dynr</code> package.</p>
 <h2 id="prepare-the-initial-condition">Prepare the Initial Condition<a class="anchor" aria-label="anchor" href="#prepare-the-initial-condition"></a>
 </h2>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">data</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">data</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
-<span><span class="co">#&gt; Error in data[, "time"]: object of type 'closure' is not subsettable</span></span>
+<code class="sourceCode R"><span><span class="va">data_0</span> <span class="op">&lt;-</span> <span class="va">grundy2007</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="va">grundy2007</span><span class="op">[</span>, <span class="st">"time"</span><span class="op">]</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span>, <span class="op">]</span></span>
 <span><span class="va">dynr_initial</span> <span class="op">&lt;-</span> <span class="fu">dynr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dynr/man/prep.initial.html" class="external-link">prep.initial</a></span><span class="op">(</span></span>
 <span>  values.inistate <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colMeans</a></span><span class="op">(</span><span class="va">data_0</span><span class="op">)</span><span class="op">[</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
@@ -123,8 +122,7 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    nrow <span class="op">=</span> <span class="fl">3</span>,</span>
 <span>    ncol <span class="op">=</span> <span class="fl">3</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'data_0' not found</span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="prepare-measurement-model">Prepare Measurement Model<a class="anchor" aria-label="anchor" href="#prepare-measurement-model"></a>
@@ -227,17 +225,14 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  dynamics <span class="op">=</span> <span class="va">dynr_dynamics</span>,</span>
 <span>  noise <span class="op">=</span> <span class="va">dynr_noise</span>,</span>
 <span>  outfile <span class="op">=</span> <span class="st">"ct-var.c"</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'dynr_initial' not found</span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="add-model-constraints-to-aid-in-optimization">Add Model Constraints to Aid in Optimization<a class="anchor" aria-label="anchor" href="#add-model-constraints-to-aid-in-optimization"></a>
 </h2>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">ub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="cn">NA</span>, times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'model' not found</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">ub</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">lb</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">xstart</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'model' not found</span></span>
 <span><span class="va">lb</span><span class="op">[</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"phi_11"</span>,</span>
@@ -251,7 +246,6 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    <span class="st">"phi_33"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="fl">1.5</span></span>
-<span><span class="co">#&gt; Error in rProject::VignettesPrecompile("/scratch/ibp5092/manCTMed"): object 'lb' not found</span></span>
 <span><span class="va">ub</span><span class="op">[</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"phi_11"</span>,</span>
@@ -265,7 +259,6 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    <span class="st">"phi_33"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1.5</span></span>
-<span><span class="co">#&gt; Error in rProject::VignettesPrecompile("/scratch/ibp5092/manCTMed"): object 'ub' not found</span></span>
 <span><span class="va">ub</span><span class="op">[</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"phi_11"</span>,</span>
@@ -273,7 +266,6 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    <span class="st">"phi_33"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
-<span><span class="co">#&gt; Error in rProject::VignettesPrecompile("/scratch/ibp5092/manCTMed"): object 'ub' not found</span></span>
 <span><span class="va">lb</span><span class="op">[</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"sigma_11"</span>,</span>
@@ -281,7 +273,6 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    <span class="st">"sigma_33"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.xmin</span></span>
-<span><span class="co">#&gt; Error in rProject::VignettesPrecompile("/scratch/ibp5092/manCTMed"): object 'lb' not found</span></span>
 <span><span class="va">lb</span><span class="op">[</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"theta_11"</span>,</span>
@@ -289,11 +280,8 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>    <span class="st">"theta_33"</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">.Machine</span><span class="op">$</span><span class="va">double.xmin</span></span>
-<span><span class="co">#&gt; Error in rProject::VignettesPrecompile("/scratch/ibp5092/manCTMed"): object 'lb' not found</span></span>
 <span><span class="va">model</span><span class="op">$</span><span class="va">lb</span> <span class="op">&lt;-</span> <span class="va">lb</span></span>
-<span><span class="co">#&gt; Error: object 'lb' not found</span></span>
-<span><span class="va">model</span><span class="op">$</span><span class="va">ub</span> <span class="op">&lt;-</span> <span class="va">ub</span></span>
-<span><span class="co">#&gt; Error: object 'ub' not found</span></span></code></pre></div>
+<span><span class="va">model</span><span class="op">$</span><span class="va">ub</span> <span class="op">&lt;-</span> <span class="va">ub</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="model-formula">Model Formula<a class="anchor" aria-label="anchor" href="#model-formula"></a>
@@ -304,8 +292,8 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  ParameterAs <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="st">"param.names"</span>,</span>
 <span>  printDyn <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  printMeas <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'model' not found</span></span></code></pre></div>
+<span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-example-ct-var-unnamed-chunk-12-1.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="fit-the-model">Fit the Model<a class="anchor" aria-label="anchor" href="#fit-the-model"></a>
@@ -315,14 +303,58 @@ autoregressive model using the <code>dynr</code> package.</p>
 <span>  <span class="va">model</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'model' not found</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "Get ready!!!!"</span></span>
+<span><span class="co">#&gt; using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’</span></span>
+<span><span class="co">#&gt; Optimization function called.</span></span>
+<span><span class="co">#&gt; Starting Hessian calculation ...</span></span>
+<span><span class="co">#&gt; Finished Hessian calculation.</span></span>
+<span><span class="co">#&gt; Original exit flag:  3 </span></span>
+<span><span class="co">#&gt; Modified exit flag:  3 </span></span>
+<span><span class="co">#&gt; Optimization terminated successfully: ftol_rel or ftol_abs was reached. </span></span>
+<span><span class="co">#&gt; Original fitted parameters:  -0.03371248 0.03781617 -0.01320671 -0.1523502 </span></span>
+<span><span class="co">#&gt; -0.5902622 0.230235 -0.1004354 0.1054622 -0.5151492 -2.852352 -0.1499536 </span></span>
+<span><span class="co">#&gt; 0.1770817 -0.2943714 0.1351704 -0.1908467 -2.255498 -1.761862 -2.542695 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Transformed fitted parameters:  -0.03371248 0.03781617 -0.01320671 -0.1523502 </span></span>
+<span><span class="co">#&gt; -0.5902622 0.230235 -0.1004354 0.1054622 -0.5151492 0.05770845 -0.008653589 </span></span>
+<span><span class="co">#&gt; 0.01021911 0.7462974 0.09916955 0.8416808 0.1048214 0.1717249 0.07865413 </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Doing end processing</span></span>
+<span><span class="co">#&gt; Successful trial</span></span>
+<span><span class="co">#&gt; Total Time: 2.172916 </span></span>
+<span><span class="co">#&gt; Backend Time: 2.160493</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
 </h2>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error: object 'fit' not found</span></span></code></pre></div>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;           Estimate Std. Error t value  ci.lower  ci.upper Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; phi_11   -0.033712   0.022461  -1.501 -0.077735  0.010310   0.0667 .  </span></span>
+<span><span class="co">#&gt; phi_12    0.037816   0.037012   1.022 -0.034727  0.110359   0.1535    </span></span>
+<span><span class="co">#&gt; phi_13   -0.013207   0.033180  -0.398 -0.078239  0.051826   0.3453    </span></span>
+<span><span class="co">#&gt; phi_21   -0.152350   0.061199  -2.489 -0.272299 -0.032402   0.0064 ** </span></span>
+<span><span class="co">#&gt; phi_22   -0.590262   0.176063  -3.353 -0.935339 -0.245185   0.0004 ***</span></span>
+<span><span class="co">#&gt; phi_23    0.230235   0.113647   2.026  0.007491  0.452979   0.0214 *  </span></span>
+<span><span class="co">#&gt; phi_31   -0.100435   0.056641  -1.773 -0.211450  0.010579   0.0381 *  </span></span>
+<span><span class="co">#&gt; phi_32    0.105462   0.106935   0.986 -0.104126  0.315050   0.1620    </span></span>
+<span><span class="co">#&gt; phi_33   -0.515149   0.146135  -3.525 -0.801568 -0.228730   0.0002 ***</span></span>
+<span><span class="co">#&gt; sigma_11  0.057708   0.022977   2.512  0.012674  0.102743   0.0060 ** </span></span>
+<span><span class="co">#&gt; sigma_12 -0.008654   0.029862  -0.290 -0.067182  0.049874   0.3860    </span></span>
+<span><span class="co">#&gt; sigma_13  0.010219   0.028265   0.362 -0.045179  0.065617   0.3589    </span></span>
+<span><span class="co">#&gt; sigma_22  0.746297   0.314194   2.375  0.130487  1.362107   0.0088 ** </span></span>
+<span><span class="co">#&gt; sigma_23  0.099170   0.082397   1.204 -0.062325  0.260664   0.1144    </span></span>
+<span><span class="co">#&gt; sigma_33  0.841681   0.292901   2.874  0.267605  1.415756   0.0020 ** </span></span>
+<span><span class="co">#&gt; theta_11  0.104821   0.016754   6.256  0.071984  0.137659   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; theta_22  0.171725   0.098048   1.751 -0.020445  0.363895   0.0400 *  </span></span>
+<span><span class="co">#&gt; theta_33  0.078654   0.091670   0.858 -0.101015  0.258323   0.1955    </span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; -2 log-likelihood value at convergence = 3569.91</span></span>
+<span><span class="co">#&gt; AIC = 3605.91</span></span>
+<span><span class="co">#&gt; BIC = 3719.75</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
