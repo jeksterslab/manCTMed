@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manCTMed</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,26 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="../articles/manCTMed.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
-<li class="active nav-item"><a class="nav-link" href="../articles/index.html">Articles</a></li>
+<li class="active nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/containers.html">Containers</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-1.html">Illustration 1 - Direct, Indirect, and Total Effects</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-2.html">Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-3.html">Illustration 3 - Regions of Significance</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-dist-ct.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-dist-dt.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-dist-med-std.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-example-dist-med.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-scatter-plots-neg.html">Scatter Plots - Weak Coupling</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-scatter-plots-pos.html">Scatter Plots - Strong Coupling</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-scatter-plots-zero.html">Scatter Plots - Moderate Coupling</a></li>
+    <li><a class="dropdown-item" href="../articles/params.html">Simulation Parameters</a></li>
+    <li><a class="dropdown-item" href="../articles/replication.html">Single Replication from the Simulation Study</a></li>
+    <li><a class="dropdown-item" href="../articles/results.html">Simulation Results</a></li>
+    <li><a class="dropdown-item" href="../articles/session/session.html">manCTMed: Session</a></li>
+  </ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -76,15 +95,53 @@ for a specific time interval or a range of time intervals. This example
 features the <code>Med</code> and <code>MedStd</code> functions from the
 <code>cTMed</code> package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dynrr.github.io/" class="external-link">dynr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jeksterslab/cTMed" class="external-link">cTMed</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="continuous-time-vector-autoregressive-model-estimates">Continuous-Time Vector Autoregressive Model Estimates<a class="anchor" aria-label="anchor" href="#continuous-time-vector-autoregressive-model-estimates"></a>
 </h2>
 <p>The object <code>fit</code> contains the fitted <code>dynr</code>
-model for the data set with a sample size of 133. See <a href="https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html" class="external-link">Fitting
-the Continuous-Time Vector Autoregressive Model</a> for more
-details.</p>
+model. Data is generated using the
+<code><a href="../reference/IllustrationGenData.html">manCTMed::IllustrationGenData</a></code> function. The model was
+fitted using the <code><a href="../reference/IllustrationFitDynr.html">manCTMed::IllustrationFitDynr</a></code>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: dynr</span></span>
+<span><span class="co">#&gt; Loading required package: ggplot2</span></span>
+<span><span class="co">#&gt; Coefficients:</span></span>
+<span><span class="co">#&gt;             Estimate Std. Error t value   ci.lower   ci.upper Pr(&gt;|t|)    </span></span>
+<span><span class="co">#&gt; phi_11    -0.1157754  0.0174197  -6.646 -0.1499173 -0.0816334   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; phi_12     0.0203747  0.0550571   0.370 -0.0875352  0.1282846   0.3557    </span></span>
+<span><span class="co">#&gt; phi_13    -0.0070992  0.0535302  -0.133 -0.1120165  0.0978181   0.4472    </span></span>
+<span><span class="co">#&gt; phi_21    -0.1226909  0.0187426  -6.546 -0.1594258 -0.0859560   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; phi_22    -0.8819998  0.0653717 -13.492 -1.0101259 -0.7538737   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; phi_23     0.4737224  0.0594135   7.973  0.3572740  0.5901708   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; phi_31    -0.0877980  0.0178492  -4.919 -0.1227817 -0.0528143   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; phi_32     0.0595814  0.0586861   1.015 -0.0554414  0.1746041   0.1550    </span></span>
+<span><span class="co">#&gt; phi_33    -0.6636176  0.0616495 -10.764 -0.7844485 -0.5427867   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; sigma_11   0.0954899  0.0049239  19.393  0.0858393  0.1051405   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; sigma_12   0.0009624  0.0040987   0.235 -0.0070710  0.0089957   0.4072    </span></span>
+<span><span class="co">#&gt; sigma_13   0.0070297  0.0040069   1.754 -0.0008237  0.0148830   0.0397 *  </span></span>
+<span><span class="co">#&gt; sigma_22   0.1027182  0.0078961  13.009  0.0872422  0.1181942   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; sigma_23   0.0009240  0.0049248   0.188 -0.0087285  0.0105764   0.4256    </span></span>
+<span><span class="co">#&gt; sigma_33   0.0991956  0.0074695  13.280  0.0845558  0.1138355   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; theta_11   0.1016133  0.0014901  68.194  0.0986928  0.1045338   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; theta_22   0.0996380  0.0015668  63.592  0.0965671  0.1027089   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; theta_33   0.0992561  0.0015460  64.202  0.0962260  0.1022862   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; mu0_1     -0.1217526  0.0521444  -2.335 -0.2239538 -0.0195514   0.0098 ** </span></span>
+<span><span class="co">#&gt; mu0_2      0.0160785  0.0279075   0.576 -0.0386192  0.0707762   0.2823    </span></span>
+<span><span class="co">#&gt; mu0_3      0.0204163  0.0288928   0.707 -0.0362125  0.0770451   0.2399    </span></span>
+<span><span class="co">#&gt; sigma0_11  0.3346315  0.0446548   7.494  0.2471097  0.4221533   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; sigma0_12 -0.0644525  0.0177503  -3.631 -0.0992424 -0.0296626   0.0001 ***</span></span>
+<span><span class="co">#&gt; sigma0_13 -0.0519690  0.0179974  -2.888 -0.0872433 -0.0166946   0.0019 ** </span></span>
+<span><span class="co">#&gt; sigma0_22  0.0691741  0.0127707   5.417  0.0441439  0.0942043   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; sigma0_23  0.0364469  0.0098132   3.714  0.0172134  0.0556805   0.0001 ***</span></span>
+<span><span class="co">#&gt; sigma0_33  0.0792446  0.0137057   5.782  0.0523819  0.1061072   &lt;2e-16 ***</span></span>
+<span><span class="co">#&gt; ---</span></span>
+<span><span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; -2 log-likelihood value at convergence = 32662.46</span></span>
+<span><span class="co">#&gt; AIC = 32716.46</span></span>
+<span><span class="co">#&gt; BIC = 32919.11</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="extract-elements-of-the-drift-matrix-and-the-process-noise-covariance-matrix">Extract Elements of the Drift Matrix and the Process Noise
@@ -92,7 +149,7 @@ Covariance Matrix<a class="anchor" aria-label="anchor" href="#extract-elements-o
 </h2>
 <p>We extract the elements of the drift matrix and the process noise
 covariance matrix from the <code>fit</code> object.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># drift matrix</span></span>
 <span><span class="va">phi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span></span>
@@ -116,7 +173,7 @@ covariance matrix from the <code>fit</code> object.</p>
 <span>  <span class="st">"knowledge"</span>,</span>
 <span>  <span class="st">"competence"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># process noise covariance matrix</span></span>
 <span><span class="va">sigma</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span></span>
 <span>  data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span></span>
@@ -141,7 +198,7 @@ covariance matrix from the <code>fit</code> object.</p>
 <p>Using the <code>Med</code> function from the <code>cTMed</code>
 package, the direct, indirect, and total effects for a time interval of
 three are given below.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/Med.html" class="external-link">Med</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
@@ -153,7 +210,7 @@ three are given below.</p>
 <span><span class="co">#&gt; Total, Direct, and Indirect Effects</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;      interval   total  direct indirect</span></span>
-<span><span class="co">#&gt; [1,]        3 -0.1716 -0.1443  -0.0273</span></span></code></pre></div>
+<span><span class="co">#&gt; [1,]        3 -0.1004 -0.0914  -0.0089</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="direct-indirect-and-total-effects-of-a-time-interval-of-zero-to-ten">Direct, Indirect, and Total Effects of a Time Interval of Zero to
@@ -162,7 +219,7 @@ Ten<a class="anchor" aria-label="anchor" href="#direct-indirect-and-total-effect
 <p>Using the <code>Med</code> function from the <code>cTMed</code>
 package, the direct, indirect, and total effects for a range of time
 interval values from 0 to 10 are plotted below.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">med</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/Med.html" class="external-link">Med</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
@@ -170,8 +227,8 @@ interval values from 0 to 10 are plotted below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-1-unnamed-chunk-8-1.png" width="1700"></p>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med</span>, legend_pos <span class="op">=</span> <span class="st">"bottomright"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-example-1-unnamed-chunk-10-1.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="standardized-direct-indirect-and-total-effects-of-a-time-interval-of-three">Standardized Direct, Indirect, and Total Effects of a Time Interval
@@ -180,20 +237,20 @@ of Three<a class="anchor" aria-label="anchor" href="#standardized-direct-indirec
 <p>Using the <code>MedStd</code> function from the <code>cTMed</code>
 package, the standardized direct, indirect, and total effects for a time
 interval of three are given below.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MedStd.html" class="external-link">MedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  sigma <span class="op">=</span> <span class="va">sigma</span>,</span>
 <span>  from <span class="op">=</span> <span class="st">"conflict"</span>,</span>
 <span>  to <span class="op">=</span> <span class="st">"competence"</span>,</span>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
-<span>  delta_t <span class="op">=</span> <span class="fl">1</span></span>
+<span>  delta_t <span class="op">=</span> <span class="fl">3</span></span>
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Total, Direct, and Indirect Effects</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;      interval   total direct indirect</span></span>
-<span><span class="co">#&gt; [1,]        1 -0.0956 -0.089  -0.0066</span></span></code></pre></div>
+<span><span class="co">#&gt;      interval   total  direct indirect</span></span>
+<span><span class="co">#&gt; [1,]        3 -0.2206 -0.2009  -0.0196</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="standardized-direct-indirect-and-total-effects-of-a-time-interval-of-zero-to-ten">Standardized Direct, Indirect, and Total Effects of a Time Interval
@@ -202,7 +259,7 @@ of Zero to Ten<a class="anchor" aria-label="anchor" href="#standardized-direct-i
 <p>Using the <code>Med</code> function from the <code>cTMed</code>
 package, the standardized direct, indirect, and total effects for a
 range of time interval values from 0 to 10 are plotted below.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">med_std</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://github.com/jeksterslab/cTMed/reference/MedStd.html" class="external-link">MedStd</a></span><span class="op">(</span></span>
 <span>  phi <span class="op">=</span> <span class="va">phi</span>,</span>
 <span>  sigma <span class="op">=</span> <span class="va">sigma</span>,</span>
@@ -211,8 +268,8 @@ range of time interval values from 0 to 10 are plotted below.</p>
 <span>  med <span class="op">=</span> <span class="st">"knowledge"</span>,</span>
 <span>  delta_t <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fl">0</span>, to <span class="op">=</span> <span class="fl">10</span>, length.out <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med_std</span><span class="op">)</span></span></code></pre></div>
-<p><img src="fig-vignettes-example-1-unnamed-chunk-10-1.png" width="1700"></p>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med_std</span>, legend_pos <span class="op">=</span> <span class="st">"bottomright"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="fig-vignettes-example-1-unnamed-chunk-12-1.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="visualizing-normality-of-direct-indirect-and-total-effects">Visualizing Normality of Direct, Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#visualizing-normality-of-direct-indirect-and-total-effects"></a>
@@ -222,12 +279,6 @@ were generated using 1000 samples.</p>
 <p><img src="fig-vignettes-example-1-direct-1-1.png" width="1700"></p>
 <p><img src="fig-vignettes-example-1-indirect-1-1.png" width="1700"></p>
 <p><img src="fig-vignettes-example-1-total-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-direct-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-indirect-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-total-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-direct-3-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-indirect-3-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-total-3-1.png" width="1700"></p>
 </div>
 <div class="section level2">
 <h2 id="visualizing-normality-of-standardized-direct-indirect-and-total-effects">Visualizing Normality of Standardized Direct, Indirect, and Total
@@ -238,12 +289,6 @@ total effects were generated using 1000 samples.</p>
 <p><img src="fig-vignettes-example-1-std-direct-1-1.png" width="1700"></p>
 <p><img src="fig-vignettes-example-1-std-indirect-1-1.png" width="1700"></p>
 <p><img src="fig-vignettes-example-1-std-total-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-direct-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-indirect-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-total-2-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-direct-3-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-indirect-3-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-total-3-1.png" width="1700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
