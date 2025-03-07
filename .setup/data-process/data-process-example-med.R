@@ -1,5 +1,5 @@
 data_process_example_med <- function(overwrite = FALSE,
-                                     n) {
+                                     n = 133) {
   cat("\ndata_process_example_med\n")
   set.seed(42)
   # find root directory
@@ -14,31 +14,6 @@ data_process_example_med <- function(overwrite = FALSE,
       recursive = TRUE
     )
   }
-  fit_example_ct <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "fit-example-ct-",
-      n,
-      ".Rds"
-    )
-  )
-  source(
-    root$find_file(
-      ".setup",
-      "data-process",
-      "data-process-example-ct.R"
-    )
-  )
-  pb_file <- root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "pb-example-",
-      n,
-      ".Rds"
-    )
-  )
   med_xmy_file <- root$find_file(
     ".setup",
     "data-raw",
@@ -179,7 +154,6 @@ data_process_example_med <- function(overwrite = FALSE,
     !all(
       file.exists(
         c(
-          pb_file,
           med_xmy_file,
           med_xym_file,
           delta_xmy_file,
@@ -193,7 +167,8 @@ data_process_example_med <- function(overwrite = FALSE,
           ci_file,
           ci_beta_file,
           example_table_coef,
-          example_table_ci
+          example_table_ci,
+          fit_example_ct_summary
         )
       )
     )
@@ -212,8 +187,18 @@ data_process_example_med <- function(overwrite = FALSE,
     library(simStateSpace)
     library(bootStateSpace)
     fit <- readRDS(
-      file = fit_example_ct
+      root$find_file(
+        ".setup",
+        "data-raw",
+        "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+      )
     )
+    saveRDS(
+      summary(fit),
+      file = fit_example_ct_summary,
+      compress = "xz"
+    )
+    coefs <- coef(fit)
     varnames <- c(
       "phi_11",
       "phi_21",
@@ -226,8 +211,9 @@ data_process_example_med <- function(overwrite = FALSE,
       "phi_33"
     )
     phi <- matrix(
-      data = coef(fit)[varnames],
-      nrow = 3
+      data = coefs[varnames],
+      nrow = 3,
+      ncol = 3
     )
     colnames(phi) <- rownames(phi) <- c(
       "conflict",
@@ -247,8 +233,9 @@ data_process_example_med <- function(overwrite = FALSE,
       "sigma_33"
     )
     sigma <- matrix(
-      data = coef(fit)[varnames],
-      nrow = 3
+      data = coefs[varnames],
+      nrow = 3,
+      ncol = 3
     )
     varnames <- c(
       "theta_11",
@@ -256,7 +243,12 @@ data_process_example_med <- function(overwrite = FALSE,
       "theta_33"
     )
     theta <- diag(3)
-    diag(theta) <- coef(fit)[varnames]
+    diag(theta) <- coefs[varnames]
+    sigma0 <- simStateSpace::LinSDECov(
+      phi = phi,
+      sigma = sigma
+    )
+    sigma0 <- (sigma0 + t(sigma0)) / 2
     varnames <- c(
       "phi_11",
       "phi_21",
@@ -274,10 +266,7 @@ data_process_example_med <- function(overwrite = FALSE,
       "sigma_23",
       "sigma_33"
     )
-    vcov_theta <- matrix(
-      data = vcov(fit)[varnames, varnames],
-      nrow = length(varnames)
-    )
+    vcov_theta <- vcov(fit)[varnames, varnames]
     delta_t <- sort(
       unique(
         c(
@@ -309,53 +298,12 @@ data_process_example_med <- function(overwrite = FALSE,
         seed = 42
       )
     )
-    grundy2007_file <- root$find_file(
-      "data",
-      "grundy2007.rda"
-    )
-    load(grundy2007_file)
-    data <- grundy2007
-    varnames <- c(
-      "conflict",
-      "knowledge",
-      "competence"
-    )
-    data_0 <- data[which(data[, "time"] == 0), ]
-    pb <- PBSSMOUFixed(
-      R = 1000L,
-      path = root$find_file(
+    pb <- readRDS(
+      root$find_file(
         ".setup",
-        "data-raw"
-      ),
-      prefix = paste0(
-        "pb_example_",
-        n
-      ),
-      n = n,
-      time = 30,
-      delta_t = 0.10,
-      mu0 = colMeans(data_0)[varnames],
-      sigma0_l = t(
-        chol(
-          cov(data_0)[varnames, varnames]
-        )
-      ),
-      mu = c(0, 0, 0),
-      phi = phi,
-      sigma_l = t(chol(sigma)),
-      nu = c(0, 0, 0),
-      lambda = diag(3),
-      theta_l = t(chol(theta)),
-      mu0_fixed = TRUE,
-      sigma0_fixed = TRUE,
-      type = 0,
-      ncores = parallel::detectCores(),
-      seed = 42
-    )
-    saveRDS(
-      pb,
-      file = pb_file,
-      compress = "xz"
+        "data-raw",
+        "manCTMed-illustration-dynr-boot-para-00001-00001.Rds"
+      )
     )
     beta_pb <- BootBeta(
       phi = extract(object = pb, what = "phi"),

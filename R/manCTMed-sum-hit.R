@@ -125,7 +125,6 @@ SumHit <- function(taskid,
   foo <- function(repid,
                   taskid,
                   output_folder,
-                  param,
                   parameter) {
     suffix <- .SimSuffix(
       taskid = taskid,
@@ -164,7 +163,7 @@ SumHit <- function(taskid,
       output$R <- 0
       output$sig <- output$p < 0.05
     }
-    return(output)
+    output
   }
   out <- (
     1 / reps
@@ -175,7 +174,6 @@ SumHit <- function(taskid,
       FUN = foo,
       taskid = taskid,
       output_folder = output_folder,
-      param = param,
       parameter = parameter,
       mc.cores = ncores
     )
@@ -204,8 +202,6 @@ SumHit <- function(taskid,
     out$p <- NA
     out$sig <- NA
   }
-  return(
-    out
-  )
+  out
 }
 # nolint end

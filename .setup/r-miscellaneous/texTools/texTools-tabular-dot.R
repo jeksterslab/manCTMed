@@ -63,9 +63,8 @@
       collapse = " \\\\"
     )
   }
-  z <- paste0(
+  paste0(
     z,
     " \\\\"
   )
-  return(z)
 }

@@ -12,13 +12,11 @@
 #' @noRd
 .Round <- function(x,
                    digits = 2) {
-  return(
-    format(
-      x = round(
-        x = x,
-        digits = digits
-      ),
-      nsmall = digits
-    )
+  format(
+    x = round(
+      x = x,
+      digits = digits
+    ),
+    nsmall = digits
   )
 }

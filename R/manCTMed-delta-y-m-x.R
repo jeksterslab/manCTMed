@@ -21,15 +21,13 @@
 #' @export
 DeltaYMX <- function(phi_hat,
                      delta_t = 1:30) {
-  return(
-    cTMed::DeltaMed(
-      phi = phi_hat$coef,
-      vcov_phi_vec = phi_hat$vcov,
-      delta_t = delta_t,
-      from = "y", # always y for backward
-      to = "x", # always x for backward
-      med = "m",
-      ncores = NULL
-    )
+  cTMed::DeltaMed(
+    phi = phi_hat$coef,
+    vcov_phi_vec = phi_hat$vcov,
+    delta_t = delta_t,
+    from = "y", # always y for backward
+    to = "x", # always x for backward
+    med = "m",
+    ncores = NULL
   )
 }

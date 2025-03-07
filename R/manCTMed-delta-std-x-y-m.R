@@ -23,16 +23,14 @@
 #' @export
 DeltaStdXYM <- function(theta_hat,
                         delta_t = 1:30) {
-  return(
-    cTMed::DeltaMedStd(
-      phi = theta_hat$phi,
-      sigma = theta_hat$sigma,
-      vcov_theta = theta_hat$vcov,
-      delta_t = delta_t,
-      from = "x", # always x for forward
-      to = "y", # always y for forward
-      med = "m",
-      ncores = NULL
-    )
+  cTMed::DeltaMedStd(
+    phi = theta_hat$phi,
+    sigma = theta_hat$sigma,
+    vcov_theta = theta_hat$vcov,
+    delta_t = delta_t,
+    from = "x", # grundy reciprocal
+    to = "m",
+    med = "y",
+    ncores = NULL
   )
 }

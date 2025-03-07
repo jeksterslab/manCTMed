@@ -53,24 +53,22 @@
     z,
     " \\\\"
   )
-  return(
+  paste(
+    "\\begin{array}",
+    "{",
     paste(
-      "\\begin{array}",
-      "{",
-      paste(
-        rep(
-          x = "c",
-          times = dim(x)[2]
-        ),
-        collapse = ""
+      rep(
+        x = "c",
+        times = dim(x)[2]
       ),
-      "}",
-      "\n",
-      z,
-      "\n",
-      "\\end{array}",
-      sep = "",
       collapse = ""
-    )
+    ),
+    "}",
+    "\n",
+    z,
+    "\n",
+    "\\end{array}",
+    sep = "",
+    collapse = ""
   )
 }

@@ -15,7 +15,7 @@
 #' ThetaHat(fit)
 #' }
 #' @family Model Fitting Functions
-#' @keywords manCTMed fit
+#' @keywords manCTMed ci
 #' @importFrom stats coef vcov
 #' @import dynr
 #' @export

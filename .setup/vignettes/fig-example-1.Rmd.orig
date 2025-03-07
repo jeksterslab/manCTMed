@@ -28,35 +28,36 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 133
-fit <- readRDS(
-  root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "fit-example-ct-",
-      n,
-      ".Rds"
-    )
-  )
-)
 ```
 
 ```{r}
 #| include = FALSE
-library(dynr)
 library(cTMed)
 ```
 
 ```{r}
 #| eval = FALSE
-library(dynr)
 library(cTMed)
 ```
 
 ## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
+
+```{r}
+#| include = FALSE
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+  )
+)
+```
+
+```{r}
+summary(fit)
+```
 
 ## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
 
@@ -134,7 +135,7 @@ med <- Med(
   med = "knowledge",
   delta_t = seq(from = 0, to = 10, length.out = 1000)
 )
-plot(med)
+plot(med, legend_pos = "bottomright")
 ```
 
 ## Standardized Direct, Indirect, and Total Effects of a Time Interval of Three
@@ -148,7 +149,7 @@ MedStd(
   from = "conflict",
   to = "competence",
   med = "knowledge",
-  delta_t = 1
+  delta_t = 3
 )
 ```
 
@@ -165,7 +166,7 @@ med_std <- MedStd(
   med = "knowledge",
   delta_t = seq(from = 0, to = 10, length.out = 1000)
 )
-plot(med_std)
+plot(med_std, legend_pos = "bottomright")
 ```
 
 ## Visualizing Normality of Direct, Indirect, and Total Effects
@@ -174,71 +175,31 @@ The sampling distribution of the direct, indirect, and total effects were genera
 
 ```{r}
 #| include = FALSE
-root <- rprojroot::is_rstudio_project
-dist <- readRDS(
+load(
   root$find_file(
-    ".setup",
-    "data-raw",
-    "sampling-distribution.Rds"
+    "data",
+    "illustration_dist_med.rda"
   )
 )
-dist_1 <- dist[which(dist[, "interval"] == 1), ]
-dist_2 <- dist[which(dist[, "interval"] == 2), ]
-dist_3 <- dist[which(dist[, "interval"] == 3), ]
+dist <- illustration_dist_med
 ```
 
 ```{r, direct-1}
 #| echo = FALSE
-qqnorm(dist_1[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "direct"])
+qqnorm(dist[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "direct"])
 ```
 
 ```{r, indirect-1}
 #| echo = FALSE
-qqnorm(dist_1[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "indirect"])
+qqnorm(dist[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "indirect"])
 ```
 
 ```{r, total-1}
 #| echo = FALSE
-qqnorm(dist_1[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "total"])
-```
-
-```{r, direct-2}
-#| echo = FALSE
-qqnorm(dist_2[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "direct"])
-```
-
-```{r, indirect-2}
-#| echo = FALSE
-qqnorm(dist_2[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "indirect"])
-```
-
-```{r, total-2}
-#| echo = FALSE
-qqnorm(dist_2[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "total"])
-```
-
-```{r, direct-3}
-#| echo = FALSE
-qqnorm(dist_3[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "direct"])
-```
-
-```{r, indirect-3}
-#| echo = FALSE
-qqnorm(dist_3[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "indirect"])
-```
-
-```{r, total-3}
-#| echo = FALSE
-qqnorm(dist_3[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "total"])
+qqnorm(dist[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "total"])
 ```
 
 ## Visualizing Normality of Standardized Direct, Indirect, and Total Effects
@@ -247,69 +208,30 @@ The sampling distribution of the standardized direct, indirect, and total effect
 
 ```{r}
 #| include = FALSE
-root <- rprojroot::is_rstudio_project
-dist <- readRDS(
+load(
   root$find_file(
-    ".setup",
-    "data-raw",
-    "sampling-distribution-std.Rds"
+    "data",
+    "illustration_dist_med_std.rda"
   )
 )
-dist_1 <- dist[which(dist[, "interval"] == 1), ]
-dist_2 <- dist[which(dist[, "interval"] == 2), ]
-dist_3 <- dist[which(dist[, "interval"] == 3), ]
+dist <- illustration_dist_med_std
 ```
 
 ```{r, std-direct-1}
 #| echo = FALSE
-qqnorm(dist_1[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "direct"])
+qqnorm(dist[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "direct"])
 ```
 
 ```{r, std-indirect-1}
 #| echo = FALSE
-qqnorm(dist_1[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "indirect"])
+qqnorm(dist[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "indirect"])
 ```
 
 ```{r, std-total-1}
 #| echo = FALSE
-qqnorm(dist_1[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 1))
-qqline(dist_1[, "total"])
+qqnorm(dist[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 1))
+qqline(dist[, "total"])
 ```
-
-```{r, std-direct-2}
-#| echo = FALSE
-qqnorm(dist_2[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "direct"])
-```
-
-```{r, std-indirect-2}
-#| echo = FALSE
-qqnorm(dist_2[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "indirect"])
-```
-
-```{r, std-total-2}
-#| echo = FALSE
-qqnorm(dist_2[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 2))
-qqline(dist_2[, "total"])
-```
-
-```{r, std-direct-3}
-#| echo = FALSE
-qqnorm(dist_3[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "direct"])
-```
-
-```{r, std-indirect-3}
-#| echo = FALSE
-qqnorm(dist_3[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "indirect"])
-```
-
-```{r, std-total-3}
-#| echo = FALSE
-qqnorm(dist_3[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 3))
-qqline(dist_3[, "total"])
-```
+ 

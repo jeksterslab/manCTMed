@@ -43,7 +43,7 @@ check for the output file integrity when \code{overwrite = FALSE}.}
 Vector of time intervals.}
 
 \item{R}{Positive integer.
-Number of random drift matrices to generate.}
+Number of Monte Carlo replications.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

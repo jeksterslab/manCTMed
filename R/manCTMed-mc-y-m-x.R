@@ -23,17 +23,15 @@ MCYMX <- function(phi_hat,
                   delta_t = 1:30,
                   R = 20000L,
                   seed = NULL) {
-  return(
-    cTMed::MCMed(
-      phi = phi_hat$coef,
-      vcov_phi_vec = phi_hat$vcov,
-      delta_t = delta_t,
-      from = "y", # always y for backward
-      to = "x", # always x for backward
-      med = "m",
-      R = R,
-      seed = seed,
-      ncores = NULL
-    )
+  cTMed::MCMed(
+    phi = phi_hat$coef,
+    vcov_phi_vec = phi_hat$vcov,
+    delta_t = delta_t,
+    from = "y", # always y for backward
+    to = "x", # always x for backward
+    med = "m",
+    R = R,
+    seed = seed,
+    ncores = NULL
   )
 }

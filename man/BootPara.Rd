@@ -8,7 +8,9 @@ BootPara(fit, path, prefix, taskid, B = 1000L, ncores = NULL, seed = NULL)
 }
 \arguments{
 \item{fit}{R object.
-Output of the \code{\link[=FitDynr]{FitDynr()}} function.}
+Output of the \code{\link[=FitDynr]{FitDynr()}}, \code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}}, or \code{\link[=IllustrationFitMx]{IllustrationFitMx()}},
+functions.}
 
 \item{path}{Path to a directory
 to store bootstrap samples and estimates.}
@@ -64,19 +66,7 @@ Other Confidence Interval Functions:
 \code{\link{DeltaXMY}()},
 \code{\link{DeltaXYM}()},
 \code{\link{DeltaYMX}()},
-\code{\link{Grundy2007BootPara}()},
-\code{\link{Grundy2007BootParaStdXMY}()},
-\code{\link{Grundy2007BootParaStdXYM}()},
-\code{\link{Grundy2007BootParaXMY}()},
-\code{\link{Grundy2007BootParaXYM}()},
-\code{\link{Grundy2007DeltaStdXMY}()},
-\code{\link{Grundy2007DeltaStdXYM}()},
-\code{\link{Grundy2007DeltaXMY}()},
-\code{\link{Grundy2007DeltaXYM}()},
-\code{\link{Grundy2007MCStdXMY}()},
-\code{\link{Grundy2007MCStdXYM}()},
-\code{\link{Grundy2007MCXMY}()},
-\code{\link{Grundy2007MCXYM}()},
+\code{\link{IllustrationBootPara}()},
 \code{\link{MCStdXMY}()},
 \code{\link{MCStdXYM}()},
 \code{\link{MCStdYMX}()},

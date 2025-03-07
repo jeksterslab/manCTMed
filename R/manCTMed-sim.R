@@ -12,12 +12,14 @@ Sim <- function(taskid,
                 output_folder,
                 overwrite,
                 integrity,
+                seed,
+                ci,
+                pb,
                 delta_t,
                 R,
-                fit_dynr = FALSE,
-                seed = NULL) {
+                B) {
   # Do not include default arguments here.
-  # All arguments should be set in `sim/sim-args.R`.
+  # All arguments should be set in `.sim/sim-args.R`.
   # Add taskid to output_folder
   output_folder <- file.path(
     output_folder,
@@ -66,7 +68,7 @@ Sim <- function(taskid,
     overwrite = overwrite,
     integrity = integrity
   )
-  if (!fit_dynr) {
+  if (ci) {
     SimDynrDeltaXMY(
       taskid = taskid,
       repid = repid,
@@ -151,5 +153,57 @@ Sim <- function(taskid,
       delta_t = delta_t,
       R = R
     )
+    if (pb) {
+      SimDynrBootPara(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        B = B
+      )
+      SimDynrBootParaXMY(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        delta_t = delta_t
+      )
+      SimDynrBootParaYMX(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        delta_t = delta_t
+      )
+      SimDynrBootParaStdXMY(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        delta_t = delta_t
+      )
+      SimDynrBootParaStdYMX(
+        taskid = taskid,
+        repid = repid,
+        output_folder = output_folder,
+        seed = seed,
+        suffix = suffix,
+        overwrite = overwrite,
+        integrity = integrity,
+        delta_t = delta_t
+      )
+    }
   }
 }

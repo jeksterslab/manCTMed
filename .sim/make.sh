@@ -6,15 +6,19 @@
 #SBATCH --output=make.out
 #SBATCH --error=make.err
 
+# Define project variables
+PROJECT=manCTMed
+SIF=manctmed.sif
+
 # make
 
-cd /scratch/ibp5092/manCTMed
-apptainer exec /scratch/ibp5092/manCTMed/.sif/manctmed.sif make all
+cd /scratch/$USER/overleaf/manCTMed-mar || exit
+apptainer exec /scratch/$USER/${PROJECT}/.sif/${SIF} make all
 
 # remake
 
-cd /scratch/ibp5092/manCTMed
-cp /scratch/ibp5092/manCTMed/vignettes/*.png /scratch/ibp5092/manCTMed/.setup/latex/figures/png
-apptainer exec /scratch/ibp5092/manCTMed/.sif/manctmed.sif make all
-apptainer exec /scratch/ibp5092/manCTMed/.sif/manctmed.sif make auto
+cd /scratch/$USER/overleaf/manCTMed-mar || exit
+cp /scratch/$USER/overleaf/manCTMed-mar/vignettes/*.png /scratch/$USER/overleaf/manCTMed-mar/.setup/latex/figures/png
+apptainer exec /scratch/$USER/${PROJECT}/.sif/${SIF} make all
+apptainer exec /scratch/$USER/${PROJECT}/.sif/${SIF} make auto
 

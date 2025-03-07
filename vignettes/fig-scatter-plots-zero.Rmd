@@ -116,6 +116,7 @@ data(results, package = "manCTMed")
 ### Type I Error Rate
 
 <img src="fig-vignettes-scatter-plots-zero-type1-1.png" width="3300" />
+
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25

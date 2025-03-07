@@ -8,7 +8,7 @@ message: 'To cite package "manCTMed" in publications use:'
 type: software
 license: MIT
 title: 'manCTMed: Continuous Time Mediation'
-version: 0.9.2
+version: 1.0.8
 doi: 10.0000/0000000000
 identifiers:
 - type: url
@@ -40,10 +40,10 @@ preferred-citation:
     given-names: Sy-Miin
     email: quc16@psu.edu
     orcid: https://orcid.org/0000-0003-1938-027X
-  year: '2024'
+  year: '2025'
   doi: 10.0000/0000000000
   journal: JOURNAL_TITLE_HERE
-  notes: R package version 0.9.2
+  notes: R package version 1.0.8
 repository-code: https://github.com/jeksterslab/manCTMed
 url: https://jeksterslab.github.io/manCTMed/
 contact:

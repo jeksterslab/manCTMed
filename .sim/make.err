@@ -1,260 +1,0 @@
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
-
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
-Scanning input file Rd2.idx.....done (1414 entries accepted, 0 rejected).
-Sorting entries..............done (16081 comparisons).
-Generating output file Rd2.ind.....done (563 lines written, 5 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
-Scanning input file Rd2.idx.....done (1414 entries accepted, 0 rejected).
-Sorting entries..............done (16081 comparisons).
-Generating output file Rd2.ind.....done (568 lines written, 5 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex
-
-Quitting from lines 349-362 [unnamed-chunk-5] (/scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex)
-Error in gzfile(file, "rb") : cannot open the connection
-Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Latexmk: Missing bbl file '.setup/latex/pdf/bak.bbl' in following:
- No file bak.bbl.
-Latexmk: Incomplete (and hence corrupt) bcf file '.setup/latex/pdf/bak.bcf'
-Latexmk: ========== Incomplete bcf_file '.setup/latex/pdf/bak.bcf'.
-  I'll rename the file to '.setup/latex/pdf/bak.bcf-SAVE-ERROR'.
-  I'll rename the bbl file to '.setup/latex/pdf/bak.bbl-SAVE-ERROR',
-  in case the incomplete bcf file was a result of error in
-  'pdflatex' caused by an error in the bbl file.
-Failure to make '.setup/latex/pdf/bak.pdf'
-Latexmk: ====Undefined refs and citations with line #s in .tex file:
-  Citation 'Deboeck-Preacher-2015' on page 3 undefined on input line 92
-  Citation 'Ryan-Hamaker-2021' on page 3 undefined on input line 92
-  Reference `fig:manCTMed-cross-sectional-mediation' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-longitudinal-mediation' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 4 undefined on input line 94
-  Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 4 undefined on input line 94
-  Citation 'Rogosa-1979' on page 4 undefined on input line 94
- And 131 more --- see log file '.setup/latex/pdf/bak.log'
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
-Scanning input file Rd2.idx.....done (1414 entries accepted, 0 rejected).
-Sorting entries..............done (16081 comparisons).
-Generating output file Rd2.ind.....done (563 lines written, 5 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
-Scanning input file Rd2.idx.....done (1414 entries accepted, 0 rejected).
-Sorting entries..............done (16081 comparisons).
-Generating output file Rd2.ind.....done (568 lines written, 5 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex
-
-Quitting from lines 349-362 [unnamed-chunk-5] (/scratch/ibp5092/manCTMed/.setup/latex/bak.Rtex)
-Error in gzfile(file, "rb") : cannot open the connection
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
-Cloning into 'manCTMed'...
-Updating files:  15% (430/2810)Updating files:  16% (450/2810)Updating files:  17% (478/2810)Updating files:  18% (506/2810)Updating files:  19% (534/2810)Updating files:  20% (562/2810)Updating files:  21% (591/2810)Updating files:  22% (619/2810)Updating files:  23% (647/2810)Updating files:  24% (675/2810)Updating files:  25% (703/2810)Updating files:  25% (717/2810)Updating files:  26% (731/2810)Updating files:  27% (759/2810)Updating files:  28% (787/2810)Updating files:  29% (815/2810)Updating files:  30% (843/2810)Updating files:  31% (872/2810)Updating files:  32% (900/2810)Updating files:  33% (928/2810)Updating files:  34% (956/2810)Updating files:  35% (984/2810)Updating files:  36% (1012/2810)Updating files:  36% (1018/2810)Updating files:  37% (1040/2810)Updating files:  38% (1068/2810)Updating files:  39% (1096/2810)Updating files:  40% (1124/2810)Updating files:  41% (1153/2810)Updating files:  42% (1181/2810)Updating files:  43% (1209/2810)Updating files:  44% (1237/2810)Updating files:  45% (1265/2810)Updating files:  45% (1273/2810)Updating files:  46% (1293/2810)Updating files:  47% (1321/2810)Updating files:  48% (1349/2810)Updating files:  49% (1377/2810)Updating files:  50% (1405/2810)Updating files:  51% (1434/2810)Updating files:  52% (1462/2810)Updating files:  53% (1490/2810)Updating files:  53% (1504/2810)Updating files:  54% (1518/2810)Updating files:  55% (1546/2810)Updating files:  56% (1574/2810)Updating files:  57% (1602/2810)Updating files:  58% (1630/2810)Updating files:  59% (1658/2810)Updating files:  60% (1686/2810)Updating files:  61% (1715/2810)Updating files:  61% (1725/2810)Updating files:  62% (1743/2810)Updating files:  63% (1771/2810)Updating files:  64% (1799/2810)Updating files:  65% (1827/2810)Updating files:  66% (1855/2810)Updating files:  67% (1883/2810)Updating files:  68% (1911/2810)Updating files:  69% (1939/2810)Updating files:  69% (1944/2810)Updating files:  70% (1967/2810)Updating files:  71% (1996/2810)Updating files:  72% (2024/2810)Updating files:  73% (2052/2810)Updating files:  74% (2080/2810)Updating files:  75% (2108/2810)Updating files:  76% (2136/2810)Updating files:  77% (2164/2810)Updating files:  78% (2192/2810)Updating files:  78% (2210/2810)Updating files:  79% (2220/2810)Updating files:  80% (2248/2810)Updating files:  81% (2277/2810)Updating files:  82% (2305/2810)Updating files:  82% (2320/2810)Updating files:  83% (2333/2810)Updating files:  84% (2361/2810)Updating files:  85% (2389/2810)Updating files:  86% (2417/2810)Updating files:  87% (2445/2810)Updating files:  88% (2473/2810)Updating files:  89% (2501/2810)Updating files:  90% (2529/2810)Updating files:  91% (2558/2810)Updating files:  92% (2586/2810)Updating files:  93% (2614/2810)Updating files:  94% (2642/2810)Updating files:  95% (2670/2810)Updating files:  96% (2698/2810)Updating files:  97% (2726/2810)Updating files:  98% (2754/2810)Updating files:  98% (2773/2810)Updating files:  99% (2782/2810)Updating files: 100% (2810/2810)Updating files: 100% (2810/2810), done.

@@ -131,6 +131,7 @@ FigScatterPlotPower(results, dynamics = 0)
 #| cache = FALSE
 FigScatterPlotType1(results, dynamics = 0)
 ```
+
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25

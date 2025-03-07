@@ -7,32 +7,46 @@
 #SBATCH --exclusive
 #SBATCH --mem=0
 #SBATCH --time=2-00:00:00
-#SBATCH --output=/scratch/ibp5092/manCTMed/.sim/sim.out
-#SBATCH --error=/scratch/ibp5092/manCTMed/.sim/sim.err
+#SBATCH --output=sim.out
+#SBATCH --error=sim.err
+
+# Define project variables
+PROJECT=manCTMed
+SIF=manctmed.sif
 
 # load parallel module ---------------------------------------------------------
 module load parallel
 
 # pre TMP ----------------------------------------------------------------------
-mkdir -p /scratch/ibp5092/manCTMed/.sim/tmp
+mkdir -p /scratch/$USER/${PROJECT}/.sim/tmp
 TODAY=$(date +"%Y-%m-%d-%H-%M-%S-%N")
-PARALLEL_TMP_FOLDER=$(mktemp -d -q "/scratch/ibp5092/manCTMed/.sim/tmp/$TODAY-sim-XXXXXXXX")
+PARALLEL_TMP_FOLDER=$(mktemp -d -q "/scratch/$USER/${PROJECT}/.sim/tmp/$TODAY-sim-XXXXXXXX")
 trap 'rm -rf -- "$PARALLEL_TMP_FOLDER"' EXIT
 echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 # ------------------------------------------------------------------------------
 
 # script -----------------------------------------------------------------------
-# {1} = repid
-# {2} = taskid
-cd /scratch/ibp5092/manCTMed
-parallel                                                                 \
-        --tmpdir "$PARALLEL_TMP_FOLDER"                                  \
-        'apptainer exec                                                  \
-        /scratch/ibp5092/manCTMed/.sif/manctmed.sif                      \
-        Rscript /scratch/ibp5092/manCTMed/.sim/sim.R {1} {2};            \
-        echo sim taskid $(printf "%05d" {2}) repid $(printf "%05d" {1})' \
-        ::: $(seq 1 1000)                                                \
-        ::: $(seq 1 30)
+repid_start=1
+repid_end=1000
+taskid_start=1
+taskid_end=30
+
+cmd="apptainer exec \
+     --bind /scratch/\$USER/${PROJECT}:/scratch/\$USER/${PROJECT} \
+     /scratch/\$USER/${PROJECT}/.sif/${SIF} \
+     Rscript /scratch/\$USER/${PROJECT}/.sim/sim.R {1} {2}; \
+     echo sim taskid \$(printf \"%05d\" {2}) repid \$(printf \"%05d\" {1}) date \$(date '+%Y-%m-%d %H:%M:%S')"
+
+cd /scratch/$USER/${PROJECT} || exit
+
+parallel --tmpdir "$PARALLEL_TMP_FOLDER" \
+    --colsep ' ' "$cmd" :::: <(
+    for repid in $(seq $repid_start $repid_end); do
+        for taskid in $(seq $taskid_start $taskid_end); do
+            echo "$repid $taskid"
+        done
+    done
+)
 # ------------------------------------------------------------------------------
 
 # done -------------------------------------------------------------------------

@@ -56,5 +56,3 @@ Standard errors and confidence intervals for the direct, indirect, and total eff
 See
 [GitHub Pages](https://jeksterslab.github.io/manCTMed/index.html)
 for package documentation.
-
-

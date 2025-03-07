@@ -23,17 +23,15 @@ MCXYM <- function(phi_hat,
                   delta_t = 1:30,
                   R = 20000L,
                   seed = NULL) {
-  return(
-    cTMed::MCMed(
-      phi = phi_hat$coef,
-      vcov_phi_vec = phi_hat$vcov,
-      delta_t = delta_t,
-      from = "x", # grundy reciprocal
-      to = "m",
-      med = "y",
-      R = R,
-      seed = seed,
-      ncores = NULL
-    )
+  cTMed::MCMed(
+    phi = phi_hat$coef,
+    vcov_phi_vec = phi_hat$vcov,
+    delta_t = delta_t,
+    from = "x", # grundy reciprocal
+    to = "m",
+    med = "y",
+    R = R,
+    seed = seed,
+    ncores = NULL
   )
 }

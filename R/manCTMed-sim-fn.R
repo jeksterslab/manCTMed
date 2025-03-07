@@ -9,16 +9,14 @@
 SimFN <- function(output_type,
                   output_folder,
                   suffix) {
-  return(
-    file.path(
-      output_folder,
-      paste0(
-        SimProj(),
-        "-",
-        output_type,
-        "-",
-        suffix
-      )
+  file.path(
+    output_folder,
+    paste0(
+      SimProj(),
+      "-",
+      output_type,
+      "-",
+      suffix
     )
   )
 }

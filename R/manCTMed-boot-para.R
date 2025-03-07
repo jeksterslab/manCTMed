@@ -102,7 +102,7 @@ BootPara <- function(fit,
       )
     )
   )
-  output <- bootStateSpace::PBSSMOUFixed(
+  bootStateSpace::PBSSMOUFixed(
     R = B,
     path = path,
     prefix = prefix,
@@ -120,8 +120,5 @@ BootPara <- function(fit,
     type = 0,
     ncores = ncores,
     seed = seed
-  )
-  return(
-    output
   )
 }

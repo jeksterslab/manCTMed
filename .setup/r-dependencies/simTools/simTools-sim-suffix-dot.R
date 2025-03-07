@@ -16,29 +16,26 @@
 .SimSuffix <- function(taskid,
                        repid) {
   if (is.null(repid)) {
-    return(
-      paste0(
-        sprintf(
-          "%05d",
-          taskid
-        ),
-        ".Rds"
-      )
+    out <- paste0(
+      sprintf(
+        "%05d",
+        taskid
+      ),
+      ".Rds"
     )
   } else {
-    return(
-      paste0(
-        sprintf(
-          "%05d",
-          taskid
-        ),
-        "-",
-        sprintf(
-          "%05d",
-          repid
-        ),
-        ".Rds"
-      )
+    out <- paste0(
+      sprintf(
+        "%05d",
+        taskid
+      ),
+      "-",
+      sprintf(
+        "%05d",
+        repid
+      ),
+      ".Rds"
     )
   }
+  out
 }

@@ -11,8 +11,6 @@
 #' \dontrun{
 #' set.seed(42)
 #' library(dynr)
-#' library(simStateSpace)
-#' library(cTMed)
 #' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
 #' fit <- FitDynr(data, taskid = 1)
@@ -35,23 +33,21 @@ BootParaStdYMX <- function(boot,
                            theta_hat,
                            delta_t = 1:30,
                            ncores = NULL) {
-  return(
-    cTMed::BootMedStd(
-      phi = bootStateSpace::extract(
-        object = boot,
-        what = "phi"
-      ),
-      sigma = bootStateSpace::extract(
-        object = boot,
-        what = "sigma"
-      ),
-      phi_hat = theta_hat$phi,
-      sigma_hat = theta_hat$sigma,
-      delta_t = delta_t,
-      from = "y", # always y for backward
-      to = "x", # always x for backward
-      med = "m",
-      ncores = ncores
-    )
+  cTMed::BootMedStd(
+    phi = bootStateSpace::extract(
+      object = boot,
+      what = "phi"
+    ),
+    sigma = bootStateSpace::extract(
+      object = boot,
+      what = "sigma"
+    ),
+    phi_hat = theta_hat$phi,
+    sigma_hat = theta_hat$sigma,
+    delta_t = delta_t,
+    from = "y", # always y for backward
+    to = "x", # always x for backward
+    med = "m",
+    ncores = ncores
   )
 }

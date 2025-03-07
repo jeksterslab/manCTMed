@@ -7,8 +7,11 @@ suppressMessages(
   )
 )
 source(
-  paste0(
-    "/scratch/ibp5092/manCTMed/.sim/",
+  file.path(
+    "/scratch",
+    Sys.getenv("USER"),
+    "manCTMed",
+    ".sim",
     "sim-args.R"
   )
 )
@@ -26,9 +29,12 @@ tryCatch(
       output_folder = output_folder,
       overwrite = overwrite,
       integrity = TRUE, # FALSE to prioritize speed, TRUE to prioritize output
-      R = R,
+      ci = ci,
+      pb = pb,
       delta_t = delta_t,
-      fit_dynr = FALSE
+      R = R,
+      B = B,
+      seed = seed
     )
   },
   error = function(e) {

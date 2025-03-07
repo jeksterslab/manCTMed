@@ -80,7 +80,7 @@ FigScatterPlotCoverage <- function(results,
       )
     )
   )
-  p <- ggplot2::ggplot(
+  ggplot2::ggplot(
     data = results,
     ggplot2::aes(
       x = interval,
@@ -130,5 +130,4 @@ FigScatterPlotCoverage <- function(results,
     ggplot2::theme_bw() +
     ggplot2::scale_color_brewer(palette = "Set1") +
     ggplot2::scale_shape()
-  return(p)
 }

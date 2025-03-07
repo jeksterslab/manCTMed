@@ -7,5 +7,5 @@
 #' @export
 #' @keywords manCTMed simulation
 SimProj <- function() {
-  return("manCTMed")
+  "manCTMed"
 }

@@ -22,13 +22,17 @@ set.seed(42)
 library(OpenMx)
 sim <- GenData(taskid = 1)
 data <- RandomMeasurement(sim)
-FitMx(data, taskid = 1)
+fit <- FitMx(data, taskid = 1)
+summary(fit)
 }
 }
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitDynr}()},
-\code{\link{Grundy2007FitDynr}()},
+\code{\link{IllustrationFitDynr}()},
+\code{\link{IllustrationFitMx}()},
+\code{\link{IllustrationMCPhiSigma}()},
+\code{\link{IllustrationPrepData}()},
 \code{\link{PhiHat}()},
 \code{\link{ThetaHat}()}
 }

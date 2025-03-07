@@ -23,7 +23,7 @@ plot(sim)
 }
 \seealso{
 Other Data Generation Functions: 
-\code{\link{Grundy2007GenData}()},
+\code{\link{IllustrationGenData}()},
 \code{\link{RandomMeasurement}()}
 }
 \concept{Data Generation Functions}

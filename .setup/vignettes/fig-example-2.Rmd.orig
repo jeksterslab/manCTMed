@@ -28,57 +28,53 @@ knitr::opts_chunk$set(
 ```{r}
 #| include = FALSE
 root <- rprojroot::is_rstudio_project
-n <- 133
-fit <- readRDS(
-  root$find_file(
-    ".setup",
-    "data-raw",
-    paste0(
-      "fit-example-ct-",
-      n,
-      ".Rds"
-    )
-  )
-)
 ```
 
 ```{r}
 #| include = FALSE
-library(dynr)
 library(bootStateSpace)
 library(cTMed)
 ```
 
 ```{r}
 #| eval = FALSE
-library(dynr)
 library(bootStateSpace)
 library(cTMed)
 ```
 
 ## Continuous-Time Vector Autoregressive Model Estimates
 
-The object `fit` contains the fitted `dynr` model for the data set with a sample size of 133. See [Fitting the Continuous-Time Vector Autoregressive Model](https://jeksterslab.github.io/manCTMed/articles/fig-example-ct-var.html) for more details.
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
 
-## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
+```{r}
+#| include = FALSE
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+  )
+)
+```
 
-We extract the elements of the drift matrix and the process noise covariance matrix and their corresponding sampling covariance matrix from the `fit` object.
+```{r}
+summary(fit)
+```
+
+## Parameter Estimates
+
+We extract parameter estimates from the `fit` object.
 
 ```{r}
 # drift matrix
-phi_names <- c(
-  "phi_11",
-  "phi_21",
-  "phi_31",
-  "phi_12",
-  "phi_22",
-  "phi_32",
-  "phi_13",
-  "phi_23",
-  "phi_33"
-)
 phi <- matrix(
-  data = coef(fit)[phi_names],
+  data = coef(fit)[
+    c(
+      "phi_11", "phi_21", "phi_31",
+      "phi_12", "phi_22", "phi_32",
+      "phi_13", "phi_23", "phi_33"
+    )
+  ],
   nrow = 3
 )
 # column names and row names are needed to define the indirect effects
@@ -87,62 +83,77 @@ colnames(phi) <- rownames(phi) <- c(
   "knowledge",
   "competence"
 )
-vcov_phi_vec <- vcov(fit)[phi_names, phi_names]
 ```
 
 ```{r}
 # process noise covariance matrix
-sigma_names <- c(
-  "sigma_11",
-  "sigma_12",
-  "sigma_13",
-  "sigma_12",
-  "sigma_22",
-  "sigma_23",
-  "sigma_13",
-  "sigma_23",
-  "sigma_33"
-)
 sigma <- matrix(
-  data = coef(fit)[sigma_names],
+  data = coef(fit)[
+    c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    )
+  ],
   nrow = 3
 )
 ```
 
 ```{r}
 # measurement error covariance matrix
-theta_names <- c(
-  "theta_11",
-  "theta_22",
-  "theta_33"
+theta <- matrix(
+  data = coef(fit)[
+    c(
+      "theta_11", 0, 0,
+      0, "theta_22", 0,
+      0, 0, "theta_33"
+    )
+  ],
+  nrow = 3
 )
-theta <- diag(3)
-diag(theta) <- coef(fit)[theta_names]
 ```
+
+```{r}
+# initial condition
+mu0 <- coef(fit)[
+  c(
+    "mu0_1", "mu0_2", "mu0_3"
+  )
+]
+sigma0 <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma0_11", "sigma0_12", "sigma0_13",
+      "sigma0_12", "sigma0_22", "sigma0_23",
+      "sigma0_13", "sigma0_23", "sigma0_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+### Sampling Variance-Covariance Matrix of Parameter Estimates
 
 ```{r}
 # combining the drift matrix and the process noise covariance matrix
 phi_sigma_names <- c(
-  "phi_11",
-  "phi_21",
-  "phi_31",
-  "phi_12",
-  "phi_22",
-  "phi_32",
-  "phi_13",
-  "phi_23",
-  "phi_33",
-  "sigma_11",
-  "sigma_12",
-  "sigma_13",
-  "sigma_22",
-  "sigma_23",
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33",
+  "sigma_11", "sigma_12", "sigma_13",
+  "sigma_22", "sigma_23",
   "sigma_33"
 )
-vcov_theta <- matrix(
-  data = vcov(fit)[phi_sigma_names, phi_sigma_names],
-  nrow = length(phi_sigma_names)
+vcov_theta <- vcov(fit)[phi_sigma_names, phi_sigma_names]
+```
+
+```{r}
+phi_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33"
 )
+vcov_phi_vec <- vcov_theta[phi_names, phi_names]
 ```
 
 ## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -179,7 +190,7 @@ MCMed(
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
 
-The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multipke times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multiple times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
 
 > **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
 
@@ -189,49 +200,47 @@ path <- root$find_file(
   ".setup",
   "data-raw"
 )
-prefix <- "pb_example_133"
+prefix <- "illustration_pb"
 ```
 
 ```{r}
 phi_hat <- phi
 sigma_hat <- sigma
-nu <- c(0, 0, 0)
-lambda <- diag(3)
 ```
 
 ```{r}
-# fixed mu0 and sigma0
-data("grundy2007", package = "manCTMed")
-data_0 <- grundy2007[which(grundy2007[, "time"] == 0), ]
-varnames <- c(
-  "conflict",
-  "knowledge",
-  "competence"
-)
-mu0 <- colMeans(data_0)[varnames]
-sigma0 <- cov(data_0)[varnames, varnames]
-```
-
-```{r}
+#| eval = FALSE
 boot <- PBSSMOUFixed(
   R = R,
   path = path,
   prefix = prefix,
   n = 133,
-  time = 30,
+  time = 101,
   delta_t = 0.10,
   mu0 = mu0,
   sigma0_l = t(chol(sigma0)),
   mu = c(0, 0, 0),
   phi = phi,
   sigma_l = t(chol(sigma)),
-  nu = nu,
-  lambda = lambda,
+  nu = c(0, 0, 0),
+  lambda = diag(3),
   theta_l = t(chol(theta)),
-  mu0_fixed = TRUE,
-  sigma0_fixed = TRUE,
+  mu0_fixed = FALSE,
+  sigma0_fixed = FALSE,
   ncores = parallel::detectCores(),
-  seed = 42
+  seed = 42,
+  clean = FALSE
+)
+```
+
+```{r}
+#| include = FALSE
+boot <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-dynr-boot-para-00001-00001.Rds"
+  )
 )
 ```
 
@@ -286,7 +295,7 @@ MCMedStd(
 
 ## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
 
-Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+Using the `BootMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
 pb <- BootMedStd(
