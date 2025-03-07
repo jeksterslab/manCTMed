@@ -29,20 +29,18 @@ GenData <- function(taskid) {
     phi <- model$phi_neg
     sigma_l <- model$sigma_l_neg
   }
-  return(
-    simStateSpace::SimSSMOUFixed(
-      n = param$n,
-      time = model$time,
-      delta_t = model$delta_t,
-      mu0 = model$mu0,
-      sigma0_l = model$sigma0_l,
-      mu = model$mu,
-      phi = phi,
-      sigma_l = sigma_l,
-      nu = model$nu,
-      lambda = model$lambda,
-      theta_l = model$theta_l,
-      type = 0
-    )
+  simStateSpace::SimSSMOUFixed(
+    n = param$n,
+    time = model$time,
+    delta_t = model$delta_t,
+    mu0 = model$mu0,
+    sigma0_l = model$sigma0_l,
+    mu = model$mu,
+    phi = phi,
+    sigma_l = sigma_l,
+    nu = model$nu,
+    lambda = model$lambda,
+    theta_l = model$theta_l,
+    type = 0
   )
 }

@@ -31,18 +31,16 @@ BootParaYMX <- function(boot,
                         phi_hat,
                         delta_t = 1:30,
                         ncores = NULL) {
-  return(
-    cTMed::BootMed(
-      phi = bootStateSpace::extract(
-        object = boot,
-        what = "phi"
-      ),
-      phi_hat = phi_hat$coef,
-      delta_t = delta_t,
-      from = "y", # always y for backward
-      to = "x", # always x for backward
-      med = "m",
-      ncores = ncores
-    )
+  cTMed::BootMed(
+    phi = bootStateSpace::extract(
+      object = boot,
+      what = "phi"
+    ),
+    phi_hat = phi_hat$coef,
+    delta_t = delta_t,
+    from = "y", # always y for backward
+    to = "x", # always x for backward
+    med = "m",
+    ncores = ncores
   )
 }

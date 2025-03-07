@@ -1,6 +1,6 @@
 Package: manCTMed
 Title: Continuous Time Mediation
-Version: 0.9.2
+Version: 1.0.8
 Authors@R: c(
     person(given = "Ivan Jacob Agaloos",
            family = "Pesigan",
@@ -20,16 +20,16 @@ BugReports: https://github.com/jeksterslab/manCTMed/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.0.0)
-Imports: utils, stats, dynr, OpenMx, dynUtils, simStateSpace,
-        bootStateSpace, cTMed, ggplot2, MASS
+Imports: stats, dynr, OpenMx, dynUtils, simStateSpace, bootStateSpace,
+        cTMed, ggplot2
 Suggests: knitr, rmarkdown, testthat, DT
-Remotes: jeksterslab/dynUtils, jeksterslab/cTMed,
-        jeksterslab/simStateSpace, jeksterslab/bootStateSpace
+Remotes: jeksterslab/dynUtils
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-02-01 21:46:43 UTC; root
+Packaged: 2025-03-07 10:26:32 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>

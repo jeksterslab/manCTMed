@@ -25,7 +25,5 @@
     showWarnings = FALSE,
     recursive = TRUE
   )
-  return(
-    path
-  )
+  path
 }

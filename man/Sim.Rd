@@ -10,10 +10,12 @@ Sim(
   output_folder,
   overwrite,
   integrity,
+  seed,
+  ci,
+  pb,
   delta_t,
   R,
-  fit_dynr = FALSE,
-  seed = NULL
+  B
 )
 }
 \arguments{
@@ -33,17 +35,23 @@ Overwrite existing output in \code{output_folder}.}
 If \code{integrity = TRUE},
 check for the output file integrity when \code{overwrite = FALSE}.}
 
+\item{seed}{Integer.
+Random seed.}
+
+\item{ci}{Logical.
+Run simulations for confidence intervals.}
+
+\item{pb}{Logical.
+Run simulations for parametric bootstrap confidence intervals.}
+
 \item{delta_t}{Numeric vector.
 Vector of time intervals.}
 
 \item{R}{Positive integer.
-Number of random drift matrices to generate.}
+Number of Monte Carlo replications.}
 
-\item{fit_dynr}{Logical.
-Generate data and fit the CT-VAR model only.}
-
-\item{seed}{Integer.
-Random seed.}
+\item{B}{Positive integer.
+Number of bootstrap samples.}
 }
 \value{
 The output is saved as an external file in \code{output_folder}.

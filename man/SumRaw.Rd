@@ -17,14 +17,7 @@ Number of replications.}
 Output folder.}
 
 \item{output_type}{Character string.
-Output type.
-Valid values include
-\code{"data"},
-\code{"fit-dynr"},
-\code{"dynr-delta-xmy"},
-\code{"dynr-delta-ymx"},
-\code{"dynr-mc-xmy"}, and
-\code{"dynr-mc-ymx"}}
+Output type.}
 
 \item{ncores}{Positive integer.
 Number of cores to use.}

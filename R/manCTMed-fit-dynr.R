@@ -10,11 +10,13 @@
 #' library(dynr)
 #' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
-#' FitDynr(data, taskid = 1)
+#' fit <- FitDynr(data, taskid = 1)
+#' summary(fit)
 #' }
 #' @family Model Fitting Functions
 #' @keywords manCTMed fit
 #' @import dynr
+#' @importFrom stats coef
 #' @export
 FitDynr <- function(data,
                     taskid) {

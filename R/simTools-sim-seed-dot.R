@@ -20,18 +20,16 @@
   )
   taskid <- as.integer(taskid)
   repid <- as.integer(repid)
-  return(
-    as.integer(
-      as.numeric(
-        paste0(
-          sprintf(
-            "%05d",
-            taskid
-          ),
-          sprintf(
-            "%05d",
-            repid
-          )
+  as.integer(
+    as.numeric(
+      paste0(
+        sprintf(
+          "%05d",
+          taskid
+        ),
+        sprintf(
+          "%05d",
+          repid
         )
       )
     )

@@ -8,14 +8,7 @@ SimFN(output_type, output_folder, suffix)
 }
 \arguments{
 \item{output_type}{Character string.
-Output type.
-Valid values include
-\code{"data"},
-\code{"fit-dynr"},
-\code{"dynr-delta-xmy"},
-\code{"dynr-delta-ymx"},
-\code{"dynr-mc-xmy"}, and
-\code{"dynr-mc-ymx"}}
+Output type.}
 
 \item{output_folder}{Character string.
 Output folder.}

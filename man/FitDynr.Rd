@@ -22,13 +22,17 @@ set.seed(42)
 library(dynr)
 sim <- GenData(taskid = 1)
 data <- RandomMeasurement(sim)
-FitDynr(data, taskid = 1)
+fit <- FitDynr(data, taskid = 1)
+summary(fit)
 }
 }
 \seealso{
 Other Model Fitting Functions: 
 \code{\link{FitMx}()},
-\code{\link{Grundy2007FitDynr}()},
+\code{\link{IllustrationFitDynr}()},
+\code{\link{IllustrationFitMx}()},
+\code{\link{IllustrationMCPhiSigma}()},
+\code{\link{IllustrationPrepData}()},
 \code{\link{PhiHat}()},
 \code{\link{ThetaHat}()}
 }

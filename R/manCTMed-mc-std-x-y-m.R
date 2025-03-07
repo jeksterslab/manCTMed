@@ -23,18 +23,16 @@ MCStdXYM <- function(theta_hat,
                      delta_t = 1:30,
                      R = 20000L,
                      seed = NULL) {
-  return(
-    cTMed::MCMedStd(
-      phi = theta_hat$phi,
-      sigma = theta_hat$sigma,
-      vcov_theta = theta_hat$vcov,
-      delta_t = delta_t,
-      from = "x", # grundy reciprocal
-      to = "m",
-      med = "y",
-      R = R,
-      seed = seed,
-      ncores = NULL
-    )
+  cTMed::MCMedStd(
+    phi = theta_hat$phi,
+    sigma = theta_hat$sigma,
+    vcov_theta = theta_hat$vcov,
+    delta_t = delta_t,
+    from = "x", # grundy reciprocal
+    to = "m",
+    med = "y",
+    R = R,
+    seed = seed,
+    ncores = NULL
   )
 }

@@ -31,18 +31,16 @@ BootParaXYM <- function(boot,
                         phi_hat,
                         delta_t = 1:30,
                         ncores = NULL) {
-  return(
-    cTMed::BootMed(
-      phi = bootStateSpace::extract(
-        object = boot,
-        what = "phi"
-      ),
-      phi_hat = phi_hat$coef,
-      delta_t = delta_t,
-      from = "x", # grundy reciprocal
-      to = "m",
-      med = "y",
-      ncores = ncores
-    )
+  cTMed::BootMed(
+    phi = bootStateSpace::extract(
+      object = boot,
+      what = "phi"
+    ),
+    phi_hat = phi_hat$coef,
+    delta_t = delta_t,
+    from = "x", # grundy reciprocal
+    to = "m",
+    med = "y",
+    ncores = ncores
   )
 }

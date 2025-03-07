@@ -8,7 +8,9 @@ PhiHat(fit)
 }
 \arguments{
 \item{fit}{R object.
-Output of the \code{\link[=FitDynr]{FitDynr()}} function.}
+Output of the \code{\link[=FitDynr]{FitDynr()}}, \code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}}, or \code{\link[=IllustrationFitMx]{IllustrationFitMx()}},
+functions.}
 }
 \description{
 The function extracts the estimated drift matrix
@@ -28,9 +30,12 @@ PhiHat(fit)
 Other Model Fitting Functions: 
 \code{\link{FitDynr}()},
 \code{\link{FitMx}()},
-\code{\link{Grundy2007FitDynr}()},
+\code{\link{IllustrationFitDynr}()},
+\code{\link{IllustrationFitMx}()},
+\code{\link{IllustrationMCPhiSigma}()},
+\code{\link{IllustrationPrepData}()},
 \code{\link{ThetaHat}()}
 }
 \concept{Model Fitting Functions}
-\keyword{fit}
+\keyword{ci}
 \keyword{manCTMed}

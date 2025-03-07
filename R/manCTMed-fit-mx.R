@@ -10,7 +10,8 @@
 #' library(OpenMx)
 #' sim <- GenData(taskid = 1)
 #' data <- RandomMeasurement(sim)
-#' FitMx(data, taskid = 1)
+#' fit <- FitMx(data, taskid = 1)
+#' summary(fit)
 #' }
 #' @family Model Fitting Functions
 #' @keywords manCTMed fit
@@ -252,19 +253,17 @@ FitMx <- function(data,
   model_id <- function(i,
                        data,
                        model) {
-    return(
-      OpenMx::mxModel(
-        name = paste0("CTVAR", "_", i),
-        model = model,
-        OpenMx::mxData(
-          observed = data[
-            which(
-              data[, "id"] == i
-            ), ,
-            drop = FALSE
-          ],
-          type = "raw"
-        )
+    OpenMx::mxModel(
+      name = paste0("CTVAR", "_", i),
+      model = model,
+      OpenMx::mxData(
+        observed = data[
+          which(
+            data[, "id"] == i
+          ), ,
+          drop = FALSE
+        ],
+        type = "raw"
       )
     )
   }
@@ -294,5 +293,5 @@ FitMx <- function(data,
       extraTries = 1000
     )
   }
-  return(fit)
+  fit
 }

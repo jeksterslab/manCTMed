@@ -125,7 +125,6 @@ SumRaw <- function(taskid,
   foo <- function(repid,
                   taskid,
                   output_folder,
-                  param,
                   parameter) {
     suffix <- .SimSuffix(
       taskid = taskid,
@@ -165,7 +164,7 @@ SumRaw <- function(taskid,
       output$R <- NA
       output$sig <- output$p < 0.05
     }
-    return(output)
+    output
   }
   out <- do.call(
     what = "rbind",
@@ -174,7 +173,6 @@ SumRaw <- function(taskid,
       FUN = foo,
       taskid = taskid,
       output_folder = output_folder,
-      param = param,
       parameter = parameter,
       mc.cores = ncores
     )
@@ -184,18 +182,16 @@ SumRaw <- function(taskid,
     "direct",
     "indirect"
   )
-  return(
-    cbind(
-      taskid = taskid,
-      replications = reps,
-      n = param$n,
-      method = method,
-      out,
-      output_type = output_type,
-      xmy = xmy,
-      std = std,
-      dynamics = param$dynamics
-    )
+  cbind(
+    taskid = taskid,
+    replications = reps,
+    n = param$n,
+    method = method,
+    out,
+    output_type = output_type,
+    xmy = xmy,
+    std = std,
+    dynamics = param$dynamics
   )
 }
 # nolint end

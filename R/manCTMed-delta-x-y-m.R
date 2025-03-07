@@ -23,15 +23,13 @@
 #' @export
 DeltaXYM <- function(phi_hat,
                      delta_t = 1:30) {
-  return(
-    cTMed::DeltaMed(
-      phi = phi_hat$coef,
-      vcov_phi_vec = phi_hat$vcov,
-      delta_t = delta_t,
-      from = "x", # grundy reciprocal
-      to = "m",
-      med = "y",
-      ncores = NULL
-    )
+  cTMed::DeltaMed(
+    phi = phi_hat$coef,
+    vcov_phi_vec = phi_hat$vcov,
+    delta_t = delta_t,
+    from = "x", # grundy reciprocal
+    to = "m",
+    med = "y",
+    ncores = NULL
   )
 }

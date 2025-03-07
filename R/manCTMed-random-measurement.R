@@ -25,38 +25,36 @@ RandomMeasurement <- function(sim) {
     time,
     observed
   )
-  return(
-    dynUtils::InsertNA(
-      data = do.call(
-        what = "rbind",
-        args = lapply(
-          X = dynUtils::SubsetByID(
-            data = data,
-            id = id,
-            time = time,
-            observed = observed,
-            ncores = NULL
-          ),
-          FUN = function(x) {
-            idx <- c(
-              1,
-              sort(
-                sample(
-                  x = 2:model$time,
-                  size = 99,
-                  replace = FALSE
-                )
+  dynUtils::InsertNA(
+    data = do.call(
+      what = "rbind",
+      args = lapply(
+        X = dynUtils::SubsetByID(
+          data = data,
+          id = id,
+          time = time,
+          observed = observed,
+          ncores = NULL
+        ),
+        FUN = function(x) {
+          idx <- c(
+            1,
+            sort(
+              sample(
+                x = 2:model$time,
+                size = 99,
+                replace = FALSE
               )
             )
-            return(x[idx, ])
-          }
-        )
-      ),
-      id = id,
-      time = time,
-      observed = observed,
-      delta_t = model$delta_t,
-      ncores = NULL
-    )
+          )
+          x[idx, ]
+        }
+      )
+    ),
+    id = id,
+    time = time,
+    observed = observed,
+    delta_t = model$delta_t,
+    ncores = NULL
   )
 }
