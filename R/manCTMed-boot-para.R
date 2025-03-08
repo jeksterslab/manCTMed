@@ -31,7 +31,8 @@ BootPara <- function(fit,
                      taskid,
                      B = 1000L,
                      ncores = NULL,
-                     seed = NULL) {
+                     seed = NULL,
+                     clean = TRUE) {
   param <- params[taskid, ]
   n <- param$n
   est <- coef(fit)
@@ -119,6 +120,7 @@ BootPara <- function(fit,
     theta_l = theta_l,
     type = 0,
     ncores = ncores,
-    seed = seed
+    seed = seed,
+    clean = clean
   )
 }
