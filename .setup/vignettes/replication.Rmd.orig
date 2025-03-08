@@ -92,7 +92,8 @@ boot <- BootPara(
   taskid = taskid,
   B = B,
   ncores = parallel::detectCores(),
-  seed = seed
+  seed = seed,
+  clean = FALSE
 )
 ```
 

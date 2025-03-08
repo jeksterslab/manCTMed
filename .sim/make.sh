@@ -21,4 +21,3 @@ cd /scratch/$USER/overleaf/manCTMed-mar || exit
 cp /scratch/$USER/overleaf/manCTMed-mar/vignettes/*.png /scratch/$USER/overleaf/manCTMed-mar/.setup/latex/figures/png
 apptainer exec /scratch/$USER/${PROJECT}/.sif/${SIF} make all
 apptainer exec /scratch/$USER/${PROJECT}/.sif/${SIF} make auto
-
