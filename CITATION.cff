@@ -25,8 +25,8 @@ authors:
   orcid: https://orcid.org/0000-0000-0000-0000
 preferred-citation:
   type: article
-  title: Standard Errors and Confidence Intervals for Total, Direct, and Indirect
-    Effects in Continuous-Time Mediation Models
+  title: Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time
+    Mediation Models
   authors:
   - family-names: Pesigan
     given-names: Ivan Jacob Agaloos
