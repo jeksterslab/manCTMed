@@ -1,7 +1,7 @@
 year <- 2025
 author_text <- "Pesigan, I. J. A., Russell, I. J. A. & Chow, S.-M."
 pkg <- meta$Package
-title <- "Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects in Continuous-Time Mediation Models"
+title <- "Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models"
 version <- meta$Version
 author <- c(
   person(
