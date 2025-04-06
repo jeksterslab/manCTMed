@@ -1,4 +1,4 @@
-pandoc: 3.6.3
+pandoc: 3.6.4
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
@@ -6,10 +6,8 @@ articles:
   fig-example-1: fig-example-1.html
   fig-example-2: fig-example-2.html
   fig-example-3: fig-example-3.html
-  fig-example-dist-ct: fig-example-dist-ct.html
-  fig-example-dist-dt: fig-example-dist-dt.html
-  fig-example-dist-med-std: fig-example-dist-med-std.html
-  fig-example-dist-med: fig-example-dist-med.html
+  fig-sampling-distribution: fig-sampling-distribution.html
+  fig-scatter-plots-illustration: fig-scatter-plots-illustration.html
   fig-scatter-plots-neg: fig-scatter-plots-neg.html
   fig-scatter-plots-pos: fig-scatter-plots-pos.html
   fig-scatter-plots-zero: fig-scatter-plots-zero.html
@@ -17,8 +15,8 @@ articles:
   params: params.html
   replication: replication.html
   results: results.html
-  session/session: session/session.html
-last_built: 2025-03-07T10:26Z
+  session: session.html
+last_built: 2025-04-06T18:24Z
 urls:
   reference: https://github.com/jeksterslab/manCTMed/reference
   article: https://github.com/jeksterslab/manCTMed/articles

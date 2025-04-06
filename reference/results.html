@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manCTMed</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,17 +23,15 @@
     <li><a class="dropdown-item" href="../articles/fig-example-1.html">Illustration 1 - Direct, Indirect, and Total Effects</a></li>
     <li><a class="dropdown-item" href="../articles/fig-example-2.html">Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects</a></li>
     <li><a class="dropdown-item" href="../articles/fig-example-3.html">Illustration 3 - Regions of Significance</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-ct.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-dt.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-med-std.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-med.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-sampling-distribution.html">Sampling Distribution of Direct, Indirect, and Total Effects</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-scatter-plots-illustration.html">Scatter Plots - Illustration</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-neg.html">Scatter Plots - Weak Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-pos.html">Scatter Plots - Strong Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-zero.html">Scatter Plots - Moderate Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/params.html">Simulation Parameters</a></li>
     <li><a class="dropdown-item" href="../articles/replication.html">Single Replication from the Simulation Study</a></li>
     <li><a class="dropdown-item" href="../articles/results.html">Simulation Results</a></li>
-    <li><a class="dropdown-item" href="../articles/session/session.html">manCTMed: Session</a></li>
+    <li><a class="dropdown-item" href="../articles/session.html">manCTMed: Session</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -48,7 +46,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Simulation Results</h1>
-      <small class="dont-index">Source: <a href="https://github.com/jeksterslab/manCTMed/blob/main/R/manCTMed-results.R"><code>R/manCTMed-results.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/jeksterslab/manCTMed/blob/main/R/manCTMed-data-results.R"><code>R/manCTMed-data-results.R</code></a></small>
       <div class="d-none name"><code>results.Rd</code></div>
     </div>
 
@@ -63,15 +61,30 @@
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A dataframe with 1440 rows and 21 columns:</p>
+    <p>A dataframe with 24 columns:</p>
 <dl><dt>taskid</dt>
-<dd><p>Simulation Task ID.</p></dd>
+<dd><p>Task ID.</p></dd>
 
 <dt>replications</dt>
-<dd><p>Number of simulation replications.</p></dd>
+<dd><p>Number of replications.</p></dd>
 
-<dt>output_type</dt>
-<dd><p>Simulation output type.</p></dd>
+<dt>effect</dt>
+<dd><p>Total, direct, or indirect effect.</p></dd>
+
+<dt>interval</dt>
+<dd><p>Time interval.</p></dd>
+
+<dt>dynamics</dt>
+<dd><p>Dynamics.
+<code>0</code> for original drift matrix,
+<code>-1</code> for near-neutral dynamics, and
+<code>1</code> for stronger damping.</p></dd>
+
+<dt>parameter</dt>
+<dd><p>Population parameter.</p></dd>
+
+<dt>method</dt>
+<dd><p>Method used to generate confidence intervals.</p></dd>
 
 <dt>xmy</dt>
 <dd><p>If <code>TRUE</code>, the mediation model is \(X \to M \to Y\).
@@ -81,47 +94,32 @@ If <code>FALSE</code>, the mediation model is \(Y \to M \to X\).</p></dd>
 <dd><p>If <code>TRUE</code>, standardized total, direct, and indirect effects.
 If <code>FALSE</code>, unstandardized total, direct, and indirect effects.</p></dd>
 
-<dt>dynamics</dt>
-<dd><p>Dynamics.
-<code>0</code> for original drift matrix,
-<code>-1</code> for near-neutral dynamics, and
-<code>1</code> for stronger damping.</p></dd>
-
 <dt>n</dt>
 <dd><p>Sample size.</p></dd>
 
-<dt>method</dt>
-<dd><p>Method used to generate confidence intervals.</p></dd>
-
-<dt>effect</dt>
-<dd><p>Total, direct, or indirect effect.</p></dd>
-
-<dt>interval</dt>
-<dd><p>Time-interval.</p></dd>
-
 <dt>est</dt>
-<dd><p>Average parameter estimate.</p></dd>
+<dd><p>Mean parameter estimate.</p></dd>
 
 <dt>se</dt>
-<dd><p>Average standard error.</p></dd>
+<dd><p>Mean standard error.</p></dd>
 
 <dt>z</dt>
-<dd><p>Average \(z\) statistic.</p></dd>
+<dd><p>Mean \(z\) statistic.</p></dd>
 
 <dt>p</dt>
-<dd><p>Average \(p\)-value.</p></dd>
+<dd><p>Mean \(p\)-value.</p></dd>
 
 <dt>R</dt>
-<dd><p>Number of replications for the Monte Carlo method.</p></dd>
+<dd><p>Number of Monte Carlo replications.</p></dd>
 
-<dt>2.5%</dt>
-<dd><p>Lower limit of the 95% confidence interval.</p></dd>
+<dt>ll</dt>
+<dd><p>Mean lower limit of the 95% confidence interval.</p></dd>
 
-<dt>97.5%</dt>
-<dd><p>Upper limit of the 95% confidence interval.</p></dd>
+<dt>ul</dt>
+<dd><p>Mean upper limit of the 95% confidence interval.</p></dd>
 
-<dt>parameter</dt>
-<dd><p>Population parameter.</p></dd>
+<dt>sig</dt>
+<dd><p>Proportion of statistically significant results.</p></dd>
 
 <dt>zero_hit</dt>
 <dd><p>Proportion of replications
@@ -133,8 +131,17 @@ contained zero.</p></dd>
 where the confidence intervals
 contained the population parameter.</p></dd>
 
-<dt>sig</dt>
-<dd><p>If <code>TRUE</code>, \(p &lt; 0.05\).</p></dd>
+<dt>sq_error</dt>
+<dd><p>Mean squared error.</p></dd>
+
+<dt>se_bias</dt>
+<dd><p>Bias in standard error estimate.</p></dd>
+
+<dt>coverage</dt>
+<dd><p>Coverage probability.</p></dd>
+
+<dt>power</dt>
+<dd><p>Statistical power.</p></dd>
 
 
 </dl></div>

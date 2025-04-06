@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">manCTMed</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,17 +41,15 @@
     <li><a class="dropdown-item" href="../articles/fig-example-1.html">Illustration 1 - Direct, Indirect, and Total Effects</a></li>
     <li><a class="dropdown-item" href="../articles/fig-example-2.html">Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects</a></li>
     <li><a class="dropdown-item" href="../articles/fig-example-3.html">Illustration 3 - Regions of Significance</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-ct.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-dt.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-med-std.html">UNKNOWN TITLE</a></li>
-    <li><a class="dropdown-item" href="../articles/fig-example-dist-med.html">UNKNOWN TITLE</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-sampling-distribution.html">Sampling Distribution of Direct, Indirect, and Total Effects</a></li>
+    <li><a class="dropdown-item" href="../articles/fig-scatter-plots-illustration.html">Scatter Plots - Illustration</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-neg.html">Scatter Plots - Weak Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-pos.html">Scatter Plots - Strong Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/fig-scatter-plots-zero.html">Scatter Plots - Moderate Coupling</a></li>
     <li><a class="dropdown-item" href="../articles/params.html">Simulation Parameters</a></li>
     <li><a class="dropdown-item" href="../articles/replication.html">Single Replication from the Simulation Study</a></li>
     <li><a class="dropdown-item" href="../articles/results.html">Simulation Results</a></li>
-    <li><a class="dropdown-item" href="../articles/session/session.html">manCTMed: Session</a></li>
+    <li><a class="dropdown-item" href="../articles/session.html">manCTMed: Session</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -105,8 +103,6 @@ model. Data is generated using the
 fitted using the <code><a href="../reference/IllustrationFitDynr.html">manCTMed::IllustrationFitDynr</a></code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: dynr</span></span>
-<span><span class="co">#&gt; Loading required package: ggplot2</span></span>
 <span><span class="co">#&gt; Coefficients:</span></span>
 <span><span class="co">#&gt;             Estimate Std. Error t value   ci.lower   ci.upper Pr(&gt;|t|)    </span></span>
 <span><span class="co">#&gt; phi_11    -0.1157754  0.0174197  -6.646 -0.1499173 -0.0816334   &lt;2e-16 ***</span></span>
@@ -270,25 +266,6 @@ range of time interval values from 0 to 10 are plotted below.</p>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">med_std</span>, legend_pos <span class="op">=</span> <span class="st">"bottomright"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="fig-vignettes-example-1-unnamed-chunk-12-1.png" width="1700"></p>
-</div>
-<div class="section level2">
-<h2 id="visualizing-normality-of-direct-indirect-and-total-effects">Visualizing Normality of Direct, Indirect, and Total Effects<a class="anchor" aria-label="anchor" href="#visualizing-normality-of-direct-indirect-and-total-effects"></a>
-</h2>
-<p>The sampling distribution of the direct, indirect, and total effects
-were generated using 1000 samples.</p>
-<p><img src="fig-vignettes-example-1-direct-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-indirect-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-total-1-1.png" width="1700"></p>
-</div>
-<div class="section level2">
-<h2 id="visualizing-normality-of-standardized-direct-indirect-and-total-effects">Visualizing Normality of Standardized Direct, Indirect, and Total
-Effects<a class="anchor" aria-label="anchor" href="#visualizing-normality-of-standardized-direct-indirect-and-total-effects"></a>
-</h2>
-<p>The sampling distribution of the standardized direct, indirect, and
-total effects were generated using 1000 samples.</p>
-<p><img src="fig-vignettes-example-1-std-direct-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-indirect-1-1.png" width="1700"></p>
-<p><img src="fig-vignettes-example-1-std-total-1-1.png" width="1700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
