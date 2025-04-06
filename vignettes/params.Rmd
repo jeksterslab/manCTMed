@@ -46,12 +46,12 @@ DT::datatable(
 results <- results[which(results[, "method"] == "delta"), ]
 results <- results[which(results[, "n"] == 50), ]
 results <- results[which(results[, "xmy"] == TRUE), ]
-results <- results[, c("interval", "effect", "parameter")]
+results <- results[, c("dynamics", "interval", "effect", "parameter")]
 total <- results[which(results[, "effect"] == "total"), ]
 direct <- results[which(results[, "effect"] == "direct"), ]
 indirect <- results[which(results[, "effect"] == "indirect"), ]
 effects <- data.frame(
-  taskid = total$taskid,
+  taskid = total$dynamics,
   interval = total$interval,
   total = total$parameter,
   direct = direct$parameter,

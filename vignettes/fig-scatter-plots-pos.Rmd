@@ -117,6 +117,10 @@ data(results, package = "manCTMed")
 
 <img src="fig-vignettes-scatter-plots-pos-type1-1.png" width="3300" />
 
+### Standard Error Bias
+
+<img src="fig-vignettes-scatter-plots-pos-se-bias-1.png" width="3300" />
+
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25
@@ -142,3 +146,7 @@ data(results, package = "manCTMed")
 ### Type I Error Rate (Standardized)
 
 <img src="fig-vignettes-scatter-plots-pos-type1-std-1.png" width="3300" />
+
+### Standard Error Bias (Standardized)
+
+<img src="fig-vignettes-scatter-plots-pos-se-bias-std-1.png" width="3300" />

@@ -30,8 +30,6 @@ The object `fit` contains the fitted `dynr` model. Data is generated using the `
 
 ``` r
 summary(fit)
-#> Loading required package: dynr
-#> Loading required package: ggplot2
 #> Coefficients:
 #>             Estimate Std. Error t value   ci.lower   ci.upper Pr(>|t|)    
 #> phi_11    -0.1157754  0.0174197  -6.646 -0.1499173 -0.0816334   <2e-16 ***
@@ -198,28 +196,3 @@ plot(med_std, legend_pos = "bottomright")
 ```
 
 <img src="fig-vignettes-example-1-unnamed-chunk-12-1.png" width="1700" />
-
-## Visualizing Normality of Direct, Indirect, and Total Effects
-
-The sampling distribution of the direct, indirect, and total effects were generated using 1000 samples.
-
-
-
-<img src="fig-vignettes-example-1-direct-1-1.png" width="1700" />
-
-<img src="fig-vignettes-example-1-indirect-1-1.png" width="1700" />
-
-<img src="fig-vignettes-example-1-total-1-1.png" width="1700" />
-
-## Visualizing Normality of Standardized Direct, Indirect, and Total Effects
-
-The sampling distribution of the standardized direct, indirect, and total effects were generated using 1000 samples.
-
-
-
-<img src="fig-vignettes-example-1-std-direct-1-1.png" width="1700" />
-
-<img src="fig-vignettes-example-1-std-indirect-1-1.png" width="1700" />
-
-<img src="fig-vignettes-example-1-std-total-1-1.png" width="1700" />
- 

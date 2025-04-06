@@ -42,6 +42,8 @@
 #'   Run simulations for confidence intervals.
 #' @param pb Logical.
 #'   Run simulations for parametric bootstrap confidence intervals.
+#' @param tasks Positive integer.
+#'   Number of tasks.
 #' @param reps Positive integer.
 #'   Number of replications.
 #'

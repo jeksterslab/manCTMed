@@ -1,13 +1,13 @@
 # SIMULATION ARGUMENTS ---------------------------------------------------------
 tasks <- 1L
-reps <- 1000L
+reps <- 200L
 overwrite <- FALSE
 R <- 20000L
 B <- 1000L
 delta_t <- 1:30
 seed <- NULL
-ci <- FALSE
-pb <- FALSE
+ci <- TRUE
+pb <- TRUE
 # ------------------------------------------------------------------------------
 output_root <- file.path(
   "/scratch",

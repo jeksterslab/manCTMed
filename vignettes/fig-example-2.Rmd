@@ -175,34 +175,36 @@ Using the `DeltaMed` function from the `cTMed` package, confidence intervals for
 
 
 ``` r
-DeltaMed(
+delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
-#> 
-#> Total, Direct, and Indirect Effects
-#> 
-#> $`1`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           1 -0.0626 0.0115 -5.4454 0.0000 -0.0851 -0.0400
-#> direct          1 -0.0602 0.0122 -4.9186 0.0000 -0.0842 -0.0362
-#> indirect        1 -0.0023 0.0023 -1.0141 0.3105 -0.0069  0.0022
-#> 
-#> $`2`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           2 -0.0907 0.0156 -5.7979 0.0000 -0.1214 -0.0601
-#> direct          2 -0.0847 0.0175 -4.8404 0.0000 -0.1190 -0.0504
-#> indirect        2 -0.0061 0.0060 -1.0154 0.3099 -0.0178  0.0056
-#> 
-#> $`3`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           3 -0.1004 0.0168 -5.9728 0.0000 -0.1333 -0.0674
-#> direct          3 -0.0914 0.0193 -4.7257 0.0000 -0.1294 -0.0535
-#> indirect        3 -0.0089 0.0089 -1.0081 0.3134 -0.0263  0.0084
+summary(delta)
+#>     effect interval          est          se         z            p
+#> 1    total        1 -0.062555476 0.011487680 -5.445440 5.167744e-08
+#> 2   direct        1 -0.060214915 0.012242403 -4.918553 8.718614e-07
+#> 3 indirect        1 -0.002340561 0.002308034 -1.014093 3.105384e-01
+#> 4    total        2 -0.090728400 0.015648577 -5.797869 6.716285e-09
+#> 5   direct        2 -0.084667452 0.017491657 -4.840448 1.295468e-06
+#> 6 indirect        2 -0.006060948 0.005969252 -1.015361 3.099336e-01
+#> 7    total        3 -0.100363120 0.016803252 -5.972839 2.331598e-09
+#> 8   direct        3 -0.091430222 0.019347394 -4.725713 2.293097e-06
+#> 9 indirect        3 -0.008932897 0.008860944 -1.008120 3.133968e-01
+#>           2.5%        97.5%
+#> 1 -0.085070916 -0.040040036
+#> 2 -0.084209585 -0.036220245
+#> 3 -0.006864224  0.002183102
+#> 4 -0.121399047 -0.060057753
+#> 5 -0.118950469 -0.050384435
+#> 6 -0.017760467  0.005638571
+#> 7 -0.133296888 -0.067429351
+#> 8 -0.129350417 -0.053510028
+#> 9 -0.026300029  0.008434235
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -211,36 +213,28 @@ Using the `MCMed` function from the `cTMed` package, confidence intervals for th
 
 
 ``` r
-MCMed(
+mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
   med = "knowledge",
+  ncores = parallel::detectCores(),
   R = 20000L,
   seed = 42
 )
-#> 
-#> Total, Direct, and Indirect Effects
-#> 
-#> $`1`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           1 -0.0626 0.0115 20000 -0.0852 -0.0400
-#> direct          1 -0.0602 0.0123 20000 -0.0847 -0.0361
-#> indirect        1 -0.0023 0.0023 20000 -0.0069  0.0023
-#> 
-#> $`2`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           2 -0.0907 0.0157 20000 -0.1215 -0.0599
-#> direct          2 -0.0847 0.0176 20000 -0.1200 -0.0506
-#> indirect        2 -0.0061 0.0060 20000 -0.0174  0.0063
-#> 
-#> $`3`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           3 -0.1004 0.0169 20000 -0.1337 -0.0670
-#> direct          3 -0.0914 0.0195 20000 -0.1315 -0.0544
-#> indirect        3 -0.0089 0.0090 20000 -0.0255  0.0098
+summary(mc)
+#>     effect interval          est          se     R         2.5%        97.5%
+#> 1    total        1 -0.062555476 0.011476453 20000 -0.084939438 -0.040090224
+#> 2   direct        1 -0.060214915 0.012210882 20000 -0.084171672 -0.036399814
+#> 3 indirect        1 -0.002340561 0.002308419 20000 -0.006754464  0.002282556
+#> 4    total        2 -0.090728400 0.015667378 20000 -0.121265206 -0.060064829
+#> 5   direct        2 -0.084667452 0.017459422 20000 -0.119272433 -0.051044445
+#> 6 indirect        2 -0.006060948 0.005977840 20000 -0.017183640  0.006202216
+#> 7    total        3 -0.100363120 0.016867657 20000 -0.133354653 -0.067428525
+#> 8   direct        3 -0.091430222 0.019350291 20000 -0.130772075 -0.054818126
+#> 9 indirect        3 -0.008932897 0.008902081 20000 -0.025231189  0.009732470
 ```
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -286,7 +280,7 @@ boot <- PBSSMOUFixed(
   sigma0_fixed = FALSE,
   ncores = parallel::detectCores(),
   seed = 42,
-  clean = FALSE
+  clean = TRUE
 )
 ```
 
@@ -302,7 +296,8 @@ ci <- BootMed(
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
 summary(ci)
 #>     effect interval          est          se    R         2.5%        97.5%
@@ -334,35 +329,37 @@ Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals 
 
 
 ``` r
-DeltaMedStd(
+delta <- DeltaMedStd(
   phi = phi,
   sigma = sigma,
   vcov_theta = vcov_theta,
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
-#> 
-#> Total, Direct, and Indirect Effects
-#> 
-#> $`1`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           1 -0.1375 0.0252 -5.4447 0.0000 -0.1870 -0.0880
-#> direct          1 -0.1323 0.0269 -4.9155 0.0000 -0.1851 -0.0796
-#> indirect        1 -0.0051 0.0051 -1.0147 0.3103 -0.0151  0.0048
-#> 
-#> $`2`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           2 -0.1994 0.0347 -5.7490 0.0000 -0.2674 -0.1314
-#> direct          2 -0.1861 0.0387 -4.8055 0.0000 -0.2619 -0.1102
-#> indirect        2 -0.0133 0.0131 -1.0159 0.3097 -0.0390  0.0124
-#> 
-#> $`3`
-#>          interval     est     se       z      p    2.5%   97.5%
-#> total           3 -0.2206 0.0377 -5.8499 0.0000 -0.2944 -0.1467
-#> direct          3 -0.2009 0.0432 -4.6536 0.0000 -0.2855 -0.1163
-#> indirect        3 -0.0196 0.0195 -1.0086 0.3132 -0.0578  0.0185
+summary(delta)
+#>     effect interval          est          se         z            p        2.5%
+#> 1    total        1 -0.137467669 0.025247997 -5.444696 5.189394e-08 -0.18695283
+#> 2   direct        1 -0.132324211 0.026919970 -4.915466 8.857130e-07 -0.18508638
+#> 3 indirect        1 -0.005143458 0.005069136 -1.014662 3.102671e-01 -0.01507878
+#> 4    total        2 -0.199378575 0.034680527 -5.749006 8.976937e-09 -0.26735116
+#> 5   direct        2 -0.186059447 0.038717618 -4.805550 1.543267e-06 -0.26194458
+#> 6 indirect        2 -0.013319129 0.013110257 -1.015932 3.096618e-01 -0.03901476
+#> 7    total        3 -0.220551181 0.037701725 -5.849896 4.918794e-09 -0.29444520
+#> 8   direct        3 -0.200920852 0.043175066 -4.653632 3.261393e-06 -0.28554243
+#> 9 indirect        3 -0.019630329 0.019462994 -1.008598 3.131677e-01 -0.05777710
+#>          97.5%
+#> 1 -0.087982504
+#> 2 -0.079562039
+#> 3  0.004791866
+#> 4 -0.131405991
+#> 5 -0.110174311
+#> 6  0.012376504
+#> 7 -0.146657159
+#> 8 -0.116299277
+#> 9  0.018516438
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -371,7 +368,7 @@ Using the `MCMedStd` function from the `cTMed` package, confidence intervals for
 
 
 ``` r
-MCMedStd(
+mc <- MCMedStd(
   phi = phi,
   sigma = sigma,
   vcov_theta = vcov_theta,
@@ -379,29 +376,21 @@ MCMedStd(
   from = "conflict",
   to = "competence",
   med = "knowledge",
+  ncores = parallel::detectCores(),
   R = 20000L,
   seed = 42
 )
-#> 
-#> Total, Direct, and Indirect Effects
-#> 
-#> $`1`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           1 -0.1375 0.0254 20000 -0.1883 -0.0876
-#> direct          1 -0.1323 0.0270 20000 -0.1868 -0.0796
-#> indirect        1 -0.0051 0.0051 20000 -0.0151  0.0048
-#> 
-#> $`2`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           2 -0.1994 0.0349 20000 -0.2691 -0.1310
-#> direct          2 -0.1861 0.0389 20000 -0.2659 -0.1116
-#> indirect        2 -0.0133 0.0132 20000 -0.0384  0.0133
-#> 
-#> $`3`
-#>          interval     est     se     R    2.5%   97.5%
-#> total           3 -0.2206 0.0381 20000 -0.2969 -0.1470
-#> direct          3 -0.2009 0.0435 20000 -0.2920 -0.1194
-#> indirect        3 -0.0196 0.0196 20000 -0.0562  0.0210
+summary(mc)
+#>     effect interval          est          se     R        2.5%       97.5%
+#> 1    total        1 -0.137467669 0.025418154 20000 -0.18807643 -0.08860838
+#> 2   direct        1 -0.132324211 0.027023696 20000 -0.18644489 -0.08063327
+#> 3 indirect        1 -0.005143458 0.005158025 20000 -0.01519004  0.00512451
+#> 4    total        2 -0.199378575 0.035119368 20000 -0.26967788 -0.13178486
+#> 5   direct        2 -0.186059447 0.039003325 20000 -0.26501487 -0.11215703
+#> 6 indirect        2 -0.013319129 0.013345440 20000 -0.03855532  0.01403200
+#> 7    total        3 -0.220551181 0.038399675 20000 -0.29759695 -0.14686634
+#> 8   direct        3 -0.200920852 0.043704516 20000 -0.29201441 -0.12035866
+#> 9 indirect        3 -0.019630329 0.019864730 20000 -0.05626834  0.02163348
 ```
 
 ## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -418,7 +407,8 @@ pb <- BootMedStd(
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
 summary(pb)
 #>     effect interval          est          se    R        2.5%       97.5%

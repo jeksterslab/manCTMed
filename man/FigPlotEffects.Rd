@@ -4,7 +4,7 @@
 \alias{FigPlotEffects}
 \title{Plot Total, Direct, and Indirect Effects}
 \usage{
-FigPlotEffects(dynamics = 0, std = FALSE, max_delta_t = 30)
+FigPlotEffects(dynamics = 0, std = FALSE, max_delta_t = 30, xmy = TRUE)
 }
 \arguments{
 \item{dynamics}{Integer.
@@ -18,6 +18,10 @@ If \code{std = FALSE}, unstandardized total, direct, and indirect effects.}
 
 \item{max_delta_t}{Numeric.
 Maximum time interval.}
+
+\item{xmy}{Logical.
+If \code{xmy = TRUE},
+plot the effects for the \code{x} -> m -> y\verb{mediation model. If}xmy = FALSE\verb{, plot the effects for the }y -> m -> x` mediation model.}
 }
 \description{
 Effects for the model \eqn{X \to M \to Y}.
@@ -30,7 +34,12 @@ FigPlotEffects()
 Other Figure Functions: 
 \code{\link{FigScatterPlotCoverage}()},
 \code{\link{FigScatterPlotPower}()},
-\code{\link{FigScatterPlotType1}()}
+\code{\link{FigScatterPlotSeBias}()},
+\code{\link{FigScatterPlotType1}()},
+\code{\link{IllustrationFigPlotEffects}()},
+\code{\link{IllustrationFigScatterPlotCoverage}()},
+\code{\link{IllustrationFigScatterPlotPower}()},
+\code{\link{IllustrationFigScatterPlotSeBias}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

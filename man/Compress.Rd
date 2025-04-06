@@ -22,6 +22,10 @@ The output is saved as an external file in \code{output_folder}.
 \description{
 Compress Replication
 }
+\seealso{
+Other Compression Functions: 
+\code{\link{IllustrationCompress}()}
+}
 \author{
 Ivan Jacob Agaloos Pesigan
 }

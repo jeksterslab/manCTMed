@@ -13,6 +13,11 @@
 #'   If `std = FALSE`, unstandardized total, direct, and indirect effects.
 #' @param max_delta_t Numeric.
 #'   Maximum time interval.
+#' @param xmy Logical.
+#'   If `xmy = TRUE`,
+#'   plot the effects for the `x` -> m -> y` mediation model.
+#'   If `xmy = FALSE`,
+#'   plot the effects for the `y -> m -> x` mediation model.
 #'
 #' @examples
 #' FigPlotEffects()
@@ -23,7 +28,8 @@
 #' @export
 FigPlotEffects <- function(dynamics = 0,
                            std = FALSE,
-                           max_delta_t = 30) {
+                           max_delta_t = 30,
+                           xmy = TRUE) {
   if (dynamics == 0) {
     phi <- model$phi_zero
     sigma <- model$sigma_zero
@@ -49,8 +55,8 @@ FigPlotEffects <- function(dynamics = 0,
     print(phi)
     cat("\nsigma:\n")
     print(sigma)
-    plot(
-      cTMed::MedStd(
+    if (xmy) {
+      output <- cTMed::MedStd(
         phi = phi,
         sigma = sigma,
         from = "x",
@@ -61,14 +67,30 @@ FigPlotEffects <- function(dynamics = 0,
           to = max_delta_t,
           length.out = 1000
         )
-      ),
+      )
+    } else {
+      output <- cTMed::MedStd(
+        phi = phi,
+        sigma = sigma,
+        from = "y",
+        to = "x",
+        med = "m",
+        delta_t = seq(
+          from = 0,
+          to = max_delta_t,
+          length.out = 1000
+        )
+      )
+    }
+    plot(
+      output,
       legend_pos = legend_pos
     )
   } else {
     cat("\nphi:\n")
     print(phi)
-    plot(
-      cTMed::Med(
+    if (xmy) {
+      output <- cTMed::Med(
         phi = phi,
         from = "x",
         to = "y",
@@ -78,7 +100,22 @@ FigPlotEffects <- function(dynamics = 0,
           to = max_delta_t,
           length.out = 1000
         )
-      ),
+      )
+    } else {
+      output <- cTMed::Med(
+        phi = phi,
+        from = "y",
+        to = "x",
+        med = "m",
+        delta_t = seq(
+          from = 0,
+          to = max_delta_t,
+          length.out = 1000
+        )
+      )
+    }
+    plot(
+      output,
       legend_pos = legend_pos
     )
   }

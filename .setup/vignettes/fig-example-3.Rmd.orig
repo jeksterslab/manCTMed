@@ -32,6 +32,7 @@ root <- rprojroot::is_rstudio_project
 
 ```{r}
 #| include = FALSE
+library(dynr)
 library(bootStateSpace)
 library(cTMed)
 ```

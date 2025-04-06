@@ -1,18 +1,18 @@
 #!/bin/bash
 
-#SBATCH --job-name=illustration-sim
+#SBATCH --job-name=i-sim
 #SBATCH --mail-user=r.jeksterslab@gmail.com
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
 #SBATCH --exclusive
 #SBATCH --mem=0
 #SBATCH --time=2-00:00:00
-#SBATCH --output=illustration-sim.out
-#SBATCH --error=illustration-sim.err
+#SBATCH --output=i-sim.out
+#SBATCH --error=i-sim.err
 
 # Define project variables
 PROJECT=manCTMed
-SIF=manctmed.sif
+SIF=manctmed_2025-03-08-18472632.sif
 
 # load parallel module ---------------------------------------------------------
 module load parallel
@@ -20,14 +20,14 @@ module load parallel
 # pre TMP ----------------------------------------------------------------------
 mkdir -p /scratch/$USER/${PROJECT}/.sim/tmp
 TODAY=$(date +"%Y-%m-%d-%H-%M-%S-%N")
-PARALLEL_TMP_FOLDER=$(mktemp -d -q "/scratch/$USER/${PROJECT}/.sim/tmp/$TODAY-illustration-sim-XXXXXXXX")
+PARALLEL_TMP_FOLDER=$(mktemp -d -q "/scratch/$USER/${PROJECT}/.sim/tmp/$TODAY-i-sim-XXXXXXXX")
 trap 'rm -rf -- "$PARALLEL_TMP_FOLDER"' EXIT
 echo "PARALLEL_TMP_FOLDER is $PARALLEL_TMP_FOLDER"
 # ------------------------------------------------------------------------------
 
 # script -----------------------------------------------------------------------
 repid_start=1
-repid_end=1000
+repid_end=100
 taskid_start=1
 taskid_end=1
 

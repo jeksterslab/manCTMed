@@ -32,6 +32,7 @@ root <- rprojroot::is_rstudio_project
 
 ```{r}
 #| include = FALSE
+library(dynr)
 library(cTMed)
 ```
 
@@ -168,70 +169,3 @@ med_std <- MedStd(
 )
 plot(med_std, legend_pos = "bottomright")
 ```
-
-## Visualizing Normality of Direct, Indirect, and Total Effects
-
-The sampling distribution of the direct, indirect, and total effects were generated using 1000 samples.
-
-```{r}
-#| include = FALSE
-load(
-  root$find_file(
-    "data",
-    "illustration_dist_med.rda"
-  )
-)
-dist <- illustration_dist_med
-```
-
-```{r, direct-1}
-#| echo = FALSE
-qqnorm(dist[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "direct"])
-```
-
-```{r, indirect-1}
-#| echo = FALSE
-qqnorm(dist[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "indirect"])
-```
-
-```{r, total-1}
-#| echo = FALSE
-qqnorm(dist[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "total"])
-```
-
-## Visualizing Normality of Standardized Direct, Indirect, and Total Effects
-
-The sampling distribution of the standardized direct, indirect, and total effects were generated using 1000 samples.
-
-```{r}
-#| include = FALSE
-load(
-  root$find_file(
-    "data",
-    "illustration_dist_med_std.rda"
-  )
-)
-dist <- illustration_dist_med_std
-```
-
-```{r, std-direct-1}
-#| echo = FALSE
-qqnorm(dist[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "direct"])
-```
-
-```{r, std-indirect-1}
-#| echo = FALSE
-qqnorm(dist[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "indirect"])
-```
-
-```{r, std-total-1}
-#| echo = FALSE
-qqnorm(dist[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 1))
-qqline(dist[, "total"])
-```
- 

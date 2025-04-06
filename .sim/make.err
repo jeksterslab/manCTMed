@@ -1,0 +1,907 @@
+make: Warning: File 'Makefile' has modification time 13390 s in the future
+Installing 9 packages: stringi, pkgbuild, xfun, jsonlite, curl, systemfonts, httr2, gert, V8
+Cloning into 'dotfiles'...
+find: ‘/scratch/ibp5092/github/manCTMed/.setup/cpp’: No such file or directory
+find: ‘/scratch/ibp5092/github/manCTMed/src’: No such file or directory
+Loading required package: ggplot2
+✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+First time using roxygen2. Upgrading automatically...
+Setting `RoxygenNote` to "7.3.2"
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+Writing 'NAMESPACE'
+Writing 'BootParaStdXMY.Rd'
+Writing 'BootParaStdXYM.Rd'
+Writing 'BootParaStdYMX.Rd'
+Writing 'BootParaXMY.Rd'
+Writing 'BootParaXYM.Rd'
+Writing 'BootParaYMX.Rd'
+Writing 'BootPara.Rd'
+Writing 'Compress.Rd'
+Writing 'params.Rd'
+Writing 'results.Rd'
+Writing 'DeltaStdXMY.Rd'
+Writing 'DeltaStdXYM.Rd'
+Writing 'DeltaStdYMX.Rd'
+Writing 'DeltaXMY.Rd'
+Writing 'DeltaXYM.Rd'
+Writing 'DeltaYMX.Rd'
+Writing 'FigPlotEffects.Rd'
+Writing 'FigScatterPlotCoverage.Rd'
+Writing 'FigScatterPlotPower.Rd'
+Writing 'FigScatterPlotSeBias.Rd'
+Writing 'FigScatterPlotType1.Rd'
+Writing 'FitDynr.Rd'
+Writing 'FitMx.Rd'
+Writing 'GenData.Rd'
+Writing 'IllustrationBootPara.Rd'
+Writing 'IllustrationCompress.Rd'
+Writing 'illustration_dist_dt_mc.Rd'
+Writing 'illustration_dist_dt.Rd'
+Writing 'illustration_dist_mc.Rd'
+Writing 'illustration_dist_med_mc.Rd'
+Writing 'illustration_dist_med_std_mc.Rd'
+Writing 'illustration_dist_med_std.Rd'
+Writing 'illustration_dist_med.Rd'
+Writing 'illustration_dist.Rd'
+Writing 'illustration_results.Rd'
+Writing 'IllustrationFigPlotEffects.Rd'
+Writing 'IllustrationFigScatterPlotCoverage.Rd'
+Writing 'IllustrationFigScatterPlotPower.Rd'
+Writing 'IllustrationFigScatterPlotSeBias.Rd'
+Writing 'IllustrationFitDynr.Rd'
+Writing 'IllustrationFitMx.Rd'
+Writing 'IllustrationGenData.Rd'
+Writing 'IllustrationMCPhiSigma.Rd'
+Writing 'IllustrationPrepData.Rd'
+Writing 'SimIllustrationDynrBootParaStdXMY.Rd'
+Writing 'SimIllustrationDynrBootParaXMY.Rd'
+Writing 'SimIllustrationDynrBootPara.Rd'
+Writing 'SimIllustrationDynrDeltaStdXMY.Rd'
+Writing 'SimIllustrationDynrDeltaXMY.Rd'
+Writing 'SimIllustrationDynrMCPhiSigma.Rd'
+Writing 'SimIllustrationDynrMCStdXMY.Rd'
+Writing 'SimIllustrationDynrMCXMY.Rd'
+Writing 'SimIllustrationFitDynr.Rd'
+Writing 'SimIllustrationFitMx.Rd'
+Writing 'SimIllustrationGenData.Rd'
+Writing 'SimIllustrationPara.Rd'
+Writing 'SimIllustration.Rd'
+Writing 'SumIllustrationDynrBootParaStdXMY.Rd'
+Writing 'SumIllustrationDynrBootParaXMY.Rd'
+Writing 'SumIllustrationDynrDeltaStdXMY.Rd'
+Writing 'SumIllustrationDynrDeltaXMY.Rd'
+Writing 'SumIllustrationDynrMCStdXMY.Rd'
+Writing 'SumIllustrationDynrMCXMY.Rd'
+Writing 'SumIllustrationFitDynr.Rd'
+Writing 'SumIllustration.Rd'
+Writing 'MCStdXMY.Rd'
+Writing 'MCStdXYM.Rd'
+Writing 'MCStdYMX.Rd'
+Writing 'MCXMY.Rd'
+Writing 'MCXYM.Rd'
+Writing 'MCYMX.Rd'
+Writing 'manCTMed-package.Rd'
+Writing 'PhiHat.Rd'
+Writing 'RandomMeasurement.Rd'
+Writing 'SimDynrBootParaStdXMY.Rd'
+Writing 'SimDynrBootParaStdYMX.Rd'
+Writing 'SimDynrBootParaXMY.Rd'
+Writing 'SimDynrBootParaYMX.Rd'
+Writing 'SimDynrBootPara.Rd'
+Writing 'SimDynrDeltaStdXMY.Rd'
+Writing 'SimDynrDeltaStdYMX.Rd'
+Writing 'SimDynrDeltaXMY.Rd'
+Writing 'SimDynrDeltaYMX.Rd'
+Writing 'SimDynrMCStdXMY.Rd'
+Writing 'SimDynrMCStdYMX.Rd'
+Writing 'SimDynrMCXMY.Rd'
+Writing 'SimDynrMCYMX.Rd'
+Writing 'SimFitDynr.Rd'
+Writing 'SimFitMx.Rd'
+Writing 'SimFN.Rd'
+Writing 'SimGenData.Rd'
+Writing 'SimPara.Rd'
+Writing 'SimProj.Rd'
+Writing 'Sim.Rd'
+Writing 'SumDynrDeltaStdXMY.Rd'
+Writing 'SumDynrDeltaStdYMX.Rd'
+Writing 'SumDynrDeltaXMY.Rd'
+Writing 'SumDynrDeltaYMX.Rd'
+Writing 'SumDynrMCStdXMY.Rd'
+Writing 'SumDynrMCStdYMX.Rd'
+Writing 'SumDynrMCXMY.Rd'
+Writing 'SumDynrMCYMX.Rd'
+Writing 'SumFitDynr.Rd'
+Writing 'Sum.Rd'
+Writing 'ThetaHat.Rd'
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/containers.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/containers.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-1.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-1.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-2.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-2.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-3.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-example-3.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-sampling-distribution.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-sampling-distribution.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-illustration.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-illustration.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-neg.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-neg.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-pos.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/replication.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/replication.Rmd
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/vignettes/session.Rmd.orig
+output file: /scratch/ibp5092/github/manCTMed/vignettes/session.Rmd
+
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/github/manCTMed/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX ..........
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
+Sorting entries..........done (10356 comparisons).
+Generating output file Rd2.ind....done (645 lines written, 10 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
+Sorting entries..........done (10362 comparisons).
+Generating output file Rd2.ind....done (645 lines written, 11 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-cover-letter.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-cover-letter.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
+
+Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
+  No file TS1xcmss.fd.
+Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
+  No file TS1cmsmf.fd.
+Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-manuscript.bbl' in following:
+ No file manCTMed-manuscript.bbl.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 123.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 135.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 143.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 149.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 155.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 163.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 170.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 177.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 191.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 196.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 201.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 208.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 213.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 218.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 225.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 235.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 242.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 247.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 252.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 263.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 271.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 123.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 135.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 143.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 149.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 155.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 163.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 170.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 177.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 191.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 196.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 201.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 208.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 213.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 218.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 225.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 235.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 242.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 247.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 252.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 263.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 271.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 123.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 135.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 143.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 149.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 155.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 163.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 170.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 177.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 191.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 196.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 201.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 208.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 213.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 218.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 225.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 235.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 242.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 247.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 252.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 263.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 271.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 123.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 135.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 143.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 149.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 155.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 163.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 170.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 177.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 191.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 196.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 201.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 208.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 213.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 218.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 225.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 235.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 242.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 247.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 252.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 263.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 271.
+Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-supplement.bbl' in following:
+ No file manCTMed-supplement.bbl.
+Latexmk: Missing input file 'manCTMed-supplement.lof' (or dependence on it) from following:
+  No file manCTMed-supplement.lof.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
+Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
+  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
+Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-title-page.bbl' in following:
+ No file manCTMed-title-page.bbl.
+
+------------
+Latexmk: Some operations failed, for the following tex file(s)
+  /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.tex
+  /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
+── Installing package manCTMed into temporary library ──────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────
+make: warning:  Clock skew detected.  Your build may be incomplete.
+Cloning into 'dotfiles'...
+find: ‘/scratch/ibp5092/github/manCTMed/.setup/cpp’: No such file or directory
+find: ‘/scratch/ibp5092/github/manCTMed/src’: No such file or directory
+✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
+✔ Saving "model" to "R/sysdata.rda".
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+ℹ Updating manCTMed documentation
+ℹ Loading manCTMed
+✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
+✖ In topic 'Template.Rd': Skipping; no name and/or title.
+
+
+processing file: README.Rmd
+output file: README.knit.md
+
+
+Preview created: /scratch/ibp5092/github/manCTMed/README.html
+
+Output created: README.md
+Converting parsed Rd's to LaTeX ..........
+Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
+  texi2dvi script/program not available, using emulation
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
+Sorting entries..........done (10356 comparisons).
+Generating output file Rd2.ind....done (645 lines written, 10 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
+Sorting entries..........done (10362 comparisons).
+Generating output file Rd2.ind....done (645 lines written, 11 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+sh: 1: /usr/bin/xdg-open: not found
+Warning in system(paste(preview, output)) : error in running command
+✔ 'CITATION.cff' generated
+✔ Congratulations! 'CITATION.cff' is valid
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-cover-letter.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-cover-letter.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
+
+── Installing package manCTMed into temporary library ──────────────────────────
+── Finished building pkgdown site for package manCTMed ─────────────────────────

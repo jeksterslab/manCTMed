@@ -1,8 +1,19 @@
-# manCTMed 1.0.8
+# manCTMed 1.0.9
 
 ## Docker Hub Tag
 
 * ijapesigan/manctmed:TAG
+
+## Code Changes
+
+* Illustration:
+  - Compress.
+
+# manCTMed 1.0.8
+
+## Docker Hub Tag
+
+* ijapesigan/manctmed:2025-03-08-18472632
 
 ## Code Changes
 

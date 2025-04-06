@@ -32,6 +32,7 @@ root <- rprojroot::is_rstudio_project
 
 ```{r}
 #| include = FALSE
+library(dynr)
 library(bootStateSpace)
 library(cTMed)
 ```
@@ -161,14 +162,16 @@ vcov_phi_vec <- vcov_theta[phi_names, phi_names]
 Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
-DeltaMed(
+delta <- DeltaMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
+summary(delta)
 ```
 
 ## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -176,16 +179,18 @@ DeltaMed(
 Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
-MCMed(
+mc <- MCMed(
   phi = phi,
   vcov_phi_vec = vcov_phi_vec,
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
   med = "knowledge",
+  ncores = parallel::detectCores(),
   R = 20000L,
   seed = 42
 )
+summary(mc)
 ```
 
 ## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
@@ -229,7 +234,7 @@ boot <- PBSSMOUFixed(
   sigma0_fixed = FALSE,
   ncores = parallel::detectCores(),
   seed = 42,
-  clean = FALSE
+  clean = TRUE
 )
 ```
 
@@ -253,7 +258,8 @@ ci <- BootMed(
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
 summary(ci)
 summary(ci, type = "bc") # bias-corrected
@@ -264,23 +270,7 @@ summary(ci, type = "bc") # bias-corrected
 Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
 
 ```{r}
-DeltaMedStd(
-  phi = phi,
-  sigma = sigma,
-  vcov_theta = vcov_theta,
-  delta_t = c(1, 2, 3),
-  from = "conflict",
-  to = "competence",
-  med = "knowledge"
-)
-```
-
-## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
-
-Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
-
-```{r}
-MCMedStd(
+delta <- DeltaMedStd(
   phi = phi,
   sigma = sigma,
   vcov_theta = vcov_theta,
@@ -288,9 +278,29 @@ MCMedStd(
   from = "conflict",
   to = "competence",
   med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(delta)
+```
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+mc <- MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores(),
   R = 20000L,
   seed = 42
 )
+summary(mc)
 ```
 
 ## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
@@ -306,7 +316,8 @@ pb <- BootMedStd(
   delta_t = c(1, 2, 3),
   from = "conflict",
   to = "competence",
-  med = "knowledge"
+  med = "knowledge",
+  ncores = parallel::detectCores()
 )
 summary(pb)
 summary(pb, type = "bc") # bias-corrected

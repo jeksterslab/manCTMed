@@ -35,7 +35,12 @@ FigScatterPlotCoverage(results, delta_t = 15:30)
 Other Figure Functions: 
 \code{\link{FigPlotEffects}()},
 \code{\link{FigScatterPlotPower}()},
-\code{\link{FigScatterPlotType1}()}
+\code{\link{FigScatterPlotSeBias}()},
+\code{\link{FigScatterPlotType1}()},
+\code{\link{IllustrationFigPlotEffects}()},
+\code{\link{IllustrationFigScatterPlotCoverage}()},
+\code{\link{IllustrationFigScatterPlotPower}()},
+\code{\link{IllustrationFigScatterPlotSeBias}()}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
