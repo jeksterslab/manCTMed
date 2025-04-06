@@ -6,7 +6,7 @@
 \alias{manCTMed-package}
 \title{manCTMed: Continuous Time Mediation}
 \description{
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (In Preparation). Standard Errors and Confidence Intervals for Total, Direct, and Indirect Effects in Continuous-Time Mediation Models. \doi{10.0000/0000000000}.
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (In Preparation). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. \doi{10.0000/0000000000}.
 }
 \seealso{
 Useful links:
