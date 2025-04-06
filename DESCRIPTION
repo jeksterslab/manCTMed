@@ -9,7 +9,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0000-0000-0000"))
     )
 Description: Research compendium for the manuscript
-    Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (In Preparation).
+    Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (Under Review).
     Inferences and Effect Sizes for Direct, Indirect, and Total Effects
     in Continuous-Time Mediation Models.
     <doi:10.0000/0000000000>.
@@ -29,7 +29,7 @@ Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-04-06 23:10:40 UTC; root
+Packaged: 2025-04-06 23:25:29 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
