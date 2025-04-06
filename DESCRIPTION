@@ -19,7 +19,7 @@ BugReports: https://github.com/jeksterslab/manCTMed/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-LazyDataCompression:xz
+LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.0.0)
 Imports:
@@ -38,3 +38,4 @@ Suggests:
     DT
 Remotes:
     jeksterslab/dynUtils
+RoxygenNote: 7.3.2
