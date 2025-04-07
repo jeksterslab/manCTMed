@@ -97,11 +97,3 @@ IllustrationFigScatterPlotCoverage(illustration_results)
 #| cache = FALSE
 IllustrationFigScatterPlotPower(illustration_results)
 ```
-
-### Standard Error Bias
-
-```{r, se-bias}
-#| echo = FALSE,
-#| cache = FALSE
-IllustrationFigScatterPlotSeBias(illustration_results)
-```

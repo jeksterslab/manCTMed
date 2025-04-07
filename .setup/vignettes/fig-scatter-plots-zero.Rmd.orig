@@ -132,14 +132,6 @@ FigScatterPlotPower(results, dynamics = 0)
 FigScatterPlotType1(results, dynamics = 0)
 ```
 
-### Standard Error Bias
-
-```{r, se-bias}
-#| echo = FALSE,
-#| cache = FALSE
-FigScatterPlotSeBias(results, dynamics = 0, std = FALSE)
-```
-
 ### Coverage Probabilities (Standardized)
 
 #### Time Intervals 1 to 25
@@ -188,12 +180,4 @@ FigScatterPlotPower(results, dynamics = 0, std = TRUE)
 #| echo = FALSE,
 #| cache = FALSE
 FigScatterPlotType1(results, dynamics = 0, std = TRUE)
-```
-
-### Standard Error Bias (Standardized)
-
-```{r, se-bias-std}
-#| echo = FALSE,
-#| cache = FALSE
-FigScatterPlotSeBias(results, dynamics = 0, std = TRUE)
 ```
