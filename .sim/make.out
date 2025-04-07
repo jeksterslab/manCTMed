@@ -14,37 +14,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpsPmSN3/dotfiles'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpBHdYfq/dotfiles'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5112[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5071[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.33.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m85d 6h 43m[0m
+[14C[33m[1muptime[0m[6D[7C[39m86d 11h 21m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m657[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10019M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m9971M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpsPmSN3/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpsPmSN3/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpBHdYfq/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpBHdYfq/dotfiles'
 
 
 TinyTex...
@@ -1651,7 +1651,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpSgQ3Cm/file902ae3ca7c9b8/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpUj9jHB/file310aaa204c0583/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -1711,7 +1711,7 @@ Setting env vars:
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.931  0.275   5.103
+FigScatterPlotCoverage 4.879   0.28   4.987
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
@@ -1720,7 +1720,7 @@ FigScatterPlotCoverage 4.931  0.275   5.103
 
 Status: 1 NOTE
 See
-  ‘/tmp/RtmpSgQ3Cm/file902ae3ca7c9b8/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpUj9jHB/file310aaa204c0583/manCTMed.Rcheck/00check.log’
 for details.
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/github/manCTMed/DESCRIPTION’ ... OK
@@ -1733,7 +1733,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpSgQ3Cm/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpUj9jHB/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/github/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -2021,136 +2021,122 @@ Precompiling vignettes...
 24/26 [std-indirect-1] 
 25/26                  
 26/26 [std-total-1]    
-1/16                  
-2/16 [unnamed-chunk-1]
-3/16                  
-4/16 [unnamed-chunk-2]
-5/16                  
-6/16 [effects]        
-7/16                  
-8/16 [effects-std]    
-9/16                  
-10/16 [unnamed-chunk-3]
-11/16                  
-12/16 [coverage]       
-13/16                  
-14/16 [power]          
-15/16                  
-16/16 [se-bias]        
-1/38                     
-2/38 [unnamed-chunk-1]   
-3/38                     
-4/38 [unnamed-chunk-2]   
-5/38                     
-6/38 [effects]           
-7/38                     
-8/38 [effects-std]       
-9/38                     
-10/38 [unnamed-chunk-3]   
-11/38                     
-12/38 [coverage-1-25]     
-13/38                     
-14/38 [coverage-1-4]      
-15/38                     
-16/38 [coverage-5-25]     
-17/38                     
-18/38 [coverage-25-30]    
-19/38                     
-20/38 [power]             
-21/38                     
-22/38 [type1]             
-23/38                     
-24/38 [se-bias]           
-25/38                     
-26/38 [coverage-std-1-25] 
-27/38                     
-28/38 [coverage-std-1-4]  
-29/38                     
-30/38 [coverage-std-5-25] 
-31/38                     
-32/38 [coverage-std-25-30]
-33/38                     
-34/38 [power-std]         
-35/38                     
-36/38 [type1-std]         
-37/38                     
-38/38 [se-bias-std]       
-1/38                     
-2/38 [unnamed-chunk-1]   
-3/38                     
-4/38 [unnamed-chunk-2]   
-5/38                     
-6/38 [effects]           
-7/38                     
-8/38 [effects-std]       
-9/38                     
-10/38 [unnamed-chunk-3]   
-11/38                     
-12/38 [coverage-1-25]     
-13/38                     
-14/38 [coverage-1-4]      
-15/38                     
-16/38 [coverage-5-25]     
-17/38                     
-18/38 [coverage-25-30]    
-19/38                     
-20/38 [power]             
-21/38                     
-22/38 [type1]             
-23/38                     
-24/38 [se-bias]           
-25/38                     
-26/38 [coverage-std-1-25] 
-27/38                     
-28/38 [coverage-std-1-4]  
-29/38                     
-30/38 [coverage-std-5-25] 
-31/38                     
-32/38 [coverage-std-25-30]
-33/38                     
-34/38 [power-std]         
-35/38                     
-36/38 [type1-std]         
-37/38                     
-38/38 [se-bias-std]       
-1/38                     
-2/38 [unnamed-chunk-1]   
-3/38                     
-4/38 [unnamed-chunk-2]   
-5/38                     
-6/38 [effects]           
-7/38                     
-8/38 [effects-std]       
-9/38                     
-10/38 [unnamed-chunk-3]   
-11/38                     
-12/38 [coverage-1-25]     
-13/38                     
-14/38 [coverage-1-4]      
-15/38                     
-16/38 [coverage-5-25]     
-17/38                     
-18/38 [coverage-25-30]    
-19/38                     
-20/38 [power]             
-21/38                     
-22/38 [type1]             
-23/38                     
-24/38 [se-bias]           
-25/38                     
-26/38 [coverage-std-1-25] 
-27/38                     
-28/38 [coverage-std-1-4]  
-29/38                     
-30/38 [coverage-std-5-25] 
-31/38                     
-32/38 [coverage-std-25-30]
-33/38                     
-34/38 [power-std]         
-35/38                     
-36/38 [type1-std]         
-37/38                     
-38/38 [se-bias-std]       
+1/14                  
+2/14 [unnamed-chunk-1]
+3/14                  
+4/14 [unnamed-chunk-2]
+5/14                  
+6/14 [effects]        
+7/14                  
+8/14 [effects-std]    
+9/14                  
+10/14 [unnamed-chunk-3]
+11/14                  
+12/14 [coverage]       
+13/14                  
+14/14 [power]          
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
+1/34                     
+2/34 [unnamed-chunk-1]   
+3/34                     
+4/34 [unnamed-chunk-2]   
+5/34                     
+6/34 [effects]           
+7/34                     
+8/34 [effects-std]       
+9/34                     
+10/34 [unnamed-chunk-3]   
+11/34                     
+12/34 [coverage-1-25]     
+13/34                     
+14/34 [coverage-1-4]      
+15/34                     
+16/34 [coverage-5-25]     
+17/34                     
+18/34 [coverage-25-30]    
+19/34                     
+20/34 [power]             
+21/34                     
+22/34 [type1]             
+23/34                     
+24/34 [coverage-std-1-25] 
+25/34                     
+26/34 [coverage-std-1-4]  
+27/34                     
+28/34 [coverage-std-5-25] 
+29/34                     
+30/34 [coverage-std-25-30]
+31/34                     
+32/34 [power-std]         
+33/34                     
+34/34 [type1-std]         
 1/38                   
 2/38 [unnamed-chunk-1] 
 3/38                   
@@ -2231,7 +2217,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpLZMbee/file2faa344328c65b/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpcBRb5b/file1777464674f96a/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -2291,7 +2277,7 @@ Setting env vars:
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.867  0.276    4.94
+FigScatterPlotCoverage 4.898  0.293    4.99
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
@@ -2300,7 +2286,7 @@ FigScatterPlotCoverage 4.867  0.276    4.94
 
 Status: 1 NOTE
 See
-  ‘/tmp/RtmpLZMbee/file2faa344328c65b/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpcBRb5b/file1777464674f96a/manCTMed.Rcheck/00check.log’
 for details.
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/github/manCTMed/DESCRIPTION’ ... OK
@@ -2313,7 +2299,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpLZMbee/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpcBRb5b/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/github/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -2832,7 +2818,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (89 pages, 230548 bytes).
+Output written on Rd2.pdf (89 pages, 230541 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -3329,7 +3315,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (97 pages, 270333 bytes).
+Output written on Rd2.pdf (97 pages, 270326 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -3820,7 +3806,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (97 pages, 270867 bytes).
+Output written on Rd2.pdf (97 pages, 270860 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘manCTMed.pdf’ ...
 Done
@@ -5280,7 +5266,7 @@ For additional information on amsmath, use the `?' option.
 [10]
 [11]
 [12] (.setup/latex/pdf/manCTMed-cover-letter.aux) )</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on .setup/latex/pdf/manCTMed-cover-letter.pdf (12 pages, 207018 bytes).
+Output written on .setup/latex/pdf/manCTMed-cover-letter.pdf (12 pages, 207049 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-cover-letter.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-cover-letter.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-cover-letter.fls'
@@ -5325,7 +5311,7 @@ For additional information on amsmath, use the `?' option.
 [10]
 [11]
 [12] (.setup/latex/pdf/manCTMed-cover-letter.aux) )</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on .setup/latex/pdf/manCTMed-cover-letter.pdf (12 pages, 207018 bytes).
+Output written on .setup/latex/pdf/manCTMed-cover-letter.pdf (12 pages, 207049 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-cover-letter.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-cover-letter.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-cover-letter.fls'
@@ -5580,338 +5566,371 @@ LaTeX Warning: Citation 'Hamilton-1994' on page 6 undefined on input line 175.
 LaTeX Warning: Citation 'Lutkepohl-2005' on page 6 undefined on input line 175.
 
 
-LaTeX Warning: Citation 'Wang-Zhang-2020' on page 6 undefined on input line 179.
+LaTeX Warning: Citation 'Wang-Zhang-2020' on page 6 undefined on input line 177.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 6 undefined on input line 179.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 6 undefined on input line 177.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 6 undefined on input line 179.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 6 undefined on input line 177.
 
 (manCTMed-manuscript.fff)
 [6{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 
-LaTeX Warning: Citation 'Maxwell-Cole-2007' on page 7 undefined on input line 216.
+LaTeX Warning: Citation 'Maxwell-Cole-2007' on page 7 undefined on input line 214.
 
 
-LaTeX Warning: Citation '' on page 7 undefined on input line 216.
+LaTeX Warning: Citation '' on page 7 undefined on input line 214.
 
 
-LaTeX Warning: Citation 'OLaughlin-Martin-Ferrer-2018' on page 7 undefined on input line 216.
+LaTeX Warning: Citation 'OLaughlin-Martin-Ferrer-2018' on page 7 undefined on input line 214.
 
 
-LaTeX Warning: Citation '' on page 7 undefined on input line 216.
+LaTeX Warning: Citation '' on page 7 undefined on input line 214.
 
 
-LaTeX Warning: Citation 'Boker-2002' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Boker-2002' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Oud-Delsing-2010' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Oud-Delsing-2010' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'vanMontfort-Oud-Voelkle-2018' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'vanMontfort-Oud-Voelkle-2018' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Voelkle-Oud-Davidov-etal-2012' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Voelkle-Oud-Davidov-etal-2012' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 7 undefined on input line 218.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 7 undefined on input line 216.
 
 
-LaTeX Warning: Citation 'Uhlenbeck-Ornstein-1930' on page 7 undefined on input line 222.
+LaTeX Warning: Citation 'Uhlenbeck-Ornstein-1930' on page 7 undefined on input line 220.
 
 
-LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 7 undefined on input line 222.
+LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 7 undefined on input line 220.
 
 
-LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 7 undefined on input line 222.
+LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 7 undefined on input line 220.
 
 
 [7]
 
-LaTeX Warning: Citation 'Chow-Ho-Hamaker-etal-2010' on page 8 undefined on input line 224.
+LaTeX Warning: Citation 'Chow-Ho-Hamaker-etal-2010' on page 8 undefined on input line 222.
 
 
-LaTeX Warning: Citation 'Ryan-Kuiper-Hamaker-2018' on page 8 undefined on input line 261.
+LaTeX Warning: Citation 'Ryan-Kuiper-Hamaker-2018' on page 8 undefined on input line 259.
 
 
-LaTeX Warning: Reference `eq:manCTMed-ou-dynamic' on page 8 undefined on input line 261.
+LaTeX Warning: Reference `eq:manCTMed-ou-dynamic' on page 8 undefined on input line 259.
 
 
 [8{/opt/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 [9]
 [10]
 
-LaTeX Warning: Citation 'Arnold-1974' on page 11 undefined on input line 329.
+LaTeX Warning: Citation 'Arnold-1974' on page 11 undefined on input line 327.
 
 
-LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 11 undefined on input line 329.
+LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 11 undefined on input line 327.
 
 
-LaTeX Warning: Citation 'Oud-Jansen-2000' on page 11 undefined on input line 329.
+LaTeX Warning: Citation 'Oud-Jansen-2000' on page 11 undefined on input line 327.
 
 
-LaTeX Warning: Citation '' on page 11 undefined on input line 329.
+LaTeX Warning: Citation '' on page 11 undefined on input line 327.
 
 
-LaTeX Warning: Citation 'Ryan-Kuiper-Hamaker-2018' on page 11 undefined on input line 332.
+LaTeX Warning: Citation 'Ryan-Kuiper-Hamaker-2018' on page 11 undefined on input line 330.
 
 
-LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 11 undefined on input line 332.
+LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 11 undefined on input line 330.
 
 
-LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 11 undefined on input line 332.
+LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 11 undefined on input line 330.
 
 
-LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 11 undefined on input line 332.
+LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 11 undefined on input line 330.
 
 
-LaTeX Warning: Citation '' on page 11 undefined on input line 332.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+LaTeX Warning: Citation '' on page 11 undefined on input line 330.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@nomath' on input line 334.
+(hyperref)                removing `\<let>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\@nomath' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thinmuskip' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medmuskip' on input line 334.
+(hyperref)                removing `\thinmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\m@ne' on input line 334.
+(hyperref)                removing `\medmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thickmuskip' on input line 334.
+(hyperref)                removing `\m@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ne' on input line 334.
+(hyperref)                removing `\thickmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tw@' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\tw@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@tempa' on input line 334.
+(hyperref)                removing `\<def>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 334.
+(hyperref)                removing `\@tempa' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\mathchoice' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\displaystyle' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\displaystyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\textstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptstyle' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\scriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptscriptstyle' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\scriptscriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `\endgroup' on input line 332.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 332.
+
+
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation '' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation '' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation '' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation 'Gollob-Reichardt-1987' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation '' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 11 undefined on input line 334.
+
+
+LaTeX Warning: Citation '' on page 11 undefined on input line 334.
 
 
 LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 11 undefined on input line 336.
@@ -5923,642 +5942,615 @@ LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 11 undefined on 
 LaTeX Warning: Citation '' on page 11 undefined on input line 336.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 11 undefined on input line 336.
+LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 11 undefined on input line 336.
 
 
-LaTeX Warning: Citation '' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation '' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation 'Gollob-Reichardt-1987' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation '' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation '' on page 11 undefined on input line 336.
-
-
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 11 undefined on input line 338.
-
-
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 11 undefined on input line 338.
-
-
-LaTeX Warning: Citation '' on page 11 undefined on input line 338.
-
-
-LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 11 undefined on input line 338.
-
-
-LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 11 undefined on input line 338.
+LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 11 undefined on input line 336.
 
 
 [11]
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 12 undefined on input line 340.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 12 undefined on input line 338.
 
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 12 undefined on input line 340.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 12 undefined on input line 338.
 
 
-LaTeX Warning: Citation '' on page 12 undefined on input line 340.
+LaTeX Warning: Citation '' on page 12 undefined on input line 338.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation '' on page 12 undefined on input line 344.
+LaTeX Warning: Citation '' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Aroian-1947' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Aroian-1947' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Craig-1936' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Craig-1936' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Sobel-1982' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Sobel-1982' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Sobel-1986' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Sobel-1986' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Sobel-1987' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Sobel-1987' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Aroian-1947' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Aroian-1947' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'Goodman-1960' on page 12 undefined on input line 344.
+LaTeX Warning: Citation 'Goodman-1960' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'MacKinnon-Fritz-Williams-etal-2007' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'MacKinnon-Fritz-Williams-etal-2007' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Bollen-Stine-1990' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Bollen-Stine-1990' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Preacher-Hayes-2008' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Preacher-Hayes-2008' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Preacher-Selig-2012' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Cheung-Pesigan-Vong-2022' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Preacher-Selig-2012' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Preacher-Selig-2012' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Preacher-Selig-2012' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Venzon-Moolgavkar-1988' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Cheung-2009a' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Venzon-Moolgavkar-1988' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Cheung-2009b' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Cheung-2009a' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Pawitan-2013' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Cheung-2009b' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2020' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Pawitan-2013' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Bollen-Stine-1990' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Pesigan-Cheung-2020' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Cheung-Pesigan-2023b' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Preacher-Hayes-2008' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Bollen-Stine-1990' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Tofighi-Kelley-2019' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Preacher-Hayes-2008' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Tofighi-Kelley-2020' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 344.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 346.
+LaTeX Warning: Citation 'Tofighi-MacKinnon-2015' on page 12 undefined on input line 344.
+
+
+LaTeX Warning: Citation 'Tofighi-Kelley-2020' on page 12 undefined on input line 344.
+
+
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 12 undefined on input line 344.
 
 
 [12]
 
-LaTeX Warning: Citation 'Sobel-1986' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Sobel-1986' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Preacher-Selig-2012' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Preacher-Selig-2012' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Kunsch-1989' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Kunsch-1989' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Politis-Romano-1994' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Politis-Romano-1994' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Stoffer-Wall-1991' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Stoffer-Wall-1991' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Lahiri-2003' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Lahiri-2003' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Politis-2003' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Politis-2003' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Shumway-Stoffer-2017' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Shumway-Stoffer-2017' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Kreiss-Lahiri-2012' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Kreiss-Lahiri-2012' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Zhang-2018' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Zhang-2018' on page 13 undefined on input line 346.
 
 
-LaTeX Warning: Citation 'Zhang-Browne-2010' on page 13 undefined on input line 348.
+LaTeX Warning: Citation 'Zhang-Browne-2010' on page 13 undefined on input line 346.
 
 
 [13]
 
-LaTeX Warning: Citation 'Ou-Hunter-Chow-2019' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Ou-Hunter-Chow-2019' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Neale-Hunter-Pritikin-etal-2015' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Neale-Hunter-Pritikin-etal-2015' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Hunter-2017' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Hunter-2017' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Driver-Oud-Voelkle-2017' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Driver-Oud-Voelkle-2017' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Driver-Voelkle-2018' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Driver-Voelkle-2018' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Muthen-Muthen-2017' on page 14 undefined on input line 352.
+LaTeX Warning: Citation 'Muthen-Muthen-2017' on page 14 undefined on input line 350.
 
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 14 undefined on input line 360.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2012' on page 14 undefined on input line 358.
 
 
-LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 14 undefined on input line 360.
+LaTeX Warning: Citation 'Aalen-Roysland-Gran-etal-2016' on page 14 undefined on input line 358.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 14 undefined on input line 360.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 14 undefined on input line 358.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 14 undefined on input line 360.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 14 undefined on input line 358.
 
 
 [14]
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 15 undefined on input line 364.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 15 undefined on input line 362.
 
 
-LaTeX Warning: Citation '' on page 15 undefined on input line 364.
+LaTeX Warning: Citation '' on page 15 undefined on input line 362.
 
 
-LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 15 undefined on input line 364.
+LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 15 undefined on input line 362.
 
 
-LaTeX Warning: Citation '' on page 15 undefined on input line 364.
+LaTeX Warning: Citation '' on page 15 undefined on input line 362.
 
 
-LaTeX Warning: Citation 'Ou-Hunter-Chow-2019' on page 15 undefined on input line 364.
+LaTeX Warning: Citation 'Ou-Hunter-Chow-2019' on page 15 undefined on input line 362.
 
 (manCTMed-manuscript.ttt)
 
-LaTeX Warning: Reference `tab:manCTMed-example-1' on page 15 undefined on input line 400.
+LaTeX Warning: Reference `tab:manCTMed-example-1' on page 15 undefined on input line 398.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-delta-3' on page 15 undefined on input line 400.
+LaTeX Warning: Reference `fig:manCTMed-beta-delta-3' on page 15 undefined on input line 398.
 
 
-LaTeX Warning: Reference `eq:manCTMed-ou-to-ssm-beta' on page 15 undefined on input line 400.
+LaTeX Warning: Reference `eq:manCTMed-ou-to-ssm-beta' on page 15 undefined on input line 398.
 
 
-LaTeX Warning: Reference `tab:manCTMed-example-1' on page 15 undefined on input line 400.
+LaTeX Warning: Reference `tab:manCTMed-example-1' on page 15 undefined on input line 398.
 
 
 [15]
 
-LaTeX Warning: Citation 'Hamilton-1994' on page 16 undefined on input line 419.
+LaTeX Warning: Citation 'Hamilton-1994' on page 16 undefined on input line 417.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-delta-3' on page 16 undefined on input line 419.
+LaTeX Warning: Reference `fig:manCTMed-beta-delta-3' on page 16 undefined on input line 417.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-bidirectional' on page 16 undefined on input line 419.
+LaTeX Warning: Reference `fig:manCTMed-beta-bidirectional' on page 16 undefined on input line 417.
 
 
-LaTeX Warning: Reference `eq:manCTMed-beta-1' on page 16 undefined on input line 419.
+LaTeX Warning: Reference `eq:manCTMed-beta-1' on page 16 undefined on input line 417.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-delta-3-full-11-11-31' on page 16 undefined on input line 441.
+LaTeX Warning: Reference `fig:manCTMed-beta-delta-3-full-11-11-31' on page 16 undefined on input line 439.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-delta-3-full-31-33-33' on page 16 undefined on input line 441.
+LaTeX Warning: Reference `fig:manCTMed-beta-delta-3-full-31-33-33' on page 16 undefined on input line 439.
 
 
-LaTeX Warning: Reference `fig:manCTMed-beta-bidirectional' on page 16 undefined on input line 441.
-
-
-LaTeX Warning: Reference `tab:manCTMed-example-1' on page 16 undefined on input line 525.
+LaTeX Warning: Reference `fig:manCTMed-beta-bidirectional' on page 16 undefined on input line 439.
 
 
 [16]
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 17 undefined on input line 559.
+LaTeX Warning: Reference `tab:manCTMed-example-1' on page 17 undefined on input line 523.
 
 
-LaTeX Warning: Citation '' on page 17 undefined on input line 559.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 17 undefined on input line 557.
+
+
+LaTeX Warning: Citation '' on page 17 undefined on input line 557.
 
 
 [17]
 
-LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 18 undefined on input line 641.
+LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-unidirectional' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 18 undefined on input line 641.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Citation '' on page 18 undefined on input line 641.
+LaTeX Warning: Citation '' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 18 undefined on input line 641.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Citation '' on page 18 undefined on input line 641.
+LaTeX Warning: Citation '' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 18 undefined on input line 641.
+LaTeX Warning: Reference `fig:manCTMed-dt-var-mediation-bidirectional' on page 18 undefined on input line 639.
 
 
-LaTeX Warning: Citation 'Mackinnon-Dwyer-1993' on page 18 undefined on input line 647.
+LaTeX Warning: Citation 'Mackinnon-Dwyer-1993' on page 18 undefined on input line 645.
 
 
-LaTeX Warning: Citation 'Lachowicz-Preacher-Kelley-2018' on page 18 undefined on input line 647.
+LaTeX Warning: Citation 'Lachowicz-Preacher-Kelley-2018' on page 18 undefined on input line 645.
 
 
-LaTeX Warning: Citation 'Kelley-Preacher-2012' on page 18 undefined on input line 647.
+LaTeX Warning: Citation 'Kelley-Preacher-2012' on page 18 undefined on input line 645.
 
 
 [18]
 
-LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Cheung-2009a' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Cheung-2009a' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Cheung-2009a' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Cheung-2009a' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Fairchild-MacKinnon-Taborga-etal-2009' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Preacher-Kelley-2011' on page 19 undefined on input line 649.
+LaTeX Warning: Citation 'Preacher-Kelley-2011' on page 19 undefined on input line 647.
 
 
-LaTeX Warning: Citation 'Schuurman-Ferrer-deBoerSonnenschein-etal-2016' on page 19 undefined on input line 651.
+LaTeX Warning: Citation 'Schuurman-Ferrer-deBoerSonnenschein-etal-2016' on page 19 undefined on input line 649.
 
 
-LaTeX Warning: Citation '' on page 19 undefined on input line 651.
+LaTeX Warning: Citation '' on page 19 undefined on input line 649.
 
 
-LaTeX Warning: Citation 'Lyapunov-1992' on page 19 undefined on input line 683.
+LaTeX Warning: Citation 'Lyapunov-1992' on page 19 undefined on input line 681.
 
 
-LaTeX Warning: Citation 'Eddelbuettel-Sanderson-2014' on page 19 undefined on input line 683.
+LaTeX Warning: Citation 'Eddelbuettel-Sanderson-2014' on page 19 undefined on input line 681.
 
 
 [19]
 
-LaTeX Warning: Citation 'Craig-1936' on page 20 undefined on input line 716.
+LaTeX Warning: Citation 'Craig-1936' on page 20 undefined on input line 714.
 
 
-LaTeX Warning: Citation 'MacKinnon-2008' on page 20 undefined on input line 716.
+LaTeX Warning: Citation 'MacKinnon-2008' on page 20 undefined on input line 714.
 
 
-LaTeX Warning: Reference `fig:combined-simulation-effects' on page 20 undefined on input line 716.
+LaTeX Warning: Reference `fig:combined-simulation-effects' on page 20 undefined on input line 714.
 
 
 [20]
 
-LaTeX Warning: Citation 'Driver-2025' on page 21 undefined on input line 790.
+LaTeX Warning: Citation 'Driver-2025' on page 21 undefined on input line 788.
 
 
-LaTeX Warning: Citation 'Aroian-1947' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Aroian-1947' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Goodman-1960' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Goodman-1960' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Sobel-1986' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Sobel-1986' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Sobel-1987' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Sobel-1987' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Yuan-Chan-2011' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Yuan-Chan-2011' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Jones-Waller-2015' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Jones-Waller-2015' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Pesigan-Sun-Cheung-2023' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Pesigan-Sun-Cheung-2023' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Muthen-Muthen-2017' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Muthen-Muthen-2017' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Rosseel-2012' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Rosseel-2012' on page 21 undefined on input line 796.
 
 
-LaTeX Warning: Citation 'Pesigan-Sun-Cheung-2023' on page 21 undefined on input line 798.
+LaTeX Warning: Citation 'Pesigan-Sun-Cheung-2023' on page 21 undefined on input line 796.
 
 
 [21]
 [22]
 
-LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'MacKinnon-Lockwood-Williams-2004' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation '' on page 23 undefined on input line 851.
+LaTeX Warning: Citation '' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Preacher-Selig-2012' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Preacher-Selig-2012' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation '' on page 23 undefined on input line 851.
+LaTeX Warning: Citation '' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Tofighi-Kelley-2019' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Tofighi-Kelley-2019' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Tofighi-Kelley-2020' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Tofighi-Kelley-2020' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Tofighi-MacKinnon-2015' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Tofighi-MacKinnon-2015' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 23 undefined on input line 849.
 
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 23 undefined on input line 851.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 23 undefined on input line 849.
 
 
 [23]
 
-LaTeX Warning: Citation 'Zhang-2018' on page 24 undefined on input line 879.
+LaTeX Warning: Citation 'Zhang-2018' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Citation 'Zhang-Browne-2010' on page 24 undefined on input line 879.
+LaTeX Warning: Citation 'Zhang-Browne-2010' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Citation 'Lahiri-2003' on page 24 undefined on input line 879.
+LaTeX Warning: Citation 'Lahiri-2003' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Citation '' on page 24 undefined on input line 879.
+LaTeX Warning: Citation '' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Reference `eq:manCTMed-ou-measurement' on page 24 undefined on input line 879.
+LaTeX Warning: Reference `eq:manCTMed-ou-measurement' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Reference `eq:manCTMed-ou-dynamic' on page 24 undefined on input line 879.
+LaTeX Warning: Reference `eq:manCTMed-ou-dynamic' on page 24 undefined on input line 877.
 
 
-LaTeX Warning: Reference `eq:manCTMed-discrete-ssm' on page 24 undefined on input line 879.
+LaTeX Warning: Reference `eq:manCTMed-discrete-ssm' on page 24 undefined on input line 877.
 
 
 [24]
 
-LaTeX Warning: Reference `tab:manCTMed-example-2' on page 25 undefined on input line 885.
+LaTeX Warning: Reference `tab:manCTMed-example-2' on page 25 undefined on input line 883.
 
 
-LaTeX Warning: Citation 'Johnson-Neyman-1936' on page 25 undefined on input line 928.
+LaTeX Warning: Citation 'Johnson-Neyman-1936' on page 25 undefined on input line 926.
 
 
-LaTeX Warning: Citation 'Johnson-Fay-1950' on page 25 undefined on input line 928.
+LaTeX Warning: Citation 'Johnson-Fay-1950' on page 25 undefined on input line 926.
 
 
-LaTeX Warning: Citation 'Bauer-Curran-2005' on page 25 undefined on input line 928.
+LaTeX Warning: Citation 'Bauer-Curran-2005' on page 25 undefined on input line 926.
 
 
-LaTeX Warning: Citation 'Preacher-Curran-Bauer-2006' on page 25 undefined on input line 928.
+LaTeX Warning: Citation 'Preacher-Curran-Bauer-2006' on page 25 undefined on input line 926.
 
 
 [25]
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 26 undefined on input line 930.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 26 undefined on input line 928.
 
 
-LaTeX Warning: Citation 'Wang-Zhang-2020' on page 26 undefined on input line 930.
+LaTeX Warning: Citation 'Wang-Zhang-2020' on page 26 undefined on input line 928.
 
 
-LaTeX Warning: Citation 'Hecht-Zitzmann-2021' on page 26 undefined on input line 930.
+LaTeX Warning: Citation 'Hecht-Zitzmann-2021' on page 26 undefined on input line 928.
 
 
-LaTeX Warning: Reference `fig:manCTMed-example-std-3-xmy-133' on page 26 undefined on input line 932.
+LaTeX Warning: Reference `fig:manCTMed-example-std-3-xmy-133' on page 26 undefined on input line 930.
 
 
 [26]
 
-LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 27 undefined on input line 1090.
+LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 27 undefined on input line 1088.
 
 
-LaTeX Warning: Citation '' on page 27 undefined on input line 1090.
+LaTeX Warning: Citation '' on page 27 undefined on input line 1088.
 
 
-LaTeX Warning: Reference `fig:illustration-coverage' on page 27 undefined on input line 1090.
+LaTeX Warning: Reference `fig:illustration-coverage' on page 27 undefined on input line 1088.
 
 
-LaTeX Warning: Reference `fig:illustration-power' on page 27 undefined on input line 1090.
+LaTeX Warning: Reference `fig:illustration-power' on page 27 undefined on input line 1088.
 
 
-LaTeX Warning: Citation 'Bradley-1978' on page 27 undefined on input line 1092.
+LaTeX Warning: Citation 'Bradley-1978' on page 27 undefined on input line 1090.
 
 
-LaTeX Warning: Citation 'Cohen-1988' on page 27 undefined on input line 1094.
+LaTeX Warning: Citation 'Cohen-1988' on page 27 undefined on input line 1092.
 
 
 [27]
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1121.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1119.
 
 
-LaTeX Warning: Citation '' on page 28 undefined on input line 1121.
+LaTeX Warning: Citation '' on page 28 undefined on input line 1119.
 
 
-LaTeX Warning: Citation 'MacKinnon-Krull-Lockwood-2000' on page 28 undefined on input line 1121.
+LaTeX Warning: Citation 'MacKinnon-Krull-Lockwood-2000' on page 28 undefined on input line 1119.
 
 
-LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 28 undefined on input line 1121.
+LaTeX Warning: Citation 'Shrout-Bolger-2002' on page 28 undefined on input line 1119.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1129.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1127.
 
 
-LaTeX Warning: Citation '' on page 28 undefined on input line 1129.
+LaTeX Warning: Citation '' on page 28 undefined on input line 1127.
 
 
-Overfull \hbox (14.98965pt too wide) detected at line 1162
+Overfull \hbox (14.98965pt too wide) detected at line 1160
 [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [] [][] \OT1/lmr/m/n/10 = []
 
-LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 28 undefined on input line 1163.
+LaTeX Warning: Citation 'Chow-Losardo-Park-etal-2023' on page 28 undefined on input line 1161.
 
 
-LaTeX Warning: Citation '' on page 28 undefined on input line 1163.
+LaTeX Warning: Citation '' on page 28 undefined on input line 1161.
 
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1197.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 28 undefined on input line 1195.
 
 
-LaTeX Warning: Citation '' on page 28 undefined on input line 1197.
+LaTeX Warning: Citation '' on page 28 undefined on input line 1195.
 
 
 [28]
 
-LaTeX Warning: Reference `fig:combined-simulation-effects' on page 29 undefined on input line 1257.
+LaTeX Warning: Reference `fig:combined-simulation-effects' on page 29 undefined on input line 1255.
 
 
-LaTeX Warning: Reference `eq:manCTMed-discrete-ssm' on page 29 undefined on input line 1261.
+LaTeX Warning: Reference `eq:manCTMed-discrete-ssm' on page 29 undefined on input line 1259.
 
 
-LaTeX Warning: Reference `eq:manCTMed-ou-measurement' on page 29 undefined on input line 1261.
+LaTeX Warning: Reference `eq:manCTMed-ou-measurement' on page 29 undefined on input line 1259.
 
 
 [29]
 [30]
 
-LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 31 undefined on input line 1297.
+LaTeX Warning: Citation 'Pesigan-Cheung-2023' on page 31 undefined on input line 1295.
 
 
-LaTeX Warning: Citation 'Cheung-2009a' on page 31 undefined on input line 1297.
+LaTeX Warning: Citation 'Cheung-2009a' on page 31 undefined on input line 1295.
 
 
-LaTeX Warning: Citation '' on page 31 undefined on input line 1297.
+LaTeX Warning: Citation '' on page 31 undefined on input line 1295.
 
 
-LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 31 undefined on input line 1308.
+LaTeX Warning: Citation 'Grundy-Gondoli-BlodgettSalafia-2007' on page 31 undefined on input line 1306.
 
 
-LaTeX Warning: Citation '' on page 31 undefined on input line 1308.
+LaTeX Warning: Citation '' on page 31 undefined on input line 1306.
 
 
 [31]
 
-LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 32 undefined on input line 1322.
+LaTeX Warning: Citation 'Deboeck-Preacher-2015' on page 32 undefined on input line 1320.
 
 
-LaTeX Warning: Citation '' on page 32 undefined on input line 1322.
+LaTeX Warning: Citation '' on page 32 undefined on input line 1320.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 32 undefined on input line 1322.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 32 undefined on input line 1320.
 
 
-LaTeX Warning: Citation '' on page 32 undefined on input line 1322.
+LaTeX Warning: Citation '' on page 32 undefined on input line 1320.
 
 
-LaTeX Warning: Citation 'Staudenmayer-Buonaccorsi-2005' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Staudenmayer-Buonaccorsi-2005' on page 32 undefined on input line 1322.
 
 
-LaTeX Warning: Citation 'Schuurman-Hamaker-2019' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Schuurman-Hamaker-2019' on page 32 undefined on input line 1322.
 
 
-LaTeX Warning: Citation 'Schuurman-Houtveen-Hamaker-2015' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Schuurman-Houtveen-Hamaker-2015' on page 32 undefined on input line 1322.
 
 
-LaTeX Warning: Citation 'Oh-Hunter-Chow-2025' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Oh-Hunter-Chow-2025' on page 32 undefined on input line 1322.
 
 
-LaTeX Warning: Citation 'Singer-2012' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Singer-2012' on page 32 undefined on input line 1322.
 
 
-LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 32 undefined on input line 1324.
+LaTeX Warning: Citation 'Voelkle-Oud-2012' on page 32 undefined on input line 1322.
 
 
 [32]
 
-LaTeX Warning: Citation 'Kenny-Kashy-Bolger-1998' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Kenny-Kashy-Bolger-1998' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Yuan-MacKinnon-2009' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Yuan-MacKinnon-2009' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Enders-Fairchild-MacKinnon-2013' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Enders-Fairchild-MacKinnon-2013' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Oravecz-Tuerlinckx-Vandekerckhove-2011' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Driver-Voelkle-2018' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Driver-Voelkle-2018' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Hecht-Zitzmann-2020a' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Hecht-Zitzmann-2020a' on page 33 undefined on input line 1328.
 
 
-LaTeX Warning: Citation 'Oravecz-Wood-Ram-2018' on page 33 undefined on input line 1330.
+LaTeX Warning: Citation 'Oravecz-Wood-Ram-2018' on page 33 undefined on input line 1328.
 
 
 [33]
 
-LaTeX Warning: Citation 'Tibshirani-1996' on page 34 undefined on input line 1332.
+LaTeX Warning: Citation 'Tibshirani-1996' on page 34 undefined on input line 1330.
 
 
-LaTeX Warning: Citation 'Tibshirani-2011' on page 34 undefined on input line 1332.
+LaTeX Warning: Citation 'Tibshirani-2011' on page 34 undefined on input line 1330.
 
 
-LaTeX Warning: Citation '' on page 34 undefined on input line 1332.
+LaTeX Warning: Citation '' on page 34 undefined on input line 1330.
 
 
-LaTeX Warning: Citation 'Orzek-Voelkle-2023' on page 34 undefined on input line 1332.
+LaTeX Warning: Citation 'Orzek-Voelkle-2023' on page 34 undefined on input line 1330.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 34 undefined on input line 1334.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 34 undefined on input line 1332.
 
 
-LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 34 undefined on input line 1334.
+LaTeX Warning: Citation 'Ryan-Hamaker-2021' on page 34 undefined on input line 1332.
 
 
-LaTeX Warning: Citation 'Hamaker-Kuiper-Grasman-2015' on page 34 undefined on input line 1338.
+LaTeX Warning: Citation 'Hamaker-Kuiper-Grasman-2015' on page 34 undefined on input line 1336.
 
 
-LaTeX Warning: Citation 'Lohmann-Zitzmann-Voelkle-etal-2022' on page 34 undefined on input line 1338.
+LaTeX Warning: Citation 'Lohmann-Zitzmann-Voelkle-etal-2022' on page 34 undefined on input line 1336.
 
 
 [34]
 
-LaTeX Warning: Empty bibliography on input line 1346.
+LaTeX Warning: Empty bibliography on input line 1344.
 
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 79.
@@ -6985,7 +6977,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (43 pages, 1322732 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (43 pages, 1322767 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -7010,13 +7002,13 @@ Running 'biber  ".setup/latex/pdf/manCTMed-manuscript.bcf"'
 INFO - This is Biber 2.20
 INFO - Logfile is '.setup/latex/pdf/manCTMed-manuscript.blg'
 INFO - Reading '.setup/latex/pdf/manCTMed-manuscript.bcf'
-INFO - Found 121 citekeys in bib section 0
+INFO - Found 123 citekeys in bib section 0
 INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/github/manCTMed/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/github/manCTMed/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
@@ -7081,239 +7073,239 @@ LaTeX Warning: You have requested package `/scratch/ibp5092/github/manCTMed/.set
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 334.
+(hyperref)                removing `\<let>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@nomath' on input line 334.
+(hyperref)                removing `\@nomath' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thinmuskip' on input line 334.
+(hyperref)                removing `\thinmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medmuskip' on input line 334.
+(hyperref)                removing `\medmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\m@ne' on input line 334.
+(hyperref)                removing `\m@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thickmuskip' on input line 334.
+(hyperref)                removing `\thickmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ne' on input line 334.
+(hyperref)                removing `\@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tw@' on input line 334.
+(hyperref)                removing `\tw@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 334.
+(hyperref)                removing `\<def>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@tempa' on input line 334.
+(hyperref)                removing `\@tempa' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 334.
+(hyperref)                removing `\mathchoice' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\displaystyle' on input line 334.
+(hyperref)                removing `\displaystyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 334.
+(hyperref)                removing `\textstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptstyle' on input line 334.
+(hyperref)                removing `\scriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptscriptstyle' on input line 334.
+(hyperref)                removing `\scriptscriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 334.
+(hyperref)                removing `\endgroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 [11]
@@ -7332,7 +7324,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [24]
 [25]
 [26]
-Overfull \hbox (14.98965pt too wide) detected at line 1162
+Overfull \hbox (14.98965pt too wide) detected at line 1160
 [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [] [][] \OT1/lmr/m/n/10 = []
 
 [27]
@@ -7737,7 +7729,7 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 pdfTeX warning (dest): name{figure.caption.38} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1361891 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1362008 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -7761,13 +7753,13 @@ Running 'biber  ".setup/latex/pdf/manCTMed-manuscript.bcf"'
 INFO - This is Biber 2.20
 INFO - Logfile is '.setup/latex/pdf/manCTMed-manuscript.blg'
 INFO - Reading '.setup/latex/pdf/manCTMed-manuscript.bcf'
-INFO - Found 121 citekeys in bib section 0
+INFO - Found 123 citekeys in bib section 0
 INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/github/manCTMed/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/github/manCTMed/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
@@ -7829,239 +7821,239 @@ LaTeX Warning: You have requested package `/scratch/ibp5092/github/manCTMed/.set
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 334.
+(hyperref)                removing `\<let>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@nomath' on input line 334.
+(hyperref)                removing `\@nomath' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thinmuskip' on input line 334.
+(hyperref)                removing `\thinmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medmuskip' on input line 334.
+(hyperref)                removing `\medmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\m@ne' on input line 334.
+(hyperref)                removing `\m@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thickmuskip' on input line 334.
+(hyperref)                removing `\thickmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ne' on input line 334.
+(hyperref)                removing `\@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tw@' on input line 334.
+(hyperref)                removing `\tw@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 334.
+(hyperref)                removing `\<def>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@tempa' on input line 334.
+(hyperref)                removing `\@tempa' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 334.
+(hyperref)                removing `\mathchoice' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\displaystyle' on input line 334.
+(hyperref)                removing `\displaystyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 334.
+(hyperref)                removing `\textstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptstyle' on input line 334.
+(hyperref)                removing `\scriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptscriptstyle' on input line 334.
+(hyperref)                removing `\scriptscriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 334.
+(hyperref)                removing `\endgroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 [11]
@@ -8080,7 +8072,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [24]
 [25]
 [26]
-Overfull \hbox (14.98965pt too wide) detected at line 1162
+Overfull \hbox (14.98965pt too wide) detected at line 1160
 [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [] [][] \OT1/lmr/m/n/10 = []
 
 [27]
@@ -8471,7 +8463,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1361860 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1361970 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -8531,239 +8523,239 @@ LaTeX Warning: You have requested package `/scratch/ibp5092/github/manCTMed/.set
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 334.
+(hyperref)                removing `\<let>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@nomath' on input line 334.
+(hyperref)                removing `\@nomath' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thinmuskip' on input line 334.
+(hyperref)                removing `\thinmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medmuskip' on input line 334.
+(hyperref)                removing `\medmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\m@ne' on input line 334.
+(hyperref)                removing `\m@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thickmuskip' on input line 334.
+(hyperref)                removing `\thickmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ne' on input line 334.
+(hyperref)                removing `\@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tw@' on input line 334.
+(hyperref)                removing `\tw@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 334.
+(hyperref)                removing `\<def>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@tempa' on input line 334.
+(hyperref)                removing `\@tempa' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 334.
+(hyperref)                removing `\mathchoice' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\displaystyle' on input line 334.
+(hyperref)                removing `\displaystyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 334.
+(hyperref)                removing `\textstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptstyle' on input line 334.
+(hyperref)                removing `\scriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptscriptstyle' on input line 334.
+(hyperref)                removing `\scriptscriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 334.
+(hyperref)                removing `\endgroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 [11]
@@ -8782,7 +8774,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [24]
 [25]
 [26]
-Overfull \hbox (14.98965pt too wide) detected at line 1162
+Overfull \hbox (14.98965pt too wide) detected at line 1160
 [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [] [][] \OT1/lmr/m/n/10 = []
 
 [27]
@@ -9173,7 +9165,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1361860 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 1361970 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -9915,7 +9907,7 @@ Package biblatex Warning: Please (re)run Biber on the file:
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manCTMed-supplement.pdf (28 pages, 207733 bytes).
+Output written on .setup/latex/pdf/manCTMed-supplement.pdf (28 pages, 207717 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-supplement.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-supplement.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-supplement.fls'
@@ -9945,7 +9937,7 @@ INFO - Writing '.setup/latex/pdf/manCTMed-supplement.bbl' with encoding 'UTF-8'
 INFO - Output to .setup/latex/pdf/manCTMed-supplement.bbl
 WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
 INFO - WARNINGS: 1
-Biber warning: [206] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
+Biber warning: [210] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
 Latexmk: Found biber source file(s) [.setup/latex/pdf/manCTMed-supplement.bcf]
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
@@ -10662,7 +10654,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 212134 bytes).
+Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 212124 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-supplement.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-supplement.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-supplement.fls'
@@ -11381,7 +11373,7 @@ l.334 ...nettes-scatter-plots-neg-type1-std-1.png}
 )
 [29] (.setup/latex/pdf/manCTMed-supplement.aux) )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 212137 bytes).
+Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 212122 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-supplement.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-supplement.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-supplement.fls'
@@ -11490,7 +11482,7 @@ INFO - Writing '.setup/latex/pdf/manCTMed-title-page.bbl' with encoding 'UTF-8'
 INFO - Output to .setup/latex/pdf/manCTMed-title-page.bbl
 WARN - The file '.setup/latex/pdf/manCTMed-title-page.bcf' does not contain any citations!
 INFO - WARNINGS: 1
-Biber warning: [204] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-title-page.bcf' does not contain any citations!
+Biber warning: [208] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-title-page.bcf' does not contain any citations!
 Latexmk: Found biber source file(s) [.setup/latex/pdf/manCTMed-title-page.bcf]
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
@@ -11974,7 +11966,6 @@ Writing `articles/fig-scatter-plots-illustration.html`
 • fig-vignettes-scatter-plots-illustration-effects-std-1.png
 • fig-vignettes-scatter-plots-illustration-coverage-1.png
 • fig-vignettes-scatter-plots-illustration-power-1.png
-• fig-vignettes-scatter-plots-illustration-se-bias-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-neg.Rmd
 Writing `articles/fig-scatter-plots-neg.html`
@@ -11987,14 +11978,12 @@ Writing `articles/fig-scatter-plots-neg.html`
 • fig-vignettes-scatter-plots-neg-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-neg-power-1.png
 • fig-vignettes-scatter-plots-neg-type1-1.png
-• fig-vignettes-scatter-plots-neg-se-bias-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-neg-power-std-1.png
 • fig-vignettes-scatter-plots-neg-type1-std-1.png
-• fig-vignettes-scatter-plots-neg-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-pos.Rmd
 Writing `articles/fig-scatter-plots-pos.html`
@@ -12007,14 +11996,12 @@ Writing `articles/fig-scatter-plots-pos.html`
 • fig-vignettes-scatter-plots-pos-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-pos-power-1.png
 • fig-vignettes-scatter-plots-pos-type1-1.png
-• fig-vignettes-scatter-plots-pos-se-bias-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-pos-power-std-1.png
 • fig-vignettes-scatter-plots-pos-type1-std-1.png
-• fig-vignettes-scatter-plots-pos-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-zero.Rmd
 Writing `articles/fig-scatter-plots-zero.html`
@@ -12027,14 +12014,12 @@ Writing `articles/fig-scatter-plots-zero.html`
 • fig-vignettes-scatter-plots-zero-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-zero-power-1.png
 • fig-vignettes-scatter-plots-zero-type1-1.png
-• fig-vignettes-scatter-plots-zero-se-bias-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-zero-power-std-1.png
 • fig-vignettes-scatter-plots-zero-type1-std-1.png
-• fig-vignettes-scatter-plots-zero-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/manCTMed.Rmd
 Writing `articles/manCTMed.html`
@@ -12169,37 +12154,37 @@ Installing packages...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpYM0ddY/dotfiles'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpU9ifyo/dotfiles'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5112[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-bc-5071[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.33.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m85d 18h 38m[0m
+[14C[33m[1muptime[0m[6D[7C[39m86d 23h 18m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m657[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10034M / 128814M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m9971M / 128814M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpYM0ddY/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpYM0ddY/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpU9ifyo/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpU9ifyo/dotfiles'
 
 
 TinyTex...
@@ -12528,7 +12513,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpjXhXZy/file2fcad2223f1fb2/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpV4VRaA/file17987d2f967b99/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -12587,8 +12572,8 @@ Setting env vars:
 * checking R/sysdata.rda ... OK
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
-                        user system elapsed
-FigScatterPlotCoverage 5.005  0.286   5.109
+                       user system elapsed
+FigScatterPlotCoverage 4.94   0.29   5.049
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
@@ -12597,8 +12582,9 @@ FigScatterPlotCoverage 5.005  0.286   5.109
 
 Status: 1 NOTE
 See
-  ‘/tmp/RtmpjXhXZy/file2fcad2223f1fb2/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpV4VRaA/file17987d2f967b99/manCTMed.Rcheck/00check.log’
 for details.
+
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/github/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -12610,7 +12596,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpjXhXZy/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpV4VRaA/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/github/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -12687,7 +12673,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpc7LbGU/file2fd8324f582c1d/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpUlfy9L/file17a2e76bb29ed2/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -12747,7 +12733,7 @@ Setting env vars:
 * checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
                         user system elapsed
-FigScatterPlotCoverage 4.962  0.265   5.029
+FigScatterPlotCoverage 4.884  0.271   4.953
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
@@ -12756,9 +12742,8 @@ FigScatterPlotCoverage 4.962  0.265   5.029
 
 Status: 1 NOTE
 See
-  ‘/tmp/Rtmpc7LbGU/file2fd8324f582c1d/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpUlfy9L/file17a2e76bb29ed2/manCTMed.Rcheck/00check.log’
 for details.
-
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/github/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -12770,7 +12755,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpc7LbGU/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpUlfy9L/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/github/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -13289,7 +13274,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (89 pages, 230548 bytes).
+Output written on Rd2.pdf (89 pages, 230541 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -13786,7 +13771,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (97 pages, 270333 bytes).
+Output written on Rd2.pdf (97 pages, 270326 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -14277,7 +14262,7 @@ pdfTeX warning (dest): name{Rfn.OpenMx} has been referenced but does not exist, 
 pdfTeX warning (dest): name{Rfn.dynr} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (97 pages, 270867 bytes).
+Output written on Rd2.pdf (97 pages, 270860 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘manCTMed.pdf’ ...
 Done
@@ -14527,239 +14512,239 @@ LaTeX Warning: You have requested package `/scratch/ibp5092/github/manCTMed/.set
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 334.
+(hyperref)                removing `\<let>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@nomath' on input line 334.
+(hyperref)                removing `\@nomath' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 334.
+(hyperref)                removing `\begingroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thinmuskip' on input line 334.
+(hyperref)                removing `\thinmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medmuskip' on input line 334.
+(hyperref)                removing `\medmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\m@ne' on input line 334.
+(hyperref)                removing `\m@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\thickmuskip' on input line 334.
+(hyperref)                removing `\thickmuskip' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ne' on input line 334.
+(hyperref)                removing `\@ne' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\setbox' on input line 334.
+(hyperref)                removing `\setbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tw@' on input line 334.
+(hyperref)                removing `\tw@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<def>-command' on input line 334.
+(hyperref)                removing `\<def>-command' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@tempa' on input line 334.
+(hyperref)                removing `\@tempa' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 334.
+(hyperref)                removing `\mathchoice' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\displaystyle' on input line 334.
+(hyperref)                removing `\displaystyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\textstyle' on input line 334.
+(hyperref)                removing `\textstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptstyle' on input line 334.
+(hyperref)                removing `\scriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hbox' on input line 334.
+(hyperref)                removing `\hbox' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 334.
+(hyperref)                removing `\mathsurround' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 334.
+(hyperref)                removing `\z@' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\scriptscriptstyle' on input line 334.
+(hyperref)                removing `\scriptscriptstyle' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 334.
+(hyperref)                removing `\beta' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 334.
+(hyperref)                removing `\endgroup' on input line 332.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 334.
+(hyperref)                removing `math shift' on input line 332.
 
 
 [11]
@@ -14778,7 +14763,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [24]
 [25]
 [26]
-Overfull \hbox (14.98965pt too wide) detected at line 1162
+Overfull \hbox (14.98965pt too wide) detected at line 1160
 [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [][] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 ;  [] [][] \OT1/lmr/m/n/10 = []
 
 [27]
@@ -14952,7 +14937,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 10415444 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (53 pages, 10384663 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -15236,7 +15221,7 @@ Overfull \hbox (8.88167pt too wide) in paragraph at lines 127--144
 [28 <./.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png>])
 [29 <./.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png>] (.setup/latex/pdf/manCTMed-supplement.aux) )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 43817233 bytes).
+Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 43773949 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-supplement.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-supplement.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-supplement.fls'
@@ -15428,7 +15413,6 @@ Reading vignettes/fig-scatter-plots-illustration.Rmd
 • fig-vignettes-scatter-plots-illustration-effects-std-1.png
 • fig-vignettes-scatter-plots-illustration-coverage-1.png
 • fig-vignettes-scatter-plots-illustration-power-1.png
-• fig-vignettes-scatter-plots-illustration-se-bias-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-neg.Rmd
 ✖ Missing alt-text in 'vignettes/fig-scatter-plots-neg.Rmd'
@@ -15440,14 +15424,12 @@ Reading vignettes/fig-scatter-plots-neg.Rmd
 • fig-vignettes-scatter-plots-neg-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-neg-power-1.png
 • fig-vignettes-scatter-plots-neg-type1-1.png
-• fig-vignettes-scatter-plots-neg-se-bias-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-neg-power-std-1.png
 • fig-vignettes-scatter-plots-neg-type1-std-1.png
-• fig-vignettes-scatter-plots-neg-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-pos.Rmd
 ✖ Missing alt-text in 'vignettes/fig-scatter-plots-pos.Rmd'
@@ -15459,14 +15441,12 @@ Reading vignettes/fig-scatter-plots-pos.Rmd
 • fig-vignettes-scatter-plots-pos-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-pos-power-1.png
 • fig-vignettes-scatter-plots-pos-type1-1.png
-• fig-vignettes-scatter-plots-pos-se-bias-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-pos-power-std-1.png
 • fig-vignettes-scatter-plots-pos-type1-std-1.png
-• fig-vignettes-scatter-plots-pos-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/fig-scatter-plots-zero.Rmd
 ✖ Missing alt-text in 'vignettes/fig-scatter-plots-zero.Rmd'
@@ -15478,14 +15458,12 @@ Reading vignettes/fig-scatter-plots-zero.Rmd
 • fig-vignettes-scatter-plots-zero-coverage-25-30-1.png
 • fig-vignettes-scatter-plots-zero-power-1.png
 • fig-vignettes-scatter-plots-zero-type1-1.png
-• fig-vignettes-scatter-plots-zero-se-bias-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-1-4-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-5-25-1.png
 • fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png
 • fig-vignettes-scatter-plots-zero-power-std-1.png
 • fig-vignettes-scatter-plots-zero-type1-std-1.png
-• fig-vignettes-scatter-plots-zero-se-bias-std-1.png
 ℹ Learn more in `vignette(pkgdown::accessibility)`.
 Reading vignettes/manCTMed.Rmd
 Reading vignettes/params.Rmd
