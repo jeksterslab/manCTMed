@@ -64,6 +64,7 @@ articles:
   - fig-scatter-plots-zero
   - fig-scatter-plots-neg
   - fig-scatter-plots-pos
+  - fig-sampling-distribution
 - title: Containers
   contents:
   - containers
