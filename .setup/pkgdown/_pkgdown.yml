@@ -39,3 +39,34 @@ reference:
 - title: All Functions
   contents:
   - has_keyword("manCTMed")
+
+articles:
+- title: manCTMed
+  contents:
+  - manCTMed
+- title: Three Illustrations Using an Empirical Data Set
+  contents:
+  - fig-example-1
+  - fig-example-2
+  - fig-example-3
+- title: Single Replication from the Simulation Study
+  contents:
+  - replication
+- title: Parameters
+  contents:
+  - params
+- title: Results
+  contents:
+  - results
+- title: Plots
+  contents:
+  - fig-scatter-plots-illustration
+  - fig-scatter-plots-zero
+  - fig-scatter-plots-neg
+  - fig-scatter-plots-pos
+- title: Containers
+  contents:
+  - containers
+- title: Session
+  contents:
+  - session
