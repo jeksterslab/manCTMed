@@ -29,7 +29,7 @@ Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-04-07 01:34:38 UTC; root
+Packaged: 2025-04-07 02:18:41 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
     (<https://orcid.org/0000-0000-0000-0000>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
