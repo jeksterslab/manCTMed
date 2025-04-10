@@ -8,7 +8,7 @@
 
 # Define project variables
 PROJECT=/scratch/$USER/github/manCTMed
-SIF=/scratch/$USER/sif/docs.sif
+SIF=/scratch/$USER/github/manCTMed/.sif/manctmed.sif
 
 # Directory
 
@@ -39,3 +39,4 @@ cd ${PROJECT} || exit
 cp ${PROJECT}/vignettes/*.png ${PROJECT}/.setup/latex/figures/png
 apptainer exec ${SIF} make all
 # apptainer exec ${SIF} make auto
+

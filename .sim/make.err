@@ -1,4 +1,5 @@
-make: Warning: File 'Makefile' has modification time 12814 s in the future
+make: Warning: File 'Makefile' has modification time 13501 s in the future
+Installing 2 packages: pillar, Rdpack
 Cloning into 'dotfiles'...
 find: ‘/scratch/ibp5092/github/manCTMed/.setup/cpp’: No such file or directory
 find: ‘/scratch/ibp5092/github/manCTMed/src’: No such file or directory
@@ -226,6 +227,16 @@ output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.t
 
 
 
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-open-practices-statement.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-open-practices-statement.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-response-letter.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-response-letter.tex
+
+
+
 processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
 output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
 
@@ -233,6 +244,11 @@ output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.t
 
 processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
 output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-translational-abstract.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-translational-abstract.tex
 
 Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
 Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
@@ -894,6 +910,16 @@ output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.t
 
 
 
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-open-practices-statement.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-open-practices-statement.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-response-letter.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-response-letter.tex
+
+
+
 processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
 output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
 
@@ -901,6 +927,11 @@ output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.t
 
 processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
 output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
+
+
+
+processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-translational-abstract.Rtex
+output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-translational-abstract.tex
 
 ── Installing package manCTMed into temporary library ──────────────────────────
 ── Finished building pkgdown site for package manCTMed ─────────────────────────
