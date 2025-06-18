@@ -6,12 +6,23 @@ Authors@R: c(
            family = "Pesigan",
            role = c("aut", "cre", "cph"),
            email = "r.jeksterslab@gmail.com",
-           comment = c(ORCID = "0000-0000-0000-0000"))
-    )
+           comment = c(ORCID = "0000-0003-4818-8420")),
+    person(given = "Michael A.",
+           family = "Russell",
+           role = "ctb",
+           email = "mar60@psu.edu",
+           comment = c(ORCID = "0000-0002-3956-604X")),
+    person(given = "Sy-Miin",,
+           family = "Chow",
+           role = "ctb",
+           email = "quc16@psu.edu",
+           comment = c(ORCID = "0000-0003-1938-027X"))
+    )    
 Description: Research compendium for the manuscript
-    Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (Under Review).
+    Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025).
     Inferences and Effect Sizes for Direct, Indirect, and Total Effects
     in Continuous-Time Mediation Models.
+    Psychological Methods.
     <doi:10.0000/0000000000>.
 URL: https://github.com/jeksterslab/manCTMed,
         https://jeksterslab.github.io/manCTMed/, https://osf.io/qwnmf/,
@@ -23,13 +34,15 @@ LazyData: true
 LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.0.0)
-Imports: stats, dynr, OpenMx, dynUtils, simStateSpace, bootStateSpace,
-        cTMed, ggplot2
+Imports: stats, dynr, OpenMx, dynUtils, simStateSpace (== 1.2.9),
+        bootStateSpace (== 1.0.2), cTMed (== 1.0.6), ggplot2
 Suggests: knitr, rmarkdown, testthat, DT
-Remotes: jeksterslab/dynUtils
+Remotes: jeksterslab/dynUtils@dc3f47b
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-04-10 10:51:49 UTC; root
+Packaged: 2025-06-18 03:15:11 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
-    (<https://orcid.org/0000-0000-0000-0000>)
+    (<https://orcid.org/0000-0003-4818-8420>),
+  Michael A. Russell [ctb] (<https://orcid.org/0000-0002-3956-604X>),
+  Sy-Miin Chow [ctb] (<https://orcid.org/0000-0003-1938-027X>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
