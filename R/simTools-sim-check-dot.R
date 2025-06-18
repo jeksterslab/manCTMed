@@ -27,28 +27,29 @@
                       overwrite,
                       integrity) {
   if (overwrite) {
-    return(TRUE)
+    out <- TRUE
   } else {
     if (file.exists(fn)) {
       if (integrity) {
-        tryCatch(
+        out <- tryCatch(
           {
             x <- readRDS(file = fn)
             rm(x)
-            return(FALSE)
+            FALSE
           },
           warning = function(w) {
-            return(TRUE)
+            TRUE
           },
           error = function(e) {
-            return(TRUE)
+            TRUE
           }
         )
       } else {
-        return(FALSE)
+        out <- FALSE
       }
     } else {
-      return(TRUE)
+      out <- TRUE
     }
   }
+  out
 }

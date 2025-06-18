@@ -7,8 +7,8 @@
 #SBATCH --error=make.err
 
 # Define project variables
-PROJECT=/scratch/$USER/github/manCTMed
-SIF=/scratch/$USER/github/manCTMed/.sif/manctmed.sif
+PROJECT=/scratch/$USER/manCTMed
+SIF=/scratch/$USER/manCTMed/.sif/manctmed.sif
 
 # Directory
 
@@ -38,5 +38,4 @@ apptainer exec ${SIF} make all
 cd ${PROJECT} || exit
 cp ${PROJECT}/vignettes/*.png ${PROJECT}/.setup/latex/figures/png
 apptainer exec ${SIF} make all
-# apptainer exec ${SIF} make auto
-
+apptainer exec ${SIF} make auto

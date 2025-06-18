@@ -1,7 +1,7 @@
 manCTMed
 ================
 Ivan Jacob Agaloos Pesigan
-2025-04-10
+2025-06-18
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -13,9 +13,9 @@ Ivan Jacob Agaloos Pesigan
 ## Description
 
 Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
-A., Chow, S.-M. (Under Review). Inferences and Effect Sizes for Direct,
+A., Chow, S.-M. (2025). Inferences and Effect Sizes for Direct,
 Indirect, and Total Effects in Continuous-Time Mediation Models.
-<https://doi.org/10.0000/0000000000>
+*Psychological Methods*. <https://doi.org/10.0000/0000000000>
 
 ## Acknowledgments
 

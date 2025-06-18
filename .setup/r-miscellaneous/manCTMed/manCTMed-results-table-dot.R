@@ -16,7 +16,7 @@
         data$dynamics == dynamics_value &
         data$interval %in% intervals,
     ]
-    return(filtered)
+    filtered
   }
 
   # Helper function to extract subgroups
@@ -29,9 +29,7 @@
         data$method == method_type &
         data$std == std_value,
     ]
-    return(
-      group[, c("interval", value)]
-    )
+    group[, c("interval", value)]
   }
 
   # List to hold results for all n values
@@ -76,5 +74,5 @@
   # Sort the combined data by interval
   combined <- combined[order(combined$interval), ]
 
-  return(combined)
+  combined
 }

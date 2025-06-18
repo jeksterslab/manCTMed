@@ -1,178 +1,0 @@
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/github/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/github/manCTMed/src’: No such file or directory
-✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/github/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ..........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10356 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 10 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10362 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 11 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-cover-letter.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-cover-letter.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-open-practices-statement.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-open-practices-statement.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-response-letter.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-response-letter.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-translational-abstract.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-translational-abstract.tex
-
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/github/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/github/manCTMed/src’: No such file or directory
-✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/github/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/github/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ..........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10356 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 10 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10362 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 11 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-cover-letter.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-cover-letter.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-manuscript.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-open-practices-statement.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-open-practices-statement.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-response-letter.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-response-letter.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-supplement.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-supplement.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-title-page.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-title-page.tex
-
-
-
-processing file: /scratch/ibp5092/github/manCTMed/.setup/latex/manCTMed-translational-abstract.Rtex
-output file: /scratch/ibp5092/github/manCTMed/detritus/tex/manCTMed-translational-abstract.tex
-
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
-Cloning into 'manCTMed'...
-Updating files:   7% (90/1163)Updating files:   8% (94/1163)Updating files:   9% (105/1163)Updating files:  10% (117/1163)Updating files:  11% (128/1163)Updating files:  12% (140/1163)Updating files:  12% (150/1163)Updating files:  13% (152/1163)Updating files:  14% (163/1163)Updating files:  15% (175/1163)Updating files:  16% (187/1163)Updating files:  17% (198/1163)Updating files:  18% (210/1163)Updating files:  19% (221/1163)Updating files:  19% (226/1163)Updating files:  20% (233/1163)Updating files:  21% (245/1163)Updating files:  22% (256/1163)Updating files:  23% (268/1163)Updating files:  24% (280/1163)Updating files:  25% (291/1163)Updating files:  26% (303/1163)Updating files:  27% (315/1163)Updating files:  27% (323/1163)Updating files:  28% (326/1163)Updating files:  29% (338/1163)Updating files:  30% (349/1163)Updating files:  31% (361/1163)Updating files:  32% (373/1163)Updating files:  33% (384/1163)Updating files:  34% (396/1163)Updating files:  35% (408/1163)Updating files:  36% (419/1163)Updating files:  37% (431/1163)Updating files:  38% (442/1163)Updating files:  39% (454/1163)Updating files:  40% (466/1163)Updating files:  41% (477/1163)Updating files:  42% (489/1163)Updating files:  43% (501/1163)Updating files:  44% (512/1163)Updating files:  45% (524/1163)Updating files:  46% (535/1163)Updating files:  46% (545/1163)Updating files:  47% (547/1163)Updating files:  48% (559/1163)Updating files:  49% (570/1163)Updating files:  50% (582/1163)Updating files:  51% (594/1163)Updating files:  52% (605/1163)Updating files:  53% (617/1163)Updating files:  54% (629/1163)Updating files:  55% (640/1163)Updating files:  56% (652/1163)Updating files:  57% (663/1163)Updating files:  58% (675/1163)Updating files:  59% (687/1163)Updating files:  60% (698/1163)Updating files:  61% (710/1163)Updating files:  62% (722/1163)Updating files:  63% (733/1163)Updating files:  64% (745/1163)Updating files:  65% (756/1163)Updating files:  66% (768/1163)Updating files:  67% (780/1163)Updating files:  68% (791/1163)Updating files:  69% (803/1163)Updating files:  70% (815/1163)Updating files:  71% (826/1163)Updating files:  72% (838/1163)Updating files:  73% (849/1163)Updating files:  74% (861/1163)Updating files:  75% (873/1163)Updating files:  76% (884/1163)Updating files:  77% (896/1163)Updating files:  78% (908/1163)Updating files:  79% (919/1163)Updating files:  80% (931/1163)Updating files:  81% (943/1163)Updating files:  81% (946/1163)Updating files:  82% (954/1163)Updating files:  83% (966/1163)Updating files:  84% (977/1163)Updating files:  85% (989/1163)Updating files:  86% (1001/1163)Updating files:  87% (1012/1163)Updating files:  88% (1024/1163)Updating files:  89% (1036/1163)Updating files:  90% (1047/1163)Updating files:  91% (1059/1163)Updating files:  92% (1070/1163)Updating files:  93% (1082/1163)Updating files:  94% (1094/1163)Updating files:  95% (1105/1163)Updating files:  96% (1117/1163)Updating files:  97% (1129/1163)Updating files:  98% (1140/1163)Updating files:  99% (1152/1163)Updating files: 100% (1163/1163)Updating files: 100% (1163/1163), done.

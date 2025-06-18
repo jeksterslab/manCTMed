@@ -18,29 +18,37 @@
 project <- "manCTMed"
 
 # installed using the container
-# "simStateSpace",
-# "dynr",
-# "cTMed",
-# "dynUtils"
-# "OpenMx"
+# "dynr"
 
 pkg_cran <- c(
   "DT",
   "OpenMx"
 )
 
+# pkg_github <- c(
+#   "jeksterslab/simStateSpace",
+#   "jeksterslab/bootStateSpace",
+#   "jeksterslab/dynUtils",
+#   "jeksterslab/cTMed"
+# )
+
 pkg_github <- c(
-  "jeksterslab/simStateSpace",
-  "jeksterslab/bootStateSpace",
-  "jeksterslab/dynUtils",
-  "jeksterslab/cTMed"
+  "jeksterslab/dynUtils@dc3f47b"
 )
 
 pkg_github_ref <- c()
 
-pkg_ver <- c()
+pkg_ver <- c(
+  "simStateSpace",
+  "bootStateSpace",
+  "cTMed"
+)
 
-ver <- c()
+ver <- c(
+  "1.2.9",
+  "1.0.2",
+  "1.0.6"
+)
 
 ignore <- "^vignettes$"
 

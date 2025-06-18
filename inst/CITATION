@@ -1,5 +1,5 @@
 year <- 2025
-author_text <- "Pesigan, I. J. A., Russell, I. J. A. & Chow, S.-M."
+author_text <- "Pesigan, I. J. A., Russell, M. A., & Chow, S.-M."
 pkg <- meta$Package
 title <- "Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models"
 version <- meta$Version
@@ -38,13 +38,13 @@ bibentry(
   title = title,
   year = year,
   doi = "10.0000/0000000000",
-  journal = "JOURNAL_TITLE_HERE",
+  journal = "Psychological Methods",
   note = note,
   textVersion = paste0(
     author_text, " ",
     "(", year, ")", ".", " ",
     title, ".", " ",
-    "JOURNAL_TITLE_HERE", ".", " ",
+    "Psychological Methods", ".", " ",
     "https://doi.org/10.0000/0000000000", " "
   ),
   header = paste(

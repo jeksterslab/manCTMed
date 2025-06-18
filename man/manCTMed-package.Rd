@@ -6,7 +6,7 @@
 \alias{manCTMed-package}
 \title{manCTMed: Continuous Time Mediation}
 \description{
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., Chow, S.-M. (Under Review). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. \doi{10.0000/0000000000}.
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. Psychological Methods. \doi{10.0000/0000000000}.
 }
 \seealso{
 Useful links:
@@ -20,7 +20,13 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ivan Jacob Agaloos Pesigan \email{r.jeksterslab@gmail.com} (\href{https://orcid.org/0000-0000-0000-0000}{ORCID}) [copyright holder]
+\strong{Maintainer}: Ivan Jacob Agaloos Pesigan \email{r.jeksterslab@gmail.com} (\href{https://orcid.org/0000-0003-4818-8420}{ORCID}) [copyright holder]
+
+Other contributors:
+\itemize{
+  \item Michael A. Russell \email{mar60@psu.edu} (\href{https://orcid.org/0000-0002-3956-604X}{ORCID}) [contributor]
+  \item Sy-Miin Chow \email{quc16@psu.edu} (\href{https://orcid.org/0000-0003-1938-027X}{ORCID}) [contributor]
+}
 
 }
 \keyword{internal}
