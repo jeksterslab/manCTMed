@@ -1,7 +1,7 @@
 manCTMed
 ================
 Ivan Jacob Agaloos Pesigan
-2025-06-18
+2025-06-19
 
 <!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
 
@@ -13,7 +13,7 @@ Ivan Jacob Agaloos Pesigan
 ## Description
 
 Research compendium for the manuscript Pesigan, I. J. A., Russell, M.
-A., Chow, S.-M. (2025). Inferences and Effect Sizes for Direct,
+A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct,
 Indirect, and Total Effects in Continuous-Time Mediation Models.
 *Psychological Methods*. <https://doi.org/10.0000/0000000000>
 
@@ -44,12 +44,26 @@ if (!require("remotes")) install.packages("remotes")
 remotes::install_github("jeksterslab/manCTMed")
 ```
 
+See
+[Containers](https://jeksterslab.github.io/manCTMed/articles/containers.html)
+for containerized versions of the package.
+
+## Author-Accepted Manuscript
+
+See
+<https://github.com/jeksterslab/manCTMed/blob/main/.setup/latex/manCTMed-manuscript.Rtex>
+for the latex file of the manuscript. See
+<https://github.com/jeksterslab/manCTMed/blob/latex/manCTMed-manuscript.pdf>
+for the compiled PDF.
+
 ## R Package
 
-Standard errors and confidence intervals for the direct, indirect, and
-total effects for continuous-time mediation models as well as
-visualization tools are available in the `cTMed` package. Documentation
-and examples can be found in the accompanying website
+Effect sizes, standard errors and confidence intervals for the direct,
+indirect, and total effects for continuous-time mediation models as well
+as visualization tools are available in the `cTMed` package available on
+the Comprehensive R Archive Network (CRAN)
+(<https://CRAN.R-project.org/package=cTMed>). Documentation and examples
+can be found in the accompanying website
 (<https://jeksterslab.github.io/cTMed>).
 
 ## More Information

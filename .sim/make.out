@@ -15,37 +15,37 @@ Installing jeksterslab/dynUtils@dc3f47b from GitHub...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/Rtmps5V9wV/dotfiles'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/RtmpUSrYzV/dotfiles'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2437[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2508[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m32d 22h 27m[0m
+[14C[33m[1muptime[0m[6D[7C[39m33d 22h 39m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m586[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10690M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m10644M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/Rtmps5V9wV/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/Rtmps5V9wV/dotfiles'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/RtmpUSrYzV/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/RtmpUSrYzV/dotfiles'
 
 
 TinyTex...
@@ -341,7 +341,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpE5uw4t/file1bf41c6163bca4/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpqSnk4n/file2315b951f70165/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -407,7 +407,7 @@ Setting env vars:
 
 Status: 1 NOTE
 See
-  ‘/tmp/RtmpE5uw4t/file1bf41c6163bca4/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpqSnk4n/file2315b951f70165/manCTMed.Rcheck/00check.log’
 for details.
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
@@ -420,7 +420,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpE5uw4t/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpqSnk4n/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -904,7 +904,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmpt4SAID/file291656cf7def9/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpJTdp8u/file9b0b17f8c0c0d/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -970,9 +970,8 @@ Setting env vars:
 
 Status: 1 NOTE
 See
-  ‘/tmp/Rtmpt4SAID/file291656cf7def9/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpJTdp8u/file9b0b17f8c0c0d/manCTMed.Rcheck/00check.log’
 for details.
-
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -984,7 +983,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmpt4SAID/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpJTdp8u/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -2506,6 +2505,15 @@ Building CITATION.cff...
 Compiling latex...
 
 
+1/9                  
+2/9 [root]           
+3/9                  
+4/9 [knitr]          
+5/9                  
+6/9 [biblatex]       
+7/9                  
+8/9 [unnamed-chunk-1]
+9/9                  
 1/29                   
 2/29 [root]            
 3/29                   
@@ -3900,6 +3908,252 @@ Latexmk: calling overleaf_post_process( "/scratch/ibp5092/manCTMed/detritus/tex/
 Rc files read:
   NONE
 Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder -output-directory=".setup/latex/pdf"  "/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/framed/framed.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (./.setup/latex/preamble/preamble.tex (./.setup/latex/preamble/000-preamble-first.tex) (./.setup/latex/preamble/001-preamble-encoding.tex) (/opt/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (./.setup/latex/preamble/002-preamble-math.tex (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (./.setup/latex/preamble/003-preamble-tables.tex (/opt/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/array.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty) (./.setup/latex/preamble/004-preamble-figures.tex (/opt/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/forest/forest.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgfopts/pgfopts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/latex/elocalloc/elocalloc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/environ/environ.sty (/opt/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/inlinedef/inlinedef.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (./.setup/latex/preamble/005-preamble-margins.tex) (/opt/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (./.setup/latex/preamble/006-preamble-spacing.tex) (/opt/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty) (./.setup/latex/preamble/007-preamble-sections.tex) (/opt/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty) (./.setup/latex/preamble/008-preamble-code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty) (./.setup/latex/preamble/009-preamble-caption.tex (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption.sty (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty) (./.setup/latex/preamble/010-preamble-quotes.tex) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg)) (./.setup/latex/preamble/999-preamble-last.tex (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty) (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def)
+(/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./.setup/latex/preamble/999-preamble-settings.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.dbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty) (.setup/latex/pdf/manCTMed-001-description.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx))))
+No file manCTMed-001-description.bbl.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (0.27412pt too wide) in paragraph at lines 118--119
+\OT1/cmr/m/n/10 See [][]$https : / / github . com / jeksterslab / manCTMed / blob / main / .setup / latex / manCTMed-[]manuscript .
+
+LaTeX Warning: Citation 'RCoreTeam-2025' undefined on input line 128.
+
+
+LaTeX Warning: Citation 'Pesigan-Russell-Chow-2025a' undefined on input line 130.
+
+
+LaTeX Warning: Empty bibliography on input line 132.
+
+
+[2] (.setup/latex/pdf/manCTMed-001-description.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `manCTMed-001-description.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                manCTMed-001-description
+(biblatex)                and rerun LaTeX afterwards.
+
+ )
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .setup/latex/pdf/manCTMed-001-description.pdf (2 pages, 89871 bytes).
+Transcript written on .setup/latex/pdf/manCTMed-001-description.log.
+Latexmk: Getting log file '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.fls'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: References changed.
+Latexmk: Log file says output to '.setup/latex/pdf/manCTMed-001-description.pdf'
+Latexmk: Bibliography file(s) from .bcf file:
+  /scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib
+Latexmk: applying rule 'biber .setup/latex/pdf/manCTMed-001-description'...
+Rule 'biber .setup/latex/pdf/manCTMed-001-description':  Reasons for rerun
+Category 'other':
+  Rerun of 'biber .setup/latex/pdf/manCTMed-001-description' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'biber .setup/latex/pdf/manCTMed-001-description'
+------------
+------------
+Running 'biber  ".setup/latex/pdf/manCTMed-001-description.bcf"'
+------------
+INFO - This is Biber 2.20
+INFO - Logfile is '.setup/latex/pdf/manCTMed-001-description.blg'
+INFO - Reading '.setup/latex/pdf/manCTMed-001-description.bcf'
+INFO - Found 2 citekeys in bib section 0
+INFO - Processing section 0
+INFO - Looking for bibtex file '/scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib' for section 0
+INFO - LaTeX decoding ...
+INFO - Found BibTeX data source '/scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+INFO - No sort tailoring available for locale 'en-US'
+INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+INFO - No sort tailoring available for locale 'en-US'
+INFO - Writing '.setup/latex/pdf/manCTMed-001-description.bbl' with encoding 'UTF-8'
+INFO - Output to .setup/latex/pdf/manCTMed-001-description.bbl
+Latexmk: Found biber source file(s) [.setup/latex/pdf/manCTMed-001-description.bcf, /scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib]
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  .setup/latex/pdf/manCTMed-001-description.aux
+  .setup/latex/pdf/manCTMed-001-description.bbl
+  .setup/latex/pdf/manCTMed-001-description.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder -output-directory=".setup/latex/pdf"  "/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/framed/framed.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (./.setup/latex/preamble/preamble.tex (./.setup/latex/preamble/000-preamble-first.tex) (./.setup/latex/preamble/001-preamble-encoding.tex) (/opt/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (./.setup/latex/preamble/002-preamble-math.tex (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (./.setup/latex/preamble/003-preamble-tables.tex (/opt/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/array.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty) (./.setup/latex/preamble/004-preamble-figures.tex (/opt/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/forest/forest.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgfopts/pgfopts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/latex/elocalloc/elocalloc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/environ/environ.sty (/opt/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/inlinedef/inlinedef.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (./.setup/latex/preamble/005-preamble-margins.tex) (/opt/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (./.setup/latex/preamble/006-preamble-spacing.tex) (/opt/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty) (./.setup/latex/preamble/007-preamble-sections.tex) (/opt/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty) (./.setup/latex/preamble/008-preamble-code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty) (./.setup/latex/preamble/009-preamble-caption.tex (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption.sty (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty) (./.setup/latex/preamble/010-preamble-quotes.tex) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg)) (./.setup/latex/preamble/999-preamble-last.tex (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty) (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def)
+(/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./.setup/latex/preamble/999-preamble-settings.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.dbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty) (.setup/latex/pdf/manCTMed-001-description.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(.setup/latex/pdf/manCTMed-001-description.out) (.setup/latex/pdf/manCTMed-001-description.out) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manCTMed-001-description.bbl) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (0.27412pt too wide) in paragraph at lines 118--119
+\OT1/cmr/m/n/10 See [][]$https : / / github . com / jeksterslab / manCTMed / blob / main / .setup / latex / manCTMed-[]manuscript .
+
+[2]
+[3] (.setup/latex/pdf/manCTMed-001-description.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
+ )
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .setup/latex/pdf/manCTMed-001-description.pdf (3 pages, 93125 bytes).
+Transcript written on .setup/latex/pdf/manCTMed-001-description.log.
+Latexmk: Getting log file '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.fls'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Found input bbl file '.setup/latex/pdf/manCTMed-001-description.bbl'
+Latexmk: Log file says output to '.setup/latex/pdf/manCTMed-001-description.pdf'
+Latexmk: Bibliography file(s) from .bcf file:
+  /scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  .setup/latex/pdf/manCTMed-001-description.aux
+  .setup/latex/pdf/manCTMed-001-description.run.xml
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder -output-directory=".setup/latex/pdf"  "/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/framed/framed.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (./.setup/latex/preamble/preamble.tex (./.setup/latex/preamble/000-preamble-first.tex) (./.setup/latex/preamble/001-preamble-encoding.tex) (/opt/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (./.setup/latex/preamble/002-preamble-math.tex (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (./.setup/latex/preamble/003-preamble-tables.tex (/opt/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/array.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty) (./.setup/latex/preamble/004-preamble-figures.tex (/opt/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/forest/forest.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgfopts/pgfopts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/latex/elocalloc/elocalloc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/environ/environ.sty (/opt/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/inlinedef/inlinedef.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (./.setup/latex/preamble/005-preamble-margins.tex) (/opt/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (./.setup/latex/preamble/006-preamble-spacing.tex) (/opt/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty) (./.setup/latex/preamble/007-preamble-sections.tex) (/opt/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty) (./.setup/latex/preamble/008-preamble-code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty) (./.setup/latex/preamble/009-preamble-caption.tex (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption.sty (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty) (./.setup/latex/preamble/010-preamble-quotes.tex) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg)) (./.setup/latex/preamble/999-preamble-last.tex (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty) (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def)
+(/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./.setup/latex/preamble/999-preamble-settings.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.dbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty) (.setup/latex/pdf/manCTMed-001-description.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(.setup/latex/pdf/manCTMed-001-description.out) (.setup/latex/pdf/manCTMed-001-description.out) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manCTMed-001-description.bbl) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (0.27412pt too wide) in paragraph at lines 118--119
+\OT1/cmr/m/n/10 See [][]$https : / / github . com / jeksterslab / manCTMed / blob / main / .setup / latex / manCTMed-[]manuscript .
+
+[2]
+[3] (.setup/latex/pdf/manCTMed-001-description.aux) )
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .setup/latex/pdf/manCTMed-001-description.pdf (3 pages, 93125 bytes).
+Transcript written on .setup/latex/pdf/manCTMed-001-description.log.
+Latexmk: Getting log file '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.fls'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Found input bbl file '.setup/latex/pdf/manCTMed-001-description.bbl'
+Latexmk: Log file says output to '.setup/latex/pdf/manCTMed-001-description.pdf'
+Latexmk: Bibliography file(s) from .bcf file:
+  /scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  .setup/latex/pdf/manCTMed-001-description.run.xml
+
+------------
+Run number 4 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder -output-directory=".setup/latex/pdf"  "/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/opt/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/opt/TinyTeX/texmf-dist/tex/latex/framed/framed.sty) (/opt/TinyTeX/texmf-dist/tex/latex/base/alltt.sty) (./.setup/latex/preamble/preamble.tex (./.setup/latex/preamble/000-preamble-first.tex) (./.setup/latex/preamble/001-preamble-encoding.tex) (/opt/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty) (./.setup/latex/preamble/002-preamble-math.tex (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (/opt/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/tools/bm.sty) (./.setup/latex/preamble/003-preamble-tables.tex (/opt/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (/opt/TinyTeX/texmf-dist/tex/latex/tools/array.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty) (./.setup/latex/preamble/004-preamble-figures.tex (/opt/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/opt/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/forest/forest.sty (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex))) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)) (/opt/TinyTeX/texmf-dist/tex/latex/pgfopts/pgfopts.sty) (/opt/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (/opt/TinyTeX/texmf-dist/tex/latex/elocalloc/elocalloc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/environ/environ.sty (/opt/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))) (/opt/TinyTeX/texmf-dist/tex/latex/inlinedef/inlinedef.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/graphics/rotating.sty (/opt/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty)) (./.setup/latex/preamble/005-preamble-margins.tex) (/opt/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty (/opt/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty))) (./.setup/latex/preamble/006-preamble-spacing.tex) (/opt/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty) (./.setup/latex/preamble/007-preamble-sections.tex) (/opt/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty) (./.setup/latex/preamble/008-preamble-code.tex) (/opt/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty) (./.setup/latex/preamble/009-preamble-caption.tex (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption.sty (/opt/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty) (./.setup/latex/preamble/010-preamble-quotes.tex) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def) (/opt/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.cfg)) (./.setup/latex/preamble/999-preamble-last.tex (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (/opt/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty) (/opt/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (/opt/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (/opt/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (/opt/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (/opt/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (/opt/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (/opt/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (/opt/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (/opt/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (/opt/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def)
+(/opt/TinyTeX/texmf-dist/tex/latex/url/url.sty) (/opt/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (/opt/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (/opt/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty) (/opt/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (/opt/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (./.setup/latex/preamble/999-preamble-settings.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex (/opt/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex)) (/opt/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex))) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty (/opt/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.dbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.def) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standard.bbx)) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.cfg) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty)) (/opt/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty) (.setup/latex/pdf/manCTMed-001-description.aux) (/opt/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/opt/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(.setup/latex/pdf/manCTMed-001-description.out) (.setup/latex/pdf/manCTMed-001-description.out) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx) (/opt/TinyTeX/texmf-dist/tex/latex/biblatex-apa/american-apa.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/american.lbx (/opt/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/english.lbx)))) (.setup/latex/pdf/manCTMed-001-description.bbl) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (/opt/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[1{/opt/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (0.27412pt too wide) in paragraph at lines 118--119
+\OT1/cmr/m/n/10 See [][]$https : / / github . com / jeksterslab / manCTMed / blob / main / .setup / latex / manCTMed-[]manuscript .
+
+[2]
+[3] (.setup/latex/pdf/manCTMed-001-description.aux) )
+(see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on .setup/latex/pdf/manCTMed-001-description.pdf (3 pages, 93125 bytes).
+Transcript written on .setup/latex/pdf/manCTMed-001-description.log.
+Latexmk: Getting log file '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.fls'
+Latexmk: Examining '.setup/latex/pdf/manCTMed-001-description.log'
+Latexmk: Found input bbl file '.setup/latex/pdf/manCTMed-001-description.bbl'
+Latexmk: Log file says output to '.setup/latex/pdf/manCTMed-001-description.pdf'
+Latexmk: Bibliography file(s) from .bcf file:
+  /scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib
+Latexmk: All targets (.setup/latex/pdf/manCTMed-001-description.pdf) are up-to-date
+
 No existing .aux file, so I'll make a simple one, and require run of *latex.
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
@@ -5560,7 +5814,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (24 pages, 991325 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (24 pages, 991108 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -5590,12 +5844,12 @@ INFO - Processing section 0
 INFO - Looking for bibtex file '/scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib' for section 0
 INFO - LaTeX decoding ...
 INFO - Found BibTeX data source '/scratch/ibp5092/manCTMed/.setup/latex/bib/bib.bib'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manCTMed-manuscript.bbl' with encoding 'UTF-8'
@@ -6309,7 +6563,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041730 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041709 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -6342,8 +6596,8 @@ INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalizat
 INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/apasortcite//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
-INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
 INFO - Sorting list 'nyt/global//global/global/global' of type 'entry' with template 'nyt' and locale 'en-US'
 INFO - No sort tailoring available for locale 'en-US'
 INFO - Writing '.setup/latex/pdf/manCTMed-manuscript.bbl' with encoding 'UTF-8'
@@ -7045,7 +7299,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041730 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041715 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -7749,7 +8003,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041730 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (29 pages, 1041715 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -8521,7 +8775,7 @@ INFO - Writing '.setup/latex/pdf/manCTMed-supplement.bbl' with encoding 'UTF-8'
 INFO - Output to .setup/latex/pdf/manCTMed-supplement.bbl
 WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
 INFO - WARNINGS: 1
-Biber warning: [185] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
+Biber warning: [184] Biber.pm:131> WARN - The file '.setup/latex/pdf/manCTMed-supplement.bcf' does not contain any citations!
 Latexmk: Found biber source file(s) [.setup/latex/pdf/manCTMed-supplement.bcf]
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
@@ -10521,37 +10775,37 @@ Installing jeksterslab/dynUtils@dc3f47b from GitHub...
 Building dotfiles...
 
 
-make[1]: Entering directory '/tmp/RtmpoflChr/dotfiles'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/bash'
+make[1]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/bash'
 Building /storage/home/ibp5092/.bashrc
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/bash'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/git'
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/git'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/ssh'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/bash'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/git'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/git'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/ssh'
 Keys already exist and will not be overwritten.
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/ssh'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/tmux'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/ssh'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/tmux'
 [?7l[1m[33m         _
 [33m     ---(_)
 [33m _/  ---  \
 [33m(_) |   |
  [33m \  --- _/
     [33m ---(_)
-[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2437[0m[39D[7C[39m[0m
+[0m[6A[14C[33m[1m[34m[1mibp5092[1m@[34m[1mp-sc-2508[0m[39D[7C[39m[0m
 [14C[33m[1mos[0m[2D[7C[39mUbuntu 24.04.1 LTS[0m
 [14C[33m[1mhost[0m[4D[7C[39mPowerEdge M630[0m
 [14C[33m[1mkernel[0m[6D[7C[39m4.18.0-553.51.1.el8_10.x86_64[0m
-[14C[33m[1muptime[0m[6D[7C[39m33d 9h 50m[0m
+[14C[33m[1muptime[0m[6D[7C[39m34d 9h 39m[0m
 [14C[33m[1mpkgs[0m[4D[7C[39m586[0m
-[14C[33m[1mmemory[0m[6D[7C[39m10564M / 257838M[0m
+[14C[33m[1mmemory[0m[6D[7C[39m10688M / 257838M[0m
 
 [?7hIn tmux press "Prefix + r" to reload configuration.
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/tmux'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/vim'
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/vim'
-make[2]: Entering directory '/tmp/RtmpoflChr/dotfiles/.setup/xterm'
-make[2]: Leaving directory '/tmp/RtmpoflChr/dotfiles/.setup/xterm'
-make[1]: Leaving directory '/tmp/RtmpoflChr/dotfiles'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/tmux'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/vim'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/vim'
+make[2]: Entering directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/xterm'
+make[2]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles/.setup/xterm'
+make[1]: Leaving directory '/tmp/Rtmpn8nVIn/dotfiles'
 
 
 TinyTex...
@@ -10865,7 +11119,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/RtmpmOlEJX/file2b4a82efa7074/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpgmNzzr/file9d17b6b112308/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -10923,9 +11177,6 @@ Setting env vars:
 * checking data for ASCII and uncompressed saves ... OK
 * checking R/sysdata.rda ... OK
 * checking examples ... OK
-Examples with CPU (user + system) or elapsed time > 5s
-                        user system elapsed
-FigScatterPlotCoverage 4.698  0.371   4.902
 * checking for unstated dependencies in ‘tests’ ... OK
 * checking tests ...
   Running ‘testthat.R’
@@ -10934,9 +11185,8 @@ FigScatterPlotCoverage 4.698  0.371   4.902
 
 Status: 1 NOTE
 See
-  ‘/tmp/RtmpmOlEJX/file2b4a82efa7074/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpgmNzzr/file9d17b6b112308/manCTMed.Rcheck/00check.log’
 for details.
-
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
 * preparing ‘manCTMed’:
@@ -10948,7 +11198,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/RtmpmOlEJX/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpgmNzzr/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -11025,7 +11275,7 @@ Setting env vars:
 • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 • NOT_CRAN                      : true
 ── R CMD check ─────────────────────────────────────────────────────────────────
-* using log directory ‘/tmp/Rtmp9RGtU3/file2bfd97b4c9031/manCTMed.Rcheck’
+* using log directory ‘/tmp/RtmpKTsFat/file9df0767502ea3/manCTMed.Rcheck’
 * using R version 4.4.3 (2025-02-28)
 * using platform: x86_64-pc-linux-gnu
 * R was compiled by
@@ -11091,7 +11341,7 @@ Setting env vars:
 
 Status: 1 NOTE
 See
-  ‘/tmp/Rtmp9RGtU3/file2bfd97b4c9031/manCTMed.Rcheck/00check.log’
+  ‘/tmp/RtmpKTsFat/file9df0767502ea3/manCTMed.Rcheck/00check.log’
 for details.
 ── R CMD build ─────────────────────────────────────────────────────────────────
 * checking for file ‘/scratch/ibp5092/manCTMed/DESCRIPTION’ ... OK
@@ -11104,7 +11354,7 @@ Warning: invalid uid value replaced by that for user 'nobody'
 Warning: invalid gid value replaced by that for user 'nobody'
 
 Running /usr/local/lib/R/bin/R CMD INSTALL \
-  /tmp/Rtmp9RGtU3/manCTMed_1.0.9.tar.gz --install-tests 
+  /tmp/RtmpKTsFat/manCTMed_1.0.9.tar.gz --install-tests 
 * installing to library ‘/scratch/ibp5092/manCTMed/.library’
 * installing *source* package ‘manCTMed’ ...
 ** using staged installation
@@ -12626,6 +12876,15 @@ Building CITATION.cff...
 Compiling latex...
 
 
+1/9                  
+2/9 [root]           
+3/9                  
+4/9 [knitr]          
+5/9                  
+6/9 [biblatex]       
+7/9                  
+8/9 [unnamed-chunk-1]
+9/9                  
 1/29                   
 2/29 [root]            
 3/29                   
@@ -12751,6 +13010,9 @@ Latexmk: All targets (.setup/latex/figures/pdf/longitudinal-mediation.pdf) are u
 Rc files read:
   NONE
 Latexmk: This is Latexmk, John Collins, 27 Dec. 2024. Version 4.86a.
+Latexmk: Nothing to do for '/scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex'.
+Latexmk: All targets (.setup/latex/pdf/manCTMed-001-description.pdf) are up-to-date
+
 Latexmk: applying rule 'pdflatex'...
 Rule 'pdflatex':  Reasons for rerun
 Changed files or newly in use/created:
@@ -13222,7 +13484,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10070227 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10068466 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -13650,7 +13912,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10070224 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10068461 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -14076,7 +14338,7 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </opt/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxbmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txex.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10070224 bytes).
+Output written on .setup/latex/pdf/manCTMed-manuscript.pdf (30 pages, 10068461 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-manuscript.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-manuscript.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-manuscript.fls'
@@ -14360,7 +14622,7 @@ Overfull \hbox (8.88167pt too wide) in paragraph at lines 127--144
 [28 <./.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png>])
 [29 <./.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png>] (.setup/latex/pdf/manCTMed-supplement.aux) )
 (see the transcript file for additional information)</opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri8.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></opt/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 43800101 bytes).
+Output written on .setup/latex/pdf/manCTMed-supplement.pdf (29 pages, 43792926 bytes).
 Transcript written on .setup/latex/pdf/manCTMed-supplement.log.
 Latexmk: Getting log file '.setup/latex/pdf/manCTMed-supplement.log'
 Latexmk: Examining '.setup/latex/pdf/manCTMed-supplement.fls'
