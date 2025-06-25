@@ -1,899 +1,347 @@
-make: Warning: File 'Makefile' has modification time 13298 s in the future
-Installing 25 packages: rlang, R.oo, ps, pkgbuild, fs, sass, generics, openssl, curl, utf8, pillar, textshaping, systemfonts, diffobj, tibble, ragg, promises, later, httpuv, zip, gh, V8, R.cache, pkgdown, miniUI
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
-Loading required package: ggplot2
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-First time using roxygen2. Upgrading automatically...
-Setting `RoxygenNote` to "7.3.2"
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-Writing 'NAMESPACE'
-Writing 'BootParaStdXMY.Rd'
-Writing 'BootParaStdXYM.Rd'
-Writing 'BootParaStdYMX.Rd'
-Writing 'BootParaXMY.Rd'
-Writing 'BootParaXYM.Rd'
-Writing 'BootParaYMX.Rd'
-Writing 'BootPara.Rd'
-Writing 'Compress.Rd'
-Writing 'params.Rd'
-Writing 'results.Rd'
-Writing 'DeltaStdXMY.Rd'
-Writing 'DeltaStdXYM.Rd'
-Writing 'DeltaStdYMX.Rd'
-Writing 'DeltaXMY.Rd'
-Writing 'DeltaXYM.Rd'
-Writing 'DeltaYMX.Rd'
-Writing 'FigPlotEffects.Rd'
-Writing 'FigScatterPlotCoverage.Rd'
-Writing 'FigScatterPlotPower.Rd'
-Writing 'FigScatterPlotSeBias.Rd'
-Writing 'FigScatterPlotType1.Rd'
-Writing 'FitDynr.Rd'
-Writing 'FitMx.Rd'
-Writing 'GenData.Rd'
-Writing 'IllustrationBootPara.Rd'
-Writing 'IllustrationCompress.Rd'
-Writing 'illustration_dist_dt_mc.Rd'
-Writing 'illustration_dist_dt.Rd'
-Writing 'illustration_dist_mc.Rd'
-Writing 'illustration_dist_med_mc.Rd'
-Writing 'illustration_dist_med_std_mc.Rd'
-Writing 'illustration_dist_med_std.Rd'
-Writing 'illustration_dist_med.Rd'
-Writing 'illustration_dist.Rd'
-Writing 'illustration_results.Rd'
-Writing 'IllustrationFigPlotEffects.Rd'
-Writing 'IllustrationFigScatterPlotCoverage.Rd'
-Writing 'IllustrationFigScatterPlotPower.Rd'
-Writing 'IllustrationFigScatterPlotSeBias.Rd'
-Writing 'IllustrationFitDynr.Rd'
-Writing 'IllustrationFitMx.Rd'
-Writing 'IllustrationGenData.Rd'
-Writing 'IllustrationMCPhiSigma.Rd'
-Writing 'IllustrationPrepData.Rd'
-Writing 'SimIllustrationDynrBootParaStdXMY.Rd'
-Writing 'SimIllustrationDynrBootParaXMY.Rd'
-Writing 'SimIllustrationDynrBootPara.Rd'
-Writing 'SimIllustrationDynrDeltaStdXMY.Rd'
-Writing 'SimIllustrationDynrDeltaXMY.Rd'
-Writing 'SimIllustrationDynrMCPhiSigma.Rd'
-Writing 'SimIllustrationDynrMCStdXMY.Rd'
-Writing 'SimIllustrationDynrMCXMY.Rd'
-Writing 'SimIllustrationFitDynr.Rd'
-Writing 'SimIllustrationFitMx.Rd'
-Writing 'SimIllustrationGenData.Rd'
-Writing 'SimIllustrationPara.Rd'
-Writing 'SimIllustration.Rd'
-Writing 'SumIllustrationDynrBootParaStdXMY.Rd'
-Writing 'SumIllustrationDynrBootParaXMY.Rd'
-Writing 'SumIllustrationDynrDeltaStdXMY.Rd'
-Writing 'SumIllustrationDynrDeltaXMY.Rd'
-Writing 'SumIllustrationDynrMCStdXMY.Rd'
-Writing 'SumIllustrationDynrMCXMY.Rd'
-Writing 'SumIllustrationFitDynr.Rd'
-Writing 'SumIllustration.Rd'
-Writing 'MCStdXMY.Rd'
-Writing 'MCStdXYM.Rd'
-Writing 'MCStdYMX.Rd'
-Writing 'MCXMY.Rd'
-Writing 'MCXYM.Rd'
-Writing 'MCYMX.Rd'
-Writing 'manCTMed-package.Rd'
-Writing 'PhiHat.Rd'
-Writing 'RandomMeasurement.Rd'
-Writing 'SimDynrBootParaStdXMY.Rd'
-Writing 'SimDynrBootParaStdYMX.Rd'
-Writing 'SimDynrBootParaXMY.Rd'
-Writing 'SimDynrBootParaYMX.Rd'
-Writing 'SimDynrBootPara.Rd'
-Writing 'SimDynrDeltaStdXMY.Rd'
-Writing 'SimDynrDeltaStdYMX.Rd'
-Writing 'SimDynrDeltaXMY.Rd'
-Writing 'SimDynrDeltaYMX.Rd'
-Writing 'SimDynrMCStdXMY.Rd'
-Writing 'SimDynrMCStdYMX.Rd'
-Writing 'SimDynrMCXMY.Rd'
-Writing 'SimDynrMCYMX.Rd'
-Writing 'SimFitDynr.Rd'
-Writing 'SimFitMx.Rd'
-Writing 'SimFN.Rd'
-Writing 'SimGenData.Rd'
-Writing 'SimPara.Rd'
-Writing 'SimProj.Rd'
-Writing 'Sim.Rd'
-Writing 'SumDynrDeltaStdXMY.Rd'
-Writing 'SumDynrDeltaStdYMX.Rd'
-Writing 'SumDynrDeltaXMY.Rd'
-Writing 'SumDynrDeltaYMX.Rd'
-Writing 'SumDynrMCStdXMY.Rd'
-Writing 'SumDynrMCStdYMX.Rd'
-Writing 'SumDynrMCXMY.Rd'
-Writing 'SumDynrMCYMX.Rd'
-Writing 'SumFitDynr.Rd'
-Writing 'Sum.Rd'
-Writing 'ThetaHat.Rd'
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/containers.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-1.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-2.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-example-3.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-sampling-distribution.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-sampling-distribution.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-illustration.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-illustration.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-neg.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-pos.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/fig-scatter-plots-zero.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/replication.Rmd
-
-
-
-processing file: /scratch/ibp5092/manCTMed/vignettes/session.Rmd.orig
-output file: /scratch/ibp5092/manCTMed/vignettes/session.Rmd
-
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ..........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10356 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 10 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10362 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 11 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-001-description.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
-
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-manuscript.tex
-
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-supplement.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-supplement.tex
-
-Use of uninitialized value in concatenation (.) or string at (eval 9) line 1.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing input file 'TS1xcmss.fd' (or dependence on it) from following:
-  No file TS1xcmss.fd.
-Latexmk: Missing input file 'TS1cmsmf.fd' (or dependence on it) from following:
-  No file TS1cmsmf.fd.
-Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-001-description.bbl' in following:
- No file manCTMed-001-description.bbl.
-Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-manuscript.bbl' in following:
- No file manCTMed-manuscript.bbl.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 717.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 723.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 729.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 737.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 743.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 749.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 757.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 764.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 771.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 934.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 939.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 944.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 951.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 956.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 961.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 968.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 973.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 978.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 985.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 990.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 995.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 1019.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 1026.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 717.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 723.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 729.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 737.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 743.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 749.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 757.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 764.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 771.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 934.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 939.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 944.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 951.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 956.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 961.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 968.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 973.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 978.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 985.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 990.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 995.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 1019.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 1026.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 717.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 723.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 729.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 737.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 743.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 749.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 757.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 764.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 771.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 934.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 939.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 944.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 951.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 956.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 961.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 968.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 973.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 978.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 985.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 990.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 995.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 1019.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 1026.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-direct-1-1.png' not found on input line 717.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-indirect-1-1.png' not found on input line 723.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-total-1-1.png' not found on input line 729.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-direct-1-1.png' not found on input line 737.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-indirect-1-1.png' not found on input line 743.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-sampling-distribution-std-total-1-1.png' not found on input line 749.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-effects-1.png' not found on input line 757.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-effects-1.png' not found on input line 764.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-effects-1.png' not found on input line 771.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 934.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 939.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 944.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 951.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 956.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 961.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 968.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 973.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 978.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 985.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 990.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 995.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-coverage-1.png' not found on input line 1019.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-illustration-power-1.png' not found on input line 1026.
-Latexmk: Missing bbl file '.setup/latex/pdf/manCTMed-supplement.bbl' in following:
- No file manCTMed-supplement.bbl.
-Latexmk: Missing input file 'manCTMed-supplement.lof' (or dependence on it) from following:
-  No file manCTMed-supplement.lof.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png' not found on input line 5.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png' not found on input line 10.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png' not found on input line 15.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png' not found on input line 22.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png' not found on input line 27.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png' not found on input line 32.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png' not found on input line 39.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png' not found on input line 44.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png' not found on input line 49.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png' not found on input line 56.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png' not found on input line 61.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png' not found on input line 66.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png' not found on input line 78.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png' not found on input line 83.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png' not found on input line 88.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png' not found on input line 95.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png' not found on input line 100.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png' not found on input line 105.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png' not found on input line 112.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png' not found on input line 117.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png' not found on input line 122.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png' not found on input line 129.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png' not found on input line 134.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png' not found on input line 139.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png' not found on input line 150.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png' not found on input line 158.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png' not found on input line 166.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png' not found on input line 174.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png' not found on input line 182.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png' not found on input line 190.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png' not found on input line 198.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png' not found on input line 206.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png' not found on input line 214.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png' not found on input line 222.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png' not found on input line 230.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png' not found on input line 238.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png' not found on input line 246.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png' not found on input line 254.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png' not found on input line 262.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png' not found on input line 270.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png' not found on input line 278.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png' not found on input line 286.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png' not found on input line 294.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png' not found on input line 302.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png' not found on input line 310.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png' not found on input line 318.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png' not found on input line 326.
-Latexmk: Missing input file '.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' (or dependence on it) from following:
-  LaTeX Warning: File `.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png' not found on input line 334.
-
-------------
-Latexmk: Some operations failed, for the following tex file(s)
-  /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-manuscript.tex
-  /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-supplement.tex
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
-make: warning:  Clock skew detected.  Your build may be incomplete.
-Cloning into 'dotfiles'...
-find: ‘/scratch/ibp5092/manCTMed/.setup/cpp’: No such file or directory
-find: ‘/scratch/ibp5092/manCTMed/src’: No such file or directory
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-✔ Setting active project to "/scratch/ibp5092/manCTMed".
-✔ Saving "model" to "R/sysdata.rda".
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-ℹ Updating manCTMed documentation
-ℹ Loading manCTMed
-✖ In topic 'TemplateIllustration.Rd': Skipping; no name and/or title.
-✖ In topic 'Template.Rd': Skipping; no name and/or title.
-
-
-processing file: README.Rmd
-output file: README.knit.md
-
-
-Preview created: /scratch/ibp5092/manCTMed/README.html
-
-Output created: README.md
-Converting parsed Rd's to LaTeX ..........
-Warning in texi2dvi(file = file, pdf = TRUE, clean = clean, quiet = quiet,  :
-  texi2dvi script/program not available, using emulation
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10356 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 10 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning input file Rd2.idx....done (973 entries accepted, 0 rejected).
-Sorting entries..........done (10362 comparisons).
-Generating output file Rd2.ind....done (645 lines written, 11 warnings).
-Output written in Rd2.ind.
-Transcript written in Rd2.ilg.
-sh: 1: /usr/bin/xdg-open: not found
-Warning in system(paste(preview, output)) : error in running command
-✔ 'CITATION.cff' generated
-✔ Congratulations! 'CITATION.cff' is valid
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-001-description.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-001-description.tex
-
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-manuscript.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-manuscript.tex
-
-
-
-processing file: /scratch/ibp5092/manCTMed/.setup/latex/manCTMed-supplement.Rtex
-output file: /scratch/ibp5092/manCTMed/detritus/tex/manCTMed-supplement.tex
-
-── Installing package manCTMed into temporary library ──────────────────────────
-── Finished building pkgdown site for package manCTMed ─────────────────────────
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/a2ping} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/a5toa4} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/adhocfilelist} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/afm2afm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/albatross} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/allcm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/allec} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/allneeded} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/amstex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/aom-fullref} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/arara} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/arlatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/authorindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/autoinst} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bbl2bib} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bg5+latex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bg5+pdflatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bib2gls} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bibcop} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bibdoiadd} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bibexport} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bibmradd} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/biburl2doi} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bibzbladd} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bookshelf-listallfonts} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bookshelf-mkfontsel} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/bundledoc} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/cachepic} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/checkcites} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/checklistings} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/chklref} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/chkweb} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/citeproc-lua} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/cjk-gs-integrate} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/cllualatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/cluttex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/clxelatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/context} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/context.lua} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/contextjit} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/convbkmk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/convertgls2bib} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/csplain} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/ctan-o-mat} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/ctanbib} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/ctanify} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/ctanupload} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/datatool2bib} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/de-macro} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/depythontex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/deweb} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/diadia} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/digestif} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dosepsbin} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dtxgen} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvi2fax} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dviasm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvigif} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dviinfox} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvilj6} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvilualatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvilualatex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dviluatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvipdfm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvipdfmx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:16  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvired} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/dvitomp} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/e2pall} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ebb} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ebong} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/edtx2dtx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/eolang} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/eplain} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/epspdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/epspdftk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/epstopdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/eptex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/etex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/exceltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/explcheck} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/extractbb} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/extractres} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fig4latex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/findhyph} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fmtutil} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fmtutil-sys} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fmtutil-user} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fontinst} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/fragmaster} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/getmapdl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/git-latexdiff} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/hilatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ht} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/htlatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/htmex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/httex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/httexi} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/htxelatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/htxetex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/hyperxmp-add-bytecount} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/includeres} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/inimf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/initex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/installfont-tl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/jadetex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/jamo-normalize} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/jfmutil} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kanji-config-updmap} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kanji-config-updmap-sys} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kanji-config-updmap-user} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kanji-fontmap-creator} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ketcindy} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/komkindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kpsepath} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kpsetool} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kpsewhere} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/kpsexpand} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/l3build} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/l3sys-query} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex-git-log} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex-papersize} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex2man} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latex2nemeth} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexdef} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexdiff} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexdiff-vc} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexfileversion} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexindent} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexminted} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexmk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexpand} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/latexrevise} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lily-glyph-commands} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lily-image-commands} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lily-rebuild-pdfs} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/listbib} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/listings-ext.sh} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/llmk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lollipop} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ltx2crossrefxml} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ltx2unitxt} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ltxfileinfo} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ltximg} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/luacsplain} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/luafindfont} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lualatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lualatex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/luaotfload-tool} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/luatools} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/lwarpmk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/m-tx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/make4ht} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/makedtx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/makeglossaries} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/makeglossaries-lite} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/markdown2tex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/match_parens} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mathspic} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/memoize-clean.pl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/memoize-clean.py} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/memoize-extract.pl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/memoize-extract.py} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mf2pt1} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mflua-nowin} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mfluajit-nowin} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mfplain} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mk4ht} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mkgrkindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mkjobtexmf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mkpic} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mkt1font} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mktexfmt} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mktexlsr} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mktexmf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mktexpk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mktextfm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mllatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mptopdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mtxrun} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mtxrun.lua} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/mtxrunjit} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/multibibliography} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/musixflx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/musixtex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ofm2opl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/opl2ofm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/optex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/optexcount} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ot2kpx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ovf2ovp} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ovp2ovf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pagelayoutapi} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pamphletangler} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pbibtex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfannotextractor} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfatfi} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfbook2} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfcrop} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfcsplain} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfetex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfjadetex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfjam} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdflatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdflatex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdflatexpicscale} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfmex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdftex-quiet} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfxmltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdfxup} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdvitomp} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pdvitype} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pedigree} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/perltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pfarrei} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pkfix} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pkfix-helper} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/platex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/platex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pmxchords} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pn2pdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ppltotf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ppmcheckpdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ps2eps} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ps2frag} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ps4pdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/psjoin} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pslatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pst2pdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ptex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ptex2pdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ptftopl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/purifyeps} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pygmentex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/pythontex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/r-mpost} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/r-pmpost} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/r-upmpost} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/repstopdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/rpdfcrop} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/rubibtex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/rubikrotation} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/rumakeindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/rungs} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/runtexshebang} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/simpdftex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/spix} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/splitindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/sqltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/srcredact} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/sty2dtx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/svn-multi} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/tex4ebook} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texaccents} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texblend} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texconfig} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texconfig-dialog} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texconfig-sys} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texcount} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texdef} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texdiff} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texdirflatten} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texdoc} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texdoctk} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texexec} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texfindpkg} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texfot} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texhash} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texindy} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texlinks} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texliveonfly} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texloganalyser} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texlogfilter} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texlogsieve} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texlua} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texluac} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texluajit} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texluajitc} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texmfstart} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texosquery} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texosquery-jre5} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texosquery-jre8} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texplate} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/texsis} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/textestvis} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/thumbpdf} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/tikztosvg} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/tlcockpit} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/tlmgr} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/tlshell} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ttf2kotexfont} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/typeoutfileinfo} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/typog-grep} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/ulqda} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/updmap} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/updmap-sys} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/updmap-user} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/updvitomp} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/uplatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/uplatex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/uptex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/urlbst} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/utf8mex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/vpe} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/vpl2ovp} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/vpl2vpl} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/webquiz} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/wordcount} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/xasy} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/xelatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/xelatex-dev} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:17  warn rootless{opt/TinyTeX/bin/x86_64-linux/xelatex-unsafe} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/xetex-unsafe} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/xhlatex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/xindex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/xindy} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/xmltex} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/06/25 10:37:18  warn rootless{opt/TinyTeX/bin/x86_64-linux/yplan} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+INFO:    Inserting Apptainer configuration...
+INFO:    Creating SIF file...
+make: Warning: File 'Makefile' has modification time 13159 s in the future
+Error in file(con, "w") : cannot open the connection
+Calls: writeLines -> file
+In addition: Warning message:
+In file(con, "w") :
+  cannot open file '/storage/home/ibp5092/.bash-secrets': Disk quota exceeded
+Execution halted
+make: *** [Makefile:7: project] Error 1
+cp: cannot stat '/scratch/ibp5092/manCTMed/vignettes/*.png': No such file or directory
+make: Warning: File 'Makefile' has modification time 13158 s in the future
+Error in file(con, "w") : cannot open the connection
+Calls: writeLines -> file
+In addition: Warning message:
+In file(con, "w") :
+  cannot open file '/storage/home/ibp5092/.bash-secrets': Disk quota exceeded
+Execution halted
+make: *** [Makefile:7: project] Error 1
+make: Warning: File 'Makefile' has modification time 13157 s in the future
 Cloning into 'manCTMed'...
-Updating files:   9% (116/1171)Updating files:  10% (118/1171)Updating files:  11% (129/1171)Updating files:  12% (141/1171)Updating files:  13% (153/1171)Updating files:  14% (164/1171)Updating files:  15% (176/1171)Updating files:  16% (188/1171)Updating files:  17% (200/1171)Updating files:  18% (211/1171)Updating files:  18% (222/1171)Updating files:  19% (223/1171)Updating files:  20% (235/1171)Updating files:  21% (246/1171)Updating files:  22% (258/1171)Updating files:  23% (270/1171)Updating files:  24% (282/1171)Updating files:  25% (293/1171)Updating files:  26% (305/1171)Updating files:  27% (317/1171)Updating files:  28% (328/1171)Updating files:  29% (340/1171)Updating files:  30% (352/1171)Updating files:  31% (364/1171)Updating files:  32% (375/1171)Updating files:  33% (387/1171)Updating files:  34% (399/1171)Updating files:  35% (410/1171)Updating files:  36% (422/1171)Updating files:  37% (434/1171)Updating files:  38% (445/1171)Updating files:  39% (457/1171)Updating files:  39% (468/1171)Updating files:  40% (469/1171)Updating files:  41% (481/1171)Updating files:  42% (492/1171)Updating files:  43% (504/1171)Updating files:  44% (516/1171)Updating files:  45% (527/1171)Updating files:  46% (539/1171)Updating files:  47% (551/1171)Updating files:  48% (563/1171)Updating files:  49% (574/1171)Updating files:  50% (586/1171)Updating files:  51% (598/1171)Updating files:  52% (609/1171)Updating files:  53% (621/1171)Updating files:  54% (633/1171)Updating files:  55% (645/1171)Updating files:  56% (656/1171)Updating files:  57% (668/1171)Updating files:  58% (680/1171)Updating files:  59% (691/1171)Updating files:  60% (703/1171)Updating files:  61% (715/1171)Updating files:  62% (727/1171)Updating files:  63% (738/1171)Updating files:  64% (750/1171)Updating files:  65% (762/1171)Updating files:  66% (773/1171)Updating files:  67% (785/1171)Updating files:  68% (797/1171)Updating files:  69% (808/1171)Updating files:  70% (820/1171)Updating files:  71% (832/1171)Updating files:  71% (841/1171)Updating files:  72% (844/1171)Updating files:  73% (855/1171)Updating files:  74% (867/1171)Updating files:  75% (879/1171)Updating files:  76% (890/1171)Updating files:  77% (902/1171)Updating files:  78% (914/1171)Updating files:  79% (926/1171)Updating files:  80% (937/1171)Updating files:  81% (949/1171)Updating files:  82% (961/1171)Updating files:  83% (972/1171)Updating files:  84% (984/1171)Updating files:  85% (996/1171)Updating files:  86% (1008/1171)Updating files:  87% (1019/1171)Updating files:  88% (1031/1171)Updating files:  89% (1043/1171)Updating files:  90% (1054/1171)Updating files:  91% (1066/1171)Updating files:  92% (1078/1171)Updating files:  93% (1090/1171)Updating files:  94% (1101/1171)Updating files:  95% (1113/1171)Updating files:  96% (1125/1171)Updating files:  97% (1136/1171)Updating files:  98% (1148/1171)Updating files:  98% (1157/1171)Updating files:  99% (1160/1171)Updating files: 100% (1171/1171)Updating files: 100% (1171/1171), done.
+Updating files:  10% (118/1173)Updating files:  11% (130/1173)Updating files:  12% (141/1173)Updating files:  13% (153/1173)Updating files:  14% (165/1173)Updating files:  15% (176/1173)Updating files:  16% (188/1173)Updating files:  17% (200/1173)Updating files:  18% (212/1173)Updating files:  19% (223/1173)Updating files:  19% (226/1173)Updating files:  20% (235/1173)Updating files:  21% (247/1173)Updating files:  22% (259/1173)Updating files:  23% (270/1173)Updating files:  24% (282/1173)Updating files:  25% (294/1173)Updating files:  26% (305/1173)Updating files:  27% (317/1173)Updating files:  28% (329/1173)Updating files:  29% (341/1173)Updating files:  30% (352/1173)Updating files:  31% (364/1173)Updating files:  32% (376/1173)Updating files:  33% (388/1173)Updating files:  34% (399/1173)Updating files:  35% (411/1173)Updating files:  36% (423/1173)Updating files:  37% (435/1173)Updating files:  38% (446/1173)Updating files:  39% (458/1173)Updating files:  40% (470/1173)Updating files:  41% (481/1173)Updating files:  42% (493/1173)Updating files:  42% (498/1173)Updating files:  43% (505/1173)Updating files:  44% (517/1173)Updating files:  45% (528/1173)Updating files:  46% (540/1173)Updating files:  47% (552/1173)Updating files:  48% (564/1173)Updating files:  49% (575/1173)Updating files:  50% (587/1173)Updating files:  51% (599/1173)Updating files:  52% (610/1173)Updating files:  53% (622/1173)Updating files:  54% (634/1173)Updating files:  55% (646/1173)Updating files:  56% (657/1173)Updating files:  57% (669/1173)Updating files:  58% (681/1173)Updating files:  59% (693/1173)Updating files:  60% (704/1173)Updating files:  61% (716/1173)Updating files:  62% (728/1173)Updating files:  63% (739/1173)Updating files:  64% (751/1173)Updating files:  65% (763/1173)Updating files:  66% (775/1173)Updating files:  67% (786/1173)Updating files:  68% (798/1173)Updating files:  69% (810/1173)Updating files:  70% (822/1173)Updating files:  71% (833/1173)Updating files:  72% (845/1173)Updating files:  73% (857/1173)Updating files:  74% (869/1173)Updating files:  75% (880/1173)Updating files:  76% (892/1173)Updating files:  77% (904/1173)Updating files:  78% (915/1173)Updating files:  79% (927/1173)Updating files:  80% (939/1173)Updating files:  81% (951/1173)Updating files:  82% (962/1173)Updating files:  83% (974/1173)Updating files:  84% (986/1173)Updating files:  85% (998/1173)Updating files:  86% (1009/1173)Updating files:  87% (1021/1173)Updating files:  88% (1033/1173)Updating files:  89% (1044/1173)Updating files:  90% (1056/1173)Updating files:  91% (1068/1173)Updating files:  92% (1080/1173)Updating files:  93% (1091/1173)Updating files:  94% (1103/1173)Updating files:  95% (1115/1173)Updating files:  96% (1127/1173)Updating files:  97% (1138/1173)Updating files:  98% (1150/1173)Updating files:  99% (1162/1173)Updating files: 100% (1173/1173)Updating files: 100% (1173/1173), done.

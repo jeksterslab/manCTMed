@@ -421,7 +421,7 @@ In this illustration, we used the CT-VAR drift matrix reported in Table 2 of \te
 
 We labeled the independent variable marital conflict $X$, the mediator variable maternal knowledge $M$, and the dependent variable behavioral competence $Y$. Since, we are incorporating a measurement model, the latent variables $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$ represent the latent variables in the model with $X$, $M$, and $Y$ as observed indicators. Elements of the estimated CT-VAR drift matrix $\boldsymbol{\Phi}$ are presented in Table \ref{tab:manCTMed-example-1}. In the study, time $t$ is scaled in years, and $\Delta t = 1$ is a time interval of one year between measurement occasions given in Figure \ref{fig:manCTMed-beta-delta-3}. Given Equation \ref{eq:manCTMed-ou-to-ssm-beta} we can calculate the matrix of lagged coefficients for a time interval $\Delta t = 1$ from the drift matrix $\boldsymbol{\Phi}$ which is also presented in Table \ref{tab:manCTMed-example-1} as follows:
 \begin{equation}
-	\begin{split}
+	\begin{aligned}
 		\boldsymbol{\beta}_{\Delta t \left( 1 \right)}
 		& =
 		\exp{
@@ -436,13 +436,13 @@ We labeled the independent variable marital conflict $X$, the mediator variable 
 			\eta_{M_{t + 1}} & \beta_{2, 1} & \beta_{2, 2} & \beta_{2, 3} \\
 			\eta_{Y_{t + 1}} & \beta_{3, 1} & \beta_{3, 2} & \beta_{3, 3} \\
 		} .
-	\end{split}
+	\end{aligned}
 	\label{eq:manCTMed-beta-1}
 \end{equation}
 
 Now we look at the case of a DT-VAR model from the same continuous process except that the time interval used is three years ($\Delta t = 3$) between measurement occasions. From the time-series literature \parencite[e.g.,][]{Hamilton-1994} we can derive $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ from $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$ using matrix powers. The key is to raise the matrix with the smaller time interval by the factor in which the time interval increased to the larger time interval. For example, the change from $\Delta t = 1$ to $\Delta t = 3$ is a factor of three, thus $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}^{3} = \boldsymbol{\beta}_{\Delta t \left( 3 \right)}$. Therefore, we can say that $\boldsymbol{\beta}_{\Delta t \left( 3 \right)} = \exp{ \left( 3 \boldsymbol{\Phi} \right)} = \boldsymbol{\beta}_{\Delta t \left( 1 \right)}^{3}$. Let us explore the relationship of the elements of $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ as a function of the elements of $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$. In particular, we focus on the third row and first column in $\boldsymbol{\beta}_{\Delta t \left( 3 \right)}$ pertaining to the association of marital conflict ($\eta_{X}$) at time $t$ and behavioral competence ($\eta_{Y}$) at time $t + 3$. The dashed path in Panel \ref{fig:manCTMed-beta-delta-3} in Figure \ref{fig:manCTMed-beta-bidirectional} represents the total effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$. This total effect is decomposed as a function of the lagged parameters in $\boldsymbol{\beta}_{\Delta t \left( 1 \right)}$. By raising Equation \ref{eq:manCTMed-beta-1} to the third power and subsetting the third row and the first column of the resulting matrix we get
 \begin{equation}
-	\begin{split}
+	\begin{aligned}
 		\mathrm{Total}
 		& = 
 		\boldsymbol{\beta}_{\Delta t \left( 3 \right)} \left[ 3, 1 \right] \\
@@ -458,7 +458,7 @@ Now we look at the case of a DT-VAR model from the same continuous process excep
 		\beta_{1, 1} \beta_{3, 1} \beta_{3, 3} +
 		\beta_{2, 1} \beta_{3, 2} \beta_{3, 3} + 
 		\beta_{3, 1} \beta_{3, 3} \beta_{3, 3} ,
-	\end{split}
+	\end{aligned}
 	\label{eq:manCTMed-beta-delta-3-3-1}
 \end{equation}
 where each term represents distinct paths from marital conflict ($\eta_{X}$) at time $t$ to behavioral competence ($\eta_{Y}$) at time $t + 3$ graphically represented by Panels \ref{fig:manCTMed-beta-delta-3-full-11-11-31} to \ref{fig:manCTMed-beta-delta-3-full-31-33-33} in Figure \ref{fig:manCTMed-beta-bidirectional}. Note that solid paths are paths where maternal knowledge ($\eta_M$) is traversed. We define these solid paths as indirect effects of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$ through maternal knowledge ($\eta_M$). The sum of these solid paths constitutes the overall indirect effect. The dashed paths are the direct effects and their sum constitutes the overall direct effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$. The sum of the direct and indirect effects represents the total effect of marital conflict ($\eta_{X}$) at time $t$ on behavioral competence ($\eta_{Y}$) at time $t + 3$.
@@ -653,7 +653,7 @@ where each term represents distinct paths from marital conflict ($\eta_{X}$) at 
 
 Now we divide any arbitrary time interval $\Delta t$ into infinitely many smaller parts and insert these infinitely many latent variables between values at time $t$ and time $t + \Delta t$. The idea in the CT-VAR approach is that the lagged parameters from the DT integral solution represent the sum of all the effects from the infinitely many smaller parts in between time $t$ and time $t + \Delta t$. The decomposition we discussed earlier still applies. The total effect is straightforward as it is simply the result of exponentiating the product of the drift matrix and the time interval. Using the estimated drift matrix presented in Table \ref{tab:manCTMed-example-1} and a time interval $\Delta t = 3$, the total effect matrix is given by
 \begin{equation}
-	\begin{split}
+	\begin{aligned}
 		\mathrm{Total}
 		& =
 		\exp{
@@ -679,14 +679,14 @@ Now we divide any arbitrary time interval $\Delta t$ into infinitely many smalle
 			\rinline{eq_total} 
 		\end{array}
 		\right) .
-	\end{split}
+	\end{aligned}
 	\label{eq:manCTMed-beta-3}
 \end{equation}
 
 Following \textcite{Ryan-Hamaker-2021}, the matrix of direct effects is obtained by removing the effects in the drift matrix $\boldsymbol{\Phi}$ that originates from and/or goes to the mediator (or mediators) from $\boldsymbol{\Phi}$ before converting it into its DT counterpart, $\boldsymbol{\beta}$, for a given time interval, $\Delta t$. We do this by pre- and post-multiplying the drift matrix $\boldsymbol{\Phi}$ with a diagonal matrix $\mathbf{D}_{\mathbf{m}}$ where the $i^{\mathrm{th}}$ and $j^{\mathrm{th}}$ index pertaining to the mediators are set to zero. In our current example where maternal knowledge ($\eta_{M}$) is treated as the mediator variable, the direct effect matrix is given by
 \begin{equation}
 	\resizebox{1\linewidth}{!}{$
-		\begin{split}
+		\begin{aligned}
 			\mathrm{Direct}
 			& =
 			\exp
@@ -722,14 +722,14 @@ Following \textcite{Ryan-Hamaker-2021}, the matrix of direct effects is obtained
 				\rinline{eq_direct} 
 			\end{array}
 			\right) .
-		\end{split}
+		\end{aligned}
 	$}
 	\label{eq:manCTMed-direct}
 \end{equation}
 
 In other words, the direct effects may be conceptualized as effects that are due only to direct linkages (i.e., arrows) between the ``independent variable'' and ``dependent variable.'' The indirect effect, in contrast, can be understood as all the influences that involve paths that go through the mediators, which can now be obtained by subtracting the direct effect matrix from the total effect matrix as:
 \begin{equation}
-	\begin{split}
+	\begin{aligned}
 		\mathrm{Indirect}
 		& =
 		\mathrm{Total} - \mathrm{Direct} \\
@@ -753,7 +753,7 @@ In other words, the direct effects may be conceptualized as effects that are due
 			\rinline{eq_indirect} 
 		\end{array}
 		\right) .
-	\end{split}
+	\end{aligned}
 	\label{eq:manCTMed-indirect}
 \end{equation}
 
@@ -1335,7 +1335,7 @@ We compared the delta and MC approaches across varying sample sizes (ranging fro
 
 \Textcite{Deboeck-Preacher-2015} generated data from a DT-VAR model using a fixed time interval of one unit with the following parameters
 \begin{equation*}
-	\begin{split}
+	\begin{aligned}
 		\boldsymbol{\alpha}_{\Delta t \left( 1 \right)}
 		& =
 		\left(
@@ -1359,11 +1359,11 @@ We compared the delta and MC approaches across varying sample sizes (ranging fro
 			\rinline{eq_psi_1} 
 		\end{array}
 		\right)
-	\end{split}
+	\end{aligned}
 \end{equation*}
 and initial values of $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$ sampled from a standard multivariate normal distribution. Using the DT-VAR parameters above, we derived the CT-VAR parameters following the approach proposed by \Textcite{Chow-Losardo-Park-etal-2023}, arriving at the following
 \begin{equation*}
-	\begin{split}
+	\begin{aligned}
 		\boldsymbol{\mu}
 		& =
 		\left(
@@ -1387,11 +1387,11 @@ and initial values of $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$ sampled from a stan
 			\rinline{eq_sigma} 
 		\end{array}
 		\right) .
-	\end{split}
+	\end{aligned}
 \end{equation*}
 We used the same mean vector and covariance matrix to generate the initial values of $\eta_{X}$, $\eta_{M}$, and $\eta_{Y}$. In addition to \Textcite{Deboeck-Preacher-2015}, we included a measurement model for the observed variables with the following parameters
 \begin{equation*}
-	\begin{split}
+	\begin{aligned}
 		\boldsymbol{\nu}
 		& =
 		\left(
@@ -1415,12 +1415,12 @@ We used the same mean vector and covariance matrix to generate the initial value
 			\rinline{eq_theta} 
 		\end{array}
 		\right) .
-	\end{split}
+	\end{aligned}
 \end{equation*}
 
 To capture diverse dynamics, we included two additional drift matrices:
 \begin{equation*}
-	\begin{split}
+	\begin{aligned}
 		\boldsymbol{\Phi}_{2}
 		& =
 		\left(
@@ -1437,7 +1437,7 @@ To capture diverse dynamics, we included two additional drift matrices:
 			\rinline{eq_phi_neg} 
 		\end{array}
 		\right) .
-	\end{split}
+	\end{aligned}
 \end{equation*}
 These matrices represent three dynamic regimes: (1) $\boldsymbol{\Phi}_{1}$: moderate coupling (intermediate decay, meaningful interactions), (2) $\boldsymbol{\Phi}_{2}$: strong coupling (rapid decay, intensified interactions), and (3) $\boldsymbol{\Phi}_{3}$: weak coupling (slow decay, minimal interactions). This variability enables a comprehensive examination of system dynamics, from tightly coupled fast-evolving processes to near-independent slow evolution, ensuring robust and generalizable insights into system behavior. The process noise covariance matrices were chosen such that the model-implied state covariance matrix for the three cases are similar. The direct, indirect, and total effects that correspond to the drift matrices $\boldsymbol{\Phi}_{1}$, $\boldsymbol{\Phi}_{2}$, and $\boldsymbol{\Phi}_{3}$ are plotted in Figure \ref{fig:combined-simulation-effects}.
 
