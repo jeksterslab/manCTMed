@@ -10,12 +10,6 @@
 PROJECT=/scratch/$USER/manCTMed
 SIF=/scratch/$USER/manCTMed/.sif/manctmed.sif
 
-# build sif
-
-if [ ! -f ${SIF} ]; then
-    apptainer pull ${SIF} docker://ijapesigan/manctmed:2025-04-07-05390291
-fi
-
 # clean
 
 rm -rf ${PROJECT}/.setup/data-raw/fit-example-*.Rds
