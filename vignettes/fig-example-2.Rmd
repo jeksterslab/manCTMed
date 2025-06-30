@@ -1,0 +1,435 @@
+---
+title: "Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette accompanies Illustration 2. The goal of the illustration is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a range of time intervals. This example features the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
+
+
+
+
+
+
+
+
+``` r
+library(bootStateSpace)
+library(cTMed)
+```
+
+## Continuous-Time Vector Autoregressive Model Estimates
+
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
+
+
+
+
+``` r
+summary(fit)
+#> Coefficients:
+#>             Estimate Std. Error t value   ci.lower   ci.upper Pr(>|t|)    
+#> phi_11    -0.1157754  0.0174197  -6.646 -0.1499173 -0.0816334   <2e-16 ***
+#> phi_12     0.0203747  0.0550571   0.370 -0.0875352  0.1282846   0.3557    
+#> phi_13    -0.0070992  0.0535302  -0.133 -0.1120165  0.0978181   0.4472    
+#> phi_21    -0.1226909  0.0187426  -6.546 -0.1594258 -0.0859560   <2e-16 ***
+#> phi_22    -0.8819998  0.0653717 -13.492 -1.0101259 -0.7538737   <2e-16 ***
+#> phi_23     0.4737224  0.0594135   7.973  0.3572740  0.5901708   <2e-16 ***
+#> phi_31    -0.0877980  0.0178492  -4.919 -0.1227817 -0.0528143   <2e-16 ***
+#> phi_32     0.0595814  0.0586861   1.015 -0.0554414  0.1746041   0.1550    
+#> phi_33    -0.6636176  0.0616495 -10.764 -0.7844485 -0.5427867   <2e-16 ***
+#> sigma_11   0.0954899  0.0049239  19.393  0.0858393  0.1051405   <2e-16 ***
+#> sigma_12   0.0009624  0.0040987   0.235 -0.0070710  0.0089957   0.4072    
+#> sigma_13   0.0070297  0.0040069   1.754 -0.0008237  0.0148830   0.0397 *  
+#> sigma_22   0.1027182  0.0078961  13.009  0.0872422  0.1181942   <2e-16 ***
+#> sigma_23   0.0009240  0.0049248   0.188 -0.0087285  0.0105764   0.4256    
+#> sigma_33   0.0991956  0.0074695  13.280  0.0845558  0.1138355   <2e-16 ***
+#> theta_11   0.1016133  0.0014901  68.194  0.0986928  0.1045338   <2e-16 ***
+#> theta_22   0.0996380  0.0015668  63.592  0.0965671  0.1027089   <2e-16 ***
+#> theta_33   0.0992561  0.0015460  64.202  0.0962260  0.1022862   <2e-16 ***
+#> mu0_1     -0.1217526  0.0521444  -2.335 -0.2239538 -0.0195514   0.0098 ** 
+#> mu0_2      0.0160785  0.0279075   0.576 -0.0386192  0.0707762   0.2823    
+#> mu0_3      0.0204163  0.0288928   0.707 -0.0362125  0.0770451   0.2399    
+#> sigma0_11  0.3346315  0.0446548   7.494  0.2471097  0.4221533   <2e-16 ***
+#> sigma0_12 -0.0644525  0.0177503  -3.631 -0.0992424 -0.0296626   0.0001 ***
+#> sigma0_13 -0.0519690  0.0179974  -2.888 -0.0872433 -0.0166946   0.0019 ** 
+#> sigma0_22  0.0691741  0.0127707   5.417  0.0441439  0.0942043   <2e-16 ***
+#> sigma0_23  0.0364469  0.0098132   3.714  0.0172134  0.0556805   0.0001 ***
+#> sigma0_33  0.0792446  0.0137057   5.782  0.0523819  0.1061072   <2e-16 ***
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#> 
+#> -2 log-likelihood value at convergence = 32662.46
+#> AIC = 32716.46
+#> BIC = 32919.11
+```
+
+## Parameter Estimates
+
+We extract parameter estimates from the `fit` object.
+
+
+``` r
+# drift matrix
+phi <- matrix(
+  data = coef(fit)[
+    c(
+      "phi_11", "phi_21", "phi_31",
+      "phi_12", "phi_22", "phi_32",
+      "phi_13", "phi_23", "phi_33"
+    )
+  ],
+  nrow = 3
+)
+# column names and row names are needed to define the indirect effects
+colnames(phi) <- rownames(phi) <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+```
+
+
+``` r
+# process noise covariance matrix
+sigma <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+
+``` r
+# measurement error covariance matrix
+theta <- matrix(
+  data = coef(fit)[
+    c(
+      "theta_11", 0, 0,
+      0, "theta_22", 0,
+      0, 0, "theta_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+
+``` r
+# initial condition
+mu0 <- coef(fit)[
+  c(
+    "mu0_1", "mu0_2", "mu0_3"
+  )
+]
+sigma0 <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma0_11", "sigma0_12", "sigma0_13",
+      "sigma0_12", "sigma0_22", "sigma0_23",
+      "sigma0_13", "sigma0_23", "sigma0_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+### Sampling Variance-Covariance Matrix of Parameter Estimates
+
+
+``` r
+# combining the drift matrix and the process noise covariance matrix
+phi_sigma_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33",
+  "sigma_11", "sigma_12", "sigma_13",
+  "sigma_22", "sigma_23",
+  "sigma_33"
+)
+vcov_theta <- vcov(fit)[phi_sigma_names, phi_sigma_names]
+```
+
+
+``` r
+phi_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33"
+)
+vcov_phi_vec <- vcov_theta[phi_names, phi_names]
+```
+
+## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+delta <- DeltaMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(delta)
+#>     effect interval          est          se         z            p
+#> 1    total        1 -0.062555476 0.011487680 -5.445440 5.167744e-08
+#> 2   direct        1 -0.060214915 0.012242403 -4.918553 8.718614e-07
+#> 3 indirect        1 -0.002340561 0.002308034 -1.014093 3.105384e-01
+#> 4    total        2 -0.090728400 0.015648577 -5.797869 6.716285e-09
+#> 5   direct        2 -0.084667452 0.017491657 -4.840448 1.295468e-06
+#> 6 indirect        2 -0.006060948 0.005969252 -1.015361 3.099336e-01
+#> 7    total        3 -0.100363120 0.016803252 -5.972839 2.331598e-09
+#> 8   direct        3 -0.091430222 0.019347394 -4.725713 2.293097e-06
+#> 9 indirect        3 -0.008932897 0.008860944 -1.008120 3.133968e-01
+#>           2.5%        97.5%
+#> 1 -0.085070916 -0.040040036
+#> 2 -0.084209585 -0.036220245
+#> 3 -0.006864224  0.002183102
+#> 4 -0.121399047 -0.060057753
+#> 5 -0.118950469 -0.050384435
+#> 6 -0.017760467  0.005638571
+#> 7 -0.133296888 -0.067429351
+#> 8 -0.129350417 -0.053510028
+#> 9 -0.026300029  0.008434235
+```
+
+## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+mc <- MCMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores(),
+  R = 20000L,
+  seed = 42
+)
+summary(mc)
+#>     effect interval          est          se     R         2.5%        97.5%
+#> 1    total        1 -0.062555476 0.011383379 20000 -0.084985821 -0.040280507
+#> 2   direct        1 -0.060214915 0.012110473 20000 -0.083978667 -0.036734432
+#> 3 indirect        1 -0.002340561 0.002328259 20000 -0.006883424  0.002346508
+#> 4    total        2 -0.090728400 0.015555987 20000 -0.121341973 -0.060020010
+#> 5   direct        2 -0.084667452 0.017332230 20000 -0.119147306 -0.051514627
+#> 6 indirect        2 -0.006060948 0.006027808 20000 -0.017479382  0.006351337
+#> 7    total        3 -0.100363120 0.016765468 20000 -0.133551798 -0.067325657
+#> 8   direct        3 -0.091430222 0.019228327 20000 -0.130471655 -0.055229672
+#> 9 indirect        3 -0.008932897 0.008974713 20000 -0.025614486  0.009851677
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multiple times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+
+> **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
+
+
+``` r
+R <- 1000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "illustration_pb"
+```
+
+
+``` r
+phi_hat <- phi
+sigma_hat <- sigma
+```
+
+
+``` r
+boot <- PBSSMOUFixed(
+  R = R,
+  path = path,
+  prefix = prefix,
+  n = 133,
+  time = 101,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = t(chol(sigma0)),
+  mu = c(0, 0, 0),
+  phi = phi,
+  sigma_l = t(chol(sigma)),
+  nu = c(0, 0, 0),
+  lambda = diag(3),
+  theta_l = t(chol(theta)),
+  mu0_fixed = FALSE,
+  sigma0_fixed = FALSE,
+  ncores = parallel::detectCores(),
+  seed = 42,
+  clean = TRUE
+)
+```
+
+
+
+Using the `BootMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+ci <- BootMed(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  phi_hat = phi_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(ci)
+#>     effect interval          est          se    R         2.5%        97.5%
+#> 1    total        1 -0.062555476 0.011895369 1000 -0.085729558 -0.040227248
+#> 2   direct        1 -0.060214915 0.012644604 1000 -0.085588908 -0.035900504
+#> 3 indirect        1 -0.002340561 0.002290933 1000 -0.007052772  0.001949044
+#> 4    total        2 -0.090728400 0.016147361 1000 -0.121302346 -0.060151196
+#> 5   direct        2 -0.084667452 0.017992384 1000 -0.120845704 -0.050280112
+#> 6 indirect        2 -0.006060948 0.005898012 1000 -0.017854673  0.005354471
+#> 7    total        3 -0.100363120 0.017285994 1000 -0.133607192 -0.067431119
+#> 8   direct        3 -0.091430222 0.019883297 1000 -0.131147843 -0.052983876
+#> 9 indirect        3 -0.008932897 0.008742578 1000 -0.026055200  0.008494383
+summary(ci, type = "bc") # bias-corrected
+#>     effect interval          est          se    R         2.5%        97.5%
+#> 1    total        1 -0.062555476 0.011895369 1000 -0.085633650 -0.040102172
+#> 2   direct        1 -0.060214915 0.012644604 1000 -0.085457442 -0.035826089
+#> 3 indirect        1 -0.002340561 0.002290933 1000 -0.007326832  0.001773306
+#> 4    total        2 -0.090728400 0.016147361 1000 -0.122605069 -0.060743351
+#> 5   direct        2 -0.084667452 0.017992384 1000 -0.120949487 -0.050297783
+#> 6 indirect        2 -0.006060948 0.005898012 1000 -0.018334252  0.004930768
+#> 7    total        3 -0.100363120 0.017285994 1000 -0.134702537 -0.067590637
+#> 8   direct        3 -0.091430222 0.019883297 1000 -0.132197696 -0.053605916
+#> 9 indirect        3 -0.008932897 0.008742578 1000 -0.026669169  0.007904886
+```
+
+## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+delta <- DeltaMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(delta)
+#>     effect interval          est          se         z            p        2.5%
+#> 1    total        1 -0.137467669 0.025247997 -5.444696 5.189394e-08 -0.18695283
+#> 2   direct        1 -0.132324211 0.026919970 -4.915466 8.857130e-07 -0.18508638
+#> 3 indirect        1 -0.005143458 0.005069136 -1.014662 3.102671e-01 -0.01507878
+#> 4    total        2 -0.199378575 0.034680527 -5.749006 8.976937e-09 -0.26735116
+#> 5   direct        2 -0.186059447 0.038717618 -4.805550 1.543267e-06 -0.26194458
+#> 6 indirect        2 -0.013319129 0.013110257 -1.015932 3.096618e-01 -0.03901476
+#> 7    total        3 -0.220551181 0.037701725 -5.849896 4.918794e-09 -0.29444520
+#> 8   direct        3 -0.200920852 0.043175066 -4.653632 3.261393e-06 -0.28554243
+#> 9 indirect        3 -0.019630329 0.019462994 -1.008598 3.131677e-01 -0.05777710
+#>          97.5%
+#> 1 -0.087982504
+#> 2 -0.079562039
+#> 3  0.004791866
+#> 4 -0.131405991
+#> 5 -0.110174311
+#> 6  0.012376504
+#> 7 -0.146657159
+#> 8 -0.116299277
+#> 9  0.018516438
+```
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+mc <- MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores(),
+  R = 20000L,
+  seed = 42
+)
+summary(mc)
+#>     effect interval          est          se     R        2.5%        97.5%
+#> 1    total        1 -0.137467669 0.025333561 20000 -0.18772719 -0.088517315
+#> 2   direct        1 -0.132324211 0.026983758 20000 -0.18640464 -0.080332377
+#> 3 indirect        1 -0.005143458 0.005166557 20000 -0.01528840  0.005116816
+#> 4    total        2 -0.199378575 0.034966091 20000 -0.26905465 -0.131782087
+#> 5   direct        2 -0.186059447 0.038948487 20000 -0.26509867 -0.112586367
+#> 6 indirect        2 -0.013319129 0.013368821 20000 -0.03887690  0.013995913
+#> 7    total        3 -0.220551181 0.038207865 20000 -0.29810995 -0.147354250
+#> 8   direct        3 -0.200920852 0.043636523 20000 -0.29189527 -0.120280873
+#> 9 indirect        3 -0.019630329 0.019900278 20000 -0.05707027  0.021605946
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `BootMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+
+``` r
+pb <- BootMedStd(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
+  phi_hat = phi_hat,
+  sigma_hat = sigma_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(pb)
+#>     effect interval          est          se    R        2.5%       97.5%
+#> 1    total        1 -0.137467669 0.026253764 1000 -0.18851716 -0.08897451
+#> 2   direct        1 -0.132324211 0.027932919 1000 -0.18663188 -0.07948977
+#> 3 indirect        1 -0.005143458 0.005055074 1000 -0.01576038  0.00425024
+#> 4    total        2 -0.199378575 0.035966425 1000 -0.26884004 -0.13182073
+#> 5   direct        2 -0.186059447 0.040041763 1000 -0.26340729 -0.11036386
+#> 6 indirect        2 -0.013319129 0.013020860 1000 -0.03934067  0.01176595
+#> 7    total        3 -0.220551181 0.039021505 1000 -0.29642911 -0.14852508
+#> 8   direct        3 -0.200920852 0.044639569 1000 -0.28761730 -0.11848043
+#> 9 indirect        3 -0.019630329 0.019311891 1000 -0.05705291  0.01906322
+summary(pb, type = "bc") # bias-corrected
+#>     effect interval          est          se    R        2.5%        97.5%
+#> 1    total        1 -0.137467669 0.026253764 1000 -0.18883080 -0.089561065
+#> 2   direct        1 -0.132324211 0.027932919 1000 -0.18576191 -0.078536696
+#> 3 indirect        1 -0.005143458 0.005055074 1000 -0.01615588  0.003820513
+#> 4    total        2 -0.199378575 0.035966425 1000 -0.27257598 -0.133985668
+#> 5   direct        2 -0.186059447 0.040041763 1000 -0.26264001 -0.109715342
+#> 6 indirect        2 -0.013319129 0.013020860 1000 -0.04093186  0.010552441
+#> 7    total        3 -0.220551181 0.039021505 1000 -0.29872972 -0.152451925
+#> 8   direct        3 -0.200920852 0.044639569 1000 -0.28483004 -0.117621516
+#> 9 indirect        3 -0.019630329 0.019311891 1000 -0.05923582  0.016686814
+```

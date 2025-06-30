@@ -1,0 +1,170 @@
+---
+title: "Sampling Distribution of Direct, Indirect, and Total Effects"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Sampling Distribution of Direct, Indirect, and Total Effects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-sampling-distribution-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+library(manCTMed)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+## Population Total, Direct, and Indirect Effects
+
+Total, direct, and indirect effects for the drift matrix
+
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         -0.357 & 0 & 0 \\
+         0.771 & -0.511 & 0 \\
+         -0.450 & 0.729 & -0.693 \\
+    \end{array}
+    \right)
+\end{equation}
+
+Presented below are the effects for the $\eta_{Y} \to \eta_{M} \to \eta_{X}$ model.
+
+```{r, effects}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+FigPlotEffects(dynamics = 0, xmy = FALSE)
+```
+
+Standardized total, direct, and indirect effects for the drift matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         -0.357 & 0 & 0 \\
+         0.771 & -0.511 & 0 \\
+         -0.450 & 0.729 & -0.693 \\
+    \end{array}
+    \right)
+\end{equation}
+and process noise covariance matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         0.24455556 & 0.02201587 & -0.05004762 \\
+         0.02201587 & 0.07067800 & 0.01539456 \\
+         -0.05004762 & 0.01539456 & 0.07553061 \\
+    \end{array}
+    \right)
+\end{equation}
+
+Presented below are the standardized effects for the $\eta_{Y} \to \eta_{M} \to \eta_{X}$ model.
+
+```{r, effects-std}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+FigPlotEffects(dynamics = 0, std = TRUE, xmy = FALSE)
+```
+
+## Visualizing Normality of the Direct, Indirect, and Total Effects
+
+```{r}
+#| include = FALSE
+unstd <- do.call(
+  what = "rbind",
+  args = lapply(
+    X = readRDS(
+      root$find_file(
+        ".setup",
+        "data-raw",
+        "manCTMed-summary-dynr-delta-ymx-00001.Rds"
+      )
+    )$replications,
+    FUN = function(i) {
+      i <- i[c(1:3), "est"]
+      names(i) <- c("total", "direct", "indirect")
+      i
+    }
+  )
+)
+```
+
+The sampling distribution of the direct, indirect, and total effects were generated using 1000 samples.
+
+```{r, direct-1}
+#| echo = FALSE
+qqnorm(unstd[, "direct"], main = expression("Direct Effect: " ~ Delta * " " * t == 1))
+qqline(unstd[, "direct"])
+```
+
+```{r, indirect-1}
+#| echo = FALSE
+qqnorm(unstd[, "indirect"], main = expression("Indirect Effect: " ~ Delta * " " * t == 1))
+qqline(unstd[, "indirect"])
+```
+
+```{r, total-1}
+#| echo = FALSE
+qqnorm(unstd[, "total"], main = expression("Total Effect: " ~ Delta * " " * t == 1))
+qqline(unstd[, "total"])
+```
+
+## Visualizing Normality of the Standardized Direct, Indirect, and Total Effects
+
+```{r}
+#| include = FALSE
+std <- do.call(
+  what = "rbind",
+  args = lapply(
+    X = readRDS(
+      root$find_file(
+        ".setup",
+        "data-raw",
+        "manCTMed-summary-dynr-delta-std-ymx-00001.Rds"
+      )
+    )$replications,
+    FUN = function(i) {
+      i <- i[c(1:3), "est"]
+      names(i) <- c("total", "direct", "indirect")
+      i
+    }
+  )
+)
+```
+
+The sampling distribution of the standardized direct, indirect, and total effects were generated using 1000 samples.
+
+```{r, std-direct-1}
+#| echo = FALSE
+qqnorm(std[, "direct"], main = expression("Standardized Direct Effect: " ~ Delta * " " * t == 1))
+qqline(std[, "direct"])
+```
+
+```{r, std-indirect-1}
+#| echo = FALSE
+qqnorm(std[, "indirect"], main = expression("Standardized Indirect Effect: " ~ Delta * " " * t == 1))
+qqline(std[, "indirect"])
+```
+
+```{r, std-total-1}
+#| echo = FALSE
+qqnorm(std[, "total"], main = expression("Standardized Total Effect: " ~ Delta * " " * t == 1))
+qqline(std[, "total"])
+```

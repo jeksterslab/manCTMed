@@ -1,0 +1,99 @@
+---
+title: "Scatter Plots - Illustration"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scatter Plots - Illustration}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-scatter-plots-illustration-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+library(manCTMed)
+```
+
+## Population Total, Direct, and Indirect Effects
+
+Total, direct, and indirect effects for the drift matrix
+
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         -0.138 & 0 & 0 \\
+         -0.124 & -0.865 & 0.434 \\
+         -0.057 & 0.115 & -0.693 \\
+    \end{array}
+    \right)
+\end{equation}
+  
+```{r, effects}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+IllustrationFigPlotEffects(std = FALSE)
+```
+
+Standardized total, direct, and indirect effects for the drift matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         -0.138 & 0 & 0 \\
+         -0.124 & -0.865 & 0.434 \\
+         -0.057 & 0.115 & -0.693 \\
+    \end{array}
+    \right)
+\end{equation}
+and process noise covariance matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         0.10 & 0 & 0 \\
+         0 & 0.10 & 0 \\
+         0 & 0 & 0.10 \\
+    \end{array}
+    \right)
+\end{equation}
+
+```{r, effects-std}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+IllustrationFigPlotEffects(std = TRUE)
+```
+
+## Evaluation of Confidence Intervals
+
+Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model.
+
+```{r}
+data(illustration_results, package = "manCTMed")
+```
+
+### Coverage Probabilities
+
+```{r, coverage}
+#| echo = FALSE,
+#| cache = FALSE
+IllustrationFigScatterPlotCoverage(illustration_results)
+```
+
+### Statistical Power
+
+```{r, power}
+#| echo = FALSE,
+#| cache = FALSE
+IllustrationFigScatterPlotPower(illustration_results)
+```

@@ -1,0 +1,41 @@
+name: Make Project
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ijapesigan/manctmed:2025-04-07-05390291
+    env:
+      GITHUB_PAT: ${{ secrets.PAT }}
+    permissions:
+      contents: write
+      packages: read
+      statuses: write
+
+    steps:
+      -
+        name: Checkout 
+        uses: actions/checkout@v4
+      -
+        name: Clean
+        run: |
+          make clean
+      -
+        name: Make Project
+        run: |
+          make install
+          make push
+      - 
+        name: Commit and push changes
+        uses: devops-infra/action-commit-push@master
+        with:
+          github_token: ${{ secrets.PAT }}
+          commit_message: "Automated build."

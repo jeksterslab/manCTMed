@@ -1,0 +1,171 @@
+---
+title: "Illustration 1 - Direct, Indirect, and Total Effects"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Illustration 1 - Direct, Indirect, and Total Effects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette accompanies Illustration 1. The goal of the illustration is to calculate the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a specific time interval or a range of time intervals. This example features the `Med` and `MedStd` functions from the `cTMed` package.
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-example-1-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+```{r}
+#| include = FALSE
+library(dynr)
+library(cTMed)
+```
+
+```{r}
+#| eval = FALSE
+library(cTMed)
+```
+
+## Continuous-Time Vector Autoregressive Model Estimates
+
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
+
+```{r}
+#| include = FALSE
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+  )
+)
+```
+
+```{r}
+summary(fit)
+```
+
+## Extract Elements of the Drift Matrix and the Process Noise Covariance Matrix
+
+We extract the elements of the drift matrix and the process noise covariance matrix from the `fit` object.
+
+```{r}
+# drift matrix
+phi <- matrix(
+  data = coef(fit)[
+    c(
+      "phi_11",
+      "phi_21",
+      "phi_31",
+      "phi_12",
+      "phi_22",
+      "phi_32",
+      "phi_13",
+      "phi_23",
+      "phi_33"
+    )
+  ],
+  nrow = 3
+)
+# column names and row names are needed to define the indirect effects
+colnames(phi) <- rownames(phi) <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+```
+
+```{r}
+# process noise covariance matrix
+sigma <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma_11",
+      "sigma_12",
+      "sigma_13",
+      "sigma_12",
+      "sigma_22",
+      "sigma_23",
+      "sigma_13",
+      "sigma_23",
+      "sigma_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+## Direct, Indirect, and Total Effects of a Time Interval of Three
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a time interval of three are given below.
+
+```{r}
+Med(
+  phi = phi,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = 3
+)
+```
+
+## Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
+
+Using the `Med` function from the `cTMed` package, the direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
+
+```{r}
+med <- Med(
+  phi = phi,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = seq(from = 0, to = 10, length.out = 1000)
+)
+plot(med, legend_pos = "bottomright")
+```
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of Three
+
+Using the `MedStd` function from the `cTMed` package, the standardized direct, indirect, and total effects for a time interval of three are given below.
+
+```{r}
+MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = 3
+)
+```
+
+## Standardized Direct, Indirect, and Total Effects of a Time Interval of Zero to Ten
+
+Using the `Med` function from the `cTMed` package, the standardized direct, indirect, and total effects for a range of time interval values from 0 to 10 are plotted below.
+
+```{r}
+med_std <- MedStd(
+  phi = phi,
+  sigma = sigma,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  delta_t = seq(from = 0, to = 10, length.out = 1000)
+)
+plot(med_std, legend_pos = "bottomright")
+```

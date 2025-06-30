@@ -1,0 +1,73 @@
+destination: pkgdown
+url: https://github.com/jeksterslab/manCTMed/
+
+template:
+  bootstrap: 5
+  bslib:
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "JetBrains Mono"}
+
+reference:
+- title: Data Generation Functions
+  contents:
+  - has_concept("Data Generation Functions")
+- title: Model Fitting Functions
+  contents:
+  - has_concept("Model Fitting Functions")
+- title: Confidence Interval Functions
+  contents:
+  - has_concept("Confidence Interval Functions")
+- title: Illustration Functions
+  contents:
+  - has_keyword("illustration")
+- title: Simulation Functions
+  contents:
+  - has_keyword("simulation")
+- title: Summary Functions
+  contents:
+  - has_keyword("summary")
+- title: Compression Functions
+  contents:
+  - has_keyword("compress")
+- title: Data
+  contents:
+  - has_keyword("data")
+- title: Figures
+  contents:
+  - has_keyword("figure")
+- title: All Functions
+  contents:
+  - has_keyword("manCTMed")
+
+articles:
+- title: manCTMed
+  contents:
+  - manCTMed
+- title: Three Illustrations Using an Empirical Data Set
+  contents:
+  - fig-example-1
+  - fig-example-2
+  - fig-example-3
+- title: Single Replication from the Simulation Study
+  contents:
+  - replication
+- title: Parameters
+  contents:
+  - params
+- title: Results
+  contents:
+  - results
+- title: Plots
+  contents:
+  - fig-scatter-plots-illustration
+  - fig-scatter-plots-zero
+  - fig-scatter-plots-neg
+  - fig-scatter-plots-pos
+  - fig-sampling-distribution
+- title: Containers
+  contents:
+  - containers
+- title: Session
+  contents:
+  - session

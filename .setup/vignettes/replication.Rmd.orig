@@ -1,0 +1,192 @@
+---
+title: "Single Replication from the Simulation Study"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Single Replication from the Simulation Study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-replication-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+```{r}
+library(manCTMed)
+```
+
+## Data Generation
+
+```{r}
+seed <- 1
+set.seed(seed)
+taskid <- 1
+sim <- GenData(taskid = taskid)
+plot(sim)
+data <- RandomMeasurement(sim)
+str(data)
+```
+
+## Model Fitting
+
+```{r}
+fit <- FitDynr(data = data, taskid = taskid)
+summary(fit)
+phi_hat <- PhiHat(fit)
+theta_hat <- ThetaHat(fit)
+```
+
+## Confidence Intervals (Unstandardized)
+
+### Model $\eta_X \to \eta_M \to \eta_Y$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaXMY(phi_hat = phi_hat)
+plot(delta)
+summary(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCXMY(phi_hat = phi_hat, seed = seed)
+plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+B <- 1000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "pb_replication"
+```
+
+```{r}
+boot <- BootPara(
+  fit = fit,
+  path = path,
+  prefix = prefix,
+  taskid = taskid,
+  B = B,
+  ncores = parallel::detectCores(),
+  seed = seed,
+  clean = FALSE
+)
+```
+
+```{r}
+pb <- BootParaXMY(boot = boot, phi_hat = phi_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
+```
+
+### Model $\eta_Y \to \eta_M \to \eta_M$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaYMX(phi_hat = phi_hat)
+plot(delta)
+summary(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCYMX(phi_hat = phi_hat, seed = seed)
+plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaYMX(boot = boot, phi_hat = phi_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
+```
+
+## Confidence Intervals (Standardized)
+
+### Model $\eta_X \to \eta_M \to \eta_Y$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaStdXMY(theta_hat = theta_hat)
+plot(delta)
+summary(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCStdXMY(theta_hat = theta_hat, seed = seed)
+plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaStdXMY(boot = boot, theta_hat = theta_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
+```
+
+### Model $\eta_Y \to \eta_M \to \eta_M$
+
+#### Delta Method
+
+```{r}
+delta <- DeltaStdYMX(theta_hat = theta_hat)
+plot(delta)
+summary(delta)
+```
+
+#### Monte Carlo Method
+
+```{r}
+mc <- MCStdYMX(theta_hat = theta_hat, seed = seed)
+plot(mc)
+summary(mc)
+```
+
+#### Parametric Bootstrap Method
+
+```{r}
+pb <- BootParaStdYMX(boot = boot, theta_hat = theta_hat)
+plot(pb)
+plot(pb, type = "bc")
+summary(pb)
+summary(pb, type = "bc")
+```

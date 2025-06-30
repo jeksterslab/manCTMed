@@ -1,0 +1,183 @@
+---
+title: "Scatter Plots - Strong Coupling"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Scatter Plots - Strong Coupling}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-scatter-plots-pos-",
+  fig.cap = "",
+  fig.width = 11,
+  fig.height = 8,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+library(manCTMed)
+```
+
+## Population Total, Direct, and Indirect Effects
+
+Total, direct, and indirect effects for the drift matrix
+
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         −0.714 & 0 & 0 \\
+         1.542 & −1.022 & 0 \\
+         −0.900 & 1.458 & −1.386 \\
+    \end{array}
+    \right)
+\end{equation}
+
+```{r, effects}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+FigPlotEffects(dynamics = 1)
+```
+
+Standardized total, direct, and indirect effects for the drift matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         −0.714 & 0 & 0 \\
+         1.542 & −1.022 & 0 \\
+         −0.900 & 1.458 & −1.386 \\
+    \end{array}
+    \right)
+\end{equation}
+and process noise covariance matrix
+\begin{equation}
+    \left(
+    \begin{array}{ccc}
+         0.4891 & 0.0440 & -0.1001 \\
+         0.0440 & 0.1414 & 0.0308 \\
+         -0.1001 & 0.0308 & 0.1511 \\
+    \end{array}
+    \right)
+\end{equation}
+
+```{r, effects-std}
+#| fig.width = 8.5 / 1.5,
+#| fig.height = 11 / 2.5,
+FigPlotEffects(dynamics = 1, std = TRUE)
+```
+
+## Evaluation of Confidence Intervals
+
+Presented below are scatter plots of coverage probabilities and power for the $\eta_X \to \eta_M \ to \eta_Y$ model and type I error rates for the $\eta_Y \to \eta_M \to \eta_X$ model.
+
+```{r}
+data(results, package = "manCTMed")
+```
+
+### Coverage Probabilities
+
+#### Time Intervals 1 to 25
+
+```{r, coverage-1-25}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 1:25, dynamics = 1)
+```
+
+#### Time Intervals 1 to 4
+
+```{r, coverage-1-4}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 1:4, dynamics = 1)
+```
+
+#### Time Intervals 5 to 25
+
+```{r, coverage-5-25}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 5:25, dynamics = 1)
+```
+
+#### Time Intervals 25 to 30
+
+```{r, coverage-25-30}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 25:30, dynamics = 1)
+```
+
+### Statistical Power
+
+```{r, power}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotPower(results, dynamics = 1)
+```
+
+### Type I Error Rate
+
+```{r, type1}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotType1(results, dynamics = 1)
+```
+
+### Coverage Probabilities (Standardized)
+
+#### Time Intervals 1 to 25
+
+```{r, coverage-std-1-25}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 1:25, dynamics = 1, std = TRUE)
+```
+
+#### Time Intervals 1 to 4
+
+```{r, coverage-std-1-4}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 1:4, dynamics = 1, std = TRUE)
+```
+
+#### Time Intervals 5 to 25
+
+```{r, coverage-std-5-25}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 5:25, dynamics = 1, std = TRUE)
+```
+
+#### Time Intervals 25 to 30
+
+```{r, coverage-std-25-30}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotCoverage(results, delta_t = 25:30, dynamics = 1, std = TRUE)
+```
+
+### Statistical Power (Standardized)
+
+```{r, power-std}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotPower(results, dynamics = 1, std = TRUE)
+```
+
+### Type I Error Rate (Standardized)
+
+```{r, type1-std}
+#| echo = FALSE,
+#| cache = FALSE
+FigScatterPlotType1(results, dynamics = 1, std = TRUE)
+```

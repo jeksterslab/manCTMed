@@ -1,0 +1,572 @@
+\documentclass[man, 10pt]{apa7}
+
+\raggedbottom
+\widowpenalty = 10000
+\clubpenalty = 10000
+% \usepackage{lineno}
+% \linenumbers
+\usepackage[american]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{blkarray}
+\usepackage{csquotes}
+\usepackage{endnotes}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{changes}
+\setlength {\marginparwidth }{2cm}
+\usepackage{todonotes}
+\usepackage{subcaption}
+\usepackage[belowskip = 2pt, aboveskip = 2pt]{caption}
+\captionsetup{
+    textfont = {it,normal},
+    labelsep = newline,
+    justification = raggedright,
+    singlelinecheck = false
+}
+\captionsetup[subfigure]{
+    size = footnotesize
+}
+
+\usepackage{rotating}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLATEX APA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "root",
+% #| include = FALSE
+% root <- rprojroot::is_rstudio_project
+%% end.rcode
+
+%% begin.rcode
+% #| label = "knitr",
+% #| include = FALSE,
+% #| file = root$find_file(
+% #|   ".setup",
+% #|   "latex",
+% #|   "r-scripts",
+% #|   "knitr.R"
+% #| )
+%% end.rcode
+
+%% begin.rcode
+% #| label = "biblatex",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% if (require("rProject")) {
+%   Bib(
+%     path = dirname(
+%       root$find_file(
+%         "project.Rproj"
+%       )
+%     )
+%   )
+%   cat(
+%     .PreambleBiblatex(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       )
+%     )
+%   )
+% } else {
+%   cat(
+%     .PreambleBiblatexCombined(
+%       path = root$find_file(
+%         ".setup",
+%         "latex",
+%         "bib"
+%       ),
+%       output_path = root$find_file(
+%         ".setup",
+%         "latex"
+%       )
+%     )
+%   )
+% }
+%% end.rcode
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kbordermatrix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%% begin.rcode
+% #| label = "kbordermatrix",
+% #| echo = FALSE,
+% #| message = FALSE,
+% #| warning = FALSE,
+% #| results = "asis"
+% cat(
+%   paste0(
+%     "\n",
+%     "\\usepackage{",
+%     root$find_file(
+%       ".setup",
+%       "latex",
+%       "sty",
+%       "kbordermatrix"
+%     ),
+%     "}",
+%     "\n"
+%   )
+% )
+% cat("\n\\renewcommand{\\kbldelim}{(}% Left delimiter")
+% cat("\n\\renewcommand{\\kbrdelim}{)}% Right delimiter")
+%% end.rcode
+
+\title{Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models (Supplementary Materials)}
+
+\shorttitle{CT Mediation: Inferences \& Effect Sizes}
+
+\authorsnames[1, {1, 2}, 3]{Ivan Jacob Agaloos Pesigan, Michael A. Russell, Sy-Miin Chow}
+
+\authorsaffiliations{{Edna Bennett Pierce Prevention Research Center, The Pennsylvania State University}, {Department of Biobehavioral Health, The Pennsylvania State University}, {Department of Human Development and Family Studies, The Pennsylvania State University}}
+
+\leftheader{Pesigan, Russell, \& Chow}
+
+\keywords{mediation, effect size, continuous-time, delta method, Monte Carlo method, parametric bootstrap, regions of significance, R package, cTMed}
+
+\authornote{\addORCIDlink{Ivan Jacob Agaloos Pesigan}{0000-0003-4818-8420}; \addORCIDlink{Michael A. Russell}{0000-0002-3956-604X}; \addORCIDlink{Sy-Miin Chow}{0000-0003-1938-027X}.
+		
+This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 MPIs: J. Maggs \& S. Lanza) from the National Institute on Drug Abuse (NIDA), the National Institutes of Health Intensive Longitudinal Health Behavior Cooperative Agreement Program U24AA027684, National Science Foundation grants DUE-2417294, the National Center for Advancing Translational Sciences under UL1TR002014-06, and the National Institute of Diabetes, Digestive \& Kidney Diseases under U01DK135126.
+		  
+Computations for this research were performed on the Pennsylvania State University's Institute for Computational and Data Sciences' Roar supercomputer.
+		
+Some of the data and ideas in the manuscript were presented at the Society for Prevention Research Conference in May 2024 and the International Meeting of Psychometric Society in July 2024.
+		
+Correspondence concerning this article should be addressed to Ivan Jacob Agaloos Pesigan, Edna Bennett Pierce Prevention Research Center, College of Health and Human Development, The Pennsylvania State University, 320 Biobehavioral Health Building, University Park, PA 16802 or by email (ijapesigan@psu.edu).}
+
+\begin{document}
+
+\maketitle
+
+\section{Links}
+
+\subsection{Research Compendium}
+
+The data and materials for this study are available on OSF (\url{https://osf.io/qwnmf}) and GitHub (\url{https://github.com/jeksterslab/manCTMed}, \url{https://jeksterslab.github.io/manCTMed/index.html}).
+
+\subsection{cTMed R Package}
+
+Source code and documentation for the \texttt{cTMed} \texttt{R} package are available on GitHub (\url{https://github.com/jeksterslab/cTMed}, \url{https://jeksterslab.github.io/cTMed/index.html}).
+
+\subsection{Illustration 1}
+
+\url{https://jeksterslab.github.io/manCTMed/articles/fig-example-1.html}
+
+\subsection{Illustration 2}
+
+\url{https://jeksterslab.github.io/manCTMed/articles/fig-example-2.html}
+
+\subsection{Illustration 3}
+
+\url{https://jeksterslab.github.io/manCTMed/articles/fig-example-3.html}
+
+\subsection{Single Replication from the Simulation Study}
+
+\url{https://jeksterslab.github.io/manCTMed/articles/replication.html}
+
+\subsection{Containers for Reproducibility}
+
+\url{https://jeksterslab.github.io/manCTMed/articles/containers.html}
+
+% \section{Tables}
+
+% \listoftables
+
+% %% begin.rcode
+% % #| include = FALSE
+% % x <- readRDS(
+% %   root$find_file(
+% %     ".setup",
+% %     "data-raw",
+% %     "example-table-coef-133.Rds"
+% %   )
+% % )
+% % x <- x[, c(1, 2, 4, 5, 6, 8, 9, 12, 13, 16, 17, 20, 21)]
+% % table_coef_133 <- .Tabular(
+% %   x = x,
+% %   digits = 3
+% % )
+% %% end.rcode
+
+% \begin{sidewaystable*}
+% 	\begin{threeparttable}
+% 		\scriptsize
+% 		\caption{Point Estimates and 95\% CIs of the CT-VAR Drift Matrix $\boldsymbol{\Phi}$ and the DT-VAR ($\Delta t = 1$) Lagged Coefficients Matrix $\boldsymbol{\beta}$ for a Single Data Set Simulated from \textcite{Grundy-Gondoli-BlodgettSalafia-2007}}
+% 		\label{tab:manCTMed-example-1}
+% 		\begin{tabular}{@{}lcccccccccccc@{}}
+% 			\toprule
+% 			& \multicolumn{3}{c}{CT-VAR} & \multicolumn{9}{c}{DT-VAR} \\
+% 			\cmidrule(lr){2-4}
+% 			\cmidrule(lr){5-13}
+% 			&  &  &  &  & \multicolumn{2}{c}{Delta} & \multicolumn{2}{c}{MC} & \multicolumn{2}{c}{PB PC} & \multicolumn{2}{c}{PB BC} \\
+% 			\cmidrule(lr){6-7}
+% 			\cmidrule(lr){8-9}
+% 			\cmidrule(lr){10-11}
+% 			\cmidrule(lr){12-13}
+% 			Parameter & Estimate & 2.5\% & 97.5\% & Estimate & 2.5\% & 97.5\% & 2.5\% & 97.5\% & 2.5\% & 97.5\% & 2.5\% & 97.5\% \\ \midrule
+% 			\rinline{table_coef_133}
+% 			\bottomrule
+% 		\end{tabular}
+% 		\begin{tablenotes}[para,flushleft]
+% 			{\tiny
+% 				\textit{Note.}
+% 				Estimates for the CT-VAR are calculated using the \texttt{dynr} package.
+% 				Estimates for the DT-VAR are calculated
+% 				using the \texttt{DeltaBeta} (delta method), \texttt{MCBeta} (MC), and \texttt{BootBeta} (PB) functions from the \texttt{cTMed} package.
+% 			}
+% 		\end{tablenotes}
+% 	\end{threeparttable}
+% \end{sidewaystable*}
+
+% %% begin.rcode
+% % #| include = FALSE
+% % rm(x)
+% % rm(table_coef_133)
+% %% end.rcode
+
+\section{Figures}
+
+\listoffigures
+
+\begin{figure*}
+	\caption{Regions of Significance for the Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-delta-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-delta-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-delta-133-1.png}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-mc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-mc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-mc-133-1.png}
+	\end{subfigure}
+				
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-pc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-pc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-pc-133-1.png}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-pb-bc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-pb-bc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-pb-bc-133-1.png}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+	\label{fig:manCTMed-example-3-xmy-133}
+\end{figure*}
+
+\begin{figure*}
+	\caption{Regions of Significance for the Standardized Direct, Indirect, and Total Effects (Conflict $\to$ Knowledge $\to$ Competence)}
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-delta-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-delta-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-delta-133-1.png}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-mc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-mc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-mc-133-1.png}
+	\end{subfigure}
+				
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-pc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-pc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-pc-133-1.png}
+	\end{subfigure}
+					
+	\medskip
+				
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-direct-std-pb-bc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-indirect-std-pb-bc-133-1.png}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}{.333333\textwidth}
+		\centering
+		\includegraphics[scale = .39]{.setup/latex/figures/png/fig-vignettes-example-3-xmy-total-std-pb-bc-133-1.png}
+	\end{subfigure}
+	\footnotesize
+	\emph{Note:} The shaded areas represent regions of significance, that is, instances where the $95\%$ CIs did not contain zero for a given time interval.
+	\label{fig:manCTMed-example-std-3-xmy-133}
+\end{figure*}
+
+% \subsection{Moderate Coupling}
+
+% \subsubsection{Unstandardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Moderate Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-1-25-1.png}
+	\label{fig:simulation-zero-coverage-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Moderate Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-25-30-1.png}
+	\label{fig:simulation-zero-coverage-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Moderate Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-1.png}
+	\label{fig:simulation-zero-power}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Moderate Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-1.png}
+	\label{fig:simulation-zero-type1}
+\end{sidewaysfigure*}
+
+% \subsubsection{Standardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Moderate Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-1-25-1.png}
+	\label{fig:simulation-zero-coverage-std-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Moderate Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-coverage-std-25-30-1.png}
+	\label{fig:simulation-zero-coverage-std-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Moderate Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-power-std-1.png}
+	\label{fig:simulation-zero-power-std}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Moderate Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-zero-type1-std-1.png}
+	\label{fig:simulation-zero-type1-std}
+\end{sidewaysfigure*}
+
+% \subsection{Strong Coupling}
+
+% \subsubsection{Unstandardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Strong Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-1-25-1.png}
+	\label{fig:simulation-pos-coverage-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Strong Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-25-30-1.png}
+	\label{fig:simulation-pos-coverage-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Strong Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-1.png}
+	\label{fig:simulation-pos-power}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Strong Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-1.png}
+	\label{fig:simulation-pos-type1}
+\end{sidewaysfigure*}
+
+% \subsubsection{Standardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Strong Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-1-25-1.png}
+	\label{fig:simulation-pos-coverage-std-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Strong Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-coverage-std-25-30-1.png}
+	\label{fig:simulation-pos-coverage-std-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Strong Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-power-std-1.png}
+	\label{fig:simulation-pos-power-std}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Strong Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-pos-type1-std-1.png}
+	\label{fig:simulation-pos-type1-std}
+\end{sidewaysfigure*}
+
+% \subsection{Weak Coupling}
+
+% \subsubsection{Unstandardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Weak Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-1-25-1.png}
+	\label{fig:simulation-neg-coverage-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Weak Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-25-30-1.png}
+	\label{fig:simulation-neg-coverage-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Weak Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-1.png}
+	\label{fig:simulation-neg-power}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Weak Coupling | Unstandardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-1.png}
+	\label{fig:simulation-neg-type1}
+\end{sidewaysfigure*}
+
+% \subsubsection{Standardized Effects}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 1 to 25 | Weak Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-1-25-1.png}
+	\label{fig:simulation-neg-coverage-std-head}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Coverage Probabilities ($\Delta t$ from 25 to 30 | Weak Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-coverage-std-25-30-1.png}
+	\label{fig:simulation-neg-coverage-std-tail}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Statistical Power (Weak Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-power-std-1.png}
+	\label{fig:simulation-neg-power-std}
+\end{sidewaysfigure*}
+
+\begin{sidewaysfigure*}
+	\caption{Monte Carlo Simulation Study Type I Error Rate (Weak Coupling | Standardized)}
+	\centering
+	\includegraphics[scale = .8]{.setup/latex/figures/png/fig-vignettes-scatter-plots-neg-type1-std-1.png}
+	\label{fig:simulation-neg-type1-std}
+\end{sidewaysfigure*}
+
+\printbibliography
+
+\end{document}

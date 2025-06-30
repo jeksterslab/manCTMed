@@ -1,0 +1,33 @@
+\contentsline {section}{\numberline {1}Background}{2}{section.1}%
+\contentsline {section}{\numberline {2}Disclaimer}{2}{section.2}%
+\contentsline {section}{\numberline {3}\textsf {apa7} Version 2.01 Changes to Authors and Affiliations}{2}{section.3}%
+\contentsline {section}{\numberline {4}Usage}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Class Options}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Document Preamble}{4}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Document Title and Headers}{4}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Authors and Affiliations}{5}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Title Page Information}{6}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Maketitle}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Heading Levels}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Enumeration}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Other Macros}{8}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Appendices}{9}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Known Limitations}{9}{section.5}%
+\contentsline {section}{\numberline {6}Development of \textsf {apa7}}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Section Headings}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Author Note}{9}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Features}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Masked References}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Repositioned Floats}{11}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}User-defined Font Size}{11}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Watermark}{11}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Flexible Bibliographies}{11}{subsection.7.5}%
+\contentsline {subsubsection}{\numberline {7.5.1}\textsf {biblatex}}{11}{subsubsection.7.5.1}%
+\contentsline {subsubsection}{\numberline {7.5.2}\textsf {apacite}}{11}{subsubsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.3}\textsf {natbib}}{12}{subsubsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.6}Keywords}{12}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Float Placement}{12}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Dependencies}{12}{section.8}%
+\contentsline {section}{\numberline {9}Examples}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}shortsample.tex}{14}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}shortsample.pdf}{17}{subsection.9.2}%

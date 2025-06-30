@@ -1,0 +1,55 @@
+year <- 2025
+author_text <- "Pesigan, I. J. A., Russell, M. A., & Chow, S.-M."
+pkg <- meta$Package
+title <- "Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models"
+version <- meta$Version
+author <- c(
+  person(
+    given = "Ivan Jacob Agaloos",
+    family = "Pesigan",
+    role = c("aut", "cre", "cph"),
+    email = "r.jeksterslab@gmail.com",
+    comment = c(ORCID = "0000-0003-4818-8420")
+  ),
+  person(
+    given = "Michael A.",
+    family = "Russell",
+    role = "ctb",
+    email = "mar60@psu.edu",
+    comment = c(ORCID = "0000-0002-3956-604X")
+  ),
+  person(
+    given = "Sy-Miin",
+    family = "Chow",
+    role = "ctb",
+    email = "quc16@psu.edu",
+    comment = c(ORCID = "0000-0003-1938-027X")
+  )
+)
+note <- sprintf(
+  "R package version %s",
+  meta$Version
+)
+url <- "https://github.com/jeksterslab/manCTMed"
+
+bibentry(
+  bibtype = "Article",
+  author = author,
+  title = title,
+  year = year,
+  doi = "10.0000/0000000000",
+  journal = "Psychological Methods",
+  note = note,
+  textVersion = paste0(
+    author_text, " ",
+    "(", year, ")", ".", " ",
+    title, ".", " ",
+    "Psychological Methods", ".", " ",
+    "https://doi.org/10.0000/0000000000", " "
+  ),
+  header = paste(
+    "To cite",
+    pkg,
+    "in publications, please use:"
+  )
+)

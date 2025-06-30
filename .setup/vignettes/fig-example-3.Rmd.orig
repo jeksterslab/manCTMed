@@ -1,0 +1,844 @@
+---
+title: "Illustration 3 - Regions of Significance"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Illustration 3 - Regions of Significance}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette accompanies Illustration 3. The goal of the illustration is to visualize regions of significance, that is, a range of time intervals, where the effects are significantly different from zero, using confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a range of time intervals. This example features `plot` methods for the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-example-3-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+```{r}
+#| include = FALSE
+library(dynr)
+library(bootStateSpace)
+library(cTMed)
+```
+
+```{r}
+#| eval = FALSE
+library(bootStateSpace)
+library(cTMed)
+```
+
+## Continuous-Time Vector Autoregressive Model Estimates
+
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
+
+```{r}
+#| include = FALSE
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+  )
+)
+```
+
+```{r}
+summary(fit)
+```
+
+## Parameter Estimates
+
+We extract parameter estimates from the `fit` object.
+
+```{r}
+# drift matrix
+phi <- matrix(
+  data = coef(fit)[
+    c(
+      "phi_11", "phi_21", "phi_31",
+      "phi_12", "phi_22", "phi_32",
+      "phi_13", "phi_23", "phi_33"
+    )
+  ],
+  nrow = 3
+)
+# column names and row names are needed to define the indirect effects
+colnames(phi) <- rownames(phi) <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+```
+
+```{r}
+# process noise covariance matrix
+sigma <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+```{r}
+# measurement error covariance matrix
+theta <- matrix(
+  data = coef(fit)[
+    c(
+      "theta_11", 0, 0,
+      0, "theta_22", 0,
+      0, 0, "theta_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+```{r}
+# initial condition
+mu0 <- coef(fit)[
+  c(
+    "mu0_1", "mu0_2", "mu0_3"
+  )
+]
+sigma0 <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma0_11", "sigma0_12", "sigma0_13",
+      "sigma0_12", "sigma0_22", "sigma0_23",
+      "sigma0_13", "sigma0_23", "sigma0_33"
+    )
+  ],
+  nrow = 3
+)
+```   
+
+### Sampling Variance-Covariance Matrix of Parameter Estimates
+
+```{r}
+# combining the drift matrix and the process noise covariance matrix
+phi_sigma_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33",
+  "sigma_11", "sigma_12", "sigma_13",
+  "sigma_22", "sigma_23",
+  "sigma_33"
+)
+vcov_theta <- vcov(fit)[phi_sigma_names, phi_sigma_names]
+```
+
+```{r}
+phi_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33"
+)
+vcov_phi_vec <- vcov_theta[phi_names, phi_names]
+```
+
+```{r}
+# range of time intervals
+delta_t <- sort(
+  c(
+    0:10,
+    seq(from = 0, to = 10, length.out = 1000)
+  )
+)
+```
+
+## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `DeltaMed` presents the regions of significance visually represented by shaded areas in the plot.
+
+
+```{r}
+delta <- DeltaMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(delta)
+```
+
+## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `MCMed` presents the regions of significance visually represented by shaded areas in the plot.
+
+```{r}
+mc <- MCMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  R = 20000L,
+  ncores = parallel::detectCores(), # use multiple cores
+  seed = 42
+)
+plot(mc)
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multiple times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+
+> **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
+
+```{r}
+R <- 1000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "illustration_pb"
+```
+
+```{r}
+phi_hat <- phi
+sigma_hat <- sigma
+```
+
+```{r}
+#| eval = FALSE
+boot <- PBSSMOUFixed(
+  R = R,
+  path = path,
+  prefix = prefix,
+  n = 133,
+  time = 101,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = t(chol(sigma0)),
+  mu = c(0, 0, 0),
+  phi = phi,
+  sigma_l = t(chol(sigma)),
+  nu = c(0, 0, 0),
+  lambda = diag(3),
+  theta_l = t(chol(theta)),
+  mu0_fixed = FALSE,
+  sigma0_fixed = FALSE,
+  ncores = parallel::detectCores(),
+  seed = 42,
+  clean = FALSE
+)
+```
+
+```{r}
+#| include = FALSE
+boot <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-dynr-boot-para-00001-00001.Rds"
+  )
+)
+```
+
+Using the `BootMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated. This makes regions of significance more visible. Consider using the `ncores` argument to use multiple cores when the `delta_t` vector is long. The `plot` method for the `BootMed` presents the regions of significance visually represented by shaded areas in the plot.
+
+```{r}
+pb <- BootMed(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  phi_hat = phi_hat,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(pb)
+plot(pb, type = "bc") # bias-corrected
+```
+
+## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a long sequence of time interval values are generated.
+
+```{r}
+delta_std <- DeltaMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(delta_std)
+```
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+mc_std <- MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  R = 20000L,
+  ncores = parallel::detectCores(),
+  seed = 42
+)
+plot(mc_std)
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `BootMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+pb <- BootMedStd(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
+  phi_hat = phi_hat,
+  sigma_hat = sigma_hat,
+  delta_t = delta_t,
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+plot(pb)
+plot(pb, type = "bc")
+```
+
+```{r}
+#| include = FALSE
+data_process_example_med_plot <- function(n,
+                                          model,
+                                          effect,
+                                          method,
+                                          delta_t_max = 10) {
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  ci_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-",
+      n,
+      ".Rds"
+    )
+  )
+  ci <- readRDS(
+    ci_file
+  )
+  ci <- ci[which(ci$interval <= delta_t_max), ]
+  ci <- ci[which(ci$model == model), ]
+  ci <- ci[which(ci$n == n), ]
+  if (method == "delta") {
+    method_label <- "Delta Method"
+  }
+  if (method == "mc") {
+    method_label <- "MC Method"
+  }
+  if (method == "pb_pc") {
+    method_label <- "PB PC Method"
+  }
+  if (method == "pb_bc") {
+    method_label <- "PB BC Method"
+  }
+  graphics::plot.default(
+    x = 0,
+    y = 0,
+    xlim = range(ci$interval),
+    ylim = range(c(ci$est, ci$ll, ci$ul)),
+    type = "n",
+    xlab = "Time Interval",
+    ylab = "Estimate",
+    main =  paste0(
+      gsub(
+        pattern = "(^|[[:space:]])([[:alpha:]])",
+        replacement = "\\1\\U\\2",
+        x = effect,
+        perl = TRUE
+      ),
+      " Effect",
+      " | ",
+      method_label
+    )
+  )
+  ci <- ci[which(ci$effect == effect), ]
+  ci <- ci[which(ci$method == method), ]
+  if (effect == "total") {
+    col <- "#5e3c99"
+  }
+  if (effect == "direct") {
+    col <- "#2c7bb6"
+  }
+  if (effect == "indirect") {
+    col <- "#d7191c"
+  }
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  graphics::abline(
+    h = 0
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$est,
+    type = "l",
+    col = col,
+    lty = 1,
+    lwd = 3
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ll,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ul,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+}
+```
+
+```{r, xmy-direct-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "direct", method = "delta")
+```
+
+```{r, xmy-direct-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-direct-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "direct", method = "pb_bc")
+```
+
+```{r, xmy-indirect-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "indirect", method = "delta")
+```
+
+```{r, xmy-indirect-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-indirect-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "indirect", method = "pb_bc")
+```
+
+```{r, xmy-total-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "total", method = "delta")
+```
+
+```{r, xmy-total-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "total", method = "mc")
+```
+
+```{r, xmy-total-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xmy", effect = "total", method = "pb_bc")
+```
+
+```{r, xym-direct-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "direct", method = "delta")
+```
+
+```{r, xym-direct-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-direct-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "direct", method = "pb_pc")
+```
+
+```{r, xym-direct-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "direct", method = "pb_bc")
+```
+
+```{r, xym-indirect-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "indirect", method = "delta")
+```
+
+```{r, xym-indirect-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "indirect", method = "mc")
+```
+
+```{r, xym-indirect-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xym-indirect-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "indirect", method = "pb_bc")
+```
+
+```{r, xym-total-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "total", method = "delta")
+```
+
+```{r, xym-total-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "total", method = "mc")
+```
+
+```{r, xym-total-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "total", method = "pb_pc")
+```
+
+```{r, xym-total-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_plot(n = 133, model = "xym", effect = "total", method = "pb_bc")
+```
+
+```{r}
+#| include = FALSE
+data_process_example_med_std_plot <- function(n,
+                                              model,
+                                              effect,
+                                              method,
+                                              delta_t_max = 10) {
+  # find root directory
+  root <- rprojroot::is_rstudio_project
+  ci_file <- root$find_file(
+    ".setup",
+    "data-raw",
+    paste0(
+      "ci-example-std-",
+      n,
+      ".Rds"
+    )
+  )
+  ci <- readRDS(
+    ci_file
+  )
+  ci <- ci[which(ci$interval <= delta_t_max), ]
+  ci <- ci[which(ci$model == model), ]
+  ci <- ci[which(ci$n == n), ]
+
+  if (method == "delta") {
+    method_label <- "Delta Method"
+  }
+  if (method == "mc") {
+    method_label <- "MC Method"
+  }
+  if (method == "pb_pc") {
+    method_label <- "PB PC Method"
+  }
+  if (method == "pb_bc") {
+    method_label <- "PB BC Method"
+  }
+  graphics::plot.default(
+    x = 0,
+    y = 0,
+    xlim = range(ci$interval),
+    ylim = range(c(ci$est, ci$ll, ci$ul)),
+    type = "n",
+    xlab = "Time Interval",
+    ylab = "Estimate",
+    main =  paste0(
+      gsub(
+        pattern = "(^|[[:space:]])([[:alpha:]])",
+        replacement = "\\1\\U\\2",
+        x = effect,
+        perl = TRUE
+      ),
+      " Effect",
+      " | ",
+      method_label
+    )
+  )
+  ci <- ci[which(ci$effect == effect), ]
+  ci <- ci[which(ci$method == method), ]
+  if (effect == "total") {
+    col <- "#5e3c99"
+  }
+  if (effect == "direct") {
+    col <- "#2c7bb6"
+  }
+  if (effect == "indirect") {
+    col <- "#d7191c"
+  }
+  for (i in seq_along(ci$interval)) {
+    if (!(ci$ll[i] <= 0 && 0 <= ci$ul[i])) {
+      graphics::segments(
+        x0 = ci$interval[i],
+        y0 = ci$ll[i],
+        x1 = ci$interval[i],
+        y1 = ci$ul[i],
+        col = col,
+        lty = 3,
+        lwd = 1
+      )
+    }
+  }
+  graphics::abline(
+    h = 0
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$est,
+    type = "l",
+    col = col,
+    lty = 1,
+    lwd = 3
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ll,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+  graphics::lines(
+    x = ci$interval,
+    y = ci$ul,
+    type = "l",
+    col = col,
+    lty = 3,
+    lwd = 2
+  )
+}
+```
+
+```{r, xmy-direct-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "direct", method = "delta")
+```
+
+```{r, xmy-direct-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "direct", method = "mc")
+```
+
+```{r, xmy-direct-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "direct", method = "pb_pc")
+```
+
+```{r, xmy-direct-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "direct", method = "pb_bc")
+```
+
+```{r, xmy-indirect-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "indirect", method = "delta")
+```
+
+```{r, xmy-indirect-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "indirect", method = "mc")
+```
+
+```{r, xmy-indirect-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xmy-indirect-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "indirect", method = "pb_bc")
+```
+
+```{r, xmy-total-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "total", method = "delta")
+```
+
+```{r, xmy-total-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "total", method = "mc")
+```
+
+```{r, xmy-total-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "total", method = "pb_pc")
+```
+
+```{r, xmy-total-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xmy", effect = "total", method = "pb_bc")
+```
+
+```{r, xym-direct-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "direct", method = "delta")
+```
+
+```{r, xym-direct-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "direct", method = "mc")
+```
+
+```{r, xym-direct-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "direct", method = "pb_pc")
+```
+
+```{r, xym-direct-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "direct", method = "pb_bc")
+```
+
+```{r, xym-indirect-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "indirect", method = "delta")
+```
+
+```{r, xym-indirect-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "indirect", method = "mc")
+```
+
+```{r, xym-indirect-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "indirect", method = "pb_pc")
+```
+
+```{r, xym-indirect-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "indirect", method = "pb_bc")
+```
+
+```{r, xym-total-std-delta-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "total", method = "delta")
+```
+
+```{r, xym-total-std-mc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "total", method = "mc")
+```
+
+```{r, xym-total-std-pb-pc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "total", method = "pb_pc")
+```
+
+```{r, xym-total-std-pb-bc-133}
+#| include = FALSE,
+#| cache = FALSE
+data_process_example_med_std_plot(n = 133, model = "xym", effect = "total", method = "pb_bc")
+```

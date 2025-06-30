@@ -1,0 +1,41 @@
+---
+title: "manCTMed: Session"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{manCTMed: Session}
+  %\VignetteEngine{quarto::quarto}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-"
+)
+```
+
+```{r}
+#| message = FALSE
+library(manCTMed)
+```
+
+# Session
+
+```{r}
+sessionInfo()
+```
+
+# CPU
+
+```{r}
+cat(system("lscpu", intern = TRUE), sep = "\n")
+```
+
+# Memory
+
+```{r}
+cat(system("free -g -h -t", intern = TRUE), sep = "\n")
+```

@@ -1,0 +1,106 @@
+\documentclass[tikz, border = 1mm]{standalone}
+
+\usepackage{xcolor}
+
+\definecolor{direct}{HTML}{2C7BB6}
+\definecolor{indirect}{HTML}{D7191C}
+\definecolor{total}{HTML}{5E3C99}
+
+\usepackage{sansmathfonts}
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 20mm,
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		inv/.style = {
+			rectangle,
+			draw=none,
+			fill=none,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 10mm
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			ultra thick,
+			>=stealth'
+		},
+		dot/.style = {
+			->,
+			thick,
+			>=stealth',
+            densely dotted
+		},
+		dashed/.style = {
+			->,
+			thick,
+			>=stealth',
+            loosely dashed
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[manifest] (X0) {$X_{t}$};
+	\node[manifest] (M0) [below = of X0] {$M_{t}$};
+	\node[manifest] (Y0) [below = of M0] {$Y_{t}$};
+	\node[manifest] (X1) [right = of X0] {$X_{t + 1}$};
+	\node[manifest] (M1) [below = of X1] {$M_{t + 1}$};
+	\node[manifest] (Y1) [below = of M1] {$Y_{t + 1}$};
+	\node[manifest] (X2) [right = of X1] {$X_{t + 2}$};
+	\node[manifest] (M2) [below = of X2] {$M_{t + 2}$};
+	\node[manifest] (Y2) [below = of M2] {$Y_{t + 2}$};
+	\node[inv] (X3) [right = .1 cm of X2] {$\cdots$};
+	\node[inv] (M3) [below = of X3] {$\cdots$};
+	\node[inv] (Y3) [below = of M3] {$\cdots$};
+	\draw[dot, color = direct] (X0) to node {} (X1);
+	%\draw[dot, color = direct] (X0) to node {} (M1);
+	\draw[dot, color = direct] (X0) to node {} (Y1);
+	\draw[dot, color = direct] (M0) to node {} (M1);
+	\draw[dot, color = direct] (M0) to node {} (Y1);
+	\draw[dot, color = direct] (Y0) to node {} (Y1);
+	\draw[dot, color = direct] (X1) to node {} (X2);
+	\draw[dot, color = direct] (X1) to node {} (M2);
+	\draw[dot, color = direct] (X1) to node {} (Y2);
+	\draw[dot, color = direct] (M1) to node {} (M2);
+	%\draw[dot, color = direct] (M1) to node {} (Y2);
+	\draw[dot, color = direct] (Y1) to node {} (Y2);
+    \draw[path, color = indirect] (X0) to node[near start, above] {$\alpha$} (M1);
+    \draw[path, color = indirect] (M1) to node[near end, below] {$\beta$} (Y2);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,143 @@
+\documentclass[tikz, border = 1mm]{standalone}
+
+\usepackage{sansmathfonts}
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 25mm,
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		inv/.style = {
+			rectangle,
+			draw=none,
+			fill=none,
+			inner sep = 0pt,
+			minimum width = 15mm,
+			minimum height = 10mm
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			thick,
+			>=stealth'
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[manifest] (X0) {$X_{t}$};
+	\node[manifest] (M0) [below = of X0] {$M_{t}$};
+	\node[manifest] (Y0) [below = of M0] {$Y_{t}$};
+	\node[manifest] (X1) [right = of X0] {$X_{t + 1}$};
+	\node[manifest] (M1) [right = of M0] {$M_{t + 1}$};
+	\node[manifest] (Y1) [right = of Y0] {$Y_{t + 1}$};
+	\node[manifest] (X2) [right = of X1] {$X_{t + 2}$};
+	\node[manifest] (M2) [right = of M1] {$M_{t + 2}$};
+	\node[manifest] (Y2) [right = of Y1] {$Y_{t + 2}$};
+	\node[manifest] (X3) [right = of X2] {$X_{t + 3}$};
+	\node[manifest] (M3) [right = of M2] {$M_{t + 3}$};
+	\node[manifest] (Y3) [right = of Y2] {$Y_{t + 3}$};
+	\node[manifest] (X4) [right = of X3] {$X_{t + 4}$};
+	\node[manifest] (M4) [right = of M3] {$M_{t + 4}$};
+	\node[manifest] (Y4) [right = of Y3] {$Y_{t + 4}$};
+	\node[manifest] (X5) [right = of X4] {$X_{t + 5}$};
+	\node[manifest] (M5) [right = of M4] {$M_{t + 5}$};
+	\node[manifest] (Y5) [right = of Y4] {$Y_{t + 5}$};
+ 	\node[manifest] (X6) [right = of X5] {$X_{t + 6}$};
+	\node[manifest] (M6) [right = of M5] {$M_{t + 6}$};
+	\node[manifest] (Y6) [right = of Y5] {$Y_{t + 6}$};
+    \draw[path] (X0) to node[near start, above] {\scriptsize $0.70$} (X1);
+    \draw[path] (X0) to node[near start, right] {\scriptsize $0.50$} (M1);
+    \draw[path] (X0) to node[near start, right] {\scriptsize $-0.10$} (Y1);
+    \draw[path] (M0) to node[near start, below] {\scriptsize $0.60$} (M1);
+    \draw[path] (M0) to node[near start, right] {\scriptsize $0.40$} (Y1);
+    \draw[path] (Y0) to node[near start, above] {\scriptsize $0.50$} (Y1);
+    \draw[path] (X1) to node[near start, above] {\scriptsize $0.70$} (X2);
+    \draw[path] (X1) to node[near start, right] {\scriptsize $0.50$} (M2);
+    \draw[path] (X1) to node[near start, right] {\scriptsize $-0.10$} (Y2);
+    \draw[path] (M1) to node[near start, below] {\scriptsize $0.60$} (M2);
+    \draw[path] (M1) to node[near start, right] {\scriptsize $0.40$} (Y2);
+    \draw[path] (Y1) to node[near start, above] {\scriptsize $0.50$} (Y2);
+    \draw[path] (X2) to node[near start, above] {\scriptsize $0.70$} (X3);
+    \draw[path] (X2) to node[near start, right] {\scriptsize $0.50$} (M3);
+    \draw[path] (X2) to node[near start, right] {\scriptsize $-0.10$} (Y3);
+    \draw[path] (M2) to node[near start, below] {\scriptsize $0.60$} (M3);
+    \draw[path] (M2) to node[near start, right] {\scriptsize $0.40$} (Y3);
+    \draw[path] (Y2) to node[near start, above] {\scriptsize $0.50$} (Y3);
+    \draw[path] (X3) to node[near start, above] {\scriptsize $0.70$} (X4);
+    \draw[path] (X3) to node[near start, right] {\scriptsize $0.50$} (M4);
+    \draw[path] (X3) to node[near start, right] {\scriptsize $-0.10$} (Y4);
+    \draw[path] (M3) to node[near start, below] {\scriptsize $0.60$} (M4);
+    \draw[path] (M3) to node[near start, right] {\scriptsize $0.40$} (Y4);
+    \draw[path] (Y3) to node[near start, above] {\scriptsize $0.50$} (Y4);
+    \draw[path] (X4) to node[near start, above] {\scriptsize $0.70$} (X5);
+    \draw[path] (X4) to node[near start, right] {\scriptsize $0.50$} (M5);
+    \draw[path] (X4) to node[near start, right] {\scriptsize $-0.10$} (Y5);
+    \draw[path] (M4) to node[near start, below] {\scriptsize $0.60$} (M5);
+    \draw[path] (M4) to node[near start, right] {\scriptsize $0.40$} (Y5);
+    \draw[path] (Y4) to node[near start, above] {\scriptsize $0.50$} (Y5);
+    \draw[path] (X5) to node[near start, above] {\scriptsize $0.70$} (X6);
+    \draw[path] (X5) to node[near start, right] {\scriptsize $0.50$} (M6);
+    \draw[path] (X5) to node[near start, right] {\scriptsize $-0.10$} (Y6);
+    \draw[path] (M5) to node[near start, below] {\scriptsize $0.60$} (M6);
+    \draw[path] (M5) to node[near start, right] {\scriptsize $0.40$} (Y6);
+    \draw[path] (Y5) to node[near start, above] {\scriptsize $0.50$} (Y6);
+    \draw[cov] (X0) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $1$} (X0);
+    \draw[cov] (M0) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $1$} (M0);
+    \draw[cov] (Y0) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $1$} (Y0);
+    \draw[cov] (X0) to[out = 180, in = 180, looseness = .5] node[right] {\scriptsize $0.20$} (M0);
+    \draw[cov] (X0) to[out = 180, in = 180, looseness = .5] node[left] {\scriptsize $0.20$} (Y0);
+    \draw[cov] (M0) to[out = 180, in = 180, looseness = .5] node[right] {\scriptsize $0.20$} (Y0);
+    \draw[cov] (X1) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X1);
+    \draw[cov] (M1) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M1);
+    \draw[cov] (Y1) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y1);
+    \draw[cov] (X2) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X2);
+    \draw[cov] (M2) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M2);
+    \draw[cov] (Y2) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y2);
+    \draw[cov] (X3) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X3);
+    \draw[cov] (M3) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M3);
+    \draw[cov] (Y3) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y3);
+    \draw[cov] (X4) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X4);
+    \draw[cov] (M4) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M4);
+    \draw[cov] (Y4) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y4);
+    \draw[cov] (X5) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X5);
+    \draw[cov] (M5) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M5);
+    \draw[cov] (Y5) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y5);
+    \draw[cov] (X6) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (X6);
+    \draw[cov] (M6) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (M6);
+    \draw[cov] (Y6) to[out = 70, in = 110, looseness = 5] node[above] {\scriptsize $0.10$} (Y6);
+\end{tikzpicture}
+
+\end{document}

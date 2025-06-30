@@ -1,0 +1,324 @@
+---
+title: "Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Illustration 2 - Confidence Intervals for the Direct, Indirect, and Total Effects}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This vignette accompanies Illustration 2. The goal of the illustration is to calculate confidence intervals for the direct, indirect, and total effects from the continuous-time vector autoregressive model drift matrix $\boldsymbol{\Phi}$ and process noise covariance matrix $\boldsymbol{\Sigma}$ for a range of time intervals. This example features the `DeltaMed`, `MCMed`, `BootMed`, `DeltaMedStd`, `MCMedStd`, and `BootMedStd` functions from the `cTMed` package.
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  fig.path = "fig-vignettes-example-2-",
+  fig.cap = "",
+  fig.width = 8.5 / 1.5,
+  fig.height = 11 / 2.5,
+  fig.retina = 2,
+  dpi = 300,
+  comment = "#>",
+  dev = "ragg_png"
+)
+```
+
+```{r}
+#| include = FALSE
+root <- rprojroot::is_rstudio_project
+```
+
+```{r}
+#| include = FALSE
+library(dynr)
+library(bootStateSpace)
+library(cTMed)
+```
+
+```{r}
+#| eval = FALSE
+library(bootStateSpace)
+library(cTMed)
+```
+
+## Continuous-Time Vector Autoregressive Model Estimates
+
+The object `fit` contains the fitted `dynr` model. Data is generated using the `manCTMed::IllustrationGenData` function. The model was fitted using the `manCTMed::IllustrationFitDynr`.
+
+```{r}
+#| include = FALSE
+fit <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-fit-dynr-00001-00001.Rds"
+  )
+)
+```
+
+```{r}
+summary(fit)
+```
+
+## Parameter Estimates
+
+We extract parameter estimates from the `fit` object.
+
+```{r}
+# drift matrix
+phi <- matrix(
+  data = coef(fit)[
+    c(
+      "phi_11", "phi_21", "phi_31",
+      "phi_12", "phi_22", "phi_32",
+      "phi_13", "phi_23", "phi_33"
+    )
+  ],
+  nrow = 3
+)
+# column names and row names are needed to define the indirect effects
+colnames(phi) <- rownames(phi) <- c(
+  "conflict",
+  "knowledge",
+  "competence"
+)
+```
+
+```{r}
+# process noise covariance matrix
+sigma <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma_11", "sigma_12", "sigma_13",
+      "sigma_12", "sigma_22", "sigma_23",
+      "sigma_13", "sigma_23", "sigma_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+```{r}
+# measurement error covariance matrix
+theta <- matrix(
+  data = coef(fit)[
+    c(
+      "theta_11", 0, 0,
+      0, "theta_22", 0,
+      0, 0, "theta_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+```{r}
+# initial condition
+mu0 <- coef(fit)[
+  c(
+    "mu0_1", "mu0_2", "mu0_3"
+  )
+]
+sigma0 <- matrix(
+  data = coef(fit)[
+    c(
+      "sigma0_11", "sigma0_12", "sigma0_13",
+      "sigma0_12", "sigma0_22", "sigma0_23",
+      "sigma0_13", "sigma0_23", "sigma0_33"
+    )
+  ],
+  nrow = 3
+)
+```
+
+### Sampling Variance-Covariance Matrix of Parameter Estimates
+
+```{r}
+# combining the drift matrix and the process noise covariance matrix
+phi_sigma_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33",
+  "sigma_11", "sigma_12", "sigma_13",
+  "sigma_22", "sigma_23",
+  "sigma_33"
+)
+vcov_theta <- vcov(fit)[phi_sigma_names, phi_sigma_names]
+```
+
+```{r}
+phi_names <- c(
+  "phi_11", "phi_21", "phi_31",
+  "phi_12", "phi_22", "phi_32",
+  "phi_13", "phi_23", "phi_33"
+)
+vcov_phi_vec <- vcov_theta[phi_names, phi_names]
+```
+
+## Delta Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `DeltaMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+delta <- DeltaMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(delta)
+```
+
+## Monte Carlo Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+Using the `MCMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+mc <- MCMed(
+  phi = phi,
+  vcov_phi_vec = vcov_phi_vec,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores(),
+  R = 20000L,
+  seed = 42
+)
+summary(mc)
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Direct, Indirect, and Total Effects
+
+The parametric bootstrap approach involves generating data from the parametric model and fitting the model on the generated data multiple times. The data generation and model fitting is hadled by the `bootStateSpace` package. The estimated parameters are passed as arguments to the `PBSSMOUFixed` function from the `bootStateSpace` package, which generates a parametric bootstrap sampling distribution of the parameter estimates. The argument `R` specifies the number of bootstrap replications. The generated data and model estimates are be stored in `path` using the specified `prefix` for the file names. The `ncores = parallel::detectCores()` argument instructs the function to use all available CPU cores in the system.
+
+> **_NOTE:_**  Fitting the CT-VAR model multiple times is computationally intensive. 
+
+```{r}
+R <- 1000L
+path <- root$find_file(
+  ".setup",
+  "data-raw"
+)
+prefix <- "illustration_pb"
+```
+
+```{r}
+phi_hat <- phi
+sigma_hat <- sigma
+```
+
+```{r}
+#| eval = FALSE
+boot <- PBSSMOUFixed(
+  R = R,
+  path = path,
+  prefix = prefix,
+  n = 133,
+  time = 101,
+  delta_t = 0.10,
+  mu0 = mu0,
+  sigma0_l = t(chol(sigma0)),
+  mu = c(0, 0, 0),
+  phi = phi,
+  sigma_l = t(chol(sigma)),
+  nu = c(0, 0, 0),
+  lambda = diag(3),
+  theta_l = t(chol(theta)),
+  mu0_fixed = FALSE,
+  sigma0_fixed = FALSE,
+  ncores = parallel::detectCores(),
+  seed = 42,
+  clean = TRUE
+)
+```
+
+```{r}
+#| include = FALSE
+boot <- readRDS(
+  root$find_file(
+    ".setup",
+    "data-raw",
+    "manCTMed-illustration-dynr-boot-para-00001-00001.Rds"
+  )
+)
+```
+
+Using the `BootMed` function from the `cTMed` package, confidence intervals for the direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+ci <- BootMed(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  phi_hat = phi_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(ci)
+summary(ci, type = "bc") # bias-corrected
+```
+
+## Delta Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `DeltaMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+delta <- DeltaMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(delta)
+```
+
+## Monte Carlo Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `MCMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+mc <- MCMedStd(
+  phi = phi,
+  sigma = sigma,
+  vcov_theta = vcov_theta,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores(),
+  R = 20000L,
+  seed = 42
+)
+summary(mc)
+```
+
+## Parametric Bootstrap Method Confidence Intervals For The Standardized Direct, Indirect, and Total Effects
+
+Using the `BootMedStd` function from the `cTMed` package, confidence intervals for the standardized direct, indirect, and total effects for a time interval of one, two, and three are given below.
+
+```{r}
+pb <- BootMedStd(
+  phi = extract(object = boot, what = "phi"), # extracts the bootstrap drift matrices
+  sigma = extract(object = boot, what = "sigma"), # extracts the bootstrap process noise covariance matrices
+  phi_hat = phi_hat,
+  sigma_hat = sigma_hat,
+  delta_t = c(1, 2, 3),
+  from = "conflict",
+  to = "competence",
+  med = "knowledge",
+  ncores = parallel::detectCores()
+)
+summary(pb)
+summary(pb, type = "bc") # bias-corrected
+```

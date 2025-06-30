@@ -1,0 +1,71 @@
+---
+title: "Simulation Parameters"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Simulation Parameters}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r}
+#| include = FALSE
+options(DT.warn.size = FALSE)
+```
+
+```{r}
+#| message = FALSE
+library(manCTMed)
+```
+
+## Sample Sizes
+
+```{r}
+#| echo = FALSE,
+#| message = FALSE
+DT::datatable(
+  params,
+  options = list(
+    scrollX = TRUE
+  )
+)
+```
+
+## Effect Sizes
+
+```{r}
+#| include = FALSE
+results <- results[which(results[, "method"] == "delta"), ]
+results <- results[which(results[, "n"] == 50), ]
+results <- results[which(results[, "xmy"] == TRUE), ]
+results <- results[, c("dynamics", "interval", "effect", "parameter")]
+total <- results[which(results[, "effect"] == "total"), ]
+direct <- results[which(results[, "effect"] == "direct"), ]
+indirect <- results[which(results[, "effect"] == "indirect"), ]
+effects <- data.frame(
+  taskid = total$dynamics,
+  interval = total$interval,
+  total = total$parameter,
+  direct = direct$parameter,
+  indirect = indirect$parameter
+)
+```
+
+```{r}
+#| echo = FALSE,
+#| message = FALSE
+DT::datatable(
+  effects,
+  options = list(
+    scrollX = TRUE
+  )
+)
+```

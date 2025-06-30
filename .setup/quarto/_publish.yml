@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 897a02ec-41da-4acc-9ffb-553b3c92984e
+      url: 'https://jeksterslab.quarto.pub/manCTMed'

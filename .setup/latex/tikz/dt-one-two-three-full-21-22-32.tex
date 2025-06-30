@@ -1,0 +1,103 @@
+\documentclass[tikz, border = 1mm]{standalone}
+
+\usepackage{xcolor}
+
+\definecolor{direct}{HTML}{2C7BB6}
+\definecolor{indirect}{HTML}{D7191C}
+\definecolor{total}{HTML}{5E3C99}
+                      
+\usepackage{sansmathfonts}
+
+\begin{document}
+
+\usetikzlibrary{
+	er,
+	arrows,
+	positioning
+}
+
+\begin{tikzpicture}[
+		auto,
+		node distance = 5mm,
+		latent/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		manifest/.style = {
+			rectangle,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 15mm,
+			align = center
+		},
+		inv/.style = {
+			ellipse,
+			draw=none,
+			thick,
+			inner sep = 0pt,
+			minimum size = 20mm,
+			align = center
+		},
+		error/.style = {
+			ellipse,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum size = 7mm,
+			align = center
+		},
+		mean/.style={
+			regular polygon,
+			regular polygon sides = 3,
+			draw,
+			thick,
+			inner sep = 0pt,
+			minimum width = 7mm,
+			minimum height = 7mm
+		},
+		path/.style = {
+			->,
+			line width = 2.5pt,
+			>=stealth'
+		},
+		dot/.style = {
+			->,
+			line width = 2.5pt,
+			>=stealth',
+            dashdotted
+		},
+		dashed/.style = {
+			->,
+			line width = 2.5pt,
+			>=stealth',
+            loosely dashed
+		},
+		cov/.style = {
+			<->,
+			thick,
+			>=stealth'
+		},
+	]
+	\node[latent] (X0) {$\eta_{X_{t}}$};
+    \node[latent] (M0) [below = of X0] {$\eta_{M_{t}}$};
+	\node[latent] (Y0) [below = of M0] {$\eta_{Y_{t}}$}; 
+	\node[latent] (X1) [right = of X0] {$\eta_{X_{t + 1}}$};
+	\node[latent] (M1) [right = of M0] {$\eta_{M_{t + 1}}$};
+	\node[latent] (Y1) [right = of Y0] {$\eta_{Y_{t + 1}}$};
+	\node[latent] (X2) [right = of X1] {$\eta_{X_{t + 2}}$};
+	\node[latent] (M2) [right = of M1] {$\eta_{M_{t + 2}}$};
+	\node[latent] (Y2) [right = of Y1] {$\eta_{Y_{t + 2}}$};
+	\node[latent] (X3) [right = of X2] {$\eta_{X_{t + 3}}$};
+	\node[latent] (M3) [right = of M2] {$\eta_{M_{t + 3}}$};
+	\node[latent] (Y3) [right = of Y2] {$\eta_{Y_{t + 3}}$};
+	\draw[path, color = indirect] (X0) to node {} (M1);
+    \draw[path, color = indirect] (M1) to node {} (M2);
+    \draw[path, color = indirect] (M2) to node {} (Y3);
+\end{tikzpicture}
+
+\end{document}
