@@ -33,7 +33,8 @@ pkg_cran <- c(
 # )
 
 pkg_github <- c(
-  "jeksterslab/dynUtils@dc3f47b"
+  "jeksterslab/dynUtils@dc3f47b",
+  "jeksterslab/rProject@2fd54e4"
 )
 
 pkg_github_ref <- c()

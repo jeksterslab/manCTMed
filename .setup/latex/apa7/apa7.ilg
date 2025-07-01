@@ -1,10 +1,10 @@
-This is makeindex, version 2.17 [TeX Live 2025] (kpathsea + Thai support).
-Scanning style file /opt/TinyTeX/texmf-dist/makeindex/latex/gind.ist..........
-** Input style error (file = /opt/TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 75):
+This is makeindex, version 2.17 [TeX Live 2024] (kpathsea + Thai support).
+Scanning style file /home/ibp5092/.TinyTeX/texmf-dist/makeindex/latex/gind.ist..........
+** Input style error (file = /home/ibp5092/.TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 75):
    -- Unknown specifier lethead_prefix.
-** Input style error (file = /opt/TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 76):
+** Input style error (file = /home/ibp5092/.TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 76):
    -- Unknown specifier lethead_suffix.
-** Input style error (file = /opt/TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 77):
+** Input style error (file = /home/ibp5092/.TinyTeX/texmf-dist/makeindex/latex/gind.ist, line = 77):
    -- Unknown specifier lethead_flag.
 ...done (13 attributes redefined, 3 ignored).
 Scanning input file apa7.idx...
