@@ -40,9 +40,10 @@ Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils@dc3f47b
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-07-01 23:16:08 UTC; root
-Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph]
-    (<https://orcid.org/0000-0003-4818-8420>),
-  Michael A. Russell [ctb] (<https://orcid.org/0000-0002-3956-604X>),
-  Sy-Miin Chow [ctb] (<https://orcid.org/0000-0003-1938-027X>)
+Packaged: 2025-07-12 02:22:10 UTC; root
+Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0003-4818-8420>),
+  Michael A. Russell [ctb] (ORCID:
+    <https://orcid.org/0000-0002-3956-604X>),
+  Sy-Miin Chow [ctb] (ORCID: <https://orcid.org/0000-0003-1938-027X>)
 Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
