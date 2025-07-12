@@ -1,4 +1,4 @@
-make.sh# Directory Tree Structure
+# Directory Tree Structure
 
 ## Simulation Source Files/Project Folder
 
