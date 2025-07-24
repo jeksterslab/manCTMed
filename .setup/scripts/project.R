@@ -17,6 +17,8 @@
 
 project <- "manCTMed"
 
+rproject_ver <- NULL
+
 # installed using the container
 # "dynr"
 
@@ -33,8 +35,7 @@ pkg_cran <- c(
 # )
 
 pkg_github <- c(
-  "jeksterslab/dynUtils@dc3f47b",
-  "jeksterslab/rProject@2fd54e4"
+  "jeksterslab/dynUtils@dc3f47b"
 )
 
 pkg_github_ref <- c()

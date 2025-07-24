@@ -1,4 +1,4 @@
-data_process_example_results <- function(overwrite = TRUE) {
+data_process_example_results <- function(overwrite = FALSE) {
   cat("\ndata_process_example_results\n")
   set.seed(42)
   # find root directory

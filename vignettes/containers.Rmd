@@ -20,10 +20,8 @@ To build the Apptainer/Singularity image file (`manctmed.sif`),
 run the following.
 
 ```bash
-apptainer pull manctmed.sif docker://ijapesigan/manctmed:latest
+apptainer pull manctmed.sif docker://ijapesigan/manctmed:2025-04-07-05390291
 ```
-
-> **NOTE**: For complete reproducibility of the software stack, the actual `manctmed.sif` used in the simulations can be requested from the maintainer of this GitHub repository.
 
 ## RStudio IDE Docker Container
 
@@ -34,7 +32,7 @@ To facilitate exploration of the package, we created a Docker container based on
 To launch `Rstudio Server`, run the following.
 
 ```bash
-docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manctmed
+docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manctmed:2025-04-07-05390291
 ```
 
 Open `http://localhost:8787` on your web browser to launch `Rstudio Server`.
