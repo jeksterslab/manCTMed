@@ -40,7 +40,7 @@ Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils@dc3f47b
 RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2025-07-29 19:42:23 UTC; root
+Packaged: 2025-08-03 00:49:31 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>),
   Michael A. Russell [ctb] (ORCID:
