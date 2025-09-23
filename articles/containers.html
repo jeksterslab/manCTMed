@@ -77,7 +77,7 @@ with the <code>manCTMed</code> package and all the dependencies
 pre-installed.</p>
 <p>To build the Apptainer/Singularity image file
 (<code>manctmed.sif</code>), run the following.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">apptainer</span> pull manctmed.sif docker://ijapesigan/manctmed:2025-04-07-05390291</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">apptainer</span> pull manctmed.sif docker://ijapesigan/manctmed</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="rstudio-ide-docker-container">RStudio IDE Docker Container<a class="anchor" aria-label="anchor" href="#rstudio-ide-docker-container"></a>
@@ -91,7 +91,7 @@ are pre-installed and can be accessed in the browser using the
 <h3 id="run">Run<a class="anchor" aria-label="anchor" href="#run"></a>
 </h3>
 <p>To launch <code>Rstudio Server</code>, run the following.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-ti</span> <span class="at">-e</span> PASSWORD=yourpassword <span class="at">-p</span> 127.0.0.1:8787:8787 ijapesigan/manctmed:2025-04-07-05390291</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-ti</span> <span class="at">-e</span> PASSWORD=yourpassword <span class="at">-p</span> 127.0.0.1:8787:8787 ijapesigan/manctmed</span></code></pre></div>
 <p>Open <code>http://localhost:8787</code> on your web browser to launch
 <code>Rstudio Server</code>.</p>
 <ul>
