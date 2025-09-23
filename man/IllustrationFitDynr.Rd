@@ -11,7 +11,7 @@ IllustrationFitDynr(data)
 Output of the \code{\link[=IllustrationPrepData]{IllustrationPrepData()}} function.}
 }
 \description{
-The function fits the model using the \link{dynr} package.
+The function fits the model using the \link[dynr:dynr-package]{dynr::dynr} package.
 }
 \examples{
 \dontrun{

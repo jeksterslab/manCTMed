@@ -6,7 +6,7 @@
 \alias{manCTMed-package}
 \title{manCTMed: Continuous Time Mediation}
 \description{
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. Psychological Methods. \doi{10.0000/0000000000}.
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. Psychological Methods. \doi{10.1037/met0000779}.
 }
 \seealso{
 Useful links:
@@ -14,7 +14,7 @@ Useful links:
   \item \url{https://github.com/jeksterslab/manCTMed}
   \item \url{https://jeksterslab.github.io/manCTMed/}
   \item \url{https://osf.io/qwnmf/}
-  \item \doi{10.0000/0000000000}
+  \item \doi{10.1037/met0000779}
   \item Report bugs at \url{https://github.com/jeksterslab/manCTMed/issues}
 }
 

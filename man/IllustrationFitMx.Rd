@@ -11,7 +11,7 @@ IllustrationFitMx(data)
 Output of the \code{\link[=IllustrationPrepData]{IllustrationPrepData()}} function.}
 }
 \description{
-The function fits the model using the \link{OpenMx} package.
+The function fits the model using the \link[OpenMx:OpenMx]{OpenMx::OpenMx} package.
 }
 \examples{
 \dontrun{

@@ -14,7 +14,7 @@ Output of the \code{\link[=RandomMeasurement]{RandomMeasurement()}} function.}
 Task ID.}
 }
 \description{
-The function fits the model using the \link{dynr} package.
+The function fits the model using the \link[dynr:dynr-package]{dynr::dynr} package.
 }
 \examples{
 \dontrun{
