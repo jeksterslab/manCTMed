@@ -123,7 +123,7 @@
 
 \title{Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models (Supplementary Materials)}
 
-\shorttitle{CT Mediation: Inferences \& Effect Sizes}
+\shorttitle{Continuous-Time Mediation: Inferences \& Effect Sizes}
 
 \authorsnames[1, {1, 2}, 3]{Ivan Jacob Agaloos Pesigan, Michael A. Russell, Sy-Miin Chow}
 
@@ -135,7 +135,7 @@
 
 \authornote{\addORCIDlink{Ivan Jacob Agaloos Pesigan}{0000-0003-4818-8420}; \addORCIDlink{Michael A. Russell}{0000-0002-3956-604X}; \addORCIDlink{Sy-Miin Chow}{0000-0003-1938-027X}.
 		
-This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 MPIs: J. Maggs \& S. Lanza) from the National Institute on Drug Abuse (NIDA), the National Institutes of Health Intensive Longitudinal Health Behavior Cooperative Agreement Program U24AA027684, National Science Foundation grants DUE-2417294, the National Center for Advancing Translational Sciences under UL1TR002014-06, and the National Institute of Diabetes, Digestive \& Kidney Diseases under U01DK135126.
+This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 Multiple Principal Investigators: Jennifer Maggs \& Stephanie Lanza) from the National Institute on Drug Abuse (NIDA), the National Institutes of Health Intensive Longitudinal Health Behavior Cooperative Agreement Program (U24AA027684), National Science Foundation (Grant DUE-2417294), the National Center for Advancing Translational Sciences (UL1TR002014-06), and the National Institute of Diabetes, Digestive \& Kidney Diseases (U01DK135126).
 		  
 Computations for this research were performed on the Pennsylvania State University's Institute for Computational and Data Sciences' Roar supercomputer using SLURM for job scheduling \parencite{Yoo-Jette-Grondona-2003}, GNU Parallel to run the simulations in parallel \parencite{Tange-2021}, and Apptainer to ensure a reproducible software stack \parencite{Kurtzer-Sochat-Bauer-2017, Kurtzer-cclerget-Bauer-etal-2021}.
 		

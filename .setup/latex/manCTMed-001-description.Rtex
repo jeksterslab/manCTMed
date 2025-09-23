@@ -77,11 +77,11 @@
 
 \section*{Description}
 
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., \& Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. \textit{Psychological Methods}. \url{https://doi.org/10.0000/0000000000}
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., \& Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. \textit{Psychological Methods}. \url{https://doi.org/10.1037/met0000779}
 
 \section*{Acknowledgments}
 
-This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 MPIs: J. Maggs \& S. Lanza) from the National Institute on Drug Abuse (NIDA), the National Institutes of Health Intensive Longitudinal Health Behavior Cooperative Agreement Program U24AA027684, National Science Foundation grants DUE-2417294, the National Center for Advancing Translational Sciences under UL1TR002014-06, and the National Institute of Diabetes, Digestive \& Kidney Diseases under U01DK135126.
+This research was made possible by the Prevention and Methodology Training Program (PAMT) funded by a T32 training grant (T32 DA017629 Multiple Principal Investigators: Jennifer Maggs \& Stephanie Lanza) from the National Institute on Drug Abuse (NIDA), the National Institutes of Health Intensive Longitudinal Health Behavior Cooperative Agreement Program (U24AA027684), National Science Foundation (Grant DUE-2417294), the National Center for Advancing Translational Sciences (UL1TR002014-06), and the National Institute of Diabetes, Digestive \& Kidney Diseases (U01DK135126).
 
 \noindent Computations for this research were performed on the Pennsylvania State University's Institute for Computational and Data Sciences' Roar supercomputer using SLURM for job scheduling \parencite{Yoo-Jette-Grondona-2003}, GNU Parallel to run the simulations in parallel \parencite{Tange-2021}, and Apptainer to ensure a reproducible software stack \parencite{Kurtzer-Sochat-Bauer-2017, Kurtzer-cclerget-Bauer-etal-2021}. See \texttt{.sim/README.md} and the scripts in the \texttt{.sim} folder in the \href{https://github.com/jeksterslab/manCTMed}{GitHub} repository for more details on how the simulations were performed.
 

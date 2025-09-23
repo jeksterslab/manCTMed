@@ -21,12 +21,12 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/DOI/10.0000/0000000000.svg)](https://doi.org/10.0000/0000000000)
+[![DOI](https://zenodo.org/badge/DOI/10.1037/met0000779.svg)](https://doi.org/10.1037/met0000779)
 <!-- badges: end -->
 
 ## Description
 
-Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. *Psychological Methods*. https://doi.org/10.0000/0000000000
+Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A., & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models. *Psychological Methods*. https://doi.org/10.1037/met0000779
 
 ## Acknowledgments
 

@@ -17,4 +17,4 @@ Save the generated `_publish.yml`. Once the `_publish.yml` is generated, the suc
 
 ## Wiki
 
-This website contains resources related to the R [@RCoreTeam-2024] package [manCTMed](https://github.com/jeksterslab/manCTMed) outside the [pkgdown](https://jeksterslab.github.io/manCTMed) documentation.
+This website contains resources related to the R [@RCoreTeam-2025] package [manCTMed](https://github.com/jeksterslab/manCTMed) outside the [pkgdown](https://jeksterslab.github.io/manCTMed) documentation.

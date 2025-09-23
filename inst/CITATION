@@ -37,7 +37,7 @@ bibentry(
   author = author,
   title = title,
   year = year,
-  doi = "10.0000/0000000000",
+  doi = "10.1037/met0000779",
   journal = "Psychological Methods",
   note = note,
   textVersion = paste0(
@@ -45,7 +45,7 @@ bibentry(
     "(", year, ")", ".", " ",
     title, ".", " ",
     "Psychological Methods", ".", " ",
-    "https://doi.org/10.0000/0000000000", " "
+    "https://doi.org/10.1037/met0000779", " "
   ),
   header = paste(
     "To cite",
