@@ -131,15 +131,15 @@
 
 \abstract{Mediation modeling using longitudinal data is an exciting field that captures the interrelations in dynamic changes, such as mediated changes, over time. Even though discrete-time vector autoregressive (DT-VAR) approaches are commonly used to estimate indirect effects in longitudinal data, they have known limitations due to the dependency of inferential results on the time intervals between successive occasions and the assumption of regular spacing between measurements. Continuous-time vector autoregressive (CT-VAR) models have been proposed as an alternative to address these issues. Previous work in the area \parencite[e.g., ][]{Deboeck-Preacher-2015, Ryan-Hamaker-2021} has shown how the direct, indirect, and total effects, for a range of time interval values, can be calculated using parameters estimated from CT-VAR models for causal inferential purposes. However, both standardized effects size measures and methods for calculating the uncertainty around the direct, indirect, and total effects in continuous-time mediation have yet to be explored. Drawing from the mediation model literature, we present and compare results using the delta, Monte Carlo (MC), and parametric bootstrap (PB) methods to calculate standard errors (SEs) and confidence intervals (CIs) for the direct, indirect, and total effects in continuous-time mediation for inferential purposes. Options to automate these inferential procedures and facilitate interpretations are available in the \texttt{cTMed} \texttt{R} package.
 
-\newpage
+\vspace{1.5ex}
 		
-\centering
-		
-\textbf{Translational Abstract}
-		
-\raggedright
+{\centering \textbf{Translational Abstract}\par}
 		
 \noindent Understanding how one variable influences another through an intermediate process is key in fields ranging from public health to behavioral science. Our study advances mediation modeling by using continuous-time models that capture how these relationships evolve dynamically--even when data are collected at irregular intervals. We introduce standardized effect size measures that adjust for differences in variable scales, enabling researchers to compare results across studies more easily. Additionally, we develop and compare methods, using delta, Monte Carlo, and parametric bootstrap techniques, to quantify the uncertainty in these mediation effects through confidence intervals and regions of significance. By implementing these methods in the open-source \texttt{R} package, \texttt{cTMed}, our work provides practical tools for researchers and practitioners, fostering better study designs, more accurate interpretations, and ultimately, more informed decision-making in applied research settings.
+
+\vspace{1.5ex}
+
+\raggedright
 
 \textit{Supplementary materials:} \url{https://raw.githubusercontent.com/jeksterslab/manCTMed/refs/heads/latex/manCTMed-supplement.pdf}.}
 
