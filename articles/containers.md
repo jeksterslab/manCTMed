@@ -1,0 +1,40 @@
+# Containers
+
+**[Docker](https://www.docker.com/) and
+[Apptainer](https://apptainer.org/) are required to build the containers
+described below.**
+
+## Apptainer/Singularity Image File
+
+The simulation was performed using the
+[Apptainer/Singularity](https://apptainer.org/) `manctmed.sif` image
+file. The image is a linux container with the `manCTMed` package and all
+the dependencies pre-installed.
+
+To build the Apptainer/Singularity image file (`manctmed.sif`), run the
+following.
+
+``` bash
+apptainer pull manctmed.sif docker://ijapesigan/manctmed:2025-04-07-05390291
+```
+
+## RStudio IDE Docker Container
+
+To facilitate exploration of the package, we created a Docker container
+based on the [Rocker Project](https://rocker-project.org/). The
+`manCTMed` package and all the dependencies are pre-installed and can be
+accessed in the browser using the `Rstudio` IDE.
+
+### Run
+
+To launch `Rstudio Server`, run the following.
+
+``` bash
+docker run --rm -ti -e PASSWORD=yourpassword -p 127.0.0.1:8787:8787 ijapesigan/manctmed:2025-04-07-05390291
+```
+
+Open `http://localhost:8787` on your web browser to launch
+`Rstudio Server`.
+
+- username: rstudio
+- password: yourpassword

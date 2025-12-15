@@ -1,0 +1,4 @@
+# License
+
+    YEAR: 2025
+    COPYRIGHT HOLDER: Ivan Jacob Agaloos Pesigan
