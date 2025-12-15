@@ -21,7 +21,7 @@ The simulation scripts are in the following folder.
 
 > **NOTE**: Build or request for `manctmed.sif` and place it in `"/scratch/$USER/$PROJECT/.sif"`.
 
-[comment]: <> (The manctmed.sif used is in https://osf.io/j9xgy/)
+[comment]: <> (The manctmed.sif used can be built using `apptainer pull manctmed.sif docker://ijapesigan/manctmed:2025-04-07-05390291`)
 
 Run the following for `manctmed.sif` to be executable and accessible to anyone.
 
@@ -38,4 +38,13 @@ Run the following to run the simulations.
 ```bash
 cd /scratch/$USER/$PROJECT/.sim
 sbatch sim.sh
+```
+
+## Summary
+
+Run the following to summarize the results.
+
+```bash
+cd /scratch/$USER/$PROJECT/.sim
+sbatch sum.sh
 ```

@@ -52,6 +52,8 @@ ver <- c(
   "1.0.6"
 )
 
+pkg_bioconductor <- c()
+
 ignore <- "^vignettes$"
 
 license <- "mit"

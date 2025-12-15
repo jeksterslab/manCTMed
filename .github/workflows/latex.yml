@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ijapesigan/manctmed
+      image: ijapesigan/docs
     concurrency:
       group: latex-${{ github.event_name != 'pull_request' || github.run_id }}
     env:
@@ -22,13 +22,15 @@ jobs:
 
     steps:
       - name: Checkout 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Make Project
         run: make build
 
       - name: Make LaTeX
         run: |
+          rm -rf .setup/latex/bib/bib.bib || true
+          rm -rf .setup/latex/bib/quarto.bib || true
           make bibrproject
           make pdf
 

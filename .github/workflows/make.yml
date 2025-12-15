@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ijapesigan/manctmed
+      image: ijapesigan/docs
     env:
       GITHUB_PAT: ${{ secrets.PAT }}
     permissions:
@@ -39,7 +39,7 @@ jobs:
           swap-storage: true
       -
         name: Checkout 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           lfs: true
@@ -57,4 +57,4 @@ jobs:
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.PAT }}
-          commit_message: "Automated build."
+          commit_message: "Automated build [skip ci]."
