@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ijapesigan/docs
+      image: ijapesigan/manctmed
     env:
       GITHUB_PAT: ${{ secrets.PAT }}
     permissions:

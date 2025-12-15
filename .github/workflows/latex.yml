@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ijapesigan/docs
+      image: ijapesigan/manctmed
     concurrency:
       group: latex-${{ github.event_name != 'pull_request' || github.run_id }}
     env:

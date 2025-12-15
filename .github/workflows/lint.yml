@@ -11,7 +11,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     container:
-      image: ijapesigan/docs
+      image: ijapesigan/manctmed
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
