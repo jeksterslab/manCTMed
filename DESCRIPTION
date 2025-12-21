@@ -12,7 +12,7 @@ Authors@R: c(
            role = "ctb",
            email = "mar60@psu.edu",
            comment = c(ORCID = "0000-0002-3956-604X")),
-    person(given = "Sy-Miin",,
+    person(given = "Sy-Miin",
            family = "Chow",
            role = "ctb",
            email = "quc16@psu.edu",
