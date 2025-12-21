@@ -12,7 +12,7 @@ Authors@R: c(
            role = "ctb",
            email = "mar60@psu.edu",
            comment = c(ORCID = "0000-0002-3956-604X")),
-    person(given = "Sy-Miin",,
+    person(given = "Sy-Miin",
            family = "Chow",
            role = "ctb",
            email = "quc16@psu.edu",
@@ -40,7 +40,7 @@ Suggests: knitr, rmarkdown, testthat, DT
 Remotes: jeksterslab/dynUtils@dc3f47b
 RoxygenNote: 7.3.3.9000
 NeedsCompilation: no
-Packaged: 2025-12-15 22:44:57 UTC; root
+Packaged: 2025-12-21 16:53:23 UTC; root
 Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-4818-8420>),
   Michael A. Russell [ctb] (ORCID:
