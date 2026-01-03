@@ -1,0 +1,66 @@
+# --------------------------------------------
+# CITATION file created with {cffr} R package
+# See also: https://docs.ropensci.org/cffr/
+# --------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "manCTMed" in publications use:'
+type: software
+license: MIT
+title: 'manCTMed: Continuous Time Mediation'
+version: 1.0.9
+doi: 10.1037/met0000779
+identifiers:
+- type: url
+  value: https://osf.io/qwnmf/
+- type: url
+  value: https://doi.org/10.1037/met0000779
+abstract: Research compendium for the manuscript Pesigan, I. J. A., Russell, M. A.,
+  & Chow, S.-M. (2025). Inferences and Effect Sizes for Direct, Indirect, and Total
+  Effects in Continuous-Time Mediation Models. Psychological Methods. <https://doi.org/10.1037/met0000779>.
+authors:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+preferred-citation:
+  type: article
+  title: Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time
+    Mediation Models
+  authors:
+  - family-names: Pesigan
+    given-names: Ivan Jacob Agaloos
+    email: r.jeksterslab@gmail.com
+    orcid: https://orcid.org/0000-0003-4818-8420
+  - family-names: Russell
+    given-names: Michael A.
+    email: mar60@psu.edu
+    orcid: https://orcid.org/0000-0002-3956-604X
+  - family-names: Chow
+    given-names: Sy-Miin
+    email: quc16@psu.edu
+    orcid: https://orcid.org/0000-0003-1938-027X
+  year: '2025'
+  doi: 10.1037/met0000779
+  journal: Psychological Methods
+  publisher:
+    name: American Psychological Association (APA)
+  notes: R package version 1.0.9
+repository-code: https://github.com/jeksterslab/manCTMed
+url: https://jeksterslab.github.io/manCTMed/
+contact:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+keywords:
+- continuous-time
+- ctmed
+- delta-method
+- effect-size
+- mediation
+- monte-carlo-method
+- parametric-bootstrap
+- r-package
+- regions-of-significance
+
