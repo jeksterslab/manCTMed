@@ -119,6 +119,8 @@
 % cat("\n\\renewcommand{\\kbrdelim}{)}% Right delimiter")
 %% end.rcode
 
+\journal{Accepted for publication in \textit{Psychological Methods}}
+
 \title{Inferences and Effect Sizes for Direct, Indirect, and Total Effects in Continuous-Time Mediation Models}
 
 \shorttitle{Continuous-Time Mediation: Inferences \& Effect Sizes}
