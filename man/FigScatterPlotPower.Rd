@@ -32,15 +32,15 @@ FigScatterPlotPower(results, delta_t = 15:30)
 
 }
 \seealso{
-Other Figure Functions: 
-\code{\link{FigPlotEffects}()},
-\code{\link{FigScatterPlotCoverage}()},
-\code{\link{FigScatterPlotSeBias}()},
-\code{\link{FigScatterPlotType1}()},
-\code{\link{IllustrationFigPlotEffects}()},
-\code{\link{IllustrationFigScatterPlotCoverage}()},
-\code{\link{IllustrationFigScatterPlotPower}()},
-\code{\link{IllustrationFigScatterPlotSeBias}()}
+Other Figure Functions:
+\code{\link[=FigPlotEffects]{FigPlotEffects()}},
+\code{\link[=FigScatterPlotCoverage]{FigScatterPlotCoverage()}},
+\code{\link[=FigScatterPlotSeBias]{FigScatterPlotSeBias()}},
+\code{\link[=FigScatterPlotType1]{FigScatterPlotType1()}},
+\code{\link[=IllustrationFigPlotEffects]{IllustrationFigPlotEffects()}},
+\code{\link[=IllustrationFigScatterPlotCoverage]{IllustrationFigScatterPlotCoverage()}},
+\code{\link[=IllustrationFigScatterPlotPower]{IllustrationFigScatterPlotPower()}},
+\code{\link[=IllustrationFigScatterPlotSeBias]{IllustrationFigScatterPlotSeBias()}}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

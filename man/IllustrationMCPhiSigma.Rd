@@ -31,14 +31,14 @@ IllustrationMCPhiSigma(fit, seed = 42)
 }
 }
 \seealso{
-Other Model Fitting Functions: 
-\code{\link{FitDynr}()},
-\code{\link{FitMx}()},
-\code{\link{IllustrationFitDynr}()},
-\code{\link{IllustrationFitMx}()},
-\code{\link{IllustrationPrepData}()},
-\code{\link{PhiHat}()},
-\code{\link{ThetaHat}()}
+Other Model Fitting Functions:
+\code{\link[=FitDynr]{FitDynr()}},
+\code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}},
+\code{\link[=IllustrationFitMx]{IllustrationFitMx()}},
+\code{\link[=IllustrationPrepData]{IllustrationPrepData()}},
+\code{\link[=PhiHat]{PhiHat()}},
+\code{\link[=ThetaHat]{ThetaHat()}}
 }
 \concept{Model Fitting Functions}
 \keyword{ci}

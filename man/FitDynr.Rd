@@ -14,7 +14,7 @@ Output of the \code{\link[=RandomMeasurement]{RandomMeasurement()}} function.}
 Task ID.}
 }
 \description{
-The function fits the model using the \link[dynr:dynr-package]{dynr::dynr} package.
+The function fits the model using the \link[dynr:dynr]{dynr} package.
 }
 \examples{
 \dontrun{
@@ -27,14 +27,14 @@ summary(fit)
 }
 }
 \seealso{
-Other Model Fitting Functions: 
-\code{\link{FitMx}()},
-\code{\link{IllustrationFitDynr}()},
-\code{\link{IllustrationFitMx}()},
-\code{\link{IllustrationMCPhiSigma}()},
-\code{\link{IllustrationPrepData}()},
-\code{\link{PhiHat}()},
-\code{\link{ThetaHat}()}
+Other Model Fitting Functions:
+\code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}},
+\code{\link[=IllustrationFitMx]{IllustrationFitMx()}},
+\code{\link[=IllustrationMCPhiSigma]{IllustrationMCPhiSigma()}},
+\code{\link[=IllustrationPrepData]{IllustrationPrepData()}},
+\code{\link[=PhiHat]{PhiHat()}},
+\code{\link[=ThetaHat]{ThetaHat()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

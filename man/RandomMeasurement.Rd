@@ -22,9 +22,9 @@ RandomMeasurement(sim)
 }
 }
 \seealso{
-Other Data Generation Functions: 
-\code{\link{GenData}()},
-\code{\link{IllustrationGenData}()}
+Other Data Generation Functions:
+\code{\link[=GenData]{GenData()}},
+\code{\link[=IllustrationGenData]{IllustrationGenData()}}
 }
 \concept{Data Generation Functions}
 \keyword{gendata}

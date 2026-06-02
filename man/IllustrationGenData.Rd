@@ -30,9 +30,9 @@ plot(sim)
 }
 }
 \seealso{
-Other Data Generation Functions: 
-\code{\link{GenData}()},
-\code{\link{RandomMeasurement}()}
+Other Data Generation Functions:
+\code{\link[=GenData]{GenData()}},
+\code{\link[=RandomMeasurement]{RandomMeasurement()}}
 }
 \concept{Data Generation Functions}
 \keyword{gendata}

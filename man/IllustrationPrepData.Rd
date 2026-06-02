@@ -23,14 +23,14 @@ dim(data)
 }
 }
 \seealso{
-Other Model Fitting Functions: 
-\code{\link{FitDynr}()},
-\code{\link{FitMx}()},
-\code{\link{IllustrationFitDynr}()},
-\code{\link{IllustrationFitMx}()},
-\code{\link{IllustrationMCPhiSigma}()},
-\code{\link{PhiHat}()},
-\code{\link{ThetaHat}()}
+Other Model Fitting Functions:
+\code{\link[=FitDynr]{FitDynr()}},
+\code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}},
+\code{\link[=IllustrationFitMx]{IllustrationFitMx()}},
+\code{\link[=IllustrationMCPhiSigma]{IllustrationMCPhiSigma()}},
+\code{\link[=PhiHat]{PhiHat()}},
+\code{\link[=ThetaHat]{ThetaHat()}}
 }
 \concept{Model Fitting Functions}
 \keyword{gendata}
