@@ -38,7 +38,9 @@ pkg_github <- c(
   "jeksterslab/dynUtils@dc3f47b"
 )
 
-pkg_github_ref <- c()
+pkg_github_ref <- c(
+  ""
+)
 
 pkg_ver <- c(
   "simStateSpace",
