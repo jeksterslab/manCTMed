@@ -23,8 +23,8 @@ The output is saved as an external file in \code{output_folder}.
 Compress Replication (Illustration)
 }
 \seealso{
-Other Compression Functions: 
-\code{\link{Compress}()}
+Other Compression Functions:
+\code{\link[=Compress]{Compress()}}
 }
 \author{
 Ivan Jacob Agaloos Pesigan

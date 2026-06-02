@@ -11,7 +11,7 @@ IllustrationFitMx(data)
 Output of the \code{\link[=IllustrationPrepData]{IllustrationPrepData()}} function.}
 }
 \description{
-The function fits the model using the \link[OpenMx:OpenMx]{OpenMx::OpenMx} package.
+The function fits the model using the \link[OpenMx:OpenMx]{OpenMx} package.
 }
 \examples{
 \dontrun{
@@ -23,14 +23,14 @@ summary(fit)
 }
 }
 \seealso{
-Other Model Fitting Functions: 
-\code{\link{FitDynr}()},
-\code{\link{FitMx}()},
-\code{\link{IllustrationFitDynr}()},
-\code{\link{IllustrationMCPhiSigma}()},
-\code{\link{IllustrationPrepData}()},
-\code{\link{PhiHat}()},
-\code{\link{ThetaHat}()}
+Other Model Fitting Functions:
+\code{\link[=FitDynr]{FitDynr()}},
+\code{\link[=FitMx]{FitMx()}},
+\code{\link[=IllustrationFitDynr]{IllustrationFitDynr()}},
+\code{\link[=IllustrationMCPhiSigma]{IllustrationMCPhiSigma()}},
+\code{\link[=IllustrationPrepData]{IllustrationPrepData()}},
+\code{\link[=PhiHat]{PhiHat()}},
+\code{\link[=ThetaHat]{ThetaHat()}}
 }
 \concept{Model Fitting Functions}
 \keyword{fit}

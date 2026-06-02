@@ -46,26 +46,26 @@ plot(ci, type = "bc")
 }
 }
 \seealso{
-Other Confidence Interval Functions: 
-\code{\link{BootPara}()},
-\code{\link{BootParaStdXMY}()},
-\code{\link{BootParaStdYMX}()},
-\code{\link{BootParaXMY}()},
-\code{\link{BootParaXYM}()},
-\code{\link{BootParaYMX}()},
-\code{\link{DeltaStdXMY}()},
-\code{\link{DeltaStdXYM}()},
-\code{\link{DeltaStdYMX}()},
-\code{\link{DeltaXMY}()},
-\code{\link{DeltaXYM}()},
-\code{\link{DeltaYMX}()},
-\code{\link{IllustrationBootPara}()},
-\code{\link{MCStdXMY}()},
-\code{\link{MCStdXYM}()},
-\code{\link{MCStdYMX}()},
-\code{\link{MCXMY}()},
-\code{\link{MCXYM}()},
-\code{\link{MCYMX}()}
+Other Confidence Interval Functions:
+\code{\link[=BootPara]{BootPara()}},
+\code{\link[=BootParaStdXMY]{BootParaStdXMY()}},
+\code{\link[=BootParaStdYMX]{BootParaStdYMX()}},
+\code{\link[=BootParaXMY]{BootParaXMY()}},
+\code{\link[=BootParaXYM]{BootParaXYM()}},
+\code{\link[=BootParaYMX]{BootParaYMX()}},
+\code{\link[=DeltaStdXMY]{DeltaStdXMY()}},
+\code{\link[=DeltaStdXYM]{DeltaStdXYM()}},
+\code{\link[=DeltaStdYMX]{DeltaStdYMX()}},
+\code{\link[=DeltaXMY]{DeltaXMY()}},
+\code{\link[=DeltaXYM]{DeltaXYM()}},
+\code{\link[=DeltaYMX]{DeltaYMX()}},
+\code{\link[=IllustrationBootPara]{IllustrationBootPara()}},
+\code{\link[=MCStdXMY]{MCStdXMY()}},
+\code{\link[=MCStdXYM]{MCStdXYM()}},
+\code{\link[=MCStdYMX]{MCStdYMX()}},
+\code{\link[=MCXMY]{MCXMY()}},
+\code{\link[=MCXYM]{MCXYM()}},
+\code{\link[=MCYMX]{MCYMX()}}
 }
 \concept{Confidence Interval Functions}
 \keyword{ci}

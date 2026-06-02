@@ -19,15 +19,15 @@ IllustrationFigScatterPlotSeBias(illustration_results)
 
 }
 \seealso{
-Other Figure Functions: 
-\code{\link{FigPlotEffects}()},
-\code{\link{FigScatterPlotCoverage}()},
-\code{\link{FigScatterPlotPower}()},
-\code{\link{FigScatterPlotSeBias}()},
-\code{\link{FigScatterPlotType1}()},
-\code{\link{IllustrationFigPlotEffects}()},
-\code{\link{IllustrationFigScatterPlotCoverage}()},
-\code{\link{IllustrationFigScatterPlotPower}()}
+Other Figure Functions:
+\code{\link[=FigPlotEffects]{FigPlotEffects()}},
+\code{\link[=FigScatterPlotCoverage]{FigScatterPlotCoverage()}},
+\code{\link[=FigScatterPlotPower]{FigScatterPlotPower()}},
+\code{\link[=FigScatterPlotSeBias]{FigScatterPlotSeBias()}},
+\code{\link[=FigScatterPlotType1]{FigScatterPlotType1()}},
+\code{\link[=IllustrationFigPlotEffects]{IllustrationFigPlotEffects()}},
+\code{\link[=IllustrationFigScatterPlotCoverage]{IllustrationFigScatterPlotCoverage()}},
+\code{\link[=IllustrationFigScatterPlotPower]{IllustrationFigScatterPlotPower()}}
 }
 \author{
 Ivan Jacob Agaloos Pesigan
