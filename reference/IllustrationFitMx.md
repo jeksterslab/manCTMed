@@ -1,7 +1,7 @@
 # Fit the Model using the OpenMx Package (Illustration)
 
 The function fits the model using the
-[OpenMx::OpenMx](https://rdrr.io/pkg/OpenMx/man/OpenMx.html) package.
+[OpenMx](https://rdrr.io/pkg/OpenMx/man/OpenMx.html) package.
 
 ## Usage
 

@@ -1,7 +1,7 @@
 # Fit the Model using the dynr Package
 
 The function fits the model using the
-[dynr::dynr](https://rdrr.io/pkg/dynr/man/dynr-package.html) package.
+[dynr](https://rdrr.io/pkg/dynr/man/dynr-package.html) package.
 
 ## Usage
 

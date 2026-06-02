@@ -25,6 +25,11 @@ Useful links:
 **Maintainer**: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
 ([ORCID](https://orcid.org/0000-0003-4818-8420)) \[copyright holder\]
 
+Authors:
+
+- Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
+  ([ORCID](https://orcid.org/0000-0003-4818-8420)) \[copyright holder\]
+
 Other contributors:
 
 - Michael A. Russell <mar60@psu.edu>
