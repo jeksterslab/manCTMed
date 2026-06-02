@@ -31,16 +31,13 @@ pkg_cran <- c(
 #   "jeksterslab/simStateSpace",
 #   "jeksterslab/bootStateSpace",
 #   "jeksterslab/dynUtils",
-#   "jeksterslab/cTMed"
+#   "jeksterslab/cTMed",
+#   "jeksterslab/dynUtils@dc3f47b"
 # )
 
-pkg_github <- c(
-  "jeksterslab/dynUtils@dc3f47b"
-)
+pkg_github <- c()
 
-pkg_github_ref <- c(
-  ""
-)
+pkg_github_ref <- c()
 
 pkg_ver <- c(
   "simStateSpace",
