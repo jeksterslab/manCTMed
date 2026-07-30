@@ -96,5 +96,7 @@ export(ThetaHat)
 import(cTMed)
 import(dynr)
 import(simStateSpace)
-importFrom(stats,coef)
-importFrom(stats,vcov)
+importFrom(stats,
+  coef,
+  vcov
+)
